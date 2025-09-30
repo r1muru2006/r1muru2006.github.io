@@ -19,7 +19,7 @@ subtitle = "Life is not fair, get used to it!"
 [sidebar.avatar]
 enabled = true
 local = true
-src = "img/Rimuru.png"
+src = "img/r1muru.jpg"
 
 [article]
 headingAnchor = false
