@@ -1,7 +1,7 @@
 # Change baseurl before deploy
 baseurl = "https://r1muru2006.github.io"
 languageCode = "en-us"
-title = "r1muru - My Blog"
+title = "r1muru"
 
 # Theme i18n support
 # Available values: en, fr, id, ja, ko, pt-br, zh-cn, zh-tw, es, de, nl, it, th, el, uk, ar
