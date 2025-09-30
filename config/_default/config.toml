@@ -16,6 +16,3 @@ disqusShortname = "hugo-theme-stack"
 
 [pagination]
 pagerSize = 5
-
-[params.article]
-math = true

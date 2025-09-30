@@ -1,9 +1,10 @@
 ---
 title: "picoCTF 2025"
-description: "Đây là blog đầu của mình nên mình sẽ lấy luôn giải mà lần đầu mình chơi cùng team aespaFanClub. Theo cá nhân mình thấy các challenge về crypto của giải phân hóa rõ ràng các mức độ khác nhau"
+description: "Blog đầu nên mình sẽ lấy giải lần đầu mình chơi cùng team aespaFanClub :3"
 date: 2025-09-30T13:52:19+07:00
 image: 
-license: 
+license:
+math: true
 hidden: false
 comments: true
 tags: 
@@ -12,7 +13,7 @@ tags:
 categories:
     - CTF Write-up
 ---
-
+> Theo cá nhân mình thấy các challenge về crypto của giải phân hóa rõ ràng các mức độ khác nhau
 ## General
 ### FANTASY CTF
 Bài này mình nghĩ là chọn hướng nào cũng ra được vì đến cuối cùng sẽ đẩy ra flag :))
