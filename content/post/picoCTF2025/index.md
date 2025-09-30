@@ -11,7 +11,6 @@ tags:
     - Cryptography
 categories:
     - CTF Write-up
-draft: true
 ---
 
 ## General
