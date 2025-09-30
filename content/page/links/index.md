@@ -12,7 +12,7 @@ links:
   - title: Facebook
     description: Facebook can be accessed from devices with Internet connectivity, such as personal computers, tablets and smartphones.
     website: https://www.facebook.com/profile.php?id=61574724441158
-    image: https://github.com/gauravghongde/social-icons/blob/master/PNG/Black/Facebook_black.png
+    image: facebook.webp
 menu:
     main: 
         weight: 4
