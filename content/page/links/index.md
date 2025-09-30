@@ -3,8 +3,16 @@ title: Links
 links:
   - title: GitHub
     description: GitHub is the world's largest software development platform.
-    website: https://github.com
+    website: https://github.com/r1muru2006
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+  - title: Hackmd
+    description: HackMD gives you a real-time Markdown editor for collaborative work.
+    website: https://hackmd.io/@r1muru
+    image: hackmd.png
+  - title: Facebook
+    description: Facebook can be accessed from devices with Internet connectivity, such as personal computers, tablets and smartphones.
+    website: https://www.facebook.com/profile.php?id=61574724441158
+    image: https://github.com/gauravghongde/social-icons/blob/master/PNG/Black/Facebook_black.png
 menu:
     main: 
         weight: 4
@@ -14,7 +22,7 @@ menu:
 comments: false
 ---
 
-To use this feature, add `links` section to frontmatter.
+<!-- To use this feature, add `links` section to frontmatter.
 
 This page's frontmatter:
 
@@ -30,4 +38,4 @@ links:
     image: ts-logo-128.jpg
 ```
 
-`image` field accepts both local and external images.
+`image` field accepts both local and external images. -->
