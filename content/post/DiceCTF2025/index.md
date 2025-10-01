@@ -2,7 +2,7 @@
 title: "DiceCTF 2025"
 description: "Giải này mình làm được 2 bài misc và 1 bài crypto ngay phút chót @@ nên viết writeup để tổng kết lại cuối tuần này."
 date: 2025-03-26T09:31:43+07:00
-image: 
+image: dicectf.png
 math: true
 license: 
 hidden: false

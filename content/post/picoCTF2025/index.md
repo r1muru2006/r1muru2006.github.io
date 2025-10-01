@@ -2,7 +2,7 @@
 title: "picoCTF 2025"
 description: "Blog đầu nên mình sẽ lấy giải lần đầu mình chơi cùng team aespaFanClub :3"
 date: 2025-03-22T13:52:19+07:00
-image: 
+image: picoCTF.png
 license:
 math: true
 hidden: false
