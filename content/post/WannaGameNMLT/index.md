@@ -1,6 +1,6 @@
 ---
 title: "WannaGame NMLT"
-description: "Đây là Write-up giành cho cuộc thi CTFs để lấy điểm Nhập môn lập trình của tôi vào năm nhất."
+description: "Đây là Write-up giành cho cuộc thi CTFs để lấy điểm Nhập môn lập trình của mình vào năm nhất."
 date: 2025-04-08T10:07:31+07:00
 image: 
 math: true
