@@ -208,7 +208,7 @@ The flag is: picoCTF{UseStr0nG_h@shEs_&PaSswDs!_eff9dbe0}
 ```
     Flag: picoCTF{UseStr0nG_h@shEs_&PaSswDs!_eff9dbe0}
 ### EVEN RSA CAN BE BROKEN???
-```python=
+```python
 # source.py
 from sys import exit
 from Crypto.Util.number import bytes_to_long, inverse
@@ -245,13 +245,13 @@ if __name__ == "__main__":
     exit()
 ```
 Mở kênh kết nối thì ta nhận được `N, e, cipher`
-```python=
+```python
 N = 14971332928931600258070222525511394212054658902871612141186429243227295047197174853004285765481866838784351475089613251384629214373054886098787783629288854
 e = 65537
 cipher = 9685487452310081650666414304396053822632884035194331224959800780976444606689190315693089108703603608391361578584998640257817456167504699460118188426557775
 ```
 Đoạn này mình thấy sai sai vì N chẵn làm mình nghĩ sao bài này nó dễ vậy được và đúng là nó dễ thật @@
-```python=
+```python
 from Crypto.Util.number import long_to_bytes
 
 # Lấy từ (nc verbal-sleep.picoctf.net 51510)
@@ -307,7 +307,7 @@ What cheese would you like to encrypt? Cottage cheese
 Here's your encrypted cheese:  JFMMBZRMJQRRVR
 Not sure why you want it though...*squeak* - oh well!
 ```
-```python=
+```python
 # solution.py
 from string import ascii_uppercase
 from Crypto.Util.number import inverse, GCD
@@ -423,7 +423,7 @@ Here's the password to the cloning room:  picoCTF{ChEeSy033d0004}
 ```
     Flag: picoCTF{ChEeSy033d0004}
 ### ChaCha Slide
-```python=
+```python
 # challenge.py
 import secrets
 import hashlib
@@ -500,7 +500,7 @@ Phương thức này sử dụng mã hóa XOR với `keystream` là XOR key.
 Nghĩa là: Ciphertext = Plaintext $\oplus$ Keystream
 $\Leftrightarrow$ Ciphertext $\oplus$ Plaintext = Plaintext $\oplus$ Keystream $\oplus$ Plaintext = Keystream
 Và khi mà ta đã biết cái plaintext ở goal rồi thì việc giải mã sẽ đơn giản bằng **known-plaintext attack** như sau: goal_ct = goal $\oplus$ Keystream = goal $\oplus$ Ciphertext $\oplus$ Plaintext
-```python=
+```python
 ciphertext = bytes(
     [
         c1 ^ p1 ^ p2
@@ -552,7 +552,7 @@ Vì `tag` ban đầu mod 1 giá trị bằng $2^{130} - 5$, gần bằng 130 bit
 Đặt $k = i-j$ thì với mỗi k, ta sẽ dựng  1 phương trình trên GF($2^{130}-5$), tìm nghiệm của phương trình này và nó là `r` rồi thế lại vào 1 trong hai phương trình trên là ta ra được `s`
 
 Khi đã có được `r, s` đối với cặp `(key, nonce)` này rồi thì ta hoàn toàn có thể tạo 1 cái `tag` xác thực được cho ciphertext của goal và đây cũng là cách mình thực hiện thử thách này.
-```python=
+```python
 # solution.py
 from pwn import *
 from Crypto.Util.Padding import pad, unpad
@@ -666,7 +666,7 @@ Thử thách cho ta một cái `cheese_list.txt` chứa 599 loại cheese cùng 
 
 Đầu tiên, mình cũng brute-force băm SHA256 hết các cheese cộng với việc thêm salt vào cuối $\rightarrow$ không ra. Sau đó, mình nghĩ tới việc băm trước rồi thêm salt sau đó băm tiếp $\rightarrow$ cũng không ra. Rồi mình nghĩ tới việc thêm salt vào từng ký tự xen giữa của cheese rồi băm và tất nhiên $\rightarrow$ không ra. Tiếp theo, mình nghĩ là ồ Part 1 đã cho ta chữ cái in hoa rồi thì có thể phải in hoa hết các cheese xong mới thực hiện $\rightarrow$ không ra.
 Lúc đó mình cũng không nghĩ tới việc là phải ngược lại là in thường hết các cheese và buồn thay nó là như vậy :))))))
-```python=
+```python
 # solution.py
 from hashlib import sha256
 
