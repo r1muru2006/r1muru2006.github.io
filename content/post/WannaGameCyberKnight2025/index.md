@@ -1,5 +1,5 @@
 ---
-title: "WannaGameCyberKnight2025"
+title: "WannaGame Cyber Knight 2025"
 description: "Đây là giải đấu do câu lạc bộ Wanna.W1n tổ chức để tuyển thành viên vào câu lạc bộ."
 date: 2025-05-16T14:13:38+07:00
 image: w1cyber
