@@ -18,12 +18,9 @@ categories:
 > ![image](https://hackmd.io/_uploads/BkKat26egg.png)
 Sau đây là bài mình giải được trong giải đấu và tiếp đó là những bài mà mình chưa làm được khi còn trong giải.
 
-# Choose!
- :::success
+## Choose!
 ![image](https://hackmd.io/_uploads/HkBEq3pexl.png)
   Link: https://www.youtube.com/watch?v=1lqe8eU48HI
- :::
-
 
 ```python
 # aes.py
@@ -684,10 +681,8 @@ io.interactive()
 ```
     Flag: W1{aAESEEESaEsaAEaSesEEEsAaseseesaSSEaaASeAAESEESSSaASeAsSSAAAAeAsE_baCsDCbtqU}
     
-# heartbreak
-:::danger
+## heartbreak
 ![image](https://hackmd.io/_uploads/HkKwhbQbll.png)
-:::
 ```python
 # chall.py
 from Crypto.Util.number import getPrime, bytes_to_long
@@ -736,7 +731,7 @@ if __name__ == "__main__":
     part2()
 ```
 Flag của thử thách được chia làm 2 và mã hóa bằng 2 phần khác nhau.
-## Part 1:
+### Part 1:
 ```python
 def part1():
     p = getPrime(2048)
@@ -787,7 +782,7 @@ def Part1():
    pt = pow(ct, d, n)
    return long_to_bytes(pt)
 ```
-## Part 2:
+### Part 2:
 ```python
 def part2():
     e = getPrime(10)
