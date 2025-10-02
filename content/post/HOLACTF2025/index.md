@@ -1,6 +1,6 @@
 ---
 title: "HOLACTF 2025"
-description: "Sau đây là những bài mình làm được trong thời gian của giải với tổng là 6 bài với 3 bài crypto, 2 bài misc và 1 bài osint.
+description: "Sau đây là những bài mình làm được trong thời gian của giải với tổng là 6 bài với 3 bài crypto, 2 bài misc và 1 bài osint."
 date: 2025-09-09T08:42:30+07:00
 image: holactf.jpg
 math: true
