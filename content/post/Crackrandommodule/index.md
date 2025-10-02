@@ -610,9 +610,9 @@ Mặt khác `output` chỉ cho 15 bit, trong khi `state` có 31 bit, thế nên 
 Do `seed` có 32 bit, ta nên sử dụng nhiều luồng nhằm chia các khoảng của nó và chạy các task song song để giảm thời gian thực hiện và tối ưu hóa bộ nhớ. Ở đây, mình sử dụng Pool của thư viện multiprocessing trong Python để chia luồng, rồi thực hiện các task duyệt, so sánh với đầu ra cho trước và trả về `seed` nếu khớp.
 Full code ở [đây](https://github.com/R1MURUN0PR0/Crack_random/blob/main/bash_random/crack.py)...
 
-# All code in Github
+## All code in Github
 https://github.com/R1MURUN0PR0/Crack_random/tree/main
-# Tài liệu
+## Tài liệu
 1. https://soon.haari.me/import-random/
 2. https://rbtree.blog/posts/2021-05-18-breaking-python-random-module/
 3. https://github.com/JorianWoltjer/BashRandomCracker?tab=readme-ov-file
