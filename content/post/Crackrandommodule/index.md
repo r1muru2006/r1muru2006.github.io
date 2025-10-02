@@ -443,7 +443,7 @@ for i in range(3):
     all_states[i] = all_states[i + 31]
 ```
 
-Full code ở [đây](https://github.com/R1MURUN0PR0/Crack_random/blob/main/glibc_random/crack.py)...
+Full code ở [đây](https://github.com/r1muru2006/Crack_random/blob/main/glibc_random/crack.py)...
 
 ## 4. Golang
 PRNG của Golang xây dựng dựa trên Lagged Fibonacci Generator.
