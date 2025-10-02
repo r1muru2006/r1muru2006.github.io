@@ -14,13 +14,14 @@ categories:
     - CTF Write-up
     - WannaGame
 ---
+
 >  Trong giải đấu này, mình đã giải được 1 câu trong phần Cryptography và may mắn đứng thứ 8 trên bảng đến cuối (≧▽≦)
 > ![image](https://hackmd.io/_uploads/BkKat26egg.png)
 Sau đây là bài mình giải được trong giải đấu và tiếp đó là những bài mà mình chưa làm được khi còn trong giải.
 
 ## Choose!
 ![image](https://hackmd.io/_uploads/HkBEq3pexl.png)
-  Link: https://www.youtube.com/watch?v=1lqe8eU48HI
+Link: https://www.youtube.com/watch?v=1lqe8eU48HI
 
 ```python
 # aes.py
@@ -300,6 +301,7 @@ print("Here is your flag !")
 print(open("WannaGame_CyberKnight/choose/flag.txt", "r").read())
 ```
 > Bài này đơn giản là về phần mã hóa AES ([Advanced Encryption Standard](https://vi.wikipedia.org/wiki/Advanced_Encryption_Standard)) và mình có xem lại cấu trúc của nó tại wikipedia và [đây](https://hackmd.io/@r1muru/HJmSbUld1x#Bringing-It-All-Together) để tiếp cận.
+
 ![image](https://hackmd.io/_uploads/rkcm02pxex.png)
 
 ### Phân tích:

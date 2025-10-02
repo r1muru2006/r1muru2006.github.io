@@ -17,7 +17,7 @@ categories:
 ## General
 ### FANTASY CTF
 Bài này mình nghĩ là chọn hướng nào cũng ra được vì đến cuối cùng sẽ đẩy ra flag :))
-```javascript=
+```javascript
 FANTASY CTF SIMULATION
 
 The simulation begins in the private room of Eibhilin, a bright, young student.
@@ -190,7 +190,7 @@ points in picoCTF 2025!
 ## Crypto
 ### hashcrack
 Ở bài này mình dựa vào số bytes của hash và các tools online để tìm ra password, như là: [MD5](https://10015.io/tools/md5-encrypt-decrypt), [SHA1](https://10015.io/tools/sha1-encrypt-decrypt), [SHA256](https://10015.io/tools/sha256-encrypt-decrypt)
-```javascript=
+```javascript
 Welcome!! Looking For the Secret?
 
 We have identified a hash: 482c811da5d5b4bc6d497ffa98491e38 //md5
@@ -270,7 +270,7 @@ print(flag.decode("utf-8"))
 ```
     Flag: picoCTF{tw0_1$_pr!m3625a858b}
 ### Guess My Cheese (Part 1)
-```javascript=
+```javascript
 *******************************************
 ***             Part 1                  ***
 ***    The Mystery of the CLONED RAT    ***
@@ -299,7 +299,7 @@ possible_a = [a for a in range(1, M) if gcd(a, M) == 1]
 Vì chỉ xét tới chữ cái in hoa nên ta sẽ lấy $M=26$.
 Ở đây, thử thách cho mình 2 quyền đoán cheese đưa ra và mã hóa 1 cheese nào đó.
 Để mà đoán được cheese thì ta cần hệ số $a, b$ và từ đó giải mã ra bản rõ. Do đó, mình sẽ mã hóa 1 cheese nào đó trước rồi đối chiếu và lấy $a, b$ và giải mã để lấy flag thôi :+1:
-```javascript=
+```javascript
 What would you like to do?
 e
 
@@ -345,7 +345,7 @@ print(cheese)
 # WELLINGTONSKA
 ```
 Nhập cheese vào guess và ta lấy được flag
-```javascript=
+```javascript
 I don't wanna talk to you too much if you're some suspicious character and not my BFF Squeexy!
 You have 2 more chances to prove yourself to me!
 
@@ -476,7 +476,7 @@ if goal in repr(user_message):
     print(flag)
 ```
 Kết nối với kênh, ta được đoạn tin sau:
-```javascript=
+```javascript
 Plaintext: 'Did you know that ChaCha20-Poly1305 is an authenticated encryption algorithm?'
 Plaintext (hex): 44696420796f75206b6e6f7720746861742043686143686132302d506f6c793133303520697320616e2061757468656e7469636174656420656e6372797074696f6e20616c676f726974686d3f
 Ciphertext (hex): 7cb5f2e754caea3d3d98048ee7d747c1b677b5ac33a000d74c86b68f7f25a955db62e0a8fd17b0235cfc0541a7f8edf105a5d1ab6a6489cfacb7e4061f5b1c8f4f04e9624220e4cb450bae1e13da93a564ed04959dbde00eb0e72b772fb4a5a47457ad46b48a03432d
@@ -641,7 +641,7 @@ flag = io.recvline().decode()
 print(flag)
 ```
 Trong lúc làm bài thì mình nhập trực tiếp tới server nên được như sau:
-```javascript=
+```javascript
 Plaintext: 'Did you know that ChaCha20-Poly1305 is an authenticated encryption algorithm?'
 Plaintext (hex): 44696420796f75206b6e6f7720746861742043686143686132302d506f6c793133303520697320616e2061757468656e7469636174656420656e6372797074696f6e20616c676f726974686d3f
 Ciphertext (hex): 7cb5f2e754caea3d3d98048ee7d747c1b677b5ac33a000d74c86b68f7f25a955db62e0a8fd17b0235cfc0541a7f8edf105a5d1ab6a6489cfacb7e4061f5b1c8f4f04e9624220e4cb450bae1e13da93a564ed04959dbde00eb0e72b772fb4a5a47457ad46b48a03432d
