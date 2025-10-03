@@ -386,7 +386,9 @@ Do đó, để tấn công thì ta có thể nghĩ rằng với cùng 1 key thì
 
 Và để giải quyết phần này thì ta sẽ phải có 2 khối trong phần `plaintext` ngay trước mã hóa để chứng minh và tính $K$ bằng cách tìm được cả $SA^9$.
 Với phần tính $SA^9$ thì không hề đơn giản và mình vẫn đang đọc và tìm hiểu qua bài [này](https://crypto.stackexchange.com/questions/89596/linear-aes-expression-of-k-in-aesp-apk/89607#89607). Còn thuật toán thì mình sẽ sử dụng 1 phần của implement trong [bài báo](https://wrth.medium.com/cracking-aes-without-any-one-of-its-operations-c42cdfc0452f) cho trên.
+
 Tiếp theo là phần 2 khối trong `plaintext` thì mình chọn khối 1 và khối 4 để sử dụng với khối 1 mình đưa vào là: `b'\x00' * 16` và khối 4 mặc định là: `b'\x10' * 16`.
+
 Script:
 ```python
 # Skip SubBytes
@@ -762,8 +764,11 @@ def part1():
     f.write("\nHints = " + str(hints) + "\n")
 ```
 Bộ khóa RSA được gửi ra sau khi được nhân với 1 số nguyên tố 1024 bit ngẫu nhiên.
+
 Chú ý điều kiện: `if hints[_] == 0: hints[_] = (hints[_] - 1) % n`
+
 => Từ đây, ta có thể tính được ngay $n = hint(n) + 1$
+
 Thêm nữa, ta có hệ phương trình:
 $$
 \begin{cases}
@@ -775,6 +780,7 @@ $$
 $$
 Tức là $n$ có 4096 bit, còn `hint(p)` chỉ có 3072 bit và vì nó bé hơn $n$ nên khi lấy đồng dư thì nó sẽ không thay đổi.
 Khi đó, ta hoàn toàn có thể lấy được $p$ bằng cách lấy GCD của `(n, hint(p))`
+
 Cuối cùng, ta khôi phục dữ liệu cần thiết của bộ khóa và giải mã được part 1.
 ```python
 def Part1():
@@ -805,8 +811,12 @@ def part2():
     f.write(f"n = {n}\nc1 = {c1}\nc2 = {c2}\n")
 ```
 Với $e$ nhỏ, thì ta nghĩ ngay tới `Low public exponent attack` và khi tìm hiểu thì ta thấy bài này tương đồng với kiểu [Franklin–Reiter related-message attack](https://en.wikipedia.org/wiki/Coppersmith%27s_attack#Franklin%E2%80%93Reiter_related-message_attack)
+
 Cụ thể hơn, $m_2 = m _1 >> 8 \Leftrightarrow m_1 = m_2 * (1 >> 8) + k$.
-Mặt khác, ta biết rằng $m_1$ là Part2 của flag tức là phần tử cuối trong 8 bit của nó khi quy về bảng mã ASCII sẽ là `}` tương đương với giá trị `125` => $m_1=256*m_2+125$
+Mặt khác, ta biết rằng $m_1$ là Part2 của flag tức là phần tử cuối trong 8 bit của nó khi quy về bảng mã ASCII sẽ là `}` tương đương với giá trị `125`
+
+=> $m_1=256*m_2+125$
+
 Sau đó, ta viết lại dưới dạng đa thức $f(x)$ và $g(x)$ là:
 $$
 \begin{cases}
