@@ -95,13 +95,13 @@ y ^= (y >> 18)
 ```
 
 `y ^= (y << 15) & 0xefc60000`
-Ở đây, mask 0xefc60000 có cấu trúc đặc biệt với làm phép biển đổi trở thành 1 hàm tự nghịch đảo, nghĩa là $f(f(x))=x$, với $f(x) = x \oplus ((x \ll 15) \ \&$ 0xefc60000$)$. Chứng minh:
+Ở đây, mask 0xefc60000 có cấu trúc đặc biệt với làm phép biển đổi trở thành 1 hàm tự nghịch đảo, nghĩa là $f(f(x))=x$, với $f(x) = x \oplus ((x << 15) \ &$ 0xefc60000$)$. Chứng minh:
 - Đặt A = 0xefc60000. Khi đó:
-$f(y)=f(f(x)) = f(x \oplus ((x \ll 15) \ \& \ A))$
-$= (x \oplus ((x \ll 15) \ \& \ A)) \oplus (((x \oplus ((x \ll 15) \ \& \ A)) \ll 15)\ \& \ A)$
-$= (x \oplus ((x \ll 15) \ \& \ A)) \oplus (((x \ll 15) \ \& \ A) \oplus((x \ll 30)\ \& \ (A \ll 15) \ \& \ A))$
-$= x \oplus (((x \ll 15) \ \& \ A) \oplus ((x \ll 15) \ \& \ A)) \oplus((x \ll 30)\ \& \ (A \ll 15) \ \& \ A) = x$
-(vì tính chất $P \oplus P = 0$ và $A$ có 17 bit thấp là 0 nên nếu dịch trái 15 bit thì 32 bit cuối của $A \ll 15$ sẽ điều là 0 nên $(A \ll 15) \ \& \ A = 0$)
+$f(y)=f(f(x)) = f(x \oplus ((x << 15) \ & \ A))$
+$= (x \oplus ((x << 15) \ & \ A)) \oplus (((x \oplus ((x << 15) \ & \ A)) << 15)\ & \ A)$
+$= (x \oplus ((x << 15) \ & \ A)) \oplus (((x << 15) \ & \ A) \oplus((x << 30)\ & \ (A << 15) \ & \ A))$
+$= x \oplus (((x << 15) \ & \ A) \oplus ((x << 15) \ & \ A)) \oplus((x << 30)\ & \ (A << 15) \ & \ A) = x$
+(vì tính chất $P \oplus P = 0$ và $A$ có 17 bit thấp là 0 nên nếu dịch trái 15 bit thì 32 bit cuối của $A << 15$ sẽ điều là 0 nên $(A << 15) \ & \ A = 0$)
 
 Do đó, để đảo ngược thì ta chỉ cần 1 lần biến đổi hàm nữa:
 ```python
@@ -112,17 +112,17 @@ y ^= (y << 15) & 0xefc60000
 `y ^= (y << 7) & 0x9d2c5680`
 Ở bước này thì ta sẽ thiết lập một hàm dịch bit gần tương tự như bước trên:
 - Đặt B = 0x9d2c5680.
-Với $y = x \oplus ((x \ll 7) \ \& \ B$)$
-, ta sẽ dùng hàm $f(x') = y \oplus ((x' \ll 7) \ \& \ B$)$
+Với $y = x \oplus ((x << 7) \ & \ B$)$
+, ta sẽ dùng hàm $f(x') = y \oplus ((x' << 7) \ & \ B$)$
 Khi đó:
-$f_4(y) = f_4(x \oplus ((x \ll 7) \ \& \ B)) = f_3(y \oplus (((x \oplus ((x \ll 7) \ \& \ B)) \ll 7)\ \& \ B))$
-$= f_3(x \oplus (((x \ll 7) \ \& \ B) \oplus ((x \ll 7) \ \& \ B)) \oplus((x \ll 7*2)\ \& \ (B \ll 7) \ \& \ B))$
-$= f_3(x \oplus((x \ll 7*2)\ \& \ (B \ll 7) \ \& \ B))$
-$= f_2(x \oplus((x \ll 7*3)\ \& \ (B \ll 7*2) \ \& \ (B \ll 7) \ \& \ B))$
-$= f(x \oplus((x \ll 7*4)\ \& \ (B\ll 7*3) \ \& \ (B \ll 7*2) \ \& \ (B \ll 7) \ \& \ B))$
-$= x \oplus((x \ll 7*5)\ \& \ (B\ll 7*4) \ \& \ (B\ll 7*3) \ \& \ (B \ll 7*2) \ \& \ (B \ll 7) \ \& \ B)$
+$f_4(y) = f_4(x \oplus ((x << 7) \ & \ B)) = f_3(y \oplus (((x \oplus ((x << 7) \ & \ B)) << 7)\ & \ B))$
+$= f_3(x \oplus (((x << 7) \ & \ B) \oplus ((x << 7) \ & \ B)) \oplus((x << 7*2)\ & \ (B << 7) \ & \ B))$
+$= f_3(x \oplus((x << 7*2)\ & \ (B << 7) \ & \ B))$
+$= f_2(x \oplus((x << 7*3)\ & \ (B << 7*2) \ & \ (B << 7) \ & \ B))$
+$= f(x \oplus((x << 7*4)\ & \ (B<< 7*3) \ & \ (B << 7*2) \ & \ (B << 7) \ & \ B))$
+$= x \oplus((x << 7*5)\ & \ (B<< 7*4) \ & \ (B<< 7*3) \ & \ (B << 7*2) \ & \ (B << 7) \ & \ B)$
 $=x$
-(vì $B$ có 7 bit thấp là 0 nên nếu dịch trái 28 bit thì 32 bit cuối của $B \ll 28$ sẽ đều là 0 nên đẳng thức trên xảy ra.)
+(vì $B$ có 7 bit thấp là 0 nên nếu dịch trái 28 bit thì 32 bit cuối của $B << 28$ sẽ đều là 0 nên đẳng thức trên xảy ra.)
 
 Do đó, để đảo ngược thì ta chỉ cần 4 lần biến đổi hàm như sau:
 ```python
@@ -370,9 +370,9 @@ outputs[i] == (outputs[i - 31] + outputs[i - 3]) & 0x7fffffff
 Đoán trạng thái của nỏ ở dạng:
 $$
 \begin{cases}
-s_{i-31} = o_{i-31} \ll 1 + 1 \\
-s_{i-3} = o_{i-3} \ll 1 + 1 \\
-s_i = o_i \ll 1 + 0
+s_{i-31} = o_{i-31} << 1 + 1 \\
+s_{i-3} = o_{i-3} << 1 + 1 \\
+s_i = o_i << 1 + 0
 \end{cases}
 $$
 
@@ -491,7 +491,7 @@ def seed(self, seed):
 ```
 Hàm `seed()` sẽ nhận giá trị `seed` và tạo ra mảng trạng thái `vec` như sau:
 1. x được gọi `seedrand()` 20 lần để tạo số ngẫu nhiên.
-2. Ghép 3 giá trị 31-bit thành số 64-bit qua hàm `seedrand()` với $x \ll 40, x \ll 20, x$.
+2. Ghép 3 giá trị 31-bit thành số 64-bit qua hàm `seedrand()` với $x << 40, x << 20, x$.
 3. XOR với 1 giá trị trong bảng `rng_cooked[]`.
 
 Tiếp theo, ta sẽ sinh số ngẫu nhiên 64-bit qua `vec` bằng hàm `uint64()`:
@@ -512,7 +512,7 @@ def uint64(self):
 - Hai con trỏ `tap` và `feed` đi lùi trong vòng có độ dài 607.
 - Theo đó là công thức Additive Lagged-Fibonacci Generator:
 $$
-vec_{feed}=(vec_{feed} + vec_{tap}) \ \& \ 0xFFFFFFFFFFFFFFFF
+vec_{feed}=(vec_{feed} + vec_{tap}) \ & \ 0xFFFFFFFFFFFFFFFF
 $$
 ```python
 x = (self.vec[self.feed] + self.vec[self.tap]) & 0xFFFFFFFFFFFFFFFF

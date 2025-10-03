@@ -362,7 +362,9 @@ Phần này đối với mình là thử thách nhất vì khi phân tích, mìn
 Như ta đã biết, nếu bỏ SubBytes đi thì các vòng của AES sẽ trở thành:
 
 Vòng 0: AddRoundKey
+
 Vòng 1–9: ShiftRows, MixColumns, AddRoundKey
+
 Vòng 10: ShiftRows, AddRoundKey
 
 
@@ -370,9 +372,13 @@ Vòng 10: ShiftRows, AddRoundKey
 Để cho gọn thì ta đặt $S, M, k_i$ lần lượt là phép biển đổi ma trận bằng ShiftRows và MixColumns và AddRoundKey ở vòng thứ i. Sau đây là quá trình mã hóa `plaintext`($P$):
 
 Vòng 0: $P + k_0$
+
 Vòng 1: $M(S(P+k_0))+k_1$. Đơn giản hóa bằng cách tính $A =MS$.
+
 Vòng 2-9: $...(A(A(A(P+k_0))+k_1)+k_2)+k_3+...$
+
 Vòng 10: $S(...(A(A(A(P+k_0))+k_1)+k_2)+k_3+...)+k_{10}$
+
 $=SA^9P+SA^8k_0+..Sk_9+k_{10}=SA^9P+K$
 
 Ở cuối ta thấy là `plaintext` gắn với $SA^9=M^9S^{10}$ mà không phụ thuộc gì tới key.
