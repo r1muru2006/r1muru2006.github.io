@@ -21,6 +21,7 @@ Sau đây là bài mình giải được trong giải đấu và tiếp đó là
 
 ## Choose!
 ![image](https://hackmd.io/_uploads/HkBEq3pexl.png)
+
 Link: https://www.youtube.com/watch?v=1lqe8eU48HI
 
 ```python
