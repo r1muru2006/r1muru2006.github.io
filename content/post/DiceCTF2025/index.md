@@ -65,6 +65,7 @@ password = f"{s}{locale_str}{username}"
 print(password) #1743126480en_UShacker
 ```
 Giải nén file zip và lấy flag thôi:
+
 ![image](https://hackmd.io/_uploads/Bkm0GxDTyl.png)
 
     Flag: dice{5k1d_y0ur_w@y_t0_v1ct0ry_t0d4y!!!}
@@ -138,7 +139,8 @@ if __name__ == "__main__":
 ```
 
 Theo thử thách, bài này nói về [1-2 oblivious transfer](https://en.wikipedia.org/wiki/Oblivious_transfer#1%E2%80%932_oblivious_transfer) nên mình cũng lên mạng tìm hiểu và đây là các bước mà giao thức này thực hiện:
-1. Alice có tin nhắn $m_0, m_1$ và 1 cặp khóa RSA $(e, d, N)$. Bob biết được khóa công khai $(e, N)$ của Alice và muốn tin nhắn $m_c$ , với $c \in \{0, 1\}$.
+1. Alice có tin nhắn $m_0, m_1$ và 1 cặp khóa RSA $(e, d, N)$.
+Bob biết được khóa công khai $(e, N)$ của Alice và muốn tin nhắn $m_c$ , với $c \in \{0, 1\}$.
 2. Alice tạo ngẫu nhiên 2 số $x_0, x_1$ và gửi cho Bob.
 3. Bob tạo ngẫu nhiên 1 số $k$ và gửi $v = b+k^e \mod N$ cho Alice.
 4. Alice tính $k_0 = (v-x_0)^d\mod N$ và $k_1 = (v-x_1)^d\mod N$ rồi gửi $m_0'=m_0+k_0\mod N$ và $m_1'=m_1+k_1\mod N$ cho Bob.
@@ -154,8 +156,8 @@ page_guess = int(input("turn to page: "))
 if page_guess != page:
     exit()
 ```
-Tuy nhiên vì `msgs` được random giữa `(live,die)` và `(die, live)`, cùng với việc ta phải nhập đúng `page` trong 64 lần liên tiếp thì rõ ràng việc làm như Bob là lấy được 1 trong 2 tin nhắn không khả thi. Vì xác suất trúng được hết chỉ là $\dfrac{1}{2^{64}}$.
-Vì ta đã biết được list của các `DEATH_CAUSES` nên ta cũng có thể tính được hết tất cả các `die` của chall, tức là ta có thể phân biệt được đâu là `live` và đâu là `die`.
+Tuy nhiên vì `msgs` được random giữa `(live,die)` và `(die, live)`, cùng với việc ta phải nhập đúng `page` trong 64 lần liên tiếp thì rõ ràng việc làm như Bob là lấy được 1 trong 2 tin nhắn không khả thi(vì xác suất trúng được hết chỉ là $\dfrac{1}{2^{64}}$)
+Hơn nữa, ta đã biết được list của các `DEATH_CAUSES` nên ta cũng có thể tính được hết tất cả các `die` của chall, tức là ta có thể phân biệt được đâu là `live` và đâu là `die`.
 
 Nhận thấy, ta đã biết $c_0, c_1$, 1 trong hai giá trị $m_0, m_1$ thì việc tìm ra được giá trị còn lại phải dựa vào 1 biểu thức tuyến tính giữa 4 biến này xảy ra.
 Nói rõ hơn:
@@ -190,7 +192,10 @@ $$
 Thử $k=1,-1$ đều không thỏa nên ta thử $k = 2$
 
 Lúc này, $k^e-1=2^{65537}-1$ là 1 số Mersenne nên các ước nguyên tố của nó có [tính chất](https://vi.wikipedia.org/wiki/S%E1%BB%91_nguy%C3%AAn_t%E1%BB%91_Mersenne#C%C3%A1c_%C4%91%E1%BB%8Bnh_l%C3%BD_v%E1%BB%81_s%E1%BB%91_nguy%C3%AAn_t%E1%BB%91_Mersenne): Nếu q là một số nguyên tố của 1 số Mersenne: $q\equiv 1\mod 65537, q\equiv \pm1\mod 8$
-Mặt khác, $n$ là một số nguyên tố 1024 bit nằm trong khoảng $2^{1023}$ đến $2^{1024}-1$ và là rất lớn so với ước nguyên tố điển hình của $2^{65537}-1$. Hơn nữa, theo [Định lý số nguyên tố](https://vi.wikipedia.org/wiki/%C4%90%E1%BB%8Bnh_l%C3%BD_s%E1%BB%91_nguy%C3%AAn_t%E1%BB%91) thì có thể có khoảng $\dfrac{2^{1023}}{ln(2^{1023})} \approx  \dfrac{2^{1023}}{709}$ số nguyên tố 1024 bit. Do đó với 1 số nguyên tố 1024 bit ngẫu nhiên, gần như chắc chắn là số đó không có khả năng là ước của $2^{65537}-1$
+
+Mặt khác, $n$ là một số nguyên tố 1024 bit nằm trong khoảng $2^{1023}$ đến $2^{1024}-1$ và là rất lớn so với ước nguyên tố điển hình của $2^{65537}-1$.
+
+Hơn nữa, theo [Định lý số nguyên tố](https://vi.wikipedia.org/wiki/%C4%90%E1%BB%8Bnh_l%C3%BD_s%E1%BB%91_nguy%C3%AAn_t%E1%BB%91) thì có thể có khoảng $\dfrac{2^{1023}}{ln(2^{1023})} \approx  \dfrac{2^{1023}}{709}$ số nguyên tố 1024 bit. Do đó với 1 số nguyên tố 1024 bit ngẫu nhiên, gần như chắc chắn là số đó không có khả năng là ước của $2^{65537}-1$
 
 Vì vậy, $\gcd(k^e-1,n)=1$ tương đương với  tồn tại nghịch đảo modulo n của $2^{65537}-1$
 $$
