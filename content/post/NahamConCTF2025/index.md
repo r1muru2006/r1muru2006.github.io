@@ -620,19 +620,19 @@ Thử thách cho ta 1 đường dẫn tới [bài báo](https://www.theatlantic.
 
 Ngoài ra mình còn google thêm một số bài viết khác và khai thác được [bài](https://micahflee.com/heres-the-source-code-for-the-unofficial-signal-app-used-by-trump-officials/) sau đây:
 ![image](https://hackmd.io/_uploads/rJ5NZxyXgl.png)
-:::info
-Part 1: Find the hard-coded credential in the application used to encrypt log files. (format jUStHEdATA, no quotes)
-:::
+
+    Part 1: Find the hard-coded credential in the application used to encrypt log files. (format jUStHEdATA, no quotes)
+
 Khi thấy bài báo là mình đã tìm được đáp án cho câu hỏi đầu: `enRR8UVVywXYbFkqU#QDPRkO`
-:::info
-Part 2: Find the email address of the developer who added the hard-coded credential from question one to the code base (format name@email.site)
-:::
+
+    Part 2: Find the email address of the developer who added the hard-coded credential from question one to the code base (format name@email.site)
+
 Tiếp đó mình kéo xuống để tìm thêm thông tin trả lời cho câu 2 thì tìm được email của những người đã lập trình nên phần mềm:
 ![image](https://hackmd.io/_uploads/HkWwMxymeg.png)
 Dùng phép thử thì mình tìm được đáp án cho phần 2 là: `moti@telemessage.com`
-:::info
-Find the first published version of the application that contained the hard-coded credential from question one (case sensitive, format Word_#.#.#......).
-:::
+
+    Find the first published version of the application that contained the hard-coded credential from question one (case sensitive, format Word_#.#.#......).
+
 Để tìm được phiên bản đã sử dụng cái `hard-coded credential` thì mình đã truy về github của app được đề cập ngay trong bài báo
 ![image](https://hackmd.io/_uploads/rJdUmgJmgx.png)
 
