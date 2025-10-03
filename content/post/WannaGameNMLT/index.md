@@ -330,8 +330,11 @@ key = sha256(long_to_bytes(ss)).digest()[:16]
 cipher = AES.new(key, AES.MODE_ECB)
 flag = cipher.decrypt(encrypted)
 ```
-Do đó, ta phải tìm ra giá trị `ss` để tạo được `key`. Ta có các phương trình sau:
+Do đó, ta phải tìm ra giá trị `ss` để tạo được `key`.
+Ta có các phương trình sau:
+
 $A≡g^a$ (mod p); $B≡g^b$ $⇒ss≡A^b≡(g^a )^b≡g^{ab}≡(g^b )^a≡B^a$ (mod p)
+
 Ta đã có p, g, A, vậy ta chỉ cần có thêm b là có thể tìm ra `ss`. Tới đây, tôi sử dụng thuật toán Pohlig-Hellman để tìm b qua công thức $B≡g^b$ (mod p) bằng công cụ Alpetron.
 
  ![image](https://hackmd.io/_uploads/B1qrVPIIJg.png)
@@ -407,6 +410,7 @@ Qua hàm main, chương trình yêu cầu ta nhập một chuỗi 20 ký tự, s
  ![image](https://hackmd.io/_uploads/rkrcrvULJx.png)
 
 Ở đây, các giá trị trong `unk_4020` là các byte đã được mã hóa. Do đó, ta sẽ lấy các giá trị khác 0 để thực hiện phép XOR và nối lại tạo thành flag.
+
 Sau đây là script cho thử thách:
  ```python
 def reverse_lookthis(flag):
@@ -553,7 +557,7 @@ for i in range(length):
 for i in range(length, length * 2):
     ans[i] = ans[i - length]
 ```
-Sau đó lập thành dãy `fin` mà ta đã biết trước bằng cách lấy i trong khoảng từ $(23*length+16)$  % $length$ tới $(23*length+16)$  % $length+length$ và lấy đó làm chỉ số với `ans` để chuyển nó về dạng Unicode và thêm vào `fin`.
+Sau đó lập thành dãy `fin` mà ta đã biết trước bằng cách lấy i trong khoảng từ `(23*length+16)  % length` tới `(23*length+16)  % length + length` và lấy đó làm chỉ số với `ans` để chuyển nó về dạng Unicode và thêm vào `fin`.
 ```python
 fin = ""
 for i in range((23 * length + 16) % length, (23 * length + 16) % length + length):
@@ -563,8 +567,10 @@ for i in range((23 * length + 16) % length, (23 * length + 16) % length + length
 #### Giải:
 Nhận thấy, `fin` có độ dài bằng length và lớn hơn 16 nên:
 $23×length+16≡16$ (mod length)
+
 Do đó, `ans` sẽ được tính từ chỉ số 16 của `fin` tăng dần và quay ngược lên 15.
 Sau đó, ta phải đảo ngược bảng giá trị `dic` cùng với việc thực hiện phép XOR với 112 để truy ngược lại giá trị ban đầu của flag.
+
 Đây là script cho thử thách:
  ```python
 dic = [0] * 85

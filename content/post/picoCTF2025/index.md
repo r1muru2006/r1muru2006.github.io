@@ -501,6 +501,7 @@ Vì vậy, ta chia ChaCha20 - Poly1305 thành hai phần để phân tích và t
 1. Về Chacha20:
 
 Phương thức này sử dụng mã hóa XOR với `keystream` là XOR key.
+
 Nghĩa là: Ciphertext = Plaintext $\oplus$ Keystream
 
 $\Leftrightarrow$ Ciphertext $\oplus$ Plaintext = Plaintext $\oplus$ Keystream $\oplus$ Plaintext = Keystream
