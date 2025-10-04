@@ -99,12 +99,10 @@ y ^= (y >> 18)
 
 Ở đây, mask 0xefc60000 có cấu trúc đặc biệt với làm phép biển đổi trở thành 1 hàm tự nghịch đảo, nghĩa là $f(f(x))=x$, với $f(x) = x \oplus ((x << 15)$ & 0xefc60000). Chứng minh:
 - Đặt A = 0xefc60000. Khi đó:
-$$
-f(y)=f(f(x)) = f(x \oplus ((x << 15) \ & \ A)) \\
+$$f(y)=f(f(x)) = f(x \oplus ((x << 15) \ & \ A)) \\
 = (x \oplus ((x << 15) \ & \ A)) \oplus (((x \oplus ((x << 15) \ & \ A)) << 15)\ & \ A) \\
 = (x \oplus ((x << 15) \ & \ A)) \oplus (((x << 15) \ & \ A) \oplus((x << 30)\ & \ (A << 15) \ & \ A)) \\
-= x \oplus (((x << 15) \ & \ A) \oplus ((x << 15) \ & \ A)) \oplus((x << 30)\ & \ (A << 15) \ & \ A) = x
-$$
+= x \oplus (((x << 15) \ & \ A) \oplus ((x << 15) \ & \ A)) \oplus((x << 30)\ & \ (A << 15) \ & \ A) = x$$
 (vì tính chất $P \oplus P = 0$ và $A$ có 17 bit thấp là 0 nên nếu dịch trái 15 bit thì 32 bit cuối của $A << 15$ sẽ điều là 0 nên $(A << 15) \ & \ A = 0$)
 
 Do đó, để đảo ngược thì ta chỉ cần 1 lần biến đổi hàm nữa:
