@@ -628,6 +628,7 @@ Khi thấy bài báo là mình đã tìm được đáp án cho câu hỏi đầ
     Part 2: Find the email address of the developer who added the hard-coded credential from question one to the code base (format name@email.site)
 
 Tiếp đó mình kéo xuống để tìm thêm thông tin trả lời cho câu 2 thì tìm được email của những người đã lập trình nên phần mềm:
+
 ![image](https://hackmd.io/_uploads/HkWwMxymeg.png)
 Dùng phép thử thì mình tìm được đáp án cho phần 2 là: `moti@telemessage.com`
 
@@ -637,6 +638,7 @@ Dùng phép thử thì mình tìm được đáp án cho phần 2 là: `moti@tel
 ![image](https://hackmd.io/_uploads/rJdUmgJmgx.png)
 
 Khi xem xét thì ta thấy là có đến 124 tags của phiên bản được release: [Link](https://github.com/micahflee/TM-SGNL-Android)
+
 Truy ngược từ dưới thì mình tìm được phiên bản được công khai sớm nhất của ứng dụng là: `Release_5.4.11.20` và đó cũng là đáp án của Part 3.
     
     Flag: flag{96143e18131e48f4c937719992b742d7}
