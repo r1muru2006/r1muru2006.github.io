@@ -80,6 +80,7 @@ SWWSAOL{CRK_NTX_AGBXRRLNYQC_ANGQBQHR_TY_QNZ_PPLNFBFXX}
 Ban đầu mình không biết cuộn tròn xuống là có reflector với plugboard nên đã bỏ qua :333
 Khi phát hiện ra thì mình liên kết lại các dữ liệu đã có và tìm được trang [wiki](https://en.wikipedia.org/wiki/Enigma_rotor_details) có để thiết lập enigma machine
 ![Screenshot 2025-08-31 101011](https://hackmd.io/_uploads/ry14aV-cee.png)
+
 Vì đã biết rotor order, reflector, ring settings và chỉ còn thiếu 1 cặp plugboard nên mình đã brute-force các cặp còn lại đến khi tìm ra flag format phù hợp như sau:
 ```python
 # solution.py
@@ -557,6 +558,7 @@ HOLACTF{4_c0Ol_Cu5t0m_f1lE_5truC7}
 
 ### 2. Weird PNG
 ![image](https://hackmd.io/_uploads/Bkx6VSb5eg.png)
+
 Đề cho ta một file `weird.png` và khi phân tích, ta được:
 ```javascript
 ➜  build git:(master) ✗ xxd weird.png
