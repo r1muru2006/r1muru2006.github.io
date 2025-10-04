@@ -99,7 +99,8 @@ y ^= (y >> 18)
 
 Ở đây, mask 0xefc60000 có cấu trúc đặc biệt với làm phép biển đổi trở thành 1 hàm tự nghịch đảo, nghĩa là $f(f(x))=x$, với $f(x) = x \oplus ((x << 15)$ & 0xefc60000). Chứng minh:
 - Đặt A = 0xefc60000. Khi đó:
-$$f(y)=f(f(x)) = f(x \oplus ((x << 15) \ & \ A)) \\
+
+$f(y)=f(f(x)) = f(x \oplus ((x << 15) \ & \ A))$
 = (x \oplus ((x << 15) \ & \ A)) \oplus (((x \oplus ((x << 15) \ & \ A)) << 15)\ & \ A) \\
 = (x \oplus ((x << 15) \ & \ A)) \oplus (((x << 15) \ & \ A) \oplus((x << 30)\ & \ (A << 15) \ & \ A)) \\
 = x \oplus (((x << 15) \ & \ A) \oplus ((x << 15) \ & \ A)) \oplus((x << 30)\ & \ (A << 15) \ & \ A) = x$$
