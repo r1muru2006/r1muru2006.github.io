@@ -100,15 +100,15 @@ y ^= (y >> 18)
 Ở đây, mask 0xefc60000 có cấu trúc đặc biệt với làm phép biển đổi trở thành 1 hàm tự nghịch đảo, nghĩa là $f(f(x))=x$, với $f(x) = x \oplus ((x << 15)$ AND 0xefc60000). Chứng minh:
 - Đặt A = 0xefc60000. Khi đó:
 
-$f(y)=f(f(x)) = f(x \oplus ((x << 15) AND A))$
+$f(y)=f(f(x)) = f(x \oplus ((x << 15) AND \ A))$
 
-$= (x \oplus ((x << 15) AND A)) \oplus (((x \oplus ((x << 15) AND A)) << 15) AND A)$
+$= (x \oplus ((x << 15) AND \ A)) \oplus (((x \oplus ((x << 15) AND \ A)) << 15) AND A)$
 
-$= (x \oplus ((x << 15) AND A)) \oplus (((x << 15) AND A) \oplus((x << 30) AND (A << 15) AND A))$
+$= (x \oplus ((x << 15) AND \ A)) \oplus (((x << 15) AND \ A) \oplus((x << 30) AND (A << 15) AND \ A))$
 
-$= x \oplus (((x << 15) AND A) \oplus ((x << 15) AND A)) \oplus((x << 30) AND (A << 15) AND A) = x$
+$= x \oplus (((x << 15) AND \ A) \oplus ((x << 15) AND \ A)) \oplus((x << 30) AND (A << 15) \ AND A) = x$
 
-(vì tính chất $P \oplus P = 0$ và $A$ có 17 bit thấp là 0 nên nếu dịch trái 15 bit thì 32 bit cuối của $A << 15$ sẽ điều là 0 nên $(A << 15) AND A = 0$)
+(vì tính chất $P \oplus P = 0$ và $A$ có 17 bit thấp là 0 nên nếu dịch trái 15 bit thì 32 bit cuối của $A << 15$ sẽ đều là 0 nên $(A << 15) AND \ A = 0$)
 
 Do đó, để đảo ngược thì ta chỉ cần 1 lần biến đổi hàm nữa:
 ```python
@@ -120,22 +120,24 @@ y ^= (y << 15) AND 0xefc60000
 
 Ở bước này thì ta sẽ thiết lập một hàm dịch bit gần tương tự như bước trên:
 - Đặt B = 0x9d2c5680.
-Với $y = x \oplus ((x << 7) \  \AND B)$
-, ta sẽ dùng hàm $f(x') = y \oplus ((x' << 7) AND B)$
+Với $y = x \oplus ((x << 7) AND \ B)$
+, ta sẽ dùng hàm $f(x') = y \oplus ((x' << 7) AND \ B)$
 Khi đó:
 
-$f_4(y) = f_4(x \oplus ((x << 7) AND B)) = f_3(y \oplus (((x \oplus ((x << 7) AND B)) << 7)AND B))$
+$f_4(y) = f_4(x \oplus ((x << 7) AND \ B)) = f_3(y \oplus (((x \oplus ((x << 7) AND \ B)) << 7)AND \ B))$
 
-$= f_3(x \oplus (((x << 7) AND B) \oplus ((x << 7) AND B)) \oplus((x << 7*2)AND (B << 7) AND B))$
+$= f_3(x \oplus (((x << 7) AND \ B) \oplus ((x << 7) AND \ B)) \oplus((x << 7*2)AND (B << 7) AND \ B))$
 
-$= f_3(x \oplus((x << 7*2)AND (B << 7) AND B))$
+$= f_3(x \oplus((x << 7*2)AND (B << 7) AND \ B))$
 
-$= f_2(x \oplus((x << 7*3)AND (B << 7*2) AND (B << 7) AND B))$
+$= f_2(x \oplus((x << 7*3)AND (B << 7*2) AND (B << 7) AND \ B))$
 
-$= f(x \oplus((x << 7*4)AND (B<< 7*3) AND (B << 7*2) AND (B << 7) AND B))$
+$= f(x \oplus((x << 7*4)AND (B<< 7*3) AND (B << 7*2) AND (B << 7) AND \ B))$
 
-$= x \oplus((x << 7*5)AND (B<< 7*4) AND (B<< 7*3) AND (B << 7*2) AND (B << 7) AND B)$
+$= x \oplus((x << 7*5)AND (B<< 7*4) AND (B<< 7*3) AND (B << 7*2) AND (B << 7) AND \ B)$
+
 $=x$
+
 (vì B có 7 bit thấp là 0 nên nếu dịch trái 28 bit thì 32 bit cuối của $B << 28$ sẽ đều là 0 nên đẳng thức trên xảy ra.)
 
 Do đó, để đảo ngược thì ta chỉ cần 4 lần biến đổi hàm như sau:
