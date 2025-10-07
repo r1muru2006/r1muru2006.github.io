@@ -42,23 +42,23 @@ genrand_uint32(RandomObject *self)
         int kk;
 
         for (kk=0;kk<N-M;kk++) {
-            y = (mt[kk]&UPPER_MASK)|(mt[kk+1]&LOWER_MASK);
-            mt[kk] = mt[kk+M] ^ (y >> 1) ^ mag01[y & 0x1U];
+            y = (mt[kk]ANDUPPER_MASK)|(mt[kk+1]ANDLOWER_MASK);
+            mt[kk] = mt[kk+M] ^ (y >> 1) ^ mag01[y AND 0x1U];
         }
         for (;kk<N-1;kk++) {
-            y = (mt[kk]&UPPER_MASK)|(mt[kk+1]&LOWER_MASK);
-            mt[kk] = mt[kk+(M-N)] ^ (y >> 1) ^ mag01[y & 0x1U];
+            y = (mt[kk]ANDUPPER_MASK)|(mt[kk+1]ANDLOWER_MASK);
+            mt[kk] = mt[kk+(M-N)] ^ (y >> 1) ^ mag01[y AND 0x1U];
         }
-        y = (mt[N-1]&UPPER_MASK)|(mt[0]&LOWER_MASK);
-        mt[N-1] = mt[M-1] ^ (y >> 1) ^ mag01[y & 0x1U];
+        y = (mt[N-1]ANDUPPER_MASK)|(mt[0]ANDLOWER_MASK);
+        mt[N-1] = mt[M-1] ^ (y >> 1) ^ mag01[y AND 0x1U];
 
         self->index = 0;
     }
 
     y = mt[self->index++];
     y ^= (y >> 11);
-    y ^= (y << 7) & 0x9d2c5680U;
-    y ^= (y << 15) & 0xefc60000U;
+    y ^= (y << 7) AND 0x9d2c5680U;
+    y ^= (y << 15) AND 0xefc60000U;
     y ^= (y >> 18);
     return y;
 }
@@ -66,19 +66,19 @@ genrand_uint32(RandomObject *self)
 
 Nếu `index >= N (= 624)`, nghĩa là đã dùng hết số trong mảng `mt[]` và do đó phải tạo lại 624 số tiếp theo. Mảng `mt[]` được thay đổi bằng quá trình sau:
 ```cpp
-y = (mt[kk] & UPPER_MASK) | (mt[(kk + 1) % N] & LOWER_MASK)
-mt[kk] = mt[(kk + M) % N] ^ (y >> 1) ^ mag01[y & 0x1U]
+y = (mt[kk] AND UPPER_MASK) | (mt[(kk + 1) % N] AND LOWER_MASK)
+mt[kk] = mt[(kk + M) % N] ^ (y >> 1) ^ mag01[y AND 0x1U]
 
-y = (mt[N-1]&UPPER_MASK)|(mt[0]&LOWER_MASK);
-mt[N-1] = mt[M-1] ^ (y >> 1) ^ mag01[y & 0x1U];
+y = (mt[N-1]ANDUPPER_MASK)|(mt[0]ANDLOWER_MASK);
+mt[N-1] = mt[M-1] ^ (y >> 1) ^ mag01[y AND 0x1U];
 ```
 
 Sau đó, số `y` ngẫu nhiên được tạo như sau:
 ```cpp
 y = mt[self->index++];
 y ^= (y >> 11);
-y ^= (y << 7) & 0x9d2c5680U;
-y ^= (y << 15) & 0xefc60000U;
+y ^= (y << 7) AND 0x9d2c5680U;
+y ^= (y << 15) AND 0xefc60000U;
 y ^= (y >> 18);
 return y;
 ```
@@ -95,46 +95,46 @@ Sau đây là các bước đảo ngược chi tiết:
 y ^= (y >> 18)
 ```
 
-`y ^= (y << 15) & 0xefc60000`
+`y ^= (y << 15) AND 0xefc60000`
 
-Ở đây, mask 0xefc60000 có cấu trúc đặc biệt với làm phép biển đổi trở thành 1 hàm tự nghịch đảo, nghĩa là $f(f(x))=x$, với $f(x) = x \oplus ((x << 15)$ & 0xefc60000). Chứng minh:
+Ở đây, mask 0xefc60000 có cấu trúc đặc biệt với làm phép biển đổi trở thành 1 hàm tự nghịch đảo, nghĩa là $f(f(x))=x$, với $f(x) = x \oplus ((x << 15)$ AND 0xefc60000). Chứng minh:
 - Đặt A = 0xefc60000. Khi đó:
 
-$f(y)=f(f(x)) = f(x \oplus ((x << 15) & A))$
+$f(y)=f(f(x)) = f(x \oplus ((x << 15) AND A))$
 
-$= (x \oplus ((x << 15) & A)) \oplus (((x \oplus ((x << 15) & A)) << 15) & A)$
+$= (x \oplus ((x << 15) AND A)) \oplus (((x \oplus ((x << 15) AND A)) << 15) AND A)$
 
-$= (x \oplus ((x << 15) & A)) \oplus (((x << 15) & A) \oplus((x << 30) & (A << 15) & A))$
+$= (x \oplus ((x << 15) AND A)) \oplus (((x << 15) AND A) \oplus((x << 30) AND (A << 15) AND A))$
 
-$= x \oplus (((x << 15) & A) \oplus ((x << 15) & A)) \oplus((x << 30) & (A << 15) & A) = x$
+$= x \oplus (((x << 15) AND A) \oplus ((x << 15) AND A)) \oplus((x << 30) AND (A << 15) AND A) = x$
 
-(vì tính chất $P \oplus P = 0$ và $A$ có 17 bit thấp là 0 nên nếu dịch trái 15 bit thì 32 bit cuối của $A << 15$ sẽ điều là 0 nên $(A << 15) & A = 0$)
+(vì tính chất $P \oplus P = 0$ và $A$ có 17 bit thấp là 0 nên nếu dịch trái 15 bit thì 32 bit cuối của $A << 15$ sẽ điều là 0 nên $(A << 15) AND A = 0$)
 
 Do đó, để đảo ngược thì ta chỉ cần 1 lần biến đổi hàm nữa:
 ```python
 # Step 2
-y ^= (y << 15) & 0xefc60000
+y ^= (y << 15) AND 0xefc60000
 ```
 
-`y ^= (y << 7) & 0x9d2c5680`
+`y ^= (y << 7) AND 0x9d2c5680`
 
 Ở bước này thì ta sẽ thiết lập một hàm dịch bit gần tương tự như bước trên:
 - Đặt B = 0x9d2c5680.
-Với $y = x \oplus ((x << 7) \  \& B)$
-, ta sẽ dùng hàm $f(x') = y \oplus ((x' << 7) & B)$
+Với $y = x \oplus ((x << 7) \  \AND B)$
+, ta sẽ dùng hàm $f(x') = y \oplus ((x' << 7) AND B)$
 Khi đó:
 
-$f_4(y) = f_4(x \oplus ((x << 7) & B)) = f_3(y \oplus (((x \oplus ((x << 7) & B)) << 7)& B))$
+$f_4(y) = f_4(x \oplus ((x << 7) AND B)) = f_3(y \oplus (((x \oplus ((x << 7) AND B)) << 7)AND B))$
 
-$= f_3(x \oplus (((x << 7) & B) \oplus ((x << 7) & B)) \oplus((x << 7*2)& (B << 7) & B))$
+$= f_3(x \oplus (((x << 7) AND B) \oplus ((x << 7) AND B)) \oplus((x << 7*2)AND (B << 7) AND B))$
 
-$= f_3(x \oplus((x << 7*2)& (B << 7) & B))$
+$= f_3(x \oplus((x << 7*2)AND (B << 7) AND B))$
 
-$= f_2(x \oplus((x << 7*3)& (B << 7*2) & (B << 7) & B))$
+$= f_2(x \oplus((x << 7*3)AND (B << 7*2) AND (B << 7) AND B))$
 
-$= f(x \oplus((x << 7*4)& (B<< 7*3) & (B << 7*2) & (B << 7) & B))$
+$= f(x \oplus((x << 7*4)AND (B<< 7*3) AND (B << 7*2) AND (B << 7) AND B))$
 
-$= x \oplus((x << 7*5)& (B<< 7*4) & (B<< 7*3) & (B << 7*2) & (B << 7) & B)$
+$= x \oplus((x << 7*5)AND (B<< 7*4) AND (B<< 7*3) AND (B << 7*2) AND (B << 7) AND B)$
 $=x$
 (vì B có 7 bit thấp là 0 nên nếu dịch trái 28 bit thì 32 bit cuối của $B << 28$ sẽ đều là 0 nên đẳng thức trên xảy ra.)
 
@@ -143,7 +143,7 @@ Do đó, để đảo ngược thì ta chỉ cần 4 lần biến đổi hàm nh
 # Step 3
 res = y
 for _ in range(4):
-    res = y ^ (res << 7) & 0x9d2c5680
+    res = y ^ (res << 7) AND 0x9d2c5680
 y = res
 ```
 
@@ -161,12 +161,12 @@ Tổng hợp lại thì ta có hàm đảo (untemper):
 def untemper(y):
     # 1. Rev: y ^= (y >> 18)
     y ^= (y >> 18)
-    # 2. Rev: y ^= (y << 15) & 0xefc60000
-    y ^= (y << 15) & 0xefc60000
-    # 3. Rev: y ^= (y << 7) & 0x9d2c5680
+    # 2. Rev: y ^= (y << 15) AND 0xefc60000
+    y ^= (y << 15) AND 0xefc60000
+    # 3. Rev: y ^= (y << 7) AND 0x9d2c5680
     temp = y
     for _ in range(4):
-        temp = y ^ (temp << 7) & 0x9d2c5680
+        temp = y ^ (temp << 7) AND 0x9d2c5680
     y = temp
     # 4. Rev: y ^= (y >> 11);
     temp = y
@@ -205,12 +205,12 @@ Phương thức tĩnh `Math.random()` trả về một số dấu phẩy động
 ```python
 def xs128(state0, state1):
     mask = (1 << 64) - 1
-    s1 = state0 & mask
-    s0 = state1 & mask
-    s1 ^= (s1 << 23) & mask
-    s1 ^= (s1 >> 17) & mask
+    s1 = state0 AND mask
+    s0 = state1 AND mask
+    s1 ^= (s1 << 23) AND mask
+    s1 ^= (s1 >> 17) AND mask
     s1 ^= s0
-    s1 ^= (s0 >> 26) & mask
+    s1 ^= (s0 >> 26) AND mask
     return s0, s1
 ```
 - Khi `cache` trống, 1 chuỗi 64 giá trị ngẫu nhiên mới sẽ được tạo thành qua xs128 và lưu trữ trong `cache` với chỉ số được đặt ở cuối.
@@ -366,7 +366,7 @@ def crack(outputs):
             outputs[i]      != None and
             outputs[i - 31] != None and 
             outputs[i - 3]  != None and 
-            outputs[i] != (outputs[i - 31] + outputs[i - 3]) & 0x7fffffff
+            outputs[i] != (outputs[i - 31] + outputs[i - 3]) AND 0x7fffffff
         ):
             states[i - 31] = (outputs[i - 31] << 1) + 1
             states[i - 3]  = (outputs[i - 3]  << 1) + 1
@@ -379,7 +379,7 @@ def crack(outputs):
 
 Nếu ta có $o_i, o_{i-31},o_{i-3}$ và chúng không thỏa:
 ```python
-outputs[i] == (outputs[i - 31] + outputs[i - 3]) & 0x7fffffff
+outputs[i] == (outputs[i - 31] + outputs[i - 3]) AND 0x7fffffff
 ```
 Đoán trạng thái của nỏ ở dạng:
 $$
@@ -495,9 +495,9 @@ def seed(self, seed):
     for i in range(-20, RNG_LEN):
         x = seedrand(x)
         if i >= 0:
-            u = (int(x) << 40) & 0xFFFFFFFFFFFFFFFF
+            u = (int(x) << 40) AND 0xFFFFFFFFFFFFFFFF
             x = seedrand(x)
-            u ^= (int(x) << 20) & 0xFFFFFFFFFFFFFFFF
+            u ^= (int(x) << 20) AND 0xFFFFFFFFFFFFFFFF
             x = seedrand(x)
             u ^= int(x)
             u ^= rng_cooked[i]
@@ -519,17 +519,17 @@ def uint64(self):
     if self.feed < 0:
         self.feed += RNG_LEN
 
-    x = (self.vec[self.feed] + self.vec[self.tap]) & 0xFFFFFFFFFFFFFFFF
+    x = (self.vec[self.feed] + self.vec[self.tap]) AND 0xFFFFFFFFFFFFFFFF
     self.vec[self.feed] = x
     return x
 ```
 - Hai con trỏ `tap` và `feed` đi lùi trong vòng có độ dài 607.
 - Theo đó là công thức Additive Lagged-Fibonacci Generator:
 $$
-vec_{feed}=(vec_{feed} + vec_{tap}) & 0xFFFFFFFFFFFFFFFF
+vec_{feed}=(vec_{feed} + vec_{tap}) AND 0xFFFFFFFFFFFFFFFF
 $$
 ```python
-x = (self.vec[self.feed] + self.vec[self.tap]) & 0xFFFFFFFFFFFFFFFF
+x = (self.vec[self.feed] + self.vec[self.tap]) AND 0xFFFFFFFFFFFFFFFF
 self.vec[self.feed] = x
 ```
 ### Khôi phục
@@ -596,10 +596,10 @@ def next_16(self) -> int:
 
     if self.is_old:
         # Bash 5.0 and earlier
-        result = self.seed & BASH_RAND_MAX
+        result = self.seed AND BASH_RAND_MAX
     else:
         # Bash 5.1 and later
-        result = ((self.seed >> 16) ^ (self.seed & 0xffff)) & BASH_RAND_MAX
+        result = ((self.seed >> 16) ^ (self.seed AND 0xffff)) AND BASH_RAND_MAX
 
     # Skip if same as last
     if result == self.last:
