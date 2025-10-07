@@ -102,11 +102,11 @@ y ^= (y >> 18)
 
 $f(y)=f(f(x)) = f(x \oplus ((x << 15) AND \ A))$
 
-$= (x \oplus ((x << 15) AND \ A)) \oplus (((x \oplus ((x << 15) AND \ A)) << 15) AND A)$
+$= (x \oplus ((x << 15) AND \ A)) \oplus (((x \oplus ((x << 15) AND \ A)) << 15) AND \ A)$
 
 $= (x \oplus ((x << 15) AND \ A)) \oplus (((x << 15) AND \ A) \oplus((x << 30) AND (A << 15) AND \ A))$
 
-$= x \oplus (((x << 15) AND \ A) \oplus ((x << 15) AND \ A)) \oplus((x << 30) AND (A << 15) \ AND A) = x$
+$= x \oplus (((x << 15) AND \ A) \oplus ((x << 15) AND \ A)) \oplus((x << 30) AND (A << 15) \ AND \ A) = x$
 
 (vì tính chất $P \oplus P = 0$ và $A$ có 17 bit thấp là 0 nên nếu dịch trái 15 bit thì 32 bit cuối của $A << 15$ sẽ đều là 0 nên $(A << 15) AND \ A = 0$)
 
@@ -126,15 +126,15 @@ Khi đó:
 
 $f_4(y) = f_4(x \oplus ((x << 7) AND \ B)) = f_3(y \oplus (((x \oplus ((x << 7) AND \ B)) << 7)AND \ B))$
 
-$= f_3(x \oplus (((x << 7) AND \ B) \oplus ((x << 7) AND \ B)) \oplus((x << 7*2)AND (B << 7) AND \ B))$
+$= f_3(x \oplus (((x << 7) AND \ B) \oplus ((x << 7) AND \ B)) \oplus((x << (7\times2))AND (B << 7) AND \ B))$
 
-$= f_3(x \oplus((x << 7*2)AND (B << 7) AND \ B))$
+$= f_3(x \oplus((x << (7\times2))AND (B << 7) AND \ B))$
 
-$= f_2(x \oplus((x << 7*3)AND (B << 7*2) AND (B << 7) AND \ B))$
+$= f_2(x \oplus((x << (7\times3))AND (B << (7\times2)) AND (B << 7) AND \ B))$
 
-$= f(x \oplus((x << 7*4)AND (B<< 7*3) AND (B << 7*2) AND (B << 7) AND \ B))$
+$= f(x \oplus((x << (7\times4))AND (B<< (7\times3)) AND (B << (7\times2)) AND (B << 7) AND \ B))$
 
-$= x \oplus((x << 7*5)AND (B<< 7*4) AND (B<< 7*3) AND (B << 7*2) AND (B << 7) AND \ B)$
+$= x \oplus((x << (7\times5))AND (B<< (7\times4)) AND (B<< (7\times3)) AND (B << (7\times2)) AND (B << 7) AND \ B)$
 
 $=x$
 
