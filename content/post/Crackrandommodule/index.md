@@ -117,10 +117,11 @@ y ^= (y << 15) & 0xefc60000
 ```
 
 `y ^= (y << 7) & 0x9d2c5680`
+
 Ở bước này thì ta sẽ thiết lập một hàm dịch bit gần tương tự như bước trên:
 - Đặt B = 0x9d2c5680.
-Với $y = x \oplus ((x << 7) & \ B$)$
-, ta sẽ dùng hàm $f(x') = y \oplus ((x' << 7) & \ B$)$
+Với $y = x \oplus ((x << 7) \  \& \ B)$
+, ta sẽ dùng hàm $f(x') = y \oplus ((x' << 7) \ \& \ B)$
 Khi đó:
 $f_4(y) = f_4(x \oplus ((x << 7) & \ B)) = f_3(y \oplus (((x \oplus ((x << 7) & \ B)) << 7)& \ B))$
 $= f_3(x \oplus (((x << 7) & \ B) \oplus ((x << 7) & \ B)) \oplus((x << 7*2)& \ (B << 7) & \ B))$
