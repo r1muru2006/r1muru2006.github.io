@@ -1,7 +1,7 @@
 ---
 title: "ImaginaryCTF 2025"
 description: "Đây là các chall mình giải được trong quá trình thi cùng team aespaFanClub."
-date: 2025-9-14T14:17:02+07:00
+date: 2025-09-14T14:17:02+07:00
 image: imaginary.jpg
 math: true
 license: 
