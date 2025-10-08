@@ -1,0 +1,1005 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="Đây là Write-up giành cho cuộc thi CTFs để lấy điểm Nhập môn lập trình của mình vào năm nhất."><title>WannaGame NMLT</title><link rel=canonical href=https://r1muru2006.github.io/p/wannagame-nmlt/><link rel=stylesheet href=/scss/style.min.6a692fd055deae459f2a9767f57f3855ba80cafd5041317f24f7360f6ca47cdf.css><meta property='og:title' content="WannaGame NMLT"><meta property='og:description' content="Đây là Write-up giành cho cuộc thi CTFs để lấy điểm Nhập môn lập trình của mình vào năm nhất."><meta property='og:url' content='https://r1muru2006.github.io/p/wannagame-nmlt/'><meta property='og:site_name' content='r1muru'><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='CTF'><meta property='article:tag' content='Cryptography'><meta property='article:tag' content='Reverse Engineering'><meta property='article:published_time' content='2025-04-08T10:07:31+07:00'><meta property='article:modified_time' content='2025-04-08T10:07:31+07:00'><meta name=twitter:title content="WannaGame NMLT"><meta name=twitter:description content="Đây là Write-up giành cho cuộc thi CTFs để lấy điểm Nhập môn lập trình của mình vào năm nhất."><link rel="shortcut icon" href=/favicon.png></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/r1muru_hu_96d524052e0dfddb.jpg width=300 height=300 class=site-logo loading=lazy alt=Avatar></a></figure><div class=site-meta><h1 class=site-name><a href=/>r1muru</a></h1><h2 class=site-description>Life is not fair, get used to it!</h2></div></header><ol class=menu id=main-menu><li><a href=/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span></a></li><li><a href=/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span></a></li><li><a href=/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span></a></li><li><a href=/links/><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
+<span>Links</span></a></li><li class=menu-bottom-section><ol class=menu><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>Dark Mode</span></li></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">Table of contents</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#pwn>Pwn</a><ol><li><a href=#1-hello-pwner>1. Hello pwner</a></li></ol></li><li><a href=#crypto>Crypto</a><ol><li><a href=#2-substitution>2. Substitution</a><ol><li><a href=#phân-tích>Phân tích:</a></li><li><a href=#giải>Giải:</a></li></ol></li><li><a href=#3-hix>3. Hix</a><ol><li><a href=#phân-tích-1>Phân tích:</a></li><li><a href=#giải-1>Giải:</a></li></ol></li><li><a href=#4-dh>4. DH</a><ol><li><a href=#phân-tích-2>Phân tích:</a></li><li><a href=#giải-2>Giải:</a></li></ol></li></ol></li><li><a href=#reverse>Reverse</a><ol><li><a href=#5-giacmotrua2>5. GiacMoTrua2</a></li><li><a href=#6-easy-flag-checker>6. Easy Flag Checker</a></li><li><a href=#7-giacmotrua1>7. GiacMoTrua1</a><ol><li><a href=#phân-tích-3>Phân tích:</a></li><li><a href=#giải-3>Giải:</a></li></ol></li></ol></li></ol></nav></div></section></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><header class=article-category><a href=/categories/ctf-write-up/>CTF Write-Up
+</a><a href=/categories/wannagame/>WannaGame</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/p/wannagame-nmlt/>WannaGame NMLT</a></h2><h3 class=article-subtitle>Đây là Write-up giành cho cuộc thi CTFs để lấy điểm Nhập môn lập trình của mình vào năm nhất.</h3></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Apr 08, 2025</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>15 minute read</time></div></footer></div></header><section class=article-content><h2 id=pwn>Pwn</h2><h3 id=1-hello-pwner>1. Hello pwner</h3><p><img src=https://hackmd.io/_uploads/SyPcemLL1g.png loading=lazy alt=image></p><pre><code>Flag: W1{welcome_to_assembly}
+</code></pre><h2 id=crypto>Crypto</h2><h3 id=2-substitution>2. Substitution</h3><p>Tải file, giải nén và mở chall lên:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>KEY</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;A&#39;</span><span class=p>:</span> <span class=s1>&#39;Q&#39;</span><span class=p>,</span> <span class=s1>&#39;B&#39;</span><span class=p>:</span> <span class=s1>&#39;W&#39;</span><span class=p>,</span> <span class=s1>&#39;C&#39;</span><span class=p>:</span> <span class=s1>&#39;E&#39;</span><span class=p>,</span> <span class=s1>&#39;D&#39;</span><span class=p>:</span> <span class=s1>&#39;R&#39;</span><span class=p>,</span> <span class=s1>&#39;E&#39;</span><span class=p>:</span> <span class=s1>&#39;T&#39;</span><span class=p>,</span> <span class=s1>&#39;F&#39;</span><span class=p>:</span> <span class=s1>&#39;Y&#39;</span><span class=p>,</span> <span class=s1>&#39;G&#39;</span><span class=p>:</span> <span class=s1>&#39;U&#39;</span><span class=p>,</span> <span class=s1>&#39;H&#39;</span><span class=p>:</span> <span class=s1>&#39;I&#39;</span><span class=p>,</span> <span class=s1>&#39;I&#39;</span><span class=p>:</span> <span class=s1>&#39;O&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;J&#39;</span><span class=p>:</span> <span class=s1>&#39;P&#39;</span><span class=p>,</span> <span class=s1>&#39;K&#39;</span><span class=p>:</span> <span class=s1>&#39;A&#39;</span><span class=p>,</span> <span class=s1>&#39;L&#39;</span><span class=p>:</span> <span class=s1>&#39;S&#39;</span><span class=p>,</span> <span class=s1>&#39;M&#39;</span><span class=p>:</span> <span class=s1>&#39;D&#39;</span><span class=p>,</span> <span class=s1>&#39;N&#39;</span><span class=p>:</span> <span class=s1>&#39;F&#39;</span><span class=p>,</span> <span class=s1>&#39;O&#39;</span><span class=p>:</span> <span class=s1>&#39;G&#39;</span><span class=p>,</span> <span class=s1>&#39;P&#39;</span><span class=p>:</span> <span class=s1>&#39;H&#39;</span><span class=p>,</span> <span class=s1>&#39;Q&#39;</span><span class=p>:</span> <span class=s1>&#39;J&#39;</span><span class=p>,</span> <span class=s1>&#39;R&#39;</span><span class=p>:</span> <span class=s1>&#39;K&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;S&#39;</span><span class=p>:</span> <span class=s1>&#39;L&#39;</span><span class=p>,</span> <span class=s1>&#39;T&#39;</span><span class=p>:</span> <span class=s1>&#39;Z&#39;</span><span class=p>,</span> <span class=s1>&#39;U&#39;</span><span class=p>:</span> <span class=s1>&#39;X&#39;</span><span class=p>,</span> <span class=s1>&#39;V&#39;</span><span class=p>:</span> <span class=s1>&#39;C&#39;</span><span class=p>,</span> <span class=s1>&#39;W&#39;</span><span class=p>:</span> <span class=s1>&#39;V&#39;</span><span class=p>,</span> <span class=s1>&#39;X&#39;</span><span class=p>:</span> <span class=s1>&#39;B&#39;</span><span class=p>,</span> <span class=s1>&#39;Y&#39;</span><span class=p>:</span> <span class=s1>&#39;N&#39;</span><span class=p>,</span> <span class=s1>&#39;Z&#39;</span><span class=p>:</span> <span class=s1>&#39;M&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;a&#39;</span><span class=p>:</span> <span class=s1>&#39;q&#39;</span><span class=p>,</span> <span class=s1>&#39;b&#39;</span><span class=p>:</span> <span class=s1>&#39;w&#39;</span><span class=p>,</span> <span class=s1>&#39;c&#39;</span><span class=p>:</span> <span class=s1>&#39;e&#39;</span><span class=p>,</span> <span class=s1>&#39;d&#39;</span><span class=p>:</span> <span class=s1>&#39;r&#39;</span><span class=p>,</span> <span class=s1>&#39;e&#39;</span><span class=p>:</span> <span class=s1>&#39;t&#39;</span><span class=p>,</span> <span class=s1>&#39;f&#39;</span><span class=p>:</span> <span class=s1>&#39;y&#39;</span><span class=p>,</span> <span class=s1>&#39;g&#39;</span><span class=p>:</span> <span class=s1>&#39;u&#39;</span><span class=p>,</span> <span class=s1>&#39;h&#39;</span><span class=p>:</span> <span class=s1>&#39;i&#39;</span><span class=p>,</span> <span class=s1>&#39;i&#39;</span><span class=p>:</span> <span class=s1>&#39;o&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;j&#39;</span><span class=p>:</span> <span class=s1>&#39;p&#39;</span><span class=p>,</span> <span class=s1>&#39;k&#39;</span><span class=p>:</span> <span class=s1>&#39;a&#39;</span><span class=p>,</span> <span class=s1>&#39;l&#39;</span><span class=p>:</span> <span class=s1>&#39;s&#39;</span><span class=p>,</span> <span class=s1>&#39;m&#39;</span><span class=p>:</span> <span class=s1>&#39;d&#39;</span><span class=p>,</span> <span class=s1>&#39;n&#39;</span><span class=p>:</span> <span class=s1>&#39;f&#39;</span><span class=p>,</span> <span class=s1>&#39;o&#39;</span><span class=p>:</span> <span class=s1>&#39;g&#39;</span><span class=p>,</span> <span class=s1>&#39;p&#39;</span><span class=p>:</span> <span class=s1>&#39;h&#39;</span><span class=p>,</span> <span class=s1>&#39;q&#39;</span><span class=p>:</span> <span class=s1>&#39;j&#39;</span><span class=p>,</span> <span class=s1>&#39;r&#39;</span><span class=p>:</span> <span class=s1>&#39;k&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s1>&#39;s&#39;</span><span class=p>:</span> <span class=s1>&#39;l&#39;</span><span class=p>,</span> <span class=s1>&#39;t&#39;</span><span class=p>:</span> <span class=s1>&#39;z&#39;</span><span class=p>,</span> <span class=s1>&#39;u&#39;</span><span class=p>:</span> <span class=s1>&#39;x&#39;</span><span class=p>,</span> <span class=s1>&#39;v&#39;</span><span class=p>:</span> <span class=s1>&#39;c&#39;</span><span class=p>,</span> <span class=s1>&#39;w&#39;</span><span class=p>:</span> <span class=s1>&#39;v&#39;</span><span class=p>,</span> <span class=s1>&#39;x&#39;</span><span class=p>:</span> <span class=s1>&#39;b&#39;</span><span class=p>,</span> <span class=s1>&#39;y&#39;</span><span class=p>:</span> <span class=s1>&#39;n&#39;</span><span class=p>,</span> <span class=s1>&#39;z&#39;</span><span class=p>:</span> <span class=s1>&#39;m&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>hehe</span><span class=p>(</span><span class=n>data</span><span class=p>,</span> <span class=n>key</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=s1>&#39;&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>key</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>char</span><span class=p>,</span> <span class=n>char</span><span class=p>)</span> <span class=k>for</span> <span class=n>char</span> <span class=ow>in</span> <span class=n>data</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>encrypt</span><span class=p>(</span><span class=n>plaintext</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=n>substituted</span> <span class=o>=</span> <span class=n>hehe</span><span class=p>(</span><span class=n>plaintext</span><span class=p>,</span> <span class=n>KEY</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>substituted</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=vm>__name__</span> <span class=o>==</span> <span class=s2>&#34;__main__&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>plaintext</span> <span class=o>=</span> <span class=s2>&#34;W1{???????????????}&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=n>encrypted</span> <span class=o>=</span> <span class=n>encrypt</span><span class=p>(</span><span class=n>plaintext</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>with</span> <span class=nb>open</span><span class=p>(</span><span class=s2>&#34;encrypted.txt&#34;</span><span class=p>,</span> <span class=s2>&#34;w&#34;</span><span class=p>)</span> <span class=k>as</span> <span class=n>f</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>f</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=n>encrypted</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=phân-tích>Phân tích:</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>hehe</span><span class=p>(</span><span class=n>data</span><span class=p>,</span> <span class=n>key</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=s1>&#39;&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>key</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>char</span><span class=p>,</span> <span class=n>char</span><span class=p>)</span> <span class=k>for</span> <span class=n>char</span> <span class=ow>in</span> <span class=n>data</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>Hàm <code>hehe</code> lấy <code>data</code> và chuyển đổi từng ký tự trong dữ liệu đó sang ký tự tương ứng bằng danh sách của <code>KEY</code>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>encrypt</span><span class=p>(</span><span class=n>plaintext</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=n>substituted</span> <span class=o>=</span> <span class=n>hehe</span><span class=p>(</span><span class=n>plaintext</span><span class=p>,</span> <span class=n>KEY</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>substituted</span>
+</span></span></code></pre></td></tr></table></div></div><p>Hàm <code>encrypt</code> có mục đich là sử dụng hàm hehe để mã hóa dữ liệu.
+ </p><h4 id=giải>Giải:</h4><p>Để lấy được <code>plaintext</code> thì ta cần giải mã <code>encrypted</code>, nghĩa là phải đảo ngược lại quá trình chuyển đổi ký tự trong danh sách của <code>KEY</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>KEY_rev</span> <span class=o>=</span> <span class=p>{</span><span class=n>i</span> <span class=p>:</span> <span class=n>v</span> <span class=k>for</span> <span class=n>v</span><span class=p>,</span> <span class=n>i</span> <span class=ow>in</span> <span class=n>KEY</span><span class=o>.</span><span class=n>items</span><span class=p>()}</span>
+</span></span></code></pre></td></tr></table></div></div><p>Rồi sử dụng hàm <code>hehe</code> chuyển đổi tiếp 1 lần nữa để được <code>data</code> ban đầu.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>hehe</span><span class=p>(</span><span class=n>data</span><span class=p>,</span> <span class=n>key</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=s1>&#39;&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>key</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>char</span><span class=p>,</span> <span class=n>char</span><span class=p>)</span> <span class=k>for</span> <span class=n>char</span> <span class=ow>in</span> <span class=n>data</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>Script:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>KEY</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=s1>&#39;A&#39;</span><span class=p>:</span> <span class=s1>&#39;Q&#39;</span><span class=p>,</span> <span class=s1>&#39;B&#39;</span><span class=p>:</span> <span class=s1>&#39;W&#39;</span><span class=p>,</span> <span class=s1>&#39;C&#39;</span><span class=p>:</span> <span class=s1>&#39;E&#39;</span><span class=p>,</span> <span class=s1>&#39;D&#39;</span><span class=p>:</span> <span class=s1>&#39;R&#39;</span><span class=p>,</span> <span class=s1>&#39;E&#39;</span><span class=p>:</span> <span class=s1>&#39;T&#39;</span><span class=p>,</span> <span class=s1>&#39;F&#39;</span><span class=p>:</span> <span class=s1>&#39;Y&#39;</span><span class=p>,</span> <span class=s1>&#39;G&#39;</span><span class=p>:</span> <span class=s1>&#39;U&#39;</span><span class=p>,</span> <span class=s1>&#39;H&#39;</span><span class=p>:</span> <span class=s1>&#39;I&#39;</span><span class=p>,</span> <span class=s1>&#39;I&#39;</span><span class=p>:</span> <span class=s1>&#39;O&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=s1>&#39;J&#39;</span><span class=p>:</span> <span class=s1>&#39;P&#39;</span><span class=p>,</span> <span class=s1>&#39;K&#39;</span><span class=p>:</span> <span class=s1>&#39;A&#39;</span><span class=p>,</span> <span class=s1>&#39;L&#39;</span><span class=p>:</span> <span class=s1>&#39;S&#39;</span><span class=p>,</span> <span class=s1>&#39;M&#39;</span><span class=p>:</span> <span class=s1>&#39;D&#39;</span><span class=p>,</span> <span class=s1>&#39;N&#39;</span><span class=p>:</span> <span class=s1>&#39;F&#39;</span><span class=p>,</span> <span class=s1>&#39;O&#39;</span><span class=p>:</span> <span class=s1>&#39;G&#39;</span><span class=p>,</span> <span class=s1>&#39;P&#39;</span><span class=p>:</span> <span class=s1>&#39;H&#39;</span><span class=p>,</span> <span class=s1>&#39;Q&#39;</span><span class=p>:</span> <span class=s1>&#39;J&#39;</span><span class=p>,</span> <span class=s1>&#39;R&#39;</span><span class=p>:</span> <span class=s1>&#39;K&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=s1>&#39;S&#39;</span><span class=p>:</span> <span class=s1>&#39;L&#39;</span><span class=p>,</span> <span class=s1>&#39;T&#39;</span><span class=p>:</span> <span class=s1>&#39;Z&#39;</span><span class=p>,</span> <span class=s1>&#39;U&#39;</span><span class=p>:</span> <span class=s1>&#39;X&#39;</span><span class=p>,</span> <span class=s1>&#39;V&#39;</span><span class=p>:</span> <span class=s1>&#39;C&#39;</span><span class=p>,</span> <span class=s1>&#39;W&#39;</span><span class=p>:</span> <span class=s1>&#39;V&#39;</span><span class=p>,</span> <span class=s1>&#39;X&#39;</span><span class=p>:</span> <span class=s1>&#39;B&#39;</span><span class=p>,</span> <span class=s1>&#39;Y&#39;</span><span class=p>:</span> <span class=s1>&#39;N&#39;</span><span class=p>,</span> <span class=s1>&#39;Z&#39;</span><span class=p>:</span> <span class=s1>&#39;M&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=s1>&#39;a&#39;</span><span class=p>:</span> <span class=s1>&#39;q&#39;</span><span class=p>,</span> <span class=s1>&#39;b&#39;</span><span class=p>:</span> <span class=s1>&#39;w&#39;</span><span class=p>,</span> <span class=s1>&#39;c&#39;</span><span class=p>:</span> <span class=s1>&#39;e&#39;</span><span class=p>,</span> <span class=s1>&#39;d&#39;</span><span class=p>:</span> <span class=s1>&#39;r&#39;</span><span class=p>,</span> <span class=s1>&#39;e&#39;</span><span class=p>:</span> <span class=s1>&#39;t&#39;</span><span class=p>,</span> <span class=s1>&#39;f&#39;</span><span class=p>:</span> <span class=s1>&#39;y&#39;</span><span class=p>,</span> <span class=s1>&#39;g&#39;</span><span class=p>:</span> <span class=s1>&#39;u&#39;</span><span class=p>,</span> <span class=s1>&#39;h&#39;</span><span class=p>:</span> <span class=s1>&#39;i&#39;</span><span class=p>,</span> <span class=s1>&#39;i&#39;</span><span class=p>:</span> <span class=s1>&#39;o&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=s1>&#39;j&#39;</span><span class=p>:</span> <span class=s1>&#39;p&#39;</span><span class=p>,</span> <span class=s1>&#39;k&#39;</span><span class=p>:</span> <span class=s1>&#39;a&#39;</span><span class=p>,</span> <span class=s1>&#39;l&#39;</span><span class=p>:</span> <span class=s1>&#39;s&#39;</span><span class=p>,</span> <span class=s1>&#39;m&#39;</span><span class=p>:</span> <span class=s1>&#39;d&#39;</span><span class=p>,</span> <span class=s1>&#39;n&#39;</span><span class=p>:</span> <span class=s1>&#39;f&#39;</span><span class=p>,</span> <span class=s1>&#39;o&#39;</span><span class=p>:</span> <span class=s1>&#39;g&#39;</span><span class=p>,</span> <span class=s1>&#39;p&#39;</span><span class=p>:</span> <span class=s1>&#39;h&#39;</span><span class=p>,</span> <span class=s1>&#39;q&#39;</span><span class=p>:</span> <span class=s1>&#39;j&#39;</span><span class=p>,</span> <span class=s1>&#39;r&#39;</span><span class=p>:</span> <span class=s1>&#39;k&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=s1>&#39;s&#39;</span><span class=p>:</span> <span class=s1>&#39;l&#39;</span><span class=p>,</span> <span class=s1>&#39;t&#39;</span><span class=p>:</span> <span class=s1>&#39;z&#39;</span><span class=p>,</span> <span class=s1>&#39;u&#39;</span><span class=p>:</span> <span class=s1>&#39;x&#39;</span><span class=p>,</span> <span class=s1>&#39;v&#39;</span><span class=p>:</span> <span class=s1>&#39;c&#39;</span><span class=p>,</span> <span class=s1>&#39;w&#39;</span><span class=p>:</span> <span class=s1>&#39;v&#39;</span><span class=p>,</span> <span class=s1>&#39;x&#39;</span><span class=p>:</span> <span class=s1>&#39;b&#39;</span><span class=p>,</span> <span class=s1>&#39;y&#39;</span><span class=p>:</span> <span class=s1>&#39;n&#39;</span><span class=p>,</span> <span class=s1>&#39;z&#39;</span><span class=p>:</span> <span class=s1>&#39;m&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=n>KEY_rev</span> <span class=o>=</span> <span class=p>{</span><span class=n>i</span> <span class=p>:</span> <span class=n>v</span> <span class=k>for</span> <span class=n>v</span><span class=p>,</span> <span class=n>i</span> <span class=ow>in</span> <span class=n>KEY</span><span class=o>.</span><span class=n>items</span><span class=p>()}</span>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>hehe</span><span class=p>(</span><span class=n>data</span><span class=p>,</span> <span class=n>key</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=s2>&#34;&#34;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>key</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>char</span><span class=p>,</span> <span class=n>char</span><span class=p>)</span> <span class=k>for</span> <span class=n>char</span> <span class=ow>in</span> <span class=n>data</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>decrypt</span><span class=p>(</span><span class=n>plaintext</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>  <span class=n>substituted</span> <span class=o>=</span> <span class=n>hehe</span><span class=p>(</span><span class=n>plaintext</span><span class=p>,</span> <span class=n>KEY_rev</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>substituted</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=vm>__name__</span> <span class=o>==</span> <span class=s2>&#34;__main__&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>  <span class=n>encrypted</span> <span class=o>=</span> <span class=s2>&#34;V1</span><span class=si>{lxwlzozxzogf}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=n>decrypted</span> <span class=o>=</span> <span class=n>decrypt</span><span class=p>(</span><span class=n>encrypted</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=nb>print</span><span class=p>(</span><span class=n>decrypted</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><pre><code>Flag: W1{substitution}
+</code></pre><p> </p><h3 id=3-hix>3. Hix</h3><p>Tải file, giải nén và mở chall lên:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>hashlib</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>random</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>methods</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;md5&#39;</span><span class=p>,</span> <span class=s1>&#39;sha256&#39;</span><span class=p>,</span> <span class=s1>&#39;sha3_256&#39;</span><span class=p>,</span> <span class=s1>&#39;sha3_512&#39;</span><span class=p>,</span> <span class=s1>&#39;sha3_384&#39;</span><span class=p>,</span> <span class=s1>&#39;sha1&#39;</span><span class=p>,</span> <span class=s1>&#39;sha384&#39;</span><span class=p>,</span> <span class=s1>&#39;sha3_224&#39;</span><span class=p>,</span> <span class=s1>&#39;sha512&#39;</span><span class=p>,</span> <span class=s1>&#39;sha224&#39;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>random_encrypt</span><span class=p>(</span><span class=n>x</span><span class=p>)</span> <span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>method</span> <span class=o>=</span> <span class=n>random</span><span class=o>.</span><span class=n>choice</span><span class=p>(</span><span class=n>methods</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>hash_obj</span> <span class=o>=</span> <span class=n>hashlib</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=n>method</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>hash_obj</span><span class=o>.</span><span class=n>update</span><span class=p>(</span><span class=n>x</span><span class=o>.</span><span class=n>encode</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>hash_obj</span><span class=o>.</span><span class=n>hexdigest</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>main</span><span class=p>()</span> <span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>message</span> <span class=o>=</span> <span class=nb>open</span><span class=p>(</span><span class=s2>&#34;./../private/flag.txt&#34;</span><span class=p>,</span> <span class=s2>&#34;r&#34;</span><span class=p>)</span><span class=o>.</span><span class=n>read</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=n>enc</span> <span class=o>=</span> <span class=p>[]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>char</span> <span class=ow>in</span> <span class=n>message</span> <span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>x</span> <span class=o>=</span> <span class=p>(</span><span class=nb>ord</span><span class=p>(</span><span class=n>char</span><span class=p>)</span> <span class=o>+</span> <span class=mi>20</span><span class=p>)</span> <span class=o>%</span> <span class=mi>130</span>
+</span></span><span class=line><span class=cl>        <span class=n>x</span> <span class=o>=</span> <span class=n>hashlib</span><span class=o>.</span><span class=n>sha512</span><span class=p>(</span><span class=nb>str</span><span class=p>(</span><span class=n>x</span><span class=p>)</span><span class=o>.</span><span class=n>encode</span><span class=p>())</span><span class=o>.</span><span class=n>hexdigest</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=n>x</span> <span class=o>=</span> <span class=n>random_encrypt</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>enc</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>with</span> <span class=nb>open</span><span class=p>(</span><span class=s1>&#39;encrypted_memory.txt&#39;</span><span class=p>,</span> <span class=s1>&#39;w&#39;</span><span class=p>)</span> <span class=k>as</span> <span class=n>f</span> <span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>f</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=s2>&#34;ct = &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>enc</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=vm>__name__</span> <span class=o>==</span> <span class=s2>&#34;__main__&#34;</span> <span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>main</span><span class=p>()</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=phân-tích-1>Phân tích:</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>methods</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;md5&#39;</span><span class=p>,</span> <span class=s1>&#39;sha256&#39;</span><span class=p>,</span> <span class=s1>&#39;sha3_256&#39;</span><span class=p>,</span> <span class=s1>&#39;sha3_512&#39;</span><span class=p>,</span> <span class=s1>&#39;sha3_384&#39;</span><span class=p>,</span> <span class=s1>&#39;sha1&#39;</span><span class=p>,</span> <span class=s1>&#39;sha384&#39;</span><span class=p>,</span> <span class=s1>&#39;sha3_224&#39;</span><span class=p>,</span> <span class=s1>&#39;sha512&#39;</span><span class=p>,</span> <span class=s1>&#39;sha224&#39;</span><span class=p>]</span>
+</span></span></code></pre></td></tr></table></div></div><p>Đây là các thuật toán được sử dụng cho hàm băm.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>random_encrypt</span><span class=p>(</span><span class=n>x</span><span class=p>)</span> <span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>method</span> <span class=o>=</span> <span class=n>random</span><span class=o>.</span><span class=n>choice</span><span class=p>(</span><span class=n>methods</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>hash_obj</span> <span class=o>=</span> <span class=n>hashlib</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=n>method</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>hash_obj</span><span class=o>.</span><span class=n>update</span><span class=p>(</span><span class=n>x</span><span class=o>.</span><span class=n>encode</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>hash_obj</span><span class=o>.</span><span class=n>hexdigest</span><span class=p>()</span>
+</span></span></code></pre></td></tr></table></div></div><p>Hàm <code>random_encrypt</code> dùng để mã hóa một chuỗi x bằng cách sử dụng một thuật toán băm bất kì có sẵn trong <code>methods</code>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>for</span> <span class=n>char</span> <span class=ow>in</span> <span class=n>message</span> <span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>x</span> <span class=o>=</span> <span class=p>(</span><span class=nb>ord</span><span class=p>(</span><span class=n>char</span><span class=p>)</span> <span class=o>+</span> <span class=mi>20</span><span class=p>)</span> <span class=o>%</span> <span class=mi>130</span>
+</span></span><span class=line><span class=cl>        <span class=n>x</span> <span class=o>=</span> <span class=n>hashlib</span><span class=o>.</span><span class=n>sha512</span><span class=p>(</span><span class=nb>str</span><span class=p>(</span><span class=n>x</span><span class=p>)</span><span class=o>.</span><span class=n>encode</span><span class=p>())</span><span class=o>.</span><span class=n>hexdigest</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=n>x</span> <span class=o>=</span> <span class=n>random_encrypt</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>enc</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>Lấy từng kí tự trong <code>message</code>, sau đó lấy giá trị của ký tự đó trong ASCII rồi cộng 20 và lấy modulo 130. Tiếp theo, chuyển nó về một chuỗi rồi băm bằng SHA-512. Đến cuối thì sử dụng hàm <code>random_encrypt</code>.
+ </p><h4 id=giải-1>Giải:</h4><p>Ý tưởng: Vì x nằm trong đoạn từ 0 đến 129 (là một số nhỏ) nên ta có thể brute-force từng giá trị x khi thử với mỗi phương pháp băm để tìm ra các x tương ứng với từng giá trị của <code>ct</code> một cách dễ dàng.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>reverse_encrypt</span><span class=p>(</span><span class=n>enc_hash</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>method</span> <span class=ow>in</span> <span class=n>methods</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=k>try</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>130</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>                <span class=n>test_input</span> <span class=o>=</span> <span class=n>hashlib</span><span class=o>.</span><span class=n>sha512</span><span class=p>(</span><span class=nb>str</span><span class=p>(</span><span class=n>x</span><span class=p>)</span><span class=o>.</span><span class=n>encode</span><span class=p>())</span><span class=o>.</span><span class=n>hexdigest</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>                <span class=n>hash_obj</span> <span class=o>=</span> <span class=n>hashlib</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=n>method</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                <span class=n>hash_obj</span><span class=o>.</span><span class=n>update</span><span class=p>(</span><span class=n>test_input</span><span class=o>.</span><span class=n>encode</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=n>hash_obj</span><span class=o>.</span><span class=n>hexdigest</span><span class=p>()</span> <span class=o>==</span> <span class=n>enc_hash</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                    <span class=k>return</span> <span class=n>x</span>
+</span></span><span class=line><span class=cl>        <span class=k>except</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=k>continue</span>
+</span></span></code></pre></td></tr></table></div></div><p>Sau đó, với từng giá trị trong <code>ct</code>, ta dùng hàm <code>reverse_encrypt</code> và truy ngược lại giá trị x ban đầu bằng các phép toán và đổi sang dạng ASCII để giải mã nó bằng hàm sau:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>decrypt</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=n>decrypted_message</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>ct_hash</span> <span class=ow>in</span> <span class=n>ct</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>x</span> <span class=o>=</span> <span class=n>reverse_encrypt</span><span class=p>(</span><span class=n>ct_hash</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>original_ascii</span> <span class=o>=</span> <span class=p>(</span><span class=n>x</span> <span class=o>-</span> <span class=mi>20</span><span class=p>)</span> <span class=o>%</span> <span class=mi>130</span>
+</span></span><span class=line><span class=cl>        <span class=n>decrypted_message</span> <span class=o>+=</span> <span class=nb>chr</span><span class=p>(</span><span class=n>original_ascii</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>decrypted_message</span>
+</span></span></code></pre></td></tr></table></div></div><p>Script:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>ct</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;f189636f8eef640b55d03387864fd17efd324453cc9276be5ff6bd4da88b13fca72438daaab00830a6d14330d37c0f7bee1e7c32d5dda0541a171f66a2343dc1&#39;</span><span class=p>,</span> <span class=s1>&#39;1388cafa58065fa0c04372ce57f303cc4ec9fe62&#39;</span><span class=p>,</span> <span class=s1>&#39;f6266e2849bf8b8575701814cc3f3eb5369e887db54b34e85b1e4608b4fbf5e5&#39;</span><span class=p>,</span> <span class=s1>&#39;31f33ac191e818db784cf8321d70f84763db2b2e599f90cf65868eec85a10f20ae0e23aa1cd48c2f13eec355b2975089490761a291ac2a1bcf33f5fbecead431&#39;</span><span class=p>,</span> <span class=s1>&#39;981e4bce5dede3faa51a936f650e2c1d64169493860c67d68a1ffbbfa32f58598e7869f3f11aefc1620ee8d3ebe4e5f5&#39;</span><span class=p>,</span> <span class=s1>&#39;f06ffaaa6290bf47d26ba2c09c28dddd8f5bcad6ac464ec17fea48040acf1214d10bc109b7c47cffddb6bccd6b61b61a9e629a8f47ab26b80593f29c8c297489&#39;</span><span class=p>,</span> <span class=s1>&#39;a7d95b3bbde885b4eaa76afc6572e18e4483351005f637fe1f5a7bc0b000fe1f&#39;</span><span class=p>,</span> <span class=s1>&#39;85245de371c327440a5f343f27d6df361225806e679950bab3a5a336&#39;</span><span class=p>,</span> <span class=s1>&#39;ea1923e909de3c3c3384ad9ae7696d73&#39;</span><span class=p>,</span> <span class=s1>&#39;21df20aab35967470aada32375f535d4a735789bf0789fd421f85163c4d75c6e&#39;</span><span class=p>,</span> <span class=s1>&#39;b9491ae1a9de40d30a86c00139bd7d6f496f5bf4ce013bc2d5a43a97&#39;</span><span class=p>,</span> <span class=s1>&#39;03f061f60f3527b15ff31d31dcce0761&#39;</span><span class=p>,</span> <span class=s1>&#39;981e4bce5dede3faa51a936f650e2c1d64169493860c67d68a1ffbbfa32f58598e7869f3f11aefc1620ee8d3ebe4e5f5&#39;</span><span class=p>,</span> <span class=s1>&#39;f2a1a7e9dd5e6363050b0cdb0579ebfebdc5e348ab538bdcf47616139351cf2b9f92cb4d14446b3ad8bf182875b81e75&#39;</span><span class=p>,</span> <span class=s1>&#39;24aaafc58a2b897aed5829b2e96d73b1de7cd680d76a1143cdc8baef&#39;</span><span class=p>,</span> <span class=s1>&#39;6d80d11e5f1161ef86619dcdb186852b5218d6ac224b81b63555fe73741631c36ae0bcb5b3228fbed796c22dedeed587c9d65ddb825aee4fae92b6619e7ffd8f&#39;</span><span class=p>,</span> <span class=s1>&#39;6f8b39550106044625102ee0cabf9fe1393f0013388633d5742fcc7e8df7708793a96885b9d18b795a2b0d9014704b9f&#39;</span><span class=p>,</span> <span class=s1>&#39;ddf3c543be9cac44f3af078583fe5fddb64104d93308c146c23f52ff25b2a6e23606c42dc0060a4dd9b11b446759cb5de1844471eb3d6d25c43c6fcc0d8d60c4&#39;</span><span class=p>,</span> <span class=s1>&#39;95f2739053cf64555b0c0662b5e2d63822433f7fcac6960de6d57efda427461a58c6e2ffac6da6f4caa9407df10cc0be&#39;</span><span class=p>,</span> <span class=s1>&#39;a1bd4e0efc7ce8bd1d63433a0baa87e3a486fbfe2729d73d1dbf7d2822d201ee8726c6d94da1f09f1a53554e440ad6041ecab545b2085dc28c6f6849f0fcea23&#39;</span><span class=p>,</span> <span class=s1>&#39;a7d95b3bbde885b4eaa76afc6572e18e4483351005f637fe1f5a7bc0b000fe1f&#39;</span><span class=p>,</span> <span class=s1>&#39;2b4561a521a82af6a26dfb76078ca97ba53a720f7ee67d923a6d3a13&#39;</span><span class=p>,</span> <span class=s1>&#39;b21ed1f3d501a8a842ef1b26ed3863cf10cf8231ee23a079f749cfa322702c8e&#39;</span><span class=p>,</span> <span class=s1>&#39;d798a32b52384219f8779dccf8b2173f4b73f075cbeb4507ee83c94e&#39;</span><span class=p>,</span> <span class=s1>&#39;b863fa3492fb87edcdef766f38a508ed&#39;</span><span class=p>,</span> <span class=s1>&#39;9f876db4b58c1b7e499f35cdbd533a810060a0c8250bfc5421e0f42b2715b027&#39;</span><span class=p>,</span> <span class=s1>&#39;4b14748ba0f3da581ddd7ec49dac41d34ea1ee6dae90818333b11501&#39;</span><span class=p>,</span> <span class=s1>&#39;85153b2a5f8dea7f5488906cb65d61e9ac0666057636ff6b356dd4d8d0fc5d20&#39;</span><span class=p>,</span> <span class=s1>&#39;6b91d6259827176bcb3f312a8faca297e56c7e627235b930cf8163b3e7a5328b&#39;</span><span class=p>,</span> <span class=s1>&#39;b21ed1f3d501a8a842ef1b26ed3863cf10cf8231ee23a079f749cfa322702c8e&#39;</span><span class=p>,</span> <span class=s1>&#39;4c8740f90af1055f194a4c8e1b69522da228812465eb72b82b35c927bc48bf9d&#39;</span><span class=p>,</span> <span class=s1>&#39;b248b6b2f2c9365aa9a0e9b37a8057effd29bb2f34c79ec0b40124d08986832b5d227db95cb97b176541589985762d9a&#39;</span><span class=p>,</span> <span class=s1>&#39;7260f9b5d1c58d0609523114ed324f396335d940f852dba558461b34c5a53630&#39;</span><span class=p>,</span> <span class=s1>&#39;a1bd4e0efc7ce8bd1d63433a0baa87e3a486fbfe2729d73d1dbf7d2822d201ee8726c6d94da1f09f1a53554e440ad6041ecab545b2085dc28c6f6849f0fcea23&#39;</span><span class=p>,</span> <span class=s1>&#39;1077caf3ed754ed8fbd49c76134906e8&#39;</span><span class=p>,</span> <span class=s1>&#39;f3565219d115ec74a85056997cc25e98e3e4912a31c858c1e45b841047698e93&#39;</span><span class=p>,</span> <span class=s1>&#39;83315b8fa07a35b12e3f47ebb365268b4a4a8ef2&#39;</span><span class=p>,</span> <span class=s1>&#39;64c008d6460c2b98aba616b1d0d11a06b9df564b87d3aeedda83b36aacd3d0c160465109eb06c62e86e360cf026faa27a616dbbf2bec269be9ad128af96073bb&#39;</span><span class=p>,</span> <span class=s1>&#39;60bbd94b3ac3ea7149fc6cd850d72d4f1750601275832815dd9a23d4c3757d84aca29d716da5dd72a0045f15ff969925&#39;</span><span class=p>,</span> <span class=s1>&#39;94327e8c8321421e72f52cd726336e824630ec7dda31b07ce83f11b8234aea7a&#39;</span><span class=p>,</span> <span class=s1>&#39;a69ef62254280226cc4223a2341c727afcd7ce4e3ffd3f2f1c57d9d3cd30659b52b1c2b56f911a7157041b5f0ff8176f&#39;</span><span class=p>,</span> <span class=s1>&#39;3c904622c8d8d79c6704d50ae0175b049b3a5708705ecdce932fe426b9f46f1bd6585b8288c1d38f6301c31af5feac02&#39;</span><span class=p>,</span> <span class=s1>&#39;a3939bf491ffd9824056e249d6e355d8423855f0&#39;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>hashlib</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>methods</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;md5&#39;</span><span class=p>,</span> <span class=s1>&#39;sha256&#39;</span><span class=p>,</span> <span class=s1>&#39;sha3_256&#39;</span><span class=p>,</span> <span class=s1>&#39;sha3_512&#39;</span><span class=p>,</span> <span class=s1>&#39;sha3_384&#39;</span><span class=p>,</span> <span class=s1>&#39;sha1&#39;</span><span class=p>,</span> <span class=s1>&#39;sha384&#39;</span><span class=p>,</span> <span class=s1>&#39;sha3_224&#39;</span><span class=p>,</span> <span class=s1>&#39;sha512&#39;</span><span class=p>,</span> <span class=s1>&#39;sha224&#39;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>reverse_encrypt</span><span class=p>(</span><span class=n>enc_hash</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>method</span> <span class=ow>in</span> <span class=n>methods</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=k>try</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>130</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>                <span class=n>test_input</span> <span class=o>=</span> <span class=n>hashlib</span><span class=o>.</span><span class=n>sha512</span><span class=p>(</span><span class=nb>str</span><span class=p>(</span><span class=n>x</span><span class=p>)</span><span class=o>.</span><span class=n>encode</span><span class=p>())</span><span class=o>.</span><span class=n>hexdigest</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>                <span class=n>hash_obj</span> <span class=o>=</span> <span class=n>hashlib</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=n>method</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                <span class=n>hash_obj</span><span class=o>.</span><span class=n>update</span><span class=p>(</span><span class=n>test_input</span><span class=o>.</span><span class=n>encode</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=n>hash_obj</span><span class=o>.</span><span class=n>hexdigest</span><span class=p>()</span> <span class=o>==</span> <span class=n>enc_hash</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                    <span class=k>return</span> <span class=n>x</span>
+</span></span><span class=line><span class=cl>        <span class=k>except</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=k>continue</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>decrypt</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=n>decrypted_message</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>ct_hash</span> <span class=ow>in</span> <span class=n>ct</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>x</span> <span class=o>=</span> <span class=n>reverse_encrypt</span><span class=p>(</span><span class=n>ct_hash</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>original_ascii</span> <span class=o>=</span> <span class=p>(</span><span class=n>x</span> <span class=o>-</span> <span class=mi>20</span><span class=p>)</span> <span class=o>%</span> <span class=mi>130</span>
+</span></span><span class=line><span class=cl>        <span class=n>decrypted_message</span> <span class=o>+=</span> <span class=nb>chr</span><span class=p>(</span><span class=n>original_ascii</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>decrypted_message</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=vm>__name__</span> <span class=o>==</span> <span class=s2>&#34;__main__&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>flag</span> <span class=o>=</span> <span class=n>decrypt</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>flag</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><pre><code>Flag: W1{are_you_trying_to_predict_randomness@_@}
+</code></pre><p> </p><h3 id=4-dh>4. DH</h3><p>Tải file, giải nén và mở chall lên:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>Crypto.Util.number</span> <span class=kn>import</span> <span class=n>isPrime</span><span class=p>,</span> <span class=n>long_to_bytes</span><span class=p>,</span> <span class=n>getPrime</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>Crypto.Cipher</span> <span class=kn>import</span> <span class=n>AES</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>Crypto.Util.Padding</span> <span class=kn>import</span> <span class=n>pad</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>random</span> <span class=kn>import</span> <span class=n>randint</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>hashlib</span> <span class=kn>import</span> <span class=n>sha256</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>FLAG</span> <span class=o>=</span> <span class=sa>b</span><span class=s2>&#34;W1{fake-flag}&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>DH</span><span class=p>:</span>   
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>gen_params</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>gen_params</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>r</span> <span class=o>=</span> <span class=n>getPrime</span><span class=p>(</span><span class=mi>512</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>q</span> <span class=o>=</span> <span class=n>getPrime</span><span class=p>(</span><span class=mi>42</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>p</span> <span class=o>=</span> <span class=p>(</span><span class=mi>2</span> <span class=o>*</span> <span class=bp>self</span><span class=o>.</span><span class=n>q</span> <span class=o>*</span> <span class=bp>self</span><span class=o>.</span><span class=n>r</span><span class=p>)</span> <span class=o>+</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=n>isPrime</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>p</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>                <span class=k>break</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>h</span> <span class=o>=</span> <span class=n>getPrime</span><span class=p>(</span><span class=mi>42</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>g</span> <span class=o>=</span> <span class=nb>pow</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>h</span><span class=p>,</span> <span class=mi>2</span> <span class=o>*</span> <span class=bp>self</span><span class=o>.</span><span class=n>r</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>p</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>g</span> <span class=o>!=</span> <span class=mi>1</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>break</span>   
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>a</span> <span class=o>=</span> <span class=n>randint</span><span class=p>(</span><span class=mi>2</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>p</span> <span class=o>-</span> <span class=mi>2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>b</span> <span class=o>=</span> <span class=n>randint</span><span class=p>(</span><span class=mi>2</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>p</span> <span class=o>-</span> <span class=mi>2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>A</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>B</span> <span class=o>=</span> <span class=nb>pow</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>g</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>a</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>p</span><span class=p>),</span> <span class=nb>pow</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>g</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>b</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>p</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>ss</span> <span class=o>=</span> <span class=nb>pow</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>A</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>b</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>p</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>encrypt</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>flag_part</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=n>key</span> <span class=o>=</span> <span class=n>sha256</span><span class=p>(</span><span class=n>long_to_bytes</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>ss</span><span class=p>))</span><span class=o>.</span><span class=n>digest</span><span class=p>()[:</span><span class=mi>16</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>        <span class=n>cipher</span> <span class=o>=</span> <span class=n>AES</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=n>key</span><span class=p>,</span> <span class=n>AES</span><span class=o>.</span><span class=n>MODE_ECB</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>ct</span> <span class=o>=</span> <span class=n>cipher</span><span class=o>.</span><span class=n>encrypt</span><span class=p>(</span><span class=n>pad</span><span class=p>(</span><span class=n>flag_part</span><span class=p>,</span> <span class=mi>16</span><span class=p>))</span><span class=o>.</span><span class=n>hex</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=sa>f</span><span class=s2>&#34;encrypted = </span><span class=si>{</span><span class=n>ct</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>get_params</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=sa>f</span><span class=s2>&#34;p = </span><span class=si>{</span><span class=bp>self</span><span class=o>.</span><span class=n>p</span><span class=si>}</span><span class=se>\n</span><span class=s2>g = </span><span class=si>{</span><span class=bp>self</span><span class=o>.</span><span class=n>g</span><span class=si>}</span><span class=se>\n</span><span class=s2>A = </span><span class=si>{</span><span class=bp>self</span><span class=o>.</span><span class=n>A</span><span class=si>}</span><span class=se>\n</span><span class=s2>B = </span><span class=si>{</span><span class=bp>self</span><span class=o>.</span><span class=n>B</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>main</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>dh</span> <span class=o>=</span> <span class=n>DH</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>dh</span><span class=o>.</span><span class=n>get_params</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>dh</span><span class=o>.</span><span class=n>encrypt</span><span class=p>(</span><span class=n>FLAG</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=vm>__name__</span> <span class=o>==</span> <span class=s2>&#34;__main__&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>main</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>p</span> <span class=o>=</span> <span class=mi>85013941328859365232686230728938372320812319905627686919070637645614632817039920673725615375841158719310596592903101914818137738460649589340349796188816568005092757847</span>
+</span></span><span class=line><span class=cl><span class=n>g</span> <span class=o>=</span> <span class=mi>20033344683527080232439150682925185454003164954955126339094967675384779782733210350757021743656898625398860187361281262413493941502725149445995471514781822892886669776</span>
+</span></span><span class=line><span class=cl><span class=n>A</span> <span class=o>=</span> <span class=mi>76548721461171533747911417838852759206858825205673491250696441734297318615226024320798706656529038703728631231084155790148283919370554345818139818854112841655270107839</span>
+</span></span><span class=line><span class=cl><span class=n>B</span> <span class=o>=</span> <span class=mi>2103083080159597422706551446020625757109756570951674830166998494220734179439318911618156966499109201221652320384817270671579741987575328177442670242481963924501204498</span>
+</span></span><span class=line><span class=cl><span class=n>encrypted</span> <span class=o>=</span> <span class=s2>&#34;240e7b7678aaaa0dcbe06de7c5598a1ca0be7e2ae584bc7dfd2388cdb1d4fb6a37ceb94556757afc293999cbe5a5a2dbb4071ebf6cfd4332088555f9b2de1922&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p> </p><h4 id=phân-tích-2>Phân tích:</h4><p>Trong class DH, có:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>gen_params</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>r</span> <span class=o>=</span> <span class=n>getPrime</span><span class=p>(</span><span class=mi>512</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>q</span> <span class=o>=</span> <span class=n>getPrime</span><span class=p>(</span><span class=mi>42</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>p</span> <span class=o>=</span> <span class=p>(</span><span class=mi>2</span> <span class=o>*</span> <span class=bp>self</span><span class=o>.</span><span class=n>q</span> <span class=o>*</span> <span class=bp>self</span><span class=o>.</span><span class=n>r</span><span class=p>)</span> <span class=o>+</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=n>isPrime</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>p</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>                <span class=k>break</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>h</span> <span class=o>=</span> <span class=n>getPrime</span><span class=p>(</span><span class=mi>42</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=bp>self</span><span class=o>.</span><span class=n>g</span> <span class=o>=</span> <span class=nb>pow</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>h</span><span class=p>,</span> <span class=mi>2</span> <span class=o>*</span> <span class=bp>self</span><span class=o>.</span><span class=n>r</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>p</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>g</span> <span class=o>!=</span> <span class=mi>1</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>break</span>   
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>a</span> <span class=o>=</span> <span class=n>randint</span><span class=p>(</span><span class=mi>2</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>p</span> <span class=o>-</span> <span class=mi>2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>b</span> <span class=o>=</span> <span class=n>randint</span><span class=p>(</span><span class=mi>2</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>p</span> <span class=o>-</span> <span class=mi>2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>A</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>B</span> <span class=o>=</span> <span class=nb>pow</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>g</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>a</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>p</span><span class=p>),</span> <span class=nb>pow</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>g</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>b</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>p</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>ss</span> <span class=o>=</span> <span class=nb>pow</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>A</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>b</span><span class=p>,</span> <span class=bp>self</span><span class=o>.</span><span class=n>p</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>Hàm <code>gen_params</code> tạo một bộ khóa Diffie-Hellman.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>get_params</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=sa>f</span><span class=s2>&#34;p = </span><span class=si>{</span><span class=bp>self</span><span class=o>.</span><span class=n>p</span><span class=si>}</span><span class=se>\n</span><span class=s2>g = </span><span class=si>{</span><span class=bp>self</span><span class=o>.</span><span class=n>g</span><span class=si>}</span><span class=se>\n</span><span class=s2>A = </span><span class=si>{</span><span class=bp>self</span><span class=o>.</span><span class=n>A</span><span class=si>}</span><span class=se>\n</span><span class=s2>B = </span><span class=si>{</span><span class=bp>self</span><span class=o>.</span><span class=n>B</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>Khi lấy hàm <code>get_params</code> thì sẽ trả về các giá trị p, g, A, B.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>encrypt</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>flag_part</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=n>key</span> <span class=o>=</span> <span class=n>sha256</span><span class=p>(</span><span class=n>long_to_bytes</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>ss</span><span class=p>))</span><span class=o>.</span><span class=n>digest</span><span class=p>()[:</span><span class=mi>16</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>        <span class=n>cipher</span> <span class=o>=</span> <span class=n>AES</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=n>key</span><span class=p>,</span> <span class=n>AES</span><span class=o>.</span><span class=n>MODE_ECB</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>ct</span> <span class=o>=</span> <span class=n>cipher</span><span class=o>.</span><span class=n>encrypt</span><span class=p>(</span><span class=n>pad</span><span class=p>(</span><span class=n>flag_part</span><span class=p>,</span> <span class=mi>16</span><span class=p>))</span><span class=o>.</span><span class=n>hex</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=sa>f</span><span class=s2>&#34;encrypted = </span><span class=si>{</span><span class=n>ct</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>Ngoài ra, còn có hàm <code>encrypt</code> lấy giá trị <code>ss</code> từ hàm <code>gen_params</code> để tạo key cho thuật toán mã hóa AES chế độ ECB, cuối cùng dùng nó để mã hóa <code>FLAG</code>.</p><h4 id=giải-2>Giải:</h4><p>Để tìm ra <code>FLAG</code> thì ta cần lấy được <code>key</code> để giải mã <code>cipher</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>key</span> <span class=o>=</span> <span class=n>sha256</span><span class=p>(</span><span class=n>long_to_bytes</span><span class=p>(</span><span class=n>ss</span><span class=p>))</span><span class=o>.</span><span class=n>digest</span><span class=p>()[:</span><span class=mi>16</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>cipher</span> <span class=o>=</span> <span class=n>AES</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=n>key</span><span class=p>,</span> <span class=n>AES</span><span class=o>.</span><span class=n>MODE_ECB</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>flag</span> <span class=o>=</span> <span class=n>cipher</span><span class=o>.</span><span class=n>decrypt</span><span class=p>(</span><span class=n>encrypted</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p>Do đó, ta phải tìm ra giá trị <code>ss</code> để tạo được <code>key</code>.
+Ta có các phương trình sau:</p><p>$A≡g^a$ (mod p); $B≡g^b$ $⇒ss≡A^b≡(g^a )^b≡g^{ab}≡(g^b )^a≡B^a$ (mod p)</p><p>Ta đã có p, g, A, vậy ta chỉ cần có thêm b là có thể tìm ra <code>ss</code>. Tới đây, tôi sử dụng thuật toán Pohlig-Hellman để tìm b qua công thức $B≡g^b$ (mod p) bằng công cụ Alpetron.</p><p><img src=https://hackmd.io/_uploads/B1qrVPIIJg.png loading=lazy alt=image></p><p>Set k = 0, lấy được b = exp và tính được <code>ss</code>. Sau đây là script cho thử thách:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>Crypto.Util.number</span> <span class=kn>import</span> <span class=n>long_to_bytes</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>Crypto.Cipher</span> <span class=kn>import</span> <span class=n>AES</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>hashlib</span> <span class=kn>import</span> <span class=n>sha256</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>p</span> <span class=o>=</span> <span class=mi>85013941328859365232686230728938372320812319905627686919070637645614632817039920673725615375841158719310596592903101914818137738460649589340349796188816568005092757847</span>
+</span></span><span class=line><span class=cl><span class=n>g</span> <span class=o>=</span> <span class=mi>20033344683527080232439150682925185454003164954955126339094967675384779782733210350757021743656898625398860187361281262413493941502725149445995471514781822892886669776</span>
+</span></span><span class=line><span class=cl><span class=n>A</span> <span class=o>=</span> <span class=mi>76548721461171533747911417838852759206858825205673491250696441734297318615226024320798706656529038703728631231084155790148283919370554345818139818854112841655270107839</span>
+</span></span><span class=line><span class=cl><span class=n>B</span> <span class=o>=</span> <span class=mi>2103083080159597422706551446020625757109756570951674830166998494220734179439318911618156966499109201221652320384817270671579741987575328177442670242481963924501204498</span>
+</span></span><span class=line><span class=cl><span class=n>encrypted</span> <span class=o>=</span> <span class=s2>&#34;240e7b7678aaaa0dcbe06de7c5598a1ca0be7e2ae584bc7dfd2388cdb1d4fb6a37ceb94556757afc293999cbe5a5a2dbb4071ebf6cfd4332088555f9b2de1922&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>encrypted</span> <span class=o>=</span> <span class=nb>bytes</span><span class=o>.</span><span class=n>fromhex</span><span class=p>(</span><span class=n>encrypted</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>b</span> <span class=o>=</span> <span class=mi>2891401095038</span>
+</span></span><span class=line><span class=cl><span class=n>ss</span> <span class=o>=</span> <span class=nb>pow</span><span class=p>(</span><span class=n>A</span><span class=p>,</span> <span class=n>b</span><span class=p>,</span> <span class=n>p</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>key</span> <span class=o>=</span> <span class=n>sha256</span><span class=p>(</span><span class=n>long_to_bytes</span><span class=p>(</span><span class=n>ss</span><span class=p>))</span><span class=o>.</span><span class=n>digest</span><span class=p>()[:</span><span class=mi>16</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>cipher</span> <span class=o>=</span> <span class=n>AES</span><span class=o>.</span><span class=n>new</span><span class=p>(</span><span class=n>key</span><span class=p>,</span> <span class=n>AES</span><span class=o>.</span><span class=n>MODE_ECB</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>flag</span> <span class=o>=</span> <span class=n>cipher</span><span class=o>.</span><span class=n>decrypt</span><span class=p>(</span><span class=n>encrypted</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>flag</span><span class=o>.</span><span class=n>decode</span><span class=p>())</span>
+</span></span></code></pre></td></tr></table></div></div><pre><code>Flag: W1{so_you_know_about_the_Diffie-Hellman-key_exchange}
+</code></pre><h2 id=reverse>Reverse</h2><h3 id=5-giacmotrua2>5. GiacMoTrua2</h3><p>Tải file về và phiên dịch mã giả bằng IDA, ta có:</p><p><img src=https://hackmd.io/_uploads/rymjEDIIJl.png loading=lazy alt=image></p><p>Chương trình yêu cầu ta nhập một chuỗi bí mật và đem chuỗi đó so sánh với flag sau khi qua hàm <code>Lookthis</code> được mã hóa thành: &ldquo;W1{live_speels_a5_NoOn_4v4ry_emit!}&rdquo;</p><p><img src=https://hackmd.io/_uploads/BJY7rwIIkx.png loading=lazy alt=image>
+<img src=https://hackmd.io/_uploads/BJ37rvI81e.png loading=lazy alt=image></p><p>Hàm <code>swap</code> dùng để đổi hai kí tự cho nhau. Hàm <code>Lookthis</code> có 3 vòng lặp riêng biệt trên từng khoảng với nhiệm vụ đổi ký tự tương ứng. Như vậy, ta chỉ cần viết script đảo ngược lại và đổi ký tự thì sẽ cho ra được <code>flag</code> ban đầu:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>reverse_lookthis</span><span class=p>(</span><span class=n>flag</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>for</span> <span class=n>k</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>32</span><span class=p>,</span> <span class=mi>28</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=k>if</span> <span class=n>k</span> <span class=o>&lt;</span> <span class=p>(</span><span class=mi>61</span> <span class=o>-</span> <span class=n>k</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>           <span class=n>flag</span><span class=p>[</span><span class=n>k</span><span class=p>],</span> <span class=n>flag</span><span class=p>[</span><span class=mi>61</span> <span class=o>-</span> <span class=n>k</span><span class=p>]</span> <span class=o>=</span> <span class=n>flag</span><span class=p>[</span><span class=mi>61</span> <span class=o>-</span> <span class=n>k</span><span class=p>],</span> <span class=n>flag</span><span class=p>[</span><span class=n>k</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>for</span> <span class=n>j</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>13</span><span class=p>,</span> <span class=mi>7</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=k>if</span> <span class=n>j</span> <span class=o>&lt;</span> <span class=p>(</span><span class=mi>21</span> <span class=o>-</span> <span class=n>j</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>           <span class=n>flag</span><span class=p>[</span><span class=n>j</span><span class=p>],</span> <span class=n>flag</span><span class=p>[</span><span class=mi>21</span> <span class=o>-</span> <span class=n>j</span><span class=p>]</span> <span class=o>=</span> <span class=n>flag</span><span class=p>[</span><span class=mi>21</span> <span class=o>-</span> <span class=n>j</span><span class=p>],</span> <span class=n>flag</span><span class=p>[</span><span class=n>j</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>6</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=k>if</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=p>(</span><span class=mi>9</span> <span class=o>-</span> <span class=n>i</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>           <span class=n>flag</span><span class=p>[</span><span class=n>i</span><span class=p>],</span> <span class=n>flag</span><span class=p>[</span><span class=mi>9</span> <span class=o>-</span> <span class=n>i</span><span class=p>]</span> <span class=o>=</span> <span class=n>flag</span><span class=p>[</span><span class=mi>9</span> <span class=o>-</span> <span class=n>i</span><span class=p>],</span> <span class=n>flag</span><span class=p>[</span><span class=n>i</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>return</span> <span class=n>flag</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>fake_flag</span> <span class=o>=</span> <span class=p>[</span><span class=nb>ord</span><span class=p>(</span><span class=n>c</span><span class=p>)</span> <span class=k>for</span> <span class=n>c</span> <span class=ow>in</span> <span class=s2>&#34;W1{live_speels_a5_NoOn_4v4ry_emit!}&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>real_flag</span> <span class=o>=</span> <span class=n>reverse_lookthis</span><span class=p>(</span><span class=n>fake_flag</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>flag</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=nb>chr</span><span class=p>(</span><span class=n>c</span><span class=p>)</span> <span class=k>for</span> <span class=n>c</span> <span class=ow>in</span> <span class=n>real_flag</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>flag</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><pre><code>Flag: W1{evil_sleeps_a5_NoOn_4v4ry_time!}
+</code></pre><p> </p><h3 id=6-easy-flag-checker>6. Easy Flag Checker</h3><p>Tải file và phiên dịch mã giả bằng IDA, có:</p><p><img src=https://hackmd.io/_uploads/S1iYSwI8kg.png loading=lazy alt=image></p><p>Qua hàm main, chương trình yêu cầu ta nhập một chuỗi 20 ký tự, sau đó thực hiện vòng lặp kiểm tra với mỗi ký tự thứ 4*i+32 XOR với 0x38. Sau đó lấy ký tự đó so sánh ngay với <code>dword_4020</code> thứ i. Chúng ta sẽ truy cập thử vào <code>dword_4020</code>:</p><p><img src=https://hackmd.io/_uploads/rkrcrvULJx.png loading=lazy alt=image></p><p>Ở đây, các giá trị trong <code>unk_4020</code> là các byte đã được mã hóa. Do đó, ta sẽ lấy các giá trị khác 0 để thực hiện phép XOR và nối lại tạo thành flag.</p><p>Sau đây là script cho thử thách:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>reverse_lookthis</span><span class=p>(</span><span class=n>flag</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>for</span> <span class=n>k</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>32</span><span class=p>,</span> <span class=mi>28</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=k>if</span> <span class=n>k</span> <span class=o>&lt;</span> <span class=p>(</span><span class=mi>61</span> <span class=o>-</span> <span class=n>k</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>           <span class=n>flag</span><span class=p>[</span><span class=n>k</span><span class=p>],</span> <span class=n>flag</span><span class=p>[</span><span class=mi>61</span> <span class=o>-</span> <span class=n>k</span><span class=p>]</span> <span class=o>=</span> <span class=n>flag</span><span class=p>[</span><span class=mi>61</span> <span class=o>-</span> <span class=n>k</span><span class=p>],</span> <span class=n>flag</span><span class=p>[</span><span class=n>k</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>for</span> <span class=n>j</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>13</span><span class=p>,</span> <span class=mi>7</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=k>if</span> <span class=n>j</span> <span class=o>&lt;</span> <span class=p>(</span><span class=mi>21</span> <span class=o>-</span> <span class=n>j</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>           <span class=n>flag</span><span class=p>[</span><span class=n>j</span><span class=p>],</span> <span class=n>flag</span><span class=p>[</span><span class=mi>21</span> <span class=o>-</span> <span class=n>j</span><span class=p>]</span> <span class=o>=</span> <span class=n>flag</span><span class=p>[</span><span class=mi>21</span> <span class=o>-</span> <span class=n>j</span><span class=p>],</span> <span class=n>flag</span><span class=p>[</span><span class=n>j</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>6</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>       <span class=k>if</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=p>(</span><span class=mi>9</span> <span class=o>-</span> <span class=n>i</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>           <span class=n>flag</span><span class=p>[</span><span class=n>i</span><span class=p>],</span> <span class=n>flag</span><span class=p>[</span><span class=mi>9</span> <span class=o>-</span> <span class=n>i</span><span class=p>]</span> <span class=o>=</span> <span class=n>flag</span><span class=p>[</span><span class=mi>9</span> <span class=o>-</span> <span class=n>i</span><span class=p>],</span> <span class=n>flag</span><span class=p>[</span><span class=n>i</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>   <span class=k>return</span> <span class=n>flag</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>fake_flag</span> <span class=o>=</span> <span class=p>[</span><span class=nb>ord</span><span class=p>(</span><span class=n>c</span><span class=p>)</span> <span class=k>for</span> <span class=n>c</span> <span class=ow>in</span> <span class=s2>&#34;W1{live_speels_a5_NoOn_4v4ry_emit!}&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>real_flag</span> <span class=o>=</span> <span class=n>reverse_lookthis</span><span class=p>(</span><span class=n>fake_flag</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>flag</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=nb>chr</span><span class=p>(</span><span class=n>c</span><span class=p>)</span> <span class=k>for</span> <span class=n>c</span> <span class=ow>in</span> <span class=n>real_flag</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>flag</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><pre><code>Flag: W1{v3ry_34sy_r1gh7?}
+</code></pre><p> </p><h3 id=7-giacmotrua1>7. GiacMoTrua1</h3><p>Ta thấy tệp thử thách có định dạng .pyc. Sau khi thử tìm kiếm thì tôi biết được đây là một tệp đầu ra được biên dịch được tạo từ mã nguồn được viết bằng ngôn ngữ lập trình Python. Do đó tôi sử dụng PyLingual – một công cụ online để dịch ngược và khôi phục mã nguồn Python:</p><p><img src=https://hackmd.io/_uploads/S1zzUDULkg.png loading=lazy alt=image></p><p>Tải file python này về, ta nhận được thử thách như sau:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>dic</span> <span class=o>=</span> <span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>*</span> <span class=mi>85</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>=</span> <span class=mi>33</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=mi>35</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>2</span><span class=p>]</span> <span class=o>=</span> <span class=mi>36</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>3</span><span class=p>]</span> <span class=o>=</span> <span class=mi>37</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>4</span><span class=p>]</span> <span class=o>=</span> <span class=mi>38</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>5</span><span class=p>]</span> <span class=o>=</span> <span class=mi>40</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>6</span><span class=p>]</span> <span class=o>=</span> <span class=mi>41</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>7</span><span class=p>]</span> <span class=o>=</span> <span class=mi>42</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>8</span><span class=p>]</span> <span class=o>=</span> <span class=mi>43</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>9</span><span class=p>]</span> <span class=o>=</span> <span class=mi>44</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>10</span><span class=p>]</span> <span class=o>=</span> <span class=mi>45</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>11</span><span class=p>]</span> <span class=o>=</span> <span class=mi>46</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>12</span><span class=p>]</span> <span class=o>=</span> <span class=mi>47</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>13</span><span class=p>]</span> <span class=o>=</span> <span class=mi>48</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>14</span><span class=p>]</span> <span class=o>=</span> <span class=mi>49</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>15</span><span class=p>]</span> <span class=o>=</span> <span class=mi>50</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>16</span><span class=p>]</span> <span class=o>=</span> <span class=mi>51</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>17</span><span class=p>]</span> <span class=o>=</span> <span class=mi>52</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>18</span><span class=p>]</span> <span class=o>=</span> <span class=mi>53</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>19</span><span class=p>]</span> <span class=o>=</span> <span class=mi>54</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>20</span><span class=p>]</span> <span class=o>=</span> <span class=mi>55</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>21</span><span class=p>]</span> <span class=o>=</span> <span class=mi>56</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>22</span><span class=p>]</span> <span class=o>=</span> <span class=mi>57</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>23</span><span class=p>]</span> <span class=o>=</span> <span class=mi>58</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>24</span><span class=p>]</span> <span class=o>=</span> <span class=mi>59</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>25</span><span class=p>]</span> <span class=o>=</span> <span class=mi>60</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>26</span><span class=p>]</span> <span class=o>=</span> <span class=mi>61</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>27</span><span class=p>]</span> <span class=o>=</span> <span class=mi>62</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>28</span><span class=p>]</span> <span class=o>=</span> <span class=mi>63</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>29</span><span class=p>]</span> <span class=o>=</span> <span class=mi>64</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>30</span><span class=p>]</span> <span class=o>=</span> <span class=mi>65</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>31</span><span class=p>]</span> <span class=o>=</span> <span class=mi>66</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>32</span><span class=p>]</span> <span class=o>=</span> <span class=mi>67</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>33</span><span class=p>]</span> <span class=o>=</span> <span class=mi>68</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>34</span><span class=p>]</span> <span class=o>=</span> <span class=mi>69</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>35</span><span class=p>]</span> <span class=o>=</span> <span class=mi>70</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>36</span><span class=p>]</span> <span class=o>=</span> <span class=mi>71</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>37</span><span class=p>]</span> <span class=o>=</span> <span class=mi>72</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>38</span><span class=p>]</span> <span class=o>=</span> <span class=mi>73</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>39</span><span class=p>]</span> <span class=o>=</span> <span class=mi>74</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>40</span><span class=p>]</span> <span class=o>=</span> <span class=mi>75</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>41</span><span class=p>]</span> <span class=o>=</span> <span class=mi>76</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>42</span><span class=p>]</span> <span class=o>=</span> <span class=mi>77</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>43</span><span class=p>]</span> <span class=o>=</span> <span class=mi>78</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>44</span><span class=p>]</span> <span class=o>=</span> <span class=mi>79</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>45</span><span class=p>]</span> <span class=o>=</span> <span class=mi>80</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>46</span><span class=p>]</span> <span class=o>=</span> <span class=mi>81</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>47</span><span class=p>]</span> <span class=o>=</span> <span class=mi>82</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>48</span><span class=p>]</span> <span class=o>=</span> <span class=mi>83</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>49</span><span class=p>]</span> <span class=o>=</span> <span class=mi>84</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>50</span><span class=p>]</span> <span class=o>=</span> <span class=mi>85</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>51</span><span class=p>]</span> <span class=o>=</span> <span class=mi>86</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>52</span><span class=p>]</span> <span class=o>=</span> <span class=mi>87</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>53</span><span class=p>]</span> <span class=o>=</span> <span class=mi>88</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>54</span><span class=p>]</span> <span class=o>=</span> <span class=mi>89</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>55</span><span class=p>]</span> <span class=o>=</span> <span class=mi>90</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>56</span><span class=p>]</span> <span class=o>=</span> <span class=mi>91</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>57</span><span class=p>]</span> <span class=o>=</span> <span class=mi>97</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>58</span><span class=p>]</span> <span class=o>=</span> <span class=mi>98</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>59</span><span class=p>]</span> <span class=o>=</span> <span class=mi>99</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>60</span><span class=p>]</span> <span class=o>=</span> <span class=mi>100</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>61</span><span class=p>]</span> <span class=o>=</span> <span class=mi>101</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>62</span><span class=p>]</span> <span class=o>=</span> <span class=mi>102</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>63</span><span class=p>]</span> <span class=o>=</span> <span class=mi>103</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>64</span><span class=p>]</span> <span class=o>=</span> <span class=mi>104</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>65</span><span class=p>]</span> <span class=o>=</span> <span class=mi>105</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>66</span><span class=p>]</span> <span class=o>=</span> <span class=mi>106</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>67</span><span class=p>]</span> <span class=o>=</span> <span class=mi>107</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>68</span><span class=p>]</span> <span class=o>=</span> <span class=mi>108</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>69</span><span class=p>]</span> <span class=o>=</span> <span class=mi>109</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>70</span><span class=p>]</span> <span class=o>=</span> <span class=mi>110</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>71</span><span class=p>]</span> <span class=o>=</span> <span class=mi>111</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>72</span><span class=p>]</span> <span class=o>=</span> <span class=mi>112</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>73</span><span class=p>]</span> <span class=o>=</span> <span class=mi>113</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>74</span><span class=p>]</span> <span class=o>=</span> <span class=mi>114</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>75</span><span class=p>]</span> <span class=o>=</span> <span class=mi>115</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>76</span><span class=p>]</span> <span class=o>=</span> <span class=mi>116</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>77</span><span class=p>]</span> <span class=o>=</span> <span class=mi>117</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>78</span><span class=p>]</span> <span class=o>=</span> <span class=mi>118</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>79</span><span class=p>]</span> <span class=o>=</span> <span class=mi>119</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>80</span><span class=p>]</span> <span class=o>=</span> <span class=mi>120</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>81</span><span class=p>]</span> <span class=o>=</span> <span class=mi>121</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>82</span><span class=p>]</span> <span class=o>=</span> <span class=mi>122</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>83</span><span class=p>]</span> <span class=o>=</span> <span class=mi>123</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>84</span><span class=p>]</span> <span class=o>=</span> <span class=mi>125</span>
+</span></span><span class=line><span class=cl><span class=n>flag</span> <span class=o>=</span> <span class=nb>input</span><span class=p>(</span><span class=s2>&#34;Let me help you check your flag: &#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>length</span> <span class=o>=</span> <span class=nb>len</span><span class=p>(</span><span class=n>flag</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>ans</span> <span class=o>=</span> <span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>*</span> <span class=n>length</span> <span class=o>*</span> <span class=mi>2</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>length</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>   <span class=n>ans</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>=</span> <span class=n>dic</span><span class=p>[</span><span class=nb>ord</span><span class=p>(</span><span class=n>flag</span><span class=p>[</span><span class=n>i</span><span class=p>])</span> <span class=o>^</span> <span class=mi>112</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>length</span><span class=p>,</span> <span class=n>length</span> <span class=o>*</span> <span class=mi>2</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>   <span class=n>ans</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>=</span> <span class=n>ans</span><span class=p>[</span><span class=n>i</span> <span class=o>-</span> <span class=n>length</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>fin</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>((</span><span class=mi>23</span> <span class=o>*</span> <span class=n>length</span> <span class=o>+</span> <span class=mi>16</span><span class=p>)</span> <span class=o>%</span> <span class=n>length</span><span class=p>,</span> <span class=p>(</span><span class=mi>23</span> <span class=o>*</span> <span class=n>length</span> <span class=o>+</span> <span class=mi>16</span><span class=p>)</span> <span class=o>%</span> <span class=n>length</span> <span class=o>+</span> <span class=n>length</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>   <span class=n>fin</span> <span class=o>+=</span> <span class=nb>chr</span><span class=p>(</span><span class=n>ans</span><span class=p>[</span><span class=n>i</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=n>fin</span> <span class=o>==</span> <span class=s2>&#34;R8Abq,R&amp;;j%R6;kiiR%hR@k6iy0Ji.[k!8R,kHR*i??&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Rightttt!&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>   <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Heyy you are really lovely, i promise!&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>   <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Think more....&#34;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=phân-tích-3>Phân tích:</h4><p>Flag được nhập vào và qua một số bước biến đổi trở thành một đoạn mã hóa cho trước là: <code>“R8Abq,R&;j%R6;kiiR%hR@k6iy0Ji.[k!8R,kHR*i??”</code>
+Đầu tiên, chúng ta lấy từng giá trị của <code>flag</code> dạng thập phân ở hệ Unicode để XOR với 112 rồi lấy đó làm chỉ số để tra bảng <code>dic</code> và gán vào dãy <code>ans</code>, tiếp theo lấy <code>ans</code> thêm vào sau để tạo thành 1 dãy có độ dài gấp đôi <code>flag</code>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>length</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>   <span class=n>ans</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>=</span> <span class=n>dic</span><span class=p>[</span><span class=nb>ord</span><span class=p>(</span><span class=n>flag</span><span class=p>[</span><span class=n>i</span><span class=p>])</span> <span class=o>^</span> <span class=mi>112</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>length</span><span class=p>,</span> <span class=n>length</span> <span class=o>*</span> <span class=mi>2</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>   <span class=n>ans</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>=</span> <span class=n>ans</span><span class=p>[</span><span class=n>i</span> <span class=o>-</span> <span class=n>length</span><span class=p>]</span>
+</span></span></code></pre></td></tr></table></div></div><p>Sau đó lập thành dãy <code>fin</code> mà ta đã biết trước bằng cách lấy i trong khoảng từ <code>(23*length+16) % length</code> tới <code>(23*length+16) % length + length</code> và lấy đó làm chỉ số với <code>ans</code> để chuyển nó về dạng Unicode và thêm vào <code>fin</code>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>fin</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>((</span><span class=mi>23</span> <span class=o>*</span> <span class=n>length</span> <span class=o>+</span> <span class=mi>16</span><span class=p>)</span> <span class=o>%</span> <span class=n>length</span><span class=p>,</span> <span class=p>(</span><span class=mi>23</span> <span class=o>*</span> <span class=n>length</span> <span class=o>+</span> <span class=mi>16</span><span class=p>)</span> <span class=o>%</span> <span class=n>length</span> <span class=o>+</span> <span class=n>length</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=n>fin</span> <span class=o>+=</span> <span class=nb>chr</span><span class=p>(</span><span class=n>ans</span><span class=p>[</span><span class=n>i</span><span class=p>])</span>
+</span></span></code></pre></td></tr></table></div></div><p> </p><h4 id=giải-3>Giải:</h4><p>Nhận thấy, <code>fin</code> có độ dài bằng length và lớn hơn 16 nên:
+$23×length+16≡16$ (mod length)</p><p>Do đó, <code>ans</code> sẽ được tính từ chỉ số 16 của <code>fin</code> tăng dần và quay ngược lên 15.
+Sau đó, ta phải đảo ngược bảng giá trị <code>dic</code> cùng với việc thực hiện phép XOR với 112 để truy ngược lại giá trị ban đầu của flag.</p><p>Đây là script cho thử thách:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span><span class=lnt>80
+</span><span class=lnt>81
+</span><span class=lnt>82
+</span><span class=lnt>83
+</span><span class=lnt>84
+</span><span class=lnt>85
+</span><span class=lnt>86
+</span><span class=lnt>87
+</span><span class=lnt>88
+</span><span class=lnt>89
+</span><span class=lnt>90
+</span><span class=lnt>91
+</span><span class=lnt>92
+</span><span class=lnt>93
+</span><span class=lnt>94
+</span><span class=lnt>95
+</span><span class=lnt>96
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>dic</span> <span class=o>=</span> <span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>*</span> <span class=mi>85</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>=</span> <span class=mi>33</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=mi>35</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>2</span><span class=p>]</span> <span class=o>=</span> <span class=mi>36</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>3</span><span class=p>]</span> <span class=o>=</span> <span class=mi>37</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>4</span><span class=p>]</span> <span class=o>=</span> <span class=mi>38</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>5</span><span class=p>]</span> <span class=o>=</span> <span class=mi>40</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>6</span><span class=p>]</span> <span class=o>=</span> <span class=mi>41</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>7</span><span class=p>]</span> <span class=o>=</span> <span class=mi>42</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>8</span><span class=p>]</span> <span class=o>=</span> <span class=mi>43</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>9</span><span class=p>]</span> <span class=o>=</span> <span class=mi>44</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>10</span><span class=p>]</span> <span class=o>=</span> <span class=mi>45</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>11</span><span class=p>]</span> <span class=o>=</span> <span class=mi>46</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>12</span><span class=p>]</span> <span class=o>=</span> <span class=mi>47</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>13</span><span class=p>]</span> <span class=o>=</span> <span class=mi>48</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>14</span><span class=p>]</span> <span class=o>=</span> <span class=mi>49</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>15</span><span class=p>]</span> <span class=o>=</span> <span class=mi>50</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>16</span><span class=p>]</span> <span class=o>=</span> <span class=mi>51</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>17</span><span class=p>]</span> <span class=o>=</span> <span class=mi>52</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>18</span><span class=p>]</span> <span class=o>=</span> <span class=mi>53</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>19</span><span class=p>]</span> <span class=o>=</span> <span class=mi>54</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>20</span><span class=p>]</span> <span class=o>=</span> <span class=mi>55</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>21</span><span class=p>]</span> <span class=o>=</span> <span class=mi>56</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>22</span><span class=p>]</span> <span class=o>=</span> <span class=mi>57</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>23</span><span class=p>]</span> <span class=o>=</span> <span class=mi>58</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>24</span><span class=p>]</span> <span class=o>=</span> <span class=mi>59</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>25</span><span class=p>]</span> <span class=o>=</span> <span class=mi>60</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>26</span><span class=p>]</span> <span class=o>=</span> <span class=mi>61</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>27</span><span class=p>]</span> <span class=o>=</span> <span class=mi>62</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>28</span><span class=p>]</span> <span class=o>=</span> <span class=mi>63</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>29</span><span class=p>]</span> <span class=o>=</span> <span class=mi>64</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>30</span><span class=p>]</span> <span class=o>=</span> <span class=mi>65</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>31</span><span class=p>]</span> <span class=o>=</span> <span class=mi>66</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>32</span><span class=p>]</span> <span class=o>=</span> <span class=mi>67</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>33</span><span class=p>]</span> <span class=o>=</span> <span class=mi>68</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>34</span><span class=p>]</span> <span class=o>=</span> <span class=mi>69</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>35</span><span class=p>]</span> <span class=o>=</span> <span class=mi>70</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>36</span><span class=p>]</span> <span class=o>=</span> <span class=mi>71</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>37</span><span class=p>]</span> <span class=o>=</span> <span class=mi>72</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>38</span><span class=p>]</span> <span class=o>=</span> <span class=mi>73</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>39</span><span class=p>]</span> <span class=o>=</span> <span class=mi>74</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>40</span><span class=p>]</span> <span class=o>=</span> <span class=mi>75</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>41</span><span class=p>]</span> <span class=o>=</span> <span class=mi>76</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>42</span><span class=p>]</span> <span class=o>=</span> <span class=mi>77</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>43</span><span class=p>]</span> <span class=o>=</span> <span class=mi>78</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>44</span><span class=p>]</span> <span class=o>=</span> <span class=mi>79</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>45</span><span class=p>]</span> <span class=o>=</span> <span class=mi>80</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>46</span><span class=p>]</span> <span class=o>=</span> <span class=mi>81</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>47</span><span class=p>]</span> <span class=o>=</span> <span class=mi>82</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>48</span><span class=p>]</span> <span class=o>=</span> <span class=mi>83</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>49</span><span class=p>]</span> <span class=o>=</span> <span class=mi>84</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>50</span><span class=p>]</span> <span class=o>=</span> <span class=mi>85</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>51</span><span class=p>]</span> <span class=o>=</span> <span class=mi>86</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>52</span><span class=p>]</span> <span class=o>=</span> <span class=mi>87</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>53</span><span class=p>]</span> <span class=o>=</span> <span class=mi>88</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>54</span><span class=p>]</span> <span class=o>=</span> <span class=mi>89</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>55</span><span class=p>]</span> <span class=o>=</span> <span class=mi>90</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>56</span><span class=p>]</span> <span class=o>=</span> <span class=mi>91</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>57</span><span class=p>]</span> <span class=o>=</span> <span class=mi>97</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>58</span><span class=p>]</span> <span class=o>=</span> <span class=mi>98</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>59</span><span class=p>]</span> <span class=o>=</span> <span class=mi>99</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>60</span><span class=p>]</span> <span class=o>=</span> <span class=mi>100</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>61</span><span class=p>]</span> <span class=o>=</span> <span class=mi>101</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>62</span><span class=p>]</span> <span class=o>=</span> <span class=mi>102</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>63</span><span class=p>]</span> <span class=o>=</span> <span class=mi>103</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>64</span><span class=p>]</span> <span class=o>=</span> <span class=mi>104</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>65</span><span class=p>]</span> <span class=o>=</span> <span class=mi>105</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>66</span><span class=p>]</span> <span class=o>=</span> <span class=mi>106</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>67</span><span class=p>]</span> <span class=o>=</span> <span class=mi>107</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>68</span><span class=p>]</span> <span class=o>=</span> <span class=mi>108</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>69</span><span class=p>]</span> <span class=o>=</span> <span class=mi>109</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>70</span><span class=p>]</span> <span class=o>=</span> <span class=mi>110</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>71</span><span class=p>]</span> <span class=o>=</span> <span class=mi>111</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>72</span><span class=p>]</span> <span class=o>=</span> <span class=mi>112</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>73</span><span class=p>]</span> <span class=o>=</span> <span class=mi>113</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>74</span><span class=p>]</span> <span class=o>=</span> <span class=mi>114</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>75</span><span class=p>]</span> <span class=o>=</span> <span class=mi>115</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>76</span><span class=p>]</span> <span class=o>=</span> <span class=mi>116</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>77</span><span class=p>]</span> <span class=o>=</span> <span class=mi>117</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>78</span><span class=p>]</span> <span class=o>=</span> <span class=mi>118</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>79</span><span class=p>]</span> <span class=o>=</span> <span class=mi>119</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>80</span><span class=p>]</span> <span class=o>=</span> <span class=mi>120</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>81</span><span class=p>]</span> <span class=o>=</span> <span class=mi>121</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>82</span><span class=p>]</span> <span class=o>=</span> <span class=mi>122</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>83</span><span class=p>]</span> <span class=o>=</span> <span class=mi>123</span>
+</span></span><span class=line><span class=cl><span class=n>dic</span><span class=p>[</span><span class=mi>84</span><span class=p>]</span> <span class=o>=</span> <span class=mi>125</span>
+</span></span><span class=line><span class=cl><span class=n>fin</span> <span class=o>=</span> <span class=s2>&#34;R8Abq,R&amp;;j%R6;kiiR%hR@k6iy0Ji.[k!8R,kHR*i??&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>length</span> <span class=o>=</span> <span class=nb>len</span><span class=p>(</span><span class=n>fin</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>ans</span> <span class=o>=</span> <span class=p>[</span><span class=nb>ord</span><span class=p>(</span><span class=n>fin</span><span class=p>[</span><span class=n>i</span> <span class=o>-</span> <span class=mi>16</span><span class=p>])</span> <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>length</span><span class=p>)]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>reverse_dic</span> <span class=o>=</span> <span class=p>{</span><span class=n>v</span><span class=p>:</span> <span class=n>i</span> <span class=k>for</span> <span class=n>i</span><span class=p>,</span> <span class=n>v</span> <span class=ow>in</span> <span class=nb>enumerate</span><span class=p>(</span><span class=n>dic</span><span class=p>)}</span>
+</span></span><span class=line><span class=cl><span class=n>flag</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=nb>chr</span><span class=p>(</span><span class=n>reverse_dic</span><span class=p>[</span><span class=n>ans</span><span class=p>[</span><span class=n>i</span><span class=p>]]</span> <span class=o>^</span> <span class=mi>112</span><span class=p>)</span> <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>length</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>flag</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><pre><code>Flag: W1{H3pe_y3U_w1ll_enJ9y_th2s_ch311_s0_m3c1!}
+</code></pre></section><footer class=article-footer><section class=article-tags><a href=/tags/ctf/>CTF</a>
+<a href=/tags/cryptography/>Cryptography</a>
+<a href=/tags/reverse-engineering/>Reverse Engineering</a></section><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section></footer><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css integrity=sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV crossorigin=anonymous><script src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js integrity=sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8 crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous defer></script><script>window.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".main-article");renderMathInElement(e,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],ignoredClasses:["gist"]})})</script></article><aside class=related-content--wrapper><h2 class=section-title>Related content</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/p/wannagame-cyber-knight-2025/><div class=article-image><img src=/p/wannagame-cyber-knight-2025/w1cyber.a4069297ed7a29deb08708dacbe2eab2_hu_20105d278e73481c.png width=250 height=150 loading=lazy alt="Featured image of post WannaGame Cyber Knight 2025" data-hash="md5-pAaSl+16Kd6whwjay+Lqsg=="></div><div class=article-details><h2 class=article-title>WannaGame Cyber Knight 2025</h2></div></a></article><article class=has-image><a href=/p/imaginaryctf-2025/><div class=article-image><img src=/p/imaginaryctf-2025/imaginary.e9de644d192de193f46c90c0d02a4680_hu_3b6bafe821b2d8e6.jpg width=250 height=150 loading=lazy alt="Featured image of post ImaginaryCTF 2025" data-hash="md5-6d5kTRkt4ZP0bJDA0CpGgA=="></div><div class=article-details><h2 class=article-title>ImaginaryCTF 2025</h2></div></a></article><article class=has-image><a href=/p/holactf-2025/><div class=article-image><img src=/p/holactf-2025/holactf.9c863f56f24ea2049dc35dc145a8456b_hu_3189ab400ea0ac9b.jpg width=250 height=150 loading=lazy alt="Featured image of post HOLACTF 2025" data-hash="md5-nIY/VvJOogSdw13BRahFaw=="></div><div class=article-details><h2 class=article-title>HOLACTF 2025</h2></div></a></article><article class=has-image><a href=/p/nahamcon-ctf-2025/><div class=article-image><img src=/p/nahamcon-ctf-2025/Certificate.7f8c046c663f2b1fa34b68d95d010fdf_hu_bba9b22fc0efc29c.png width=250 height=150 loading=lazy alt="Featured image of post NahamCon CTF 2025" data-hash="md5-f4wEbGY/Kx+jS2jZXQEP3w=="></div><div class=article-details><h2 class=article-title>NahamCon CTF 2025</h2></div></a></article><article class=has-image><a href=/p/dicectf-2025/><div class=article-image><img src=/p/dicectf-2025/dicectf.6d8ee4df8edecb6635d487f03ca4cc4c_hu_649dec51335a5483.png width=250 height=150 loading=lazy alt="Featured image of post DiceCTF 2025" data-hash="md5-bY7k347ey2Y11IfwPKTMTA=="></div><div class=article-details><h2 class=article-title>DiceCTF 2025</h2></div></a></article></div></div></aside><div class=disqus-container><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//hugo-theme-stack.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div><style>.disqus-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}</style><script>window.addEventListener("onColorSchemeChange",e=>{typeof DISQUS=="object"&&DISQUS.reset({reload:!0})})</script><footer class=site-footer><section class=copyright>&copy;
+2020 -
+2025 r1muru</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.31.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>
