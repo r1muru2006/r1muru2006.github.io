@@ -480,10 +480,11 @@ assert ((E:=EllipticCurve(GF(0xbde3c425157a83cbe69cee172d27e2ef9c1bd754ff052d4e7
 
 Ý tưởng chính:
 Nguyên lý dùng ở đây là: nếu thứ tự nhóm điểm của elliptic curve là n và n có một nhân tử là k, thì phép nhân $[k]:P\rightarrow kP$ không phải là đơn ánh mà nó tồn tại một nhân tử (kernel) thứ bậc k.
-:::spoiler Source
+
+Source
 If n is a positive integer, we denote by $E(\mathbb{Q})[n]$ the subgroup of rational points of order dividing n, which is the kernel of the multiplication map from E to itself.
 https://johncremona.github.io/book/fulltext/chapter3.pdf
-:::
+
 Bằng cách dựng $Q = k^{-1} * R$ và sau đó cộng mọi phần tử thuộc kernel (jS), ta thu được nhiều $x_Q$ sao cho khi nhân k vẫn trả về R (tức là target_x).
 ```python
 # solution.py
@@ -663,9 +664,9 @@ https://crypto.stackexchange.com/questions/11053/rsa-least-significant-bit-oracl
 Vì vậy, việc so sánh $(((2^i\mod n) \times m) \mod n) \mod 2$ và $(((2^{i+1}\mod n) \times m) \mod n) \mod 2$ cho ta MSB của $(2^i\mod n) \times m$. Ở đây, ta nhận được ngẫu nhiên một trong bốn bit thấp.
 
 Đầu tiên, ta thử các trường hợp cho đến khi ta nhận được $n\equiv -1 \mod 16$.
-Bây giờ, giả sử ta nhận được LSB thứ ba (chỉ số 2, vị trí thứ tư). Ta có thể gửi $(2^{e \times (i+3)} \mod n)*c$ và nhận lại $((8\times (2^i\mod n) \times m) \mod n)\ \& \ 4$.
+Bây giờ, giả sử ta nhận được LSB thứ ba (chỉ số 2, vị trí thứ tư). Ta có thể gửi $(2^{e \times (i+3)} \mod n)*c$ và nhận lại $((8\times (2^i\mod n) \times m) \mod n)$ & 4.
 
-Như vậy, $$((8\times (2^i\mod n) \times m) \mod n)\ \& \ 4 =int((((8\times (2^i\mod n) \times m) \mod n)\mod  8) \ge 4)$$ và giá trị $((8\times (2^i\mod n) \times m) \mod n)\mod  8$ là bit đúng sai của đẳng thức $$0-n\times \lfloor\dfrac{(8\times (2^i\mod n) \times m)}{n}\rfloor\mod 8 =\lfloor\dfrac{(8\times (2^i\mod n) \times m)}{n}\rfloor\mod 8$$
+Như vậy, $$((8\times (2^i\mod n) \times m) \mod n) & 4 =int((((8\times (2^i\mod n) \times m) \mod n)\mod  8) \ge 4)$$ và giá trị $((8\times (2^i\mod n) \times m) \mod n)\mod  8$ là bit đúng sai của đẳng thức $$0-n\times \lfloor\dfrac{(8\times (2^i\mod n) \times m)}{n}\rfloor\mod 8 =\lfloor\dfrac{(8\times (2^i\mod n) \times m)}{n}\rfloor\mod 8$$
 
 Giá trị này cho chúng ta biết $(2^i \mod n) \times m$ nằm trong khoảng nào trong số các khoảng $[0, n/8), ..., [7*n/8, n)$, nhưng chúng ta chỉ nhận được MSB của nó (từ $\ge 4$ hoặc $\& \ 4$), vì vậy về cơ bản chúng ta chỉ nhận được một MSG của $(2^i \mod n) \times m$.
 Lặp lại điều này sẽ cho phép chúng ta thu được toàn bộ `m`.
