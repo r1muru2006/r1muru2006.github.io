@@ -668,7 +668,7 @@ Bây giờ, giả sử ta nhận được LSB thứ ba (chỉ số 2, vị trí 
 
 Như vậy, $$((8\times (2^i\mod n) \times m) \mod n) & 4 =int((((8\times (2^i\mod n) \times m) \mod n)\mod  8) \ge 4)$$ và giá trị $((8\times (2^i\mod n) \times m) \mod n)\mod  8$ là bit đúng sai của đẳng thức $$0-n\times \lfloor\dfrac{(8\times (2^i\mod n) \times m)}{n}\rfloor\mod 8 =\lfloor\dfrac{(8\times (2^i\mod n) \times m)}{n}\rfloor\mod 8$$
 
-Giá trị này cho chúng ta biết $(2^i \mod n) \times m$ nằm trong khoảng nào trong số các khoảng $[0, n/8), ..., [7*n/8, n)$, nhưng chúng ta chỉ nhận được MSB của nó (từ $\ge 4$ hoặc $\& \ 4$), vì vậy về cơ bản chúng ta chỉ nhận được một MSG của $(2^i \mod n) \times m$.
+Giá trị này cho chúng ta biết $(2^i \mod n) \times m$ nằm trong khoảng nào trong số các khoảng $[0, n/8), ..., [7*n/8, n)$, nhưng chúng ta chỉ nhận được MSB của nó (từ $\ge 4$ hoặc & 4), vì vậy về cơ bản chúng ta chỉ nhận được một MSG của $(2^i \mod n) \times m$.
 Lặp lại điều này sẽ cho phép chúng ta thu được toàn bộ `m`.
 
 Về bản chất, phương pháp này là binary-search trên phần fractional m/n: mỗi bit thu được sẽ cho ta cắt đôi khoảng hiện tại (giống LSB-oracle). Dùng việc hỏi “bit của octant” là một biến thể nhưng về lượng thông tin mỗi truy vấn vẫn ~1 bit, do đó độ phức tạp tương đương LSB-oracle cơ bản.
