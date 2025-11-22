@@ -3,7 +3,7 @@
   lang="en-us" 
   data-theme-mode="auto"
   >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=45829&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8" />
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=36241&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8" />
 <meta
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -11,7 +11,7 @@
   DiceCTF 2025 | r1muru
 </title>
 <meta name="description" content="Giải này mình làm được 2 bài misc và 1 bài crypto ngay phút chót @@ nên viết writeup để tổng kết lại cuối tuần này."/><script>
-  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"http://localhost:45829/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"http://localhost:36241/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
   
 </script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,7 +39,7 @@
     property="og:description"
     content="Giải này mình làm được 2 bài misc và 1 bài crypto ngay phút chót @@ nên viết writeup để tổng kết lại cuối tuần này."
   />
-  <meta property="og:url" content="http://localhost:45829/post/dicectf2025/" />
+  <meta property="og:url" content="http://localhost:36241/post/dicectf2025/" />
   <meta
     property="og:site_name"
     content="r1muru&#39;s blog"
@@ -125,7 +125,7 @@ This article does not have a corresponding language version
         <span class="main-nav-link">About</span>
       </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
   </nav>
-  <nav id="sub-nav" aria-label="Secondary navigation"></nav></div>
+  <nav id="sub-nav" aria-label="Secondary navigation"><a id="nav-search-btn" class="nav-icon popup-trigger" title="Search" aria-label="Search"></a></nav></div>
 <header id="header" aria-label="Site header"><picture></picture>
     <img  fetchpriority="high" src="/images/dicectf.png" alt="DiceCTF 2025"><div id="header-outer">
     <div id="header-title"><span id="logo">
@@ -134,8 +134,8 @@ This article does not have a corresponding language version
   </div>
 </header><div id="content"
           aria-label="Page content"
-          
-          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+          class="sidebar-left"
+            ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
     <div
       class="sidebar-wrap"
       data-aos="fade-up"
@@ -159,7 +159,7 @@ This article does not have a corresponding language version
 </div></div>
           <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img
-    data-src="/avatar/avatar/avatar.jpg"
+    data-src="/avatar/avatar.png"
     data-sizes="auto"
     alt="r1muru"
     class="lazyload"
@@ -311,19 +311,19 @@ Export file ra thì ta được 1 file main theo định dạng ELF cùng 1 tệ
 </ol>
 <p>Đầu tiên, khi ta xem lại thì gói main nằm ở No.168 và khi tra lại thì ta lấy được thời gian v1 rồi sau đó tính theo công thức để lấy s.
 <img src="https://hackmd.io/_uploads/HkktlxD61x.png" alt="image"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>v1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1743126530</span>
-</span></span><span style="display:flex;"><span>s <span style="color:#f92672">=</span> v1 <span style="color:#f92672">-</span> v1 <span style="color:#f92672">%</span> <span style="color:#ae81ff">60</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1743126480</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">v1</span> <span class="o">=</span> <span class="mi">1743126530</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">-</span> <span class="n">v1</span> <span class="o">%</span> <span class="mi">60</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1743126480</span>
 </span></span></code></pre></div><p>Thứ hai về locate thì ta lấy mặc định là <code>en_US.UTF-8</code> nhưng chỉ lấy 5 kí tự đầu cho dest là: <code>en_US</code></p>
 <p>Cuối cùng, username ta sẽ có được bằng cách tìm kiếm những request được gửi lên thông qua gói tin mà ta có thể xem được và đây là kết quả:
 <img src="https://hackmd.io/_uploads/r1dCpyvTke.png" alt="image"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># solution.py</span>
-</span></span><span style="display:flex;"><span>v1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1743126530</span>
-</span></span><span style="display:flex;"><span>s <span style="color:#f92672">=</span> v1 <span style="color:#f92672">-</span> v1 <span style="color:#f92672">%</span> <span style="color:#ae81ff">60</span>
-</span></span><span style="display:flex;"><span>locale_str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;en_US&#34;</span>
-</span></span><span style="display:flex;"><span>username <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hacker&#34;</span>
-</span></span><span style="display:flex;"><span>password <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>s<span style="color:#e6db74">}{</span>locale_str<span style="color:#e6db74">}{</span>username<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>print(password) <span style="color:#75715e">#1743126480en_UShacker</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># solution.py</span>
+</span></span><span class="line"><span class="cl"><span class="n">v1</span> <span class="o">=</span> <span class="mi">1743126530</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">-</span> <span class="n">v1</span> <span class="o">%</span> <span class="mi">60</span>
+</span></span><span class="line"><span class="cl"><span class="n">locale_str</span> <span class="o">=</span> <span class="s2">&#34;en_US&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">username</span> <span class="o">=</span> <span class="s2">&#34;hacker&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">password</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">s</span><span class="si">}{</span><span class="n">locale_str</span><span class="si">}{</span><span class="n">username</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="c1">#1743126480en_UShacker</span>
 </span></span></code></pre></div><p>Giải nén file zip và lấy flag thôi:</p>
 <p><img src="https://hackmd.io/_uploads/Bkm0GxDTyl.png" alt="image"></p>
 <pre><code>Flag: dice{5k1d_y0ur_w@y_t0_v1ct0ry_t0d4y!!!}
@@ -335,69 +335,69 @@ Crypto
 <a class="header-anchor" href="#vorpal-sword"></a>
 vorpal-sword
 </h3><p><img src="https://hackmd.io/_uploads/SkrisLv6yx.png" alt="image"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># server.py</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#!/usr/local/bin/python</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> secrets
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.PublicKey <span style="color:#f92672">import</span> RSA
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>DEATH_CAUSES <span style="color:#f92672">=</span> [
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;a fever&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;dysentery&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;measles&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;cholera&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;typhoid&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;exhaustion&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;a snakebite&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;a broken leg&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;a broken arm&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;drowning&#34;</span>,
-</span></span><span style="display:flex;"><span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run_ot</span>(key, msg0, msg1):
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    https://en.wikipedia.org/wiki/Oblivious_transfer#1–2_oblivious_transfer
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    x0 <span style="color:#f92672">=</span> secrets<span style="color:#f92672">.</span>randbelow(key<span style="color:#f92672">.</span>n)
-</span></span><span style="display:flex;"><span>    x1 <span style="color:#f92672">=</span> secrets<span style="color:#f92672">.</span>randbelow(key<span style="color:#f92672">.</span>n)
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;n: </span><span style="color:#e6db74">{</span>key<span style="color:#f92672">.</span>n<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;e: </span><span style="color:#e6db74">{</span>key<span style="color:#f92672">.</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;x0: </span><span style="color:#e6db74">{</span>x0<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;x1: </span><span style="color:#e6db74">{</span>x1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>    v <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#34;v: &#34;</span>))
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;=</span> v <span style="color:#f92672">&lt;</span> key<span style="color:#f92672">.</span>n, <span style="color:#e6db74">&#34;invalid value&#34;</span>
-</span></span><span style="display:flex;"><span>    k0 <span style="color:#f92672">=</span> pow(v <span style="color:#f92672">-</span> x0, key<span style="color:#f92672">.</span>d, key<span style="color:#f92672">.</span>n)
-</span></span><span style="display:flex;"><span>    k1 <span style="color:#f92672">=</span> pow(v <span style="color:#f92672">-</span> x1, key<span style="color:#f92672">.</span>d, key<span style="color:#f92672">.</span>n)
-</span></span><span style="display:flex;"><span>    m0 <span style="color:#f92672">=</span> int<span style="color:#f92672">.</span>from_bytes(msg0<span style="color:#f92672">.</span>encode(), <span style="color:#e6db74">&#34;big&#34;</span>)
-</span></span><span style="display:flex;"><span>    m1 <span style="color:#f92672">=</span> int<span style="color:#f92672">.</span>from_bytes(msg1<span style="color:#f92672">.</span>encode(), <span style="color:#e6db74">&#34;big&#34;</span>)
-</span></span><span style="display:flex;"><span>    c0 <span style="color:#f92672">=</span> (m0 <span style="color:#f92672">+</span> k0) <span style="color:#f92672">%</span> key<span style="color:#f92672">.</span>n
-</span></span><span style="display:flex;"><span>    c1 <span style="color:#f92672">=</span> (m1 <span style="color:#f92672">+</span> k1) <span style="color:#f92672">%</span> key<span style="color:#f92672">.</span>n
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;c0: </span><span style="color:#e6db74">{</span>c0<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;c1: </span><span style="color:#e6db74">{</span>c1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;flag.txt&#34;</span>) <span style="color:#66d9ef">as</span> f:
-</span></span><span style="display:flex;"><span>        flag <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>read()<span style="color:#f92672">.</span>strip()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;=== CHOOSE YOUR OWN ADVENTURE: Vorpal Sword Edition ===&#34;</span>)
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;you enter a cave.&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">64</span>):
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;the tunnel forks ahead. do you take the left or right path?&#34;</span>)
-</span></span><span style="display:flex;"><span>        key <span style="color:#f92672">=</span> RSA<span style="color:#f92672">.</span>generate(<span style="color:#ae81ff">1024</span>)
-</span></span><span style="display:flex;"><span>        msgs <span style="color:#f92672">=</span> [<span style="color:#66d9ef">None</span>, <span style="color:#66d9ef">None</span>]
-</span></span><span style="display:flex;"><span>        page <span style="color:#f92672">=</span> secrets<span style="color:#f92672">.</span>randbits(<span style="color:#ae81ff">32</span>)
-</span></span><span style="display:flex;"><span>        live <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;you continue walking. turn to page </span><span style="color:#e6db74">{</span>page<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>
-</span></span><span style="display:flex;"><span>        die <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;you die of </span><span style="color:#e6db74">{</span>secrets<span style="color:#f92672">.</span>choice(DEATH_CAUSES)<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>
-</span></span><span style="display:flex;"><span>        msgs <span style="color:#f92672">=</span> (live, die) <span style="color:#66d9ef">if</span> secrets<span style="color:#f92672">.</span>randbits(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">else</span> (die, live)
-</span></span><span style="display:flex;"><span>        run_ot(key, <span style="color:#f92672">*</span>msgs)
-</span></span><span style="display:flex;"><span>        page_guess <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#34;turn to page: &#34;</span>))
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> page_guess <span style="color:#f92672">!=</span> page:
-</span></span><span style="display:flex;"><span>            exit()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;you find a chest containing </span><span style="color:#e6db74">{</span>flag<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># server.py</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#!/usr/local/bin/python</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">secrets</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">DEATH_CAUSES</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;a fever&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;dysentery&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;measles&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cholera&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;typhoid&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;exhaustion&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;a snakebite&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;a broken leg&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;a broken arm&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;drowning&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">run_ot</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">msg0</span><span class="p">,</span> <span class="n">msg1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    https://en.wikipedia.org/wiki/Oblivious_transfer#1–2_oblivious_transfer
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x0</span> <span class="o">=</span> <span class="n">secrets</span><span class="o">.</span><span class="n">randbelow</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x1</span> <span class="o">=</span> <span class="n">secrets</span><span class="o">.</span><span class="n">randbelow</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;n: </span><span class="si">{</span><span class="n">key</span><span class="o">.</span><span class="n">n</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;e: </span><span class="si">{</span><span class="n">key</span><span class="o">.</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;x0: </span><span class="si">{</span><span class="n">x0</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;x1: </span><span class="si">{</span><span class="n">x1</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">v</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;v: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">assert</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">key</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="s2">&#34;invalid value&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">k0</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">v</span> <span class="o">-</span> <span class="n">x0</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">d</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">k1</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">v</span> <span class="o">-</span> <span class="n">x1</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">d</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">m0</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="n">msg0</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="s2">&#34;big&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">m1</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="n">msg1</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="s2">&#34;big&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c0</span> <span class="o">=</span> <span class="p">(</span><span class="n">m0</span> <span class="o">+</span> <span class="n">k0</span><span class="p">)</span> <span class="o">%</span> <span class="n">key</span><span class="o">.</span><span class="n">n</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c1</span> <span class="o">=</span> <span class="p">(</span><span class="n">m1</span> <span class="o">+</span> <span class="n">k1</span><span class="p">)</span> <span class="o">%</span> <span class="n">key</span><span class="o">.</span><span class="n">n</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;c0: </span><span class="si">{</span><span class="n">c0</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;c1: </span><span class="si">{</span><span class="n">c1</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;flag.txt&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">flag</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;=== CHOOSE YOUR OWN ADVENTURE: Vorpal Sword Edition ===&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;you enter a cave.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">64</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;the tunnel forks ahead. do you take the left or right path?&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">key</span> <span class="o">=</span> <span class="n">RSA</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">msgs</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">page</span> <span class="o">=</span> <span class="n">secrets</span><span class="o">.</span><span class="n">randbits</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">live</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;you continue walking. turn to page </span><span class="si">{</span><span class="n">page</span><span class="si">}</span><span class="s2">.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">die</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;you die of </span><span class="si">{</span><span class="n">secrets</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">DEATH_CAUSES</span><span class="p">)</span><span class="si">}</span><span class="s2">.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">msgs</span> <span class="o">=</span> <span class="p">(</span><span class="n">live</span><span class="p">,</span> <span class="n">die</span><span class="p">)</span> <span class="k">if</span> <span class="n">secrets</span><span class="o">.</span><span class="n">randbits</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">die</span><span class="p">,</span> <span class="n">live</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">run_ot</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="o">*</span><span class="n">msgs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">page_guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;turn to page: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">page_guess</span> <span class="o">!=</span> <span class="n">page</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">exit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;you find a chest containing </span><span class="si">{</span><span class="n">flag</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Theo thử thách, bài này nói về <a href="https://en.wikipedia.org/wiki/Oblivious_transfer#1%E2%80%932_oblivious_transfer">1-2 oblivious transfer</a> nên mình cũng lên mạng tìm hiểu và đây là các bước mà giao thức này thực hiện:</p>
 <ol>
 <li>Alice có tin nhắn $m_0, m_1$ và 1 cặp khóa RSA $(e, d, N)$.
@@ -408,13 +408,13 @@ Bob biết được khóa công khai $(e, N)$ của Alice và muốn tin nhắn 
 <li>Bob tính và lấy được $m_c=m_c&rsquo;-k\mod N$ và không lấy được thông tin gì từ $m_{1-c}$</li>
 </ol>
 <p>Đọc file server thì ta thấy là hàm <code>run_ot</code> đúng là đang thực hiện giống như 4 bước đầu trong giao thức trên. Và khi ta truy ngược lại thì ta cần biết được <code>page</code> mà được giấu trong tin nhắn <code>live</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>live <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;you continue walking. turn to page </span><span style="color:#e6db74">{</span>page<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>
-</span></span><span style="display:flex;"><span>die <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;you die of </span><span style="color:#e6db74">{</span>secrets<span style="color:#f92672">.</span>choice(DEATH_CAUSES)<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>
-</span></span><span style="display:flex;"><span>msgs <span style="color:#f92672">=</span> (live, die) <span style="color:#66d9ef">if</span> secrets<span style="color:#f92672">.</span>randbits(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">else</span> (die, live)
-</span></span><span style="display:flex;"><span>run_ot(key, <span style="color:#f92672">*</span>msgs)
-</span></span><span style="display:flex;"><span>page_guess <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#34;turn to page: &#34;</span>))
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> page_guess <span style="color:#f92672">!=</span> page:
-</span></span><span style="display:flex;"><span>    exit()
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">live</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;you continue walking. turn to page </span><span class="si">{</span><span class="n">page</span><span class="si">}</span><span class="s2">.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">die</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;you die of </span><span class="si">{</span><span class="n">secrets</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">DEATH_CAUSES</span><span class="p">)</span><span class="si">}</span><span class="s2">.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">msgs</span> <span class="o">=</span> <span class="p">(</span><span class="n">live</span><span class="p">,</span> <span class="n">die</span><span class="p">)</span> <span class="k">if</span> <span class="n">secrets</span><span class="o">.</span><span class="n">randbits</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">die</span><span class="p">,</span> <span class="n">live</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">run_ot</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="o">*</span><span class="n">msgs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">page_guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;turn to page: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">page_guess</span> <span class="o">!=</span> <span class="n">page</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">exit</span><span class="p">()</span>
 </span></span></code></pre></div><p>Tuy nhiên vì <code>msgs</code> được random giữa <code>(live,die)</code> và <code>(die, live)</code>, cùng với việc ta phải nhập đúng <code>page</code> trong 64 lần liên tiếp thì rõ ràng việc làm như Bob là lấy được 1 trong 2 tin nhắn không khả thi(vì xác suất trúng được hết chỉ là $\dfrac{1}{2^{64}}$)
 Hơn nữa, ta đã biết được list của các <code>DEATH_CAUSES</code> nên ta cũng có thể tính được hết tất cả các <code>die</code> của chall, tức là ta có thể phân biệt được đâu là <code>live</code> và đâu là <code>die</code>.</p>
 <p>Nhận thấy, ta đã biết $c_0, c_1$, 1 trong hai giá trị $m_0, m_1$ thì việc tìm ra được giá trị còn lại phải dựa vào 1 biểu thức tuyến tính giữa 4 biến này xảy ra.
@@ -451,11 +451,11 @@ $$</p>
 <p>$$
 \Leftrightarrow v\equiv (k^e - 1)^{-1}(x_1-x_0) + x_1\mod n
 $$</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>e <span style="color:#f92672">=</span> <span style="color:#ae81ff">65537</span>
-</span></span><span style="display:flex;"><span>k <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>e <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sol_v</span>(n, k, x0, x1):
-</span></span><span style="display:flex;"><span>    d <span style="color:#f92672">=</span> inverse(k, n)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (x1 <span style="color:#f92672">+</span> d<span style="color:#f92672">*</span>(x1<span style="color:#f92672">-</span>x0)) <span style="color:#f92672">%</span> n
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
+</span></span><span class="line"><span class="cl"><span class="n">k</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">e</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">sol_v</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">d</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="n">d</span><span class="o">*</span><span class="p">(</span><span class="n">x1</span><span class="o">-</span><span class="n">x0</span><span class="p">))</span> <span class="o">%</span> <span class="n">n</span>
 </span></span></code></pre></div><p>Bây giờ trở lại với $(*)$ thì ta được biểu thức tuyến tính sau:
 $$
 \Leftrightarrow c_0 -2c_1\equiv m_0-2m_1\mod n \ \ \ \ \ (**)
@@ -467,140 +467,140 @@ $$
 (**)\Leftrightarrow m_0\equiv c_0 -2c_1+2m_1\mod n
 $$</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">case_m0</span>(n, c0, c1, lst):
-</span></span><span style="display:flex;"><span>    page <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> lst:
-</span></span><span style="display:flex;"><span>        k <span style="color:#f92672">=</span> (c0 <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>c1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>i) <span style="color:#f92672">%</span> n
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>            res <span style="color:#f92672">=</span> long_to_bytes(k)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> res<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;you continue walking. turn to page &#34;</span>):
-</span></span><span style="display:flex;"><span>            page <span style="color:#f92672">=</span> res[<span style="color:#ae81ff">35</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> page<span style="color:#f92672">.</span>isdigit():
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> page
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">case_m0</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">c0</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">c1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">res</span> <span class="o">=</span> <span class="n">long_to_bytes</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;you continue walking. turn to page &#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">page</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">35</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">page</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">page</span>
 </span></span></code></pre></div><ol start="2">
 <li>nếu <code>page</code> nằm trong <code>live</code> của $m_1$:
 $$
 (**)\Leftrightarrow m_1\equiv (m_0-c_0+2c_1)\times 2^{-1}\mod n
 $$</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">case_m1</span>(n, c0, c1, lst):
-</span></span><span style="display:flex;"><span>    page <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    inv <span style="color:#f92672">=</span> inverse(<span style="color:#ae81ff">2</span>, n)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> lst:
-</span></span><span style="display:flex;"><span>        k <span style="color:#f92672">=</span> (j <span style="color:#f92672">-</span> c0 <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>c1)<span style="color:#f92672">*</span>inv <span style="color:#f92672">%</span> n
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>            res <span style="color:#f92672">=</span> long_to_bytes(k)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> res<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;you continue walking. turn to page &#34;</span>):
-</span></span><span style="display:flex;"><span>            page <span style="color:#f92672">=</span> res[<span style="color:#ae81ff">35</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> page<span style="color:#f92672">.</span>isdigit():
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> page
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">case_m1</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">inv</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">-</span> <span class="n">c0</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">c1</span><span class="p">)</span><span class="o">*</span><span class="n">inv</span> <span class="o">%</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">res</span> <span class="o">=</span> <span class="n">long_to_bytes</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;you continue walking. turn to page &#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">page</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">35</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">page</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">page</span>
 </span></span></code></pre></div><p>Đến đây rồi thì, ta brute-force hết cái list của <code>die</code> thì ta sẽ biết được trường hợp nào là thỏa và tìm được <code>page</code>. Remote tới server và nhận flag thôi :333</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># solution.py</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Util.number <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
-</span></span><span style="display:flex;"><span>sys<span style="color:#f92672">.</span>set_int_max_str_digits(<span style="color:#ae81ff">0</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>DEATH_CAUSES <span style="color:#f92672">=</span> [
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;a fever&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;dysentery&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;measles&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;cholera&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;typhoid&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;exhaustion&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;a snakebite&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;a broken leg&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;a broken arm&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;drowning&#39;</span>,
-</span></span><span style="display:flex;"><span>]
-</span></span><span style="display:flex;"><span>lst <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> DEATH_CAUSES:
-</span></span><span style="display:flex;"><span>    die <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;you die of </span><span style="color:#e6db74">{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#39;</span>
-</span></span><span style="display:flex;"><span>    s <span style="color:#f92672">=</span> int<span style="color:#f92672">.</span>from_bytes(die<span style="color:#f92672">.</span>encode(), <span style="color:#e6db74">&#39;big&#39;</span>)
-</span></span><span style="display:flex;"><span>    lst<span style="color:#f92672">.</span>append(s)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">rev_data</span>():
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> int(io<span style="color:#f92672">.</span>recvline()<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>decode())
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">take_data1</span>():
-</span></span><span style="display:flex;"><span>    io<span style="color:#f92672">.</span>recvuntil(<span style="color:#e6db74">&#34;n: &#34;</span>)
-</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> rev_data()
-</span></span><span style="display:flex;"><span>    io<span style="color:#f92672">.</span>recvuntil(<span style="color:#e6db74">&#34;x0: &#34;</span>)
-</span></span><span style="display:flex;"><span>    x0 <span style="color:#f92672">=</span> rev_data()
-</span></span><span style="display:flex;"><span>    io<span style="color:#f92672">.</span>recvuntil(<span style="color:#e6db74">&#34;x1: &#34;</span>)
-</span></span><span style="display:flex;"><span>    x1 <span style="color:#f92672">=</span> rev_data()
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> n, x0, x1
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>e <span style="color:#f92672">=</span> <span style="color:#ae81ff">65537</span>
-</span></span><span style="display:flex;"><span>k <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>e <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sol_v</span>(n, k, x0, x1):
-</span></span><span style="display:flex;"><span>    d <span style="color:#f92672">=</span> inverse(k, n)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (x1 <span style="color:#f92672">+</span> d<span style="color:#f92672">*</span>(x1<span style="color:#f92672">-</span>x0)) <span style="color:#f92672">%</span> n
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">take_data2</span>():
-</span></span><span style="display:flex;"><span>    io<span style="color:#f92672">.</span>recvuntil(<span style="color:#e6db74">&#34;c0: &#34;</span>)
-</span></span><span style="display:flex;"><span>    c0 <span style="color:#f92672">=</span> rev_data()
-</span></span><span style="display:flex;"><span>    io<span style="color:#f92672">.</span>recvuntil(<span style="color:#e6db74">&#34;c1: &#34;</span>)
-</span></span><span style="display:flex;"><span>    c1 <span style="color:#f92672">=</span> rev_data()
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> c0, c1
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">case_m0</span>(n, c0, c1, lst):
-</span></span><span style="display:flex;"><span>    page <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> lst:
-</span></span><span style="display:flex;"><span>        k <span style="color:#f92672">=</span> (c0 <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>c1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>i) <span style="color:#f92672">%</span> n
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>            res <span style="color:#f92672">=</span> long_to_bytes(k)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> res<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;you continue walking. turn to page &#34;</span>):
-</span></span><span style="display:flex;"><span>            page <span style="color:#f92672">=</span> res[<span style="color:#ae81ff">35</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> page<span style="color:#f92672">.</span>isdigit():
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> page
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">case_m1</span>(n, c0, c1, lst):
-</span></span><span style="display:flex;"><span>    page <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    inv <span style="color:#f92672">=</span> inverse(<span style="color:#ae81ff">2</span>, n)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> lst:
-</span></span><span style="display:flex;"><span>        k <span style="color:#f92672">=</span> (j <span style="color:#f92672">-</span> c0 <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>c1)<span style="color:#f92672">*</span>inv <span style="color:#f92672">%</span> n
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>            res <span style="color:#f92672">=</span> long_to_bytes(k)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> res<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;you continue walking. turn to page &#34;</span>):
-</span></span><span style="display:flex;"><span>            page <span style="color:#f92672">=</span> res[<span style="color:#ae81ff">35</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> page<span style="color:#f92672">.</span>isdigit():
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> page
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>io <span style="color:#f92672">=</span> remote(<span style="color:#e6db74">&#34;dicec.tf&#34;</span>, <span style="color:#ae81ff">31001</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">64</span>):
-</span></span><span style="display:flex;"><span>    n, x0, x1 <span style="color:#f92672">=</span> take_data1()
-</span></span><span style="display:flex;"><span>    v <span style="color:#f92672">=</span> sol_v(n, k, x0, x1)
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    io<span style="color:#f92672">.</span>recvuntil(<span style="color:#e6db74">&#34;v: &#34;</span>)
-</span></span><span style="display:flex;"><span>    io<span style="color:#f92672">.</span>sendline(str(v))
-</span></span><span style="display:flex;"><span>    c0, c1 <span style="color:#f92672">=</span> take_data2()
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    page <span style="color:#f92672">=</span> case_m0(n, c0, c1, lst)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> page <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:
-</span></span><span style="display:flex;"><span>        page <span style="color:#f92672">=</span> case_m1(n, c0, c1, lst)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    io<span style="color:#f92672">.</span>recvuntil(<span style="color:#e6db74">&#34;turn to page: &#34;</span>)
-</span></span><span style="display:flex;"><span>    io<span style="color:#f92672">.</span>sendline(page)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>recvall()
-</span></span><span style="display:flex;"><span>print(data)
-</span></span><span style="display:flex;"><span>io<span style="color:#f92672">.</span>close()
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># solution.py</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="cl"><span class="n">sys</span><span class="o">.</span><span class="n">set_int_max_str_digits</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">DEATH_CAUSES</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;a fever&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;dysentery&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;measles&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;cholera&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;typhoid&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;exhaustion&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;a snakebite&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;a broken leg&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;a broken arm&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;drowning&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">DEATH_CAUSES</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">die</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;you die of </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="n">die</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="s1">&#39;big&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">rev_data</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">take_data1</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">io</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&#34;n: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="n">rev_data</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">io</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&#34;x0: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x0</span> <span class="o">=</span> <span class="n">rev_data</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">io</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&#34;x1: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x1</span> <span class="o">=</span> <span class="n">rev_data</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">n</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
+</span></span><span class="line"><span class="cl"><span class="n">k</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">e</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">sol_v</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">d</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="n">d</span><span class="o">*</span><span class="p">(</span><span class="n">x1</span><span class="o">-</span><span class="n">x0</span><span class="p">))</span> <span class="o">%</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">take_data2</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">io</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&#34;c0: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c0</span> <span class="o">=</span> <span class="n">rev_data</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">io</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&#34;c1: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c1</span> <span class="o">=</span> <span class="n">rev_data</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">c0</span><span class="p">,</span> <span class="n">c1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">case_m0</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">c0</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">c1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">res</span> <span class="o">=</span> <span class="n">long_to_bytes</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;you continue walking. turn to page &#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">page</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">35</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">page</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">page</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">case_m1</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">inv</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">-</span> <span class="n">c0</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">c1</span><span class="p">)</span><span class="o">*</span><span class="n">inv</span> <span class="o">%</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">res</span> <span class="o">=</span> <span class="n">long_to_bytes</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;you continue walking. turn to page &#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">page</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">35</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">page</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">page</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">io</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s2">&#34;dicec.tf&#34;</span><span class="p">,</span> <span class="mi">31001</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">64</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span> <span class="o">=</span> <span class="n">take_data1</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">v</span> <span class="o">=</span> <span class="n">sol_v</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">io</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&#34;v: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">io</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c0</span><span class="p">,</span> <span class="n">c1</span> <span class="o">=</span> <span class="n">take_data2</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">page</span> <span class="o">=</span> <span class="n">case_m0</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">page</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">page</span> <span class="o">=</span> <span class="n">case_m1</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">io</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&#34;turn to page: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">io</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">recvall</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">io</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></span></code></pre></div><pre><code>Flag: dice{gl3am1ng_g0ld_doubl00n}
 </code></pre>
 </div>
@@ -661,7 +661,7 @@ $$</li>
     <div class="footer-line"></div>
   </div>
   <div id="footer-info"><div>
-      <span class="icon-copyright"></span>2020-2025<span class="footer-info-sep rotate"></span>
+      <span class="icon-copyright"></span>2024-2025<span class="footer-info-sep rotate"></span>
       r1muru
     </div><div>
         Powered by&nbsp;<a
@@ -722,7 +722,7 @@ $$</li>
 </div></div>
         <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img
-    data-src="/avatar/avatar/avatar.jpg"
+    data-src="/avatar/avatar.png"
     data-sizes="auto"
     alt="r1muru"
     class="lazyload"
@@ -815,7 +815,21 @@ $$</li>
         <div class="sidebar-toc-btn current"></div>
         <div class="sidebar-common-btn"></div>
       </div></nav>
-</div><script
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><script
     src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
     integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
     src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
@@ -833,7 +847,28 @@ $$</li>
     } else {
       aosInit();
     }
-  </script><script src="/js/pjax_main.js" data-pjax></script><script
+  </script><script src="/js/pjax_main.js" data-pjax></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "",
+        apiKey: "",
+        indexName: "",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": 'Search.....',
+          "hits_empty": 'No results found for 「${query}」',
+          "hits_stats": 'Found ${hits} results (in ${time} ms)'
+        }
+      }
+    };
+  </script><script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    deferintegrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/@reimujs/instantsearch.js@4.57.0-beta.1/dist/instantsearch.production.min.js"
+    deferintegrity="sha384-aagKMe8nkqaP2DYQc8kkYOL5l&#43;M5Q2WH/Uhr4teOh0Ybp0RZj0kUSDm45qPikMjK" crossorigin="anonymous"></script><script src="/js/algolia_search.js" ></script><script
     src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
     integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
   if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
@@ -851,9 +886,9 @@ $$</li>
         window.REIMU_POST = {
           author: "r1muru",
           title: "DiceCTF 2025",
-          url: "http:\/\/localhost:45829\/post\/dicectf2025\/",
+          url: "http:\/\/localhost:36241\/post\/dicectf2025\/",
           description: "Giải này mình làm được 2 bài misc và 1 bài crypto ngay phút chót @@ nên viết writeup để tổng kết lại cuối tuần này.",
-          cover: "http:\/\/localhost:45829\/images\/dicectf.png",
+          cover: "http:\/\/localhost:36241\/images\/dicectf.png",
         };
       </script><script src="/js/insert_highlight.js" data-pjax></script><script src="/js/tabs.js" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
           if (_$$(`${gallery} ${children}`).length > 0) {

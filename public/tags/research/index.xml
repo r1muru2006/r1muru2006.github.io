@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Research on r1muru&#39;s blog</title>
-    <link>http://localhost:45829/tags/research/</link>
+    <link>http://localhost:36241/tags/research/</link>
     <description>Recent content from r1muru&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Fri, 21 Nov 2025 22:19:58 +0700</lastBuildDate>
     
     
-    <atom:link href="http://localhost:45829/tags/research/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:36241/tags/research/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>M*CTF Quals 2025</title>
-      <link>http://localhost:45829/post/mctfquals2025/</link>
+      <link>http://localhost:36241/post/mctfquals2025/</link>
       <pubDate>Fri, 21 Nov 2025 22:19:58 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>http://localhost:45829/post/mctfquals2025/</guid>
+      <guid>http://localhost:36241/post/mctfquals2025/</guid>
       <description>
         <![CDATA[<h1>M*CTF Quals 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -38,7 +38,7 @@ WELCOME
 W3lc0m3_ M7_Fr13nd$
 </h2>
         
-        <hr><p>Published on 2025-11-21 at <a href='http://localhost:45829/'>r1muru's blog</a>, last modified on 2025-11-21</p>]]>
+        <hr><p>Published on 2025-11-21 at <a href='http://localhost:36241/'>r1muru's blog</a>, last modified on 2025-11-21</p>]]>
       </description>
       
         <category>Learning</category>
@@ -49,10 +49,10 @@ W3lc0m3_ M7_Fr13nd$
 
     <item>
       <title>Crack Random Modules</title>
-      <link>http://localhost:45829/post/crackrandommodule/</link>
+      <link>http://localhost:36241/post/crackrandommodule/</link>
       <pubDate>Mon, 15 Sep 2025 20:31:17 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>http://localhost:45829/post/crackrandommodule/</guid>
+      <guid>http://localhost:36241/post/crackrandommodule/</guid>
       <description>
         <![CDATA[<h1>Crack Random Modules</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -65,49 +65,49 @@ W3lc0m3_ M7_Fr13nd$
 <a class="header-anchor" href="#mersenne-twister"></a>
 Mersenne Twister
 </h3><p>Ta sẽ phân tích thuật toán tạo số ngẫu nhiên trong khoảng <code>[0,0xffffffff]</code>: <a href="https://github.com/python/cpython/blob/23362f8c301f72bbf261b56e1af93e8c52f5b6cf/Modules/_randommodule.c">Link</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/* Period parameters -- These are all magic.  Don&#39;t change. */</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#define N 624
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define M 397
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define MATRIX_A 0x9908b0dfU    </span><span style="color:#75715e">/* constant vector a */</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define UPPER_MASK 0x80000000U  </span><span style="color:#75715e">/* most significant w-r bits */</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define LOWER_MASK 0x7fffffffU  </span><span style="color:#75715e">/* least significant r bits */</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">uint32_t</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">genrand_uint32</span>(RandomObject <span style="color:#f92672">*</span>self)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">uint32_t</span> y;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint32_t</span> mag01[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0x0U</span>, MATRIX_A};
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* mag01[x] = x * MATRIX_A  for x=0,1 */</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">uint32_t</span> <span style="color:#f92672">*</span>mt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    mt <span style="color:#f92672">=</span> self<span style="color:#f92672">-&gt;</span>state;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (self<span style="color:#f92672">-&gt;</span>index <span style="color:#f92672">&gt;=</span> N) { <span style="color:#75715e">/* generate N words at one time */</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> kk;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (kk<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;kk<span style="color:#f92672">&lt;</span>N<span style="color:#f92672">-</span>M;kk<span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>            y <span style="color:#f92672">=</span> (mt[kk]ANDUPPER_MASK)<span style="color:#f92672">|</span>(mt[kk<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]ANDLOWER_MASK);
-</span></span><span style="display:flex;"><span>            mt[kk] <span style="color:#f92672">=</span> mt[kk<span style="color:#f92672">+</span>M] <span style="color:#f92672">^</span> (y <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">^</span> mag01[y AND <span style="color:#ae81ff">0x1U</span>];
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (;kk<span style="color:#f92672">&lt;</span>N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;kk<span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>            y <span style="color:#f92672">=</span> (mt[kk]ANDUPPER_MASK)<span style="color:#f92672">|</span>(mt[kk<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]ANDLOWER_MASK);
-</span></span><span style="display:flex;"><span>            mt[kk] <span style="color:#f92672">=</span> mt[kk<span style="color:#f92672">+</span>(M<span style="color:#f92672">-</span>N)] <span style="color:#f92672">^</span> (y <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">^</span> mag01[y AND <span style="color:#ae81ff">0x1U</span>];
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        y <span style="color:#f92672">=</span> (mt[N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]ANDUPPER_MASK)<span style="color:#f92672">|</span>(mt[<span style="color:#ae81ff">0</span>]ANDLOWER_MASK);
-</span></span><span style="display:flex;"><span>        mt[N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> mt[M<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">^</span> (y <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">^</span> mag01[y AND <span style="color:#ae81ff">0x1U</span>];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">-&gt;</span>index <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">=</span> mt[self<span style="color:#f92672">-&gt;</span>index<span style="color:#f92672">++</span>];
-</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">^=</span> (y <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">11</span>);
-</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">^=</span> (y <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">7</span>) AND <span style="color:#ae81ff">0x9d2c5680U</span>;
-</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">^=</span> (y <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">15</span>) AND <span style="color:#ae81ff">0xefc60000U</span>;
-</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">^=</span> (y <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">18</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> y;
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/* Period parameters -- These are all magic.  Don&#39;t change. */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define N 624
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define M 397
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define MATRIX_A 0x9908b0dfU    </span><span class="cm">/* constant vector a */</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define UPPER_MASK 0x80000000U  </span><span class="cm">/* most significant w-r bits */</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define LOWER_MASK 0x7fffffffU  </span><span class="cm">/* least significant r bits */</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">uint32_t</span>
+</span></span><span class="line"><span class="cl"><span class="nf">genrand_uint32</span><span class="p">(</span><span class="n">RandomObject</span> <span class="o">*</span><span class="n">self</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">uint32_t</span> <span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">mag01</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mh">0x0U</span><span class="p">,</span> <span class="n">MATRIX_A</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* mag01[x] = x * MATRIX_A  for x=0,1 */</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">uint32_t</span> <span class="o">*</span><span class="n">mt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">mt</span> <span class="o">=</span> <span class="n">self</span><span class="o">-&gt;</span><span class="n">state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="o">-&gt;</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="n">N</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* generate N words at one time */</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">kk</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="n">kk</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">kk</span><span class="o">&lt;</span><span class="n">N</span><span class="o">-</span><span class="n">M</span><span class="p">;</span><span class="n">kk</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">mt</span><span class="p">[</span><span class="n">kk</span><span class="p">]</span><span class="n">ANDUPPER_MASK</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">mt</span><span class="p">[</span><span class="n">kk</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="n">ANDLOWER_MASK</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">mt</span><span class="p">[</span><span class="n">kk</span><span class="p">]</span> <span class="o">=</span> <span class="n">mt</span><span class="p">[</span><span class="n">kk</span><span class="o">+</span><span class="n">M</span><span class="p">]</span> <span class="o">^</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">^</span> <span class="n">mag01</span><span class="p">[</span><span class="n">y</span> <span class="n">AND</span> <span class="mh">0x1U</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(;</span><span class="n">kk</span><span class="o">&lt;</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="n">kk</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">mt</span><span class="p">[</span><span class="n">kk</span><span class="p">]</span><span class="n">ANDUPPER_MASK</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">mt</span><span class="p">[</span><span class="n">kk</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="n">ANDLOWER_MASK</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">mt</span><span class="p">[</span><span class="n">kk</span><span class="p">]</span> <span class="o">=</span> <span class="n">mt</span><span class="p">[</span><span class="n">kk</span><span class="o">+</span><span class="p">(</span><span class="n">M</span><span class="o">-</span><span class="n">N</span><span class="p">)]</span> <span class="o">^</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">^</span> <span class="n">mag01</span><span class="p">[</span><span class="n">y</span> <span class="n">AND</span> <span class="mh">0x1U</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">mt</span><span class="p">[</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="n">ANDUPPER_MASK</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">mt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="n">ANDLOWER_MASK</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">mt</span><span class="p">[</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">mt</span><span class="p">[</span><span class="n">M</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">^</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">^</span> <span class="n">mag01</span><span class="p">[</span><span class="n">y</span> <span class="n">AND</span> <span class="mh">0x1U</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">self</span><span class="o">-&gt;</span><span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="n">mt</span><span class="p">[</span><span class="n">self</span><span class="o">-&gt;</span><span class="n">index</span><span class="o">++</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">^=</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;&gt;</span> <span class="mi">11</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">^=</span> <span class="p">(</span><span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="mi">7</span><span class="p">)</span> <span class="n">AND</span> <span class="mh">0x9d2c5680U</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">^=</span> <span class="p">(</span><span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="mi">15</span><span class="p">)</span> <span class="n">AND</span> <span class="mh">0xefc60000U</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">^=</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;&gt;</span> <span class="mi">18</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Nếu <code>index &gt;= N (= 624)</code>, nghĩa là đã dùng hết số trong mảng <code>mt[]</code> và do đó phải tạo lại 624 số tiếp theo. Mảng <code>mt[]</code> được thay đổi bằng quá trình sau:</p>
         
-        <hr><p>Published on 2025-09-15 at <a href='http://localhost:45829/'>r1muru's blog</a>, last modified on 2025-09-15</p>]]>
+        <hr><p>Published on 2025-09-15 at <a href='http://localhost:36241/'>r1muru's blog</a>, last modified on 2025-09-15</p>]]>
       </description>
       
         <category>Learning</category>

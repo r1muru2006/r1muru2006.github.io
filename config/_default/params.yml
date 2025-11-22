@@ -43,8 +43,7 @@ banner_srcset:
     - src: "images/banner.webp"
       media: "(min-width: 800px)"
 
-avatar: "/avatar/avatar.jpg"
-favicon: "/avatar/favicon.ico"
+avatar: "avatar.png"
 # Control the display of the post cover
 # If not set, the banner image will be displayed by default
 # Its priority is lower than the cover in the Front-matter
@@ -91,7 +90,7 @@ copyright:
 #   All website licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></div>
 
 footer:
-  since: 2020 # 2020-current year
+  since: 2024 
   powered: true
   count: true
   busuanzi: true
@@ -101,7 +100,7 @@ footer:
     mask: true # whether to use the images as a mask
 
 # Sidebar
-sidebar: right
+sidebar: left
 
 social:
   email: cuongchu200@gmail.com
@@ -392,7 +391,7 @@ disqus:
 ########################################
 
 algolia_search:
-  enable: false
+  enable: true
   appID:
   apiKey:
   indexName:
