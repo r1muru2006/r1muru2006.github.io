@@ -37,13 +37,27 @@ WELCOME
 <a class="header-anchor" href="#w3lc0m3_-m7_fr13nd"></a>
 W3lc0m3_ M7_Fr13nd$
 </h2><p><img src="/images/mctf/Welcome.png" alt="images">
-Link này dẫn tới nhóm Telegram chính để trao đổi về cuộc thi và ở đây thì mình tìm thấy flag bài này.</p>
-<p>Tuy nhiên ta phải bỏ dấu * trong <code>M*CTF</code> thì mới ra đúng flag.</p>
+This link leads to the main Telegram group for discussing the contest and here I found this post flag.</p>
+<p>However, we must remove the * in <code>M*CTF</code> to get the correct flag.</p>
 <p><strong>Flag:</strong> <code>MCTF{ok3y_l3ts_g0}</code></p>
-<h2 id="crcl35">
+<h1 id="sber">
+<a class="header-anchor" href="#sber"></a>
+SBER
+</h1><h2 id="crcl35">
 <a class="header-anchor" href="#crcl35"></a>
 CRCL35
 </h2><p><img src="/images/mctf/CRCL35.png" alt="images"></p>
+<p>This is the picture:</p>
+<p><img src="/images/mctf/challCRC.png" alt="images"></p>
+<p>This is the description of the challenge after translation:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="s2">&#34;Everything... is unreal?&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;What is reality? And how do you define it? The entire range of sensations: visual, tactile, olfactory—these are signals from receptors, electrical impulses received by the brain.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;So, it&#39;s all NULL?&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;No, it&#39;s all 0. Don&#39;t confuse it and don&#39;t forget the difference, otherwise, during the transformation, you&#39;ll end up in the wrong place.&#34;</span>
+</span></span></code></pre></div><p>In the description, I noticed the word &ldquo;difference&rdquo; so I quickly tested this method by python and it worked.</p>
         
         <hr><p>Published on 2025-11-21 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-11-21</p>]]>
       </description>

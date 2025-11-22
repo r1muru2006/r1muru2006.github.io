@@ -10,7 +10,7 @@
 /><title>
   M*CTF Quals 2025 | r1muru
 </title>
-<meta name="description" content="Top 1 đầu tiên với Wanna.Win"/><script>
+<meta name="description" content="First Top 1 with Wanna.Win"/><script>
   window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"http://localhost:1313/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
   
 </script>
@@ -37,7 +37,7 @@
   <meta property="og:title" content="M*CTF Quals 2025 | r1muru" />
   <meta
     property="og:description"
-    content="Top 1 đầu tiên với Wanna.Win"
+    content="First Top 1 with Wanna.Win"
   />
   <meta property="og:url" content="http://localhost:1313/post/mctfquals2025/" />
   <meta
@@ -144,7 +144,16 @@ This article does not have a corresponding language version
   <nav id="TableOfContents">
   <ul>
     <li><a href="#w3lc0m3_-m7_fr13nd">W3lc0m3_ M7_Fr13nd$</a></li>
+  </ul>
+
+  <ul>
     <li><a href="#crcl35">CRCL35</a></li>
+    <li><a href="#backpuckup">BackPuckUp</a></li>
+    <li><a href="#geo_what">Geo_What?</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#display-ception">Display ception</a></li>
   </ul>
 </nav>
 </div></div>
@@ -278,13 +287,94 @@ WELCOME
 <a class="header-anchor" href="#w3lc0m3_-m7_fr13nd"></a>
 W3lc0m3_ M7_Fr13nd$
 </h2><p><img src="/images/mctf/Welcome.png" alt="images">
-Link này dẫn tới nhóm Telegram chính để trao đổi về cuộc thi và ở đây thì mình tìm thấy flag bài này.</p>
-<p>Tuy nhiên ta phải bỏ dấu * trong <code>M*CTF</code> thì mới ra đúng flag.</p>
+This link leads to the main Telegram group for discussing the contest and here I found this post flag.</p>
+<p>However, we must remove the * in <code>M*CTF</code> to get the correct flag.</p>
 <p><strong>Flag:</strong> <code>MCTF{ok3y_l3ts_g0}</code></p>
-<h2 id="crcl35">
+<h1 id="sber">
+<a class="header-anchor" href="#sber"></a>
+SBER
+</h1><h2 id="crcl35">
 <a class="header-anchor" href="#crcl35"></a>
 CRCL35
 </h2><p><img src="/images/mctf/CRCL35.png" alt="images"></p>
+<p>This is the picture:</p>
+<p><img src="/images/mctf/challCRC.png" alt="images"></p>
+<p>This is the description of the challenge after translation:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="s2">&#34;Everything... is unreal?&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;What is reality? And how do you define it? The entire range of sensations: visual, tactile, olfactory—these are signals from receptors, electrical impulses received by the brain.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;So, it&#39;s all NULL?&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;No, it&#39;s all 0. Don&#39;t confuse it and don&#39;t forget the difference, otherwise, during the transformation, you&#39;ll end up in the wrong place.&#34;</span>
+</span></span></code></pre></div><p>In the description, I noticed the word &ldquo;difference&rdquo; so I quickly tested this method by python and it worked.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">180</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">186</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">192</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">185</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">s1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">360</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">151</span><span class="p">,</span> <span class="mi">266</span><span class="p">,</span> <span class="mi">171</span><span class="p">,</span> <span class="mi">286</span><span class="p">,</span> <span class="mi">175</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">s2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">520</span><span class="p">,</span> <span class="mi">425</span><span class="p">,</span> <span class="mi">326</span><span class="p">,</span> <span class="mi">215</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">337</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">arr</span> <span class="ow">in</span> <span class="p">(</span><span class="n">s0</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">])),</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p>This give us <code>flag{this_so_cool}</code> so I replace <code>flag</code> with <code>MCTF</code> to get it.</p>
+<p><strong>Flag:</strong><code>MCTF{this_so_cool}</code></p>
+<h2 id="backpuckup">
+<a class="header-anchor" href="#backpuckup"></a>
+BackPuckUp
+</h2><p><img src="/images/mctf/BackPuckUp.png" alt="images"></p>
+<p>In the source, I found the main <code>app.py</code> which contains many of the site&rsquo;s secrets and inside there is also a flag: <code>flag{adm1n_artifact_rec0very_2025}</code>.
+Here is the place I took this flag:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># admin_task1/flask-app/app.py</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s2">&#34;/profile&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">profile</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="s2">&#34;user&#34;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">session</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&#34;login&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">session</span><span class="p">[</span><span class="s2">&#34;user&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="n">ADMIN_USER</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&#34;profile.html&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                             <span class="n">username</span><span class="o">=</span><span class="n">session</span><span class="p">[</span><span class="s2">&#34;user&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                             <span class="n">flag</span><span class="o">=</span><span class="s2">&#34;flag</span><span class="si">{adm1n_artifact_rec0very_2025}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&#34;profile.html&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                         <span class="n">username</span><span class="o">=</span><span class="n">session</span><span class="p">[</span><span class="s2">&#34;user&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                         <span class="n">flag</span><span class="o">=</span><span class="s2">&#34;Обычный пользователь - флага нет&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>I wondered if it was a fake flag, but I sent it with the alternate prefix and it worked.</p>
+<p><strong>Flag:</strong> <code>MCTF{adm1n_artifact_rec0very_2025}</code></p>
+<h2 id="geo_what">
+<a class="header-anchor" href="#geo_what"></a>
+Geo_What?
+</h2><p><img src="/images/mctf/Geo_What.png" alt="images"></p>
+<p>This is the description of the challenge after translation:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">In the world of cyberpunk, where technology and information rule, the story of the search for a great train that could change the course of history has become the stuff of legend.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">This train, hidden in the depths of the digital world, was the key to solving many mysteries and riddles. Many adventurers tried to find it, but all their attempts ended in failure. All they had was the mysterious string &#34;ucfwsz,&#34; which they found in the most unexpected places.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">No one knew what it meant, but everyone believed it was part of a cipher leading to the train. One day, a young hacker named Alex decided to take on this task. He spent countless hours exploring cyberspace, breaking into secure servers, and deciphering complex codes.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">And finally, he found it—the great train.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Alex realized that the string &#34;ucfwsz&#34; was the key to finding the train, but it was only part of the coordinates. The key was a string that allowed him to locate a sector on the map. But before he could use this knowledge, he faced his final challenge.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">The train&#39;s defense system was intelligent and ruthless. It knew Alex was approaching, and it tried to stop him.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">But Alex was ready. He used all his skills and knowledge to bypass the defenses and reach the heart of the system.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">In the end, Alex disappeared. His story became the beginning of a journey for all enthusiasts interested in both Alex&#39;s story and the search for the mysterious train.
+</span></span></code></pre></div><p>The keyword I found for this challenge is: <code>a great train that could change the course of history</code>, <code>ucfwsz</code> and <code>only part of the coordinates</code>.
+In short, we need to find a great train that has some history, then it can become a monument. Next, the keyword <code>ucfwsz</code> made me google for a while and found out it is a geohash. Here is where <code>ucfwsz</code> is:
+<img src="/images/mctf/geohash.png" alt="images"></p>
+<p>Because they said it was <code>only part of the coordinates</code> so I scanned all within the square area. Luckily, I found something that looked like a tombstone and fit the square perfectly. Can you found out just by looking through this picture 😂😂?
+<img src="/images/mctf/geohash2.png" alt="images"></p>
+<p>Woww you have such sharp eyes, it&rsquo;s right here:
+<img src="/images/mctf/geohash3.png" alt="images"></p>
+<p><strong>Flag:</strong><code>mctf{ucfwszjc}</code></p>
+<p>Outside knowledge: The name of monument - ЭР21-7109 is a model of a train
+<img src="/images/mctf/geohash4.png" alt="images"></p>
+<h1 id="hardware">
+<a class="header-anchor" href="#hardware"></a>
+Hardware
+</h1><h2 id="display-ception">
+<a class="header-anchor" href="#display-ception"></a>
+Display ception
+</h2><p><img src="/images/mctf/hardware.png" alt="images"></p>
 </div>
     <footer class="article-footer"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
       <a
@@ -347,10 +437,10 @@ CRCL35
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;23.8k</span
+          >&nbsp;24.4k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;01:57</span>
+        <span class="icon-coffee">&nbsp;02:00</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -377,7 +467,16 @@ CRCL35
   <nav id="TableOfContents">
   <ul>
     <li><a href="#w3lc0m3_-m7_fr13nd">W3lc0m3_ M7_Fr13nd$</a></li>
+  </ul>
+
+  <ul>
     <li><a href="#crcl35">CRCL35</a></li>
+    <li><a href="#backpuckup">BackPuckUp</a></li>
+    <li><a href="#geo_what">Geo_What?</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#display-ception">Display ception</a></li>
   </ul>
 </nav>
 </div></div>
@@ -548,7 +647,7 @@ CRCL35
           author: "r1muru",
           title: "M*CTF Quals 2025",
           url: "http:\/\/localhost:1313\/post\/mctfquals2025\/",
-          description: "Top 1 đầu tiên với Wanna.Win",
+          description: "First Top 1 with Wanna.Win",
           cover: "http:\/\/localhost:1313\/images\/mctf\/mctf.png",
         };
       </script><script src="/js/insert_highlight.js" data-pjax></script><script src="/js/tabs.js" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
