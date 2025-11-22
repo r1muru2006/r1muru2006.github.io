@@ -1,0 +1,291 @@
+<!doctype html><html lang=en-us data-theme-mode=auto><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>DiceCTF 2025 | r1muru</title><meta name=description content="Giải này mình làm được 2 bài misc và 1 bài crypto ngay phút chót @@ nên viết writeup để tổng kết lại cuối tuần này."><script>window.siteConfig=JSON.parse('{"anchor_icon":null,"base":"https://r1muru2006.github.io/","clipboard":{"copyright":{"count":50,"enable":false,"license_type":"by-nc-sa"},"fail":{"en":"Copy failed (ﾟ⊿ﾟ)ﾂ","ja":"コピー失敗 (ﾟ⊿ﾟ)ﾂ","pt-br":"Falha ao copiar (ﾟ⊿ﾟ)ﾂ","zh-cn":"复制失败 (ﾟ⊿ﾟ)ﾂ","zh-tw":"複製失敗 (ﾟ⊿ﾟ)ﾂ"},"success":{"en":"Copy successfully (*^▽^*)","ja":"コピー成功 (*^▽^*)","pt-br":"Copiado com sucesso (*^▽^*)","zh-cn":"复制成功 (*^▽^*)","zh-tw":"複製成功 (*^▽^*)"}},"code_block":{"expand":true},"icon_font":"4552607_4k4bc36ef96","outdate":{"daysago":180,"enable":false,"message":{"en":"This article was last updated on {time}. Please note that the content may no longer be applicable.","ja":"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。","pt-br":"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.","zh-cn":"本文最后更新于 {time}，请注意文中内容可能已不适用。","zh-tw":"本文最後更新於 {time}，請注意文中內容可能已不適用。"}}}')</script><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload as=style href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap" media=print onload='this.media="all"'><link rel=preload href=//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=stylesheet href=/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css><meta property="og:type" content="website"><meta property="og:title" content="DiceCTF 2025 | r1muru"><meta property="og:description" content="Giải này mình làm được 2 bài misc và 1 bài crypto ngay phút chót @@ nên viết writeup để tổng kết lại cuối tuần này."><meta property="og:url" content="https://r1muru2006.github.io/post/dicectf2025/"><meta property="og:site_name" content="Welcome to my journey"><meta property="og:image" content="/images/dicectf.png"><meta property="article:author" content="r1muru"><meta property="article:published_time" content="2025-03-26T09:31:43+07:00"><meta property="article:modified_time" content="2025-03-26T09:31:43+07:00"><meta property="article:tag" content="CTFCryptographyMiscellaneous"><meta name=twitter:card content="summary"><meta name=twitter:image content="/images/dicectf.png"><link rel="shortcut icon" href=/favicon.ico><link rel=stylesheet href=/css/main.min.3f4fd122cf0f99ff7801eb4c3d87d2c30d757b99c89ded49cd78a6de22bd22ba.css><link rel=preload as=style href=https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css integrity=sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE crossorigin=anonymous onload='this.onload=null,this.rel="stylesheet"'><link rel=preload as=style href=https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css integrity=sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz+YI crossorigin=anonymous onload='this.onload=null,this.rel="stylesheet"'><script src=https://npm.webcache.cn/pace-js@1.2.4/pace.min.js integrity=sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8 crossorigin=anonymous></script><link rel=stylesheet href=https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css integrity=sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa crossorigin=anonymous></head><body><div id=loader><div class="loading-left-bg loading-bg"></div><div class="loading-right-bg loading-bg"></div><div class=spinner-box><div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" shape-rendering="geometricPrecision"><path d="M303.5 432a80 80 0 01-12 160 80 80 0 0112-160z" fill="var(--red-1, #ff5252)"/><path d="M512 65a447 447 0 010 894V929a417 417 0 000-834 417 417 0 000 834v30a447 447 0 010-894zm0 30A417 417 0 01929 512 208.5 208.5.0 01720.5 720.5V592a80 80 0 000-160 80 80 0 000 160V720.5A208.5 208.5.0 01512 512 208.5 208.5.0 00303.5 303.5 208.5 208.5.0 0095 512 417 417 0 01512 95z" fill="var(--red-1, #ff5252)"/></svg></div><div class=loading-word>Loading...</div></div></div></div><script>var time=null,loaderEl=document.getElementById("loader"),startLoading=()=>{time=Date.now(),loaderEl.classList.remove("loading")},hideLoader=()=>{document.body.style.overflow="auto",loader.classList.add("loading")},endLoading=()=>{time?Date.now()-time>500?(time=null,hideLoader()):(setTimeout(endLoading,500-(Date.now()-time)),time=null):hideLoader()};window.addEventListener("DOMContentLoaded",endLoading),loaderEl.addEventListener("click",endLoading)</script><div id=copy-tooltip></div><div id=lang-tooltip>This article does not have a corresponding language version</div><div id=heatmap-tooltip></div><div id=container><div id=wrap><div id=header-nav><nav id=main-nav aria-label="Primary navigation"><a class=main-nav-link-wrap href=/><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class=main-nav-link>Home</span>
+</a><a class=main-nav-link-wrap href=/archives><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class=main-nav-link>Archives</span>
+</a><a class=main-nav-link-wrap href=/about><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class=main-nav-link>About</span>
+</a><a id=main-nav-toggle class=nav-icon aria-label="Toggle navigation" role=button></a></nav><nav id=sub-nav aria-label="Secondary navigation"></nav></div><header id=header aria-label="Site header"><picture></picture>
+<img fetchpriority=high src=/images/dicectf.png alt="DiceCTF 2025"><div id=header-outer><div id=header-title><span id=logo><h1 data-aos=slide-up>DiceCTF 2025</h1></span><h2 id=subtitle-wrap data-aos=slide-down></h2></div></div></header><div id=content aria-label="Page content" class=sidebar-right><aside id=sidebar aria-label=Sidebar><div class="sidebar-wrapper-container sticky"><div class=sidebar-wrapper><div class=sidebar-wrap data-aos=fade-up><div class=sidebar-toc-sidebar><h3 class=toc-title>Contents</h3><div class="sidebar-toc-wrapper toc-div-class"><nav id=TableOfContents><ul><li><a href=#misc>Misc</a><ul><li><a href=#bcu-binding>bcu-binding</a></li><li><a href=#dicecap>dicecap</a></li></ul></li><li><a href=#crypto>Crypto</a><ul><li><a href=#vorpal-sword>vorpal-sword</a></li></ul></li></ul></nav></div></div><div class="sidebar-common-sidebar hidden"><div class=sidebar-author><img data-src=/avatar/avatar.webp data-sizes=auto alt=r1muru class=lazyload><div class=sidebar-author-name>r1muru</div><div class=sidebar-description>Life is not fair, get used to it</div></div><div class=sidebar-state><div class=sidebar-state-article><div>Posts</div><div class=sidebar-state-number>9</div></div><a class=sidebar-state-category href=/categories/ aria-label=sidebar-state-category-link><div>Categories</div><div class=sidebar-state-number>3</div></a><a class=sidebar-state-tag href=/tags/ aria-label=sidebar-state-tag-link><div>Tags</div><div class=sidebar-state-number>7</div></a></div><div class=sidebar-social></div><div class=sidebar-menu><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/ aria-label=Home></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>Home</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/archives aria-label=Archives></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>Archives</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/about aria-label=About></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>About</div></div></div></div><div class=sidebar-btn-wrapper style=position:static><div class="sidebar-toc-btn current"></div><div class=sidebar-common-btn></div></div></div></div><div class=sidebar-widget></div></div></aside><section id=main aria-label="Main content"><article class="h-entry article" itemscope itemtype=https://schema.org/BlogPosting><div class=article-inner data-aos=fade-up><div class=article-meta><div class=article-date><span class="article-date-link icon-calendar" data-aos=zoom-in><time datetime="2025-03-26 09:31:43 +0700 +0700" itemprop=datePublished>2025-03-26</time>
+<time style=display:none id=post-update-time>2025-03-26</time></span></div><div class=article-category><a class=article-category-link href=/categories/ctf-write-up data-aos=zoom-in>CTF WRITE-UP</a></div></div><div class=hr-line></div><div class="e-content article-entry" itemprop=articleBody><h2 id=misc><a class=header-anchor href=#misc></a>Misc</h2><h3 id=bcu-binding><a class=header-anchor href=#bcu-binding></a>bcu-binding</h3><p><img src=https://hackmd.io/_uploads/BJ2tcJv61e.png alt=image></p><p>Tải file về thì ta search thử &lsquo;dice{&rsquo; để tìm flag và nó ra thật @@
+Có vẻ như nó được giấu trong phần nền trắng để không thể nhìn thấy&mldr;</p><p><img src=https://hackmd.io/_uploads/HyXwoyPTJx.png alt="Screenshot 2025-03-29 213449"></p><pre><code>Flag: dice{r3ad1ng_th4_d0cs_71ccd}
+</code></pre><h3 id=dicecap><a class=header-anchor href=#dicecap></a>dicecap</h3><p><img src=https://hackmd.io/_uploads/SJIsi1wake.png alt=image></p><p>Đề cho ta 1 file pcap nên ta mở nó lên bằng wireshark và xem thử:
+<img src=https://hackmd.io/_uploads/HJg7hyDTkx.png alt="Screenshot 2025-03-29 215831"></p><p>Thử tìm theo từ khóa thì ta ra được 2 kênh khả nghi chứa flag theo protocol FTP-DATA.
+Export file ra thì ta được 1 file main theo định dạng ELF cùng 1 tệp zip cần mật khẩu mà trong đó chứa flag.txt có thể lấy flag.</p><p>File main được định dạng ELF nên ta mở IDA để đọc code của nó
+<img src=https://hackmd.io/_uploads/rkmmR1Dpkg.png alt="Screenshot 2025-03-29 223714"></p><p>Ở đây file main khởi tạo mật khẩu và nó có thể được dùng để giải nén file zip. Đọc rõ hơn:</p><ol><li>Lấy thời gian hiện tại và làm tròn theo phút là được s</li><li>Lấy 5 ký tự đầu tiên của locale (dest)</li><li>Ghép username (v3)</li><li>Kết hợp tất cả thành mật khẩu (v6)</li></ol><p>Đầu tiên, khi ta xem lại thì gói main nằm ở No.168 và khi tra lại thì ta lấy được thời gian v1 rồi sau đó tính theo công thức để lấy s.
+<img src=https://hackmd.io/_uploads/HkktlxD61x.png alt=image></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>v1 <span style=color:#f92672>=</span> <span style=color:#ae81ff>1743126530</span>
+</span></span><span style=display:flex><span>s <span style=color:#f92672>=</span> v1 <span style=color:#f92672>-</span> v1 <span style=color:#f92672>%</span> <span style=color:#ae81ff>60</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 1743126480</span>
+</span></span></code></pre></div><p>Thứ hai về locate thì ta lấy mặc định là <code>en_US.UTF-8</code> nhưng chỉ lấy 5 kí tự đầu cho dest là: <code>en_US</code></p><p>Cuối cùng, username ta sẽ có được bằng cách tìm kiếm những request được gửi lên thông qua gói tin mà ta có thể xem được và đây là kết quả:
+<img src=https://hackmd.io/_uploads/r1dCpyvTke.png alt=image></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># solution.py</span>
+</span></span><span style=display:flex><span>v1 <span style=color:#f92672>=</span> <span style=color:#ae81ff>1743126530</span>
+</span></span><span style=display:flex><span>s <span style=color:#f92672>=</span> v1 <span style=color:#f92672>-</span> v1 <span style=color:#f92672>%</span> <span style=color:#ae81ff>60</span>
+</span></span><span style=display:flex><span>locale_str <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;en_US&#34;</span>
+</span></span><span style=display:flex><span>username <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;hacker&#34;</span>
+</span></span><span style=display:flex><span>password <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>s<span style=color:#e6db74>}{</span>locale_str<span style=color:#e6db74>}{</span>username<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>print(password) <span style=color:#75715e>#1743126480en_UShacker</span>
+</span></span></code></pre></div><p>Giải nén file zip và lấy flag thôi:</p><p><img src=https://hackmd.io/_uploads/Bkm0GxDTyl.png alt=image></p><pre><code>Flag: dice{5k1d_y0ur_w@y_t0_v1ct0ry_t0d4y!!!}
+</code></pre><h2 id=crypto><a class=header-anchor href=#crypto></a>Crypto</h2><h3 id=vorpal-sword><a class=header-anchor href=#vorpal-sword></a>vorpal-sword</h3><p><img src=https://hackmd.io/_uploads/SkrisLv6yx.png alt=image></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># server.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#!/usr/local/bin/python</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> secrets
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.PublicKey <span style=color:#f92672>import</span> RSA
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>DEATH_CAUSES <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;a fever&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;dysentery&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;measles&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;cholera&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;typhoid&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;exhaustion&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;a snakebite&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;a broken leg&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;a broken arm&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;drowning&#34;</span>,
+</span></span><span style=display:flex><span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>run_ot</span>(key, msg0, msg1):
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    https://en.wikipedia.org/wiki/Oblivious_transfer#1–2_oblivious_transfer
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    x0 <span style=color:#f92672>=</span> secrets<span style=color:#f92672>.</span>randbelow(key<span style=color:#f92672>.</span>n)
+</span></span><span style=display:flex><span>    x1 <span style=color:#f92672>=</span> secrets<span style=color:#f92672>.</span>randbelow(key<span style=color:#f92672>.</span>n)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;n: </span><span style=color:#e6db74>{</span>key<span style=color:#f92672>.</span>n<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;e: </span><span style=color:#e6db74>{</span>key<span style=color:#f92672>.</span>e<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;x0: </span><span style=color:#e6db74>{</span>x0<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;x1: </span><span style=color:#e6db74>{</span>x1<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>    v <span style=color:#f92672>=</span> int(input(<span style=color:#e6db74>&#34;v: &#34;</span>))
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>assert</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>&lt;=</span> v <span style=color:#f92672>&lt;</span> key<span style=color:#f92672>.</span>n, <span style=color:#e6db74>&#34;invalid value&#34;</span>
+</span></span><span style=display:flex><span>    k0 <span style=color:#f92672>=</span> pow(v <span style=color:#f92672>-</span> x0, key<span style=color:#f92672>.</span>d, key<span style=color:#f92672>.</span>n)
+</span></span><span style=display:flex><span>    k1 <span style=color:#f92672>=</span> pow(v <span style=color:#f92672>-</span> x1, key<span style=color:#f92672>.</span>d, key<span style=color:#f92672>.</span>n)
+</span></span><span style=display:flex><span>    m0 <span style=color:#f92672>=</span> int<span style=color:#f92672>.</span>from_bytes(msg0<span style=color:#f92672>.</span>encode(), <span style=color:#e6db74>&#34;big&#34;</span>)
+</span></span><span style=display:flex><span>    m1 <span style=color:#f92672>=</span> int<span style=color:#f92672>.</span>from_bytes(msg1<span style=color:#f92672>.</span>encode(), <span style=color:#e6db74>&#34;big&#34;</span>)
+</span></span><span style=display:flex><span>    c0 <span style=color:#f92672>=</span> (m0 <span style=color:#f92672>+</span> k0) <span style=color:#f92672>%</span> key<span style=color:#f92672>.</span>n
+</span></span><span style=display:flex><span>    c1 <span style=color:#f92672>=</span> (m1 <span style=color:#f92672>+</span> k1) <span style=color:#f92672>%</span> key<span style=color:#f92672>.</span>n
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;c0: </span><span style=color:#e6db74>{</span>c0<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;c1: </span><span style=color:#e6db74>{</span>c1<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;__main__&#34;</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#34;flag.txt&#34;</span>) <span style=color:#66d9ef>as</span> f:
+</span></span><span style=display:flex><span>        flag <span style=color:#f92672>=</span> f<span style=color:#f92672>.</span>read()<span style=color:#f92672>.</span>strip()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;=== CHOOSE YOUR OWN ADVENTURE: Vorpal Sword Edition ===&#34;</span>)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;you enter a cave.&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>64</span>):
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>&#34;the tunnel forks ahead. do you take the left or right path?&#34;</span>)
+</span></span><span style=display:flex><span>        key <span style=color:#f92672>=</span> RSA<span style=color:#f92672>.</span>generate(<span style=color:#ae81ff>1024</span>)
+</span></span><span style=display:flex><span>        msgs <span style=color:#f92672>=</span> [<span style=color:#66d9ef>None</span>, <span style=color:#66d9ef>None</span>]
+</span></span><span style=display:flex><span>        page <span style=color:#f92672>=</span> secrets<span style=color:#f92672>.</span>randbits(<span style=color:#ae81ff>32</span>)
+</span></span><span style=display:flex><span>        live <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;you continue walking. turn to page </span><span style=color:#e6db74>{</span>page<span style=color:#e6db74>}</span><span style=color:#e6db74>.&#34;</span>
+</span></span><span style=display:flex><span>        die <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;you die of </span><span style=color:#e6db74>{</span>secrets<span style=color:#f92672>.</span>choice(DEATH_CAUSES)<span style=color:#e6db74>}</span><span style=color:#e6db74>.&#34;</span>
+</span></span><span style=display:flex><span>        msgs <span style=color:#f92672>=</span> (live, die) <span style=color:#66d9ef>if</span> secrets<span style=color:#f92672>.</span>randbits(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>else</span> (die, live)
+</span></span><span style=display:flex><span>        run_ot(key, <span style=color:#f92672>*</span>msgs)
+</span></span><span style=display:flex><span>        page_guess <span style=color:#f92672>=</span> int(input(<span style=color:#e6db74>&#34;turn to page: &#34;</span>))
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> page_guess <span style=color:#f92672>!=</span> page:
+</span></span><span style=display:flex><span>            exit()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;you find a chest containing </span><span style=color:#e6db74>{</span>flag<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span></code></pre></div><p>Theo thử thách, bài này nói về <a href=https://en.wikipedia.org/wiki/Oblivious_transfer#1%E2%80%932_oblivious_transfer>1-2 oblivious transfer</a> nên mình cũng lên mạng tìm hiểu và đây là các bước mà giao thức này thực hiện:</p><ol><li>Alice có tin nhắn $m_0, m_1$ và 1 cặp khóa RSA $(e, d, N)$.
+Bob biết được khóa công khai $(e, N)$ của Alice và muốn tin nhắn $m_c$ , với $c \in {0, 1}$.</li><li>Alice tạo ngẫu nhiên 2 số $x_0, x_1$ và gửi cho Bob.</li><li>Bob tạo ngẫu nhiên 1 số $k$ và gửi $v = b+k^e \mod N$ cho Alice.</li><li>Alice tính $k_0 = (v-x_0)^d\mod N$ và $k_1 = (v-x_1)^d\mod N$ rồi gửi $m_0&rsquo;=m_0+k_0\mod N$ và $m_1&rsquo;=m_1+k_1\mod N$ cho Bob.</li><li>Bob tính và lấy được $m_c=m_c&rsquo;-k\mod N$ và không lấy được thông tin gì từ $m_{1-c}$</li></ol><p>Đọc file server thì ta thấy là hàm <code>run_ot</code> đúng là đang thực hiện giống như 4 bước đầu trong giao thức trên. Và khi ta truy ngược lại thì ta cần biết được <code>page</code> mà được giấu trong tin nhắn <code>live</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>live <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;you continue walking. turn to page </span><span style=color:#e6db74>{</span>page<span style=color:#e6db74>}</span><span style=color:#e6db74>.&#34;</span>
+</span></span><span style=display:flex><span>die <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;you die of </span><span style=color:#e6db74>{</span>secrets<span style=color:#f92672>.</span>choice(DEATH_CAUSES)<span style=color:#e6db74>}</span><span style=color:#e6db74>.&#34;</span>
+</span></span><span style=display:flex><span>msgs <span style=color:#f92672>=</span> (live, die) <span style=color:#66d9ef>if</span> secrets<span style=color:#f92672>.</span>randbits(<span style=color:#ae81ff>1</span>) <span style=color:#66d9ef>else</span> (die, live)
+</span></span><span style=display:flex><span>run_ot(key, <span style=color:#f92672>*</span>msgs)
+</span></span><span style=display:flex><span>page_guess <span style=color:#f92672>=</span> int(input(<span style=color:#e6db74>&#34;turn to page: &#34;</span>))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> page_guess <span style=color:#f92672>!=</span> page:
+</span></span><span style=display:flex><span>    exit()
+</span></span></code></pre></div><p>Tuy nhiên vì <code>msgs</code> được random giữa <code>(live,die)</code> và <code>(die, live)</code>, cùng với việc ta phải nhập đúng <code>page</code> trong 64 lần liên tiếp thì rõ ràng việc làm như Bob là lấy được 1 trong 2 tin nhắn không khả thi(vì xác suất trúng được hết chỉ là $\dfrac{1}{2^{64}}$)
+Hơn nữa, ta đã biết được list của các <code>DEATH_CAUSES</code> nên ta cũng có thể tính được hết tất cả các <code>die</code> của chall, tức là ta có thể phân biệt được đâu là <code>live</code> và đâu là <code>die</code>.</p><p>Nhận thấy, ta đã biết $c_0, c_1$, 1 trong hai giá trị $m_0, m_1$ thì việc tìm ra được giá trị còn lại phải dựa vào 1 biểu thức tuyến tính giữa 4 biến này xảy ra.
+Nói rõ hơn:
+$$
+c_0\equiv m_0+k_0\mod n
+$$</p><p>$$
+c_1\equiv m_1+k_1\mod n
+$$</p><p>$$
+\Leftrightarrow a c_0 -bc_1\equiv am_0-bm_1 +(ak_0 -bk_1)\mod n \ \ \ \ \ (*)
+$$</p><p>Có nghĩa là ta phải tìm v làm sao mà $ak_0-bk_1 \equiv 0 \mod n$, với a,b bất kỳ</p><p>Điều này tương đương với: $(v-x_0)^d\equiv k(v-x_1)^d \mod n$
+$$
+\Leftrightarrow (v-x_0)^{de}\equiv k^e(v-x_1)^{de}\mod n
+$$</p><p>Chọn v có điều kiện $\gcd(v-x_0, n) = 1$ và sử dụng định lý Euler cùng $de\equiv 1\mod \phi(n)$
+$$
+\Leftrightarrow v-x_0\equiv k^e(v-x_1)\mod n
+$$</p><p>$$
+\Leftrightarrow (k^e - 1)(v-x_1)\equiv x_1-x_0\mod n
+$$</p><p>Thử $k=1,-1$ đều không thỏa nên ta thử $k = 2$</p><p>Lúc này, $k^e-1=2^{65537}-1$ là 1 số Mersenne nên các ước nguyên tố của nó có <a href=https://vi.wikipedia.org/wiki/S%E1%BB%91_nguy%C3%AAn_t%E1%BB%91_Mersenne#C%C3%A1c_%C4%91%E1%BB%8Bnh_l%C3%BD_v%E1%BB%81_s%E1%BB%91_nguy%C3%AAn_t%E1%BB%91_Mersenne>tính chất</a>: Nếu q là một số nguyên tố của 1 số Mersenne: $q\equiv 1\mod 65537, q\equiv \pm1\mod 8$</p><p>Mặt khác, $n$ là một số nguyên tố 1024 bit nằm trong khoảng $2^{1023}$ đến $2^{1024}-1$ và là rất lớn so với ước nguyên tố điển hình của $2^{65537}-1$.</p><p>Hơn nữa, theo <a href=https://vi.wikipedia.org/wiki/%C4%90%E1%BB%8Bnh_l%C3%BD_s%E1%BB%91_nguy%C3%AAn_t%E1%BB%91>Định lý số nguyên tố</a> thì có thể có khoảng $\dfrac{2^{1023}}{ln(2^{1023})} \approx \dfrac{2^{1023}}{709}$ số nguyên tố 1024 bit. Do đó với 1 số nguyên tố 1024 bit ngẫu nhiên, gần như chắc chắn là số đó không có khả năng là ước của $2^{65537}-1$</p><p>Vì vậy, $\gcd(k^e-1,n)=1$ tương đương với tồn tại nghịch đảo modulo n của $2^{65537}-1$
+$$
+\Leftrightarrow v-x_1\equiv (k^e - 1)^{-1}(x_1-x_0)\mod n
+$$</p><p>$$
+\Leftrightarrow v\equiv (k^e - 1)^{-1}(x_1-x_0) + x_1\mod n
+$$</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>e <span style=color:#f92672>=</span> <span style=color:#ae81ff>65537</span>
+</span></span><span style=display:flex><span>k <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span><span style=color:#f92672>**</span>e <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sol_v</span>(n, k, x0, x1):
+</span></span><span style=display:flex><span>    d <span style=color:#f92672>=</span> inverse(k, n)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> (x1 <span style=color:#f92672>+</span> d<span style=color:#f92672>*</span>(x1<span style=color:#f92672>-</span>x0)) <span style=color:#f92672>%</span> n
+</span></span></code></pre></div><p>Bây giờ trở lại với $(*)$ thì ta được biểu thức tuyến tính sau:
+$$
+\Leftrightarrow c_0 -2c_1\equiv m_0-2m_1\mod n \ \ \ \ \ (**)
+$$</p><p>Lúc này, ta chia 2 trường hợp rõ ràng:</p><ol><li>nếu <code>page</code> nằm trong <code>live</code> của $m_0$:
+$$
+(**)\Leftrightarrow m_0\equiv c_0 -2c_1+2m_1\mod n
+$$</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>case_m0</span>(n, c0, c1, lst):
+</span></span><span style=display:flex><span>    page <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> lst:
+</span></span><span style=display:flex><span>        k <span style=color:#f92672>=</span> (c0 <span style=color:#f92672>-</span> <span style=color:#ae81ff>2</span><span style=color:#f92672>*</span>c1 <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span><span style=color:#f92672>*</span>i) <span style=color:#f92672>%</span> n
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span>:
+</span></span><span style=display:flex><span>            res <span style=color:#f92672>=</span> long_to_bytes(k)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>except</span> <span style=color:#a6e22e>ValueError</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>continue</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> res<span style=color:#f92672>.</span>startswith(<span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;you continue walking. turn to page &#34;</span>):
+</span></span><span style=display:flex><span>            page <span style=color:#f92672>=</span> res[<span style=color:#ae81ff>35</span>:<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> page<span style=color:#f92672>.</span>isdigit():
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> page
+</span></span></code></pre></div><ol start=2><li>nếu <code>page</code> nằm trong <code>live</code> của $m_1$:
+$$
+(**)\Leftrightarrow m_1\equiv (m_0-c_0+2c_1)\times 2^{-1}\mod n
+$$</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>case_m1</span>(n, c0, c1, lst):
+</span></span><span style=display:flex><span>    page <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    inv <span style=color:#f92672>=</span> inverse(<span style=color:#ae81ff>2</span>, n)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> lst:
+</span></span><span style=display:flex><span>        k <span style=color:#f92672>=</span> (j <span style=color:#f92672>-</span> c0 <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span><span style=color:#f92672>*</span>c1)<span style=color:#f92672>*</span>inv <span style=color:#f92672>%</span> n
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span>:
+</span></span><span style=display:flex><span>            res <span style=color:#f92672>=</span> long_to_bytes(k)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>except</span> <span style=color:#a6e22e>ValueError</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>continue</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> res<span style=color:#f92672>.</span>startswith(<span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;you continue walking. turn to page &#34;</span>):
+</span></span><span style=display:flex><span>            page <span style=color:#f92672>=</span> res[<span style=color:#ae81ff>35</span>:<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> page<span style=color:#f92672>.</span>isdigit():
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> page
+</span></span></code></pre></div><p>Đến đây rồi thì, ta brute-force hết cái list của <code>die</code> thì ta sẽ biết được trường hợp nào là thỏa và tìm được <code>page</code>. Remote tới server và nhận flag thôi :333</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># solution.py</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pwn <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Util.number <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> sys
+</span></span><span style=display:flex><span>sys<span style=color:#f92672>.</span>set_int_max_str_digits(<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>DEATH_CAUSES <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;a fever&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;dysentery&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;measles&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;cholera&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;typhoid&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;exhaustion&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;a snakebite&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;a broken leg&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;a broken arm&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;drowning&#39;</span>,
+</span></span><span style=display:flex><span>]
+</span></span><span style=display:flex><span>lst <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> DEATH_CAUSES:
+</span></span><span style=display:flex><span>    die <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;you die of </span><span style=color:#e6db74>{</span>i<span style=color:#e6db74>}</span><span style=color:#e6db74>.&#39;</span>
+</span></span><span style=display:flex><span>    s <span style=color:#f92672>=</span> int<span style=color:#f92672>.</span>from_bytes(die<span style=color:#f92672>.</span>encode(), <span style=color:#e6db74>&#39;big&#39;</span>)
+</span></span><span style=display:flex><span>    lst<span style=color:#f92672>.</span>append(s)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>rev_data</span>():
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> int(io<span style=color:#f92672>.</span>recvline()<span style=color:#f92672>.</span>strip()<span style=color:#f92672>.</span>decode())
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>take_data1</span>():
+</span></span><span style=display:flex><span>    io<span style=color:#f92672>.</span>recvuntil(<span style=color:#e6db74>&#34;n: &#34;</span>)
+</span></span><span style=display:flex><span>    n <span style=color:#f92672>=</span> rev_data()
+</span></span><span style=display:flex><span>    io<span style=color:#f92672>.</span>recvuntil(<span style=color:#e6db74>&#34;x0: &#34;</span>)
+</span></span><span style=display:flex><span>    x0 <span style=color:#f92672>=</span> rev_data()
+</span></span><span style=display:flex><span>    io<span style=color:#f92672>.</span>recvuntil(<span style=color:#e6db74>&#34;x1: &#34;</span>)
+</span></span><span style=display:flex><span>    x1 <span style=color:#f92672>=</span> rev_data()
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> n, x0, x1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>e <span style=color:#f92672>=</span> <span style=color:#ae81ff>65537</span>
+</span></span><span style=display:flex><span>k <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span><span style=color:#f92672>**</span>e <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sol_v</span>(n, k, x0, x1):
+</span></span><span style=display:flex><span>    d <span style=color:#f92672>=</span> inverse(k, n)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> (x1 <span style=color:#f92672>+</span> d<span style=color:#f92672>*</span>(x1<span style=color:#f92672>-</span>x0)) <span style=color:#f92672>%</span> n
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>take_data2</span>():
+</span></span><span style=display:flex><span>    io<span style=color:#f92672>.</span>recvuntil(<span style=color:#e6db74>&#34;c0: &#34;</span>)
+</span></span><span style=display:flex><span>    c0 <span style=color:#f92672>=</span> rev_data()
+</span></span><span style=display:flex><span>    io<span style=color:#f92672>.</span>recvuntil(<span style=color:#e6db74>&#34;c1: &#34;</span>)
+</span></span><span style=display:flex><span>    c1 <span style=color:#f92672>=</span> rev_data()
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> c0, c1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>case_m0</span>(n, c0, c1, lst):
+</span></span><span style=display:flex><span>    page <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> lst:
+</span></span><span style=display:flex><span>        k <span style=color:#f92672>=</span> (c0 <span style=color:#f92672>-</span> <span style=color:#ae81ff>2</span><span style=color:#f92672>*</span>c1 <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span><span style=color:#f92672>*</span>i) <span style=color:#f92672>%</span> n
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span>:
+</span></span><span style=display:flex><span>            res <span style=color:#f92672>=</span> long_to_bytes(k)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>except</span> <span style=color:#a6e22e>ValueError</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>continue</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> res<span style=color:#f92672>.</span>startswith(<span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;you continue walking. turn to page &#34;</span>):
+</span></span><span style=display:flex><span>            page <span style=color:#f92672>=</span> res[<span style=color:#ae81ff>35</span>:<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> page<span style=color:#f92672>.</span>isdigit():
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> page
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>case_m1</span>(n, c0, c1, lst):
+</span></span><span style=display:flex><span>    page <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    inv <span style=color:#f92672>=</span> inverse(<span style=color:#ae81ff>2</span>, n)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> lst:
+</span></span><span style=display:flex><span>        k <span style=color:#f92672>=</span> (j <span style=color:#f92672>-</span> c0 <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span><span style=color:#f92672>*</span>c1)<span style=color:#f92672>*</span>inv <span style=color:#f92672>%</span> n
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span>:
+</span></span><span style=display:flex><span>            res <span style=color:#f92672>=</span> long_to_bytes(k)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>except</span> <span style=color:#a6e22e>ValueError</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>continue</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> res<span style=color:#f92672>.</span>startswith(<span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;you continue walking. turn to page &#34;</span>):
+</span></span><span style=display:flex><span>            page <span style=color:#f92672>=</span> res[<span style=color:#ae81ff>35</span>:<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> page<span style=color:#f92672>.</span>isdigit():
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> page
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>io <span style=color:#f92672>=</span> remote(<span style=color:#e6db74>&#34;dicec.tf&#34;</span>, <span style=color:#ae81ff>31001</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>64</span>):
+</span></span><span style=display:flex><span>    n, x0, x1 <span style=color:#f92672>=</span> take_data1()
+</span></span><span style=display:flex><span>    v <span style=color:#f92672>=</span> sol_v(n, k, x0, x1)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    io<span style=color:#f92672>.</span>recvuntil(<span style=color:#e6db74>&#34;v: &#34;</span>)
+</span></span><span style=display:flex><span>    io<span style=color:#f92672>.</span>sendline(str(v))
+</span></span><span style=display:flex><span>    c0, c1 <span style=color:#f92672>=</span> take_data2()
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    page <span style=color:#f92672>=</span> case_m0(n, c0, c1, lst)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> page <span style=color:#f92672>==</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>:
+</span></span><span style=display:flex><span>        page <span style=color:#f92672>=</span> case_m1(n, c0, c1, lst)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    io<span style=color:#f92672>.</span>recvuntil(<span style=color:#e6db74>&#34;turn to page: &#34;</span>)
+</span></span><span style=display:flex><span>    io<span style=color:#f92672>.</span>sendline(page)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>data <span style=color:#f92672>=</span> io<span style=color:#f92672>.</span>recvall()
+</span></span><span style=display:flex><span>print(data)
+</span></span><span style=display:flex><span>io<span style=color:#f92672>.</span>close()
+</span></span></code></pre></div><pre><code>Flag: dice{gl3am1ng_g0ld_doubl00n}
+</code></pre></div><footer class=article-footer><ul class=article-tag-list itemprop=keywords><li class=article-tag-list-item data-aos=zoom-in><a class=article-tag-list-link href=/tags/ctf rel=tag>CTF</a></li><li class=article-tag-list-item data-aos=zoom-in><a class=article-tag-list-link href=/tags/cryptography rel=tag>CRYPTOGRAPHY</a></li><li class=article-tag-list-item data-aos=zoom-in><a class=article-tag-list-link href=/tags/miscellaneous rel=tag>MISCELLANEOUS</a></li></ul></footer></div><nav id=article-nav aria-label="Article navigation" data-aos=fade-up><div class="article-nav-link-wrap left"><img data-src=/images/picoCTF.png data-sizes=auto alt="picoCTF 2025" class=lazyload><a href=/post/picoctf2025/ aria-label="Prev:picoCTF 2025" title="Prev:picoCTF 2025"></a><div class=article-nav-caption>Prev</div><h3 class=article-nav-title>picoCTF 2025</h3></div><div class="article-nav-link-wrap right"><img data-src=/images/WannaW1n.png data-sizes=auto alt="WannaGame NMLT" class=lazyload><a href=/post/wannagamenmlt/ aria-label="Next:WannaGame NMLT" title="Next:WannaGame NMLT"></a><div class=article-nav-caption>Next</div><h3 class=article-nav-title>WannaGame NMLT</h3></div></nav></article></section></div><footer id=footer aria-label="Site footer"><div style=width:100%;overflow:hidden><div class=footer-line></div></div><div id=footer-info><div><span class=icon-copyright></span>2020-2025<span class="footer-info-sep rotate"></span>
+r1muru</div><div>Powered by&nbsp;<a href=https://gohugo.io/ target=_blank rel="noopener nofollow noreferrer">Hugo</a>&nbsp; Theme.<a href=https://github.com/D-Sketon/hugo-theme-reimu target=_blank rel="noopener nofollow noreferrer">Reimu</a></div><div><span class=icon-brush>&nbsp;23.8k</span>
+&nbsp;|&nbsp;
+<span class=icon-coffee>&nbsp;01:57</span></div><div><span class=icon-eye></span>
+<span id=busuanzi_container_site_pv>Number of visits&nbsp;<span id=busuanzi_value_site_pv></span></span>
+&nbsp;|&nbsp;
+<span class=icon-user></span>
+<span id=busuanzi_container_site_uv>Number of visitors&nbsp;<span id=busuanzi_value_site_uv></span></span></div></div></footer><div class=sidebar-top><div class="sidebar-top-taichi rotate"></div><div class=arrow-up></div></div><div id=mask class=hide></div></div><nav id=mobile-nav aria-label="Mobile navigation"><div class=sidebar-wrap><div class=sidebar-toc-sidebar><h3 class=toc-title>Contents</h3><div class="sidebar-toc-wrapper toc-div-class"><nav id=TableOfContents><ul><li><a href=#misc>Misc</a><ul><li><a href=#bcu-binding>bcu-binding</a></li><li><a href=#dicecap>dicecap</a></li></ul></li><li><a href=#crypto>Crypto</a><ul><li><a href=#vorpal-sword>vorpal-sword</a></li></ul></li></ul></nav></div></div><div class="sidebar-common-sidebar hidden"><div class=sidebar-author><img data-src=/avatar/avatar.webp data-sizes=auto alt=r1muru class=lazyload><div class=sidebar-author-name>r1muru</div><div class=sidebar-description>Life is not fair, get used to it</div></div><div class=sidebar-state><div class=sidebar-state-article><div>Posts</div><div class=sidebar-state-number>9</div></div><a class=sidebar-state-category href=/categories/ aria-label=sidebar-state-category-link><div>Categories</div><div class=sidebar-state-number>3</div></a><a class=sidebar-state-tag href=/tags/ aria-label=sidebar-state-tag-link><div>Tags</div><div class=sidebar-state-number>7</div></a></div><div class=sidebar-social></div><div class=sidebar-menu><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/ aria-label=Home></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>Home</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/archives aria-label=Archives></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>Archives</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/about aria-label=About></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>About</div></div></div></div></div><div class=sidebar-btn-wrapper><div class="sidebar-toc-btn current"></div><div class=sidebar-common-btn></div></div></nav></div><script src=https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js integrity=sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf+e crossorigin=anonymous></script><script src=https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js integrity=sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q crossorigin=anonymous></script><script src=/js/main.js integrity crossorigin=anonymous></script><script src=/js/aos.js integrity crossorigin=anonymous></script><script>var aosInit=()=>{AOS.init({duration:1e3,easing:"ease",once:!0,offset:50})};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",aosInit):aosInit()</script><script src=/js/pjax_main.js integrity crossorigin=anonymous data-pjax></script><script src=https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js integrity=sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d crossorigin=anonymous></script><script>if((!!1||!window.matchMedia("(max-width: 768px)").matches)&&window.firework){const e=JSON.parse('{"excludeelements":["a","button"],"particles":[{"colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"duration":[1200,1800],"easing":"easeOutExpo","move":["emit"],"number":20,"shape":"circle","shapeOptions":{"alpha":[0.3,0.5],"radius":[16,32]}},{"colors":["var(--red-0)"],"duration":[1200,1800],"easing":"easeOutExpo","move":["diffuse"],"number":1,"shape":"circle","shapeOptions":{"alpha":[0.2,0.5],"lineWidth":6,"radius":20}}]}');e.excludeElements=e.excludeelements,delete e.excludeelements,window.firework(e)}</script><div id=lazy-script><div><script data-pjax>window.REIMU_POST={author:"r1muru",title:"DiceCTF 2025",url:"https://r1muru2006.github.io/post/dicectf2025/",description:"Giải này mình làm được 2 bài misc và 1 bài crypto ngay phút chót @@ nên viết writeup để tổng kết lại cuối tuần này.",cover:"https://r1muru2006.github.io/images/dicectf.png"}</script><script src=/js/insert_highlight.js integrity crossorigin=anonymous data-pjax></script><script src=/js/tabs.js integrity crossorigin=anonymous data-pjax></script><script type=module data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script src=https://npm.webcache.cn/katex@0.16.24/dist/katex.min.js data-pjaxintegrity=sha384-MWNUH0WmtsYGhn2cbH6ELRCbf9LG3QDqCC+gqPB3IBNO35xjZK3Ejb6oONRpDbPg crossorigin=anonymous></script><script src=https://npm.webcache.cn/katex@0.16.24/dist/contrib/auto-render.min.js data-pjaxintegrity=sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh crossorigin=anonymous></script><script data-pjax>var renderMath=()=>{if(!window.renderMathInElement)return;window.renderMathInElement(_$("article"),{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}]})};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",renderMath,{once:!0}):renderMath()</script></div></div><script src=https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js asyncintegrity=sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S crossorigin=anonymous></script><script>"serviceWorker"in navigator&&navigator.serviceWorker.getRegistrations().then(e=>{for(let t of e)t.unregister()})</script><script>const reimuCopyright=String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;console.log(String.raw`%c ${reimuCopyright}`,"color: #ff5252;"),console.log("%c Theme.Reimu %c https://github.com/D-Sketon/hugo-theme-reimu ","color: white; background: #ff5252; padding:5px 0;","padding:4px;border:1px solid #ff5252;")</script></body></html>

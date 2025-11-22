@@ -1,0 +1,613 @@
+<!doctype html><html lang=en-us data-theme-mode=auto><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>picoCTF 2025 | r1muru</title><meta name=description content="Blog đầu nên mình sẽ lấy giải lần đầu mình chơi cùng team aespaFanClub :3"><script>window.siteConfig=JSON.parse('{"anchor_icon":null,"base":"https://r1muru2006.github.io/","clipboard":{"copyright":{"count":50,"enable":false,"license_type":"by-nc-sa"},"fail":{"en":"Copy failed (ﾟ⊿ﾟ)ﾂ","ja":"コピー失敗 (ﾟ⊿ﾟ)ﾂ","pt-br":"Falha ao copiar (ﾟ⊿ﾟ)ﾂ","zh-cn":"复制失败 (ﾟ⊿ﾟ)ﾂ","zh-tw":"複製失敗 (ﾟ⊿ﾟ)ﾂ"},"success":{"en":"Copy successfully (*^▽^*)","ja":"コピー成功 (*^▽^*)","pt-br":"Copiado com sucesso (*^▽^*)","zh-cn":"复制成功 (*^▽^*)","zh-tw":"複製成功 (*^▽^*)"}},"code_block":{"expand":true},"icon_font":"4552607_4k4bc36ef96","outdate":{"daysago":180,"enable":false,"message":{"en":"This article was last updated on {time}. Please note that the content may no longer be applicable.","ja":"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。","pt-br":"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.","zh-cn":"本文最后更新于 {time}，请注意文中内容可能已不适用。","zh-tw":"本文最後更新於 {time}，請注意文中內容可能已不適用。"}}}')</script><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload as=style href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap" media=print onload='this.media="all"'><link rel=preload href=//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=stylesheet href=/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css><meta property="og:type" content="website"><meta property="og:title" content="picoCTF 2025 | r1muru"><meta property="og:description" content="Blog đầu nên mình sẽ lấy giải lần đầu mình chơi cùng team aespaFanClub :3"><meta property="og:url" content="https://r1muru2006.github.io/post/picoctf2025/"><meta property="og:site_name" content="Welcome to my journey"><meta property="og:image" content="/images/picoCTF.png"><meta property="article:author" content="r1muru"><meta property="article:published_time" content="2025-03-22T13:52:19+07:00"><meta property="article:modified_time" content="2025-03-22T13:52:19+07:00"><meta property="article:tag" content="CTFCryptography"><meta name=twitter:card content="summary"><meta name=twitter:image content="/images/picoCTF.png"><link rel="shortcut icon" href=/favicon.ico><link rel=stylesheet href=/css/main.min.3f4fd122cf0f99ff7801eb4c3d87d2c30d757b99c89ded49cd78a6de22bd22ba.css><link rel=preload as=style href=https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css integrity=sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE crossorigin=anonymous onload='this.onload=null,this.rel="stylesheet"'><link rel=preload as=style href=https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css integrity=sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz+YI crossorigin=anonymous onload='this.onload=null,this.rel="stylesheet"'><script src=https://npm.webcache.cn/pace-js@1.2.4/pace.min.js integrity=sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8 crossorigin=anonymous></script><link rel=stylesheet href=https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css integrity=sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa crossorigin=anonymous></head><body><div id=loader><div class="loading-left-bg loading-bg"></div><div class="loading-right-bg loading-bg"></div><div class=spinner-box><div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" shape-rendering="geometricPrecision"><path d="M303.5 432a80 80 0 01-12 160 80 80 0 0112-160z" fill="var(--red-1, #ff5252)"/><path d="M512 65a447 447 0 010 894V929a417 417 0 000-834 417 417 0 000 834v30a447 447 0 010-894zm0 30A417 417 0 01929 512 208.5 208.5.0 01720.5 720.5V592a80 80 0 000-160 80 80 0 000 160V720.5A208.5 208.5.0 01512 512 208.5 208.5.0 00303.5 303.5 208.5 208.5.0 0095 512 417 417 0 01512 95z" fill="var(--red-1, #ff5252)"/></svg></div><div class=loading-word>Loading...</div></div></div></div><script>var time=null,loaderEl=document.getElementById("loader"),startLoading=()=>{time=Date.now(),loaderEl.classList.remove("loading")},hideLoader=()=>{document.body.style.overflow="auto",loader.classList.add("loading")},endLoading=()=>{time?Date.now()-time>500?(time=null,hideLoader()):(setTimeout(endLoading,500-(Date.now()-time)),time=null):hideLoader()};window.addEventListener("DOMContentLoaded",endLoading),loaderEl.addEventListener("click",endLoading)</script><div id=copy-tooltip></div><div id=lang-tooltip>This article does not have a corresponding language version</div><div id=heatmap-tooltip></div><div id=container><div id=wrap><div id=header-nav><nav id=main-nav aria-label="Primary navigation"><a class=main-nav-link-wrap href=/><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class=main-nav-link>Home</span>
+</a><a class=main-nav-link-wrap href=/archives><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class=main-nav-link>Archives</span>
+</a><a class=main-nav-link-wrap href=/about><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class=main-nav-link>About</span>
+</a><a id=main-nav-toggle class=nav-icon aria-label="Toggle navigation" role=button></a></nav><nav id=sub-nav aria-label="Secondary navigation"></nav></div><header id=header aria-label="Site header"><picture></picture>
+<img fetchpriority=high src=/images/picoCTF.png alt="picoCTF 2025"><div id=header-outer><div id=header-title><span id=logo><h1 data-aos=slide-up>picoCTF 2025</h1></span><h2 id=subtitle-wrap data-aos=slide-down></h2></div></div></header><div id=content aria-label="Page content" class=sidebar-right><aside id=sidebar aria-label=Sidebar><div class="sidebar-wrapper-container sticky"><div class=sidebar-wrapper><div class=sidebar-wrap data-aos=fade-up><div class=sidebar-toc-sidebar><h3 class=toc-title>Contents</h3><div class="sidebar-toc-wrapper toc-div-class"><nav id=TableOfContents><ul><li><a href=#general>General</a><ul><li><a href=#fantasy-ctf>FANTASY CTF</a></li></ul></li><li><a href=#crypto>Crypto</a><ul><li><a href=#hashcrack>hashcrack</a></li><li><a href=#even-rsa-can-be-broken>EVEN RSA CAN BE BROKEN???</a></li><li><a href=#guess-my-cheese-part-1>Guess My Cheese (Part 1)</a></li><li><a href=#chacha-slide>ChaCha Slide</a></li><li><a href=#guess-my-cheese-part-2>Guess My Cheese (Part 2)</a></li></ul></li></ul></nav></div></div><div class="sidebar-common-sidebar hidden"><div class=sidebar-author><img data-src=/avatar/avatar.webp data-sizes=auto alt=r1muru class=lazyload><div class=sidebar-author-name>r1muru</div><div class=sidebar-description>Life is not fair, get used to it</div></div><div class=sidebar-state><div class=sidebar-state-article><div>Posts</div><div class=sidebar-state-number>9</div></div><a class=sidebar-state-category href=/categories/ aria-label=sidebar-state-category-link><div>Categories</div><div class=sidebar-state-number>3</div></a><a class=sidebar-state-tag href=/tags/ aria-label=sidebar-state-tag-link><div>Tags</div><div class=sidebar-state-number>7</div></a></div><div class=sidebar-social></div><div class=sidebar-menu><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/ aria-label=Home></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>Home</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/archives aria-label=Archives></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>Archives</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/about aria-label=About></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>About</div></div></div></div><div class=sidebar-btn-wrapper style=position:static><div class="sidebar-toc-btn current"></div><div class=sidebar-common-btn></div></div></div></div><div class=sidebar-widget></div></div></aside><section id=main aria-label="Main content"><article class="h-entry article" itemscope itemtype=https://schema.org/BlogPosting><div class=article-inner data-aos=fade-up><div class=article-meta><div class=article-date><span class="article-date-link icon-calendar" data-aos=zoom-in><time datetime="2025-03-22 13:52:19 +0700 +0700" itemprop=datePublished>2025-03-22</time>
+<time style=display:none id=post-update-time>2025-03-22</time></span></div><div class=article-category><a class=article-category-link href=/categories/ctf-write-up data-aos=zoom-in>CTF WRITE-UP</a></div></div><div class=hr-line></div><div class="e-content article-entry" itemprop=articleBody><blockquote><p>Theo cá nhân mình thấy các challenge về crypto của giải phân hóa rõ ràng các mức độ khác nhau</p></blockquote><h2 id=general><a class=header-anchor href=#general></a>General</h2><h3 id=fantasy-ctf><a class=header-anchor href=#fantasy-ctf></a>FANTASY CTF</h3><p>Bài này mình nghĩ là chọn hướng nào cũng ra được vì đến cuối cùng sẽ đẩy ra flag :))</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#a6e22e>FANTASY</span> <span style=color:#a6e22e>CTF</span> <span style=color:#a6e22e>SIMULATION</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>The</span> <span style=color:#a6e22e>simulation</span> <span style=color:#a6e22e>begins</span> <span style=color:#66d9ef>in</span> <span style=color:#a6e22e>the</span> <span style=color:#66d9ef>private</span> <span style=color:#a6e22e>room</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>Eibhilin</span>, <span style=color:#a6e22e>a</span> <span style=color:#a6e22e>bright</span>, <span style=color:#a6e22e>young</span> <span style=color:#a6e22e>student</span>.
+</span></span><span style=display:flex><span><span style=color:#a6e22e>The</span> <span style=color:#a6e22e>room</span> <span style=color:#a6e22e>is</span> <span style=color:#a6e22e>dimly</span> <span style=color:#a6e22e>lit</span>, <span style=color:#66d9ef>with</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>glow</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>her</span> <span style=color:#a6e22e>multiple</span> <span style=color:#a6e22e>monitors</span> <span style=color:#a6e22e>casting</span> <span style=color:#a6e22e>an</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>electric</span> <span style=color:#a6e22e>blue</span> <span style=color:#a6e22e>hue</span> <span style=color:#a6e22e>on</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>walls</span>. <span style=color:#a6e22e>Around</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>room</span> <span style=color:#a6e22e>are</span> <span style=color:#a6e22e>posters</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>vintage</span> <span style=color:#a6e22e>movies</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>from</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>MCU</span> <span style=color:#960050;background-color:#1e0010>—</span> <span style=color:#a6e22e>ancient</span> <span style=color:#a6e22e>guardians</span> <span style=color:#a6e22e>from</span> <span style=color:#a6e22e>another</span> <span style=color:#a6e22e>age</span> <span style=color:#a6e22e>staring</span> <span style=color:#a6e22e>down</span> <span style=color:#a6e22e>like</span> <span style=color:#a6e22e>digital</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>sentinels</span>.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>---</span>
+</span></span><span style=display:flex><span>(<span style=color:#a6e22e>Press</span> <span style=color:#a6e22e>Enter</span> <span style=color:#a6e22e>to</span> <span style=color:#66d9ef>continue</span>...)
+</span></span><span style=display:flex><span><span style=color:#f92672>---</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Eibhilin</span> <span style=color:#a6e22e>stretches</span> <span style=color:#a6e22e>back</span> <span style=color:#66d9ef>in</span> <span style=color:#a6e22e>her</span> <span style=color:#a6e22e>chair</span>, <span style=color:#a6e22e>adjusting</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>holo</span><span style=color:#f92672>-</span><span style=color:#a6e22e>display</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>her</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>keyboard</span>. <span style=color:#a6e22e>A</span> <span style=color:#a6e22e>soft</span> <span style=color:#a6e22e>hum</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>a</span> <span style=color:#a6e22e>nearby</span> <span style=color:#a6e22e>server</span> <span style=color:#a6e22e>fills</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>air</span> <span style=color:#a6e22e>as</span> <span style=color:#a6e22e>her</span> <span style=color:#a6e22e>AI</span> <span style=color:#a6e22e>companion</span>,
+</span></span><span style=display:flex><span><span style=color:#e6db74>`Nyx`</span>, <span style=color:#a6e22e>comes</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>life</span>.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>---</span>
+</span></span><span style=display:flex><span>(<span style=color:#a6e22e>Press</span> <span style=color:#a6e22e>Enter</span> <span style=color:#a6e22e>to</span> <span style=color:#66d9ef>continue</span>...)
+</span></span><span style=display:flex><span><span style=color:#f92672>---</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>&#34;Good evening, Ei,&#34;</span> <span style=color:#a6e22e>Nyx</span> <span style=color:#a6e22e>chirps</span>, <span style=color:#e6db74>&#34;The 3025 edition of picoCTF registration is
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>open. You asked me to remind so you could try out the competition for the first
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>time. Do you wish to proceed?&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>---</span>
+</span></span><span style=display:flex><span>(<span style=color:#a6e22e>Press</span> <span style=color:#a6e22e>Enter</span> <span style=color:#a6e22e>to</span> <span style=color:#66d9ef>continue</span>...)
+</span></span><span style=display:flex><span><span style=color:#f92672>---</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Outside</span>, <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>city</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>Nexalus</span> <span style=color:#a6e22e>glimmers</span> <span style=color:#a6e22e>under</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>stars</span>, <span style=color:#a6e22e>but</span> <span style=color:#a6e22e>Eibhilin</span><span style=color:#e6db74>&#39;s focus
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>remains entirely on the screen in front of her.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>(Press Enter to continue...)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;Yes, Nyx. Let&#39;</span><span style=color:#a6e22e>s</span> <span style=color:#66d9ef>do</span> <span style=color:#a6e22e>it</span><span style=color:#f92672>!</span><span style=color:#e6db74>&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>(Press Enter to continue...)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Nyx brings up the registration page.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Options:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>A) *Register multiple accounts*
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>B) *Share an account with a friend*
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>C) *Register a single, private account*
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>[a/b/c] &gt; A
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Nyx chimes in, &#34;</span><span style=color:#a6e22e>Eibhilin</span>, <span style=color:#a6e22e>don</span><span style=color:#e6db74>&#39;t do that! That&#39;</span><span style=color:#a6e22e>s</span> <span style=color:#a6e22e>been</span> <span style=color:#a6e22e>grounds</span> <span style=color:#66d9ef>for</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>disqualification</span> <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>past</span> <span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>000</span> <span style=color:#a6e22e>years</span><span style=color:#f92672>!</span><span style=color:#e6db74>&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>(Press Enter to continue...)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;</span><span style=color:#a6e22e>Oh</span>, <span style=color:#a6e22e>thanks</span> <span style=color:#a6e22e>Nyx</span>, <span style=color:#a6e22e>that</span> <span style=color:#a6e22e>was</span> <span style=color:#a6e22e>close</span><span style=color:#f92672>!</span><span style=color:#e6db74>&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>(Press Enter to continue...)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;</span><span style=color:#a6e22e>Ok</span>,<span style=color:#e6db74>&#34; Nyx says, &#34;</span><span style=color:#a6e22e>Registering</span> <span style=color:#a6e22e>you</span> <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>competition</span>... <span style=color:#a6e22e>There</span><span style=color:#e6db74>&#39;s an introductory
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>audio message, piping to your speakers.&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>(Press Enter to continue...)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;Welcome hacker! You&#39;</span><span style=color:#a6e22e>re</span> <span style=color:#a6e22e>about</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>embark</span> <span style=color:#a6e22e>on</span> <span style=color:#a6e22e>a</span> <span style=color:#a6e22e>journey</span> <span style=color:#a6e22e>that</span> <span style=color:#a6e22e>will</span> <span style=color:#a6e22e>teach</span> <span style=color:#a6e22e>you</span> <span style=color:#a6e22e>many</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>esoteric</span> <span style=color:#a6e22e>and</span> <span style=color:#a6e22e>valuable</span> <span style=color:#a6e22e>skills</span>. <span style=color:#a6e22e>Our</span> <span style=color:#a6e22e>mission</span> <span style=color:#a6e22e>is</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>guide</span> <span style=color:#a6e22e>you</span> <span style=color:#66d9ef>in</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>right</span> <span style=color:#a6e22e>path</span>,
+</span></span><span style=display:flex><span><span style=color:#a6e22e>that</span> <span style=color:#a6e22e>you</span> <span style=color:#a6e22e>may</span> <span style=color:#a6e22e>use</span> <span style=color:#a6e22e>these</span> <span style=color:#a6e22e>skills</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>protect</span> <span style=color:#a6e22e>and</span> <span style=color:#a6e22e>defend</span> <span style=color:#a6e22e>and</span> <span style=color:#a6e22e>never</span> <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>selfish</span> <span style=color:#a6e22e>gain</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>or</span> <span style=color:#a6e22e>deceit</span>. <span style=color:#a6e22e>We</span> <span style=color:#a6e22e>hope</span> <span style=color:#a6e22e>you</span> <span style=color:#a6e22e>enjoy</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>challenges</span> <span style=color:#a6e22e>that</span> <span style=color:#a6e22e>our</span> <span style=color:#a6e22e>authors</span> <span style=color:#a6e22e>have</span> <span style=color:#a6e22e>devised</span> <span style=color:#66d9ef>this</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>year</span>. <span style=color:#a6e22e>Always</span> <span style=color:#a6e22e>remember</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;With great power, comes great responsibility!&#39;</span><span style=color:#e6db74>&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>(Press Enter to continue...)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Nyx continues, &#34;</span><span style=color:#a6e22e>I</span><span style=color:#e6db74>&#39;ve gleaned from the Ether that in CTF competitions, it&#39;</span><span style=color:#a6e22e>s</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>always</span> <span style=color:#a6e22e>good</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>start</span> <span style=color:#66d9ef>with</span> <span style=color:#a6e22e>the</span> <span style=color:#e6db74>&#39;sanity&#39;</span> <span style=color:#a6e22e>challenge</span>. <span style=color:#a6e22e>It</span> <span style=color:#a6e22e>should</span> <span style=color:#a6e22e>be</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>challenge</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>worth</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>least</span> <span style=color:#a6e22e>amount</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>points</span>. <span style=color:#a6e22e>I</span><span style=color:#e6db74>&#39;ll pull it up. You&#39;</span><span style=color:#a6e22e>re</span> <span style=color:#a6e22e>looking</span> <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>something</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>called</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>flag</span>. <span style=color:#a6e22e>You</span> <span style=color:#a6e22e>should</span> <span style=color:#a6e22e>know</span> <span style=color:#a6e22e>it</span> <span style=color:#a6e22e>when</span> <span style=color:#a6e22e>you</span> <span style=color:#a6e22e>see</span> <span style=color:#a6e22e>it</span>.<span style=color:#e6db74>&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>(Press Enter to continue...)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;</span><span style=color:#a6e22e>Oh</span> <span style=color:#a6e22e>interesting</span>,<span style=color:#e6db74>&#34; Eibhilin says, &#34;</span><span style=color:#a6e22e>It</span> <span style=color:#a6e22e>seems</span> <span style=color:#a6e22e>like</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>sanity</span> <span style=color:#a6e22e>challenge</span> <span style=color:#a6e22e>is</span> <span style=color:#a6e22e>an</span> <span style=color:#a6e22e>old</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>school</span> <span style=color:#a6e22e>interactive</span> <span style=color:#a6e22e>fiction</span> <span style=color:#a6e22e>game</span>.<span style=color:#e6db74>&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>(Press Enter to continue...)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Options:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>A) *Play the game*
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>B) *Search the Ether for the flag*
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>[a/b] &gt; A
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;</span><span style=color:#a6e22e>Good</span> <span style=color:#a6e22e>choice</span>, <span style=color:#a6e22e>Ei</span>,<span style=color:#e6db74>&#34; Nyx says, &#34;</span><span style=color:#a6e22e>You</span> <span style=color:#a6e22e>never</span> <span style=color:#a6e22e>want</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>share</span> <span style=color:#a6e22e>flags</span> <span style=color:#a6e22e>or</span> <span style=color:#a6e22e>artifact</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>downloads</span>.<span style=color:#e6db74>&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>(Press Enter to continue...)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74> Playing the Game
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Playing the Game:   0%|                                           [time left: ?]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Playing the Game: 100%|██████████████████████████████████████ [time left: 00:00]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Playing the Game completed successfully!
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>(Press Enter to continue...)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;</span><span style=color:#a6e22e>That</span> <span style=color:#a6e22e>was</span> <span style=color:#a6e22e>fun</span><span style=color:#f92672>!</span><span style=color:#e6db74>&#34; Eibhilin exclaims, &#34;</span><span style=color:#a6e22e>I</span> <span style=color:#a6e22e>found</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>flag</span><span style=color:#f92672>!</span><span style=color:#e6db74>&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>(Press Enter to continue...)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Nyx says, &#34;</span><span style=color:#a6e22e>Great</span> <span style=color:#a6e22e>job</span>, <span style=color:#a6e22e>Ei</span><span style=color:#f92672>!</span> <span style=color:#a6e22e>I</span><span style=color:#e6db74>&#39;ve read that a lot of players create writeups of
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>interesting challenges they solve during the competition. Just be sure to wait
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>to publish them until after the winners have been announced. We can work on
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>that together if you&#39;</span><span style=color:#a6e22e>d</span> <span style=color:#a6e22e>like</span>.<span style=color:#e6db74>&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>(Press Enter to continue...)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;</span><span style=color:#a6e22e>Thanks</span>, <span style=color:#a6e22e>Nyx</span><span style=color:#f92672>!</span> <span style=color:#a6e22e>Here</span><span style=color:#e6db74>&#39;s the flag I found: picoCTF{m1113n1um_3d1710n_76b680a5}&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>(Press Enter to continue...)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;Great, you just got 10 points!&#34; Nyx exclaims.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>(Press Enter to continue...)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Eibhilin smiles, &#34;I&#39;</span><span style=color:#a6e22e>m</span> <span style=color:#a6e22e>off</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>a</span> <span style=color:#a6e22e>good</span> <span style=color:#a6e22e>start</span><span style=color:#f92672>!</span><span style=color:#e6db74>&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>(Press Enter to continue...)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>---
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Nyx says, &#34;</span><span style=color:#a6e22e>Let</span><span style=color:#960050;background-color:#1e0010>&#39;</span><span style=color:#a6e22e>s</span> <span style=color:#a6e22e>keep</span> <span style=color:#a6e22e>going</span><span style=color:#f92672>!</span><span style=color:#960050;background-color:#1e0010>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>---</span>
+</span></span><span style=display:flex><span>(<span style=color:#a6e22e>Press</span> <span style=color:#a6e22e>Enter</span> <span style=color:#a6e22e>to</span> <span style=color:#66d9ef>continue</span>...)
+</span></span><span style=display:flex><span><span style=color:#f92672>---</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>END</span> <span style=color:#a6e22e>OF</span> <span style=color:#a6e22e>FANTASY</span> <span style=color:#a6e22e>CTF</span> <span style=color:#a6e22e>SIMULATION</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Thank</span> <span style=color:#a6e22e>you</span> <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>playing</span><span style=color:#f92672>!</span> <span style=color:#a6e22e>To</span> <span style=color:#a6e22e>reemphasize</span> <span style=color:#a6e22e>some</span> <span style=color:#a6e22e>rules</span> <span style=color:#66d9ef>for</span> <span style=color:#66d9ef>this</span> <span style=color:#a6e22e>year</span><span style=color:#f92672>:</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>1.</span> <span style=color:#a6e22e>Register</span> <span style=color:#a6e22e>only</span> <span style=color:#a6e22e>one</span> <span style=color:#a6e22e>account</span>.
+</span></span><span style=display:flex><span><span style=color:#ae81ff>2.</span> <span style=color:#a6e22e>Do</span> <span style=color:#a6e22e>not</span> <span style=color:#a6e22e>share</span> <span style=color:#a6e22e>accounts</span>, <span style=color:#a6e22e>flags</span> <span style=color:#a6e22e>or</span> <span style=color:#a6e22e>artifact</span> <span style=color:#a6e22e>downloads</span>.
+</span></span><span style=display:flex><span><span style=color:#ae81ff>3.</span> <span style=color:#a6e22e>Wait</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>publish</span> <span style=color:#a6e22e>writeups</span> <span style=color:#a6e22e>publicly</span> <span style=color:#a6e22e>until</span> <span style=color:#a6e22e>after</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>organizers</span> <span style=color:#a6e22e>announce</span> <span style=color:#a6e22e>the</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>winners</span>.
+</span></span><span style=display:flex><span><span style=color:#ae81ff>4.</span> <span style=color:#a6e22e>picoCTF</span>{<span style=color:#a6e22e>m1113n1um_3d1710n_76b680a5</span>} <span style=color:#a6e22e>is</span> <span style=color:#a6e22e>a</span> <span style=color:#a6e22e>real</span> <span style=color:#a6e22e>flag</span><span style=color:#f92672>!</span> <span style=color:#a6e22e>Submit</span> <span style=color:#a6e22e>it</span> <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>some</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>points</span> <span style=color:#66d9ef>in</span> <span style=color:#a6e22e>picoCTF</span> <span style=color:#ae81ff>2025</span><span style=color:#f92672>!</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>---</span>
+</span></span><span style=display:flex><span>(<span style=color:#a6e22e>Press</span> <span style=color:#a6e22e>Enter</span> <span style=color:#a6e22e>to</span> <span style=color:#66d9ef>continue</span>...)
+</span></span><span style=display:flex><span><span style=color:#f92672>---</span>
+</span></span></code></pre></div><pre><code>FLag: picoCTF{m1113n1um_3d1710n_76b680a5}
+</code></pre><h2 id=crypto><a class=header-anchor href=#crypto></a>Crypto</h2><h3 id=hashcrack><a class=header-anchor href=#hashcrack></a>hashcrack</h3><p>Ở bài này mình dựa vào số bytes của hash và các tools online để tìm ra password, như là: <a href=https://10015.io/tools/md5-encrypt-decrypt>MD5</a>, <a href=https://10015.io/tools/sha1-encrypt-decrypt>SHA1</a>, <a href=https://10015.io/tools/sha256-encrypt-decrypt>SHA256</a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#a6e22e>Welcome</span><span style=color:#f92672>!!</span> <span style=color:#a6e22e>Looking</span> <span style=color:#a6e22e>For</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>Secret</span><span style=color:#f92672>?</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>We</span> <span style=color:#a6e22e>have</span> <span style=color:#a6e22e>identified</span> <span style=color:#a6e22e>a</span> <span style=color:#a6e22e>hash</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>482</span><span style=color:#a6e22e>c811da5d5b4bc6d497ffa98491e38</span> <span style=color:#75715e>//md5
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>Enter</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>password</span> <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>identified</span> <span style=color:#a6e22e>hash</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>password123</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Correct</span><span style=color:#f92672>!</span> <span style=color:#a6e22e>You</span><span style=color:#e6db74>&#39;ve cracked the MD5 hash with no secret found!
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Flag is yet to be revealed!! Crack this hash: b7a875fc1ea228b9061041b7cec4bd3c52ab3ce3 //sha1
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Enter the password for the identified hash: letmein
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Correct! You&#39;</span><span style=color:#a6e22e>ve</span> <span style=color:#a6e22e>cracked</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>SHA</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span> <span style=color:#a6e22e>hash</span> <span style=color:#66d9ef>with</span> <span style=color:#a6e22e>no</span> <span style=color:#a6e22e>secret</span> <span style=color:#a6e22e>found</span><span style=color:#f92672>!</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Almost</span> <span style=color:#a6e22e>there</span><span style=color:#f92672>!!</span> <span style=color:#a6e22e>Crack</span> <span style=color:#66d9ef>this</span> <span style=color:#a6e22e>hash</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>916e8</span><span style=color:#a6e22e>c4f79b25028c9e467f1eb8eee6d6bbdff965f9928310ad30a8d88697745</span> <span style=color:#75715e>//sha256
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>Enter</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>password</span> <span style=color:#66d9ef>for</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>identified</span> <span style=color:#a6e22e>hash</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>qwerty098</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Correct</span><span style=color:#f92672>!</span> <span style=color:#a6e22e>You</span><span style=color:#960050;background-color:#1e0010>&#39;</span><span style=color:#a6e22e>ve</span> <span style=color:#a6e22e>cracked</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>SHA</span><span style=color:#f92672>-</span><span style=color:#ae81ff>256</span> <span style=color:#a6e22e>hash</span> <span style=color:#66d9ef>with</span> <span style=color:#a6e22e>a</span> <span style=color:#a6e22e>secret</span> <span style=color:#a6e22e>found</span>.
+</span></span><span style=display:flex><span><span style=color:#a6e22e>The</span> <span style=color:#a6e22e>flag</span> <span style=color:#a6e22e>is</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>picoCTF</span>{<span style=color:#a6e22e>UseStr0nG_h</span><span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>shEs_</span><span style=color:#f92672>&amp;</span><span style=color:#a6e22e>PaSswDs</span><span style=color:#f92672>!</span><span style=color:#a6e22e>_eff9dbe0</span>}
+</span></span></code></pre></div><pre><code>Flag: picoCTF{UseStr0nG_h@shEs_&amp;PaSswDs!_eff9dbe0}
+</code></pre><h3 id=even-rsa-can-be-broken><a class=header-anchor href=#even-rsa-can-be-broken></a>EVEN RSA CAN BE BROKEN???</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># source.py</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> sys <span style=color:#f92672>import</span> exit
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Util.number <span style=color:#f92672>import</span> bytes_to_long, inverse
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> setup <span style=color:#f92672>import</span> get_primes
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>e <span style=color:#f92672>=</span> <span style=color:#ae81ff>65537</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>gen_key</span>(k):
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    Generates RSA key with k bits
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    p,q <span style=color:#f92672>=</span> get_primes(k<span style=color:#f92672>//</span><span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>    N <span style=color:#f92672>=</span> p<span style=color:#f92672>*</span>q
+</span></span><span style=display:flex><span>    d <span style=color:#f92672>=</span> inverse(e, (p<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>)<span style=color:#f92672>*</span>(q<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> ((N,e), d)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>encrypt</span>(pubkey, m):
+</span></span><span style=display:flex><span>    N,e <span style=color:#f92672>=</span> pubkey
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> pow(bytes_to_long(m<span style=color:#f92672>.</span>encode(<span style=color:#e6db74>&#39;utf-8&#39;</span>)), e, N)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>main</span>(flag):
+</span></span><span style=display:flex><span>    pubkey, _privkey <span style=color:#f92672>=</span> gen_key(<span style=color:#ae81ff>1024</span>)
+</span></span><span style=display:flex><span>    encrypted <span style=color:#f92672>=</span> encrypt(pubkey, flag) 
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> (pubkey[<span style=color:#ae81ff>0</span>], encrypted)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;__main__&#34;</span>:
+</span></span><span style=display:flex><span>    flag <span style=color:#f92672>=</span> open(<span style=color:#e6db74>&#39;flag.txt&#39;</span>, <span style=color:#e6db74>&#39;r&#39;</span>)<span style=color:#f92672>.</span>read()
+</span></span><span style=display:flex><span>    flag <span style=color:#f92672>=</span> flag<span style=color:#f92672>.</span>strip()
+</span></span><span style=display:flex><span>    N, cypher  <span style=color:#f92672>=</span> main(flag)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;N:&#34;</span>, N)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;e:&#34;</span>, e)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;cyphertext:&#34;</span>, cypher)
+</span></span><span style=display:flex><span>    exit()
+</span></span></code></pre></div><p>Mở kênh kết nối thì ta nhận được <code>N, e, cipher</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>N <span style=color:#f92672>=</span> <span style=color:#ae81ff>14971332928931600258070222525511394212054658902871612141186429243227295047197174853004285765481866838784351475089613251384629214373054886098787783629288854</span>
+</span></span><span style=display:flex><span>e <span style=color:#f92672>=</span> <span style=color:#ae81ff>65537</span>
+</span></span><span style=display:flex><span>cipher <span style=color:#f92672>=</span> <span style=color:#ae81ff>9685487452310081650666414304396053822632884035194331224959800780976444606689190315693089108703603608391361578584998640257817456167504699460118188426557775</span>
+</span></span></code></pre></div><p>Đoạn này mình thấy sai sai vì N chẵn làm mình nghĩ sao bài này nó dễ vậy được và đúng là nó dễ thật @@</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Util.number <span style=color:#f92672>import</span> long_to_bytes
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Lấy từ (nc verbal-sleep.picoctf.net 51510)</span>
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> <span style=color:#ae81ff>14971332928931600258070222525511394212054658902871612141186429243227295047197174853004285765481866838784351475089613251384629214373054886098787783629288854</span>
+</span></span><span style=display:flex><span>e <span style=color:#f92672>=</span> <span style=color:#ae81ff>65537</span>
+</span></span><span style=display:flex><span>cipher <span style=color:#f92672>=</span> <span style=color:#ae81ff>9685487452310081650666414304396053822632884035194331224959800780976444606689190315693089108703603608391361578584998640257817456167504699460118188426557775</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>p <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>q <span style=color:#f92672>=</span> N <span style=color:#f92672>//</span> p
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>phi <span style=color:#f92672>=</span> (p <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>) <span style=color:#f92672>*</span> (q <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>d <span style=color:#f92672>=</span> pow(e, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, phi)
+</span></span><span style=display:flex><span>flag <span style=color:#f92672>=</span> long_to_bytes(pow(cipher, d, N))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(flag<span style=color:#f92672>.</span>decode(<span style=color:#e6db74>&#34;utf-8&#34;</span>))
+</span></span></code></pre></div><pre><code>Flag: picoCTF{tw0_1$_pr!m3625a858b}
+</code></pre><h3 id=guess-my-cheese-part-1><a class=header-anchor href=#guess-my-cheese-part-1></a>Guess My Cheese (Part 1)</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#f92672>*******************************************</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>***</span>             <span style=color:#a6e22e>Part</span> <span style=color:#ae81ff>1</span>                  <span style=color:#f92672>***</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>***</span>    <span style=color:#a6e22e>The</span> <span style=color:#a6e22e>Mystery</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>CLONED</span> <span style=color:#a6e22e>RAT</span>    <span style=color:#f92672>***</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>*******************************************</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>The</span> <span style=color:#66d9ef>super</span> <span style=color:#a6e22e>evil</span> <span style=color:#a6e22e>Dr</span>. <span style=color:#a6e22e>Lacktoes</span> <span style=color:#a6e22e>Inn</span> <span style=color:#a6e22e>Tolerant</span> <span style=color:#a6e22e>told</span> <span style=color:#a6e22e>me</span> <span style=color:#a6e22e>he</span> <span style=color:#a6e22e>kidnapped</span> <span style=color:#a6e22e>my</span> <span style=color:#a6e22e>best</span> <span style=color:#a6e22e>friend</span>, <span style=color:#a6e22e>Squeexy</span>, <span style=color:#a6e22e>and</span> <span style=color:#a6e22e>replaced</span> <span style=color:#a6e22e>him</span> <span style=color:#66d9ef>with</span> <span style=color:#a6e22e>an</span> <span style=color:#a6e22e>evil</span> <span style=color:#a6e22e>clone</span><span style=color:#f92672>!</span> <span style=color:#a6e22e>You</span> <span style=color:#a6e22e>look</span> <span style=color:#a6e22e>JUST</span> <span style=color:#a6e22e>LIKE</span> <span style=color:#a6e22e>SQUEEXY</span>, <span style=color:#a6e22e>but</span> <span style=color:#a6e22e>I</span><span style=color:#e6db74>&#39;m not sure if you&#39;</span><span style=color:#a6e22e>re</span> <span style=color:#a6e22e>him</span> <span style=color:#a6e22e>or</span> <span style=color:#a6e22e>THE</span> <span style=color:#a6e22e>CLONE</span>. <span style=color:#a6e22e>I</span><span style=color:#e6db74>&#39;ve devised a plan to find out if YOU&#39;</span><span style=color:#a6e22e>RE</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>REAL</span> <span style=color:#a6e22e>SQUEEXY</span><span style=color:#f92672>!</span> <span style=color:#a6e22e>If</span> <span style=color:#a6e22e>you</span><span style=color:#e6db74>&#39;re Squeexy, I&#39;</span><span style=color:#a6e22e>ll</span> <span style=color:#a6e22e>give</span> <span style=color:#a6e22e>you</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>key</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>cloning</span> <span style=color:#a6e22e>room</span> <span style=color:#a6e22e>so</span> <span style=color:#a6e22e>you</span> <span style=color:#a6e22e>can</span> <span style=color:#a6e22e>maul</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>imposter</span>...
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Here</span><span style=color:#e6db74>&#39;s my secret cheese -- if you&#39;</span><span style=color:#a6e22e>re</span> <span style=color:#a6e22e>Squeexy</span>, <span style=color:#a6e22e>you</span><span style=color:#e6db74>&#39;ll be able to guess it:  LRGGHOZMFOVPB
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Hint: The cheeses are top secret and limited edition, so they might look different from cheeses you&#39;</span><span style=color:#a6e22e>re</span> <span style=color:#a6e22e>used</span> <span style=color:#a6e22e>to</span><span style=color:#f92672>!</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Commands</span><span style=color:#f92672>:</span> (<span style=color:#a6e22e>g</span>)<span style=color:#a6e22e>uess</span> <span style=color:#a6e22e>my</span> <span style=color:#a6e22e>cheese</span> <span style=color:#a6e22e>or</span> (<span style=color:#a6e22e>e</span>)<span style=color:#a6e22e>ncrypt</span> <span style=color:#a6e22e>a</span> <span style=color:#a6e22e>cheese</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>What</span> <span style=color:#a6e22e>would</span> <span style=color:#a6e22e>you</span> <span style=color:#a6e22e>like</span> <span style=color:#a6e22e>to</span> <span style=color:#66d9ef>do</span><span style=color:#f92672>?</span>
+</span></span></code></pre></div><pre><code>Hint: Remember that cipher we devised together Squeexy? The one that incorporates your affinity for linear equations
+</code></pre><p>Thử thách nhắc tới phương trình tuyến tính và <code>affinity</code> nên mình đã google xem thử nó nói về cái gì và đây là kết quả: <a href=https://en.wikipedia.org/wiki/Affine_transformation>Affine transformation</a></p><p>Bản đồ affine $f$ tác dụng lên $x$ được biểu diển dưới dạng: $y \equiv f(x)=ax+b$ (mod m).</p><p>Khi áp dụng vào mã hóa thì $y$ là bản mã (Ciphertext), còn $x$ là bản rõ (Plaintext). Nghĩa là:</p><ul><li>Khi mã hóa: $C\equiv aP+b$ (mod m)</li><li>Khi giải mã: $P=a^{-1}(C-b)$ (mod m)</li></ul><p>Ở đây, ta thấy nó được mã hóa theo từng chữ cái trên bảng Latinh nên $m$ sẽ là số lượng chữ cái và hơn nữa để giải mã được thì phải tồn tại nghịch đảo modulo $m$ của $a$.</p><p>Và để làm được điều đó thì $m, a$ phải đôi một nguyên tố cùng nhau. Xem thêm ở <a href=https://wiki.vnoi.info/algo/math/modular-inverse>đây</a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>possible_a <span style=color:#f92672>=</span> [a <span style=color:#66d9ef>for</span> a <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, M) <span style=color:#66d9ef>if</span> gcd(a, M) <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>]
+</span></span></code></pre></div><p>Vì chỉ xét tới chữ cái in hoa nên ta sẽ lấy $M=26$.
+Ở đây, thử thách cho mình 2 quyền đoán cheese đưa ra và mã hóa 1 cheese nào đó.
+Để mà đoán được cheese thì ta cần hệ số $a, b$ và từ đó giải mã ra bản rõ. Do đó, mình sẽ mã hóa 1 cheese nào đó trước rồi đối chiếu và lấy $a, b$ và giải mã để lấy flag.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#a6e22e>What</span> <span style=color:#a6e22e>would</span> <span style=color:#a6e22e>you</span> <span style=color:#a6e22e>like</span> <span style=color:#a6e22e>to</span> <span style=color:#66d9ef>do</span><span style=color:#f92672>?</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>e</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>What</span> <span style=color:#a6e22e>cheese</span> <span style=color:#a6e22e>would</span> <span style=color:#a6e22e>you</span> <span style=color:#a6e22e>like</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>encrypt</span><span style=color:#f92672>?</span> <span style=color:#a6e22e>Cottage</span> <span style=color:#a6e22e>cheese</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Here</span><span style=color:#960050;background-color:#1e0010>&#39;</span><span style=color:#a6e22e>s</span> <span style=color:#a6e22e>your</span> <span style=color:#a6e22e>encrypted</span> <span style=color:#a6e22e>cheese</span><span style=color:#f92672>:</span>  <span style=color:#a6e22e>JFMMBZRMJQRRVR</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Not</span> <span style=color:#a6e22e>sure</span> <span style=color:#a6e22e>why</span> <span style=color:#a6e22e>you</span> <span style=color:#a6e22e>want</span> <span style=color:#a6e22e>it</span> <span style=color:#a6e22e>though</span>...<span style=color:#f92672>*</span><span style=color:#a6e22e>squeak</span><span style=color:#f92672>*</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>oh</span> <span style=color:#a6e22e>well</span><span style=color:#f92672>!</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># solution.py</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> string <span style=color:#f92672>import</span> ascii_uppercase
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Util.number <span style=color:#f92672>import</span> inverse, GCD
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Bảng chữ cái</span>
+</span></span><span style=display:flex><span>ALPHABET <span style=color:#f92672>=</span> ascii_uppercase
+</span></span><span style=display:flex><span>M <span style=color:#f92672>=</span> len(ALPHABET)  <span style=color:#75715e># M = 26</span>
+</span></span><span style=display:flex><span>possible_a <span style=color:#f92672>=</span> [a <span style=color:#66d9ef>for</span> a <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>, M) <span style=color:#66d9ef>if</span> GCD(a, M) <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>affine_decrypt</span>(ciphertext, a, b):
+</span></span><span style=display:flex><span>    a_inv <span style=color:#f92672>=</span> inverse(a, M)
+</span></span><span style=display:flex><span>    plaintext <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> char <span style=color:#f92672>in</span> ciphertext:
+</span></span><span style=display:flex><span>        C <span style=color:#f92672>=</span> ALPHABET<span style=color:#f92672>.</span>index(char)
+</span></span><span style=display:flex><span>        P <span style=color:#f92672>=</span> (a_inv <span style=color:#f92672>*</span> (C <span style=color:#f92672>-</span> b)) <span style=color:#f92672>%</span> M
+</span></span><span style=display:flex><span>        plaintext <span style=color:#f92672>+=</span> ALPHABET[P]
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> plaintext
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Mẫu ban đầu với Cottage Cheese</span>
+</span></span><span style=display:flex><span>cipher_pattern <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;JFMMBZRMJQRRVR&#34;</span>
+</span></span><span style=display:flex><span>cipher <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;LRGGHOZMFOVPB&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>found <span style=color:#f92672>=</span> <span style=color:#66d9ef>False</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> a <span style=color:#f92672>in</span> possible_a:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> b <span style=color:#f92672>in</span> range(M):
+</span></span><span style=display:flex><span>        decrypted <span style=color:#f92672>=</span> affine_decrypt(cipher_pattern, a, b)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#39;COTTAGE&#39;</span> <span style=color:#f92672>in</span> decrypted:
+</span></span><span style=display:flex><span>            found <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>break</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> found:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>cheese <span style=color:#f92672>=</span> affine_decrypt(cipher, a, b)
+</span></span><span style=display:flex><span>print(cheese)
+</span></span><span style=display:flex><span><span style=color:#75715e># WELLINGTONSKA</span>
+</span></span></code></pre></div><p>Nhập cheese vào guess và ta lấy được flag</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#a6e22e>I</span> <span style=color:#a6e22e>don</span><span style=color:#e6db74>&#39;t wanna talk to you too much if you&#39;</span><span style=color:#a6e22e>re</span> <span style=color:#a6e22e>some</span> <span style=color:#a6e22e>suspicious</span> <span style=color:#a6e22e>character</span> <span style=color:#a6e22e>and</span> <span style=color:#a6e22e>not</span> <span style=color:#a6e22e>my</span> <span style=color:#a6e22e>BFF</span> <span style=color:#a6e22e>Squeexy</span><span style=color:#f92672>!</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>You</span> <span style=color:#a6e22e>have</span> <span style=color:#ae81ff>2</span> <span style=color:#a6e22e>more</span> <span style=color:#a6e22e>chances</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>prove</span> <span style=color:#a6e22e>yourself</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>me</span><span style=color:#f92672>!</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Commands</span><span style=color:#f92672>:</span> (<span style=color:#a6e22e>g</span>)<span style=color:#a6e22e>uess</span> <span style=color:#a6e22e>my</span> <span style=color:#a6e22e>cheese</span> <span style=color:#a6e22e>or</span> (<span style=color:#a6e22e>e</span>)<span style=color:#a6e22e>ncrypt</span> <span style=color:#a6e22e>a</span> <span style=color:#a6e22e>cheese</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>What</span> <span style=color:#a6e22e>would</span> <span style=color:#a6e22e>you</span> <span style=color:#a6e22e>like</span> <span style=color:#a6e22e>to</span> <span style=color:#66d9ef>do</span><span style=color:#f92672>?</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>g</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#a6e22e>_</span>   <span style=color:#a6e22e>_</span>
+</span></span><span style=display:flex><span>  (<span style=color:#a6e22e>q</span><span style=color:#960050;background-color:#1e0010>\</span><span style=color:#a6e22e>_</span><span style=color:#f92672>/</span><span style=color:#a6e22e>p</span>)
+</span></span><span style=display:flex><span>   <span style=color:#f92672>/</span>. .<span style=color:#960050;background-color:#1e0010>\</span>.<span style=color:#f92672>-</span>.....<span style=color:#f92672>-</span>.     <span style=color:#a6e22e>___</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>=</span><span style=color:#960050;background-color:#1e0010>\</span><span style=color:#a6e22e>_t_</span><span style=color:#f92672>/=</span>     <span style=color:#960050;background-color:#1e0010>/  `\  (</span>
+</span></span><span style=display:flex><span>    )<span style=color:#960050;background-color:#1e0010>\</span> ))<span style=color:#a6e22e>__</span> <span style=color:#a6e22e>__</span><span style=color:#960050;background-color:#1e0010>\</span>   <span style=color:#f92672>|</span><span style=color:#a6e22e>___</span>)
+</span></span><span style=display:flex><span>   (<span style=color:#e6db74>/-(/</span><span style=color:#e6db74>`  `</span><span style=color:#a6e22e>nn</span><span style=color:#f92672>---</span><span style=color:#e6db74>&#39;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>SQUEAK SQUEAK SQUEAK
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>         _   _
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        (q\_/p)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>         /. .\
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  ,__   =\_t_/=
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>     )   /   \
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    (   ((   ))
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>     \  /\) (/\
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      `-\  Y  /
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>         nn^nn
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Is that you, Squeexy? Are you ready to GUESS...MY...CHEEEEEEESE?
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Remember, this is my encrypted cheese:  LRGGHOZMFOVPB
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>So...what&#39;</span><span style=color:#a6e22e>s</span> <span style=color:#a6e22e>my</span> <span style=color:#a6e22e>cheese</span><span style=color:#f92672>?</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>WELLINGTONSKA</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>         <span style=color:#a6e22e>_</span>   <span style=color:#a6e22e>_</span>
+</span></span><span style=display:flex><span>        (<span style=color:#a6e22e>q</span><span style=color:#960050;background-color:#1e0010>\</span><span style=color:#a6e22e>_</span><span style=color:#f92672>/</span><span style=color:#a6e22e>p</span>)
+</span></span><span style=display:flex><span>         <span style=color:#f92672>/</span>. .<span style=color:#960050;background-color:#1e0010>\</span>         <span style=color:#a6e22e>__</span>
+</span></span><span style=display:flex><span>  ,<span style=color:#a6e22e>__</span>   <span style=color:#f92672>=</span><span style=color:#960050;background-color:#1e0010>\</span><span style=color:#a6e22e>_t_</span><span style=color:#f92672>/=</span>      .<span style=color:#e6db74>&#39;o O&#39;</span><span style=color:#f92672>-</span>.
+</span></span><span style=display:flex><span>     )   <span style=color:#f92672>/</span>   <span style=color:#960050;background-color:#1e0010>\</span>      <span style=color:#f92672>/</span> <span style=color:#a6e22e>O</span> <span style=color:#a6e22e>o_</span>.<span style=color:#f92672>-</span><span style=color:#e6db74>`|
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    (   ((   ))    /O_.-&#39;  O |
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>     \  /\) (/\    | o   o  o|
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      `</span><span style=color:#f92672>-</span><span style=color:#960050;background-color:#1e0010>\</span>  <span style=color:#a6e22e>Y</span>  <span style=color:#f92672>/</span>    <span style=color:#f92672>|</span><span style=color:#a6e22e>o</span>   <span style=color:#a6e22e>o</span> <span style=color:#a6e22e>O</span>.<span style=color:#f92672>-</span><span style=color:#e6db74>`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>         nn^nn     | O _.-&#39;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                   &#39;--`</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>munch</span>...
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>         <span style=color:#a6e22e>_</span>   <span style=color:#a6e22e>_</span>
+</span></span><span style=display:flex><span>        (<span style=color:#a6e22e>q</span><span style=color:#960050;background-color:#1e0010>\</span><span style=color:#a6e22e>_</span><span style=color:#f92672>/</span><span style=color:#a6e22e>p</span>)
+</span></span><span style=display:flex><span>         <span style=color:#f92672>/</span>. .<span style=color:#960050;background-color:#1e0010>\</span>         <span style=color:#a6e22e>__</span>
+</span></span><span style=display:flex><span>  ,<span style=color:#a6e22e>__</span>   <span style=color:#f92672>=</span><span style=color:#960050;background-color:#1e0010>\</span><span style=color:#a6e22e>_t_</span><span style=color:#f92672>/=</span>      .<span style=color:#e6db74>&#39;o O&#39;</span><span style=color:#f92672>-</span>.
+</span></span><span style=display:flex><span>     )   <span style=color:#f92672>/</span>   <span style=color:#960050;background-color:#1e0010>\</span>      <span style=color:#f92672>/</span> <span style=color:#a6e22e>O</span> <span style=color:#a6e22e>o_</span>.<span style=color:#f92672>-</span><span style=color:#e6db74>`|
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    (   ((   ))      ).-&#39;  O |
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>     \  /\) (/\      )   o  o|
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      `</span><span style=color:#f92672>-</span><span style=color:#960050;background-color:#1e0010>\</span>  <span style=color:#a6e22e>Y</span>  <span style=color:#f92672>/</span>    <span style=color:#f92672>|</span><span style=color:#a6e22e>o</span>   <span style=color:#a6e22e>o</span> <span style=color:#a6e22e>O</span>.<span style=color:#f92672>-</span><span style=color:#e6db74>`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>         nn^nn     | O _.-&#39;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                   &#39;--`</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>munch</span>...
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>         <span style=color:#a6e22e>_</span>   <span style=color:#a6e22e>_</span>
+</span></span><span style=display:flex><span>        (<span style=color:#a6e22e>q</span><span style=color:#960050;background-color:#1e0010>\</span><span style=color:#a6e22e>_</span><span style=color:#f92672>/</span><span style=color:#a6e22e>p</span>)
+</span></span><span style=display:flex><span>         <span style=color:#f92672>/</span>. .<span style=color:#960050;background-color:#1e0010>\</span>         <span style=color:#a6e22e>__</span>
+</span></span><span style=display:flex><span>  ,<span style=color:#a6e22e>__</span>   <span style=color:#f92672>=</span><span style=color:#960050;background-color:#1e0010>\</span><span style=color:#a6e22e>_t_</span><span style=color:#f92672>/=</span>      .<span style=color:#e6db74>&#39;o O&#39;</span><span style=color:#f92672>-</span>.
+</span></span><span style=display:flex><span>     )   <span style=color:#f92672>/</span>   <span style=color:#960050;background-color:#1e0010>\</span>      <span style=color:#f92672>/</span> <span style=color:#a6e22e>O</span> <span style=color:#a6e22e>o_</span>.<span style=color:#f92672>-</span><span style=color:#e6db74>`|
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    (   ((   ))        )&#39;  O |
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>     \  /\) (/\          )  o|
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      `</span><span style=color:#f92672>-</span><span style=color:#960050;background-color:#1e0010>\</span>  <span style=color:#a6e22e>Y</span>  <span style=color:#f92672>/</span>         ) <span style=color:#a6e22e>O</span>.<span style=color:#f92672>-</span><span style=color:#e6db74>`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>         nn^nn        ) _.-&#39;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                   &#39;--`</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>MUNCH</span>.............
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>YUM</span><span style=color:#f92672>!</span> <span style=color:#a6e22e>MMMMmmmmMMMMmmmMMM</span><span style=color:#f92672>!!!</span> <span style=color:#a6e22e>Yes</span>...<span style=color:#a6e22e>yesssss</span><span style=color:#f92672>!</span> <span style=color:#a6e22e>That</span><span style=color:#e6db74>&#39;s my cheese!
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Here&#39;</span><span style=color:#a6e22e>s</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>password</span> <span style=color:#a6e22e>to</span> <span style=color:#a6e22e>the</span> <span style=color:#a6e22e>cloning</span> <span style=color:#a6e22e>room</span><span style=color:#f92672>:</span>  <span style=color:#a6e22e>picoCTF</span>{<span style=color:#a6e22e>ChEeSy033d0004</span>}
+</span></span></code></pre></div><pre><code>Flag: picoCTF{ChEeSy033d0004}
+</code></pre><h3 id=chacha-slide><a class=header-anchor href=#chacha-slide></a>ChaCha Slide</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># challenge.py</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> secrets
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> hashlib
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Cipher <span style=color:#f92672>import</span> ChaCha20_Poly1305
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>flag <span style=color:#f92672>=</span> open(<span style=color:#e6db74>&#34;flag.txt&#34;</span>)<span style=color:#f92672>.</span>read()<span style=color:#f92672>.</span>strip()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>shasum</span>(x):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> hashlib<span style=color:#f92672>.</span>sha256(x)<span style=color:#f92672>.</span>digest()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>key <span style=color:#f92672>=</span> shasum(shasum(secrets<span style=color:#f92672>.</span>token_bytes(<span style=color:#ae81ff>32</span>) <span style=color:#f92672>+</span> flag<span style=color:#f92672>.</span>encode()))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Generate a random nonce to be extra safe</span>
+</span></span><span style=display:flex><span>nonce <span style=color:#f92672>=</span> secrets<span style=color:#f92672>.</span>token_bytes(<span style=color:#ae81ff>12</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>messages <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;Did you know that ChaCha20-Poly1305 is an authenticated encryption algorithm?&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;That means it protects both the confidentiality and integrity of data!&#34;</span>
+</span></span><span style=display:flex><span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>goal <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;But it&#39;s only secure if used correctly!&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>encrypt</span>(message):
+</span></span><span style=display:flex><span>    cipher <span style=color:#f92672>=</span> ChaCha20_Poly1305<span style=color:#f92672>.</span>new(key<span style=color:#f92672>=</span>key, nonce<span style=color:#f92672>=</span>nonce)
+</span></span><span style=display:flex><span>    ciphertext, tag <span style=color:#f92672>=</span> cipher<span style=color:#f92672>.</span>encrypt_and_digest(message)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> ciphertext <span style=color:#f92672>+</span> tag <span style=color:#f92672>+</span> nonce
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>decrypt</span>(message_enc):
+</span></span><span style=display:flex><span>    ciphertext <span style=color:#f92672>=</span> message_enc[:<span style=color:#f92672>-</span><span style=color:#ae81ff>28</span>]
+</span></span><span style=display:flex><span>    tag <span style=color:#f92672>=</span> message_enc[<span style=color:#f92672>-</span><span style=color:#ae81ff>28</span>:<span style=color:#f92672>-</span><span style=color:#ae81ff>12</span>]
+</span></span><span style=display:flex><span>    nonce <span style=color:#f92672>=</span> message_enc[<span style=color:#f92672>-</span><span style=color:#ae81ff>12</span>:]
+</span></span><span style=display:flex><span>    cipher <span style=color:#f92672>=</span> ChaCha20_Poly1305<span style=color:#f92672>.</span>new(key<span style=color:#f92672>=</span>key, nonce<span style=color:#f92672>=</span>nonce)
+</span></span><span style=display:flex><span>    plaintext <span style=color:#f92672>=</span> cipher<span style=color:#f92672>.</span>decrypt_and_verify(ciphertext, tag)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> plaintext
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> message <span style=color:#f92672>in</span> messages:
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;Plaintext: &#34;</span> <span style=color:#f92672>+</span> repr(message))
+</span></span><span style=display:flex><span>    message <span style=color:#f92672>=</span> message<span style=color:#f92672>.</span>encode()
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;Plaintext (hex): &#34;</span> <span style=color:#f92672>+</span> message<span style=color:#f92672>.</span>hex())
+</span></span><span style=display:flex><span>    ciphertext <span style=color:#f92672>=</span> encrypt(message)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;Ciphertext (hex): &#34;</span> <span style=color:#f92672>+</span> ciphertext<span style=color:#f92672>.</span>hex())
+</span></span><span style=display:flex><span>    print()
+</span></span><span style=display:flex><span>    print()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>user <span style=color:#f92672>=</span> bytes<span style=color:#f92672>.</span>fromhex(input(<span style=color:#e6db74>&#34;What is your message? &#34;</span>))
+</span></span><span style=display:flex><span>user_message <span style=color:#f92672>=</span> decrypt(user)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;User message (decrypted): &#34;</span> <span style=color:#f92672>+</span> repr(user_message))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> goal <span style=color:#f92672>in</span> repr(user_message):
+</span></span><span style=display:flex><span>    print(flag)
+</span></span></code></pre></div><p>Kết nối với kênh, ta được đoạn tin sau:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#a6e22e>Plaintext</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;Did you know that ChaCha20-Poly1305 is an authenticated encryption algorithm?&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Plaintext</span> (<span style=color:#a6e22e>hex</span>)<span style=color:#f92672>:</span> <span style=color:#ae81ff>44696420796</span><span style=color:#a6e22e>f75206b6e6f7720746861742043686143686132302d506f6c793133303520697320616e2061757468656e7469636174656420656e6372797074696f6e20616c676f726974686d3f</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Ciphertext</span> (<span style=color:#a6e22e>hex</span>)<span style=color:#f92672>:</span> <span style=color:#ae81ff>7</span><span style=color:#a6e22e>cb5f2e754caea3d3d98048ee7d747c1b677b5ac33a000d74c86b68f7f25a955db62e0a8fd17b0235cfc0541a7f8edf105a5d1ab6a6489cfacb7e4061f5b1c8f4f04e9624220e4cb450bae1e13da93a564ed04959dbde00eb0e72b772fb4a5a47457ad46b48a03432d</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Plaintext</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;That means it protects both the confidentiality and integrity of data!&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Plaintext</span> (<span style=color:#a6e22e>hex</span>)<span style=color:#f92672>:</span> <span style=color:#ae81ff>54686174206</span><span style=color:#a6e22e>d65616e732069742070726f746563747320626f74682074686520636f6e666964656e7469616c69747920616e6420696e74656772697479206f66206461746121</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Ciphertext</span> (<span style=color:#a6e22e>hex</span>)<span style=color:#f92672>:</span> <span style=color:#ae81ff>6</span><span style=color:#a6e22e>cb4f7b30dc8fa7c38854b90b3835fd2ad2393a7269048d411c2f3ff6421b5448b3dbbeefd00f52c46b50558bae4f1bf10a2d6ea776f998aaeabee001f0b0780000ea8774f66f3102a46013366d9ab4b0cf5b4320020b4a5a47457ad46b48a03432d</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>What</span> <span style=color:#a6e22e>is</span> <span style=color:#a6e22e>your</span> <span style=color:#a6e22e>message</span><span style=color:#f92672>?</span>
+</span></span></code></pre></div><p>Sơ lược lại thì thử thách nói về hệ mã dòng có xác thực ChaCha20 - Poly1305.
+Rõ hơn thì đề cho ta hai đoạn tin nhắn và bản mã của chúng, yêu cầu ta gửi tới bản mã của goal được cho để nhận về flag của chall.</p><p>Để gửi được đúng bản mã của goal, ta phải tìm được 3 phần gồm: <code>ciphertext, tag, nonce</code>. Đơn giản với <code>nonce</code> vì nó đã trùng với cái của 2 ciphertext mẫu có sẵn. Còn <code>ciphertext</code> thì liên quan tới phần mã hóa của Chacha20, <code>tag</code> liên quan tới phần xác thực của Poly1305</p><p>Vì vậy, ta chia ChaCha20 - Poly1305 thành hai phần để phân tích và tấn công:</p><ol><li>Về Chacha20:</li></ol><p>Phương thức này sử dụng mã hóa XOR với <code>keystream</code> là XOR key.</p><p>Nghĩa là: Ciphertext = Plaintext $\oplus$ Keystream</p><p>$\Leftrightarrow$ Ciphertext $\oplus$ Plaintext = Plaintext $\oplus$ Keystream $\oplus$ Plaintext = Keystream</p><p>Và khi mà ta đã biết cái plaintext ở goal rồi thì việc giải mã sẽ đơn giản bằng <strong>known-plaintext attack</strong> như sau: goal_ct = goal $\oplus$ Keystream = goal $\oplus$ Ciphertext $\oplus$ Plaintext</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>ciphertext <span style=color:#f92672>=</span> bytes(
+</span></span><span style=display:flex><span>    [
+</span></span><span style=display:flex><span>        c1 <span style=color:#f92672>^</span> p1 <span style=color:#f92672>^</span> p2
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> c1, p1, p2 <span style=color:#f92672>in</span> zip(ciphertext1, plaintext1, goal)
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>)  <span style=color:#75715e># vì độ dài goal nhỏ hơn ciphertext1 nên keystream sẽ chạy hết được goal</span>
+</span></span></code></pre></div><ol start=2><li>Poly1305:</li></ol><p>Phần này mới thực sự là phức tạp của thử thách, với mục đích chính là tìm cái <code>tag</code> để server check xem có đúng không.
+Sau khi google thì ta biết được rằng Poly1305 được dùng như mã xác thực một lần với:</p><p>$$
+tag \equiv Poly1305_r(m)+s \mod 2^{128}
+$$</p><p>Đề cho ta 2 tag của 2 tin nhắn phân biệt mà ta đã biết và được dùng cùng 1 Poly1305 key bí mật (r,s). Bây giờ, chúng ta phải tìm lại key này để giải mã được cấu trúc tạo tag.</p><p>Và ở <a href=https://en.wikipedia.org/wiki/Poly1305#Use_as_a_one-time_authenticator>đây</a> cũng có để cách attack nếu sử dụng 2 lần để mã hóa tin nhắn bằng 1 key.</p><p>$$
+tag_1 = (Poly1305_r(m_1) + s )\mod 2^{128} \ (1)
+$$</p><p>$$
+tag_2 = (Poly1305_r(mg_2) + s )\mod 2^{128} \ (2)
+$$</p><p>Từ (1) và (2), ta có:</p><p>$$
+tag_1 - tag_2 \equiv Poly1305_r(m_1)- Poly1305_r(m_2) \mod 2^{128}
+$$</p><p>Mình xem ở <a href=https://en.wikipedia.org/wiki/Poly1305#Definition_of_Poly1305>đây</a> để phân tích cái Poly1305 ra:
+$$
+tag_1 - tag_2 \equiv (c_1^1r^q+c_1^2r^{q-1}+&mldr;+c_1^qr^1\mod 2^{130} -5)
+$$</p><p>$$
+-(c_2^1r^q+c_2^2r^{q-1}+&mldr;+c_2^qr^1\mod 2^{130} -5) \mod 2^{128}
+$$</p><p>$$
+\Leftrightarrow tag_1 - tag_2 + 2^{128}(i-j) \equiv (((c_1^1-c_2^1)r^q+(c_1^2-c_2^2)r^{q-1}+&mldr;+(c_1^q-c_2^q)r^1) \mod 2^{130} -5)
+$$</p><p>Vì <code>tag</code> ban đầu mod 1 giá trị bằng $2^{130} - 5$, gần bằng 130 bits rồi mod $2^{128}$ nghĩa là <code>tag</code> mất 2 bits nên $i,j \in \overline{0,4} \Rightarrow (i-j)\in \overline{-4,4}$.</p><p>Đặt $k = i-j$ thì với mỗi k, ta sẽ dựng 1 phương trình trên GF($2^{130}-5$), tìm nghiệm của phương trình này và nó là <code>r</code> rồi thế lại vào 1 trong hai phương trình trên là ta ra được <code>s</code></p><p>Khi đã có được <code>r, s</code> đối với cặp <code>(key, nonce)</code> này rồi thì ta hoàn toàn có thể tạo 1 cái <code>tag</code> xác thực được cho ciphertext của goal và đây cũng là cách mình thực hiện thử thách này.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># solution.py</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pwn <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Util.Padding <span style=color:#f92672>import</span> pad, unpad
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> sage.all <span style=color:#66d9ef>as</span> sage
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>io <span style=color:#f92672>=</span> remote(<span style=color:#e6db74>&#34;activist-birds.picoctf.net&#34;</span>, <span style=color:#ae81ff>59584</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>plaintext1 <span style=color:#f92672>=</span> (
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;Did you know that ChaCha20-Poly1305 is an authenticated encryption algorithm?&#34;</span>
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>data</span>():
+</span></span><span style=display:flex><span>    io<span style=color:#f92672>.</span>recvuntil(<span style=color:#e6db74>&#34;Ciphertext (hex): &#34;</span>)
+</span></span><span style=display:flex><span>    message_enc <span style=color:#f92672>=</span> io<span style=color:#f92672>.</span>recvline()<span style=color:#f92672>.</span>decode()<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>)[<span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>    <span style=color:#75715e># lấy từ ciphertext của plaintext từ server</span>
+</span></span><span style=display:flex><span>    message_enc <span style=color:#f92672>=</span> bytes<span style=color:#f92672>.</span>fromhex(message_enc)
+</span></span><span style=display:flex><span>    ciphertext <span style=color:#f92672>=</span> message_enc[:<span style=color:#f92672>-</span><span style=color:#ae81ff>28</span>]
+</span></span><span style=display:flex><span>    tag <span style=color:#f92672>=</span> message_enc[<span style=color:#f92672>-</span><span style=color:#ae81ff>28</span>:<span style=color:#f92672>-</span><span style=color:#ae81ff>12</span>]
+</span></span><span style=display:flex><span>    nonce <span style=color:#f92672>=</span> message_enc[<span style=color:#f92672>-</span><span style=color:#ae81ff>12</span>:]
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> ciphertext, tag, nonce
+</span></span><span style=display:flex><span>ciphertext1, tag1, nonce <span style=color:#f92672>=</span> data()
+</span></span><span style=display:flex><span>ciphertext2, tag2, nonce <span style=color:#f92672>=</span> data()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>goal <span style=color:#f92672>=</span> <span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;But it&#39;s only secure if used correctly!&#34;</span>
+</span></span><span style=display:flex><span>ciphertext <span style=color:#f92672>=</span> bytes(
+</span></span><span style=display:flex><span>    [
+</span></span><span style=display:flex><span>        c1 <span style=color:#f92672>^</span> p1 <span style=color:#f92672>^</span> p2
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> c1, p1, p2 <span style=color:#f92672>in</span> zip(ciphertext1, plaintext1, goal)
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>)  <span style=color:#75715e># vì độ dài goal nhỏ hơn ciphertext1 nên keystream sẽ chạy hết được goal</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>make_poly</span>(ct):
+</span></span><span style=display:flex><span>    data <span style=color:#f92672>=</span> <span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>    mac_data <span style=color:#f92672>=</span> data <span style=color:#f92672>+</span> pad(data, <span style=color:#ae81ff>16</span>)
+</span></span><span style=display:flex><span>    mac_data <span style=color:#f92672>+=</span> ct <span style=color:#f92672>+</span> pad(ct, <span style=color:#ae81ff>16</span>)
+</span></span><span style=display:flex><span>    mac_data <span style=color:#f92672>+=</span> struct<span style=color:#f92672>.</span>pack(<span style=color:#e6db74>&#34;&lt;Q&#34;</span>, len(data))
+</span></span><span style=display:flex><span>    mac_data <span style=color:#f92672>+=</span> struct<span style=color:#f92672>.</span>pack(<span style=color:#e6db74>&#34;&lt;Q&#34;</span>, len(ct))
+</span></span><span style=display:flex><span>    f <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>0</span>, round(len(mac_data) <span style=color:#f92672>/</span> <span style=color:#ae81ff>16</span>)):
+</span></span><span style=display:flex><span>        n <span style=color:#f92672>=</span> mac_data[i <span style=color:#f92672>*</span> <span style=color:#ae81ff>16</span> : (i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>) <span style=color:#f92672>*</span> <span style=color:#ae81ff>16</span>] <span style=color:#f92672>+</span> <span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\x01</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        n <span style=color:#f92672>+=</span> (<span style=color:#ae81ff>17</span> <span style=color:#f92672>-</span> len(n)) <span style=color:#f92672>*</span> <span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\x00</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        f <span style=color:#f92672>=</span> (f <span style=color:#f92672>+</span> int<span style=color:#f92672>.</span>from_bytes(n, <span style=color:#e6db74>&#34;little&#34;</span>)) <span style=color:#f92672>*</span> x
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> f
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>tag1_int <span style=color:#f92672>=</span> int<span style=color:#f92672>.</span>from_bytes(tag1, <span style=color:#e6db74>&#34;little&#34;</span>)
+</span></span><span style=display:flex><span>tag2_int <span style=color:#f92672>=</span> int<span style=color:#f92672>.</span>from_bytes(tag2, <span style=color:#e6db74>&#34;little&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Pr <span style=color:#f92672>=</span> sage<span style=color:#f92672>.</span>PolynomialRing(sage<span style=color:#f92672>.</span>GF(<span style=color:#ae81ff>2</span><span style=color:#f92672>**</span><span style=color:#ae81ff>130</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>5</span>), <span style=color:#e6db74>&#34;x&#34;</span>)
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> Pr<span style=color:#f92672>.</span>gen()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>f1 <span style=color:#f92672>=</span> make_poly(ciphertext1)
+</span></span><span style=display:flex><span>f2 <span style=color:#f92672>=</span> make_poly(ciphertext2)
+</span></span><span style=display:flex><span>print(f1)
+</span></span><span style=display:flex><span>print(f2)
+</span></span><span style=display:flex><span><span style=color:#75715e># 597196402248105951626966011877782631804*x^6 + 454145005287357688070972442197395601334*x^5 + 661861931549384550481074575939827950299*x^4 + 530509202787700791233082061683076211973*x^3 + 340282368435768507855198875253190755407*x^2 + 340282366920938464883773901107403685888*x</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 619916185459487913787536860817282020460*x^6 + 431610353687254081499753564988673041325*x^5 + 595420896811833730416722478289825512843*x^4 + 510460122022284652188488210929459569168*x^3 + 340282366920938463463374719923264163328*x^2 + 340282366920938464754646692591436824576*x</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>res <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> k <span style=color:#f92672>in</span> range(<span style=color:#f92672>-</span><span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>):
+</span></span><span style=display:flex><span>    rhs <span style=color:#f92672>=</span> tag1_int <span style=color:#f92672>-</span> tag2_int <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span><span style=color:#f92672>**</span><span style=color:#ae81ff>128</span> <span style=color:#f92672>*</span> k
+</span></span><span style=display:flex><span>    print(rhs, k)
+</span></span><span style=display:flex><span>    f <span style=color:#f92672>=</span> rhs <span style=color:#f92672>-</span> (f1 <span style=color:#f92672>-</span> f2)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> r, _ <span style=color:#f92672>in</span> f<span style=color:#f92672>.</span>roots():
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> int(r)<span style=color:#f92672>.</span>bit_length() <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>124</span>:
+</span></span><span style=display:flex><span>            s <span style=color:#f92672>=</span> (tag1_int <span style=color:#f92672>-</span> int(f1(r))) <span style=color:#f92672>%</span> (<span style=color:#ae81ff>2</span><span style=color:#f92672>**</span><span style=color:#ae81ff>128</span>)
+</span></span><span style=display:flex><span>            res<span style=color:#f92672>.</span>append((r, s))
+</span></span><span style=display:flex><span>print(res)
+</span></span><span style=display:flex><span><span style=color:#75715e># [(20320015409774457323517351832911875936, 340179677694136160511250274535902749702)]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> r, s <span style=color:#f92672>in</span> res:
+</span></span><span style=display:flex><span>    f <span style=color:#f92672>=</span> make_poly(ciphertext)
+</span></span><span style=display:flex><span>    tag <span style=color:#f92672>=</span> (int(f(r)) <span style=color:#f92672>+</span> s) <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span><span style=color:#f92672>**</span><span style=color:#ae81ff>128</span>
+</span></span><span style=display:flex><span>    print(tag)
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 314525754662942930020042292487713459951</span>
+</span></span><span style=display:flex><span>    tag <span style=color:#f92672>=</span> int(tag)<span style=color:#f92672>.</span>to_bytes(<span style=color:#ae81ff>16</span>, <span style=color:#e6db74>&#34;little&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>message <span style=color:#f92672>=</span> (ciphertext <span style=color:#f92672>+</span> tag <span style=color:#f92672>+</span> nonce)<span style=color:#f92672>.</span>hex()
+</span></span><span style=display:flex><span>print(message)
+</span></span><span style=display:flex><span><span style=color:#75715e># 7aa9e2e744d1b86e76990595be835cc5a12284a1728a0e960bc5febb302abf169a37b6fcf81db1ef0ee4d59f089de8f06ea49ef8749fecb4a5a47457ad46b48a03432d</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>io<span style=color:#f92672>.</span>recvuntil(<span style=color:#e6db74>&#34;What is your message? &#34;</span>)
+</span></span><span style=display:flex><span>io<span style=color:#f92672>.</span>sendline(message)
+</span></span><span style=display:flex><span>io<span style=color:#f92672>.</span>recvline()
+</span></span><span style=display:flex><span>flag <span style=color:#f92672>=</span> io<span style=color:#f92672>.</span>recvline()<span style=color:#f92672>.</span>decode()
+</span></span><span style=display:flex><span>print(flag)
+</span></span></code></pre></div><p>Trong lúc làm bài thì mình nhập trực tiếp tới server nên được như sau:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#a6e22e>Plaintext</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;Did you know that ChaCha20-Poly1305 is an authenticated encryption algorithm?&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Plaintext</span> (<span style=color:#a6e22e>hex</span>)<span style=color:#f92672>:</span> <span style=color:#ae81ff>44696420796</span><span style=color:#a6e22e>f75206b6e6f7720746861742043686143686132302d506f6c793133303520697320616e2061757468656e7469636174656420656e6372797074696f6e20616c676f726974686d3f</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Ciphertext</span> (<span style=color:#a6e22e>hex</span>)<span style=color:#f92672>:</span> <span style=color:#ae81ff>7</span><span style=color:#a6e22e>cb5f2e754caea3d3d98048ee7d747c1b677b5ac33a000d74c86b68f7f25a955db62e0a8fd17b0235cfc0541a7f8edf105a5d1ab6a6489cfacb7e4061f5b1c8f4f04e9624220e4cb450bae1e13da93a564ed04959dbde00eb0e72b772fb4a5a47457ad46b48a03432d</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Plaintext</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;That means it protects both the confidentiality and integrity of data!&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Plaintext</span> (<span style=color:#a6e22e>hex</span>)<span style=color:#f92672>:</span> <span style=color:#ae81ff>54686174206</span><span style=color:#a6e22e>d65616e732069742070726f746563747320626f74682074686520636f6e666964656e7469616c69747920616e6420696e74656772697479206f66206461746121</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Ciphertext</span> (<span style=color:#a6e22e>hex</span>)<span style=color:#f92672>:</span> <span style=color:#ae81ff>6</span><span style=color:#a6e22e>cb4f7b30dc8fa7c38854b90b3835fd2ad2393a7269048d411c2f3ff6421b5448b3dbbeefd00f52c46b50558bae4f1bf10a2d6ea776f998aaeabee001f0b0780000ea8774f66f3102a46013366d9ab4b0cf5b4320020b4a5a47457ad46b48a03432d</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>What</span> <span style=color:#a6e22e>is</span> <span style=color:#a6e22e>your</span> <span style=color:#a6e22e>message</span><span style=color:#f92672>?</span> <span style=color:#ae81ff>7</span><span style=color:#a6e22e>aa9e2e744d1b86e76990595be835cc5a12284a1728a0e960bc5febb302abf169a37b6fcf81db1ef0ee4d59f089de8f06ea49ef8749fecb4a5a47457ad46b48a03432d</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>User</span> <span style=color:#a6e22e>message</span> (<span style=color:#a6e22e>decrypted</span>)<span style=color:#f92672>:</span> <span style=color:#a6e22e>b</span><span style=color:#e6db74>&#34;But it&#39;s only secure if used correctly!&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>picoCTF</span>{<span style=color:#ae81ff>7</span><span style=color:#a6e22e>urn_17_84ck_n0w_77243c82</span>}
+</span></span></code></pre></div><pre><code>Flag: picoCTF{7urn_17_84ck_n0w_77243c82}
+</code></pre><h3 id=guess-my-cheese-part-2><a class=header-anchor href=#guess-my-cheese-part-2></a>Guess My Cheese (Part 2)</h3><blockquote><p>Mình để bài này sau cùng vì thực sự thì nó khá là tricky và xém nữa thì mình có thể làm ra nó sớm hơn trong quá trình giải bài nhưng không được.</p></blockquote><p>Thử thách cho ta một cái <code>cheese_list.txt</code> chứa 599 loại cheese cùng với đó là server được kết nối như Part 1 chỉ khác 1 chỗ là không được mã hóa một loại cheese mà ta cho trước.</p><p>Ở đây thì hint có nhắc tới <a href=https://en.wikipedia.org/wiki/Salt_(cryptography)>Salt</a> là 2 ký tự thập lục phân và gợi ý cho ta dùng <a href=https://en.wikipedia.org/wiki/Rainbow_table>Rainbow table</a></p><p>Đầu tiên, mình cũng brute-force băm SHA256 hết các cheese cộng với việc thêm salt vào cuối $\rightarrow$ không ra. Sau đó, mình nghĩ tới việc băm trước rồi thêm salt sau đó băm tiếp $\rightarrow$ cũng không ra. Rồi mình nghĩ tới việc thêm salt vào từng ký tự xen giữa của cheese rồi băm và tất nhiên $\rightarrow$ không ra. Tiếp theo, mình nghĩ là ồ Part 1 đã cho ta chữ cái in hoa rồi thì có thể phải in hoa hết các cheese xong mới thực hiện $\rightarrow$ không ra.</p><p>Lúc đó mình cũng không nghĩ tới việc là phải ngược lại là in thường hết các cheese và nó đúng thật là như vậy&mldr;</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># solution.py</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> hashlib <span style=color:#f92672>import</span> sha256
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> open(
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;cheese_list.txt&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;r&#34;</span>,
+</span></span><span style=display:flex><span>) <span style=color:#66d9ef>as</span> f:
+</span></span><span style=display:flex><span>    data <span style=color:#f92672>=</span> f<span style=color:#f92672>.</span>readlines()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>cheeses <span style=color:#f92672>=</span> [line<span style=color:#f92672>.</span>strip()<span style=color:#f92672>.</span>lower() <span style=color:#66d9ef>for</span> line <span style=color:#f92672>in</span> data]
+</span></span><span style=display:flex><span>chall <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;9b71b2b23fa26641a0096848f97b78718975832f37ab770c60398949cd991a14&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>rainbow_table <span style=color:#f92672>=</span> {}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> cheese <span style=color:#f92672>in</span> cheeses:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> salt <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>256</span>):
+</span></span><span style=display:flex><span>        x <span style=color:#f92672>=</span> cheese<span style=color:#f92672>.</span>encode() <span style=color:#f92672>+</span> salt<span style=color:#f92672>.</span>to_bytes(<span style=color:#ae81ff>1</span>, byteorder<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;big&#39;</span>)
+</span></span><span style=display:flex><span>        new_cheese_hash <span style=color:#f92672>=</span> sha256(x)<span style=color:#f92672>.</span>hexdigest()
+</span></span><span style=display:flex><span>        rainbow_table[new_cheese_hash] <span style=color:#f92672>=</span> x
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> chall <span style=color:#f92672>in</span> rainbow_table:
+</span></span><span style=display:flex><span>    x <span style=color:#f92672>=</span> rainbow_table[chall]
+</span></span><span style=display:flex><span>    print(x)
+</span></span><span style=display:flex><span>    <span style=color:#75715e># b&#39;pyramide\xa9&#39;</span>
+</span></span></code></pre></div><p>Gửi cheese rồi sau đó là salt vào server thì ta nhận được flag&mldr;</p></div><footer class=article-footer><ul class=article-tag-list itemprop=keywords><li class=article-tag-list-item data-aos=zoom-in><a class=article-tag-list-link href=/tags/ctf rel=tag>CTF</a></li><li class=article-tag-list-item data-aos=zoom-in><a class=article-tag-list-link href=/tags/cryptography rel=tag>CRYPTOGRAPHY</a></li></ul></footer></div><nav id=article-nav aria-label="Article navigation" data-aos=fade-up><div class="article-nav-link-wrap right"><img data-src=/images/dicectf.png data-sizes=auto alt="DiceCTF 2025" class=lazyload><a href=/post/dicectf2025/ aria-label="Next:DiceCTF 2025" title="Next:DiceCTF 2025"></a><div class=article-nav-caption>Next</div><h3 class=article-nav-title>DiceCTF 2025</h3></div></nav></article></section></div><footer id=footer aria-label="Site footer"><div style=width:100%;overflow:hidden><div class=footer-line></div></div><div id=footer-info><div><span class=icon-copyright></span>2020-2025<span class="footer-info-sep rotate"></span>
+r1muru</div><div>Powered by&nbsp;<a href=https://gohugo.io/ target=_blank rel="noopener nofollow noreferrer">Hugo</a>&nbsp; Theme.<a href=https://github.com/D-Sketon/hugo-theme-reimu target=_blank rel="noopener nofollow noreferrer">Reimu</a></div><div><span class=icon-brush>&nbsp;23.8k</span>
+&nbsp;|&nbsp;
+<span class=icon-coffee>&nbsp;01:57</span></div><div><span class=icon-eye></span>
+<span id=busuanzi_container_site_pv>Number of visits&nbsp;<span id=busuanzi_value_site_pv></span></span>
+&nbsp;|&nbsp;
+<span class=icon-user></span>
+<span id=busuanzi_container_site_uv>Number of visitors&nbsp;<span id=busuanzi_value_site_uv></span></span></div></div></footer><div class=sidebar-top><div class="sidebar-top-taichi rotate"></div><div class=arrow-up></div></div><div id=mask class=hide></div></div><nav id=mobile-nav aria-label="Mobile navigation"><div class=sidebar-wrap><div class=sidebar-toc-sidebar><h3 class=toc-title>Contents</h3><div class="sidebar-toc-wrapper toc-div-class"><nav id=TableOfContents><ul><li><a href=#general>General</a><ul><li><a href=#fantasy-ctf>FANTASY CTF</a></li></ul></li><li><a href=#crypto>Crypto</a><ul><li><a href=#hashcrack>hashcrack</a></li><li><a href=#even-rsa-can-be-broken>EVEN RSA CAN BE BROKEN???</a></li><li><a href=#guess-my-cheese-part-1>Guess My Cheese (Part 1)</a></li><li><a href=#chacha-slide>ChaCha Slide</a></li><li><a href=#guess-my-cheese-part-2>Guess My Cheese (Part 2)</a></li></ul></li></ul></nav></div></div><div class="sidebar-common-sidebar hidden"><div class=sidebar-author><img data-src=/avatar/avatar.webp data-sizes=auto alt=r1muru class=lazyload><div class=sidebar-author-name>r1muru</div><div class=sidebar-description>Life is not fair, get used to it</div></div><div class=sidebar-state><div class=sidebar-state-article><div>Posts</div><div class=sidebar-state-number>9</div></div><a class=sidebar-state-category href=/categories/ aria-label=sidebar-state-category-link><div>Categories</div><div class=sidebar-state-number>3</div></a><a class=sidebar-state-tag href=/tags/ aria-label=sidebar-state-tag-link><div>Tags</div><div class=sidebar-state-number>7</div></a></div><div class=sidebar-social></div><div class=sidebar-menu><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/ aria-label=Home></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>Home</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/archives aria-label=Archives></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>Archives</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/about aria-label=About></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>About</div></div></div></div></div><div class=sidebar-btn-wrapper><div class="sidebar-toc-btn current"></div><div class=sidebar-common-btn></div></div></nav></div><script src=https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js integrity=sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf+e crossorigin=anonymous></script><script src=https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js integrity=sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q crossorigin=anonymous></script><script src=/js/main.js integrity crossorigin=anonymous></script><script src=/js/aos.js integrity crossorigin=anonymous></script><script>var aosInit=()=>{AOS.init({duration:1e3,easing:"ease",once:!0,offset:50})};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",aosInit):aosInit()</script><script src=/js/pjax_main.js integrity crossorigin=anonymous data-pjax></script><script src=https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js integrity=sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d crossorigin=anonymous></script><script>if((!!1||!window.matchMedia("(max-width: 768px)").matches)&&window.firework){const e=JSON.parse('{"excludeelements":["a","button"],"particles":[{"colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"duration":[1200,1800],"easing":"easeOutExpo","move":["emit"],"number":20,"shape":"circle","shapeOptions":{"alpha":[0.3,0.5],"radius":[16,32]}},{"colors":["var(--red-0)"],"duration":[1200,1800],"easing":"easeOutExpo","move":["diffuse"],"number":1,"shape":"circle","shapeOptions":{"alpha":[0.2,0.5],"lineWidth":6,"radius":20}}]}');e.excludeElements=e.excludeelements,delete e.excludeelements,window.firework(e)}</script><div id=lazy-script><div><script data-pjax>window.REIMU_POST={author:"r1muru",title:"picoCTF 2025",url:"https://r1muru2006.github.io/post/picoctf2025/",description:"Blog đầu nên mình sẽ lấy giải lần đầu mình chơi cùng team aespaFanClub :3",cover:"https://r1muru2006.github.io/images/picoCTF.png"}</script><script src=/js/insert_highlight.js integrity crossorigin=anonymous data-pjax></script><script src=/js/tabs.js integrity crossorigin=anonymous data-pjax></script><script type=module data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script src=https://npm.webcache.cn/katex@0.16.24/dist/katex.min.js data-pjaxintegrity=sha384-MWNUH0WmtsYGhn2cbH6ELRCbf9LG3QDqCC+gqPB3IBNO35xjZK3Ejb6oONRpDbPg crossorigin=anonymous></script><script src=https://npm.webcache.cn/katex@0.16.24/dist/contrib/auto-render.min.js data-pjaxintegrity=sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh crossorigin=anonymous></script><script data-pjax>var renderMath=()=>{if(!window.renderMathInElement)return;window.renderMathInElement(_$("article"),{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}]})};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",renderMath,{once:!0}):renderMath()</script></div></div><script src=https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js asyncintegrity=sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S crossorigin=anonymous></script><script>"serviceWorker"in navigator&&navigator.serviceWorker.getRegistrations().then(e=>{for(let t of e)t.unregister()})</script><script>const reimuCopyright=String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;console.log(String.raw`%c ${reimuCopyright}`,"color: #ff5252;"),console.log("%c Theme.Reimu %c https://github.com/D-Sketon/hugo-theme-reimu ","color: white; background: #ff5252; padding:5px 0;","padding:4px;border:1px solid #ff5252;")</script></body></html>

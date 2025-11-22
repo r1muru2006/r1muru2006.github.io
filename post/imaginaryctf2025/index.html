@@ -1,0 +1,778 @@
+<!doctype html><html lang=en-us data-theme-mode=auto><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>ImaginaryCTF 2025 | r1muru</title><meta name=description content="Đây là các chall mình giải được trong quá trình thi cùng team aespaFanClub."><script>window.siteConfig=JSON.parse('{"anchor_icon":null,"base":"https://r1muru2006.github.io/","clipboard":{"copyright":{"count":50,"enable":false,"license_type":"by-nc-sa"},"fail":{"en":"Copy failed (ﾟ⊿ﾟ)ﾂ","ja":"コピー失敗 (ﾟ⊿ﾟ)ﾂ","pt-br":"Falha ao copiar (ﾟ⊿ﾟ)ﾂ","zh-cn":"复制失败 (ﾟ⊿ﾟ)ﾂ","zh-tw":"複製失敗 (ﾟ⊿ﾟ)ﾂ"},"success":{"en":"Copy successfully (*^▽^*)","ja":"コピー成功 (*^▽^*)","pt-br":"Copiado com sucesso (*^▽^*)","zh-cn":"复制成功 (*^▽^*)","zh-tw":"複製成功 (*^▽^*)"}},"code_block":{"expand":true},"icon_font":"4552607_4k4bc36ef96","outdate":{"daysago":180,"enable":false,"message":{"en":"This article was last updated on {time}. Please note that the content may no longer be applicable.","ja":"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。","pt-br":"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.","zh-cn":"本文最后更新于 {time}，请注意文中内容可能已不适用。","zh-tw":"本文最後更新於 {time}，請注意文中內容可能已不適用。"}}}')</script><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload as=style href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap" media=print onload='this.media="all"'><link rel=preload href=//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=stylesheet href=/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css><meta property="og:type" content="website"><meta property="og:title" content="ImaginaryCTF 2025 | r1muru"><meta property="og:description" content="Đây là các chall mình giải được trong quá trình thi cùng team aespaFanClub."><meta property="og:url" content="https://r1muru2006.github.io/post/imaginaryctf2025/"><meta property="og:site_name" content="Welcome to my journey"><meta property="og:image" content="/images/imaginary.jpg"><meta property="article:author" content="r1muru"><meta property="article:published_time" content="2025-09-14T14:17:02+07:00"><meta property="article:modified_time" content="2025-09-14T14:17:02+07:00"><meta property="article:tag" content="CTFCryptography"><meta name=twitter:card content="summary"><meta name=twitter:image content="/images/imaginary.jpg"><link rel="shortcut icon" href=/favicon.ico><link rel=stylesheet href=/css/main.min.3f4fd122cf0f99ff7801eb4c3d87d2c30d757b99c89ded49cd78a6de22bd22ba.css><link rel=preload as=style href=https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css integrity=sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE crossorigin=anonymous onload='this.onload=null,this.rel="stylesheet"'><link rel=preload as=style href=https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css integrity=sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz+YI crossorigin=anonymous onload='this.onload=null,this.rel="stylesheet"'><script src=https://npm.webcache.cn/pace-js@1.2.4/pace.min.js integrity=sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8 crossorigin=anonymous></script><link rel=stylesheet href=https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css integrity=sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa crossorigin=anonymous></head><body><div id=loader><div class="loading-left-bg loading-bg"></div><div class="loading-right-bg loading-bg"></div><div class=spinner-box><div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" shape-rendering="geometricPrecision"><path d="M303.5 432a80 80 0 01-12 160 80 80 0 0112-160z" fill="var(--red-1, #ff5252)"/><path d="M512 65a447 447 0 010 894V929a417 417 0 000-834 417 417 0 000 834v30a447 447 0 010-894zm0 30A417 417 0 01929 512 208.5 208.5.0 01720.5 720.5V592a80 80 0 000-160 80 80 0 000 160V720.5A208.5 208.5.0 01512 512 208.5 208.5.0 00303.5 303.5 208.5 208.5.0 0095 512 417 417 0 01512 95z" fill="var(--red-1, #ff5252)"/></svg></div><div class=loading-word>Loading...</div></div></div></div><script>var time=null,loaderEl=document.getElementById("loader"),startLoading=()=>{time=Date.now(),loaderEl.classList.remove("loading")},hideLoader=()=>{document.body.style.overflow="auto",loader.classList.add("loading")},endLoading=()=>{time?Date.now()-time>500?(time=null,hideLoader()):(setTimeout(endLoading,500-(Date.now()-time)),time=null):hideLoader()};window.addEventListener("DOMContentLoaded",endLoading),loaderEl.addEventListener("click",endLoading)</script><div id=copy-tooltip></div><div id=lang-tooltip>This article does not have a corresponding language version</div><div id=heatmap-tooltip></div><div id=container><div id=wrap><div id=header-nav><nav id=main-nav aria-label="Primary navigation"><a class=main-nav-link-wrap href=/><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class=main-nav-link>Home</span>
+</a><a class=main-nav-link-wrap href=/archives><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class=main-nav-link>Archives</span>
+</a><a class=main-nav-link-wrap href=/about><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class=main-nav-link>About</span>
+</a><a id=main-nav-toggle class=nav-icon aria-label="Toggle navigation" role=button></a></nav><nav id=sub-nav aria-label="Secondary navigation"></nav></div><header id=header aria-label="Site header"><picture></picture>
+<img fetchpriority=high src=/images/imaginary.jpg alt="ImaginaryCTF 2025"><div id=header-outer><div id=header-title><span id=logo><h1 data-aos=slide-up>ImaginaryCTF 2025</h1></span><h2 id=subtitle-wrap data-aos=slide-down></h2></div></div></header><div id=content aria-label="Page content" class=sidebar-right><aside id=sidebar aria-label=Sidebar><div class="sidebar-wrapper-container sticky"><div class=sidebar-wrapper><div class=sidebar-wrap data-aos=fade-up><div class=sidebar-toc-sidebar><h3 class=toc-title>Contents</h3><div class="sidebar-toc-wrapper toc-div-class"><nav id=TableOfContents><ul><li><a href=#leaky-rsa>leaky-rsa</a><ul><li><a href=#phân-tích-và-lời-giải>Phân tích và lời giải</a></li></ul></li><li><a href=#zkpow>zkpow</a><ul><li><a href=#phân-tích-và-lời-giải-1>Phân tích và lời giải</a></li></ul></li><li><a href=#scalar-division>scalar-division</a><ul><li><a href=#phân-tích-và-lời-giải-2>Phân tích và lời giải</a></li></ul></li><li><a href=#redacted>redacted</a><ul><li><a href=#phân-tích-và-lời-giải-3>Phân tích và lời giải</a></li></ul></li><li><a href=#leaky-rsa-revenge>leaky-rsa-revenge</a><ul><li><a href=#phân-tích>Phân tích</a></li><li><a href=#hướng-giải>Hướng giải</a></li></ul></li><li><a href=#clcg>clcg</a><ul><li><a href=#phân-tích-đề-bài>Phân tích đề bài</a></li><li><a href=#hướng-giải-1>Hướng giải</a></li></ul></li><li><a href=#bigger-rsa>Bigger-RSA</a></li><li><a href=#tài-liệu>Tài liệu</a></li></ul></nav></div></div><div class="sidebar-common-sidebar hidden"><div class=sidebar-author><img data-src=/avatar/avatar.webp data-sizes=auto alt=r1muru class=lazyload><div class=sidebar-author-name>r1muru</div><div class=sidebar-description>Life is not fair, get used to it</div></div><div class=sidebar-state><div class=sidebar-state-article><div>Posts</div><div class=sidebar-state-number>9</div></div><a class=sidebar-state-category href=/categories/ aria-label=sidebar-state-category-link><div>Categories</div><div class=sidebar-state-number>3</div></a><a class=sidebar-state-tag href=/tags/ aria-label=sidebar-state-tag-link><div>Tags</div><div class=sidebar-state-number>7</div></a></div><div class=sidebar-social></div><div class=sidebar-menu><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/ aria-label=Home></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>Home</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/archives aria-label=Archives></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>Archives</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/about aria-label=About></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>About</div></div></div></div><div class=sidebar-btn-wrapper style=position:static><div class="sidebar-toc-btn current"></div><div class=sidebar-common-btn></div></div></div></div><div class=sidebar-widget></div></div></aside><section id=main aria-label="Main content"><article class="h-entry article" itemscope itemtype=https://schema.org/BlogPosting><div class=article-inner data-aos=fade-up><div class=article-meta><div class=article-date><span class="article-date-link icon-calendar" data-aos=zoom-in><time datetime="2025-09-14 14:17:02 +0700 +0700" itemprop=datePublished>2025-09-14</time>
+<time style=display:none id=post-update-time>2025-09-14</time></span></div><div class=article-category><a class=article-category-link href=/categories/ctf-write-up data-aos=zoom-in>CTF WRITE-UP</a></div></div><div class=hr-line></div><div class="e-content article-entry" itemprop=articleBody><blockquote><p>Shout out to others member for trying their best and reached the top 15 of the world, ranked 1st University of Technology.</p></blockquote><h2 id=leaky-rsa><a class=header-anchor href=#leaky-rsa></a>leaky-rsa</h2><p><img src=https://hackmd.io/_uploads/HJRRJ-hqxl.png alt=image>
+<code>chall.py</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#!/usr/local/bin/python3</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> json
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Util.number <span style=color:#f92672>import</span> getPrime
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Cipher <span style=color:#f92672>import</span> AES
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Util.Padding <span style=color:#f92672>import</span> pad
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> secrets <span style=color:#f92672>import</span> randbelow, token_bytes
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> hashlib <span style=color:#f92672>import</span> sha256
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;flag.txt&#39;</span>) <span style=color:#66d9ef>as</span> f:
+</span></span><span style=display:flex><span>    flag <span style=color:#f92672>=</span> f<span style=color:#f92672>.</span>read()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>p <span style=color:#f92672>=</span> getPrime(<span style=color:#ae81ff>512</span>)
+</span></span><span style=display:flex><span>q <span style=color:#f92672>=</span> getPrime(<span style=color:#ae81ff>512</span>)
+</span></span><span style=display:flex><span>n <span style=color:#f92672>=</span> p <span style=color:#f92672>*</span> q
+</span></span><span style=display:flex><span>e <span style=color:#f92672>=</span> <span style=color:#ae81ff>65537</span>
+</span></span><span style=display:flex><span>d <span style=color:#f92672>=</span> pow(e, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, (p<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>)<span style=color:#f92672>*</span>(q<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>key_m <span style=color:#f92672>=</span> randbelow(n)
+</span></span><span style=display:flex><span>key_c <span style=color:#f92672>=</span> pow(key_m, e, n)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>key <span style=color:#f92672>=</span> sha256(str(key_m)<span style=color:#f92672>.</span>encode())<span style=color:#f92672>.</span>digest()[:<span style=color:#ae81ff>16</span>]
+</span></span><span style=display:flex><span>iv <span style=color:#f92672>=</span> token_bytes(<span style=color:#ae81ff>16</span>)
+</span></span><span style=display:flex><span>ct <span style=color:#f92672>=</span> AES<span style=color:#f92672>.</span>new(key, AES<span style=color:#f92672>.</span>MODE_CBC, IV<span style=color:#f92672>=</span>iv)<span style=color:#f92672>.</span>encrypt(pad(flag<span style=color:#f92672>.</span>encode(), <span style=color:#ae81ff>16</span>))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(json<span style=color:#f92672>.</span>dumps({<span style=color:#e6db74>&#39;n&#39;</span>: n, <span style=color:#e6db74>&#39;c&#39;</span>: key_c, <span style=color:#e6db74>&#39;iv&#39;</span>: iv<span style=color:#f92672>.</span>hex(), <span style=color:#e6db74>&#39;ct&#39;</span>: ct<span style=color:#f92672>.</span>hex()}))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>get_bit</span>(n, k):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> (n <span style=color:#f92672>&gt;&gt;</span> k) <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1024</span>):
+</span></span><span style=display:flex><span>    idx <span style=color:#f92672>=</span> randbelow(<span style=color:#ae81ff>4</span>)
+</span></span><span style=display:flex><span>    print(json<span style=color:#f92672>.</span>dumps({<span style=color:#e6db74>&#39;idx&#39;</span>: idx}))
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>try</span>:
+</span></span><span style=display:flex><span>        response <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(input())
+</span></span><span style=display:flex><span>        c <span style=color:#f92672>=</span> response[<span style=color:#e6db74>&#39;c&#39;</span>] <span style=color:#f92672>%</span> n
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>assert</span> c <span style=color:#f92672>!=</span> key_c
+</span></span><span style=display:flex><span>        m <span style=color:#f92672>=</span> pow(c, d, n)
+</span></span><span style=display:flex><span>        b <span style=color:#f92672>=</span> get_bit(m, idx)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>except</span> (json<span style=color:#f92672>.</span>JSONDecodeError, <span style=color:#a6e22e>TypeError</span>, <span style=color:#a6e22e>KeyError</span>, <span style=color:#a6e22e>ValueError</span>, <span style=color:#a6e22e>AssertionError</span>):
+</span></span><span style=display:flex><span>        b <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>    print(json<span style=color:#f92672>.</span>dumps({<span style=color:#e6db74>&#39;b&#39;</span>: b}))
+</span></span><span style=display:flex><span>print(key_m)
+</span></span></code></pre></div><h3 id=phân-tích-và-lời-giải><a class=header-anchor href=#ph%c3%a2n-t%c3%adch-v%c3%a0-l%e1%bb%9di-gi%e1%ba%a3i></a>Phân tích và lời giải</h3><p>Nhìn sơ qua thì đây là một bài ứng dụng thuật AES-RSA</p><p>Sơ đồ chính của thử thách là:
+Random <code>key_m</code> bé hơn n -> dùng <code>key_m</code> mã hóa flag thành <code>ct</code> bằng AES mode CBC.
+Mặt khác: Dùng RSA mã hóa <code>key_m</code> thành <code>key_c</code>
+Cuối cùng tiết lộ <code>n, key_c, iv, ct</code> và cho ta gửi 1024 bản mã. Với mỗi bản mã, tiết lộ 1 bit nằm trong khoảng vị trí thứ 0 đến 3 từ phải qua sau khi giải mã với thuật RSA.</p><p>Tuy nhiên trong bài này, <code>key_m</code> đã bị leak khi hoàn thành 1024 bản mã và thế là ta có thể giải mã được AES mode CBC ngay</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># solution.py</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Cipher <span style=color:#f92672>import</span> AES
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Util.Padding <span style=color:#f92672>import</span> unpad
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> hashlib <span style=color:#f92672>import</span> sha256
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pwn <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> json
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>context<span style=color:#f92672>.</span>log_level <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;debug&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># io = process([&#39;python3&#39;, &#39;chall.py&#39;])</span>
+</span></span><span style=display:flex><span>io <span style=color:#f92672>=</span> remote(<span style=color:#e6db74>&#34;leaky-rsa.chal.imaginaryctf.org&#34;</span>, <span style=color:#ae81ff>1337</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>io<span style=color:#f92672>.</span>recvline()
+</span></span><span style=display:flex><span>data <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(io<span style=color:#f92672>.</span>recvline())
+</span></span><span style=display:flex><span>n, iv, ct, c <span style=color:#f92672>=</span> data[<span style=color:#e6db74>&#39;n&#39;</span>], bytes<span style=color:#f92672>.</span>fromhex(data[<span style=color:#e6db74>&#39;iv&#39;</span>]), bytes<span style=color:#f92672>.</span>fromhex(data[<span style=color:#e6db74>&#39;ct&#39;</span>]), data[<span style=color:#e6db74>&#39;c&#39;</span>]
+</span></span><span style=display:flex><span>count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1024</span>):
+</span></span><span style=display:flex><span>    idx <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(io<span style=color:#f92672>.</span>recvline())[<span style=color:#e6db74>&#39;idx&#39;</span>]
+</span></span><span style=display:flex><span>    send <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>dumps({<span style=color:#e6db74>&#39;c&#39;</span>: <span style=color:#ae81ff>0</span>})<span style=color:#f92672>.</span>encode()
+</span></span><span style=display:flex><span>    io<span style=color:#f92672>.</span>sendline(send)
+</span></span><span style=display:flex><span>    b <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(io<span style=color:#f92672>.</span>recvline())[<span style=color:#e6db74>&#39;b&#39;</span>]
+</span></span><span style=display:flex><span>    count <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    print(count)
+</span></span><span style=display:flex><span>key_m <span style=color:#f92672>=</span> int(io<span style=color:#f92672>.</span>recvline()<span style=color:#f92672>.</span>decode())
+</span></span><span style=display:flex><span>key <span style=color:#f92672>=</span> sha256(str(key_m)<span style=color:#f92672>.</span>encode())<span style=color:#f92672>.</span>digest()[:<span style=color:#ae81ff>16</span>]
+</span></span><span style=display:flex><span>flag <span style=color:#f92672>=</span> unpad(AES<span style=color:#f92672>.</span>new(key, AES<span style=color:#f92672>.</span>MODE_CBC, IV<span style=color:#f92672>=</span>iv)<span style=color:#f92672>.</span>decrypt(ct), <span style=color:#ae81ff>16</span>)<span style=color:#f92672>.</span>decode()
+</span></span><span style=display:flex><span>print(flag)
+</span></span></code></pre></div><pre><code>Flag: ictf{p13cin9_7h3_b1t5_t0g37her_3f0068c1b9be2547ada52a8020420fb0}
+</code></pre><h2 id=zkpow><a class=header-anchor href=#zkpow></a>zkpow</h2><p><img src=https://hackmd.io/_uploads/rkNys-hcgx.png alt=image></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#!/usr/bin/env python3</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> hashlib<span style=color:#f92672>,</span> secrets<span style=color:#f92672>,</span> json<span style=color:#f92672>,</span> time
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># --- Utility functions ---</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sha256</span>(b: bytes) <span style=color:#f92672>-&gt;</span> bytes:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> hashlib<span style=color:#f92672>.</span>sha256(b)<span style=color:#f92672>.</span>digest()
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>hexf</span>(b: bytes) <span style=color:#f92672>-&gt;</span> str:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> b<span style=color:#f92672>.</span>hex()
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>commit_vertex</span>(v: int, color_label: int, nonce: bytes) <span style=color:#f92672>-&gt;</span> bytes:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> sha256(<span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;vertex:&#34;</span> <span style=color:#f92672>+</span> str(v)<span style=color:#f92672>.</span>encode() <span style=color:#f92672>+</span> <span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;:&#34;</span> <span style=color:#f92672>+</span> str(color_label)<span style=color:#f92672>.</span>encode() <span style=color:#f92672>+</span> <span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;:&#34;</span> <span style=color:#f92672>+</span> nonce)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># --- Merkle tree helpers ---</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>build_merkle_tree</span>(leaves_hex):
+</span></span><span style=display:flex><span>    leaves <span style=color:#f92672>=</span> [bytes<span style=color:#f92672>.</span>fromhex(h) <span style=color:#66d9ef>for</span> h <span style=color:#f92672>in</span> leaves_hex]
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> len(leaves) <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> hexf(sha256(<span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;&#34;</span>)), [[sha256(<span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;&#34;</span>)]]
+</span></span><span style=display:flex><span>    levels <span style=color:#f92672>=</span> [leaves]
+</span></span><span style=display:flex><span>    cur <span style=color:#f92672>=</span> leaves
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>while</span> len(cur) <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1</span>:
+</span></span><span style=display:flex><span>        nxt <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>0</span>, len(cur), <span style=color:#ae81ff>2</span>):
+</span></span><span style=display:flex><span>            left <span style=color:#f92672>=</span> cur[i]
+</span></span><span style=display:flex><span>            right <span style=color:#f92672>=</span> cur[i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#66d9ef>if</span> i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;</span> len(cur) <span style=color:#66d9ef>else</span> left
+</span></span><span style=display:flex><span>            nxt<span style=color:#f92672>.</span>append(sha256(left <span style=color:#f92672>+</span> right))
+</span></span><span style=display:flex><span>        levels<span style=color:#f92672>.</span>append(nxt)
+</span></span><span style=display:flex><span>        cur <span style=color:#f92672>=</span> nxt
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> hexf(levels[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][<span style=color:#ae81ff>0</span>]), levels
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>merkle_proof_for_index</span>(levels, index):
+</span></span><span style=display:flex><span>    proof <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>    idx <span style=color:#f92672>=</span> index
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> level <span style=color:#f92672>in</span> levels[:<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> idx <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>            sib_index <span style=color:#f92672>=</span> idx <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>if</span> idx <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;</span> len(level) <span style=color:#66d9ef>else</span> idx
+</span></span><span style=display:flex><span>            sibling <span style=color:#f92672>=</span> level[sib_index]
+</span></span><span style=display:flex><span>            proof<span style=color:#f92672>.</span>append((hexf(sibling), <span style=color:#66d9ef>False</span>))
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>            sib_index <span style=color:#f92672>=</span> idx <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            sibling <span style=color:#f92672>=</span> level[sib_index]
+</span></span><span style=display:flex><span>            proof<span style=color:#f92672>.</span>append((hexf(sibling), <span style=color:#66d9ef>True</span>))
+</span></span><span style=display:flex><span>        idx <span style=color:#f92672>//=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> proof
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>verify_merkle_proof</span>(root_hex, leaf_hex, proof):
+</span></span><span style=display:flex><span>    cur <span style=color:#f92672>=</span> bytes<span style=color:#f92672>.</span>fromhex(leaf_hex)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> sibling_hex, sibling_is_left <span style=color:#f92672>in</span> proof:
+</span></span><span style=display:flex><span>        sibling <span style=color:#f92672>=</span> bytes<span style=color:#f92672>.</span>fromhex(sibling_hex)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> sibling_is_left:
+</span></span><span style=display:flex><span>            cur <span style=color:#f92672>=</span> sha256(sibling <span style=color:#f92672>+</span> cur)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>            cur <span style=color:#f92672>=</span> sha256(cur <span style=color:#f92672>+</span> sibling)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> hexf(cur) <span style=color:#f92672>==</span> root_hex
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># --- Fiat-Shamir edge selection ---</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>fiat_shamir_select_index</span>(root_hex, m):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> int<span style=color:#f92672>.</span>from_bytes(hashlib<span style=color:#f92672>.</span>sha256(root_hex<span style=color:#f92672>.</span>encode())<span style=color:#f92672>.</span>digest(), <span style=color:#e6db74>&#34;big&#34;</span>) <span style=color:#f92672>%</span> m
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># --- Configurable graph generator ---</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>make_graph</span>(n_vertices<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>, p_good<span style=color:#f92672>=</span><span style=color:#ae81ff>0.75</span>, p_bad<span style=color:#f92672>=</span><span style=color:#ae81ff>0.003</span>):
+</span></span><span style=display:flex><span>    coloring <span style=color:#f92672>=</span> [secrets<span style=color:#f92672>.</span>randbelow(<span style=color:#ae81ff>3</span>) <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(n_vertices)]
+</span></span><span style=display:flex><span>    parts <span style=color:#f92672>=</span> {<span style=color:#ae81ff>0</span>: [], <span style=color:#ae81ff>1</span>: [], <span style=color:#ae81ff>2</span>: []}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> v, c <span style=color:#f92672>in</span> enumerate(coloring):
+</span></span><span style=display:flex><span>        parts[c]<span style=color:#f92672>.</span>append(v)
+</span></span><span style=display:flex><span>        edges <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> c1 <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>3</span>):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> c2 <span style=color:#f92672>in</span> range(c1<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>3</span>):
+</span></span><span style=display:flex><span>            A, B <span style=color:#f92672>=</span> parts[c1], parts[c2]
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> u <span style=color:#f92672>in</span> A:
+</span></span><span style=display:flex><span>               <span style=color:#66d9ef>for</span> v <span style=color:#f92672>in</span> B:
+</span></span><span style=display:flex><span>                   <span style=color:#66d9ef>if</span> secrets<span style=color:#f92672>.</span>randbelow(<span style=color:#ae81ff>1_000_000</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>1_000_000</span> <span style=color:#f92672>&lt;</span> p_good:
+</span></span><span style=display:flex><span>                       edges<span style=color:#f92672>.</span>append((u, v)) <span style=color:#75715e># spice things up :)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> c <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>3</span>):
+</span></span><span style=display:flex><span>        part <span style=color:#f92672>=</span> parts[c]
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(part)):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>, len(part)):
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> secrets<span style=color:#f92672>.</span>randbelow(<span style=color:#ae81ff>1_000_000</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>1_000_000</span> <span style=color:#f92672>&lt;</span> p_bad:
+</span></span><span style=display:flex><span>                    edges<span style=color:#f92672>.</span>append((part[i], part[j]))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> edges, n_vertices
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># --- zkPoW prover ---</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>zkpow_prove</span>(edges, coloring, n_vertices<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>):
+</span></span><span style=display:flex><span>    verts <span style=color:#f92672>=</span> list(range(n_vertices))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># permutation + colors</span>
+</span></span><span style=display:flex><span>    perm <span style=color:#f92672>=</span> [<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>2</span>]
+</span></span><span style=display:flex><span>    secrets<span style=color:#f92672>.</span>SystemRandom()<span style=color:#f92672>.</span>shuffle(perm)
+</span></span><span style=display:flex><span>    permuted <span style=color:#f92672>=</span> {v: perm[coloring[v]] <span style=color:#66d9ef>for</span> v <span style=color:#f92672>in</span> verts}
+</span></span><span style=display:flex><span>    nonces <span style=color:#f92672>=</span> {v: secrets<span style=color:#f92672>.</span>token_bytes(<span style=color:#ae81ff>16</span>) <span style=color:#66d9ef>for</span> v <span style=color:#f92672>in</span> verts}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    leaves_hex <span style=color:#f92672>=</span> [hexf(commit_vertex(v, permuted[v], nonces[v])) <span style=color:#66d9ef>for</span> v <span style=color:#f92672>in</span> verts]
+</span></span><span style=display:flex><span>    merkle_root, levels <span style=color:#f92672>=</span> build_merkle_tree(leaves_hex)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># pick single edge</span>
+</span></span><span style=display:flex><span>    idx <span style=color:#f92672>=</span> fiat_shamir_select_index(merkle_root, len(edges))
+</span></span><span style=display:flex><span>    u,v <span style=color:#f92672>=</span> edges[idx]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># prepare openings</span>
+</span></span><span style=display:flex><span>    openings <span style=color:#f92672>=</span> {}
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> w <span style=color:#f92672>in</span> (u,v):
+</span></span><span style=display:flex><span>        openings[w] <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#34;color&#34;</span>: permuted[w],
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#34;nonce&#34;</span>: hexf(nonces[w]),
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#34;merkle_proof&#34;</span>: merkle_proof_for_index(levels, w)
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    proof <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;merkle_root&#34;</span>: merkle_root,
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;openings&#34;</span>: openings,
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> json<span style=color:#f92672>.</span>dumps(proof)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># --- zkPoW verifier ---</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>zkpow_verify</span>(proof, edges):
+</span></span><span style=display:flex><span>    merkle_root <span style=color:#f92672>=</span> proof[<span style=color:#e6db74>&#34;merkle_root&#34;</span>]
+</span></span><span style=display:flex><span>    openings <span style=color:#f92672>=</span> proof[<span style=color:#e6db74>&#34;openings&#34;</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># verify Merkle proofs</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> v_s, opened <span style=color:#f92672>in</span> openings<span style=color:#f92672>.</span>items():
+</span></span><span style=display:flex><span>        v <span style=color:#f92672>=</span> int(v_s)
+</span></span><span style=display:flex><span>        leaf_hex <span style=color:#f92672>=</span> hexf(commit_vertex(v, opened[<span style=color:#e6db74>&#34;color&#34;</span>], bytes<span style=color:#f92672>.</span>fromhex(opened[<span style=color:#e6db74>&#34;nonce&#34;</span>])))
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> verify_merkle_proof(merkle_root, leaf_hex, opened[<span style=color:#e6db74>&#34;merkle_proof&#34;</span>]):
+</span></span><span style=display:flex><span>            print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Merkle proof failed for vertex </span><span style=color:#e6db74>{</span>v<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># recompute chosen edge</span>
+</span></span><span style=display:flex><span>    idx <span style=color:#f92672>=</span> fiat_shamir_select_index(merkle_root, len(edges))
+</span></span><span style=display:flex><span>    u,v <span style=color:#f92672>=</span> map(str, edges[idx])
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> u <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> openings <span style=color:#f92672>or</span> v <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> openings:
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Missing opening for endpoints of edge </span><span style=color:#e6db74>{</span>idx<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> openings[u][<span style=color:#e6db74>&#34;color&#34;</span>] <span style=color:#f92672>==</span> openings[v][<span style=color:#e6db74>&#34;color&#34;</span>]:
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Edge </span><span style=color:#e6db74>{</span>idx<span style=color:#e6db74>}</span><span style=color:#e6db74> endpoints same color -&gt; invalid&#34;</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>main</span>():
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;==zk-proof-of-work: enabled==&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>50</span>):
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;==round </span><span style=color:#e6db74>{</span>i<span style=color:#e6db74>}</span><span style=color:#e6db74>==&#34;</span>)
+</span></span><span style=display:flex><span>        edges, n_vertices <span style=color:#f92672>=</span> make_graph(i <span style=color:#f92672>*</span> <span style=color:#ae81ff>33</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.8</span>)
+</span></span><span style=display:flex><span>        print(json<span style=color:#f92672>.</span>dumps({<span style=color:#e6db74>&#34;n&#34;</span>: n_vertices, <span style=color:#e6db74>&#34;edges&#34;</span>: edges}))
+</span></span><span style=display:flex><span>        start <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>        proof <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(input(<span style=color:#e6db74>&#34;proof: &#34;</span>))
+</span></span><span style=display:flex><span>        end <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> end <span style=color:#f92672>-</span> start <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>5</span>:
+</span></span><span style=display:flex><span>            print(<span style=color:#e6db74>&#34;too slow!&#34;</span>)
+</span></span><span style=display:flex><span>            exit(<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>        ok <span style=color:#f92672>=</span> zkpow_verify(proof, edges)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> ok:
+</span></span><span style=display:flex><span>            print(<span style=color:#e6db74>&#34;verified!&#34;</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>            print(<span style=color:#e6db74>&#34;failed!&#34;</span>)
+</span></span><span style=display:flex><span>            exit(<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    flag <span style=color:#f92672>=</span> open(<span style=color:#e6db74>&#34;flag.txt&#34;</span>)<span style=color:#f92672>.</span>read()
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;flag:&#34;</span>, flag)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;__main__&#34;</span>:
+</span></span><span style=display:flex><span>    main()
+</span></span></code></pre></div><h3 id=phân-tích-và-lời-giải-1><a class=header-anchor href=#ph%c3%a2n-t%c3%adch-v%c3%a0-l%e1%bb%9di-gi%e1%ba%a3i-1></a>Phân tích và lời giải</h3><p>Ở thử thách này, ta không cần phải tô 3 màu cho đồ thị. Hàm <code>verify</code> chỉ kiểm tra hai điểm cuối của một cạnh, và chỉ số cạnh đó là H(merkle_root) % m. Vì ta kiểm soát tất cả các nonce (vì là gốc Merkle) nên có thể thử nonce của một lá cho đến khi thử thách trỏ đến một cạnh có các điểm cuối có màu khác nhau theo bất kỳ màu ngẫu nhiên nào ta chọn. Điều này làm cho mỗi vòng trở nên đơn giản, không cần <code>backtracking</code> mà chỉ cần một vài lần băm.</p><p>Sau đây là các bước giải:</p><ol><li>Chọn một màu 3 ngẫu nhiên (bất kỳ màu nào cũng được).</li><li>Xây dựng cây Merkle một lần.</li><li>Liên tục điều chỉnh nonce của một lá và tính toán lại gốc Merkle theo từng bước (O(log n) mỗi lần thử).</li><li>Dừng ngay khi H(root) % m chọn một cạnh có màu khác nhau.</li><li>Gán hai đỉnh đó cho <code>openings</code></li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># solution.py</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pwn <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> json<span style=color:#f92672>,</span> hashlib<span style=color:#f92672>,</span> secrets
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ===== Challenge-compatible helpers =====</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sha256</span>(b: bytes) <span style=color:#f92672>-&gt;</span> bytes:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> hashlib<span style=color:#f92672>.</span>sha256(b)<span style=color:#f92672>.</span>digest()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>commit_vertex_bytes</span>(v: int, color_label: int, nonce: bytes) <span style=color:#f92672>-&gt;</span> bytes:
+</span></span><span style=display:flex><span>    <span style=color:#75715e># EXACT match to the server&#39;s commit function (but returns raw bytes)</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> sha256(<span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;vertex:&#34;</span> <span style=color:#f92672>+</span> str(v)<span style=color:#f92672>.</span>encode() <span style=color:#f92672>+</span> <span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;:&#34;</span> <span style=color:#f92672>+</span> str(color_label)<span style=color:#f92672>.</span>encode() <span style=color:#f92672>+</span> <span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;:&#34;</span> <span style=color:#f92672>+</span> nonce)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>fiat_shamir_select_index</span>(root_hex: str, m: int) <span style=color:#f92672>-&gt;</span> int:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> int<span style=color:#f92672>.</span>from_bytes(hashlib<span style=color:#f92672>.</span>sha256(root_hex<span style=color:#f92672>.</span>encode())<span style=color:#f92672>.</span>digest(), <span style=color:#e6db74>&#34;big&#34;</span>) <span style=color:#f92672>%</span> m
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ===== Merkle (bytes throughout, then hex only when serializing the proof) =====</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>build_merkle_tree_bytes</span>(leaves):
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    leaves: list[bytes]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    returns: (root_bytes, levels)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      levels[0] = leaves (bytes)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      levels[h] = list of bytes at height h
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> leaves:
+</span></span><span style=display:flex><span>        z <span style=color:#f92672>=</span> sha256(<span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;&#34;</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> z, [[z]]
+</span></span><span style=display:flex><span>    levels <span style=color:#f92672>=</span> [list(leaves)]
+</span></span><span style=display:flex><span>    cur <span style=color:#f92672>=</span> levels[<span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>while</span> len(cur) <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1</span>:
+</span></span><span style=display:flex><span>        nxt <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>0</span>, len(cur), <span style=color:#ae81ff>2</span>):
+</span></span><span style=display:flex><span>            left <span style=color:#f92672>=</span> cur[i]
+</span></span><span style=display:flex><span>            right <span style=color:#f92672>=</span> cur[i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#66d9ef>if</span> i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;</span> len(cur) <span style=color:#66d9ef>else</span> left
+</span></span><span style=display:flex><span>            nxt<span style=color:#f92672>.</span>append(sha256(left <span style=color:#f92672>+</span> right))
+</span></span><span style=display:flex><span>        levels<span style=color:#f92672>.</span>append(nxt)
+</span></span><span style=display:flex><span>        cur <span style=color:#f92672>=</span> nxt
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> levels[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][<span style=color:#ae81ff>0</span>], levels
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>update_leaf_inplace</span>(levels, index, new_leaf):
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    Update levels in place after changing one leaf.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    O(log n) hashes up to the root, honoring the &#39;duplicate last&#39; rule.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    levels[<span style=color:#ae81ff>0</span>][index] <span style=color:#f92672>=</span> new_leaf
+</span></span><span style=display:flex><span>    idx <span style=color:#f92672>=</span> index
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> h <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>0</span>, len(levels) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>        level <span style=color:#f92672>=</span> levels[h]
+</span></span><span style=display:flex><span>        <span style=color:#75715e># figure siblings and parent</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> idx <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>            right_idx <span style=color:#f92672>=</span> idx <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>if</span> idx <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;</span> len(level) <span style=color:#66d9ef>else</span> idx
+</span></span><span style=display:flex><span>            left <span style=color:#f92672>=</span> level[idx]
+</span></span><span style=display:flex><span>            right <span style=color:#f92672>=</span> level[right_idx]
+</span></span><span style=display:flex><span>            parent <span style=color:#f92672>=</span> sha256(left <span style=color:#f92672>+</span> right)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>            left_idx <span style=color:#f92672>=</span> idx <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            left <span style=color:#f92672>=</span> level[left_idx]
+</span></span><span style=display:flex><span>            right <span style=color:#f92672>=</span> level[idx]
+</span></span><span style=display:flex><span>            parent <span style=color:#f92672>=</span> sha256(left <span style=color:#f92672>+</span> right)
+</span></span><span style=display:flex><span>        <span style=color:#75715e># write parent</span>
+</span></span><span style=display:flex><span>        levels[h <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>][idx <span style=color:#f92672>//</span> <span style=color:#ae81ff>2</span>] <span style=color:#f92672>=</span> parent
+</span></span><span style=display:flex><span>        idx <span style=color:#f92672>//=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>merkle_proof_for_index</span>(levels, index):
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    Returns proof as list of (sibling_hex, sibling_is_left_bool),
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    exactly like the challenge expects.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    proof <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>    idx <span style=color:#f92672>=</span> index
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> level <span style=color:#f92672>in</span> levels[:<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> idx <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>            sib_index <span style=color:#f92672>=</span> idx <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> <span style=color:#66d9ef>if</span> idx <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;</span> len(level) <span style=color:#66d9ef>else</span> idx
+</span></span><span style=display:flex><span>            sibling <span style=color:#f92672>=</span> level[sib_index]
+</span></span><span style=display:flex><span>            proof<span style=color:#f92672>.</span>append((sibling<span style=color:#f92672>.</span>hex(), <span style=color:#66d9ef>False</span>))  <span style=color:#75715e># sibling on the right</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>            sib_index <span style=color:#f92672>=</span> idx <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            sibling <span style=color:#f92672>=</span> level[sib_index]
+</span></span><span style=display:flex><span>            proof<span style=color:#f92672>.</span>append((sibling<span style=color:#f92672>.</span>hex(), <span style=color:#66d9ef>True</span>))   <span style=color:#75715e># sibling on the left</span>
+</span></span><span style=display:flex><span>        idx <span style=color:#f92672>//=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> proof
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ===== Core: nonce grinding (no coloring solve needed) =====</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>build_and_print_proof</span>(graph_line: bytes) <span style=color:#f92672>-&gt;</span> str:
+</span></span><span style=display:flex><span>    obj <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(graph_line<span style=color:#f92672>.</span>decode())
+</span></span><span style=display:flex><span>    n <span style=color:#f92672>=</span> obj[<span style=color:#e6db74>&#34;n&#34;</span>]
+</span></span><span style=display:flex><span>    edges <span style=color:#f92672>=</span> obj[<span style=color:#e6db74>&#34;edges&#34;</span>]  <span style=color:#75715e># list of [u, v]</span>
+</span></span><span style=display:flex><span>    m <span style=color:#f92672>=</span> len(edges)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 1) Any random 3-coloring works (we only need one good edge per round)</span>
+</span></span><span style=display:flex><span>    rng <span style=color:#f92672>=</span> secrets<span style=color:#f92672>.</span>SystemRandom()
+</span></span><span style=display:flex><span>    colors <span style=color:#f92672>=</span> [rng<span style=color:#f92672>.</span>randrange(<span style=color:#ae81ff>3</span>) <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(n)]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 2) Random nonces for all vertices; build initial tree once</span>
+</span></span><span style=display:flex><span>    nonces <span style=color:#f92672>=</span> [secrets<span style=color:#f92672>.</span>token_bytes(<span style=color:#ae81ff>16</span>) <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(n)]
+</span></span><span style=display:flex><span>    leaves <span style=color:#f92672>=</span> [commit_vertex_bytes(v, colors[v], nonces[v]) <span style=color:#66d9ef>for</span> v <span style=color:#f92672>in</span> range(n)]
+</span></span><span style=display:flex><span>    root_bytes, levels <span style=color:#f92672>=</span> build_merkle_tree_bytes(leaves)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 3) Grind a SINGLE leaf&#39;s nonce until H(root) % m hits a &#34;good&#34; edge</span>
+</span></span><span style=display:flex><span>    pivot <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>  <span style=color:#75715e># any index works</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Keep a small safety cap; expected tries ~ 1.5 because ~2/3 edges are &#34;good&#34;</span>
+</span></span><span style=display:flex><span>    max_tries <span style=color:#f92672>=</span> <span style=color:#ae81ff>4096</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(max_tries):
+</span></span><span style=display:flex><span>        <span style=color:#75715e># new nonce for pivot leaf</span>
+</span></span><span style=display:flex><span>        nonces[pivot] <span style=color:#f92672>=</span> secrets<span style=color:#f92672>.</span>token_bytes(<span style=color:#ae81ff>16</span>)
+</span></span><span style=display:flex><span>        new_leaf <span style=color:#f92672>=</span> commit_vertex_bytes(pivot, colors[pivot], nonces[pivot])
+</span></span><span style=display:flex><span>        update_leaf_inplace(levels, pivot, new_leaf)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        root_hex <span style=color:#f92672>=</span> levels[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][<span style=color:#ae81ff>0</span>]<span style=color:#f92672>.</span>hex()
+</span></span><span style=display:flex><span>        idx <span style=color:#f92672>=</span> fiat_shamir_select_index(root_hex, m)
+</span></span><span style=display:flex><span>        u, v <span style=color:#f92672>=</span> edges[idx]
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> colors[u] <span style=color:#f92672>!=</span> colors[v]:
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 4) Prepare openings for the challenged edge only</span>
+</span></span><span style=display:flex><span>            openings <span style=color:#f92672>=</span> {}
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> w <span style=color:#f92672>in</span> (u, v):
+</span></span><span style=display:flex><span>                openings[str(w)] <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>                    <span style=color:#e6db74>&#34;color&#34;</span>: colors[w],
+</span></span><span style=display:flex><span>                    <span style=color:#e6db74>&#34;nonce&#34;</span>: nonces[w]<span style=color:#f92672>.</span>hex(),
+</span></span><span style=display:flex><span>                    <span style=color:#e6db74>&#34;merkle_proof&#34;</span>: merkle_proof_for_index(levels, w)
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            proof <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;merkle_root&#34;</span>: root_hex,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;openings&#34;</span>: openings
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> json<span style=color:#f92672>.</span>dumps(proof)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># In practice we should never get here; fallback (recolor &amp; retry once)</span>
+</span></span><span style=display:flex><span>    colors <span style=color:#f92672>=</span> [rng<span style=color:#f92672>.</span>randrange(<span style=color:#ae81ff>3</span>) <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(n)]
+</span></span><span style=display:flex><span>    nonces <span style=color:#f92672>=</span> [secrets<span style=color:#f92672>.</span>token_bytes(<span style=color:#ae81ff>16</span>) <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(n)]
+</span></span><span style=display:flex><span>    leaves <span style=color:#f92672>=</span> [commit_vertex_bytes(v, colors[v], nonces[v]) <span style=color:#66d9ef>for</span> v <span style=color:#f92672>in</span> range(n)]
+</span></span><span style=display:flex><span>    root_bytes, levels <span style=color:#f92672>=</span> build_merkle_tree_bytes(leaves)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(max_tries):
+</span></span><span style=display:flex><span>        nonces[pivot] <span style=color:#f92672>=</span> secrets<span style=color:#f92672>.</span>token_bytes(<span style=color:#ae81ff>16</span>)
+</span></span><span style=display:flex><span>        new_leaf <span style=color:#f92672>=</span> commit_vertex_bytes(pivot, colors[pivot], nonces[pivot])
+</span></span><span style=display:flex><span>        update_leaf_inplace(levels, pivot, new_leaf)
+</span></span><span style=display:flex><span>        root_hex <span style=color:#f92672>=</span> levels[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][<span style=color:#ae81ff>0</span>]<span style=color:#f92672>.</span>hex()
+</span></span><span style=display:flex><span>        idx <span style=color:#f92672>=</span> fiat_shamir_select_index(root_hex, m)
+</span></span><span style=display:flex><span>        u, v <span style=color:#f92672>=</span> edges[idx]
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> colors[u] <span style=color:#f92672>!=</span> colors[v]:
+</span></span><span style=display:flex><span>            openings <span style=color:#f92672>=</span> {}
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> w <span style=color:#f92672>in</span> (u, v):
+</span></span><span style=display:flex><span>                openings[str(w)] <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>                    <span style=color:#e6db74>&#34;color&#34;</span>: colors[w],
+</span></span><span style=display:flex><span>                    <span style=color:#e6db74>&#34;nonce&#34;</span>: nonces[w]<span style=color:#f92672>.</span>hex(),
+</span></span><span style=display:flex><span>                    <span style=color:#e6db74>&#34;merkle_proof&#34;</span>: merkle_proof_for_index(levels, w)
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            proof <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;merkle_root&#34;</span>: root_hex,
+</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#34;openings&#34;</span>: openings
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> json<span style=color:#f92672>.</span>dumps(proof)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># If still unlucky, bail so you can inspect</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>RuntimeError</span>(<span style=color:#e6db74>&#34;Grinding failed unexpectedly&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ===== Runner =====</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>main</span>():
+</span></span><span style=display:flex><span>    context<span style=color:#f92672>.</span>log_level <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;error&#34;</span>  <span style=color:#75715e># keep pwntools quiet &amp; fast</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># io = process([&#39;python3&#39;, &#39;zkpow.py&#39;])</span>
+</span></span><span style=display:flex><span>    io <span style=color:#f92672>=</span> remote(<span style=color:#e6db74>&#34;zkpow.chal.imaginaryctf.org&#34;</span>, <span style=color:#ae81ff>1337</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># banner</span>
+</span></span><span style=display:flex><span>    io<span style=color:#f92672>.</span>recvline()
+</span></span><span style=display:flex><span>    io<span style=color:#f92672>.</span>recvline()
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>50</span>):
+</span></span><span style=display:flex><span>        io<span style=color:#f92672>.</span>recvline()          <span style=color:#75715e># &#34;==round i==&#34;</span>
+</span></span><span style=display:flex><span>        graph_line <span style=color:#f92672>=</span> io<span style=color:#f92672>.</span>recvline()  <span style=color:#75715e># JSON line with n &amp; edges</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        proof <span style=color:#f92672>=</span> build_and_print_proof(graph_line)
+</span></span><span style=display:flex><span>        io<span style=color:#f92672>.</span>sendline(proof<span style=color:#f92672>.</span>encode())
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        res <span style=color:#f92672>=</span> io<span style=color:#f92672>.</span>recvline()<span style=color:#f92672>.</span>decode()<span style=color:#f92672>.</span>strip()
+</span></span><span style=display:flex><span>        <span style=color:#75715e># print progress without slowing down</span>
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Round </span><span style=color:#e6db74>{</span>i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span><span style=color:#e6db74>}</span><span style=color:#e6db74>: </span><span style=color:#e6db74>{</span>res<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># flag</span>
+</span></span><span style=display:flex><span>    print(io<span style=color:#f92672>.</span>recvline()<span style=color:#f92672>.</span>decode()<span style=color:#f92672>.</span>strip())
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;__main__&#34;</span>:
+</span></span><span style=display:flex><span>    main()
+</span></span></code></pre></div><pre><code>Flag: ictf{zero_knowledge_proof_more_like_i_have_zero_knowledge_of_how_to_prove_this}
+</code></pre><h2 id=scalar-division><a class=header-anchor href=#scalar-division></a>scalar-division</h2><p><img src=https://hackmd.io/_uploads/SkB5UpJigx.png alt=image></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># chall.sage</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>assert</span> ((E<span style=color:#f92672>:=</span>EllipticCurve(GF(<span style=color:#ae81ff>0xbde3c425157a83cbe69cee172d27e2ef9c1bd754ff052d4e7e6a26074efcea673eab9438dc45e0786c4ea54a89f9079ddb21</span>),[<span style=color:#ae81ff>5</span>,<span style=color:#ae81ff>7</span>]))<span style=color:#f92672>.</span>order()<span style=color:#f92672>.</span>factor(limit<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span><span style=color:#f92672>**</span><span style=color:#ae81ff>10</span>)[<span style=color:#ae81ff>3</span>][<span style=color:#ae81ff>0</span>]<span style=color:#f92672>*</span>E<span style=color:#f92672>.</span>lift_x(ZZ(int<span style=color:#f92672>.</span>from_bytes((flag<span style=color:#f92672>:=</span>input(<span style=color:#e6db74>&#39;ictf{&#39;</span>))<span style=color:#f92672>.</span>encode()))))<span style=color:#f92672>.</span>x() <span style=color:#f92672>==</span> <span style=color:#ae81ff>0x686be42f9c3f431296a928c288145a847364bb259c9f5738270d48a7fba035377cc23b27f69d6ae0fad76d745fab25d504d5</span> <span style=color:#f92672>and</span> <span style=color:#f92672>not</span> print(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\033</span><span style=color:#e6db74>[53C</span><span style=color:#ae81ff>\033</span><span style=color:#e6db74>[1A}&#39;</span>)
+</span></span></code></pre></div><h3 id=phân-tích-và-lời-giải-2><a class=header-anchor href=#ph%c3%a2n-t%c3%adch-v%c3%a0-l%e1%bb%9di-gi%e1%ba%a3i-2></a>Phân tích và lời giải</h3><p><code>assert</code> kiểm tra: nếu điểm có hoành độ là <code>Q.xy()[0]</code> lift và nhân với k thì nó phải bằng target_x. Tức là <code>assert(k * lift_x(x_Q)).x() == target_x</code>.</p><p>Ý tưởng chính:
+Nguyên lý dùng ở đây là: nếu thứ tự nhóm điểm của elliptic curve là n và n có một nhân tử là k, thì phép nhân $[k]:P\rightarrow kP$ không phải là đơn ánh mà nó tồn tại một nhân tử (kernel) thứ bậc k.</p><p>Source
+If n is a positive integer, we denote by $E(\mathbb{Q})[n]$ the subgroup of rational points of order dividing n, which is the kernel of the multiplication map from E to itself.
+<a href=https://johncremona.github.io/book/fulltext/chapter3.pdf>https://johncremona.github.io/book/fulltext/chapter3.pdf</a></p><p>Bằng cách dựng $Q = k^{-1} * R$ và sau đó cộng mọi phần tử thuộc kernel (jS), ta thu được nhiều $x_Q$ sao cho khi nhân k vẫn trả về R (tức là target_x).</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># solution.py</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> sage.all <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Util.number <span style=color:#f92672>import</span> long_to_bytes
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> string
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>p <span style=color:#f92672>=</span> <span style=color:#ae81ff>0xbde3c425157a83cbe69cee172d27e2ef9c1bd754ff052d4e7e6a26074efcea673eab9438dc45e0786c4ea54a89f9079ddb21</span>
+</span></span><span style=display:flex><span>E <span style=color:#f92672>=</span> EllipticCurve(GF(p), [<span style=color:#ae81ff>5</span>,<span style=color:#ae81ff>7</span>])
+</span></span><span style=display:flex><span>n <span style=color:#f92672>=</span> E<span style=color:#f92672>.</span>order()
+</span></span><span style=display:flex><span>fac <span style=color:#f92672>=</span> n<span style=color:#f92672>.</span>factor(limit<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span><span style=color:#f92672>**</span><span style=color:#ae81ff>10</span>)
+</span></span><span style=display:flex><span>k <span style=color:#f92672>=</span> int(fac[<span style=color:#ae81ff>3</span>][<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>target_x <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x686be42f9c3f431296a928c288145a847364bb259c9f5738270d48a7fba035377cc23b27f69d6ae0fad76d745fab25d504d5</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>m <span style=color:#f92672>=</span> n <span style=color:#f92672>//</span> k
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>R <span style=color:#f92672>=</span> E<span style=color:#f92672>.</span>lift_x(ZZ(target_x))
+</span></span><span style=display:flex><span>k_inv_mod_m <span style=color:#f92672>=</span> inverse_mod(k, m)
+</span></span><span style=display:flex><span>Q <span style=color:#f92672>=</span> k_inv_mod_m <span style=color:#f92672>*</span> R
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>assert</span> ((E<span style=color:#f92672>:=</span>EllipticCurve(GF(<span style=color:#ae81ff>0xbde3c425157a83cbe69cee172d27e2ef9c1bd754ff052d4e7e6a26074efcea673eab9438dc45e0786c4ea54a89f9079ddb21</span>),[<span style=color:#ae81ff>5</span>,<span style=color:#ae81ff>7</span>]))<span style=color:#f92672>.</span>order()<span style=color:#f92672>.</span>factor(limit<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span><span style=color:#f92672>**</span><span style=color:#ae81ff>10</span>)[<span style=color:#ae81ff>3</span>][<span style=color:#ae81ff>0</span>]<span style=color:#f92672>*</span>E<span style=color:#f92672>.</span>lift_x(ZZ(Q<span style=color:#f92672>.</span>xy()[<span style=color:#ae81ff>0</span>])))<span style=color:#f92672>.</span>x() <span style=color:#f92672>==</span> <span style=color:#ae81ff>0x686be42f9c3f431296a928c288145a847364bb259c9f5738270d48a7fba035377cc23b27f69d6ae0fad76d745fab25d504d5</span> <span style=color:#f92672>and</span> <span style=color:#f92672>not</span> print(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\033</span><span style=color:#e6db74>[53C</span><span style=color:#ae81ff>\033</span><span style=color:#e6db74>[1A}&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># S được chọn sao cho nhóm con sinh bởi S có kích thước k (tức là kS = O)</span>
+</span></span><span style=display:flex><span>S <span style=color:#f92672>=</span> E<span style=color:#f92672>.</span>lift_x(ZZ(<span style=color:#ae81ff>1908615609373310359393680708495309867245478461545179513106385994207950225114719305735749421285909081171302218073610177595</span>))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>lst <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(k):
+</span></span><span style=display:flex><span>    Pj <span style=color:#f92672>=</span> Q <span style=color:#f92672>+</span> j <span style=color:#f92672>*</span> S
+</span></span><span style=display:flex><span>    x <span style=color:#f92672>=</span> int(Pj<span style=color:#f92672>.</span>xy()[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>    b <span style=color:#f92672>=</span> long_to_bytes(x)<span style=color:#f92672>.</span>decode(<span style=color:#e6db74>&#39;utf-8&#39;</span>, errors<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;ignore&#39;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> all(ch <span style=color:#f92672>in</span> string<span style=color:#f92672>.</span>printable <span style=color:#66d9ef>for</span> ch <span style=color:#f92672>in</span> b):
+</span></span><span style=display:flex><span>        print(b)
+</span></span></code></pre></div><pre><code>Flag: ictf{mayb3_d0nt_m4ke_th3_sca1ar_a_f4ctor_0f_the_ord3r}
+</code></pre><h2 id=redacted><a class=header-anchor href=#redacted></a>redacted</h2><p><img src=https://hackmd.io/_uploads/SkhUIKHolx.png alt=image>
+<img src=https://hackmd.io/_uploads/Syuj8tHixg.png alt=image></p><h3 id=phân-tích-và-lời-giải-3><a class=header-anchor href=#ph%c3%a2n-t%c3%adch-v%c3%a0-l%e1%bb%9di-gi%e1%ba%a3i-3></a>Phân tích và lời giải</h3><p>Theo lẽ thường, qua phép XOR thì 2 giá trị như nhau sẽ cho ra giá trị 0. Tuy nhiên, ở đây cùng 1 giá trị nhưng lại cho ra 1 output có giá trị khác 0&mldr; Là bởi phần key của phép XOR không phải dạng ASCII mà là dạng hex nên nó sẽ chỉ lấy những giá trị trong hệ thập lục phân.</p><p>Ở đây, phần key của CyberChef dạng hex được lấy theo kiểu sau:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>cyberchef_hexparse</span>(a):
+</span></span><span style=display:flex><span>    h <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;&#39;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> ch <span style=color:#f92672>in</span> a:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> ch <span style=color:#f92672>in</span> string<span style=color:#f92672>.</span>hexdigits:
+</span></span><span style=display:flex><span>            h <span style=color:#f92672>+=</span> ch
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#39; &#39;</span> <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> h[<span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>:]:
+</span></span><span style=display:flex><span>                h <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#39; &#39;</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>            h <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#39; &#39;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> bytes([int(x, <span style=color:#ae81ff>16</span>) <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> h<span style=color:#f92672>.</span>split()])
+</span></span></code></pre></div><p>Với bài này thì mình thử brute-force và mong rằng độ dài key là nhỏ :3</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># solution.py</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#!/bin/python</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> string
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>cyberchef_hexparse</span>(a):
+</span></span><span style=display:flex><span>    h <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;&#39;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> ch <span style=color:#f92672>in</span> a:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> ch <span style=color:#f92672>in</span> string<span style=color:#f92672>.</span>hexdigits:
+</span></span><span style=display:flex><span>            h <span style=color:#f92672>+=</span> ch
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#39; &#39;</span> <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> h[<span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>:]:
+</span></span><span style=display:flex><span>                h <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#39; &#39;</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>            h <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#39; &#39;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> bytes([int(x, <span style=color:#ae81ff>16</span>) <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> h<span style=color:#f92672>.</span>split()])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>cyberchef_xor</span>(a, key):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> bytes(a[i] <span style=color:#f92672>^</span> key[i <span style=color:#f92672>%</span> len(key)] <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(a)))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>OUTPUT <span style=color:#f92672>=</span> bytes<span style=color:#f92672>.</span>fromhex(<span style=color:#e6db74>&#39;656cce6bc175617e5366c952d86c6a536e6ede52df636d7e757fce64d56373&#39;</span>)
+</span></span><span style=display:flex><span>FLAG_PREFIX <span style=color:#f92672>=</span> <span style=color:#e6db74>b</span><span style=color:#e6db74>&#39;ictf{&#39;</span>
+</span></span><span style=display:flex><span>key_prefix <span style=color:#f92672>=</span> cyberchef_xor(FLAG_PREFIX, OUTPUT[:len(FLAG_PREFIX)])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> attempt_length <span style=color:#f92672>in</span> range(len(key_prefix), len(OUTPUT) <span style=color:#f92672>//</span> <span style=color:#ae81ff>2</span>):
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>{</span>attempt_length <span style=color:#e6db74>= }</span><span style=color:#e6db74>&#39;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> attempt <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>256</span> <span style=color:#f92672>**</span> (attempt_length <span style=color:#f92672>-</span> len(key_prefix))):
+</span></span><span style=display:flex><span>        key <span style=color:#f92672>=</span> key_prefix <span style=color:#f92672>+</span> attempt<span style=color:#f92672>.</span>to_bytes(attempt_length <span style=color:#f92672>-</span> len(key_prefix))
+</span></span><span style=display:flex><span>        flag <span style=color:#f92672>=</span> cyberchef_xor(OUTPUT, key)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> flag<span style=color:#f92672>.</span>isascii() <span style=color:#f92672>and</span> cyberchef_hexparse(flag<span style=color:#f92672>.</span>decode()) <span style=color:#f92672>==</span> key:
+</span></span><span style=display:flex><span>            print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;Found: </span><span style=color:#e6db74>{</span>flag<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
+</span></span><span style=display:flex><span>            exit(<span style=color:#ae81ff>0</span>)
+</span></span></code></pre></div><pre><code>Flag: ictf{xor_is_bad_bad_encryption}
+</code></pre><h2 id=leaky-rsa-revenge><a class=header-anchor href=#leaky-rsa-revenge></a>leaky-rsa-revenge</h2><p><img src=https://hackmd.io/_uploads/HJ8iRtLjge.png alt=image></p><p><code>chall.py</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e>#!/usr/local/bin/python3</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> json
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Util.number <span style=color:#f92672>import</span> getPrime
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Cipher <span style=color:#f92672>import</span> AES
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Util.Padding <span style=color:#f92672>import</span> pad
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> secrets <span style=color:#f92672>import</span> randbelow, token_bytes
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> hashlib <span style=color:#f92672>import</span> sha256
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;flag.txt&#39;</span>) <span style=color:#66d9ef>as</span> f:
+</span></span><span style=display:flex><span>    flag <span style=color:#f92672>=</span> f<span style=color:#f92672>.</span>read()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>p <span style=color:#f92672>=</span> getPrime(<span style=color:#ae81ff>512</span>)
+</span></span><span style=display:flex><span>q <span style=color:#f92672>=</span> getPrime(<span style=color:#ae81ff>512</span>)
+</span></span><span style=display:flex><span>n <span style=color:#f92672>=</span> p <span style=color:#f92672>*</span> q
+</span></span><span style=display:flex><span>e <span style=color:#f92672>=</span> <span style=color:#ae81ff>65537</span>
+</span></span><span style=display:flex><span>d <span style=color:#f92672>=</span> pow(e, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, (p<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>)<span style=color:#f92672>*</span>(q<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>key_m <span style=color:#f92672>=</span> randbelow(n)
+</span></span><span style=display:flex><span>key_c <span style=color:#f92672>=</span> pow(key_m, e, n)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>key <span style=color:#f92672>=</span> sha256(str(key_m)<span style=color:#f92672>.</span>encode())<span style=color:#f92672>.</span>digest()[:<span style=color:#ae81ff>16</span>]
+</span></span><span style=display:flex><span>iv <span style=color:#f92672>=</span> token_bytes(<span style=color:#ae81ff>16</span>)
+</span></span><span style=display:flex><span>ct <span style=color:#f92672>=</span> AES<span style=color:#f92672>.</span>new(key, AES<span style=color:#f92672>.</span>MODE_CBC, IV<span style=color:#f92672>=</span>iv)<span style=color:#f92672>.</span>encrypt(pad(flag<span style=color:#f92672>.</span>encode(), <span style=color:#ae81ff>16</span>))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(json<span style=color:#f92672>.</span>dumps({<span style=color:#e6db74>&#39;n&#39;</span>: n, <span style=color:#e6db74>&#39;c&#39;</span>: key_c, <span style=color:#e6db74>&#39;iv&#39;</span>: iv<span style=color:#f92672>.</span>hex(), <span style=color:#e6db74>&#39;ct&#39;</span>: ct<span style=color:#f92672>.</span>hex()}))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>get_bit</span>(n, k):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> (n <span style=color:#f92672>&gt;&gt;</span> k) <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1024</span>):
+</span></span><span style=display:flex><span>    idx <span style=color:#f92672>=</span> randbelow(<span style=color:#ae81ff>4</span>)
+</span></span><span style=display:flex><span>    print(json<span style=color:#f92672>.</span>dumps({<span style=color:#e6db74>&#39;idx&#39;</span>: idx}))
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>try</span>:
+</span></span><span style=display:flex><span>        response <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(input())
+</span></span><span style=display:flex><span>        c <span style=color:#f92672>=</span> response[<span style=color:#e6db74>&#39;c&#39;</span>] <span style=color:#f92672>%</span> n
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>assert</span> c <span style=color:#f92672>!=</span> key_c
+</span></span><span style=display:flex><span>        m <span style=color:#f92672>=</span> pow(c, d, n)
+</span></span><span style=display:flex><span>        b <span style=color:#f92672>=</span> get_bit(m, idx)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>except</span> (json<span style=color:#f92672>.</span>JSONDecodeError, <span style=color:#a6e22e>TypeError</span>, <span style=color:#a6e22e>KeyError</span>, <span style=color:#a6e22e>ValueError</span>, <span style=color:#a6e22e>AssertionError</span>):
+</span></span><span style=display:flex><span>        b <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>    print(json<span style=color:#f92672>.</span>dumps({<span style=color:#e6db74>&#39;b&#39;</span>: b}))
+</span></span></code></pre></div><h3 id=phân-tích><a class=header-anchor href=#ph%c3%a2n-t%c3%adch></a>Phân tích</h3><p>Thử thách này đã sửa lỗi của bài trước bằng cách bỏ phần leak <code>key_m</code> ở cuối.
+Ta được cung cấp các tham số như sau:</p><ul><li><code>n</code>: tích của hai số nguyên tố 512 bit <code>p</code> và <code>q</code></li><li><code>e</code>: Khóa công khai, có giá trị bằng <code>65537</code></li><li><code>key_c</code>: là khóa <code>key_m</code> sau khi được mã hóa RSA với <code>n</code> và <code>e</code></li><li><code>iv</code>: Là init vector khi mã hóa AES <code>flag</code> bằng khóa là <code>sha256</code> của <code>key_m</code></li><li><code>ct</code>: Là mã hóa AES của <code>flag</code>.</li></ul><p>Đề bài cho phép ta gửi lần lượt 1024 số và nhận một trong các bit thứ 0-3 của giải mã RSA của các số đó:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1024</span>):
+</span></span><span style=display:flex><span>    idx <span style=color:#f92672>=</span> randbelow(<span style=color:#ae81ff>4</span>)
+</span></span><span style=display:flex><span>    print(json<span style=color:#f92672>.</span>dumps({<span style=color:#e6db74>&#39;idx&#39;</span>: idx}))
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>try</span>:
+</span></span><span style=display:flex><span>        response <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(input())
+</span></span><span style=display:flex><span>        c <span style=color:#f92672>=</span> response[<span style=color:#e6db74>&#39;c&#39;</span>] <span style=color:#f92672>%</span> n
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>assert</span> c <span style=color:#f92672>!=</span> key_c
+</span></span><span style=display:flex><span>        m <span style=color:#f92672>=</span> pow(c, d, n)
+</span></span><span style=display:flex><span>        b <span style=color:#f92672>=</span> get_bit(m, idx)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>except</span> (json<span style=color:#f92672>.</span>JSONDecodeError, <span style=color:#a6e22e>TypeError</span>, <span style=color:#a6e22e>KeyError</span>, <span style=color:#a6e22e>ValueError</span>, <span style=color:#a6e22e>AssertionError</span>):
+</span></span><span style=display:flex><span>        b <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>    print(json<span style=color:#f92672>.</span>dumps({<span style=color:#e6db74>&#39;b&#39;</span>: b}))
+</span></span></code></pre></div><p>=> Ta phải khôi phục lại khóa <code>key_m</code> (từ đây gọi tắt là <code>m</code>) để lấy flag.</p><h3 id=hướng-giải><a class=header-anchor href=#h%c6%b0%e1%bb%9bng-gi%e1%ba%a3i></a>Hướng giải</h3><p>Bài này tương tự như tấn công LSB oracle.</p><p><a href=https://crypto.stackexchange.com/questions/11053/rsa-least-significant-bit-oracle-attack>https://crypto.stackexchange.com/questions/11053/rsa-least-significant-bit-oracle-attack</a></p><p>Để tấn công, ta gửi $(2^{e \times i} \mod n)*c$ để giải mã và nhận $(((2^i\mod n) \times m) \mod n) \mod 2$.
+Để ý rằng $((2^{i+1}\mod n) \times m) \mod n$ bằng $((2^i\mod n) \times m) \mod n$ và trừ cho $0$ hoặc $n$, tùy thuộc vào việc $((2^i\mod n) \times m) \mod n$ lớn hơn hay nhỏ hơn $\dfrac{n}{2}$.
+Vì vậy, việc so sánh $(((2^i\mod n) \times m) \mod n) \mod 2$ và $(((2^{i+1}\mod n) \times m) \mod n) \mod 2$ cho ta MSB của $(2^i\mod n) \times m$. Ở đây, ta nhận được ngẫu nhiên một trong bốn bit thấp.</p><p>Đầu tiên, ta thử các trường hợp cho đến khi ta nhận được $n\equiv -1 \mod 16$.
+Bây giờ, giả sử ta nhận được LSB thứ ba (chỉ số 2, vị trí thứ tư). Ta có thể gửi $(2^{e \times (i+3)} \mod n)*c$ và nhận lại $((8\times (2^i\mod n) \times m) \mod n)$ & 4.</p><p>Như vậy, $$((8\times (2^i\mod n) \times m) \mod n) & 4 =int((((8\times (2^i\mod n) \times m) \mod n)\mod 8) \ge 4)$$ và giá trị $((8\times (2^i\mod n) \times m) \mod n)\mod 8$ là bit đúng sai của đẳng thức $$0-n\times \lfloor\dfrac{(8\times (2^i\mod n) \times m)}{n}\rfloor\mod 8 =\lfloor\dfrac{(8\times (2^i\mod n) \times m)}{n}\rfloor\mod 8$$</p><p>Giá trị này cho chúng ta biết $(2^i \mod n) \times m$ nằm trong khoảng nào trong số các khoảng $[0, n/8), &mldr;, [7*n/8, n)$, nhưng chúng ta chỉ nhận được MSB của nó (từ $\ge 4$ hoặc & 4), vì vậy về cơ bản chúng ta chỉ nhận được một MSG của $(2^i \mod n) \times m$.
+Lặp lại điều này sẽ cho phép chúng ta thu được toàn bộ <code>m</code>.</p><p>Về bản chất, phương pháp này là binary-search trên phần fractional m/n: mỗi bit thu được sẽ cho ta cắt đôi khoảng hiện tại (giống LSB-oracle). Dùng việc hỏi “bit của octant” là một biến thể nhưng về lượng thông tin mỗi truy vấn vẫn ~1 bit, do đó độ phức tạp tương đương LSB-oracle cơ bản.</p><p>Sau đây là phần code giải:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># get_key_m.py</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> fractions <span style=color:#f92672>import</span> Fraction
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pwn <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> json
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># context.log_level = &#39;debug&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>get_data</span>():
+</span></span><span style=display:flex><span>    <span style=color:#75715e># target = process([&#34;python3&#34;, &#34;chall.py&#34;])</span>
+</span></span><span style=display:flex><span>    target <span style=color:#f92672>=</span> remote(<span style=color:#e6db74>&#39;leaky-rsa-revenge.chal.imaginaryctf.org&#39;</span>, <span style=color:#ae81ff>1337</span>)
+</span></span><span style=display:flex><span>    target<span style=color:#f92672>.</span>recvline()
+</span></span><span style=display:flex><span>    data <span style=color:#f92672>=</span> target<span style=color:#f92672>.</span>recvline()
+</span></span><span style=display:flex><span>    params <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(data)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    c <span style=color:#f92672>=</span> int(params[<span style=color:#e6db74>&#39;c&#39;</span>])
+</span></span><span style=display:flex><span>    n <span style=color:#f92672>=</span> int(params[<span style=color:#e6db74>&#39;n&#39;</span>])
+</span></span><span style=display:flex><span>    iv <span style=color:#f92672>=</span> params[<span style=color:#e6db74>&#39;iv&#39;</span>]
+</span></span><span style=display:flex><span>    ct <span style=color:#f92672>=</span> params[<span style=color:#e6db74>&#39;ct&#39;</span>]
+</span></span><span style=display:flex><span>    e <span style=color:#f92672>=</span> <span style=color:#ae81ff>65537</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> target, n, e, c, iv, ct
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>target, n, e, c, iv, ct <span style=color:#f92672>=</span> get_data()
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span> n <span style=color:#f92672>&amp;</span> <span style=color:#ae81ff>0xf</span> <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0xf</span>:
+</span></span><span style=display:flex><span>    target<span style=color:#f92672>.</span>close()
+</span></span><span style=display:flex><span>    target, n, e, c, iv, ct <span style=color:#f92672>=</span> get_data()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>open(<span style=color:#e6db74>&#34;ct.hex&#34;</span>, <span style=color:#e6db74>&#34;w&#34;</span>)<span style=color:#f92672>.</span>write(json<span style=color:#f92672>.</span>dumps({<span style=color:#e6db74>&#39;iv&#39;</span>: iv, <span style=color:#e6db74>&#39;ct&#39;</span>: ct}))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;n:&#34;</span>, n)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;c:&#34;</span>, c)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>low, high <span style=color:#f92672>=</span> Fraction(<span style=color:#ae81ff>0</span>), Fraction(n)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(n<span style=color:#f92672>.</span>bit_length()):
+</span></span><span style=display:flex><span>    x <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(target<span style=color:#f92672>.</span>recvline())[<span style=color:#e6db74>&#39;idx&#39;</span>]
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;----------------------&#34;</span>)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Round </span><span style=color:#e6db74>{</span>_<span style=color:#e6db74>}</span><span style=color:#e6db74>, idx: </span><span style=color:#e6db74>{</span>x<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>    c_i <span style=color:#f92672>=</span> c <span style=color:#f92672>*</span> pow(<span style=color:#ae81ff>2</span><span style=color:#f92672>**</span>(_<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span><span style=color:#f92672>+</span>x), e, n)<span style=color:#f92672>%</span> n
+</span></span><span style=display:flex><span>    target<span style=color:#f92672>.</span>sendline(json<span style=color:#f92672>.</span>dumps({<span style=color:#e6db74>&#39;c&#39;</span>: c_i}))
+</span></span><span style=display:flex><span>    parity <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(target<span style=color:#f92672>.</span>recvline())[<span style=color:#e6db74>&#39;b&#39;</span>]
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;parity:&#34;</span>, parity)
+</span></span><span style=display:flex><span>    mid <span style=color:#f92672>=</span> (low <span style=color:#f92672>+</span> high) <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> parity <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>        high <span style=color:#f92672>=</span> mid
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>        low <span style=color:#f92672>=</span> mid
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> high <span style=color:#f92672>-</span> low <span style=color:#f92672>&lt;=</span> Fraction(<span style=color:#ae81ff>1</span>, n):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>break</span>
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;low: </span><span style=color:#e6db74>{</span>int(low)<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;high: </span><span style=color:#e6db74>{</span>int(high)<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;high - low: </span><span style=color:#e6db74>{</span>int(high <span style=color:#f92672>-</span> low)<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(int(high))
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># get_flag.py</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Cipher <span style=color:#f92672>import</span> AES
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Util.Padding <span style=color:#f92672>import</span> unpad
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> hashlib <span style=color:#f92672>import</span> sha256
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> json
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#34;ct.hex&#34;</span>, <span style=color:#e6db74>&#34;r&#34;</span>) <span style=color:#66d9ef>as</span> f:
+</span></span><span style=display:flex><span>    data <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(f<span style=color:#f92672>.</span>read())
+</span></span><span style=display:flex><span>iv, ct <span style=color:#f92672>=</span> bytes<span style=color:#f92672>.</span>fromhex(data[<span style=color:#e6db74>&#34;iv&#34;</span>]), bytes<span style=color:#f92672>.</span>fromhex(data[<span style=color:#e6db74>&#34;ct&#34;</span>])
+</span></span><span style=display:flex><span><span style=color:#75715e># copy key_m from the result</span>
+</span></span><span style=display:flex><span>key_m <span style=color:#f92672>=</span> <span style=color:#ae81ff>66913879129427921532141095805213088350786068884711371183610467808888726432628555235077071240182816868700010352314530781554928879532699339797452869208244793928847297090122325104212375055788476001149144065203543329623887717342649312948304461426083404294042817825376050063313290113639594521177002093126711190702</span>
+</span></span><span style=display:flex><span>key <span style=color:#f92672>=</span> sha256(str(key_m)<span style=color:#f92672>.</span>encode())<span style=color:#f92672>.</span>digest()[:<span style=color:#ae81ff>16</span>]
+</span></span><span style=display:flex><span>flag <span style=color:#f92672>=</span> unpad(AES<span style=color:#f92672>.</span>new(key, AES<span style=color:#f92672>.</span>MODE_CBC, IV<span style=color:#f92672>=</span>iv)<span style=color:#f92672>.</span>decrypt(ct), <span style=color:#ae81ff>16</span>)<span style=color:#f92672>.</span>decode()
+</span></span><span style=display:flex><span>print(flag)
+</span></span></code></pre></div><pre><code>Flag: ictf{p13cin9_7h3_b1t5_t0g37her_7d092f5d43ebbf6fa60fba8c9e9ac4466daba9a71d04def7e5bf09bcce5649c8}
+</code></pre><h2 id=clcg><a class=header-anchor href=#clcg></a>clcg</h2><p><img src=https://hackmd.io/_uploads/HkHj9cLsgl.png alt=image></p><p><code>chall.py</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Util.number <span style=color:#f92672>import</span> getPrime
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Cipher <span style=color:#f92672>import</span> AES
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Util.Padding <span style=color:#f92672>import</span> pad
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> secrets <span style=color:#f92672>import</span> randbelow, token_bytes
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> json
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;flag.txt&#39;</span>) <span style=color:#66d9ef>as</span> f:
+</span></span><span style=display:flex><span>    flag <span style=color:#f92672>=</span> f<span style=color:#f92672>.</span>read()<span style=color:#f92672>.</span>strip()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>CLCG</span>:
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>__init__</span>(self, length):
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>p <span style=color:#f92672>=</span> getPrime(<span style=color:#ae81ff>256</span>)
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>A <span style=color:#f92672>=</span> [randbelow(self<span style=color:#f92672>.</span>p) <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(length)]
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>C <span style=color:#f92672>=</span> [randbelow(self<span style=color:#f92672>.</span>p) <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(length)]
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>X <span style=color:#f92672>=</span> [randbelow(self<span style=color:#f92672>.</span>p) <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(length)]
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>rand</span>(self):
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>X <span style=color:#f92672>=</span> [(a <span style=color:#f92672>*</span> x <span style=color:#f92672>+</span> c) <span style=color:#f92672>%</span> self<span style=color:#f92672>.</span>p <span style=color:#66d9ef>for</span> a, x, c <span style=color:#f92672>in</span> zip(self<span style=color:#f92672>.</span>A, self<span style=color:#f92672>.</span>X, self<span style=color:#f92672>.</span>C)]
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> int<span style=color:#f92672>.</span>to_bytes((sum(self<span style=color:#f92672>.</span>X) <span style=color:#f92672>%</span> self<span style=color:#f92672>.</span>p) <span style=color:#f92672>&gt;&gt;</span> <span style=color:#ae81ff>192</span>, <span style=color:#ae81ff>8</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>NUM_HINTS <span style=color:#f92672>=</span> <span style=color:#ae81ff>36</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>clcg <span style=color:#f92672>=</span> CLCG(<span style=color:#ae81ff>8</span>)
+</span></span><span style=display:flex><span>data <span style=color:#f92672>=</span> dict()
+</span></span><span style=display:flex><span>data[<span style=color:#e6db74>&#39;p&#39;</span>] <span style=color:#f92672>=</span> clcg<span style=color:#f92672>.</span>p
+</span></span><span style=display:flex><span>data[<span style=color:#e6db74>&#39;A&#39;</span>] <span style=color:#f92672>=</span> clcg<span style=color:#f92672>.</span>A
+</span></span><span style=display:flex><span>data[<span style=color:#e6db74>&#39;hints&#39;</span>] <span style=color:#f92672>=</span> [clcg<span style=color:#f92672>.</span>rand()<span style=color:#f92672>.</span>hex() <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(NUM_HINTS)]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>key <span style=color:#f92672>=</span> clcg<span style=color:#f92672>.</span>rand() <span style=color:#f92672>+</span> clcg<span style=color:#f92672>.</span>rand()
+</span></span><span style=display:flex><span>iv <span style=color:#f92672>=</span> token_bytes(<span style=color:#ae81ff>16</span>)
+</span></span><span style=display:flex><span>cipher <span style=color:#f92672>=</span> AES<span style=color:#f92672>.</span>new(key, AES<span style=color:#f92672>.</span>MODE_CBC, iv<span style=color:#f92672>=</span>iv)
+</span></span><span style=display:flex><span>data[<span style=color:#e6db74>&#39;iv&#39;</span>] <span style=color:#f92672>=</span> iv<span style=color:#f92672>.</span>hex()
+</span></span><span style=display:flex><span>data[<span style=color:#e6db74>&#39;ct&#39;</span>] <span style=color:#f92672>=</span> cipher<span style=color:#f92672>.</span>encrypt(pad(flag<span style=color:#f92672>.</span>encode(), <span style=color:#ae81ff>16</span>))<span style=color:#f92672>.</span>hex()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(json<span style=color:#f92672>.</span>dumps(data))
+</span></span></code></pre></div><h3 id=phân-tích-đề-bài><a class=header-anchor href=#ph%c3%a2n-t%c3%adch-%c4%91%e1%bb%81-b%c3%a0i></a>Phân tích đề bài</h3><ul><li>p, A, C, X lần luợt là số nguyên tố 256 bit và các list gồm 1 độ dài nhất định (theo đề là 8) các giá trị ngẫu nhiên bé hơn p.</li><li>Hàm <code>rand()</code> cho đầu ra là top 64 bit đầu của tổng S là 8 giá trị LCG không phụ thuộc modulo p của các cặp (A, X, C) tương ứng và gán X mới lần lượt là 8 giá trị LCG này. $$X^{(i)}_{t+1}\equiv a_i\times X^{(i)}<em>t+c_i\mod p,i=[1, 8]$$ $$S =\displaystyle \sum</em>{i=1}^8 X_t^{(i)}\mod p$$</li><li>Lấy hàm <code>rand()</code> 36 lần rồi lấy 2 lần tiếp theo làm key cho chế độ mã hóa AES mode CBC với iv là ngẫu nhiên và plaintext là flag.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>data[<span style=color:#e6db74>&#39;hints&#39;</span>] <span style=color:#f92672>=</span> [clcg<span style=color:#f92672>.</span>rand()<span style=color:#f92672>.</span>hex() <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>36</span>)]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>key <span style=color:#f92672>=</span> clcg<span style=color:#f92672>.</span>rand() <span style=color:#f92672>+</span> clcg<span style=color:#f92672>.</span>rand()
+</span></span><span style=display:flex><span>iv <span style=color:#f92672>=</span> token_bytes(<span style=color:#ae81ff>16</span>)
+</span></span><span style=display:flex><span>cipher <span style=color:#f92672>=</span> AES<span style=color:#f92672>.</span>new(key, AES<span style=color:#f92672>.</span>MODE_CBC, iv<span style=color:#f92672>=</span>iv)
+</span></span></code></pre></div><h3 id=hướng-giải-1><a class=header-anchor href=#h%c6%b0%e1%bb%9bng-gi%e1%ba%a3i-1></a>Hướng giải</h3><p>Hint from admin</p><p>Note that if <code>x1 = a*x0 + c</code> then <code>x1 + c/(a-1) = a*x0 + ac/(a-1) = a(x0 + c/(a-1))</code> so <code>xi = C*a**i - c/(a-1)</code>. If we add up 8 LCGs, it will be of the form <code>sum(Cj*aj**i for j) - D</code>, and taking the partial differences gets rid of <code>D</code>. We now note that this satisfies the linear recurrence whose characteristic polynomial is <code>prod(x - aj for j)</code>. We use this recurrence to build a lattice that will be <code>0</code> mod <code>p</code> when multiplied by the vector of true differences between state sums.</p><h4 id=khai-thác-từ-lcg-cho-trước><a class=header-anchor href=#khai-th%c3%a1c-t%e1%bb%ab-lcg-cho-tr%c6%b0%e1%bb%9bc></a>Khai thác từ LCG cho trước</h4><p>Từ phép biến đổi affine LCG ta sẽ thử tạo chuỗi cấp số và trình bày công thức.
+Giả sử, tồn tại $k$ sao cho: $$X^{(i)}_{t+1} + k\equiv a_i\times (X^{(i)}_t+k)\mod p,i=[1, 8]$$</p><p>$$\Leftrightarrow (a_i-1)\times k\equiv c\mod p,i=[1, 8]\Leftrightarrow k\equiv \dfrac{c}{a_i-1}\mod p,i=[1, 8]$$</p><p>Như vậy, ta hoàn toàn có thể biến đổi dãy trên thành dãy số hệ số nhân $$C^{(i)}_{t+1}\equiv a_i\times C^{(i)}_t\mod p,i=[1, 8]$$, với $C_i = X_i+\dfrac{c}{a_i-1}\mod p,i=[1, 8]$</p><p>Do đó, tổng S biến đổi thành:$$S\equiv \displaystyle \sum_{j=1}^8 K_ja^i_j-D\mod p$$
+Có nghĩa là nếu ta lấy từng cặp hiệu của S đôi một liên tiếp thì nó sẽ khử D
+($\Delta S_i=S_{i+1}-S_i$), để lại tổng của các thừa số thỏa mãn hồi quy tuyến tính bậc 8 với đa thức đặc trưng là:
+$$m(x)=\displaystyle \prod_{j=1}^8(x-a_j)\in \mathbb{F}_p[x]$$</p><h4 id=khôi-phục-lại-delta-s_t><a class=header-anchor href=#kh%c3%b4i-ph%e1%bb%a5c-l%e1%ba%a1i-delta-s_t></a>Khôi phục lại $\Delta S_t$</h4><p>Theo đề bài, ta sẽ tách $\Delta S_t$ thành $2^{192}\Delta b_t+d_t$ với $d_t\in (-2^{192}, 2^{192})$</p><p>Từ phép hồi quy trên, suy ra được: $$\displaystyle \sum_{k=0}^8c_k\Delta S_{t+k}\equiv 0 \mod p\ \ (1)$$</p><p>Vì vậy, khi ta sử dụng phép tách trên, $(1)$ sẽ trở thành phương trình đồng dư tuyến tính modulo p với ẩn $d_t$</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Cipher <span style=color:#f92672>import</span> AES
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> sage.all <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> json
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#34;out.txt&#34;</span>) <span style=color:#66d9ef>as</span> f:
+</span></span><span style=display:flex><span>    out <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>load(f)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>p <span style=color:#f92672>=</span> out[<span style=color:#e6db74>&#34;p&#34;</span>]
+</span></span><span style=display:flex><span>A <span style=color:#f92672>=</span> out[<span style=color:#e6db74>&#34;A&#34;</span>]
+</span></span><span style=display:flex><span>hints <span style=color:#f92672>=</span> [int(hint, <span style=color:#ae81ff>16</span>) <span style=color:#66d9ef>for</span> hint <span style=color:#f92672>in</span> out[<span style=color:#e6db74>&#34;hints&#34;</span>]]
+</span></span><span style=display:flex><span>last <span style=color:#f92672>=</span> hints[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>&lt;&lt;</span> <span style=color:#ae81ff>192</span>
+</span></span><span style=display:flex><span>hints <span style=color:#f92672>=</span> [hints[i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>] <span style=color:#f92672>-</span> hints[i] <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(hints) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)]
+</span></span><span style=display:flex><span>ct <span style=color:#f92672>=</span> bytes<span style=color:#f92672>.</span>fromhex(out[<span style=color:#e6db74>&#34;ct&#34;</span>])
+</span></span><span style=display:flex><span>iv <span style=color:#f92672>=</span> bytes<span style=color:#f92672>.</span>fromhex(out[<span style=color:#e6db74>&#34;iv&#34;</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>decrypt</span>(rand1, rand2):
+</span></span><span style=display:flex><span>    cipher <span style=color:#f92672>=</span> AES<span style=color:#f92672>.</span>new(
+</span></span><span style=display:flex><span>        int<span style=color:#f92672>.</span>to_bytes(rand1, <span style=color:#ae81ff>8</span>) <span style=color:#f92672>+</span> int<span style=color:#f92672>.</span>to_bytes(rand2, <span style=color:#ae81ff>8</span>), AES<span style=color:#f92672>.</span>MODE_CBC, iv<span style=color:#f92672>=</span>iv
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> cipher<span style=color:#f92672>.</span>decrypt(ct)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>=</span> PolynomialRing(GF(p), <span style=color:#e6db74>&#34;x&#34;</span>)<span style=color:#f92672>.</span>gen()
+</span></span><span style=display:flex><span>rec <span style=color:#f92672>=</span> list(map(int, prod(x <span style=color:#f92672>-</span> a <span style=color:#66d9ef>for</span> a <span style=color:#f92672>in</span> A)))
+</span></span><span style=display:flex><span>L <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>    [<span style=color:#ae81ff>0</span> <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(i)] <span style=color:#f92672>+</span> rec <span style=color:#f92672>+</span> [<span style=color:#ae81ff>0</span> <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(len(hints) <span style=color:#f92672>-</span> len(rec) <span style=color:#f92672>-</span> i)]
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(hints) <span style=color:#f92672>-</span> len(rec) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>] <span style=color:#f92672>+</span> [[p <span style=color:#f92672>*</span> int(i <span style=color:#f92672>==</span> j) <span style=color:#66d9ef>for</span> j <span style=color:#f92672>in</span> range(len(hints))] <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(rec) <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>)]
+</span></span><span style=display:flex><span>L <span style=color:#f92672>=</span> Matrix(ZZ, L)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>B <span style=color:#f92672>=</span> L<span style=color:#f92672>.</span>LLL()
+</span></span><span style=display:flex><span>yprime <span style=color:#f92672>=</span> (<span style=color:#ae81ff>2</span><span style=color:#f92672>**</span><span style=color:#ae81ff>192</span>) <span style=color:#f92672>*</span> vector(ZZ, hints)
+</span></span><span style=display:flex><span>Byprime <span style=color:#f92672>=</span> B <span style=color:#f92672>*</span> yprime
+</span></span><span style=display:flex><span>v <span style=color:#f92672>=</span> vector(ZZ, [round(i <span style=color:#f92672>/</span> p) <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> Byprime])
+</span></span><span style=display:flex><span>Bzprime <span style=color:#f92672>=</span> v <span style=color:#f92672>*</span> p <span style=color:#f92672>-</span> Byprime
+</span></span><span style=display:flex><span>zprime <span style=color:#f92672>=</span> (B <span style=color:#f92672>**</span> (<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>)) <span style=color:#f92672>*</span> Bzprime
+</span></span><span style=display:flex><span><span style=color:#75715e># print([len(bin(i)) for i in zprime]) - debug - should be around 192</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>xprime <span style=color:#f92672>=</span> list(yprime <span style=color:#f92672>+</span> zprime)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>2</span>):
+</span></span><span style=display:flex><span>    xprime<span style=color:#f92672>.</span>append((<span style=color:#f92672>-</span>vector(rec[:<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]) <span style=color:#f92672>*</span> vector(xprime[<span style=color:#f92672>-</span>len(rec) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> :])) <span style=color:#f92672>%</span> p)
+</span></span><span style=display:flex><span>rand1 <span style=color:#f92672>=</span> ((last <span style=color:#f92672>+</span> xprime[<span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>]) <span style=color:#f92672>%</span> p) <span style=color:#f92672>&gt;&gt;</span> <span style=color:#ae81ff>192</span>
+</span></span><span style=display:flex><span>rand2 <span style=color:#f92672>=</span> ((last <span style=color:#f92672>+</span> xprime[<span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>] <span style=color:#f92672>+</span> xprime[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]) <span style=color:#f92672>%</span> p) <span style=color:#f92672>&gt;&gt;</span> <span style=color:#ae81ff>192</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> r1 <span style=color:#f92672>in</span> range(rand1 <span style=color:#f92672>-</span> <span style=color:#ae81ff>4</span>, rand1 <span style=color:#f92672>+</span> <span style=color:#ae81ff>4</span>):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> r2 <span style=color:#f92672>in</span> range(rand2 <span style=color:#f92672>-</span> <span style=color:#ae81ff>4</span>, rand2 <span style=color:#f92672>+</span> <span style=color:#ae81ff>4</span>):
+</span></span><span style=display:flex><span>        flag <span style=color:#f92672>=</span> decrypt(r1, r2)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;ictf&#34;</span> <span style=color:#f92672>in</span> flag:
+</span></span><span style=display:flex><span>            print(flag)
+</span></span></code></pre></div><pre><code>Flag: ictf{y3t_an07h3r_lcg_ch411_7b24ac314588057bfd4b70b10585a277}
+</code></pre><h2 id=bigger-rsa><a class=header-anchor href=#bigger-rsa></a>Bigger-RSA</h2><p><img src=https://hackmd.io/_uploads/HkRU3tD3eg.png alt=image></p><p><code>bigger_rsa.sage</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> Crypto.Util.number <span style=color:#f92672>import</span> getPrime, bytes_to_long
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> secrets
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>n <span style=color:#f92672>=</span> <span style=color:#ae81ff>32</span>
+</span></span><span style=display:flex><span>e <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x10001</span>
+</span></span><span style=display:flex><span>N <span style=color:#f92672>=</span> <span style=color:#ae81ff>64</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>flag <span style=color:#f92672>=</span> <span style=color:#e6db74>b</span><span style=color:#e6db74>&#39;ictf</span><span style=color:#e6db74>{REDACTED}</span><span style=color:#e6db74>&#39;</span>
+</span></span><span style=display:flex><span>flag <span style=color:#f92672>=</span> secrets<span style=color:#f92672>.</span>token_bytes((n <span style=color:#f92672>*</span> <span style=color:#ae81ff>63</span>) <span style=color:#f92672>-</span> len(flag)) <span style=color:#f92672>+</span> flag
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>ps <span style=color:#f92672>=</span> [getPrime(<span style=color:#ae81ff>512</span>) <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(n)]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>m <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> ps:
+</span></span><span style=display:flex><span>    m <span style=color:#f92672>*=</span> i
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>nums <span style=color:#f92672>=</span> [CRT([<span style=color:#ae81ff>1</span> <span style=color:#f92672>+</span> secrets<span style=color:#f92672>.</span>randbits(<span style=color:#ae81ff>260</span>) <span style=color:#66d9ef>for</span> _ <span style=color:#f92672>in</span> range(n)],ps) <span style=color:#66d9ef>for</span> __ <span style=color:#f92672>in</span> range(N)]
+</span></span><span style=display:flex><span>ct <span style=color:#f92672>=</span> pow(bytes_to_long(flag),e,m)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;ct=</span><span style=color:#e6db74>{</span>ct<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;m=</span><span style=color:#e6db74>{</span>m<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;nums=</span><span style=color:#e6db74>{</span>nums<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span></code></pre></div><h2 id=tài-liệu><a class=header-anchor href=#t%c3%a0i-li%e1%bb%87u></a>Tài liệu</h2><ol><li>(scalar-division): <a href=https://johncremona.github.io/book/fulltext/chapter3.pdf>https://johncremona.github.io/book/fulltext/chapter3.pdf</a></li><li>(zkpow):</li></ol><ul><li><a href=https://en.wikipedia.org/wiki/Merkle_tree>https://en.wikipedia.org/wiki/Merkle_tree</a></li><li><a href=https://en.wikipedia.org/wiki/Zero-knowledge_proof>https://en.wikipedia.org/wiki/Zero-knowledge_proof</a></li><li><a href=https://blog.codeminer42.com/zero-knowledge-proofs-and-merkle-trees-an-overview-before-diving-into-it/>https://blog.codeminer42.com/zero-knowledge-proofs-and-merkle-trees-an-overview-before-diving-into-it/</a></li></ul><ol start=3><li>(leaky-rsa-revenge): <a href=https://crypto.stackexchange.com/questions/11053/rsa-least-significant-bit-oracle-attack>https://crypto.stackexchange.com/questions/11053/rsa-least-significant-bit-oracle-attack</a></li><li>(clcg):</li></ol><ul><li><a href=https://en.wikipedia.org/wiki/Linear_congruential_generator>https://en.wikipedia.org/wiki/Linear_congruential_generator</a></li><li><a href=https://crypto.stackexchange.com/questions/2086/predicting-values-from-a-linear-congruential-generator>https://crypto.stackexchange.com/questions/2086/predicting-values-from-a-linear-congruential-generator</a></li></ul></div><footer class=article-footer><ul class=article-tag-list itemprop=keywords><li class=article-tag-list-item data-aos=zoom-in><a class=article-tag-list-link href=/tags/ctf rel=tag>CTF</a></li><li class=article-tag-list-item data-aos=zoom-in><a class=article-tag-list-link href=/tags/cryptography rel=tag>CRYPTOGRAPHY</a></li></ul></footer></div><nav id=article-nav aria-label="Article navigation" data-aos=fade-up><div class="article-nav-link-wrap left"><img data-src=/images/holactf.jpg data-sizes=auto alt="HOLACTF 2025" class=lazyload><a href=/post/holactf2025/ aria-label="Prev:HOLACTF 2025" title="Prev:HOLACTF 2025"></a><div class=article-nav-caption>Prev</div><h3 class=article-nav-title>HOLACTF 2025</h3></div><div class="article-nav-link-wrap right"><img data-src=/images/random.webp data-sizes=auto alt="Crack Random Modules" class=lazyload><a href=/post/crackrandommodule/ aria-label="Next:Crack Random Modules" title="Next:Crack Random Modules"></a><div class=article-nav-caption>Next</div><h3 class=article-nav-title>Crack Random Modules</h3></div></nav></article></section></div><footer id=footer aria-label="Site footer"><div style=width:100%;overflow:hidden><div class=footer-line></div></div><div id=footer-info><div><span class=icon-copyright></span>2020-2025<span class="footer-info-sep rotate"></span>
+r1muru</div><div>Powered by&nbsp;<a href=https://gohugo.io/ target=_blank rel="noopener nofollow noreferrer">Hugo</a>&nbsp; Theme.<a href=https://github.com/D-Sketon/hugo-theme-reimu target=_blank rel="noopener nofollow noreferrer">Reimu</a></div><div><span class=icon-brush>&nbsp;23.8k</span>
+&nbsp;|&nbsp;
+<span class=icon-coffee>&nbsp;01:57</span></div><div><span class=icon-eye></span>
+<span id=busuanzi_container_site_pv>Number of visits&nbsp;<span id=busuanzi_value_site_pv></span></span>
+&nbsp;|&nbsp;
+<span class=icon-user></span>
+<span id=busuanzi_container_site_uv>Number of visitors&nbsp;<span id=busuanzi_value_site_uv></span></span></div></div></footer><div class=sidebar-top><div class="sidebar-top-taichi rotate"></div><div class=arrow-up></div></div><div id=mask class=hide></div></div><nav id=mobile-nav aria-label="Mobile navigation"><div class=sidebar-wrap><div class=sidebar-toc-sidebar><h3 class=toc-title>Contents</h3><div class="sidebar-toc-wrapper toc-div-class"><nav id=TableOfContents><ul><li><a href=#leaky-rsa>leaky-rsa</a><ul><li><a href=#phân-tích-và-lời-giải>Phân tích và lời giải</a></li></ul></li><li><a href=#zkpow>zkpow</a><ul><li><a href=#phân-tích-và-lời-giải-1>Phân tích và lời giải</a></li></ul></li><li><a href=#scalar-division>scalar-division</a><ul><li><a href=#phân-tích-và-lời-giải-2>Phân tích và lời giải</a></li></ul></li><li><a href=#redacted>redacted</a><ul><li><a href=#phân-tích-và-lời-giải-3>Phân tích và lời giải</a></li></ul></li><li><a href=#leaky-rsa-revenge>leaky-rsa-revenge</a><ul><li><a href=#phân-tích>Phân tích</a></li><li><a href=#hướng-giải>Hướng giải</a></li></ul></li><li><a href=#clcg>clcg</a><ul><li><a href=#phân-tích-đề-bài>Phân tích đề bài</a></li><li><a href=#hướng-giải-1>Hướng giải</a></li></ul></li><li><a href=#bigger-rsa>Bigger-RSA</a></li><li><a href=#tài-liệu>Tài liệu</a></li></ul></nav></div></div><div class="sidebar-common-sidebar hidden"><div class=sidebar-author><img data-src=/avatar/avatar.webp data-sizes=auto alt=r1muru class=lazyload><div class=sidebar-author-name>r1muru</div><div class=sidebar-description>Life is not fair, get used to it</div></div><div class=sidebar-state><div class=sidebar-state-article><div>Posts</div><div class=sidebar-state-number>9</div></div><a class=sidebar-state-category href=/categories/ aria-label=sidebar-state-category-link><div>Categories</div><div class=sidebar-state-number>3</div></a><a class=sidebar-state-tag href=/tags/ aria-label=sidebar-state-tag-link><div>Tags</div><div class=sidebar-state-number>7</div></a></div><div class=sidebar-social></div><div class=sidebar-menu><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/ aria-label=Home></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>Home</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/archives aria-label=Archives></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>Archives</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/about aria-label=About></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>About</div></div></div></div></div><div class=sidebar-btn-wrapper><div class="sidebar-toc-btn current"></div><div class=sidebar-common-btn></div></div></nav></div><script src=https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js integrity=sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf+e crossorigin=anonymous></script><script src=https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js integrity=sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q crossorigin=anonymous></script><script src=/js/main.js integrity crossorigin=anonymous></script><script src=/js/aos.js integrity crossorigin=anonymous></script><script>var aosInit=()=>{AOS.init({duration:1e3,easing:"ease",once:!0,offset:50})};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",aosInit):aosInit()</script><script src=/js/pjax_main.js integrity crossorigin=anonymous data-pjax></script><script src=https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js integrity=sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d crossorigin=anonymous></script><script>if((!!1||!window.matchMedia("(max-width: 768px)").matches)&&window.firework){const e=JSON.parse('{"excludeelements":["a","button"],"particles":[{"colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"duration":[1200,1800],"easing":"easeOutExpo","move":["emit"],"number":20,"shape":"circle","shapeOptions":{"alpha":[0.3,0.5],"radius":[16,32]}},{"colors":["var(--red-0)"],"duration":[1200,1800],"easing":"easeOutExpo","move":["diffuse"],"number":1,"shape":"circle","shapeOptions":{"alpha":[0.2,0.5],"lineWidth":6,"radius":20}}]}');e.excludeElements=e.excludeelements,delete e.excludeelements,window.firework(e)}</script><div id=lazy-script><div><script data-pjax>window.REIMU_POST={author:"r1muru",title:"ImaginaryCTF 2025",url:"https://r1muru2006.github.io/post/imaginaryctf2025/",description:"Đây là các chall mình giải được trong quá trình thi cùng team aespaFanClub.",cover:"https://r1muru2006.github.io/images/imaginary.jpg"}</script><script src=/js/insert_highlight.js integrity crossorigin=anonymous data-pjax></script><script src=/js/tabs.js integrity crossorigin=anonymous data-pjax></script><script type=module data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script src=https://npm.webcache.cn/katex@0.16.24/dist/katex.min.js data-pjaxintegrity=sha384-MWNUH0WmtsYGhn2cbH6ELRCbf9LG3QDqCC+gqPB3IBNO35xjZK3Ejb6oONRpDbPg crossorigin=anonymous></script><script src=https://npm.webcache.cn/katex@0.16.24/dist/contrib/auto-render.min.js data-pjaxintegrity=sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh crossorigin=anonymous></script><script data-pjax>var renderMath=()=>{if(!window.renderMathInElement)return;window.renderMathInElement(_$("article"),{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}]})};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",renderMath,{once:!0}):renderMath()</script></div></div><script src=https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js asyncintegrity=sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S crossorigin=anonymous></script><script>"serviceWorker"in navigator&&navigator.serviceWorker.getRegistrations().then(e=>{for(let t of e)t.unregister()})</script><script>const reimuCopyright=String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;console.log(String.raw`%c ${reimuCopyright}`,"color: #ff5252;"),console.log("%c Theme.Reimu %c https://github.com/D-Sketon/hugo-theme-reimu ","color: white; background: #ff5252; padding:5px 0;","padding:4px;border:1px solid #ff5252;")</script></body></html>
