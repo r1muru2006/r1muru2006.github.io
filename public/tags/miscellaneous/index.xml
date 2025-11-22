@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Miscellaneous on r1muru&#39;s blog</title>
-    <link>http://localhost:36205/tags/miscellaneous/</link>
+    <link>https://r1muru2006.github.io/tags/miscellaneous/</link>
     <description>Recent content from r1muru&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Tue, 09 Sep 2025 08:42:30 +0700</lastBuildDate>
     
     
-    <atom:link href="http://localhost:36205/tags/miscellaneous/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://r1muru2006.github.io/tags/miscellaneous/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>HOLACTF 2025</title>
-      <link>http://localhost:36205/post/holactf2025/</link>
+      <link>https://r1muru2006.github.io/post/holactf2025/</link>
       <pubDate>Tue, 09 Sep 2025 08:42:30 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>http://localhost:36205/post/holactf2025/</guid>
+      <guid>https://r1muru2006.github.io/post/holactf2025/</guid>
       <description>
         <![CDATA[<h1>HOLACTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -87,7 +87,7 @@ Crypto
 <img src="https://hackmd.io/_uploads/SkGCc4-cge.png" alt="image">
 <img src="https://hackmd.io/_uploads/r1OJoEW9lx.png" alt="image"></p>
         
-        <hr><p>Published on 2025-09-09 at <a href='http://localhost:36205/'>r1muru's blog</a>, last modified on 2025-09-09</p>]]>
+        <hr><p>Published on 2025-09-09 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-09</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -98,10 +98,10 @@ Crypto
 
     <item>
       <title>DiceCTF 2025</title>
-      <link>http://localhost:36205/post/dicectf2025/</link>
+      <link>https://r1muru2006.github.io/post/dicectf2025/</link>
       <pubDate>Wed, 26 Mar 2025 09:31:43 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>http://localhost:36205/post/dicectf2025/</guid>
+      <guid>https://r1muru2006.github.io/post/dicectf2025/</guid>
       <description>
         <![CDATA[<h1>DiceCTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -126,7 +126,7 @@ dicecap
 <p>Thử tìm theo từ khóa thì ta ra được 2 kênh khả nghi chứa flag theo protocol FTP-DATA.
 Export file ra thì ta được 1 file main theo định dạng ELF cùng 1 tệp zip cần mật khẩu mà trong đó chứa flag.txt có thể lấy flag.</p>
         
-        <hr><p>Published on 2025-03-26 at <a href='http://localhost:36205/'>r1muru's blog</a>, last modified on 2025-03-26</p>]]>
+        <hr><p>Published on 2025-03-26 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-03-26</p>]]>
       </description>
       
         <category>CTF Write-up</category>
