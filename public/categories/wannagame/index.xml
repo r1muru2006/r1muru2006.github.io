@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>WannaGame on Welcome to my world</title>
+    <title>WannaGame on Welcome to my journey</title>
     <link>http://localhost:1313/categories/wannagame/</link>
-    <description>Recent content from Welcome to my world</description>
+    <description>Recent content from Welcome to my journey</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     
@@ -315,7 +315,7 @@ Choose!
 </span></span></code></pre></div><blockquote>
 <p>Bài này đơn giản là về phần mã hóa AES (<a href="https://vi.wikipedia.org/wiki/Advanced_Encryption_Standard">Advanced Encryption Standard</a>) và mình có xem lại cấu trúc của nó tại wikipedia và <a href="https://hackmd.io/@r1muru/HJmSbUld1x#Bringing-It-All-Together">đây</a> để tiếp cận.</p>
         
-        <hr><p>Published on 2025-05-16 at <a href='http://localhost:1313/'>Welcome to my world</a>, last modified on 2025-05-16</p>]]>
+        <hr><p>Published on 2025-05-16 at <a href='http://localhost:1313/'>Welcome to my journey</a>, last modified on 2025-05-16</p>]]>
       </description>
       
         <category>CTF Write-up</category><category>WannaGame</category>
@@ -377,7 +377,7 @@ Phân tích:
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(key<span style="color:#f92672">.</span>get(char, char) <span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> data)
 </span></span></code></pre></div><p>Hàm <code>hehe</code> lấy <code>data</code> và chuyển đổi từng ký tự trong dữ liệu đó sang ký tự tương ứng bằng danh sách của <code>KEY</code>.</p>
         
-        <hr><p>Published on 2025-04-08 at <a href='http://localhost:1313/'>Welcome to my world</a>, last modified on 2025-04-08</p>]]>
+        <hr><p>Published on 2025-04-08 at <a href='http://localhost:1313/'>Welcome to my journey</a>, last modified on 2025-04-08</p>]]>
       </description>
       
         <category>CTF Write-up</category><category>WannaGame</category>

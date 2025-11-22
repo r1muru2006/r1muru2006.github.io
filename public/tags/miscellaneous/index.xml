@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Miscellaneous on Welcome to my world</title>
+    <title>Miscellaneous on Welcome to my journey</title>
     <link>http://localhost:1313/tags/miscellaneous/</link>
-    <description>Recent content from Welcome to my world</description>
+    <description>Recent content from Welcome to my journey</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     
@@ -63,7 +63,7 @@ Crypto
 </span></span><span style="display:flex;"><span>c3: 7151799367443802424297049002310776844321501905398348074481144597918413565153
 </span></span></code></pre></div><p>Đây chỉ là 1 bài RSA đơn giản và mình để ý rằng n1 là số nguyên tố nên bài này có thể được giải như sau:</p>
         
-        <hr><p>Published on 2025-09-09 at <a href='http://localhost:1313/'>Welcome to my world</a>, last modified on 2025-09-09</p>]]>
+        <hr><p>Published on 2025-09-09 at <a href='http://localhost:1313/'>Welcome to my journey</a>, last modified on 2025-09-09</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -102,7 +102,7 @@ dicecap
 <p>Thử tìm theo từ khóa thì ta ra được 2 kênh khả nghi chứa flag theo protocol FTP-DATA.
 Export file ra thì ta được 1 file main theo định dạng ELF cùng 1 tệp zip cần mật khẩu mà trong đó chứa flag.txt có thể lấy flag.</p>
         
-        <hr><p>Published on 2025-03-26 at <a href='http://localhost:1313/'>Welcome to my world</a>, last modified on 2025-03-26</p>]]>
+        <hr><p>Published on 2025-03-26 at <a href='http://localhost:1313/'>Welcome to my journey</a>, last modified on 2025-03-26</p>]]>
       </description>
       
         <category>CTF Write-up</category>

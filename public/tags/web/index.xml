@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web on Welcome to my world</title>
+    <title>Web on Welcome to my journey</title>
     <link>http://localhost:1313/tags/web/</link>
-    <description>Recent content from Welcome to my world</description>
+    <description>Recent content from Welcome to my journey</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     
@@ -65,7 +65,7 @@
 3. Naham Commencement2025
 </h2><p>Thử thách cho ta một đường dẫn vào 1 trang đăng nhập, có vẻ như mục đích là ta phải sử dụng đúng tài khoản để truy cập vào và lấy flag. Khi <code>f12</code>, thì ta có source sau:</p>
         
-        <hr><p>Published on 2025-06-05 at <a href='http://localhost:1313/'>Welcome to my world</a>, last modified on 2025-06-05</p>]]>
+        <hr><p>Published on 2025-06-05 at <a href='http://localhost:1313/'>Welcome to my journey</a>, last modified on 2025-06-05</p>]]>
       </description>
       
         <category>CTF Write-up</category>
