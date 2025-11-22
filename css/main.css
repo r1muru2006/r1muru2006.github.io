@@ -1727,6 +1727,7 @@ a, .main-nav-icon, .popup-btn-close, button {
   font-weight: bold;
   line-height: 1.2em;
   margin: 1.2em 0 0.75em;
+  word-wrap: break-word;
 }
 
 .article-entry h1 a.header-anchor,
@@ -1927,6 +1928,10 @@ a.article-gallery-item,
   background-color: var(--color-footer-background);
   border-radius: 8px;
   transition: 0.3s;
+}
+
+.article-entry p, .article-entry ul, .article-entry dl {
+  word-wrap: break-word;
 }
 
 .article-more-link a {
