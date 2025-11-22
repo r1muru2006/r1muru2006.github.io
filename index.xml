@@ -7,7 +7,14 @@ WELCOME
 </h1><h2 id="w3lc0m3_-m7_fr13nd">
 <a class="header-anchor" href="#w3lc0m3_-m7_fr13nd"></a>
 W3lc0m3_ M7_Fr13nd$
-</h2>
+</h2><p><img src="/images/mctf/Welcome.png" alt="images">
+Link này dẫn tới nhóm Telegram chính để trao đổi về cuộc thi và ở đây thì mình tìm thấy flag bài này.</p>
+<p>Tuy nhiên ta phải bỏ dấu * trong <code>M*CTF</code> thì mới ra đúng flag.</p>
+<p><strong>Flag:</strong> <code>MCTF{ok3y_l3ts_g0}</code></p>
+<h2 id="crcl35">
+<a class="header-anchor" href="#crcl35"></a>
+CRCL35
+</h2><p><img src="/images/mctf/CRCL35.png" alt="images"></p>
         
         <hr><p>Published on 2025-11-21 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-11-21</p>]]></description><category>Learning</category></item><item><title>Crack Random Modules</title><link>https://r1muru2006.github.io/post/crackrandommodule/</link><pubDate>Mon, 15 Sep 2025 20:31:17 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/crackrandommodule/</guid><description>
 <![CDATA[<h1>Crack Random Modules</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
