@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Reverse Engineering on Welcome to my journey</title>
-    <link>http://localhost:1313/tags/reverse-engineering/</link>
-    <description>Recent content from Welcome to my journey</description>
+    <title>Reverse Engineering on r1muru&#39;s blog</title>
+    <link>http://localhost:45829/tags/reverse-engineering/</link>
+    <description>Recent content from r1muru&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     
@@ -15,7 +15,7 @@
     <lastBuildDate>Tue, 08 Apr 2025 10:07:31 +0700</lastBuildDate>
     
     
-    <atom:link href="http://localhost:1313/tags/reverse-engineering/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:45829/tags/reverse-engineering/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>WannaGame NMLT</title>
-      <link>http://localhost:1313/post/wannagamenmlt/</link>
+      <link>http://localhost:45829/post/wannagamenmlt/</link>
       <pubDate>Tue, 08 Apr 2025 10:07:31 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>http://localhost:1313/post/wannagamenmlt/</guid>
+      <guid>http://localhost:45829/post/wannagamenmlt/</guid>
       <description>
         <![CDATA[<h1>WannaGame NMLT</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -74,7 +74,7 @@ Phân tích:
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(key<span style="color:#f92672">.</span>get(char, char) <span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> data)
 </span></span></code></pre></div><p>Hàm <code>hehe</code> lấy <code>data</code> và chuyển đổi từng ký tự trong dữ liệu đó sang ký tự tương ứng bằng danh sách của <code>KEY</code>.</p>
         
-        <hr><p>Published on 2025-04-08 at <a href='http://localhost:1313/'>Welcome to my journey</a>, last modified on 2025-04-08</p>]]>
+        <hr><p>Published on 2025-04-08 at <a href='http://localhost:45829/'>r1muru's blog</a>, last modified on 2025-04-08</p>]]>
       </description>
       
         <category>CTF Write-up</category><category>WannaGame</category>

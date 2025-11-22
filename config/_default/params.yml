@@ -26,9 +26,9 @@ timeFormat: "2006-01-02 15:04:05"
 author: r1muru
 email: cuongchu200@gmail.com
 description: "Life is not fair, get used to it"
-subtitle: "r1muru's blog"
+subtitle: "Welcome to my journey"
 
-banner: "images/banner.webp"
+banner: "avatar/banner.jpg"
 # You can also write it in the form of the following url
 # banner: "https://example.com"
 
@@ -43,8 +43,8 @@ banner_srcset:
     - src: "images/banner.webp"
       media: "(min-width: 800px)"
 
-avatar: "avatar.webp"
-
+avatar: "/avatar/avatar.jpg"
+favicon: "/avatar/favicon.ico"
 # Control the display of the post cover
 # If not set, the banner image will be displayed by default
 # Its priority is lower than the cover in the Front-matter
@@ -104,12 +104,12 @@ footer:
 sidebar: right
 
 social:
-  # email: mailto:xxx@gmail.com
-  # github: https://github.com/yourname
+  email: cuongchu200@gmail.com
+  github: https://github.com/r1muru2006
   # google: https://plus.google.com/yourname
   # twitter: https://twitter.com/yourname
-  # facebook: https://www.facebook.com/yourname
-  # instagram: https://www.instagram.com/yourname
+  facebook: https://www.facebook.com/chu.cuong.732399
+  instagram: https://www.instagram.com/r1murun0pr0
   # linkedin: https://www.linkedin.com/in/yourname
   # pinterest: https://www.pinterest.com/yourname
   # youtube: https://www.youtube.com/channel/yourname
@@ -127,7 +127,7 @@ social:
   # stackoverflow: https://stackoverflow.com/users/yourname
   # keybase: https://keybase.io/yourname
   # telegram: https://t.me/yourname
-  # discord: https://discordapp.com/users/yourname
+  discord: https://discordapp.com/users/r1muru2006
   # steam: https://steamcommunity.com/id/yourname
 
 widgets:

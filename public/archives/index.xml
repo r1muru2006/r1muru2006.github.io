@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Welcome to my journey</title>
-    <link>http://localhost:1313/archives/</link>
-    <description>Recent content from Welcome to my journey</description>
+    <title>r1muru&#39;s blog</title>
+    <link>http://localhost:45829/archives/</link>
+    <description>Recent content from r1muru&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     
@@ -13,7 +13,7 @@
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
     
-    <atom:link href="http://localhost:1313/archives/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:45829/archives/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
