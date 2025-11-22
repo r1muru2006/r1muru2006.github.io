@@ -331,6 +331,22 @@ body [data-aos="zoom-in"] {
   content: "\e619";
 }
 
+.icon-facebook:before {
+  content: "\e60e";
+}
+
+.icon-instagram:before {
+  content: "\e615";
+}
+
+.icon-discord:before {
+  content: "\e60d";
+}
+
+.icon-email:before {
+  content: "\e63c";
+}
+
 .sidebar-toc-btn:before {
   font-family: "iconfont";
   content: "\e633";
@@ -3104,6 +3120,30 @@ mjx-container::-webkit-scrollbar {
 
 .sidebar-social-icon:hover {
   transform: scale(1.2);
+}
+
+.icon-email {
+  color: var(--red-2);
+}
+
+.icon-github {
+  color: #191717;
+}
+
+[data-theme="dark"] .icon-github {
+  color: #bc88ff;
+}
+
+.icon-facebook {
+  color: #3b5998;
+}
+
+.icon-instagram {
+  color: #e1306c;
+}
+
+.icon-discord {
+  color: #7289da;
 }
 
 .sidebar-menu {
