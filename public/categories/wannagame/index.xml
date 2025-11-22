@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WannaGame on My New Hugo Site</title>
+    <link>https://r1muru2006.github.io/categories/wannagame/</link>
+    <description>Recent content from My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    
+    <managingEditor>xxx@example.com (D-Sketon)</managingEditor>
+    <webMaster>xxx@example.com (D-Sketon)</webMaster>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate>Fri, 16 May 2025 14:13:38 +0700</lastBuildDate>
+    
+    
+    <atom:link href="https://r1muru2006.github.io/categories/wannagame/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>WannaGame Cyber Knight 2025</title>
+      <link>https://r1muru2006.github.io/post/wannagamecyberknight2025/</link>
+      <pubDate>Fri, 16 May 2025 14:13:38 &#43;0700</pubDate>
+      <author>xxx@example.com (D-Sketon)</author>
+      <guid>https://r1muru2006.github.io/post/wannagamecyberknight2025/</guid>
+      <description>
+        <![CDATA[<h1>WannaGame Cyber Knight 2025</h1><p>Author: D-Sketon(xxx@example.com)</p>
+        
+          <blockquote>
+<p>Trong giải đấu này, mình đã giải được 1 câu trong phần Cryptography và may mắn đứng thứ 8 trên bảng đến cuối (≧▽≦)
+<img src="https://hackmd.io/_uploads/BkKat26egg.png" alt="image">
+Sau đây là bài mình giải được trong giải đấu và tiếp đó là những bài mà mình chưa làm được khi còn trong giải.</p>
+</blockquote>
+<h2 id="choose">
+<a class="header-anchor" href="#choose"></a>
+Choose!
+</h2><p><img src="https://hackmd.io/_uploads/HkBEq3pexl.png" alt="image"></p>
+<p>Link: <a href="https://www.youtube.com/watch?v=1lqe8eU48HI">https://www.youtube.com/watch?v=1lqe8eU48HI</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># aes.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Implementation from https://github.com/boppreh/aes/blob/master/aes.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>s_box <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x63</span>, <span style="color:#ae81ff">0x7C</span>, <span style="color:#ae81ff">0x77</span>, <span style="color:#ae81ff">0x7B</span>, <span style="color:#ae81ff">0xF2</span>, <span style="color:#ae81ff">0x6B</span>, <span style="color:#ae81ff">0x6F</span>, <span style="color:#ae81ff">0xC5</span>, <span style="color:#ae81ff">0x30</span>, <span style="color:#ae81ff">0x01</span>, <span style="color:#ae81ff">0x67</span>, <span style="color:#ae81ff">0x2B</span>, <span style="color:#ae81ff">0xFE</span>, <span style="color:#ae81ff">0xD7</span>, <span style="color:#ae81ff">0xAB</span>, <span style="color:#ae81ff">0x76</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0xCA</span>, <span style="color:#ae81ff">0x82</span>, <span style="color:#ae81ff">0xC9</span>, <span style="color:#ae81ff">0x7D</span>, <span style="color:#ae81ff">0xFA</span>, <span style="color:#ae81ff">0x59</span>, <span style="color:#ae81ff">0x47</span>, <span style="color:#ae81ff">0xF0</span>, <span style="color:#ae81ff">0xAD</span>, <span style="color:#ae81ff">0xD4</span>, <span style="color:#ae81ff">0xA2</span>, <span style="color:#ae81ff">0xAF</span>, <span style="color:#ae81ff">0x9C</span>, <span style="color:#ae81ff">0xA4</span>, <span style="color:#ae81ff">0x72</span>, <span style="color:#ae81ff">0xC0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0xB7</span>, <span style="color:#ae81ff">0xFD</span>, <span style="color:#ae81ff">0x93</span>, <span style="color:#ae81ff">0x26</span>, <span style="color:#ae81ff">0x36</span>, <span style="color:#ae81ff">0x3F</span>, <span style="color:#ae81ff">0xF7</span>, <span style="color:#ae81ff">0xCC</span>, <span style="color:#ae81ff">0x34</span>, <span style="color:#ae81ff">0xA5</span>, <span style="color:#ae81ff">0xE5</span>, <span style="color:#ae81ff">0xF1</span>, <span style="color:#ae81ff">0x71</span>, <span style="color:#ae81ff">0xD8</span>, <span style="color:#ae81ff">0x31</span>, <span style="color:#ae81ff">0x15</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x04</span>, <span style="color:#ae81ff">0xC7</span>, <span style="color:#ae81ff">0x23</span>, <span style="color:#ae81ff">0xC3</span>, <span style="color:#ae81ff">0x18</span>, <span style="color:#ae81ff">0x96</span>, <span style="color:#ae81ff">0x05</span>, <span style="color:#ae81ff">0x9A</span>, <span style="color:#ae81ff">0x07</span>, <span style="color:#ae81ff">0x12</span>, <span style="color:#ae81ff">0x80</span>, <span style="color:#ae81ff">0xE2</span>, <span style="color:#ae81ff">0xEB</span>, <span style="color:#ae81ff">0x27</span>, <span style="color:#ae81ff">0xB2</span>, <span style="color:#ae81ff">0x75</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x09</span>, <span style="color:#ae81ff">0x83</span>, <span style="color:#ae81ff">0x2C</span>, <span style="color:#ae81ff">0x1A</span>, <span style="color:#ae81ff">0x1B</span>, <span style="color:#ae81ff">0x6E</span>, <span style="color:#ae81ff">0x5A</span>, <span style="color:#ae81ff">0xA0</span>, <span style="color:#ae81ff">0x52</span>, <span style="color:#ae81ff">0x3B</span>, <span style="color:#ae81ff">0xD6</span>, <span style="color:#ae81ff">0xB3</span>, <span style="color:#ae81ff">0x29</span>, <span style="color:#ae81ff">0xE3</span>, <span style="color:#ae81ff">0x2F</span>, <span style="color:#ae81ff">0x84</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x53</span>, <span style="color:#ae81ff">0xD1</span>, <span style="color:#ae81ff">0x00</span>, <span style="color:#ae81ff">0xED</span>, <span style="color:#ae81ff">0x20</span>, <span style="color:#ae81ff">0xFC</span>, <span style="color:#ae81ff">0xB1</span>, <span style="color:#ae81ff">0x5B</span>, <span style="color:#ae81ff">0x6A</span>, <span style="color:#ae81ff">0xCB</span>, <span style="color:#ae81ff">0xBE</span>, <span style="color:#ae81ff">0x39</span>, <span style="color:#ae81ff">0x4A</span>, <span style="color:#ae81ff">0x4C</span>, <span style="color:#ae81ff">0x58</span>, <span style="color:#ae81ff">0xCF</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0xD0</span>, <span style="color:#ae81ff">0xEF</span>, <span style="color:#ae81ff">0xAA</span>, <span style="color:#ae81ff">0xFB</span>, <span style="color:#ae81ff">0x43</span>, <span style="color:#ae81ff">0x4D</span>, <span style="color:#ae81ff">0x33</span>, <span style="color:#ae81ff">0x85</span>, <span style="color:#ae81ff">0x45</span>, <span style="color:#ae81ff">0xF9</span>, <span style="color:#ae81ff">0x02</span>, <span style="color:#ae81ff">0x7F</span>, <span style="color:#ae81ff">0x50</span>, <span style="color:#ae81ff">0x3C</span>, <span style="color:#ae81ff">0x9F</span>, <span style="color:#ae81ff">0xA8</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x51</span>, <span style="color:#ae81ff">0xA3</span>, <span style="color:#ae81ff">0x40</span>, <span style="color:#ae81ff">0x8F</span>, <span style="color:#ae81ff">0x92</span>, <span style="color:#ae81ff">0x9D</span>, <span style="color:#ae81ff">0x38</span>, <span style="color:#ae81ff">0xF5</span>, <span style="color:#ae81ff">0xBC</span>, <span style="color:#ae81ff">0xB6</span>, <span style="color:#ae81ff">0xDA</span>, <span style="color:#ae81ff">0x21</span>, <span style="color:#ae81ff">0x10</span>, <span style="color:#ae81ff">0xFF</span>, <span style="color:#ae81ff">0xF3</span>, <span style="color:#ae81ff">0xD2</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0xCD</span>, <span style="color:#ae81ff">0x0C</span>, <span style="color:#ae81ff">0x13</span>, <span style="color:#ae81ff">0xEC</span>, <span style="color:#ae81ff">0x5F</span>, <span style="color:#ae81ff">0x97</span>, <span style="color:#ae81ff">0x44</span>, <span style="color:#ae81ff">0x17</span>, <span style="color:#ae81ff">0xC4</span>, <span style="color:#ae81ff">0xA7</span>, <span style="color:#ae81ff">0x7E</span>, <span style="color:#ae81ff">0x3D</span>, <span style="color:#ae81ff">0x64</span>, <span style="color:#ae81ff">0x5D</span>, <span style="color:#ae81ff">0x19</span>, <span style="color:#ae81ff">0x73</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x60</span>, <span style="color:#ae81ff">0x81</span>, <span style="color:#ae81ff">0x4F</span>, <span style="color:#ae81ff">0xDC</span>, <span style="color:#ae81ff">0x22</span>, <span style="color:#ae81ff">0x2A</span>, <span style="color:#ae81ff">0x90</span>, <span style="color:#ae81ff">0x88</span>, <span style="color:#ae81ff">0x46</span>, <span style="color:#ae81ff">0xEE</span>, <span style="color:#ae81ff">0xB8</span>, <span style="color:#ae81ff">0x14</span>, <span style="color:#ae81ff">0xDE</span>, <span style="color:#ae81ff">0x5E</span>, <span style="color:#ae81ff">0x0B</span>, <span style="color:#ae81ff">0xDB</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0xE0</span>, <span style="color:#ae81ff">0x32</span>, <span style="color:#ae81ff">0x3A</span>, <span style="color:#ae81ff">0x0A</span>, <span style="color:#ae81ff">0x49</span>, <span style="color:#ae81ff">0x06</span>, <span style="color:#ae81ff">0x24</span>, <span style="color:#ae81ff">0x5C</span>, <span style="color:#ae81ff">0xC2</span>, <span style="color:#ae81ff">0xD3</span>, <span style="color:#ae81ff">0xAC</span>, <span style="color:#ae81ff">0x62</span>, <span style="color:#ae81ff">0x91</span>, <span style="color:#ae81ff">0x95</span>, <span style="color:#ae81ff">0xE4</span>, <span style="color:#ae81ff">0x79</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0xE7</span>, <span style="color:#ae81ff">0xC8</span>, <span style="color:#ae81ff">0x37</span>, <span style="color:#ae81ff">0x6D</span>, <span style="color:#ae81ff">0x8D</span>, <span style="color:#ae81ff">0xD5</span>, <span style="color:#ae81ff">0x4E</span>, <span style="color:#ae81ff">0xA9</span>, <span style="color:#ae81ff">0x6C</span>, <span style="color:#ae81ff">0x56</span>, <span style="color:#ae81ff">0xF4</span>, <span style="color:#ae81ff">0xEA</span>, <span style="color:#ae81ff">0x65</span>, <span style="color:#ae81ff">0x7A</span>, <span style="color:#ae81ff">0xAE</span>, <span style="color:#ae81ff">0x08</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0xBA</span>, <span style="color:#ae81ff">0x78</span>, <span style="color:#ae81ff">0x25</span>, <span style="color:#ae81ff">0x2E</span>, <span style="color:#ae81ff">0x1C</span>, <span style="color:#ae81ff">0xA6</span>, <span style="color:#ae81ff">0xB4</span>, <span style="color:#ae81ff">0xC6</span>, <span style="color:#ae81ff">0xE8</span>, <span style="color:#ae81ff">0xDD</span>, <span style="color:#ae81ff">0x74</span>, <span style="color:#ae81ff">0x1F</span>, <span style="color:#ae81ff">0x4B</span>, <span style="color:#ae81ff">0xBD</span>, <span style="color:#ae81ff">0x8B</span>, <span style="color:#ae81ff">0x8A</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x70</span>, <span style="color:#ae81ff">0x3E</span>, <span style="color:#ae81ff">0xB5</span>, <span style="color:#ae81ff">0x66</span>, <span style="color:#ae81ff">0x48</span>, <span style="color:#ae81ff">0x03</span>, <span style="color:#ae81ff">0xF6</span>, <span style="color:#ae81ff">0x0E</span>, <span style="color:#ae81ff">0x61</span>, <span style="color:#ae81ff">0x35</span>, <span style="color:#ae81ff">0x57</span>, <span style="color:#ae81ff">0xB9</span>, <span style="color:#ae81ff">0x86</span>, <span style="color:#ae81ff">0xC1</span>, <span style="color:#ae81ff">0x1D</span>, <span style="color:#ae81ff">0x9E</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0xE1</span>, <span style="color:#ae81ff">0xF8</span>, <span style="color:#ae81ff">0x98</span>, <span style="color:#ae81ff">0x11</span>, <span style="color:#ae81ff">0x69</span>, <span style="color:#ae81ff">0xD9</span>, <span style="color:#ae81ff">0x8E</span>, <span style="color:#ae81ff">0x94</span>, <span style="color:#ae81ff">0x9B</span>, <span style="color:#ae81ff">0x1E</span>, <span style="color:#ae81ff">0x87</span>, <span style="color:#ae81ff">0xE9</span>, <span style="color:#ae81ff">0xCE</span>, <span style="color:#ae81ff">0x55</span>, <span style="color:#ae81ff">0x28</span>, <span style="color:#ae81ff">0xDF</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x8C</span>, <span style="color:#ae81ff">0xA1</span>, <span style="color:#ae81ff">0x89</span>, <span style="color:#ae81ff">0x0D</span>, <span style="color:#ae81ff">0xBF</span>, <span style="color:#ae81ff">0xE6</span>, <span style="color:#ae81ff">0x42</span>, <span style="color:#ae81ff">0x68</span>, <span style="color:#ae81ff">0x41</span>, <span style="color:#ae81ff">0x99</span>, <span style="color:#ae81ff">0x2D</span>, <span style="color:#ae81ff">0x0F</span>, <span style="color:#ae81ff">0xB0</span>, <span style="color:#ae81ff">0x54</span>, <span style="color:#ae81ff">0xBB</span>, <span style="color:#ae81ff">0x16</span>,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>inv_s_box <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x52</span>, <span style="color:#ae81ff">0x09</span>, <span style="color:#ae81ff">0x6A</span>, <span style="color:#ae81ff">0xD5</span>, <span style="color:#ae81ff">0x30</span>, <span style="color:#ae81ff">0x36</span>, <span style="color:#ae81ff">0xA5</span>, <span style="color:#ae81ff">0x38</span>, <span style="color:#ae81ff">0xBF</span>, <span style="color:#ae81ff">0x40</span>, <span style="color:#ae81ff">0xA3</span>, <span style="color:#ae81ff">0x9E</span>, <span style="color:#ae81ff">0x81</span>, <span style="color:#ae81ff">0xF3</span>, <span style="color:#ae81ff">0xD7</span>, <span style="color:#ae81ff">0xFB</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x7C</span>, <span style="color:#ae81ff">0xE3</span>, <span style="color:#ae81ff">0x39</span>, <span style="color:#ae81ff">0x82</span>, <span style="color:#ae81ff">0x9B</span>, <span style="color:#ae81ff">0x2F</span>, <span style="color:#ae81ff">0xFF</span>, <span style="color:#ae81ff">0x87</span>, <span style="color:#ae81ff">0x34</span>, <span style="color:#ae81ff">0x8E</span>, <span style="color:#ae81ff">0x43</span>, <span style="color:#ae81ff">0x44</span>, <span style="color:#ae81ff">0xC4</span>, <span style="color:#ae81ff">0xDE</span>, <span style="color:#ae81ff">0xE9</span>, <span style="color:#ae81ff">0xCB</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x54</span>, <span style="color:#ae81ff">0x7B</span>, <span style="color:#ae81ff">0x94</span>, <span style="color:#ae81ff">0x32</span>, <span style="color:#ae81ff">0xA6</span>, <span style="color:#ae81ff">0xC2</span>, <span style="color:#ae81ff">0x23</span>, <span style="color:#ae81ff">0x3D</span>, <span style="color:#ae81ff">0xEE</span>, <span style="color:#ae81ff">0x4C</span>, <span style="color:#ae81ff">0x95</span>, <span style="color:#ae81ff">0x0B</span>, <span style="color:#ae81ff">0x42</span>, <span style="color:#ae81ff">0xFA</span>, <span style="color:#ae81ff">0xC3</span>, <span style="color:#ae81ff">0x4E</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x08</span>, <span style="color:#ae81ff">0x2E</span>, <span style="color:#ae81ff">0xA1</span>, <span style="color:#ae81ff">0x66</span>, <span style="color:#ae81ff">0x28</span>, <span style="color:#ae81ff">0xD9</span>, <span style="color:#ae81ff">0x24</span>, <span style="color:#ae81ff">0xB2</span>, <span style="color:#ae81ff">0x76</span>, <span style="color:#ae81ff">0x5B</span>, <span style="color:#ae81ff">0xA2</span>, <span style="color:#ae81ff">0x49</span>, <span style="color:#ae81ff">0x6D</span>, <span style="color:#ae81ff">0x8B</span>, <span style="color:#ae81ff">0xD1</span>, <span style="color:#ae81ff">0x25</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x72</span>, <span style="color:#ae81ff">0xF8</span>, <span style="color:#ae81ff">0xF6</span>, <span style="color:#ae81ff">0x64</span>, <span style="color:#ae81ff">0x86</span>, <span style="color:#ae81ff">0x68</span>, <span style="color:#ae81ff">0x98</span>, <span style="color:#ae81ff">0x16</span>, <span style="color:#ae81ff">0xD4</span>, <span style="color:#ae81ff">0xA4</span>, <span style="color:#ae81ff">0x5C</span>, <span style="color:#ae81ff">0xCC</span>, <span style="color:#ae81ff">0x5D</span>, <span style="color:#ae81ff">0x65</span>, <span style="color:#ae81ff">0xB6</span>, <span style="color:#ae81ff">0x92</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x6C</span>, <span style="color:#ae81ff">0x70</span>, <span style="color:#ae81ff">0x48</span>, <span style="color:#ae81ff">0x50</span>, <span style="color:#ae81ff">0xFD</span>, <span style="color:#ae81ff">0xED</span>, <span style="color:#ae81ff">0xB9</span>, <span style="color:#ae81ff">0xDA</span>, <span style="color:#ae81ff">0x5E</span>, <span style="color:#ae81ff">0x15</span>, <span style="color:#ae81ff">0x46</span>, <span style="color:#ae81ff">0x57</span>, <span style="color:#ae81ff">0xA7</span>, <span style="color:#ae81ff">0x8D</span>, <span style="color:#ae81ff">0x9D</span>, <span style="color:#ae81ff">0x84</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x90</span>, <span style="color:#ae81ff">0xD8</span>, <span style="color:#ae81ff">0xAB</span>, <span style="color:#ae81ff">0x00</span>, <span style="color:#ae81ff">0x8C</span>, <span style="color:#ae81ff">0xBC</span>, <span style="color:#ae81ff">0xD3</span>, <span style="color:#ae81ff">0x0A</span>, <span style="color:#ae81ff">0xF7</span>, <span style="color:#ae81ff">0xE4</span>, <span style="color:#ae81ff">0x58</span>, <span style="color:#ae81ff">0x05</span>, <span style="color:#ae81ff">0xB8</span>, <span style="color:#ae81ff">0xB3</span>, <span style="color:#ae81ff">0x45</span>, <span style="color:#ae81ff">0x06</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0xD0</span>, <span style="color:#ae81ff">0x2C</span>, <span style="color:#ae81ff">0x1E</span>, <span style="color:#ae81ff">0x8F</span>, <span style="color:#ae81ff">0xCA</span>, <span style="color:#ae81ff">0x3F</span>, <span style="color:#ae81ff">0x0F</span>, <span style="color:#ae81ff">0x02</span>, <span style="color:#ae81ff">0xC1</span>, <span style="color:#ae81ff">0xAF</span>, <span style="color:#ae81ff">0xBD</span>, <span style="color:#ae81ff">0x03</span>, <span style="color:#ae81ff">0x01</span>, <span style="color:#ae81ff">0x13</span>, <span style="color:#ae81ff">0x8A</span>, <span style="color:#ae81ff">0x6B</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x3A</span>, <span style="color:#ae81ff">0x91</span>, <span style="color:#ae81ff">0x11</span>, <span style="color:#ae81ff">0x41</span>, <span style="color:#ae81ff">0x4F</span>, <span style="color:#ae81ff">0x67</span>, <span style="color:#ae81ff">0xDC</span>, <span style="color:#ae81ff">0xEA</span>, <span style="color:#ae81ff">0x97</span>, <span style="color:#ae81ff">0xF2</span>, <span style="color:#ae81ff">0xCF</span>, <span style="color:#ae81ff">0xCE</span>, <span style="color:#ae81ff">0xF0</span>, <span style="color:#ae81ff">0xB4</span>, <span style="color:#ae81ff">0xE6</span>, <span style="color:#ae81ff">0x73</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x96</span>, <span style="color:#ae81ff">0xAC</span>, <span style="color:#ae81ff">0x74</span>, <span style="color:#ae81ff">0x22</span>, <span style="color:#ae81ff">0xE7</span>, <span style="color:#ae81ff">0xAD</span>, <span style="color:#ae81ff">0x35</span>, <span style="color:#ae81ff">0x85</span>, <span style="color:#ae81ff">0xE2</span>, <span style="color:#ae81ff">0xF9</span>, <span style="color:#ae81ff">0x37</span>, <span style="color:#ae81ff">0xE8</span>, <span style="color:#ae81ff">0x1C</span>, <span style="color:#ae81ff">0x75</span>, <span style="color:#ae81ff">0xDF</span>, <span style="color:#ae81ff">0x6E</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x47</span>, <span style="color:#ae81ff">0xF1</span>, <span style="color:#ae81ff">0x1A</span>, <span style="color:#ae81ff">0x71</span>, <span style="color:#ae81ff">0x1D</span>, <span style="color:#ae81ff">0x29</span>, <span style="color:#ae81ff">0xC5</span>, <span style="color:#ae81ff">0x89</span>, <span style="color:#ae81ff">0x6F</span>, <span style="color:#ae81ff">0xB7</span>, <span style="color:#ae81ff">0x62</span>, <span style="color:#ae81ff">0x0E</span>, <span style="color:#ae81ff">0xAA</span>, <span style="color:#ae81ff">0x18</span>, <span style="color:#ae81ff">0xBE</span>, <span style="color:#ae81ff">0x1B</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0xFC</span>, <span style="color:#ae81ff">0x56</span>, <span style="color:#ae81ff">0x3E</span>, <span style="color:#ae81ff">0x4B</span>, <span style="color:#ae81ff">0xC6</span>, <span style="color:#ae81ff">0xD2</span>, <span style="color:#ae81ff">0x79</span>, <span style="color:#ae81ff">0x20</span>, <span style="color:#ae81ff">0x9A</span>, <span style="color:#ae81ff">0xDB</span>, <span style="color:#ae81ff">0xC0</span>, <span style="color:#ae81ff">0xFE</span>, <span style="color:#ae81ff">0x78</span>, <span style="color:#ae81ff">0xCD</span>, <span style="color:#ae81ff">0x5A</span>, <span style="color:#ae81ff">0xF4</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x1F</span>, <span style="color:#ae81ff">0xDD</span>, <span style="color:#ae81ff">0xA8</span>, <span style="color:#ae81ff">0x33</span>, <span style="color:#ae81ff">0x88</span>, <span style="color:#ae81ff">0x07</span>, <span style="color:#ae81ff">0xC7</span>, <span style="color:#ae81ff">0x31</span>, <span style="color:#ae81ff">0xB1</span>, <span style="color:#ae81ff">0x12</span>, <span style="color:#ae81ff">0x10</span>, <span style="color:#ae81ff">0x59</span>, <span style="color:#ae81ff">0x27</span>, <span style="color:#ae81ff">0x80</span>, <span style="color:#ae81ff">0xEC</span>, <span style="color:#ae81ff">0x5F</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x60</span>, <span style="color:#ae81ff">0x51</span>, <span style="color:#ae81ff">0x7F</span>, <span style="color:#ae81ff">0xA9</span>, <span style="color:#ae81ff">0x19</span>, <span style="color:#ae81ff">0xB5</span>, <span style="color:#ae81ff">0x4A</span>, <span style="color:#ae81ff">0x0D</span>, <span style="color:#ae81ff">0x2D</span>, <span style="color:#ae81ff">0xE5</span>, <span style="color:#ae81ff">0x7A</span>, <span style="color:#ae81ff">0x9F</span>, <span style="color:#ae81ff">0x93</span>, <span style="color:#ae81ff">0xC9</span>, <span style="color:#ae81ff">0x9C</span>, <span style="color:#ae81ff">0xEF</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0xA0</span>, <span style="color:#ae81ff">0xE0</span>, <span style="color:#ae81ff">0x3B</span>, <span style="color:#ae81ff">0x4D</span>, <span style="color:#ae81ff">0xAE</span>, <span style="color:#ae81ff">0x2A</span>, <span style="color:#ae81ff">0xF5</span>, <span style="color:#ae81ff">0xB0</span>, <span style="color:#ae81ff">0xC8</span>, <span style="color:#ae81ff">0xEB</span>, <span style="color:#ae81ff">0xBB</span>, <span style="color:#ae81ff">0x3C</span>, <span style="color:#ae81ff">0x83</span>, <span style="color:#ae81ff">0x53</span>, <span style="color:#ae81ff">0x99</span>, <span style="color:#ae81ff">0x61</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x17</span>, <span style="color:#ae81ff">0x2B</span>, <span style="color:#ae81ff">0x04</span>, <span style="color:#ae81ff">0x7E</span>, <span style="color:#ae81ff">0xBA</span>, <span style="color:#ae81ff">0x77</span>, <span style="color:#ae81ff">0xD6</span>, <span style="color:#ae81ff">0x26</span>, <span style="color:#ae81ff">0xE1</span>, <span style="color:#ae81ff">0x69</span>, <span style="color:#ae81ff">0x14</span>, <span style="color:#ae81ff">0x63</span>, <span style="color:#ae81ff">0x55</span>, <span style="color:#ae81ff">0x21</span>, <span style="color:#ae81ff">0x0C</span>, <span style="color:#ae81ff">0x7D</span>,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sub_bytes</span>(s):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>            s[i][j] <span style="color:#f92672">=</span> s_box[s[i][j]]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inv_sub_bytes</span>(s):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>            s[i][j] <span style="color:#f92672">=</span> inv_s_box[s[i][j]]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">shift_rows</span>(s):
+</span></span><span style="display:flex;"><span>    s[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>], s[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>], s[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">1</span>], s[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> s[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>], s[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">1</span>], s[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">1</span>], s[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>    s[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">2</span>], s[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">2</span>], s[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">2</span>], s[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> s[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">2</span>], s[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">2</span>], s[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">2</span>], s[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>    s[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">3</span>], s[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">3</span>], s[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">3</span>], s[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">3</span>] <span style="color:#f92672">=</span> s[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">3</span>], s[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">3</span>], s[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">3</span>], s[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inv_shift_rows</span>(s):
+</span></span><span style="display:flex;"><span>    s[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>], s[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>], s[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">1</span>], s[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> s[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">1</span>], s[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>], s[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>], s[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>    s[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">2</span>], s[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">2</span>], s[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">2</span>], s[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> s[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">2</span>], s[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">2</span>], s[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">2</span>], s[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>    s[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">3</span>], s[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">3</span>], s[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">3</span>], s[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">3</span>] <span style="color:#f92672">=</span> s[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">3</span>], s[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">3</span>], s[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">3</span>], s[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_round_key</span>(s, k):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>            s[i][j] <span style="color:#f92672">^=</span> k[i][j]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># learned from https://web.archive.org/web/20100626212235/http://cs.ucsb.edu/~koc/cs178/projects/JT/aes.c</span>
+</span></span><span style="display:flex;"><span>xtime <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> a: (((a <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">^</span> <span style="color:#ae81ff">0x1B</span>) <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0xFF</span>) <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0x80</span>) <span style="color:#66d9ef">else</span> (a <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">mix_single_column</span>(a):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># see Sec 4.1.2 in The Design of Rijndael</span>
+</span></span><span style="display:flex;"><span>    t <span style="color:#f92672">=</span> a[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">^</span> a[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">^</span> a[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">^</span> a[<span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>    u <span style="color:#f92672">=</span> a[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    a[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">^=</span> t <span style="color:#f92672">^</span> xtime(a[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">^</span> a[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>    a[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">^=</span> t <span style="color:#f92672">^</span> xtime(a[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">^</span> a[<span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>    a[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">^=</span> t <span style="color:#f92672">^</span> xtime(a[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">^</span> a[<span style="color:#ae81ff">3</span>])
+</span></span><span style="display:flex;"><span>    a[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">^=</span> t <span style="color:#f92672">^</span> xtime(a[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">^</span> u)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">mix_columns</span>(s):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>        mix_single_column(s[i])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inv_mix_columns</span>(s):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># see Sec 4.1.3 in The Design of Rijndael</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>        u <span style="color:#f92672">=</span> xtime(xtime(s[i][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">^</span> s[i][<span style="color:#ae81ff">2</span>]))
+</span></span><span style="display:flex;"><span>        v <span style="color:#f92672">=</span> xtime(xtime(s[i][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">^</span> s[i][<span style="color:#ae81ff">3</span>]))
+</span></span><span style="display:flex;"><span>        s[i][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">^=</span> u
+</span></span><span style="display:flex;"><span>        s[i][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">^=</span> v
+</span></span><span style="display:flex;"><span>        s[i][<span style="color:#ae81ff">2</span>] <span style="color:#f92672">^=</span> u
+</span></span><span style="display:flex;"><span>        s[i][<span style="color:#ae81ff">3</span>] <span style="color:#f92672">^=</span> v
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    mix_columns(s)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>r_con <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x00</span>, <span style="color:#ae81ff">0x01</span>, <span style="color:#ae81ff">0x02</span>, <span style="color:#ae81ff">0x04</span>, <span style="color:#ae81ff">0x08</span>, <span style="color:#ae81ff">0x10</span>, <span style="color:#ae81ff">0x20</span>, <span style="color:#ae81ff">0x40</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x80</span>, <span style="color:#ae81ff">0x1B</span>, <span style="color:#ae81ff">0x36</span>, <span style="color:#ae81ff">0x6C</span>, <span style="color:#ae81ff">0xD8</span>, <span style="color:#ae81ff">0xAB</span>, <span style="color:#ae81ff">0x4D</span>, <span style="color:#ae81ff">0x9A</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0x2F</span>, <span style="color:#ae81ff">0x5E</span>, <span style="color:#ae81ff">0xBC</span>, <span style="color:#ae81ff">0x63</span>, <span style="color:#ae81ff">0xC6</span>, <span style="color:#ae81ff">0x97</span>, <span style="color:#ae81ff">0x35</span>, <span style="color:#ae81ff">0x6A</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0xD4</span>, <span style="color:#ae81ff">0xB3</span>, <span style="color:#ae81ff">0x7D</span>, <span style="color:#ae81ff">0xFA</span>, <span style="color:#ae81ff">0xEF</span>, <span style="color:#ae81ff">0xC5</span>, <span style="color:#ae81ff">0x91</span>, <span style="color:#ae81ff">0x39</span>,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bytes2matrix</span>(text):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34; Converts a 16-byte array into a 4x4 matrix.  &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> [list(text[i:i<span style="color:#f92672">+</span><span style="color:#ae81ff">4</span>]) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(text), <span style="color:#ae81ff">4</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">matrix2bytes</span>(matrix):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34; Converts a 4x4 matrix into a 16-byte array.  &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> bytes(sum(matrix, []))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xor_bytes</span>(a, b):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34; Returns a new byte array with the elements xor&#39;ed. &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> bytes(i<span style="color:#f92672">^</span>j <span style="color:#66d9ef">for</span> i, j <span style="color:#f92672">in</span> zip(a, b))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inc_bytes</span>(a):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34; Returns a new byte array with the value increment by 1 &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    out <span style="color:#f92672">=</span> list(a)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> reversed(range(len(out))):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> out[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0xFF</span>:
+</span></span><span style="display:flex;"><span>            out[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            out[i] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> bytes(out)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">pad</span>(plaintext):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Pads the given plaintext with PKCS#7 padding to a multiple of 16 bytes.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Note that if the plaintext size is a multiple of 16,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    a whole block will be added.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    padding_len <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">-</span> (len(plaintext) <span style="color:#f92672">%</span> <span style="color:#ae81ff">16</span>)
+</span></span><span style="display:flex;"><span>    padding <span style="color:#f92672">=</span> bytes([padding_len] <span style="color:#f92672">*</span> padding_len)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> plaintext <span style="color:#f92672">+</span> padding
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">unpad</span>(plaintext):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Removes a PKCS#7 padding, returning the unpadded text and ensuring the
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    padding was correct.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    padding_len <span style="color:#f92672">=</span> plaintext[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> padding_len <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    message, padding <span style="color:#f92672">=</span> plaintext[:<span style="color:#f92672">-</span>padding_len], plaintext[<span style="color:#f92672">-</span>padding_len:]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> all(p <span style="color:#f92672">==</span> padding_len <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> padding)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> message
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">split_blocks</span>(message, block_size<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span>, require_padding<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">assert</span> len(message) <span style="color:#f92672">%</span> block_size <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> require_padding
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> [message[i:i<span style="color:#f92672">+</span><span style="color:#ae81ff">16</span>] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(message), block_size)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AES</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Class for AES-128 encryption with CBC mode and PKCS#7.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    This is a raw implementation of AES, without key stretching or IV
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    management. Unless you need that, please use `encrypt` and `decrypt`.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    rounds_by_key_size <span style="color:#f92672">=</span> {<span style="color:#ae81ff">16</span>: <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">24</span>: <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">32</span>: <span style="color:#ae81ff">14</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self, master_key):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Initializes the object with a given key.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">assert</span> len(master_key) <span style="color:#f92672">in</span> AES<span style="color:#f92672">.</span>rounds_by_key_size
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>n_rounds <span style="color:#f92672">=</span> AES<span style="color:#f92672">.</span>rounds_by_key_size[len(master_key)]
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_key_matrices <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_expand_key(master_key)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_expand_key</span>(self, master_key):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Expands and returns a list of key matrices for the given master_key.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Initialize round keys with raw key material.</span>
+</span></span><span style="display:flex;"><span>        key_columns <span style="color:#f92672">=</span> bytes2matrix(master_key)
+</span></span><span style="display:flex;"><span>        iteration_size <span style="color:#f92672">=</span> len(master_key) <span style="color:#f92672">//</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> len(key_columns) <span style="color:#f92672">&lt;</span> (self<span style="color:#f92672">.</span>n_rounds <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">4</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Copy previous word.</span>
+</span></span><span style="display:flex;"><span>            word <span style="color:#f92672">=</span> list(key_columns[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Perform schedule_core once every &#34;row&#34;.</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> len(key_columns) <span style="color:#f92672">%</span> iteration_size <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Circular shift.</span>
+</span></span><span style="display:flex;"><span>                word<span style="color:#f92672">.</span>append(word<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Map to S-BOX.</span>
+</span></span><span style="display:flex;"><span>                word <span style="color:#f92672">=</span> [s_box[b] <span style="color:#66d9ef">for</span> b <span style="color:#f92672">in</span> word]
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># XOR with first byte of R-CON, since the others bytes of R-CON are 0.</span>
+</span></span><span style="display:flex;"><span>                word[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">^=</span> r_con[i]
+</span></span><span style="display:flex;"><span>                i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">elif</span> len(master_key) <span style="color:#f92672">==</span> <span style="color:#ae81ff">32</span> <span style="color:#f92672">and</span> len(key_columns) <span style="color:#f92672">%</span> iteration_size <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Run word through S-box in the fourth iteration when using a</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># 256-bit key.</span>
+</span></span><span style="display:flex;"><span>                word <span style="color:#f92672">=</span> [s_box[b] <span style="color:#66d9ef">for</span> b <span style="color:#f92672">in</span> word]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># XOR with equivalent word from previous iteration.</span>
+</span></span><span style="display:flex;"><span>            word <span style="color:#f92672">=</span> xor_bytes(word, key_columns[<span style="color:#f92672">-</span>iteration_size])
+</span></span><span style="display:flex;"><span>            key_columns<span style="color:#f92672">.</span>append(word)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Group key words in 4x4 byte matrices.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> [key_columns[<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>i : <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(key_columns) <span style="color:#f92672">//</span> <span style="color:#ae81ff">4</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encrypt_block</span>(self, plaintext, step<span style="color:#f92672">=</span>[add_round_key, sub_bytes, shift_rows, mix_columns]):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Encrypts a single block of 16 byte long plaintext.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">assert</span> len(plaintext) <span style="color:#f92672">==</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        plain_state <span style="color:#f92672">=</span> bytes2matrix(plaintext)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        step[<span style="color:#ae81ff">0</span>](plain_state, self<span style="color:#f92672">.</span>_key_matrices[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, self<span style="color:#f92672">.</span>n_rounds):
+</span></span><span style="display:flex;"><span>            step[<span style="color:#ae81ff">1</span>](plain_state)
+</span></span><span style="display:flex;"><span>            step[<span style="color:#ae81ff">2</span>](plain_state)
+</span></span><span style="display:flex;"><span>            step[<span style="color:#ae81ff">3</span>](plain_state)
+</span></span><span style="display:flex;"><span>            step[<span style="color:#ae81ff">0</span>](plain_state, self<span style="color:#f92672">.</span>_key_matrices[i])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        step[<span style="color:#ae81ff">1</span>](plain_state)
+</span></span><span style="display:flex;"><span>        step[<span style="color:#ae81ff">2</span>](plain_state)
+</span></span><span style="display:flex;"><span>        step[<span style="color:#ae81ff">0</span>](plain_state, self<span style="color:#f92672">.</span>_key_matrices[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> matrix2bytes(plain_state)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encrypt</span>(self, plaintext, step):
+</span></span><span style="display:flex;"><span>        plaintext <span style="color:#f92672">=</span> pad(plaintext)
+</span></span><span style="display:flex;"><span>        ciphertext <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> block <span style="color:#f92672">in</span> split_blocks(plaintext):
+</span></span><span style="display:flex;"><span>            ciphertext_block <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>encrypt_block(block, step)
+</span></span><span style="display:flex;"><span>            ciphertext <span style="color:#f92672">+=</span> ciphertext_block
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ciphertext
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># chall.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> aes <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dumb_step</span>(s, key <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>key <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>urandom(<span style="color:#ae81ff">16</span>)
+</span></span><span style="display:flex;"><span>cipher <span style="color:#f92672">=</span> AES(key)
+</span></span><span style="display:flex;"><span>init_step <span style="color:#f92672">=</span> [add_round_key, sub_bytes, shift_rows, mix_columns]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> round <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">50</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Round </span><span style="color:#e6db74">{</span>round <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/50&#34;</span>)
+</span></span><span style="display:flex;"><span>        plaintext <span style="color:#f92672">=</span> bytes<span style="color:#f92672">.</span>fromhex(input(<span style="color:#e6db74">&#34;&gt;&gt;&gt; &#34;</span>))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">assert</span> len(plaintext) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#34;Too long!&#34;</span>
+</span></span><span style="display:flex;"><span>        step <span style="color:#f92672">=</span> init_step[:]
+</span></span><span style="display:flex;"><span>        pos <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>        step<span style="color:#f92672">.</span>pop(pos)
+</span></span><span style="display:flex;"><span>        step<span style="color:#f92672">.</span>insert(pos, dumb_step)
+</span></span><span style="display:flex;"><span>        bit <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        print(cipher<span style="color:#f92672">.</span>encrypt(plaintext, [init_step, step][bit])<span style="color:#f92672">.</span>hex())
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> int(input(<span style="color:#e6db74">&#34;&gt;&gt;&gt; &#34;</span>)) <span style="color:#f92672">!=</span> bit:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Wrong!&#34;</span>)
+</span></span><span style="display:flex;"><span>            exit(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Correct!&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span>:
+</span></span><span style="display:flex;"><span>        exit(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Here is your flag !&#34;</span>)
+</span></span><span style="display:flex;"><span>print(open(<span style="color:#e6db74">&#34;WannaGame_CyberKnight/choose/flag.txt&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>)<span style="color:#f92672">.</span>read())
+</span></span></code></pre></div><blockquote>
+<p>Bài này đơn giản là về phần mã hóa AES (<a href="https://vi.wikipedia.org/wiki/Advanced_Encryption_Standard">Advanced Encryption Standard</a>) và mình có xem lại cấu trúc của nó tại wikipedia và <a href="https://hackmd.io/@r1muru/HJmSbUld1x#Bringing-It-All-Together">đây</a> để tiếp cận.</p>
+        
+        <hr><p>Published on 2025-05-16 at <a href='https://r1muru2006.github.io/'>My New Hugo Site</a>, last modified on 2025-05-16</p>]]>
+      </description>
+      
+        <category>CTF Write-up</category><category>WannaGame</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>WannaGame NMLT</title>
+      <link>https://r1muru2006.github.io/post/wannagamenmlt/</link>
+      <pubDate>Tue, 08 Apr 2025 10:07:31 &#43;0700</pubDate>
+      <author>xxx@example.com (D-Sketon)</author>
+      <guid>https://r1muru2006.github.io/post/wannagamenmlt/</guid>
+      <description>
+        <![CDATA[<h1>WannaGame NMLT</h1><p>Author: D-Sketon(xxx@example.com)</p>
+        
+          <h2 id="pwn">
+<a class="header-anchor" href="#pwn"></a>
+Pwn
+</h2><h3 id="1-hello-pwner">
+<a class="header-anchor" href="#1-hello-pwner"></a>
+1. Hello pwner
+</h3><p><img src="https://hackmd.io/_uploads/SyPcemLL1g.png" alt="image"></p>
+<pre><code>Flag: W1{welcome_to_assembly}
+</code></pre>
+<h2 id="crypto">
+<a class="header-anchor" href="#crypto"></a>
+Crypto
+</h2><h3 id="2-substitution">
+<a class="header-anchor" href="#2-substitution"></a>
+2. Substitution
+</h3><p>Tải file, giải nén và mở chall lên:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>KEY <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#e6db74">&#39;Q&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#e6db74">&#39;W&#39;</span>, <span style="color:#e6db74">&#39;C&#39;</span>: <span style="color:#e6db74">&#39;E&#39;</span>, <span style="color:#e6db74">&#39;D&#39;</span>: <span style="color:#e6db74">&#39;R&#39;</span>, <span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#e6db74">&#39;T&#39;</span>, <span style="color:#e6db74">&#39;F&#39;</span>: <span style="color:#e6db74">&#39;Y&#39;</span>, <span style="color:#e6db74">&#39;G&#39;</span>: <span style="color:#e6db74">&#39;U&#39;</span>, <span style="color:#e6db74">&#39;H&#39;</span>: <span style="color:#e6db74">&#39;I&#39;</span>, <span style="color:#e6db74">&#39;I&#39;</span>: <span style="color:#e6db74">&#39;O&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;J&#39;</span>: <span style="color:#e6db74">&#39;P&#39;</span>, <span style="color:#e6db74">&#39;K&#39;</span>: <span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;L&#39;</span>: <span style="color:#e6db74">&#39;S&#39;</span>, <span style="color:#e6db74">&#39;M&#39;</span>: <span style="color:#e6db74">&#39;D&#39;</span>, <span style="color:#e6db74">&#39;N&#39;</span>: <span style="color:#e6db74">&#39;F&#39;</span>, <span style="color:#e6db74">&#39;O&#39;</span>: <span style="color:#e6db74">&#39;G&#39;</span>, <span style="color:#e6db74">&#39;P&#39;</span>: <span style="color:#e6db74">&#39;H&#39;</span>, <span style="color:#e6db74">&#39;Q&#39;</span>: <span style="color:#e6db74">&#39;J&#39;</span>, <span style="color:#e6db74">&#39;R&#39;</span>: <span style="color:#e6db74">&#39;K&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;S&#39;</span>: <span style="color:#e6db74">&#39;L&#39;</span>, <span style="color:#e6db74">&#39;T&#39;</span>: <span style="color:#e6db74">&#39;Z&#39;</span>, <span style="color:#e6db74">&#39;U&#39;</span>: <span style="color:#e6db74">&#39;X&#39;</span>, <span style="color:#e6db74">&#39;V&#39;</span>: <span style="color:#e6db74">&#39;C&#39;</span>, <span style="color:#e6db74">&#39;W&#39;</span>: <span style="color:#e6db74">&#39;V&#39;</span>, <span style="color:#e6db74">&#39;X&#39;</span>: <span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;Y&#39;</span>: <span style="color:#e6db74">&#39;N&#39;</span>, <span style="color:#e6db74">&#39;Z&#39;</span>: <span style="color:#e6db74">&#39;M&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;a&#39;</span>: <span style="color:#e6db74">&#39;q&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>: <span style="color:#e6db74">&#39;w&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>: <span style="color:#e6db74">&#39;e&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>: <span style="color:#e6db74">&#39;r&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>: <span style="color:#e6db74">&#39;t&#39;</span>, <span style="color:#e6db74">&#39;f&#39;</span>: <span style="color:#e6db74">&#39;y&#39;</span>, <span style="color:#e6db74">&#39;g&#39;</span>: <span style="color:#e6db74">&#39;u&#39;</span>, <span style="color:#e6db74">&#39;h&#39;</span>: <span style="color:#e6db74">&#39;i&#39;</span>, <span style="color:#e6db74">&#39;i&#39;</span>: <span style="color:#e6db74">&#39;o&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;j&#39;</span>: <span style="color:#e6db74">&#39;p&#39;</span>, <span style="color:#e6db74">&#39;k&#39;</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;l&#39;</span>: <span style="color:#e6db74">&#39;s&#39;</span>, <span style="color:#e6db74">&#39;m&#39;</span>: <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;n&#39;</span>: <span style="color:#e6db74">&#39;f&#39;</span>, <span style="color:#e6db74">&#39;o&#39;</span>: <span style="color:#e6db74">&#39;g&#39;</span>, <span style="color:#e6db74">&#39;p&#39;</span>: <span style="color:#e6db74">&#39;h&#39;</span>, <span style="color:#e6db74">&#39;q&#39;</span>: <span style="color:#e6db74">&#39;j&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>: <span style="color:#e6db74">&#39;k&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;s&#39;</span>: <span style="color:#e6db74">&#39;l&#39;</span>, <span style="color:#e6db74">&#39;t&#39;</span>: <span style="color:#e6db74">&#39;z&#39;</span>, <span style="color:#e6db74">&#39;u&#39;</span>: <span style="color:#e6db74">&#39;x&#39;</span>, <span style="color:#e6db74">&#39;v&#39;</span>: <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>: <span style="color:#e6db74">&#39;v&#39;</span>, <span style="color:#e6db74">&#39;x&#39;</span>: <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;y&#39;</span>: <span style="color:#e6db74">&#39;n&#39;</span>, <span style="color:#e6db74">&#39;z&#39;</span>: <span style="color:#e6db74">&#39;m&#39;</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hehe</span>(data, key):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(key<span style="color:#f92672">.</span>get(char, char) <span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> data)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encrypt</span>(plaintext):
+</span></span><span style="display:flex;"><span>    substituted <span style="color:#f92672">=</span> hehe(plaintext, KEY)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> substituted
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    plaintext <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;W1{???????????????}&#34;</span>
+</span></span><span style="display:flex;"><span>    encrypted <span style="color:#f92672">=</span> encrypt(plaintext)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;encrypted.txt&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>        f<span style="color:#f92672">.</span>write(encrypted)
+</span></span></code></pre></div><h4 id="phân-tích">
+<a class="header-anchor" href="#ph%c3%a2n-t%c3%adch"></a>
+Phân tích:
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hehe</span>(data, key):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(key<span style="color:#f92672">.</span>get(char, char) <span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> data)
+</span></span></code></pre></div><p>Hàm <code>hehe</code> lấy <code>data</code> và chuyển đổi từng ký tự trong dữ liệu đó sang ký tự tương ứng bằng danh sách của <code>KEY</code>.</p>
+        
+        <hr><p>Published on 2025-04-08 at <a href='https://r1muru2006.github.io/'>My New Hugo Site</a>, last modified on 2025-04-08</p>]]>
+      </description>
+      
+        <category>CTF Write-up</category><category>WannaGame</category>
+      
+    </item>
+    
+  </channel>
+</rss>

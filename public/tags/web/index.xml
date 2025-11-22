@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on My New Hugo Site</title>
+    <link>https://r1muru2006.github.io/tags/web/</link>
+    <description>Recent content from My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    
+    <managingEditor>xxx@example.com (D-Sketon)</managingEditor>
+    <webMaster>xxx@example.com (D-Sketon)</webMaster>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate>Thu, 05 Jun 2025 08:19:28 +0700</lastBuildDate>
+    
+    
+    <atom:link href="https://r1muru2006.github.io/tags/web/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>NahamCon CTF 2025</title>
+      <link>https://r1muru2006.github.io/post/nahamconctf2025/</link>
+      <pubDate>Thu, 05 Jun 2025 08:19:28 &#43;0700</pubDate>
+      <author>xxx@example.com (D-Sketon)</author>
+      <guid>https://r1muru2006.github.io/post/nahamconctf2025/</guid>
+      <description>
+        <![CDATA[<h1>NahamCon CTF 2025</h1><p>Author: D-Sketon(xxx@example.com)</p>
+        
+          <h2 id="1-readtherules">
+<a class="header-anchor" href="#1-readtherules"></a>
+1. Readtherules
+</h2><p><img src="https://hackmd.io/_uploads/Bkc2_0AGel.png" alt="Screenshot 2025-05-24 063727"></p>
+<pre><code>Flag: flag{90bc54705794a62015369fd8e86e557b}
+</code></pre>
+<h2 id="2-freeflag">
+<a class="header-anchor" href="#2-freeflag"></a>
+2. FreeFlag
+</h2><p>Thử thách cho ta một file <code>free_flags.txt</code> chứa 1000 flag nên ta nghĩ ngay tới việc sử dụng định dạng mẫu và lọc flag phù hợp.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># solution.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_flag</span>(s):
+</span></span><span style="display:flex;"><span>    pattern <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^flag\{[0-9a-f]</span><span style="color:#e6db74">{32}</span><span style="color:#e6db74">\}$&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> re<span style="color:#f92672">.</span><span style="color:#66d9ef">match</span>(pattern, s)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;free_flags.txt&#34;</span>, <span style="color:#e6db74">&#39;r&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>readlines()
+</span></span><span style="display:flex;"><span>    lst <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> data:
+</span></span><span style="display:flex;"><span>        flag <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;  &#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> flag:
+</span></span><span style="display:flex;"><span>            lst<span style="color:#f92672">.</span>append(i)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> lst:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> is_flag(i):
+</span></span><span style="display:flex;"><span>        print(i)
+</span></span></code></pre></div><pre><code>Flag: flag{ae6b6fb0686ec594652afe9eb6088167}
+</code></pre>
+<h2 id="3-naham-commencement2025">
+<a class="header-anchor" href="#3-naham-commencement2025"></a>
+3. Naham Commencement2025
+</h2><p>Thử thách cho ta một đường dẫn vào 1 trang đăng nhập, có vẻ như mục đích là ta phải sử dụng đúng tài khoản để truy cập vào và lấy flag. Khi <code>f12</code>, thì ta có source sau:</p>
+        
+        <hr><p>Published on 2025-06-05 at <a href='https://r1muru2006.github.io/'>My New Hugo Site</a>, last modified on 2025-06-05</p>]]>
+      </description>
+      
+        <category>CTF Write-up</category>
+      
+    </item>
+    
+  </channel>
+</rss>

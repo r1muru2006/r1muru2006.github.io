@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Miscellaneous on My New Hugo Site</title>
+    <link>https://r1muru2006.github.io/tags/miscellaneous/</link>
+    <description>Recent content from My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    
+    <managingEditor>xxx@example.com (D-Sketon)</managingEditor>
+    <webMaster>xxx@example.com (D-Sketon)</webMaster>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate>Tue, 09 Sep 2025 08:42:30 +0700</lastBuildDate>
+    
+    
+    <atom:link href="https://r1muru2006.github.io/tags/miscellaneous/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>HOLACTF 2025</title>
+      <link>https://r1muru2006.github.io/post/holactf2025/</link>
+      <pubDate>Tue, 09 Sep 2025 08:42:30 &#43;0700</pubDate>
+      <author>xxx@example.com (D-Sketon)</author>
+      <guid>https://r1muru2006.github.io/post/holactf2025/</guid>
+      <description>
+        <![CDATA[<h1>HOLACTF 2025</h1><p>Author: D-Sketon(xxx@example.com)</p>
+        
+          <h2 id="crypto">
+<a class="header-anchor" href="#crypto"></a>
+Crypto
+</h2><h3 id="1-cs2rtrash">
+<a class="header-anchor" href="#1-cs2rtrash"></a>
+1. Cs2RTrash
+</h3><p><img src="https://hackmd.io/_uploads/B16EYV-qgl.png" alt="image"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># chall.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Util.number <span style="color:#f92672">import</span> bytes_to_long, long_to_bytes
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>e <span style="color:#f92672">=</span> <span style="color:#ae81ff">65537</span>
+</span></span><span style="display:flex;"><span>n1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">106274132069853085771962684070654057294853035674691451636354054913790308627721</span>
+</span></span><span style="display:flex;"><span>n2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">73202720518342632558813895439681594395095017145510800999002057461861058762579</span>
+</span></span><span style="display:flex;"><span>n3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">58129476807669651703262865829974447479957080526429581698674448004236654958847</span>
+</span></span><span style="display:flex;"><span>message <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;HOLACTF{...}&#39;</span>
+</span></span><span style="display:flex;"><span>m <span style="color:#f92672">=</span> bytes_to_long(message)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>c1 <span style="color:#f92672">=</span> pow(m, e, n1)
+</span></span><span style="display:flex;"><span>c2 <span style="color:#f92672">=</span> pow(m, e, n2)
+</span></span><span style="display:flex;"><span>c3 <span style="color:#f92672">=</span> pow(m, e, n3)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;c1: </span><span style="color:#e6db74">{</span>c1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;c2: </span><span style="color:#e6db74">{</span>c2<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;c3: </span><span style="color:#e6db74">{</span>c3<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// output.txt</span>
+</span></span><span style="display:flex;"><span>c1: 40409669713698525444927116587938485167766997176959778633087672968720888190012
+</span></span><span style="display:flex;"><span>c2: 50418608792183022472533104230595523000246213655735834753443442906871618770832
+</span></span><span style="display:flex;"><span>c3: 7151799367443802424297049002310776844321501905398348074481144597918413565153
+</span></span></code></pre></div><p>Đây chỉ là 1 bài RSA đơn giản và mình để ý rằng n1 là số nguyên tố nên bài này có thể được giải như sau:</p>
+        
+        <hr><p>Published on 2025-09-09 at <a href='https://r1muru2006.github.io/'>My New Hugo Site</a>, last modified on 2025-09-09</p>]]>
+      </description>
+      
+        <category>CTF Write-up</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>DiceCTF 2025</title>
+      <link>https://r1muru2006.github.io/post/dicectf2025/</link>
+      <pubDate>Wed, 26 Mar 2025 09:31:43 &#43;0700</pubDate>
+      <author>xxx@example.com (D-Sketon)</author>
+      <guid>https://r1muru2006.github.io/post/dicectf2025/</guid>
+      <description>
+        <![CDATA[<h1>DiceCTF 2025</h1><p>Author: D-Sketon(xxx@example.com)</p>
+        
+          <h2 id="misc">
+<a class="header-anchor" href="#misc"></a>
+Misc
+</h2><h3 id="bcu-binding">
+<a class="header-anchor" href="#bcu-binding"></a>
+bcu-binding
+</h3><p><img src="https://hackmd.io/_uploads/BJ2tcJv61e.png" alt="image"></p>
+<p>Tải file về thì ta search thử &lsquo;dice{&rsquo; để tìm flag và nó ra thật @@
+Có vẻ như nó được giấu trong phần nền trắng để không thể nhìn thấy&hellip;</p>
+<p><img src="https://hackmd.io/_uploads/HyXwoyPTJx.png" alt="Screenshot 2025-03-29 213449"></p>
+<pre><code>Flag: dice{r3ad1ng_th4_d0cs_71ccd}
+</code></pre>
+<h3 id="dicecap">
+<a class="header-anchor" href="#dicecap"></a>
+dicecap
+</h3><p><img src="https://hackmd.io/_uploads/SJIsi1wake.png" alt="image"></p>
+<p>Đề cho ta 1 file pcap nên ta mở nó lên bằng wireshark và xem thử:
+<img src="https://hackmd.io/_uploads/HJg7hyDTkx.png" alt="Screenshot 2025-03-29 215831"></p>
+<p>Thử tìm theo từ khóa thì ta ra được 2 kênh khả nghi chứa flag theo protocol FTP-DATA.
+Export file ra thì ta được 1 file main theo định dạng ELF cùng 1 tệp zip cần mật khẩu mà trong đó chứa flag.txt có thể lấy flag.</p>
+        
+        <hr><p>Published on 2025-03-26 at <a href='https://r1muru2006.github.io/'>My New Hugo Site</a>, last modified on 2025-03-26</p>]]>
+      </description>
+      
+        <category>CTF Write-up</category>
+      
+    </item>
+    
+  </channel>
+</rss>
