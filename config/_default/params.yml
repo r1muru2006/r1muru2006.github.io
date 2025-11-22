@@ -392,9 +392,9 @@ disqus:
 
 algolia_search:
   enable: true
-  appID:
-  apiKey:
-  indexName:
+  appID: "RAY96S32HW"
+  apiKey: "53e71efc7b6ca695cdb630e780aeae50"
+  indexName: "my-blog"
   hits:
     per_page: 10
 
