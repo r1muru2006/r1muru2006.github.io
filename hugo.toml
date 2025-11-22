@@ -1,0 +1,4 @@
+baseURL = 'https://r1muru2006.github.io/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = "reimu"
