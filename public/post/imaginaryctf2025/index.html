@@ -937,8 +937,9 @@ Hướng giải
 Vì vậy, việc so sánh $(((2^i\mod n) \times m) \mod n) \mod 2$ và $(((2^{i+1}\mod n) \times m) \mod n) \mod 2$ cho ta MSB của $(2^i\mod n) \times m$. Ở đây, ta nhận được ngẫu nhiên một trong bốn bit thấp.</p>
 <p>Đầu tiên, ta thử các trường hợp cho đến khi ta nhận được $n\equiv -1 \mod 16$.
 Bây giờ, giả sử ta nhận được LSB thứ ba (chỉ số 2, vị trí thứ tư). Ta có thể gửi $(2^{e \times (i+3)} \mod n)*c$ và nhận lại $((8\times (2^i\mod n) \times m) \mod n)$ &amp; 4.</p>
-<p>Như vậy, $$((8\times (2^i\mod n) \times m) \mod n) &amp; 4 =int((((8\times (2^i\mod n) \times m) \mod n)\mod  8) \ge 4)$$ và giá trị $((8\times (2^i\mod n) \times m) \mod n)\mod  8$ là bit đúng sai của đẳng thức $$0-n\times \lfloor\dfrac{(8\times (2^i\mod n) \times m)}{n}\rfloor\mod 8 =\lfloor\dfrac{(8\times (2^i\mod n) \times m)}{n}\rfloor\mod 8$$</p>
-<p>Giá trị này cho chúng ta biết $(2^i \mod n) \times m$ nằm trong khoảng nào trong số các khoảng $[0, n/8), &hellip;, [7*n/8, n)$, nhưng chúng ta chỉ nhận được MSB của nó (từ $\ge 4$ hoặc &amp; 4), vì vậy về cơ bản chúng ta chỉ nhận được một MSG của $(2^i \mod n) \times m$.
+<p>Như vậy, </p>
+$$((8\times (2^i\mod n) \times m) \mod n) & 4 =int((((8\times (2^i\mod n) \times m) \mod n)\mod  8) \ge 4)$$<p> và giá trị $((8\times (2^i\mod n) \times m) \mod n)\mod  8$ là bit đúng sai của đẳng thức </p>
+$$0-n\times \lfloor\dfrac{(8\times (2^i\mod n) \times m)}{n}\rfloor\mod 8 =\lfloor\dfrac{(8\times (2^i\mod n) \times m)}{n}\rfloor\mod 8$$<p>Giá trị này cho chúng ta biết $(2^i \mod n) \times m$ nằm trong khoảng nào trong số các khoảng $[0, n/8), ..., [7*n/8, n)$, nhưng chúng ta chỉ nhận được MSB của nó (từ $\ge 4$ hoặc &amp; 4), vì vậy về cơ bản chúng ta chỉ nhận được một MSG của $(2^i \mod n) \times m$.
 Lặp lại điều này sẽ cho phép chúng ta thu được toàn bộ <code>m</code>.</p>
 <p>Về bản chất, phương pháp này là binary-search trên phần fractional m/n: mỗi bit thu được sẽ cho ta cắt đôi khoảng hiện tại (giống LSB-oracle). Dùng việc hỏi “bit của octant” là một biến thể nhưng về lượng thông tin mỗi truy vấn vẫn ~1 bit, do đó độ phức tạp tương đương LSB-oracle cơ bản.</p>
 <p>Sau đây là phần code giải:</p>
@@ -1057,7 +1058,7 @@ clcg
 Phân tích đề bài
 </h3><ul>
 <li>p, A, C, X lần luợt là số nguyên tố 256 bit và các list gồm 1 độ dài nhất định (theo đề là 8) các giá trị ngẫu nhiên bé hơn p.</li>
-<li>Hàm <code>rand()</code> cho đầu ra là top 64 bit đầu của tổng S là 8 giá trị LCG không phụ thuộc modulo p của các cặp (A, X, C) tương ứng và gán X mới lần lượt là 8 giá trị LCG này. $$X^{(i)}_{t+1}\equiv a_i\times X^{(i)}<em>t+c_i\mod p,i=[1, 8]$$ $$S =\displaystyle \sum</em>{i=1}^8 X_t^{(i)}\mod p$$</li>
+<li>Hàm <code>rand()</code> cho đầu ra là top 64 bit đầu của tổng S là 8 giá trị LCG không phụ thuộc modulo p của các cặp (A, X, C) tương ứng và gán X mới lần lượt là 8 giá trị LCG này. $$X^{(i)}_{t+1}\equiv a_i\times X^{(i)}_t+c_i\mod p,i=[1, 8]$$ $$S =\displaystyle \sum_{i=1}^8 X_t^{(i)}\mod p$$</li>
 <li>Lấy hàm <code>rand()</code> 36 lần rồi lấy 2 lần tiếp theo làm key cho chế độ mã hóa AES mode CBC với iv là ngẫu nhiên và plaintext là flag.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">data</span><span class="p">[</span><span class="s1">&#39;hints&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">clcg</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">36</span><span class="p">)]</span>
@@ -1074,19 +1075,20 @@ Hướng giải
 <a class="header-anchor" href="#khai-th%c3%a1c-t%e1%bb%ab-lcg-cho-tr%c6%b0%e1%bb%9bc"></a>
 Khai thác từ LCG cho trước
 </h4><p>Từ phép biến đổi affine LCG ta sẽ thử tạo chuỗi cấp số và trình bày công thức.
-Giả sử, tồn tại $k$ sao cho: $$X^{(i)}_{t+1} + k\equiv a_i\times (X^{(i)}_t+k)\mod p,i=[1, 8]$$</p>
-<p>$$\Leftrightarrow (a_i-1)\times k\equiv c\mod p,i=[1, 8]\Leftrightarrow k\equiv \dfrac{c}{a_i-1}\mod p,i=[1, 8]$$</p>
-<p>Như vậy, ta hoàn toàn có thể biến đổi dãy trên thành dãy số hệ số nhân $$C^{(i)}_{t+1}\equiv a_i\times C^{(i)}_t\mod p,i=[1, 8]$$, với $C_i = X_i+\dfrac{c}{a_i-1}\mod p,i=[1, 8]$</p>
-<p>Do đó, tổng S biến đổi thành:$$S\equiv \displaystyle \sum_{j=1}^8 K_ja^i_j-D\mod p$$
+Giả sử, tồn tại $k$ sao cho: </p>
+$$X^{(i)}_{t+1} + k\equiv a_i\times (X^{(i)}_t+k)\mod p,i=[1, 8]$$$$\Leftrightarrow (a_i-1)\times k\equiv c\mod p,i=[1, 8]\Leftrightarrow k\equiv \dfrac{c}{a_i-1}\mod p,i=[1, 8]$$<p>Như vậy, ta hoàn toàn có thể biến đổi dãy trên thành dãy số hệ số nhân </p>
+$$C^{(i)}_{t+1}\equiv a_i\times C^{(i)}_t\mod p,i=[1, 8]$$<p>, với $C_i = X_i+\dfrac{c}{a_i-1}\mod p,i=[1, 8]$</p>
+<p>Do đó, tổng S biến đổi thành:</p>
+$$S\equiv \displaystyle \sum_{j=1}^8 K_ja^i_j-D\mod p$$<p>
 Có nghĩa là nếu ta lấy từng cặp hiệu của S đôi một liên tiếp thì nó sẽ khử D
 ($\Delta S_i=S_{i+1}-S_i$), để lại tổng của các thừa số thỏa mãn hồi quy tuyến tính bậc 8 với đa thức đặc trưng là:
-$$m(x)=\displaystyle \prod_{j=1}^8(x-a_j)\in \mathbb{F}_p[x]$$</p>
-<h4 id="khôi-phục-lại-delta-s_t">
-<a class="header-anchor" href="#kh%c3%b4i-ph%e1%bb%a5c-l%e1%ba%a1i-delta-s_t"></a>
+</p>
+$$m(x)=\displaystyle \prod_{j=1}^8(x-a_j)\in \mathbb{F}_p[x]$$<h4 id="khôi-phục-lại">
+<a class="header-anchor" href="#kh%c3%b4i-ph%e1%bb%a5c-l%e1%ba%a1i"></a>
 Khôi phục lại $\Delta S_t$
 </h4><p>Theo đề bài, ta sẽ tách $\Delta S_t$ thành $2^{192}\Delta b_t+d_t$ với $d_t\in (-2^{192}, 2^{192})$</p>
-<p>Từ phép hồi quy trên, suy ra được: $$\displaystyle \sum_{k=0}^8c_k\Delta S_{t+k}\equiv 0 \mod p\ \ (1)$$</p>
-<p>Vì vậy, khi ta sử dụng phép tách trên, $(1)$ sẽ trở thành phương trình đồng dư tuyến tính modulo p với ẩn $d_t$</p>
+<p>Từ phép hồi quy trên, suy ra được: </p>
+$$\displaystyle \sum_{k=0}^8c_k\Delta S_{t+k}\equiv 0 \mod p\ \ (1)$$<p>Vì vậy, khi ta sử dụng phép tách trên, $(1)$ sẽ trở thành phương trình đồng dư tuyến tính modulo p với ẩn $d_t$</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">AES</span>
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sage.all</span> <span class="kn">import</span> <span class="o">*</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
@@ -1251,7 +1253,7 @@ Tài liệu
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;23.8k</span
+          >&nbsp;23.7k</span
         >
         &nbsp;|&nbsp;
         <span class="icon-coffee">&nbsp;01:57</span>

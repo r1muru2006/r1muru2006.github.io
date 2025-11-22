@@ -778,32 +778,26 @@ Rõ hơn thì đề cho ta hai đoạn tin nhắn và bản mã của chúng, y�
 </ol>
 <p>Phần này mới thực sự là phức tạp của thử thách, với mục đích chính là tìm cái <code>tag</code> để server check xem có đúng không.
 Sau khi google thì ta biết được rằng Poly1305 được dùng như mã xác thực một lần với:</p>
-<p>$$
-tag \equiv Poly1305_r(m)+s \mod 2^{128}
-$$</p>
-<p>Đề cho ta 2 tag của 2 tin nhắn phân biệt mà ta đã biết và được dùng cùng 1 Poly1305 key bí mật (r,s). Bây giờ, chúng ta phải tìm lại key này để giải mã được cấu trúc tạo tag.</p>
-<p>Và ở <a href="https://en.wikipedia.org/wiki/Poly1305#Use_as_a_one-time_authenticator">đây</a> cũng có để cách attack nếu sử dụng 2 lần để mã hóa tin nhắn bằng 1 key.</p>
-<p>$$
-tag_1 = (Poly1305_r(m_1) + s )\mod 2^{128} \ (1)
-$$</p>
-<p>$$
-tag_2 = (Poly1305_r(mg_2) + s )\mod 2^{128} \ (2)
-$$</p>
-<p>Từ (1) và (2), ta có:</p>
-<p>$$
-tag_1 - tag_2 \equiv Poly1305_r(m_1)- Poly1305_r(m_2) \mod 2^{128}
-$$</p>
-<p>Mình xem ở <a href="https://en.wikipedia.org/wiki/Poly1305#Definition_of_Poly1305">đây</a> để phân tích cái Poly1305 ra:
 $$
-tag_1 - tag_2 \equiv (c_1^1r^q+c_1^2r^{q-1}+&hellip;+c_1^qr^1\mod 2^{130} -5)
-$$</p>
-<p>$$
--(c_2^1r^q+c_2^2r^{q-1}+&hellip;+c_2^qr^1\mod 2^{130} -5) \mod 2^{128}
-$$</p>
-<p>$$
-\Leftrightarrow tag_1 - tag_2 + 2^{128}(i-j) \equiv (((c_1^1-c_2^1)r^q+(c_1^2-c_2^2)r^{q-1}+&hellip;+(c_1^q-c_2^q)r^1) \mod 2^{130} -5)
-$$</p>
-<p>Vì <code>tag</code> ban đầu mod 1 giá trị bằng $2^{130} - 5$, gần bằng 130 bits rồi mod  $2^{128}$ nghĩa là <code>tag</code> mất 2 bits nên $i,j \in \overline{0,4} \Rightarrow (i-j)\in \overline{-4,4}$.</p>
+    tag \equiv Poly1305_r(m)+s \mod 2^{128}
+$$<p>Đề cho ta 2 tag của 2 tin nhắn phân biệt mà ta đã biết và được dùng cùng 1 Poly1305 key bí mật (r,s). Bây giờ, chúng ta phải tìm lại key này để giải mã được cấu trúc tạo tag.</p>
+<p>Và ở <a href="https://en.wikipedia.org/wiki/Poly1305#Use_as_a_one-time_authenticator">đây</a> cũng có để cách attack nếu sử dụng 2 lần để mã hóa tin nhắn bằng 1 key.</p>
+$$
+    tag_1 = (Poly1305_r(m_1) + s )\mod 2^{128} \ (1)
+$$$$
+    tag_2 = (Poly1305_r(mg_2) + s )\mod 2^{128} \ (2)
+$$<p>Từ (1) và (2), ta có:</p>
+$$
+    tag_1 - tag_2 \equiv Poly1305_r(m_1)- Poly1305_r(m_2) \mod 2^{128}
+$$<p>Mình xem ở <a href="https://en.wikipedia.org/wiki/Poly1305#Definition_of_Poly1305">đây</a> để phân tích cái Poly1305 ra:
+</p>
+$$
+    tag_1 - tag_2 \equiv (c_1^1r^q+c_1^2r^{q-1}+...+c_1^qr^1\mod 2^{130} -5)
+$$$$
+  -(c_2^1r^q+c_2^2r^{q-1}+...+c_2^qr^1\mod 2^{130} -5) \mod 2^{128}
+$$$$
+\Leftrightarrow tag_1 - tag_2 + 2^{128}(i-j) \equiv (((c_1^1-c_2^1)r^q+(c_1^2-c_2^2)r^{q-1}+...+(c_1^q-c_2^q)r^1) \mod 2^{130} -5)
+$$<p>Vì <code>tag</code> ban đầu mod 1 giá trị bằng $2^{130} - 5$, gần bằng 130 bits rồi mod  $2^{128}$ nghĩa là <code>tag</code> mất 2 bits nên $i,j \in \overline{0,4} \Rightarrow (i-j)\in \overline{-4,4}$.</p>
 <p>Đặt $k = i-j$ thì với mỗi k, ta sẽ dựng  1 phương trình trên GF($2^{130}-5$), tìm nghiệm của phương trình này và nó là <code>r</code> rồi thế lại vào 1 trong hai phương trình trên là ta ra được <code>s</code></p>
 <p>Khi đã có được <code>r, s</code> đối với cặp <code>(key, nonce)</code> này rồi thì ta hoàn toàn có thể tạo 1 cái <code>tag</code> xác thực được cho ciphertext của goal và đây cũng là cách mình thực hiện thử thách này.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># solution.py</span>
@@ -998,7 +992,7 @@ Guess My Cheese (Part 2)
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;23.8k</span
+          >&nbsp;23.7k</span
         >
         &nbsp;|&nbsp;
         <span class="icon-coffee">&nbsp;01:57</span>

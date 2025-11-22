@@ -649,8 +649,8 @@ Như ta đã biết, nếu bỏ SubBytes đi thì các vòng của AES sẽ tr�
 <p>Để cho gọn thì ta đặt $S, M, k_i$ lần lượt là phép biển đổi ma trận bằng ShiftRows và MixColumns và AddRoundKey ở vòng thứ i. Sau đây là quá trình mã hóa <code>plaintext</code>($P$):</p>
 <p>Vòng 0: $P + k_0$</p>
 <p>Vòng 1: $M(S(P+k_0))+k_1$. Đơn giản hóa bằng cách tính $A =MS$.</p>
-<p>Vòng 2-9: $&hellip;(A(A(A(P+k_0))+k_1)+k_2)+k_3+&hellip;$</p>
-<p>Vòng 10: $S(&hellip;(A(A(A(P+k_0))+k_1)+k_2)+k_3+&hellip;)+k_{10}$</p>
+<p>Vòng 2-9: $...(A(A(A(P+k_0))+k_1)+k_2)+k_3+...$</p>
+<p>Vòng 10: $S(...(A(A(A(P+k_0))+k_1)+k_2)+k_3+...)+k_{10}$</p>
 <p>$=SA^9P+SA^8k_0+..Sk_9+k_{10}=SA^9P+K$</p>
 <p>Ở cuối ta thấy là <code>plaintext</code> gắn với $SA^9=M^9S^{10}$ mà không phụ thuộc gì tới key.
 Do đó, để tấn công thì ta có thể nghĩ rằng với cùng 1 key thì $K$ tính được ở trên sẽ như nhau tức là <code>ciphertext</code> đặt là $C$ sẽ cho ra 1 hằng số $K=C-SA^9P$.</p>
@@ -1030,14 +1030,15 @@ Part 1:
 <p>Chú ý điều kiện: <code>if hints[_] == 0: hints[_] = (hints[_] - 1) % n</code></p>
 <p>=&gt; Từ đây, ta có thể tính được ngay $n = hint(n) + 1$</p>
 <p>Thêm nữa, ta có hệ phương trình:
+</p>
 $$
 \begin{cases}
-p = getPrime(2048) \
-q = getPrime(2048) \
-n = p * q          \
-hint(p) = p * getPrime(1024)
+    p = getPrime(2048) \\
+    q = getPrime(2048) \\
+    n = p * q          \\
+    hint(p) = p * getPrime(1024)
 \end{cases}
-$$
+$$<p>
 Tức là $n$ có 4096 bit, còn <code>hint(p)</code> chỉ có 3072 bit và vì nó bé hơn $n$ nên khi lấy đồng dư thì nó sẽ không thay đổi.
 Khi đó, ta hoàn toàn có thể lấy được $p$ bằng cách lấy GCD của <code>(n, hint(p))</code></p>
 <p>Cuối cùng, ta khôi phục dữ liệu cần thiết của bộ khóa và giải mã được part 1.</p>
@@ -1068,22 +1069,22 @@ Part 2:
 </span></span><span class="line"><span class="cl">    <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="nb">pow</span><span class="p">(</span><span class="n">m2</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;n = </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="se">\n</span><span class="s2">c1 = </span><span class="si">{</span><span class="n">c1</span><span class="si">}</span><span class="se">\n</span><span class="s2">c2 = </span><span class="si">{</span><span class="n">c2</span><span class="si">}</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Với $e$ nhỏ, thì ta nghĩ ngay tới <code>Low public exponent attack</code> và khi tìm hiểu thì ta thấy bài này tương đồng với kiểu <a href="https://en.wikipedia.org/wiki/Coppersmith%27s_attack#Franklin%E2%80%93Reiter_related-message_attack">Franklin–Reiter related-message attack</a></p>
-<p>Cụ thể hơn, $m_2 = m _1 &raquo; 8 \Leftrightarrow m_1 = m_2 * (1 &raquo; 8) + k$.
+<p>Cụ thể hơn, $m_2 = m _1 >> 8 \Leftrightarrow m_1 = m_2 * (1 >> 8) + k$.
 Mặt khác, ta biết rằng $m_1$ là Part2 của flag tức là phần tử cuối trong 8 bit của nó khi quy về bảng mã ASCII sẽ là <code>}</code> tương đương với giá trị <code>125</code></p>
 <p>=&gt; $m_1=256*m_2+125$</p>
 <p>Sau đó, ta viết lại dưới dạng đa thức $f(x)$ và $g(x)$ là:
+</p>
 $$
 \begin{cases}
-f(x) = x^e-c_1, f(m_1) =0 \
-g(x) = x^e-c_2, f(m_2) =0
+    f(x) = x^e-c_1, f(m_1) =0 \\
+    g(x) = x^e-c_2, f(m_2) =0
 \end{cases}
 \Leftrightarrow
 \begin{cases}
-f(x) = (256*x+125)^e-c_1, f(m_2) =0 \
-g(x) = x^e-c_2, g(m_2) =0
+    f(x) = (256*x+125)^e-c_1, f(m_2) =0 \\
+    g(x) = x^e-c_2, g(m_2) =0
 \end{cases}
-$$</p>
-<p>Hai đa thức này có nghiệm chung là $m_2$ nên khi lấy GCD của chúng và nếu nó tuyến tính thì ta sẽ lấy được $m_2$, tính $m_1$ và lấy được Part2 của flag.</p>
+$$<p>Hai đa thức này có nghiệm chung là $m_2$ nên khi lấy GCD của chúng và nếu nó tuyến tính thì ta sẽ lấy được $m_2$, tính $m_1$ và lấy được Part2 của flag.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">Part2</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">   <span class="n">n</span> <span class="o">=</span> <span class="mi">3942322022657678598973964668297464188690492529227912763243818849286024502988170927049337618748813366973108404930787214396933140242919629931061653981563183</span>
 </span></span><span class="line"><span class="cl">   <span class="n">c1</span> <span class="o">=</span> <span class="mi">711628464933911477721875076362382562533209928505813633932265201230108117662370018036520970813120568151605229871541865330790006742825947411425842775387464</span>
@@ -1225,7 +1226,7 @@ $$</p>
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;23.8k</span
+          >&nbsp;23.7k</span
         >
         &nbsp;|&nbsp;
         <span class="icon-coffee">&nbsp;01:57</span>

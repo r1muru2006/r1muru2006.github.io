@@ -368,19 +368,19 @@ Mersenne Twister
 Khôi phục từ đầu ra đầy đủ 32-bit
 </h3><p>Sau đây là các bước đảo ngược chi tiết:
 <code>y ^= (y &gt;&gt; 18)</code></p>
-<p>Đây là dịch phải 18 bit, ảnh hưởng từ bit cao tới bit thấp và sau bước này thì bit cao không thay đổi cùng với việc $18*2 = 36 &gt; 32$ nên ta chỉ cần 1 lần đảo là được.</p>
+<p>Đây là dịch phải 18 bit, ảnh hưởng từ bit cao tới bit thấp và sau bước này thì bit cao không thay đổi cùng với việc $18*2 = 36 > 32$ nên ta chỉ cần 1 lần đảo là được.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Step 1</span>
 </span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">^=</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;&gt;</span> <span class="mi">18</span><span class="p">)</span>
 </span></span></code></pre></div><p><code>y ^= (y &lt;&lt; 15) AND 0xefc60000</code></p>
-<p>Ở đây, mask 0xefc60000 có cấu trúc đặc biệt với làm phép biển đổi trở thành 1 hàm tự nghịch đảo, nghĩa là $f(f(x))=x$, với $f(x) = x \oplus ((x &laquo; 15)$ AND 0xefc60000). Chứng minh:</p>
+<p>Ở đây, mask 0xefc60000 có cấu trúc đặc biệt với làm phép biển đổi trở thành 1 hàm tự nghịch đảo, nghĩa là $f(f(x))=x$, với $f(x) = x \oplus ((x << 15)$ AND 0xefc60000). Chứng minh:</p>
 <ul>
 <li>Đặt A = 0xefc60000. Khi đó:</li>
 </ul>
-<p>$f(y)=f(f(x)) = f(x \oplus ((x &laquo; 15) AND \ A))$</p>
-<p>$= (x \oplus ((x &laquo; 15) AND \ A)) \oplus (((x \oplus ((x &laquo; 15) AND \ A)) &laquo; 15) AND \ A)$</p>
-<p>$= (x \oplus ((x &laquo; 15) AND \ A)) \oplus (((x &laquo; 15) AND \ A) \oplus((x &laquo; 30) AND (A &laquo; 15) AND \ A))$</p>
-<p>$= x \oplus (((x &laquo; 15) AND \ A) \oplus ((x &laquo; 15) AND \ A)) \oplus((x &laquo; 30) AND (A &laquo; 15) \ AND \ A) = x$</p>
-<p>(vì tính chất $P \oplus P = 0$ và $A$ có 17 bit thấp là 0 nên nếu dịch trái 15 bit thì 32 bit cuối của $A &laquo; 15$ sẽ đều là 0 nên $(A &laquo; 15) AND \ A = 0$)</p>
+<p>$f(y)=f(f(x)) = f(x \oplus ((x << 15) AND \ A))$</p>
+<p>$= (x \oplus ((x << 15) AND \ A)) \oplus (((x \oplus ((x << 15) AND \ A)) << 15) AND \ A)$</p>
+<p>$= (x \oplus ((x << 15) AND \ A)) \oplus (((x << 15) AND \ A) \oplus((x << 30) AND (A << 15) AND \ A))$</p>
+<p>$= x \oplus (((x << 15) AND \ A) \oplus ((x << 15) AND \ A)) \oplus((x << 30) AND (A << 15) \ AND \ A) = x$</p>
+<p>(vì tính chất $P \oplus P = 0$ và $A$ có 17 bit thấp là 0 nên nếu dịch trái 15 bit thì 32 bit cuối của $A << 15$ sẽ đều là 0 nên $(A << 15) AND \ A = 0$)</p>
 <p>Do đó, để đảo ngược thì ta chỉ cần 1 lần biến đổi hàm nữa:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Step 2</span>
 </span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">^=</span> <span class="p">(</span><span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="mi">15</span><span class="p">)</span> <span class="n">AND</span> <span class="mh">0xefc60000</span>
@@ -388,18 +388,18 @@ Khôi phục từ đầu ra đầy đủ 32-bit
 <p>Ở bước này thì ta sẽ thiết lập một hàm dịch bit gần tương tự như bước trên:</p>
 <ul>
 <li>Đặt B = 0x9d2c5680.
-Với $y = x \oplus ((x &laquo; 7) AND \ B)$
-, ta sẽ dùng hàm $f(x&rsquo;) = y \oplus ((x&rsquo; &laquo; 7) AND \ B)$
+Với $y = x \oplus ((x << 7) AND \ B)$
+, ta sẽ dùng hàm $f(x') = y \oplus ((x' << 7) AND \ B)$
 Khi đó:</li>
 </ul>
-<p>$f_4(y) = f_4(x \oplus ((x &laquo; 7) AND \ B)) = f_3(y \oplus (((x \oplus ((x &laquo; 7) AND \ B)) &laquo; 7)AND \ B))$</p>
-<p>$= f_3(x \oplus (((x &laquo; 7) AND \ B) \oplus ((x &laquo; 7) AND \ B)) \oplus((x &laquo; (7\times2))AND (B &laquo; 7) AND \ B))$</p>
-<p>$= f_3(x \oplus((x &laquo; (7\times2))AND (B &laquo; 7) AND \ B))$</p>
-<p>$= f_2(x \oplus((x &laquo; (7\times3))AND (B &laquo; (7\times2)) AND (B &laquo; 7) AND \ B))$</p>
-<p>$= f(x \oplus((x &laquo; (7\times4))AND (B&laquo; (7\times3)) AND (B &laquo; (7\times2)) AND (B &laquo; 7) AND \ B))$</p>
-<p>$= x \oplus((x &laquo; (7\times5))AND (B&laquo; (7\times4)) AND (B&laquo; (7\times3)) AND (B &laquo; (7\times2)) AND (B &laquo; 7) AND \ B)$</p>
+<p>$f_4(y) = f_4(x \oplus ((x << 7) AND \ B)) = f_3(y \oplus (((x \oplus ((x << 7) AND \ B)) << 7)AND \ B))$</p>
+<p>$= f_3(x \oplus (((x << 7) AND \ B) \oplus ((x << 7) AND \ B)) \oplus((x << (7\times2))AND (B << 7) AND \ B))$</p>
+<p>$= f_3(x \oplus((x << (7\times2))AND (B << 7) AND \ B))$</p>
+<p>$= f_2(x \oplus((x << (7\times3))AND (B << (7\times2)) AND (B << 7) AND \ B))$</p>
+<p>$= f(x \oplus((x << (7\times4))AND (B<< (7\times3)) AND (B << (7\times2)) AND (B << 7) AND \ B))$</p>
+<p>$= x \oplus((x << (7\times5))AND (B<< (7\times4)) AND (B<< (7\times3)) AND (B << (7\times2)) AND (B << 7) AND \ B)$</p>
 <p>$=x$</p>
-<p>(vì B có 7 bit thấp là 0 nên nếu dịch trái 28 bit thì 32 bit cuối của $B &laquo; 28$ sẽ đều là 0 nên đẳng thức trên xảy ra.)</p>
+<p>(vì B có 7 bit thấp là 0 nên nếu dịch trái 28 bit thì 32 bit cuối của $B << 28$ sẽ đều là 0 nên đẳng thức trên xảy ra.)</p>
 <p>Do đó, để đảo ngược thì ta chỉ cần 4 lần biến đổi hàm như sau:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Step 3</span>
 </span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="n">y</span>
@@ -407,7 +407,7 @@ Khi đó:</li>
 </span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="n">y</span> <span class="o">^</span> <span class="p">(</span><span class="n">res</span> <span class="o">&lt;&lt;</span> <span class="mi">7</span><span class="p">)</span> <span class="n">AND</span> <span class="mh">0x9d2c5680</span>
 </span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">res</span>
 </span></span></code></pre></div><p><code>y ^= (y &gt;&gt; 11)</code>
-Đây là dịch phải 11 bit, ảnh hưởng từ bit cao tới bit thấp và sau bước này thì bit cao không thay đổi cùng với việc $11*3 = 33 &gt; 32$ nên ta chỉ cần 2 lần đảo để khôi phục từ bit cao đến bit thấp.</p>
+Đây là dịch phải 11 bit, ảnh hưởng từ bit cao tới bit thấp và sau bước này thì bit cao không thay đổi cùng với việc $11*3 = 33 > 32$ nên ta chỉ cần 2 lần đảo để khôi phục từ bit cao đến bit thấp.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Step 4</span>
 </span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="n">y</span>
 </span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
@@ -558,17 +558,17 @@ Khôi phục trạng thái từ một lượng giá trị ngẫu nhiên được
 <a class="header-anchor" href="#thu%e1%ba%adt-to%c3%a1n"></a>
 Thuật toán
 </h3><p>Như mô tả ở trên, ta có: $2147483647 = 2^{31} - 1$ và $4294967296 = 2^{32}$</p>
-<p>Với mỗi <code>seed</code> cho trước, 1 <code>initialization vector</code> (iv) $r_0&hellip;r_{33}$ được tính như sau:</p>
+<p>Với mỗi <code>seed</code> cho trước, 1 <code>initialization vector</code> (iv) $r_0...r_{33}$ được tính như sau:</p>
 <ul>
 <li>$r_0$ = <code>seed</code></li>
 <li>$r_i\equiv (16807 * r_{i-1}) \mod 2147483647 \ ( i \in [1,30])$</li>
 <li>$r_i=r_{i-31}\ (i\in [31, 33])$</li>
 </ul>
-<p>Sau đó, 1 chuỗi các số ngẫu nhiên $r_{34}&hellip;$ được tạo bằng vòng lặp phản hồi tuyến tính:</p>
+<p>Sau đó, 1 chuỗi các số ngẫu nhiên $r_{34}...$ được tạo bằng vòng lặp phản hồi tuyến tính:</p>
 <ul>
 <li>$r_i\equiv r_{i-3}+r_{i-31}\mod 4294967296 \ (i \ge 34)$</li>
 </ul>
-<p>$r_0&hellip;r_{343}$ không được sử dụng mà đầu ra $o_i$ của hàm <code>rand()</code> là: $o_i =r_{i+344} \gg 1$</p>
+<p>$r_0...r_{343}$ không được sử dụng mà đầu ra $o_i$ của hàm <code>rand()</code> là: $o_i =r_{i+344} \gg 1$</p>
 <p>Code in C:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
@@ -630,14 +630,14 @@ Khôi phục
 </span></span></code></pre></div><p>Nếu ta có $o_i, o_{i-31},o_{i-3}$ và chúng không thỏa:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">outputs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="p">(</span><span class="n">outputs</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">31</span><span class="p">]</span> <span class="o">+</span> <span class="n">outputs</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">3</span><span class="p">])</span> <span class="n">AND</span> <span class="mh">0x7fffffff</span>
 </span></span></code></pre></div><p>Đoán trạng thái của nỏ ở dạng:
+</p>
 $$
 \begin{cases}
-s_{i-31} = o_{i-31} &laquo; 1 + 1 \
-s_{i-3} = o_{i-3} &laquo; 1 + 1 \
-s_i = o_i &laquo; 1 + 0
+s_{i-31} = o_{i-31} << 1 + 1 \\
+s_{i-3} = o_{i-3} << 1 + 1 \\
+s_i = o_i << 1 + 0
 \end{cases}
-$$</p>
-<p>Nếu không, gắn $s_i =$ None vì chưa biết dạng chuẩn.</p>
+$$<p>Nếu không, gắn $s_i =$ None vì chưa biết dạng chuẩn.</p>
 <ol start="2">
 <li>Khôi phục trạng thái:</li>
 </ol>
@@ -740,7 +740,7 @@ Thuật toán
 </span></span></code></pre></div><p>Hàm <code>seed()</code> sẽ nhận giá trị <code>seed</code> và tạo ra mảng trạng thái <code>vec</code> như sau:</p>
 <ol>
 <li>x được gọi <code>seedrand()</code> 20 lần để tạo số ngẫu nhiên.</li>
-<li>Ghép 3 giá trị 31-bit thành số 64-bit qua hàm <code>seedrand()</code> với $x &laquo; 40, x &laquo; 20, x$.</li>
+<li>Ghép 3 giá trị 31-bit thành số 64-bit qua hàm <code>seedrand()</code> với $x << 40, x << 20, x$.</li>
 <li>XOR với 1 giá trị trong bảng <code>rng_cooked[]</code>.</li>
 </ol>
 <p>Tiếp theo, ta sẽ sinh số ngẫu nhiên 64-bit qua <code>vec</code> bằng hàm <code>uint64()</code>:</p>
@@ -807,10 +807,10 @@ Khôi phục
 <a class="header-anchor" href="#thu%e1%ba%adt-to%c3%a1n-2"></a>
 Thuật toán
 </h3><p>Hàm <code>next_seed</code> sinh <code>seed</code> mới bằng cách áp dụng công thức Park-Miller LCG:
+</p>
 $$
 X_{k+1}=(a\times X_k)\mod m
-$$</p>
-<p>với $a = 16807,\ m = 2^{31} - 1$</p>
+$$<p>với $a = 16807,\ m = 2^{31} - 1$</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">next_seed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">seed</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">seed</span> <span class="o">=</span> <span class="mi">123459876</span>
@@ -940,7 +940,7 @@ Tài liệu
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;23.8k</span
+          >&nbsp;23.7k</span
         >
         &nbsp;|&nbsp;
         <span class="icon-coffee">&nbsp;01:57</span>
