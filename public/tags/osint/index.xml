@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Osint on My New Hugo Site</title>
-    <link>https://r1muru2006.github.io/tags/osint/</link>
-    <description>Recent content from My New Hugo Site</description>
+    <title>Osint on Welcome to my world</title>
+    <link>http://localhost:1313/tags/osint/</link>
+    <description>Recent content from Welcome to my world</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     
-    <managingEditor>xxx@example.com (D-Sketon)</managingEditor>
-    <webMaster>xxx@example.com (D-Sketon)</webMaster>
+    <managingEditor>cuongchu200@gmail.com (r1muru)</managingEditor>
+    <webMaster>cuongchu200@gmail.com (r1muru)</webMaster>
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
     <lastBuildDate>Tue, 09 Sep 2025 08:42:30 +0700</lastBuildDate>
     
     
-    <atom:link href="https://r1muru2006.github.io/tags/osint/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/tags/osint/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,12 +23,12 @@
 
     <item>
       <title>HOLACTF 2025</title>
-      <link>https://r1muru2006.github.io/post/holactf2025/</link>
+      <link>http://localhost:1313/post/holactf2025/</link>
       <pubDate>Tue, 09 Sep 2025 08:42:30 &#43;0700</pubDate>
-      <author>xxx@example.com (D-Sketon)</author>
-      <guid>https://r1muru2006.github.io/post/holactf2025/</guid>
+      <author>cuongchu200@gmail.com (r1muru)</author>
+      <guid>http://localhost:1313/post/holactf2025/</guid>
       <description>
-        <![CDATA[<h1>HOLACTF 2025</h1><p>Author: D-Sketon(xxx@example.com)</p>
+        <![CDATA[<h1>HOLACTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
           <h2 id="crypto">
 <a class="header-anchor" href="#crypto"></a>
@@ -63,7 +63,7 @@ Crypto
 </span></span><span style="display:flex;"><span>c3: 7151799367443802424297049002310776844321501905398348074481144597918413565153
 </span></span></code></pre></div><p>Đây chỉ là 1 bài RSA đơn giản và mình để ý rằng n1 là số nguyên tố nên bài này có thể được giải như sau:</p>
         
-        <hr><p>Published on 2025-09-09 at <a href='https://r1muru2006.github.io/'>My New Hugo Site</a>, last modified on 2025-09-09</p>]]>
+        <hr><p>Published on 2025-09-09 at <a href='http://localhost:1313/'>Welcome to my world</a>, last modified on 2025-09-09</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -74,12 +74,12 @@ Crypto
 
     <item>
       <title>NahamCon CTF 2025</title>
-      <link>https://r1muru2006.github.io/post/nahamconctf2025/</link>
+      <link>http://localhost:1313/post/nahamconctf2025/</link>
       <pubDate>Thu, 05 Jun 2025 08:19:28 &#43;0700</pubDate>
-      <author>xxx@example.com (D-Sketon)</author>
-      <guid>https://r1muru2006.github.io/post/nahamconctf2025/</guid>
+      <author>cuongchu200@gmail.com (r1muru)</author>
+      <guid>http://localhost:1313/post/nahamconctf2025/</guid>
       <description>
-        <![CDATA[<h1>NahamCon CTF 2025</h1><p>Author: D-Sketon(xxx@example.com)</p>
+        <![CDATA[<h1>NahamCon CTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
           <h2 id="1-readtherules">
 <a class="header-anchor" href="#1-readtherules"></a>
@@ -116,7 +116,7 @@ Crypto
 3. Naham Commencement2025
 </h2><p>Thử thách cho ta một đường dẫn vào 1 trang đăng nhập, có vẻ như mục đích là ta phải sử dụng đúng tài khoản để truy cập vào và lấy flag. Khi <code>f12</code>, thì ta có source sau:</p>
         
-        <hr><p>Published on 2025-06-05 at <a href='https://r1muru2006.github.io/'>My New Hugo Site</a>, last modified on 2025-06-05</p>]]>
+        <hr><p>Published on 2025-06-05 at <a href='http://localhost:1313/'>Welcome to my world</a>, last modified on 2025-06-05</p>]]>
       </description>
       
         <category>CTF Write-up</category>

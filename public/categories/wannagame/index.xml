@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>WannaGame on My New Hugo Site</title>
-    <link>https://r1muru2006.github.io/categories/wannagame/</link>
-    <description>Recent content from My New Hugo Site</description>
+    <title>WannaGame on Welcome to my world</title>
+    <link>http://localhost:1313/categories/wannagame/</link>
+    <description>Recent content from Welcome to my world</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     
-    <managingEditor>xxx@example.com (D-Sketon)</managingEditor>
-    <webMaster>xxx@example.com (D-Sketon)</webMaster>
+    <managingEditor>cuongchu200@gmail.com (r1muru)</managingEditor>
+    <webMaster>cuongchu200@gmail.com (r1muru)</webMaster>
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
     <lastBuildDate>Fri, 16 May 2025 14:13:38 +0700</lastBuildDate>
     
     
-    <atom:link href="https://r1muru2006.github.io/categories/wannagame/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/categories/wannagame/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,12 +23,12 @@
 
     <item>
       <title>WannaGame Cyber Knight 2025</title>
-      <link>https://r1muru2006.github.io/post/wannagamecyberknight2025/</link>
+      <link>http://localhost:1313/post/wannagamecyberknight2025/</link>
       <pubDate>Fri, 16 May 2025 14:13:38 &#43;0700</pubDate>
-      <author>xxx@example.com (D-Sketon)</author>
-      <guid>https://r1muru2006.github.io/post/wannagamecyberknight2025/</guid>
+      <author>cuongchu200@gmail.com (r1muru)</author>
+      <guid>http://localhost:1313/post/wannagamecyberknight2025/</guid>
       <description>
-        <![CDATA[<h1>WannaGame Cyber Knight 2025</h1><p>Author: D-Sketon(xxx@example.com)</p>
+        <![CDATA[<h1>WannaGame Cyber Knight 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
           <blockquote>
 <p>Trong giải đấu này, mình đã giải được 1 câu trong phần Cryptography và may mắn đứng thứ 8 trên bảng đến cuối (≧▽≦)
@@ -315,7 +315,7 @@ Choose!
 </span></span></code></pre></div><blockquote>
 <p>Bài này đơn giản là về phần mã hóa AES (<a href="https://vi.wikipedia.org/wiki/Advanced_Encryption_Standard">Advanced Encryption Standard</a>) và mình có xem lại cấu trúc của nó tại wikipedia và <a href="https://hackmd.io/@r1muru/HJmSbUld1x#Bringing-It-All-Together">đây</a> để tiếp cận.</p>
         
-        <hr><p>Published on 2025-05-16 at <a href='https://r1muru2006.github.io/'>My New Hugo Site</a>, last modified on 2025-05-16</p>]]>
+        <hr><p>Published on 2025-05-16 at <a href='http://localhost:1313/'>Welcome to my world</a>, last modified on 2025-05-16</p>]]>
       </description>
       
         <category>CTF Write-up</category><category>WannaGame</category>
@@ -326,12 +326,12 @@ Choose!
 
     <item>
       <title>WannaGame NMLT</title>
-      <link>https://r1muru2006.github.io/post/wannagamenmlt/</link>
+      <link>http://localhost:1313/post/wannagamenmlt/</link>
       <pubDate>Tue, 08 Apr 2025 10:07:31 &#43;0700</pubDate>
-      <author>xxx@example.com (D-Sketon)</author>
-      <guid>https://r1muru2006.github.io/post/wannagamenmlt/</guid>
+      <author>cuongchu200@gmail.com (r1muru)</author>
+      <guid>http://localhost:1313/post/wannagamenmlt/</guid>
       <description>
-        <![CDATA[<h1>WannaGame NMLT</h1><p>Author: D-Sketon(xxx@example.com)</p>
+        <![CDATA[<h1>WannaGame NMLT</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
           <h2 id="pwn">
 <a class="header-anchor" href="#pwn"></a>
@@ -377,7 +377,7 @@ Phân tích:
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(key<span style="color:#f92672">.</span>get(char, char) <span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> data)
 </span></span></code></pre></div><p>Hàm <code>hehe</code> lấy <code>data</code> và chuyển đổi từng ký tự trong dữ liệu đó sang ký tự tương ứng bằng danh sách của <code>KEY</code>.</p>
         
-        <hr><p>Published on 2025-04-08 at <a href='https://r1muru2006.github.io/'>My New Hugo Site</a>, last modified on 2025-04-08</p>]]>
+        <hr><p>Published on 2025-04-08 at <a href='http://localhost:1313/'>Welcome to my world</a>, last modified on 2025-04-08</p>]]>
       </description>
       
         <category>CTF Write-up</category><category>WannaGame</category>
