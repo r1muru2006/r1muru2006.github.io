@@ -9,10 +9,10 @@ hidden: false
 comments: true
 tags: 
     - CTF
-    - Cryptography
-    - Research
+    - Hardware
+    - Osint
 categories:
-    - Learning
+    -  CTF Write-Up
 ---
 
 # WELCOME
@@ -114,9 +114,30 @@ Woww you have such sharp eyes, it's right here:
 
 **Flag:**`mctf{ucfwszjc}`
 
-Outside knowledge: The name of monument - ЭР21-7109 is a model of a train
+Outside knowledge: The name of monument (ЭР2T-7109) is a model of a train
 ![images](/images/mctf/geohash4.png)
 
 # Hardware
 ## Display ception
 ![images](/images/mctf/hardware.png)
+
+In the source, they gave us a SAL file. After googling, I knew that we could work on .sal files directly with **Logic 2 Software**.
+
+Installing it and opening the file, we saw this:
+![images](/images/mctf/hardware2.png)
+
+Channels 0,1,2 have almost no data (tiny files), while 3–7 have a lot more transitions. So I ignore 0–2 and only focus on 3,4,5,6,7. After evaluating these channel, I rename them: (D3, D4, D5, D6, D7) = (CLK, DATA, CLK, DATA, ENB)
+![images](/images/mctf/hardware3.png)
+
+![images](/images/mctf/hardware4.png)
+
+The challenge told that: `the message becomes readable only after removing the common elements from the two displayed data sets`. In terms of the capture, that typically means when XOR-ing two patterns (keep bits that differ, drop those that are the same), we get readable text. In common cases, it’s a serial protocol, so I assume it's SPI and set 2 datasets to XOR.
+
+### SPI protocol
+We will export data to CSV for future analysis.
+
+Dataset A: I use set (MOSI, Clock, Enable) = (D6, D5, D7)
+![images](/images/mctf/hardware5.png)
+
+Dataset B: I use set (MOSI, Clock) = (D4, D3)
+![images](/images/mctf/hardware6.png)

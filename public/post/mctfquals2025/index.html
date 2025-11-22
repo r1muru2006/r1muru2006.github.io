@@ -50,7 +50,7 @@
   />
   <meta property="article:author" content="r1muru" />
   <meta property="article:published_time" content="2025-11-21T22:19:58&#43;07:00" />
-  <meta property="article:modified_time" content="2025-11-21T22:19:58&#43;07:00" /><meta property="article:tag" content="CTFCryptographyResearch" /><meta name="twitter:card" content="summary" />
+  <meta property="article:modified_time" content="2025-11-21T22:19:58&#43;07:00" /><meta property="article:tag" content="CTFHardwareOsint" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/images/mctf/mctf.png" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.css" />
 <link
@@ -153,7 +153,11 @@ This article does not have a corresponding language version
   </ul>
 
   <ul>
-    <li><a href="#display-ception">Display ception</a></li>
+    <li><a href="#display-ception">Display ception</a>
+      <ul>
+        <li><a href="#spi-protocol">SPI protocol</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div></div>
@@ -179,7 +183,7 @@ This article does not have a corresponding language version
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>Tags</div>
-    <div class="sidebar-state-number">7</div>
+    <div class="sidebar-state-number">8</div>
   </a>
 </div>
 <div class="sidebar-social"><div class="icon-discord sidebar-social-icon">
@@ -276,9 +280,9 @@ This article does not have a corresponding language version
   </span></div>
 <div class="article-category"><a
       class="article-category-link"
-      href="/categories/learning"
+      href="/categories/ctf-write-up"
       data-aos="zoom-in"
-      >LEARNING</a
+      >CTF WRITE-UP</a
     ></div>
 </div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="welcome">
 <a class="header-anchor" href="#welcome"></a>
@@ -366,7 +370,7 @@ In short, we need to find a great train that has some history, then it can becom
 <p>Woww you have such sharp eyes, it&rsquo;s right here:
 <img src="/images/mctf/geohash3.png" alt="images"></p>
 <p><strong>Flag:</strong><code>mctf{ucfwszjc}</code></p>
-<p>Outside knowledge: The name of monument - ЭР21-7109 is a model of a train
+<p>Outside knowledge: The name of monument (ЭР2T-7109) is a model of a train
 <img src="/images/mctf/geohash4.png" alt="images"></p>
 <h1 id="hardware">
 <a class="header-anchor" href="#hardware"></a>
@@ -375,6 +379,21 @@ Hardware
 <a class="header-anchor" href="#display-ception"></a>
 Display ception
 </h2><p><img src="/images/mctf/hardware.png" alt="images"></p>
+<p>In the source, they gave us a SAL file. After googling, I knew that we could work on .sal files directly with <strong>Logic 2 Software</strong>.</p>
+<p>Installing it and opening the file, we saw this:
+<img src="/images/mctf/hardware2.png" alt="images"></p>
+<p>Channels 0,1,2 have almost no data (tiny files), while 3–7 have a lot more transitions. So I ignore 0–2 and only focus on 3,4,5,6,7. After evaluating these channel, I rename them: (D3, D4, D5, D6, D7) = (CLK, DATA, CLK, DATA, ENB)
+<img src="/images/mctf/hardware3.png" alt="images"></p>
+<p><img src="/images/mctf/hardware4.png" alt="images"></p>
+<p>The challenge told that: <code>the message becomes readable only after removing the common elements from the two displayed data sets</code>. In terms of the capture, that typically means when XOR-ing two patterns (keep bits that differ, drop those that are the same), we get readable text. In common cases, it’s a serial protocol, so I assume it&rsquo;s SPI and set 2 datasets to XOR.</p>
+<h3 id="spi-protocol">
+<a class="header-anchor" href="#spi-protocol"></a>
+SPI protocol
+</h3><p>We will export data to CSV for future analysis.</p>
+<p>Dataset A: I use set (MOSI, Clock, Enable) = (D6, D5, D7)
+<img src="/images/mctf/hardware5.png" alt="images"></p>
+<p>Dataset B: I use set (MOSI, Clock) = (D4, D3)
+<img src="/images/mctf/hardware6.png" alt="images"></p>
 </div>
     <footer class="article-footer"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
       <a
@@ -386,16 +405,16 @@ Display ception
     </li><li class="article-tag-list-item" data-aos="zoom-in">
       <a
         class="article-tag-list-link"
-        href="/tags/cryptography"
+        href="/tags/hardware"
         rel="tag"
-        >CRYPTOGRAPHY</a
+        >HARDWARE</a
       >
     </li><li class="article-tag-list-item" data-aos="zoom-in">
       <a
         class="article-tag-list-link"
-        href="/tags/research"
+        href="/tags/osint"
         rel="tag"
-        >RESEARCH</a
+        >OSINT</a
       >
     </li></ul>
 </footer>
@@ -437,7 +456,7 @@ Display ception
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;24.4k</span
+          >&nbsp;24.6k</span
         >
         &nbsp;|&nbsp;
         <span class="icon-coffee">&nbsp;02:00</span>
@@ -476,7 +495,11 @@ Display ception
   </ul>
 
   <ul>
-    <li><a href="#display-ception">Display ception</a></li>
+    <li><a href="#display-ception">Display ception</a>
+      <ul>
+        <li><a href="#spi-protocol">SPI protocol</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div></div>
@@ -502,7 +525,7 @@ Display ception
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>Tags</div>
-    <div class="sidebar-state-number">7</div>
+    <div class="sidebar-state-number">8</div>
   </a>
 </div>
 <div class="sidebar-social"><div class="icon-discord sidebar-social-icon">
