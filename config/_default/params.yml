@@ -616,37 +616,30 @@ player:
   # if you enable meting, you must enable aplayer first
   aplayer:
     # https://github.com/DIYgod/APlayer
-    enable: false
+    enable: true
     options:
-      fixed: false
-      autoplay: false
-      loop:
-      order: list
-      preload: auto
-      volume: 0.7
-      mutex:
-      listFolded: false
-      lrcType:
-
-      # --- PHẦN QUAN TRỌNG: KHAI BÁO DANH SÁCH NHẠC ---
       audio:
-        # Bài số 1
         - name: "Nắng Ấm Trong Tim"
           artist: "Dadeon, Duongg"
-          # Đường dẫn tính từ thư mục static (nhớ có dấu / ở đầu)
           url: "/music/Nangamtrongtim_remix.mp3"
           cover: "/images/music/nangamtrongtim.png"
-          # lrc: "/music/loi-bai-hat.lrc" # (Tùy chọn: nếu có file lời bài hát)
 
-        # Bài số 2
         - name: "Ngày Này Năm Ấy"
           artist: "Việt Anh"
           url: "/music/Ngaynaynamay_remix.mp3"
           cover: "/images/music/ngaynaynamay.png"
+      fixed: false
+      autoplay: false
+      loop: all
+      order: list
+      preload: auto
+      volume: 0.7
+      listFolded: false
+
   meting:
     # https://github.com/metowolf/MetingJS
     # if you want to use meting, please enable aplayer first
-    enable: true
+    enable: false
     meting_api: # custom api
     options:
       id: 2265921590
