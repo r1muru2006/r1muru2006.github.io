@@ -631,18 +631,18 @@ player:
       # --- PHẦN QUAN TRỌNG: KHAI BÁO DANH SÁCH NHẠC ---
       audio:
         # Bài số 1
-        - name: "Tên Bài Hát 1"
-          artist: "Ca sĩ A"
+        - name: "Nắng Ấm Trong Tim"
+          artist: "Dadeon, Duongg"
           # Đường dẫn tính từ thư mục static (nhớ có dấu / ở đầu)
-          url: "/music/bai-hat-1.mp3"
-          cover: "/images/cover-1.jpg"
+          url: "/music/Nangamtrongtim_remix.mp3"
+          cover: "/images/music/nangamtrongtim.png"
           # lrc: "/music/loi-bai-hat.lrc" # (Tùy chọn: nếu có file lời bài hát)
 
         # Bài số 2
-        - name: "Tên Bài Hát 2"
-          artist: "Ca sĩ B"
-          url: "/music/bai-hat-2.mp3"
-          cover: "/images/cover-2.jpg"
+        - name: "Ngày Này Năm Ấy"
+          artist: "Việt Anh"
+          url: "/music/Ngaynaynamay_remix.mp3"
+          cover: "/images/music/ngaynaynamay.png"
   meting:
     # https://github.com/metowolf/MetingJS
     # if you want to use meting, please enable aplayer first
