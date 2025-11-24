@@ -620,7 +620,7 @@ player:
     options:
       fixed: false
       autoplay: false
-      loop: all
+      loop:
       order: list
       preload: auto
       volume: 0.7
