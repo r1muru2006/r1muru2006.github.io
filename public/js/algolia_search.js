@@ -1,1 +1,140 @@
-(()=>{var u=()=>{let t=ALGOLIA_CONFIG.algolia;if(!(t.applicationID&&t.apiKey&&t.indexName)){console.error("Algolia Settings are invalid.");return}if(!window.instantsearch){console.error("Algolia InstantSearch is not loaded.");return}let o=instantsearch({indexName:t.indexName,searchClient:algoliasearch(t.applicationID,t.apiKey),searchFunction:e=>{_$("#reimu-search-input input").value&&e.search()}});[instantsearch.widgets.configure({hitsPerPage:t.hits.per_page||10}),instantsearch.widgets.searchBox({container:"#reimu-search-input",placeholder:t.labels.input_placeholder,showReset:!1,showSubmit:!1,showLoadingIndicator:!1}),instantsearch.widgets.hits({container:"#reimu-hits",templates:{item:e=>{let i=e.title,s=e._highlightResult?.title?.value;return!i&&e.type&&(e.type==="content"&&e.content?(i=e.content,s=e._highlightResult?.content?.value):e.type.startsWith("lvl")&&e.hierarchy&&(i=Object.values(e.hierarchy).join(" > "),s=Object.values(e._highlightResult?.hierarchy||{}).map(a=>a?.value).filter(Boolean).join(" > "))),'<a href="'+(e.permalink??e.url)+'" class="reimu-hit-item-link" title="'+(i||"")+'">'+s+"</a>"},empty:e=>'<div id="reimu-hits-empty">'+t.labels.hits_empty.replace(/\$\{query}/,e.query)+"</div>"},cssClasses:{item:"reimu-hit-item"}}),instantsearch.widgets.stats({container:"#reimu-stats",templates:{text:e=>t.labels.hits_stats.replace(/\$\{hits}/,e.nbHits).replace(/\$\{time}/,e.processingTimeMS)+'<span class="reimu-powered">  <img src="'+ALGOLIA_CONFIG.logo+'" alt="Algolia" /></span><hr />'}}),instantsearch.widgets.pagination({container:"#reimu-pagination",scrollTo:!1,showFirst:!1,showLast:!1,cssClasses:{list:"pagination",item:"pagination-item",link:"page-number",selectedItem:"current",disabledItem:"disabled-item"}})].forEach(o.addWidget,o),o.start(),_$(".popup-trigger")?.off("click").on("click",e=>{e.stopPropagation();let i=window.innerWidth-document.documentElement.offsetWidth;_$("#container").style.marginRight=i+"px",_$("#header-nav").style.marginRight=i+"px";let s=_$(".popup");s.classList.add("show"),_$("#mask").classList.remove("hide"),document.body.style.overflow="hidden",setTimeout(()=>{_$("#reimu-search-input input")?.focus()},100);let a=n=>{let l=s.querySelectorAll("input, [href]"),c=l[0],h=l[l.length-1];n.key==="Escape"?r():n.key==="Tab"&&l.length&&(n.shiftKey&&document.activeElement===c?(n.preventDefault(),h?.focus()):!n.shiftKey&&document.activeElement===h&&(n.preventDefault(),c?.focus()))};document.addEventListener("keydown",a);function r(){s.classList.remove("show"),_$("#mask").classList.add("hide"),_$("#container").style.marginRight="",_$("#header-nav").style.marginRight="",document.body.style.overflow="",document.removeEventListener("keydown",a),_$("#nav-search-btn")?.focus()}s.__closePopup=r}),_$(".popup-btn-close")?.off("click").on("click",()=>{_$(".popup").__closePopup?.()})};document.readyState!=="loading"?u():document.addEventListener("DOMContentLoaded",u);})();
+(() => {
+  // <stdin>
+  var algoliaHandler = () => {
+    const algoliaSettings = ALGOLIA_CONFIG.algolia;
+    const isAlgoliaSettingsValid = algoliaSettings.applicationID && algoliaSettings.apiKey && algoliaSettings.indexName;
+    if (!isAlgoliaSettingsValid) {
+      console.error("Algolia Settings are invalid.");
+      return;
+    }
+    if (!window.instantsearch) {
+      console.error("Algolia InstantSearch is not loaded.");
+      return;
+    }
+    const search = instantsearch({
+      indexName: algoliaSettings.indexName,
+      searchClient: algoliasearch(
+        algoliaSettings.applicationID,
+        algoliaSettings.apiKey
+      ),
+      searchFunction: (helper) => {
+        if (_$("#reimu-search-input input").value) {
+          helper.search();
+        }
+      }
+    });
+    [
+      instantsearch.widgets.configure({
+        hitsPerPage: algoliaSettings.hits.per_page || 10
+      }),
+      instantsearch.widgets.searchBox({
+        container: "#reimu-search-input",
+        placeholder: algoliaSettings.labels.input_placeholder,
+        showReset: false,
+        showSubmit: false,
+        showLoadingIndicator: false
+      }),
+      instantsearch.widgets.hits({
+        container: "#reimu-hits",
+        templates: {
+          item: (data) => {
+            let title = data.title;
+            let highlightTitle = data._highlightResult?.title?.value;
+            if (!title && data.type) {
+              if (data.type === "content" && data.content) {
+                title = data.content;
+                highlightTitle = data._highlightResult?.content?.value;
+              } else if (data.type.startsWith("lvl") && data.hierarchy) {
+                title = Object.values(data.hierarchy).join(" > ");
+                highlightTitle = Object.values(
+                  data._highlightResult?.hierarchy || {}
+                ).map((v) => v?.value).filter(Boolean).join(" > ");
+              }
+            }
+            return '<a href="' + (data.permalink ?? data.url) + '" class="reimu-hit-item-link" title="' + (title || "") + '">' + highlightTitle + "</a>";
+          },
+          empty: (data) => {
+            return '<div id="reimu-hits-empty">' + algoliaSettings.labels.hits_empty.replace(
+              /\$\{query}/,
+              data.query
+            ) + "</div>";
+          }
+        },
+        cssClasses: {
+          item: "reimu-hit-item"
+        }
+      }),
+      instantsearch.widgets.stats({
+        container: "#reimu-stats",
+        templates: {
+          text: (data) => {
+            const stats = algoliaSettings.labels.hits_stats.replace(/\$\{hits}/, data.nbHits).replace(/\$\{time}/, data.processingTimeMS);
+            return stats + '<span class="reimu-powered">  <img src="' + ALGOLIA_CONFIG.logo + '" alt="Algolia" /></span><hr />';
+          }
+        }
+      }),
+      instantsearch.widgets.pagination({
+        container: "#reimu-pagination",
+        scrollTo: false,
+        showFirst: false,
+        showLast: false,
+        cssClasses: {
+          list: "pagination",
+          item: "pagination-item",
+          link: "page-number",
+          selectedItem: "current",
+          disabledItem: "disabled-item"
+        }
+      })
+    ].forEach(search.addWidget, search);
+    search.start();
+    _$(".popup-trigger")?.off("click").on("click", (event) => {
+      event.stopPropagation();
+      const scrollWidth = window.innerWidth - document.documentElement.offsetWidth;
+      _$("#container").style.marginRight = scrollWidth + "px";
+      _$("#header-nav").style.marginRight = scrollWidth + "px";
+      const popup = _$(".popup");
+      popup.classList.add("show");
+      _$("#mask").classList.remove("hide");
+      document.body.style.overflow = "hidden";
+      setTimeout(() => {
+        _$("#reimu-search-input input")?.focus();
+      }, 100);
+      const keydownHandler = (e) => {
+        const focusables = popup.querySelectorAll("input, [href]");
+        const firstFocusable = focusables[0];
+        const lastFocusable = focusables[focusables.length - 1];
+        if (e.key === "Escape") {
+          closePopup();
+        } else if (e.key === "Tab" && focusables.length) {
+          if (e.shiftKey && document.activeElement === firstFocusable) {
+            e.preventDefault();
+            lastFocusable?.focus();
+          } else if (!e.shiftKey && document.activeElement === lastFocusable) {
+            e.preventDefault();
+            firstFocusable?.focus();
+          }
+        }
+      };
+      document.addEventListener("keydown", keydownHandler);
+      function closePopup() {
+        popup.classList.remove("show");
+        _$("#mask").classList.add("hide");
+        _$("#container").style.marginRight = "";
+        _$("#header-nav").style.marginRight = "";
+        document.body.style.overflow = "";
+        document.removeEventListener("keydown", keydownHandler);
+        _$("#nav-search-btn")?.focus();
+      }
+      popup.__closePopup = closePopup;
+    });
+    _$(".popup-btn-close")?.off("click").on("click", () => {
+      _$(".popup").__closePopup?.();
+    });
+  };
+  if (document.readyState !== "loading") {
+    algoliaHandler();
+  } else {
+    document.addEventListener("DOMContentLoaded", algoliaHandler);
+  }
+})();

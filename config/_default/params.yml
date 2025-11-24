@@ -7,13 +7,13 @@
 menu:
   - name: home
     url: ""
-    icon: # default use taichi icon, you can use a hexadecimal representation of fontawesome or icon_font, like 'f0c1'
+    icon: "f015"
   - name: archives
     url: "archives"
-    icon:
+    icon: "f187"
   - name: about
     url: "about"
-    icon:
+    icon: "f007"
 
 mainSections: ["post"]
 # 年，月，日及时间的格式化样式
@@ -188,11 +188,11 @@ anchor_icon: # default use '#' icon, you can use a hexadecimal representation of
 reimu_cursor:
   enable: true
   cursor:
-    default: ../images/cursor/reimu-cursor-default.png  # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
-    pointer: ../images/cursor/reimu-cursor-pointer.png
-    text: ../images/cursor/reimu-cursor-text.png
+    default: ../cursor/default.png  # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
+    pointer: ../cursor/pointer.png
+    text: ../cursor/text.png
 
-icon_font: 4552607_4k4bc36ef96
+icon_font: false
 
 # Font loading strategy
 # Custom Font -> Google Fonts -> Local FallBack Font
@@ -472,7 +472,7 @@ firework:
 
 # show the copyright below each article
 article_copyright:
-  enable: false
+  enable: true
   content:
     author: true
     link: true
@@ -506,9 +506,9 @@ top:
   enable: true
   position: right # left or right
   icon:
-    url: "../images/taichi.png" # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
+    url: "../images/rimuru.png" # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
     rotate: true
-    mask: true # whether to use the images as a mask
+    mask: false # whether to use the images as a mask
 
 # whether to display the notification when the article is outdated
 outdate:
@@ -575,7 +575,7 @@ home_categories:
 
 # Experimental, may have a lot of bugs, open with caution!
 pjax:
-  enable: false
+  enable: true
 
 # Experimental
 # https://github.com/GoogleChromeLabs/quicklink
@@ -616,18 +616,33 @@ player:
   # if you enable meting, you must enable aplayer first
   aplayer:
     # https://github.com/DIYgod/APlayer
-    enable: false
+    enable: true
     options:
-      audio: []
-      fixed: true
-      autoplay:
-      loop:
-      order:
-      preload:
-      volume:
+      fixed: false
+      autoplay: false
+      loop: all
+      order: list
+      preload: auto
+      volume: 0.7
       mutex:
-      listFolded:
+      listFolded: false
       lrcType:
+
+      # --- PHẦN QUAN TRỌNG: KHAI BÁO DANH SÁCH NHẠC ---
+      audio:
+        # Bài số 1
+        - name: "Tên Bài Hát 1"
+          artist: "Ca sĩ A"
+          # Đường dẫn tính từ thư mục static (nhớ có dấu / ở đầu)
+          url: "/music/bai-hat-1.mp3"
+          cover: "/images/cover-1.jpg"
+          # lrc: "/music/loi-bai-hat.lrc" # (Tùy chọn: nếu có file lời bài hát)
+
+        # Bài số 2
+        - name: "Tên Bài Hát 2"
+          artist: "Ca sĩ B"
+          url: "/music/bai-hat-2.mp3"
+          cover: "/images/cover-2.jpg"
   meting:
     # https://github.com/metowolf/MetingJS
     # if you want to use meting, please enable aplayer first
@@ -661,16 +676,16 @@ material_theme:
 
 internal_theme:
   light:
-    --red-0: '#ff0000'
-    --red-1: '#ff5252'
-    --red-2: '#ff7c7c'
-    --red-3: '#ffafaf'
-    --red-4: '#ffd0d0'
-    --red-5: '#ffecec'
-    --red-5-5: '#fff3f3'
-    --red-6: '#fff7f7'
-    --color-red-6-shadow: 'rgba(255, 78, 78, 0.6)'
-    --color-red-3-shadow: 'rgba(255, 78, 78, 0.3)'
+    --red-0: '#007BFF'
+    --red-1: '#3395FF'
+    --red-2: '#66B0FF'
+    --red-3: '#99CAFF'
+    --red-4: '#CCE5FF'
+    --red-5: '#E6F2FF'
+    --red-5-5: '#F0F8FF'
+    --red-6: '#F5FAFF'
+    --color-red-6-shadow: 'rgba(0, 123, 255, 0.6)'
+    --color-red-3-shadow: 'rgba(0, 123, 255, 0.3)'
 
     --highlight-nav: "#f5f5f5"
     --highlight-scrollbar: "#d6d6d6"
