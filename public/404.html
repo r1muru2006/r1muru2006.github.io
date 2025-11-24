@@ -234,32 +234,23 @@ data-theme-mode="auto"
 </script><script
     src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js"
     integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr&#43;h5UfruuRL/aORyw&#43;5&#43;HZoU6e" crossorigin="anonymous"></script><script>
-      if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
-        if (window.matchMedia('(max-width: 959px)').matches) {
-        const aplayer = _$('#aplayer');
-          if (aplayer) {
-            const aside = aplayer.parentNode?.parentNode;
-            if (aside?.tagName === 'ASIDE') {
-              aplayer.removeAttribute('data-aos');
-              aside.parentNode.removeChild(aplayer);
-              document.body.appendChild(aplayer);
-            }
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.matchMedia('(max-width: 959px)').matches) {
+        const meting = _$('meting-js');
+        if (meting) {
+          meting.setAttribute('fixed', 'true');
+          const aside = meting.parentNode?.parentNode;
+          if (aside?.tagName === 'ASIDE') {
+            meting.parentNode.removeChild(meting);
+            document.body.appendChild(meting);
           }
         }
-        const ap = new APlayer({
-            theme: "var(--color-link)",
-            container: document.getElementById('aplayer'),
-            audio: JSON.parse("[{\"artist\":\"Dadeon, Duongg\",\"cover\":\"/images/music/nangamtrongtim.png\",\"name\":\"Nắng Ấm Trong Tim\",\"url\":\"/music/Nangamtrongtim_remix.mp3\"},{\"artist\":\"Việt Anh\",\"cover\":\"/images/music/ngaynaynamay.png\",\"name\":\"Ngày Này Năm Ấy\",\"url\":\"/music/Ngaynaynamay_remix.mp3\"}]") || [],
-            fixed: isMobile ? true : ( false  || false),
-            autoplay:  false  || false,
-            loop: 'all' || 'all',
-            order: 'list' || 'list',
-            preload: 'auto' || 'auto',
-            volume:  0.7  || 0.7,
-            mutex:  null  || true,
-            listFolded:  false  || false,
-            lrcType:  null  || 0,
-        });
       }
-    </script></body>
+      const script = document.createElement('script');
+      script.src = "https:\/\/npm.webcache.cn\/meting@2.0.1\/dist\/Meting.min.js";
+      script.integrity = "sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8\u002b0maanw1S\/IyB\u002bY4JG\u002bZDU7GpKE8";
+      script.crossOrigin = "anonymous";
+      document.body.appendChild(script);
+    }
+  </script></body>
 </html>

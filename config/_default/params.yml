@@ -618,16 +618,7 @@ player:
     # https://github.com/DIYgod/APlayer
     enable: true
     options:
-      audio:
-        - name: "Nắng Ấm Trong Tim"
-          artist: "Dadeon, Duongg"
-          url: "/music/Nangamtrongtim_remix.mp3"
-          cover: "/images/music/nangamtrongtim.png"
-
-        - name: "Ngày Này Năm Ấy"
-          artist: "Việt Anh"
-          url: "/music/Ngaynaynamay_remix.mp3"
-          cover: "/images/music/ngaynaynamay.png"
+      audio: []
       fixed: false
       autoplay: false
       loop: all
@@ -639,10 +630,10 @@ player:
   meting:
     # https://github.com/metowolf/MetingJS
     # if you want to use meting, please enable aplayer first
-    enable: false
+    enable: true
     meting_api: # custom api
     options:
-      id: 2265921590
+      id: 8668604226
       server: netease
       type: playlist
       auto:
