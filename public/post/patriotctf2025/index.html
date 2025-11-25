@@ -474,15 +474,18 @@ Matrix Reconstruction
 </span></span><span class="line"><span class="cl">Recover A from consecutive states.
 </span></span><span class="line"><span class="cl">Then decrypt.
 </span></span></code></pre></div><p>From the <code>keystream_leak.txt</code> file we have 40 consecutive 32-bit states $S_0, S_1, \dots, S_{39}$</p>
-<p>With the model:
-</p>
+<ul>
+<li>With the model:
 $$
 S_{n+1} = AS_n \oplus B \ \  (\texttt{over} \ \ \mathbb{GF}(2))
-$$<p>each pair $(S_n, S_{n+1})$ gives us 32 linear equations on 1056 unknowns (1024 bits of matrix $A$ and 32 bits of $B$). Collect 39 pairs to get 1248 equations, enough to solve the system and get $A$, $B$.</p>
-<p>Check $A, B$ again by regenerating $S_{n+1}$ from $S_n$ and look if it matches the entire leak sequence.</p>
-<p>Viewing keystream: each keystream byte corresponds to the 8 lowest bits (LSB) of the corresponding state: </p>
-$$K_n = S_n \mathbin{\&} \texttt{0xFF}$$<p>
-and ciphertext byte $n$ uses $K_n$, so we can easily decode it: $P_n = C_n \oplus K_n$ for 35 bytes of the <code>cipher.txt</code>.</p>
+$$</li>
+</ul>
+<p>each pair $(S_n, S_{n+1})$ gives us 32 linear equations on 1056 unknowns (1024 bits of matrix $A$ and 32 bits of $B$). Collect 39 pairs to get 1248 equations, enough to solve the system and get $A$, $B$.</p>
+<ul>
+<li>Check $A, B$ again by regenerating $S_{n+1}$ from $S_n$ and look if it matches the entire leak sequence.</li>
+<li>Viewing keystream: each keystream byte corresponds to the 8 lowest bits (LSB) of the corresponding state: $$K_n = S_n \mathbin{\&} \texttt{0xFF}$$
+and ciphertext byte $n$ uses $K_n$, so we can easily decode it: $P_n = C_n \oplus K_n$ for 35 bytes of the <code>cipher.txt</code>.</li>
+</ul>
 <p>Here is the script:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">KEYSTREAM_FILE</span> <span class="o">=</span> <span class="s2">&#34;keystream_leak.txt&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="n">CIPHER_FILE</span> <span class="o">=</span> <span class="s2">&#34;cipher.txt&#34;</span>

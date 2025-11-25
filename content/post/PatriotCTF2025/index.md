@@ -221,16 +221,15 @@ Then decrypt.
 
 From the `keystream_leak.txt` file we have 40 consecutive 32-bit states $S_0, S_1, \dots, S_{39}$
 
-With the model:
+- With the model:
 $$
 S_{n+1} = AS_n \oplus B \ \  (\texttt{over} \ \ \mathbb{GF}(2))
 $$
 
 each pair $(S_n, S_{n+1})$ gives us 32 linear equations on 1056 unknowns (1024 bits of matrix $A$ and 32 bits of $B$). Collect 39 pairs to get 1248 equations, enough to solve the system and get $A$, $B$.
 
-Check $A, B$ again by regenerating $S_{n+1}$ from $S_n$ and look if it matches the entire leak sequence.
-
-Viewing keystream: each keystream byte corresponds to the 8 lowest bits (LSB) of the corresponding state: $$K_n = S_n \mathbin{\&} \texttt{0xFF}$$
+- Check $A, B$ again by regenerating $S_{n+1}$ from $S_n$ and look if it matches the entire leak sequence.
+- Viewing keystream: each keystream byte corresponds to the 8 lowest bits (LSB) of the corresponding state: $$K_n = S_n \mathbin{\&} \texttt{0xFF}$$
 and ciphertext byte $n$ uses $K_n$, so we can easily decode it: $P_n = C_n \oplus K_n$ for 35 bytes of the `cipher.txt`.
 
 Here is the script:
