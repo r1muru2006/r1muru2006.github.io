@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>r1muru&#39;s blog</title>
-    <link>https://r1muru2006.github.io/post/</link>
+    <link>http://localhost:1313/post/</link>
     <description>Recent content from r1muru&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Mon, 24 Nov 2025 21:40:43 +0700</lastBuildDate>
     
     
-    <atom:link href="https://r1muru2006.github.io/post/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>Patriot CTF 2025</title>
-      <link>https://r1muru2006.github.io/post/patriotctf2025/</link>
+      <link>http://localhost:1313/post/patriotctf2025/</link>
       <pubDate>Mon, 24 Nov 2025 21:40:43 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/patriotctf2025/</guid>
+      <guid>http://localhost:1313/post/patriotctf2025/</guid>
       <description>
         <![CDATA[<h1>Patriot CTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -46,7 +46,7 @@ Where&rsquo;s Legally Distinct Waldo One
 <p>In the picture, I noticed an area with a similar patterned tile floor to the challenge in the lower right corner of the photo at the George Mason Statue. When I scanned this street, I saw a corner with the same pattern and the building name <code>Horizon Hall</code> had the same view.
 <img src="/images/patriot/osint1_4.png" alt="images"></p>
         
-        <hr><p>Published on 2025-11-24 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-11-24</p>]]>
+        <hr><p>Published on 2025-11-24 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-11-24</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -57,10 +57,10 @@ Where&rsquo;s Legally Distinct Waldo One
 
     <item>
       <title>M*CTF Quals 2025</title>
-      <link>https://r1muru2006.github.io/post/mctfquals2025/</link>
+      <link>http://localhost:1313/post/mctfquals2025/</link>
       <pubDate>Fri, 21 Nov 2025 22:19:58 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/mctfquals2025/</guid>
+      <guid>http://localhost:1313/post/mctfquals2025/</guid>
       <description>
         <![CDATA[<h1>M*CTF Quals 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -93,7 +93,7 @@ CRCL35
 </span></span><span class="line"><span class="cl"><span class="s2">&#34;No, it&#39;s all 0. Don&#39;t confuse it and don&#39;t forget the difference, otherwise, during the transformation, you&#39;ll end up in the wrong place.&#34;</span>
 </span></span></code></pre></div><p>In the description, I noticed the word &ldquo;difference&rdquo; so I quickly tested this method by python and it worked.</p>
         
-        <hr><p>Published on 2025-11-21 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-11-21</p>]]>
+        <hr><p>Published on 2025-11-21 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-11-21</p>]]>
       </description>
       
         <category>CTF Write-Up</category>
@@ -104,10 +104,10 @@ CRCL35
 
     <item>
       <title>Crack Random Modules</title>
-      <link>https://r1muru2006.github.io/post/crackrandommodule/</link>
+      <link>http://localhost:1313/post/crackrandommodule/</link>
       <pubDate>Mon, 15 Sep 2025 20:31:17 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/crackrandommodule/</guid>
+      <guid>http://localhost:1313/post/crackrandommodule/</guid>
       <description>
         <![CDATA[<h1>Crack Random Modules</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -162,7 +162,7 @@ Mersenne Twister
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Nếu <code>index &gt;= N (= 624)</code>, nghĩa là đã dùng hết số trong mảng <code>mt[]</code> và do đó phải tạo lại 624 số tiếp theo. Mảng <code>mt[]</code> được thay đổi bằng quá trình sau:</p>
         
-        <hr><p>Published on 2025-09-15 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-15</p>]]>
+        <hr><p>Published on 2025-09-15 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-09-15</p>]]>
       </description>
       
         <category>Learning</category>
@@ -173,10 +173,10 @@ Mersenne Twister
 
     <item>
       <title>ImaginaryCTF 2025</title>
-      <link>https://r1muru2006.github.io/post/imaginaryctf2025/</link>
+      <link>http://localhost:1313/post/imaginaryctf2025/</link>
       <pubDate>Sun, 14 Sep 2025 14:17:02 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/imaginaryctf2025/</guid>
+      <guid>http://localhost:1313/post/imaginaryctf2025/</guid>
       <description>
         <![CDATA[<h1>ImaginaryCTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -235,7 +235,7 @@ leaky-rsa
 Phân tích và lời giải
 </h3><p>Nhìn sơ qua thì đây là một bài ứng dụng thuật AES-RSA</p>
         
-        <hr><p>Published on 2025-09-14 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-14</p>]]>
+        <hr><p>Published on 2025-09-14 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-09-14</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -246,10 +246,10 @@ Phân tích và lời giải
 
     <item>
       <title>HOLACTF 2025</title>
-      <link>https://r1muru2006.github.io/post/holactf2025/</link>
+      <link>http://localhost:1313/post/holactf2025/</link>
       <pubDate>Tue, 09 Sep 2025 08:42:30 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/holactf2025/</guid>
+      <guid>http://localhost:1313/post/holactf2025/</guid>
       <description>
         <![CDATA[<h1>HOLACTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -310,7 +310,7 @@ Crypto
 <img src="https://hackmd.io/_uploads/SkGCc4-cge.png" alt="image">
 <img src="https://hackmd.io/_uploads/r1OJoEW9lx.png" alt="image"></p>
         
-        <hr><p>Published on 2025-09-09 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-09</p>]]>
+        <hr><p>Published on 2025-09-09 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-09-09</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -321,10 +321,10 @@ Crypto
 
     <item>
       <title>NahamCon CTF 2025</title>
-      <link>https://r1muru2006.github.io/post/nahamconctf2025/</link>
+      <link>http://localhost:1313/post/nahamconctf2025/</link>
       <pubDate>Thu, 05 Jun 2025 08:19:28 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/nahamconctf2025/</guid>
+      <guid>http://localhost:1313/post/nahamconctf2025/</guid>
       <description>
         <![CDATA[<h1>NahamCon CTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -363,7 +363,7 @@ Crypto
 3. Naham Commencement2025
 </h2><p>Thử thách cho ta một đường dẫn vào 1 trang đăng nhập, có vẻ như mục đích là ta phải sử dụng đúng tài khoản để truy cập vào và lấy flag. Khi <code>f12</code>, thì ta có source sau:</p>
         
-        <hr><p>Published on 2025-06-05 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-06-05</p>]]>
+        <hr><p>Published on 2025-06-05 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-06-05</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -374,10 +374,10 @@ Crypto
 
     <item>
       <title>WannaGame Cyber Knight 2025</title>
-      <link>https://r1muru2006.github.io/post/wannagamecyberknight2025/</link>
+      <link>http://localhost:1313/post/wannagamecyberknight2025/</link>
       <pubDate>Fri, 16 May 2025 14:13:38 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/wannagamecyberknight2025/</guid>
+      <guid>http://localhost:1313/post/wannagamecyberknight2025/</guid>
       <description>
         <![CDATA[<h1>WannaGame Cyber Knight 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -666,7 +666,7 @@ Choose!
 </span></span></code></pre></div><blockquote>
 <p>Bài này đơn giản là về phần mã hóa AES (<a href="https://vi.wikipedia.org/wiki/Advanced_Encryption_Standard">Advanced Encryption Standard</a>) và mình có xem lại cấu trúc của nó tại wikipedia và <a href="https://hackmd.io/@r1muru/HJmSbUld1x#Bringing-It-All-Together">đây</a> để tiếp cận.</p>
         
-        <hr><p>Published on 2025-05-16 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-05-16</p>]]>
+        <hr><p>Published on 2025-05-16 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-05-16</p>]]>
       </description>
       
         <category>CTF Write-up</category><category>WannaGame</category>
@@ -677,10 +677,10 @@ Choose!
 
     <item>
       <title>WannaGame NMLT</title>
-      <link>https://r1muru2006.github.io/post/wannagamenmlt/</link>
+      <link>http://localhost:1313/post/wannagamenmlt/</link>
       <pubDate>Tue, 08 Apr 2025 10:07:31 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/wannagamenmlt/</guid>
+      <guid>http://localhost:1313/post/wannagamenmlt/</guid>
       <description>
         <![CDATA[<h1>WannaGame NMLT</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -728,7 +728,7 @@ Phân tích:
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">data</span><span class="p">)</span>
 </span></span></code></pre></div><p>Hàm <code>hehe</code> lấy <code>data</code> và chuyển đổi từng ký tự trong dữ liệu đó sang ký tự tương ứng bằng danh sách của <code>KEY</code>.</p>
         
-        <hr><p>Published on 2025-04-08 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-04-08</p>]]>
+        <hr><p>Published on 2025-04-08 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-04-08</p>]]>
       </description>
       
         <category>CTF Write-up</category><category>WannaGame</category>
@@ -739,10 +739,10 @@ Phân tích:
 
     <item>
       <title>DiceCTF 2025</title>
-      <link>https://r1muru2006.github.io/post/dicectf2025/</link>
+      <link>http://localhost:1313/post/dicectf2025/</link>
       <pubDate>Wed, 26 Mar 2025 09:31:43 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/dicectf2025/</guid>
+      <guid>http://localhost:1313/post/dicectf2025/</guid>
       <description>
         <![CDATA[<h1>DiceCTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -767,7 +767,7 @@ dicecap
 <p>Thử tìm theo từ khóa thì ta ra được 2 kênh khả nghi chứa flag theo protocol FTP-DATA.
 Export file ra thì ta được 1 file main theo định dạng ELF cùng 1 tệp zip cần mật khẩu mà trong đó chứa flag.txt có thể lấy flag.</p>
         
-        <hr><p>Published on 2025-03-26 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-03-26</p>]]>
+        <hr><p>Published on 2025-03-26 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-03-26</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -778,10 +778,10 @@ Export file ra thì ta được 1 file main theo định dạng ELF cùng 1 tệ
 
     <item>
       <title>picoCTF 2025</title>
-      <link>https://r1muru2006.github.io/post/picoctf2025/</link>
+      <link>http://localhost:1313/post/picoctf2025/</link>
       <pubDate>Sat, 22 Mar 2025 13:52:19 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/picoctf2025/</guid>
+      <guid>http://localhost:1313/post/picoctf2025/</guid>
       <description>
         <![CDATA[<h1>picoCTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -972,7 +972,7 @@ Crypto
 hashcrack
 </h3><p>Ở bài này mình dựa vào số bytes của hash và các tools online để tìm ra password, như là: <a href="https://10015.io/tools/md5-encrypt-decrypt">MD5</a>, <a href="https://10015.io/tools/sha1-encrypt-decrypt">SHA1</a>, <a href="https://10015.io/tools/sha256-encrypt-decrypt">SHA256</a></p>
         
-        <hr><p>Published on 2025-03-22 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-03-22</p>]]>
+        <hr><p>Published on 2025-03-22 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-03-22</p>]]>
       </description>
       
         <category>CTF Write-up</category>
