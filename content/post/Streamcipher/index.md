@@ -2,7 +2,7 @@
 title: "Is stream encryption secure?"
 description: "Today I will go over some stream ciphers and learn how they can be exploited by attackers."
 date: 2025-11-25T14:33:54+07:00
-cover: /images/patriot/patriot.png
+cover: /images/StreamCipher/background.png
 math: true
 license: 
 hidden: false
