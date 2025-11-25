@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>r1muru's blog</title><link>https://r1muru2006.github.io/algolia.json</link><description>Recent content from r1muru's blog</description><generator>Hugo</generator><language>en-us</language><managingEditor>cuongchu200@gmail.com (r1muru)</managingEditor><webMaster>cuongchu200@gmail.com (r1muru)</webMaster><copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright><lastBuildDate>Mon, 24 Nov 2025 21:40:43 +0700</lastBuildDate><atom:link href="https://r1muru2006.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Patriot CTF 2025</title><link>https://r1muru2006.github.io/post/patriotctf2025/</link><pubDate>Mon, 24 Nov 2025 21:40:43 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/patriotctf2025/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>r1muru's blog</title><link>https://r1muru2006.github.io/algolia.json</link><description>Recent content from r1muru's blog</description><generator>Hugo</generator><language>en-us</language><managingEditor>cuongchu200@gmail.com (r1muru)</managingEditor><webMaster>cuongchu200@gmail.com (r1muru)</webMaster><copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright><lastBuildDate>Tue, 25 Nov 2025 14:33:54 +0700</lastBuildDate><atom:link href="https://r1muru2006.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Is stream encryption secure?</title><link>https://r1muru2006.github.io/post/streamcipher/</link><pubDate>Tue, 25 Nov 2025 14:33:54 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/streamcipher/</guid><description>
+<![CDATA[<h1>Is stream encryption secure?</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
+        
+          <h1 id="chacha20-poly1305">
+<a class="header-anchor" href="#chacha20-poly1305"></a>
+Chacha20-Poly1305
+</h1><h2 id="algorithm">
+<a class="header-anchor" href="#algorithm"></a>
+Algorithm
+</h2><p>ChaCha20-Poly1305 architecture consists of two main components, the stream cipher ChaCha20 and the authentication mechanism Poly1305 by the same author D.J. Berstein.
+The ChaCha20 algorithm uses ChaCha20 block functions to generate the encryption keystream.
+<img src="/images/StreamCipher/encrypt.png" alt="images"></p>
+<p>The input of the ChaCha20 block function is a 4x4 word matrix described as in this figure:
+<img src="/images/StreamCipher/input.png" alt="images"></p>
+<p>More details in figure a are 128 bit constant <em>C</em> (4-word), 256 bit key <em>K</em> (8-word), 32 bit counter parameter <em>Ctr</em> (1 word), 96 bit nonce <em>N</em> (3 words). Then perform 20 loops alternatingly executing the column round transformations according to figure b and the diagonal round transformations according to figure c.</p>
+        
+        <hr><p>Published on 2025-11-25 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-11-25</p>]]></description><category>Learning</category></item><item><title>Patriot CTF 2025</title><link>https://r1muru2006.github.io/post/patriotctf2025/</link><pubDate>Mon, 24 Nov 2025 21:40:43 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/patriotctf2025/</guid><description>
 <![CDATA[<h1>Patriot CTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
           <h1 id="osint">
@@ -618,194 +634,4 @@ dicecap
 <p>Thử tìm theo từ khóa thì ta ra được 2 kênh khả nghi chứa flag theo protocol FTP-DATA.
 Export file ra thì ta được 1 file main theo định dạng ELF cùng 1 tệp zip cần mật khẩu mà trong đó chứa flag.txt có thể lấy flag.</p>
         
-        <hr><p>Published on 2025-03-26 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-03-26</p>]]></description><category>CTF Write-up</category></item><item><title>picoCTF 2025</title><link>https://r1muru2006.github.io/post/picoctf2025/</link><pubDate>Sat, 22 Mar 2025 13:52:19 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/picoctf2025/</guid><description>
-<![CDATA[<h1>picoCTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
-        
-          <blockquote>
-<p>Theo cá nhân mình thấy các challenge về crypto của giải phân hóa rõ ràng các mức độ khác nhau</p>
-</blockquote>
-<h2 id="general">
-<a class="header-anchor" href="#general"></a>
-General
-</h2><h3 id="fantasy-ctf">
-<a class="header-anchor" href="#fantasy-ctf"></a>
-FANTASY CTF
-</h3><p>Bài này mình nghĩ là chọn hướng nào cũng ra được vì đến cuối cùng sẽ đẩy ra flag :))</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">FANTASY</span> <span class="nx">CTF</span> <span class="nx">SIMULATION</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">The</span> <span class="nx">simulation</span> <span class="nx">begins</span> <span class="k">in</span> <span class="nx">the</span> <span class="kr">private</span> <span class="nx">room</span> <span class="k">of</span> <span class="nx">Eibhilin</span><span class="p">,</span> <span class="nx">a</span> <span class="nx">bright</span><span class="p">,</span> <span class="nx">young</span> <span class="nx">student</span><span class="p">.</span>
-</span></span><span class="line"><span class="cl"><span class="nx">The</span> <span class="nx">room</span> <span class="nx">is</span> <span class="nx">dimly</span> <span class="nx">lit</span><span class="p">,</span> <span class="kd">with</span> <span class="nx">the</span> <span class="nx">glow</span> <span class="k">of</span> <span class="nx">her</span> <span class="nx">multiple</span> <span class="nx">monitors</span> <span class="nx">casting</span> <span class="nx">an</span>
-</span></span><span class="line"><span class="cl"><span class="nx">electric</span> <span class="nx">blue</span> <span class="nx">hue</span> <span class="nx">on</span> <span class="nx">the</span> <span class="nx">walls</span><span class="p">.</span> <span class="nx">Around</span> <span class="nx">the</span> <span class="nx">room</span> <span class="nx">are</span> <span class="nx">posters</span> <span class="k">of</span> <span class="nx">vintage</span> <span class="nx">movies</span>
-</span></span><span class="line"><span class="cl"><span class="nx">from</span> <span class="nx">the</span> <span class="nx">MCU</span> <span class="err">—</span> <span class="nx">ancient</span> <span class="nx">guardians</span> <span class="nx">from</span> <span class="nx">another</span> <span class="nx">age</span> <span class="nx">staring</span> <span class="nx">down</span> <span class="nx">like</span> <span class="nx">digital</span>
-</span></span><span class="line"><span class="cl"><span class="nx">sentinels</span><span class="p">.</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">---</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">Press</span> <span class="nx">Enter</span> <span class="nx">to</span> <span class="k">continue</span><span class="p">...)</span>
-</span></span><span class="line"><span class="cl"><span class="o">---</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">Eibhilin</span> <span class="nx">stretches</span> <span class="nx">back</span> <span class="k">in</span> <span class="nx">her</span> <span class="nx">chair</span><span class="p">,</span> <span class="nx">adjusting</span> <span class="nx">the</span> <span class="nx">holo</span><span class="o">-</span><span class="nx">display</span> <span class="k">of</span> <span class="nx">her</span>
-</span></span><span class="line"><span class="cl"><span class="nx">keyboard</span><span class="p">.</span> <span class="nx">A</span> <span class="nx">soft</span> <span class="nx">hum</span> <span class="k">of</span> <span class="nx">a</span> <span class="nx">nearby</span> <span class="nx">server</span> <span class="nx">fills</span> <span class="nx">the</span> <span class="nx">air</span> <span class="nx">as</span> <span class="nx">her</span> <span class="nx">AI</span> <span class="nx">companion</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="sb">`Nyx`</span><span class="p">,</span> <span class="nx">comes</span> <span class="nx">to</span> <span class="nx">life</span><span class="p">.</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">---</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">Press</span> <span class="nx">Enter</span> <span class="nx">to</span> <span class="k">continue</span><span class="p">...)</span>
-</span></span><span class="line"><span class="cl"><span class="o">---</span>
-</span></span><span class="line"><span class="cl"><span class="s2">&#34;Good evening, Ei,&#34;</span> <span class="nx">Nyx</span> <span class="nx">chirps</span><span class="p">,</span> <span class="s2">&#34;The 3025 edition of picoCTF registration is
-</span></span></span><span class="line"><span class="cl"><span class="s2">open. You asked me to remind so you could try out the competition for the first
-</span></span></span><span class="line"><span class="cl"><span class="s2">time. Do you wish to proceed?&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">---</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">Press</span> <span class="nx">Enter</span> <span class="nx">to</span> <span class="k">continue</span><span class="p">...)</span>
-</span></span><span class="line"><span class="cl"><span class="o">---</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">Outside</span><span class="p">,</span> <span class="nx">the</span> <span class="nx">city</span> <span class="k">of</span> <span class="nx">Nexalus</span> <span class="nx">glimmers</span> <span class="nx">under</span> <span class="nx">the</span> <span class="nx">stars</span><span class="p">,</span> <span class="nx">but</span> <span class="nx">Eibhilin</span><span class="s1">&#39;s focus
-</span></span></span><span class="line"><span class="cl"><span class="s1">remains entirely on the screen in front of her.
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">---
-</span></span></span><span class="line"><span class="cl"><span class="s1">(Press Enter to continue...)
-</span></span></span><span class="line"><span class="cl"><span class="s1">---
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">&#34;Yes, Nyx. Let&#39;</span><span class="nx">s</span> <span class="k">do</span> <span class="nx">it</span><span class="o">!</span><span class="s2">&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">(Press Enter to continue...)
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">Nyx brings up the registration page.
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">Options:
-</span></span></span><span class="line"><span class="cl"><span class="s2">A) *Register multiple accounts*
-</span></span></span><span class="line"><span class="cl"><span class="s2">B) *Share an account with a friend*
-</span></span></span><span class="line"><span class="cl"><span class="s2">C) *Register a single, private account*
-</span></span></span><span class="line"><span class="cl"><span class="s2">[a/b/c] &gt; A
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">Nyx chimes in, &#34;</span><span class="nx">Eibhilin</span><span class="p">,</span> <span class="nx">don</span><span class="s1">&#39;t do that! That&#39;</span><span class="nx">s</span> <span class="nx">been</span> <span class="nx">grounds</span> <span class="k">for</span>
-</span></span><span class="line"><span class="cl"><span class="nx">disqualification</span> <span class="k">for</span> <span class="nx">the</span> <span class="nx">past</span> <span class="mi">1</span><span class="p">,</span><span class="mi">000</span> <span class="nx">years</span><span class="o">!</span><span class="s2">&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">(Press Enter to continue...)
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="nx">Oh</span><span class="p">,</span> <span class="nx">thanks</span> <span class="nx">Nyx</span><span class="p">,</span> <span class="nx">that</span> <span class="nx">was</span> <span class="nx">close</span><span class="o">!</span><span class="s2">&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">(Press Enter to continue...)
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="nx">Ok</span><span class="p">,</span><span class="s2">&#34; Nyx says, &#34;</span><span class="nx">Registering</span> <span class="nx">you</span> <span class="k">for</span> <span class="nx">the</span> <span class="nx">competition</span><span class="p">...</span> <span class="nx">There</span><span class="s1">&#39;s an introductory
-</span></span></span><span class="line"><span class="cl"><span class="s1">audio message, piping to your speakers.&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">---
-</span></span></span><span class="line"><span class="cl"><span class="s1">(Press Enter to continue...)
-</span></span></span><span class="line"><span class="cl"><span class="s1">---
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">&#34;Welcome hacker! You&#39;</span><span class="nx">re</span> <span class="nx">about</span> <span class="nx">to</span> <span class="nx">embark</span> <span class="nx">on</span> <span class="nx">a</span> <span class="nx">journey</span> <span class="nx">that</span> <span class="nx">will</span> <span class="nx">teach</span> <span class="nx">you</span> <span class="nx">many</span>
-</span></span><span class="line"><span class="cl"><span class="nx">esoteric</span> <span class="nx">and</span> <span class="nx">valuable</span> <span class="nx">skills</span><span class="p">.</span> <span class="nx">Our</span> <span class="nx">mission</span> <span class="nx">is</span> <span class="nx">to</span> <span class="nx">guide</span> <span class="nx">you</span> <span class="k">in</span> <span class="nx">the</span> <span class="nx">right</span> <span class="nx">path</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="nx">that</span> <span class="nx">you</span> <span class="nx">may</span> <span class="nx">use</span> <span class="nx">these</span> <span class="nx">skills</span> <span class="nx">to</span> <span class="nx">protect</span> <span class="nx">and</span> <span class="nx">defend</span> <span class="nx">and</span> <span class="nx">never</span> <span class="k">for</span> <span class="nx">selfish</span> <span class="nx">gain</span>
-</span></span><span class="line"><span class="cl"><span class="nx">or</span> <span class="nx">deceit</span><span class="p">.</span> <span class="nx">We</span> <span class="nx">hope</span> <span class="nx">you</span> <span class="nx">enjoy</span> <span class="nx">the</span> <span class="nx">challenges</span> <span class="nx">that</span> <span class="nx">our</span> <span class="nx">authors</span> <span class="nx">have</span> <span class="nx">devised</span> <span class="k">this</span>
-</span></span><span class="line"><span class="cl"><span class="nx">year</span><span class="p">.</span> <span class="nx">Always</span> <span class="nx">remember</span><span class="o">:</span> <span class="s1">&#39;With great power, comes great responsibility!&#39;</span><span class="s2">&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">(Press Enter to continue...)
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">Nyx continues, &#34;</span><span class="nx">I</span><span class="s1">&#39;ve gleaned from the Ether that in CTF competitions, it&#39;</span><span class="nx">s</span>
-</span></span><span class="line"><span class="cl"><span class="nx">always</span> <span class="nx">good</span> <span class="nx">to</span> <span class="nx">start</span> <span class="kd">with</span> <span class="nx">the</span> <span class="s1">&#39;sanity&#39;</span> <span class="nx">challenge</span><span class="p">.</span> <span class="nx">It</span> <span class="nx">should</span> <span class="nx">be</span> <span class="nx">the</span> <span class="nx">challenge</span>
-</span></span><span class="line"><span class="cl"><span class="nx">worth</span> <span class="nx">the</span> <span class="nx">least</span> <span class="nx">amount</span> <span class="k">of</span> <span class="nx">points</span><span class="p">.</span> <span class="nx">I</span><span class="s1">&#39;ll pull it up. You&#39;</span><span class="nx">re</span> <span class="nx">looking</span> <span class="k">for</span> <span class="nx">something</span>
-</span></span><span class="line"><span class="cl"><span class="nx">called</span> <span class="nx">the</span> <span class="nx">flag</span><span class="p">.</span> <span class="nx">You</span> <span class="nx">should</span> <span class="nx">know</span> <span class="nx">it</span> <span class="nx">when</span> <span class="nx">you</span> <span class="nx">see</span> <span class="nx">it</span><span class="p">.</span><span class="s2">&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">(Press Enter to continue...)
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="nx">Oh</span> <span class="nx">interesting</span><span class="p">,</span><span class="s2">&#34; Eibhilin says, &#34;</span><span class="nx">It</span> <span class="nx">seems</span> <span class="nx">like</span> <span class="nx">the</span> <span class="nx">sanity</span> <span class="nx">challenge</span> <span class="nx">is</span> <span class="nx">an</span> <span class="nx">old</span>
-</span></span><span class="line"><span class="cl"><span class="nx">school</span> <span class="nx">interactive</span> <span class="nx">fiction</span> <span class="nx">game</span><span class="p">.</span><span class="s2">&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">(Press Enter to continue...)
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">Options:
-</span></span></span><span class="line"><span class="cl"><span class="s2">A) *Play the game*
-</span></span></span><span class="line"><span class="cl"><span class="s2">B) *Search the Ether for the flag*
-</span></span></span><span class="line"><span class="cl"><span class="s2">[a/b] &gt; A
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="nx">Good</span> <span class="nx">choice</span><span class="p">,</span> <span class="nx">Ei</span><span class="p">,</span><span class="s2">&#34; Nyx says, &#34;</span><span class="nx">You</span> <span class="nx">never</span> <span class="nx">want</span> <span class="nx">to</span> <span class="nx">share</span> <span class="nx">flags</span> <span class="nx">or</span> <span class="nx">artifact</span>
-</span></span><span class="line"><span class="cl"><span class="nx">downloads</span><span class="p">.</span><span class="s2">&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">(Press Enter to continue...)
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2"> Playing the Game
-</span></span></span><span class="line"><span class="cl"><span class="s2">Playing the Game:   0%|                                           [time left: ?]
-</span></span></span><span class="line"><span class="cl"><span class="s2">Playing the Game: 100%|██████████████████████████████████████ [time left: 00:00]
-</span></span></span><span class="line"><span class="cl"><span class="s2">Playing the Game completed successfully!
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">(Press Enter to continue...)
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="nx">That</span> <span class="nx">was</span> <span class="nx">fun</span><span class="o">!</span><span class="s2">&#34; Eibhilin exclaims, &#34;</span><span class="nx">I</span> <span class="nx">found</span> <span class="nx">the</span> <span class="nx">flag</span><span class="o">!</span><span class="s2">&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">(Press Enter to continue...)
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">Nyx says, &#34;</span><span class="nx">Great</span> <span class="nx">job</span><span class="p">,</span> <span class="nx">Ei</span><span class="o">!</span> <span class="nx">I</span><span class="s1">&#39;ve read that a lot of players create writeups of
-</span></span></span><span class="line"><span class="cl"><span class="s1">interesting challenges they solve during the competition. Just be sure to wait
-</span></span></span><span class="line"><span class="cl"><span class="s1">to publish them until after the winners have been announced. We can work on
-</span></span></span><span class="line"><span class="cl"><span class="s1">that together if you&#39;</span><span class="nx">d</span> <span class="nx">like</span><span class="p">.</span><span class="s2">&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">(Press Enter to continue...)
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="nx">Thanks</span><span class="p">,</span> <span class="nx">Nyx</span><span class="o">!</span> <span class="nx">Here</span><span class="s1">&#39;s the flag I found: picoCTF{m1113n1um_3d1710n_76b680a5}&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">---
-</span></span></span><span class="line"><span class="cl"><span class="s1">(Press Enter to continue...)
-</span></span></span><span class="line"><span class="cl"><span class="s1">---
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">&#34;Great, you just got 10 points!&#34; Nyx exclaims.
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">---
-</span></span></span><span class="line"><span class="cl"><span class="s1">(Press Enter to continue...)
-</span></span></span><span class="line"><span class="cl"><span class="s1">---
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">Eibhilin smiles, &#34;I&#39;</span><span class="nx">m</span> <span class="nx">off</span> <span class="nx">to</span> <span class="nx">a</span> <span class="nx">good</span> <span class="nx">start</span><span class="o">!</span><span class="s2">&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">(Press Enter to continue...)
-</span></span></span><span class="line"><span class="cl"><span class="s2">---
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">Nyx says, &#34;</span><span class="nx">Let</span><span class="err">&#39;</span><span class="nx">s</span> <span class="nx">keep</span> <span class="nx">going</span><span class="o">!</span><span class="err">&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">---</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">Press</span> <span class="nx">Enter</span> <span class="nx">to</span> <span class="k">continue</span><span class="p">...)</span>
-</span></span><span class="line"><span class="cl"><span class="o">---</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">END</span> <span class="nx">OF</span> <span class="nx">FANTASY</span> <span class="nx">CTF</span> <span class="nx">SIMULATION</span>
-</span></span><span class="line"><span class="cl"><span class="nx">Thank</span> <span class="nx">you</span> <span class="k">for</span> <span class="nx">playing</span><span class="o">!</span> <span class="nx">To</span> <span class="nx">reemphasize</span> <span class="nx">some</span> <span class="nx">rules</span> <span class="k">for</span> <span class="k">this</span> <span class="nx">year</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl"><span class="mf">1.</span> <span class="nx">Register</span> <span class="nx">only</span> <span class="nx">one</span> <span class="nx">account</span><span class="p">.</span>
-</span></span><span class="line"><span class="cl"><span class="mf">2.</span> <span class="nx">Do</span> <span class="nx">not</span> <span class="nx">share</span> <span class="nx">accounts</span><span class="p">,</span> <span class="nx">flags</span> <span class="nx">or</span> <span class="nx">artifact</span> <span class="nx">downloads</span><span class="p">.</span>
-</span></span><span class="line"><span class="cl"><span class="mf">3.</span> <span class="nx">Wait</span> <span class="nx">to</span> <span class="nx">publish</span> <span class="nx">writeups</span> <span class="nx">publicly</span> <span class="nx">until</span> <span class="nx">after</span> <span class="nx">the</span> <span class="nx">organizers</span> <span class="nx">announce</span> <span class="nx">the</span>
-</span></span><span class="line"><span class="cl"><span class="nx">winners</span><span class="p">.</span>
-</span></span><span class="line"><span class="cl"><span class="mf">4.</span> <span class="nx">picoCTF</span><span class="p">{</span><span class="nx">m1113n1um_3d1710n_76b680a5</span><span class="p">}</span> <span class="nx">is</span> <span class="nx">a</span> <span class="nx">real</span> <span class="nx">flag</span><span class="o">!</span> <span class="nx">Submit</span> <span class="nx">it</span> <span class="k">for</span> <span class="nx">some</span>
-</span></span><span class="line"><span class="cl"><span class="nx">points</span> <span class="k">in</span> <span class="nx">picoCTF</span> <span class="mi">2025</span><span class="o">!</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">---</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">Press</span> <span class="nx">Enter</span> <span class="nx">to</span> <span class="k">continue</span><span class="p">...)</span>
-</span></span><span class="line"><span class="cl"><span class="o">---</span>
-</span></span></code></pre></div><pre><code>FLag: picoCTF{m1113n1um_3d1710n_76b680a5}
-</code></pre>
-<h2 id="crypto">
-<a class="header-anchor" href="#crypto"></a>
-Crypto
-</h2><h3 id="hashcrack">
-<a class="header-anchor" href="#hashcrack"></a>
-hashcrack
-</h3><p>Ở bài này mình dựa vào số bytes của hash và các tools online để tìm ra password, như là: <a href="https://10015.io/tools/md5-encrypt-decrypt">MD5</a>, <a href="https://10015.io/tools/sha1-encrypt-decrypt">SHA1</a>, <a href="https://10015.io/tools/sha256-encrypt-decrypt">SHA256</a></p>
-        
-        <hr><p>Published on 2025-03-22 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-03-22</p>]]></description><category>CTF Write-up</category></item></channel></rss>
+        <hr><p>Published on 2025-03-26 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-03-26</p>]]></description><category>CTF Write-up</category></item></channel></rss>
