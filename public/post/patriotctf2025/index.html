@@ -177,6 +177,7 @@ This article does not have a corresponding language version
   <ul>
     <li><a href="#password-palooza">Password Palooza</a></li>
     <li><a href="#cipher-from-hell">Cipher from Hell</a></li>
+    <li><a href="#matrix-reconstruction">Matrix Reconstruction</a></li>
   </ul>
 </nav>
 </div></div>
@@ -448,7 +449,135 @@ Cipher from Hell
 </span></span><span class="line"><span class="cl">	<span class="n">c</span> <span class="o">-=</span> <span class="mi">2</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">open</span><span class="p">(</span><span class="s2">&#34;encrypted&#34;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ss</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">ss</span><span class="p">,</span> <span class="mi">256</span><span class="p">)),</span> <span class="n">byteorder</span><span class="o">=</span><span class="s1">&#39;big&#39;</span><span class="p">))</span>
-</span></span></code></pre></div></div>
+</span></span></code></pre></div><p>It performs the conversion of the flag&rsquo;s content (in string form) to a large integer, then transforms that number based on base-3 and saves the result to an encrypted file.</p>
+<p>We will explain the loop while to reverse this process:</p>
+<p>Firstly, ss multiplied by 9. <code>ss += o[s//3**c][s%3]</code> mean that it takes the MSD for row and LSD for col of the matrix then added to ss.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s</span> <span class="o">-=</span> <span class="n">s</span><span class="o">//</span><span class="mi">3</span><span class="o">**</span><span class="n">c</span><span class="o">*</span><span class="mi">3</span><span class="o">**</span><span class="n">c</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="o">//=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">-=</span> <span class="mi">2</span>
+</span></span></code></pre></div><p>Finally, it removes the MSD and LDS from s and reduces the exponent c by 2. Because it works on the linear system, so we can easily decode the loop like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">while</span> <span class="n">ss</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">val</span> <span class="o">=</span> <span class="n">ss</span> <span class="o">%</span> <span class="mi">9</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ss</span> <span class="o">//=</span> <span class="mi">9</span>
+</span></span><span class="line"><span class="cl">    <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">rev_o</span><span class="p">[</span><span class="n">val</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">left_part</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="o">+</span> <span class="n">left_part</span>
+</span></span><span class="line"><span class="cl">    <span class="n">right_part</span> <span class="o">=</span> <span class="n">right_part</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+</span></span></code></pre></div><p>with <code>rev_o</code> is the matrix lookup table. Then we match the left and right part, convert it from 3-base to decimal, decode it and that&rsquo;s all it takes to get the flag.</p>
+<p><strong>Flag:</strong> <code>pctf{a_l3ss_cr4zy_tr1tw1s3_op3r4ti0n_f37d4b}</code></p>
+<h2 id="matrix-reconstruction">
+<a class="header-anchor" href="#matrix-reconstruction"></a>
+Matrix Reconstruction
+</h2><p>We have <code>cipher.txt</code>, <code>keystream_leak.txt</code> and a <code>README.txt</code> with content:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">You are given ciphertext and leaked keystream states.
+</span></span><span class="line"><span class="cl">Model: S[n+1] = A*S[n] XOR B  over GF(2)
+</span></span><span class="line"><span class="cl">Recover A from consecutive states.
+</span></span><span class="line"><span class="cl">Then decrypt.
+</span></span></code></pre></div><p>From the <code>keystream_leak.txt</code> file we have 40 consecutive 32-bit states $S_0, S_1, \dots, S_{39}$</p>
+<p>With the model:
+</p>
+$$
+S_{n+1} = AS_n \oplus B \ \  (\texttt{over} \ \ \mathbb{GF}(2))
+$$<p>each pair $(S_n, S_{n+1})$ gives us 32 linear equations on 1056 unknowns (1024 bits of matrix $A$ and 32 bits of $B$). Collect 39 pairs to get 1248 equations, enough to solve the system and get $A$, $B$.</p>
+<p>Check $A, B$ again by regenerating $S_{n+1}$ from $S_n$ and look if it matches the entire leak sequence.</p>
+<p>Viewing keystream: each keystream byte corresponds to the 8 lowest bits (LSB) of the corresponding state: </p>
+$$K_n = S_n \mathbin{\&} \texttt{0xFF}$$<p>
+and ciphertext byte $n$ uses $K_n$, so we can easily decode it: $P_n = C_n \oplus K_n$ for 35 bytes of the <code>cipher.txt</code>.</p>
+<p>Here is the script:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">KEYSTREAM_FILE</span> <span class="o">=</span> <span class="s2">&#34;keystream_leak.txt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">CIPHER_FILE</span> <span class="o">=</span> <span class="s2">&#34;cipher.txt&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">solve_A_B</span><span class="p">(</span><span class="n">states</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">nvar</span> <span class="o">=</span> <span class="mi">32</span><span class="o">*</span><span class="mi">32</span> <span class="o">+</span> <span class="mi">32</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Build GF(2) linear system</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">sn1</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">states</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">lhs</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="mi">32</span><span class="o">*</span><span class="mi">32</span> <span class="o">+</span> <span class="n">i</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">lhs</span> <span class="o">^=</span> <span class="nb">sum</span><span class="p">(((</span><span class="n">s</span> <span class="o">&gt;&gt;</span> <span class="n">j</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">32</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">sn1</span> <span class="o">&gt;&gt;</span> <span class="n">i</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">lhs</span> <span class="o">^=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">nvar</span>
+</span></span><span class="line"><span class="cl">            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lhs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">pivot</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">nvar</span>
+</span></span><span class="line"><span class="cl">    <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Gaussian elimination</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nvar</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">rows</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">rows</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="n">col</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">rows</span><span class="p">[</span><span class="n">r</span><span class="p">],</span> <span class="n">rows</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">rows</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">rows</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="n">pivot</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rows</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">r</span> <span class="ow">and</span> <span class="p">((</span><span class="n">rows</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="n">col</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">rows</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^=</span> <span class="n">rows</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">r</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">r</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Back-substitution</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sol</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">nvar</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nvar</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pr</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">pr</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">        <span class="n">row</span> <span class="o">=</span> <span class="n">rows</span><span class="p">[</span><span class="n">pr</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="n">row</span> <span class="o">&gt;&gt;</span> <span class="n">nvar</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tmp</span> <span class="o">=</span> <span class="p">(</span><span class="n">row</span> <span class="o">&gt;&gt;</span> <span class="p">(</span><span class="n">col</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">j</span> <span class="o">=</span> <span class="n">col</span><span class="o">+</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># FIXED BOUND CHECK</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="n">tmp</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nvar</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">tmp</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">val</span> <span class="o">^=</span> <span class="n">sol</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="n">tmp</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">sol</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">A_rows</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">sum</span><span class="p">((</span><span class="n">sol</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">32</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">B</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">sol</span><span class="p">[</span><span class="mi">32</span><span class="o">*</span><span class="mi">32</span> <span class="o">+</span> <span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">A_rows</span><span class="p">,</span> <span class="n">B</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">apply_A</span><span class="p">(</span><span class="n">A_rows</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="n">A_rows</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">s</span>
+</span></span><span class="line"><span class="cl">        <span class="n">parity</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&#34;1&#34;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">res</span> <span class="o">|=</span> <span class="n">parity</span> <span class="o">&lt;&lt;</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ct</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">CIPHER_FILE</span><span class="p">,</span> <span class="s2">&#34;rb&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">states</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">KEYSTREAM_FILE</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="n">solve_A_B</span><span class="p">(</span><span class="n">states</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Verify</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">states</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">apply_A</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">states</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">^</span> <span class="n">B</span> <span class="o">!=</span> <span class="n">states</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;WRONG AT STATE&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;PASS A AND B!!</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">flag</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">c</span> <span class="o">^</span> <span class="p">(</span><span class="n">s</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ct</span><span class="p">,</span> <span class="n">states</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">()</span>
+</span></span></code></pre></div><p><strong>Flag:</strong> <code>pctf{mAtr1x_r3construct?on_!s_fu4n}</code></p>
+</div>
     <footer class="article-footer"><blockquote class="article-copyright"><p><strong><span class="icon-user icon"></span>Author: </strong>r1muru</p><p>
       <strong><span class="icon-link icon"></span>Permalink: </strong><a href="http://localhost:1313/post/patriotctf2025/">http://localhost:1313/post/patriotctf2025/</a>
     </p><p>
@@ -525,10 +654,10 @@ Cipher from Hell
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;27.4k</span
+          >&nbsp;28.0k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;02:14</span>
+        <span class="icon-coffee">&nbsp;02:17</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -567,6 +696,7 @@ Cipher from Hell
   <ul>
     <li><a href="#password-palooza">Password Palooza</a></li>
     <li><a href="#cipher-from-hell">Cipher from Hell</a></li>
+    <li><a href="#matrix-reconstruction">Matrix Reconstruction</a></li>
   </ul>
 </nav>
 </div></div>

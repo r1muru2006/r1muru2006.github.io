@@ -182,4 +182,151 @@ while c > -1:
 
 open("encrypted", 'wb').write(ss.to_bytes(math.ceil(math.log(ss, 256)), byteorder='big'))
 ```
+
 It performs the conversion of the flag's content (in string form) to a large integer, then transforms that number based on base-3 and saves the result to an encrypted file.
+
+We will explain the loop while to reverse this process:
+
+Firstly, ss multiplied by 9. `ss += o[s//3**c][s%3]` mean that it takes the MSD for row and LSD for col of the matrix then added to ss.
+
+```python
+s -= s//3**c*3**c
+s //= 3
+c -= 2
+```
+
+Finally, it removes the MSD and LDS from s and reduces the exponent c by 2. Because it works on the linear system, so we can easily decode the loop like this:
+```python
+while ss > 0:
+    val = ss % 9
+    ss //= 9
+    row, col = rev_o[val]
+    
+    left_part = str(row) + left_part
+    right_part = right_part + str(col)
+```
+
+with `rev_o` is the matrix lookup table. Then we match the left and right part, convert it from 3-base to decimal, decode it and that's all it takes to get the flag.
+
+**Flag:** `pctf{a_l3ss_cr4zy_tr1tw1s3_op3r4ti0n_f37d4b}`
+
+## Matrix Reconstruction
+We have `cipher.txt`, `keystream_leak.txt` and a `README.txt` with content:
+```
+You are given ciphertext and leaked keystream states.
+Model: S[n+1] = A*S[n] XOR B  over GF(2)
+Recover A from consecutive states.
+Then decrypt.
+```
+
+From the `keystream_leak.txt` file we have 40 consecutive 32-bit states $S_0, S_1, \dots, S_{39}$
+
+With the model:
+$$
+S_{n+1} = AS_n \oplus B \ \  (\texttt{over} \ \ \mathbb{GF}(2))
+$$
+
+each pair $(S_n, S_{n+1})$ gives us 32 linear equations on 1056 unknowns (1024 bits of matrix $A$ and 32 bits of $B$). Collect 39 pairs to get 1248 equations, enough to solve the system and get $A$, $B$.
+
+Check $A, B$ again by regenerating $S_{n+1}$ from $S_n$ and look if it matches the entire leak sequence.
+
+Viewing keystream: each keystream byte corresponds to the 8 lowest bits (LSB) of the corresponding state: $$K_n = S_n \mathbin{\&} \texttt{0xFF}$$
+and ciphertext byte $n$ uses $K_n$, so we can easily decode it: $P_n = C_n \oplus K_n$ for 35 bytes of the `cipher.txt`.
+
+Here is the script:
+```python
+KEYSTREAM_FILE = "keystream_leak.txt"
+CIPHER_FILE = "cipher.txt"
+
+def solve_A_B(states):
+    nvar = 32*32 + 32
+    rows = []
+
+    # Build GF(2) linear system
+    for s, sn1 in zip(states, states[1:]):
+        for i in range(32):
+            lhs = (1 << (32*32 + i))
+            lhs ^= sum(((s >> j) & 1) << (i*32 + j) for j in range(32))
+            if (sn1 >> i) & 1:
+                lhs ^= 1 << nvar
+            rows.append(lhs)
+
+    pivot = [-1]*nvar
+    r = 0
+
+    # Gaussian elimination
+    for col in range(nvar):
+        for i in range(r, len(rows)):
+            if (rows[i] >> col) & 1:
+                rows[r], rows[i] = rows[i], rows[r]
+                pivot[col] = r
+                break
+        else:
+            continue
+
+        for i in range(len(rows)):
+            if i != r and ((rows[i] >> col) & 1):
+                rows[i] ^= rows[r]
+        r += 1
+        if r == len(rows):
+            break
+
+    # Back-substitution
+    sol = [0]*nvar
+    for col in range(nvar-1, -1, -1):
+        pr = pivot[col]
+        if pr < 0: continue
+        row = rows[pr]
+        val = (row >> nvar) & 1
+        tmp = (row >> (col+1))
+        j = col+1
+
+        # FIXED BOUND CHECK
+        while tmp and j < nvar:
+            if tmp & 1:
+                val ^= sol[j]
+            tmp >>= 1
+            j += 1
+
+        sol[col] = val
+
+    A_rows = [
+        sum((sol[i*32 + j] << j) for j in range(32))
+        for i in range(32)
+    ]
+    B = sum((sol[32*32 + i] << i) for i in range(32))
+    return A_rows, B
+
+
+def apply_A(A_rows, s):
+    res = 0
+    for i in range(32):
+        x = A_rows[i] & s
+        parity = bin(x).count("1") & 1
+        res |= parity << i
+    return res
+
+
+def main():
+    ct = open(CIPHER_FILE, "rb").read()
+    states = [int(x) for x in open(KEYSTREAM_FILE).read().split()]
+
+    A, B = solve_A_B(states)
+
+    # Verify
+    for i in range(len(states)-1):
+        if apply_A(A, states[i]) ^ B != states[i+1]:
+            print("WRONG AT STATE", i)
+            break
+    else:
+        print("PASS A AND B!!\n")
+
+    flag = bytes(c ^ (s & 0xFF) for c, s in zip(ct, states))
+    print(flag)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+**Flag:** `pctf{mAtr1x_r3construct?on_!s_fu4n}`
