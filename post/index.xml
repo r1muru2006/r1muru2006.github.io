@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>r1muru's blog</title><link>https://r1muru2006.github.io/post/</link><description>Recent content from r1muru's blog</description><generator>Hugo</generator><language>en-us</language><managingEditor>cuongchu200@gmail.com (r1muru)</managingEditor><webMaster>cuongchu200@gmail.com (r1muru)</webMaster><copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright><lastBuildDate>Fri, 21 Nov 2025 22:19:58 +0700</lastBuildDate><atom:link href="https://r1muru2006.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>M*CTF Quals 2025</title><link>https://r1muru2006.github.io/post/mctfquals2025/</link><pubDate>Fri, 21 Nov 2025 22:19:58 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/mctfquals2025/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>r1muru's blog</title><link>https://r1muru2006.github.io/post/</link><description>Recent content from r1muru's blog</description><generator>Hugo</generator><language>en-us</language><managingEditor>cuongchu200@gmail.com (r1muru)</managingEditor><webMaster>cuongchu200@gmail.com (r1muru)</webMaster><copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright><lastBuildDate>Mon, 24 Nov 2025 21:40:43 +0700</lastBuildDate><atom:link href="https://r1muru2006.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Patriot CTF 2025</title><link>https://r1muru2006.github.io/post/patriotctf2025/</link><pubDate>Mon, 24 Nov 2025 21:40:43 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/patriotctf2025/</guid><description>
+<![CDATA[<h1>Patriot CTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
+        
+          <h1 id="osint">
+<a class="header-anchor" href="#osint"></a>
+Osint
+</h1><h2 id="wheres-legally-distinct-waldo-one">
+<a class="header-anchor" href="#wheres-legally-distinct-waldo-one"></a>
+Where&rsquo;s Legally Distinct Waldo One
+</h2><p><img src="/images/patriot/osint1.png" alt="images"></p>
+<p>We have to find the building place where they take this picture. After using google lens, I got this:
+<img src="/images/patriot/osint1_1.png" alt="images"></p>
+<p>It looks exactly the same so I clicked in this article:
+<img src="/images/patriot/osint1_2.png" alt="images"></p>
+<p>So we know that it relates to <code>the campus of George Mason University in Fairfax, VA</code>. Therefore, I googled map it and scanned around:
+<img src="/images/patriot/osint1_3.png" alt="images"></p>
+<p>In the picture, I noticed an area with a similar patterned tile floor to the challenge in the lower right corner of the photo at the George Mason Statue. When I scanned this street, I saw a corner with the same pattern and the building name <code>Horizon Hall</code> had the same view.
+<img src="/images/patriot/osint1_4.png" alt="images"></p>
+        
+        <hr><p>Published on 2025-11-24 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-11-24</p>]]></description><category>CTF Write-up</category></item><item><title>M*CTF Quals 2025</title><link>https://r1muru2006.github.io/post/mctfquals2025/</link><pubDate>Fri, 21 Nov 2025 22:19:58 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/mctfquals2025/</guid><description>
 <![CDATA[<h1>M*CTF Quals 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
           <h1 id="welcome">
