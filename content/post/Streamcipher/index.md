@@ -16,6 +16,7 @@ categories:
 
 # Chacha20-Poly1305
 ## Algorithm
+### Chacha20
 ChaCha20-Poly1305 architecture consists of two main components, the stream cipher ChaCha20 and the authentication mechanism Poly1305 by the same author D.J. Berstein.
 The ChaCha20 algorithm uses ChaCha20 block functions to generate the encryption keystream.
 ![images](/images/StreamCipher/encrypt.png)
@@ -68,3 +69,13 @@ def chacha20_block(key32: bytes, counter: int, nonce12: bytes) -> bytes:
     out = b"".join(struct.pack("<I", (x[i] + state[i]) & 0xFFFFFFFF) for i in range(16))
     return out
 ```
+### Poly1305
+Poly1305 is a message authentication cipher (MAC) to ensure the authenticity and integrity of data.
+The input key is divided into 2 parts called r and s, each part is 128 bits long. The pair (r,s) must be unique and unguessable for each call.
+
+The input message is divided into 16-byte blocks (the last block can be padded with 0 bits), the 16-byte blocks are padded with 1 byte with value 0x01 to 17 bytes, calculations are performed on these blocks with r on the Z() field to create an accumulator.
+![images](/images/StreamCipher/poly1305.png)
+
+
+# Reference
+1. [Hệ mã dòng có xác thực](https://tailieu.antoanthongtin.gov.vn/Files/files/site-2/files/Hemadongcoxacthuc.pdf)
