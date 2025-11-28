@@ -397,6 +397,7 @@ The input key is divided into 2 parts called r and s, each part is 128 bits long
 <a class="header-anchor" href="#security"></a>
 Security
 </h2><p>ChaCha20-Poly1305 is generally secure and offers better resistance to timing attacks than AES-GCM. However, like GCM, its security relies strictly on unique nonces. While specific implementations like SSH face vulnerabilities such as the Terrapin attack, this post focuses on a fundamental flaw: exploiting ChaCha20-Poly1305 under nonce reuse.</p>
+<p>All of the code I put in <a href="/script/streamcipher/">here</a></p>
 <h1 id="reference">
 <a class="header-anchor" href="#reference"></a>
 Reference
