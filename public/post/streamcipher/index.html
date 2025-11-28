@@ -160,7 +160,13 @@ This article does not have a corresponding language version
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#algorithm">Algorithm</a></li>
+    <li><a href="#algorithm">Algorithm</a>
+      <ul>
+        <li><a href="#chacha20">Chacha20</a></li>
+        <li><a href="#poly1305">Poly1305</a></li>
+      </ul>
+    </li>
+    <li><a href="#security">Security</a></li>
   </ul>
 </nav>
 </div></div>
@@ -293,7 +299,10 @@ Chacha20-Poly1305
 </h1><h2 id="algorithm">
 <a class="header-anchor" href="#algorithm"></a>
 Algorithm
-</h2><p>ChaCha20-Poly1305 architecture consists of two main components, the stream cipher ChaCha20 and the authentication mechanism Poly1305 by the same author D.J. Berstein.
+</h2><h3 id="chacha20">
+<a class="header-anchor" href="#chacha20"></a>
+Chacha20
+</h3><p>ChaCha20-Poly1305 architecture consists of two main components, the stream cipher ChaCha20 and the authentication mechanism Poly1305 by the same author D.J. Berstein.
 The ChaCha20 algorithm uses ChaCha20 block functions to generate the encryption keystream.
 <img src="/images/StreamCipher/encrypt.png" alt="images"></p>
 <p>The input of the ChaCha20 block function is a 4x4 word matrix described as in this figure:
@@ -335,7 +344,28 @@ The ChaCha20 algorithm uses ChaCha20 block functions to generate the encryption 
 </span></span><span class="line"><span class="cl">        <span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="n">chacha20_quarter_round</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">14</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl">    <span class="n">out</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&#34;&lt;I&#34;</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">state</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mh">0xFFFFFFFF</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">out</span>
-</span></span></code></pre></div></div>
+</span></span></code></pre></div><h3 id="poly1305">
+<a class="header-anchor" href="#poly1305"></a>
+Poly1305
+</h3><p>Poly1305 is a message authentication cipher (MAC) to ensure the authenticity and integrity of data.
+The input key is divided into 2 parts called r and s, each part is 128 bits long. The pair (r,s) must be unique and unguessable for each call.</p>
+<p>The input message is divided into 16-byte blocks (the last block can be padded with 0 bits), the 16-byte blocks are padded with 1 byte with value 0x01 to 17 bytes, calculations are performed on these blocks with r on the Z() field to create an accumulator.
+<img src="/images/StreamCipher/poly1305.png" alt="images"></p>
+<p>Finally the value s is added to the accumulator and the 128 bits are extracted as the authentication tag.
+<img src="/images/StreamCipher/poly1305_2.png" alt="images"></p>
+<h2 id="security">
+<a class="header-anchor" href="#security"></a>
+Security
+</h2><p>The ChaCha20-Poly1305 construction is generally secure in the standard model and the ideal permutation model, for the single- and multi-user setting. However, similarly to GCM, the security relies on choosing a unique nonce for every message encrypted. Compared to AES-GCM, implementations of ChaCha20-Poly1305 are less vulnerable to timing attacks.</p>
+<p>To be noted, when the SSH protocol uses ChaCha20-Poly1305 as underlying primitive, it is vulnerable to the Terrapin attack.</p>
+<h1 id="reference">
+<a class="header-anchor" href="#reference"></a>
+Reference
+</h1><ol>
+<li><a href="https://tailieu.antoanthongtin.gov.vn/Files/files/site-2/files/Hemadongcoxacthuc.pdf">Hệ mã dòng có xác thực</a></li>
+<li><a href="https://en.wikipedia.org/wiki/ChaCha20-Poly1305#Security">Security of Chacha20-Poly1305 by Wikipedia</a></li>
+</ol>
+</div>
     <footer class="article-footer"><blockquote class="article-copyright"><p><strong><span class="icon-user icon"></span>Author: </strong>r1muru</p><p>
       <strong><span class="icon-link icon"></span>Permalink: </strong><a href="http://localhost:1313/post/streamcipher/">http://localhost:1313/post/streamcipher/</a>
     </p><p>
@@ -398,10 +428,10 @@ The ChaCha20 algorithm uses ChaCha20 block functions to generate the encryption 
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;28.4k</span
+          >&nbsp;28.6k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;02:19</span>
+        <span class="icon-coffee">&nbsp;02:20</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -427,7 +457,13 @@ The ChaCha20 algorithm uses ChaCha20 block functions to generate the encryption 
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#algorithm">Algorithm</a></li>
+    <li><a href="#algorithm">Algorithm</a>
+      <ul>
+        <li><a href="#chacha20">Chacha20</a></li>
+        <li><a href="#poly1305">Poly1305</a></li>
+      </ul>
+    </li>
+    <li><a href="#security">Security</a></li>
   </ul>
 </nav>
 </div></div>

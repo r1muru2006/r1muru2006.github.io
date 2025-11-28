@@ -36,7 +36,10 @@ Chacha20-Poly1305
 </h1><h2 id="algorithm">
 <a class="header-anchor" href="#algorithm"></a>
 Algorithm
-</h2><p>ChaCha20-Poly1305 architecture consists of two main components, the stream cipher ChaCha20 and the authentication mechanism Poly1305 by the same author D.J. Berstein.
+</h2><h3 id="chacha20">
+<a class="header-anchor" href="#chacha20"></a>
+Chacha20
+</h3><p>ChaCha20-Poly1305 architecture consists of two main components, the stream cipher ChaCha20 and the authentication mechanism Poly1305 by the same author D.J. Berstein.
 The ChaCha20 algorithm uses ChaCha20 block functions to generate the encryption keystream.
 <img src="/images/StreamCipher/encrypt.png" alt="images"></p>
 <p>The input of the ChaCha20 block function is a 4x4 word matrix described as in this figure:
