@@ -3,7 +3,7 @@ import os
 
 key = os.urandom(32)
 nonce = os.urandom(12)
-aad = ""
+aad = b''
 
 messages = [
     "ChaCha20-Poly1305 is an authenticated cipher with associated data (AEAD).",
