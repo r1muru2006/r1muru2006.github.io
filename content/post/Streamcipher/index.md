@@ -125,6 +125,9 @@ def poly1305_mac(msg: bytes, key: bytes) -> bytes:
 ## Security
 ChaCha20-Poly1305 is generally secure and offers better resistance to timing attacks than AES-GCM. However, like GCM, its security relies strictly on unique nonces. While specific implementations like SSH face vulnerabilities such as the Terrapin attack, this post focuses on a fundamental flaw: exploiting ChaCha20-Poly1305 under nonce reuse.
 
+First of all, I will create a chall named `chall_chacha20_poly1305.py` to generate 2 pairs (ct, tag) and known plaintext to get the keystream, and we need to forge a tag for a new message.
+
+
 All of the code I put in [here](https://github.com/r1muru2006/r1muru2006.github.io/tree/main/static/script/streamcipher)
 # Reference
 1. [Hệ mã dòng có xác thực](https://tailieu.antoanthongtin.gov.vn/Files/files/site-2/files/Hemadongcoxacthuc.pdf)
