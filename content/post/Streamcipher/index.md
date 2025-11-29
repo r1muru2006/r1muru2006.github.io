@@ -125,8 +125,21 @@ def poly1305_mac(msg: bytes, key: bytes) -> bytes:
 ## Security
 ChaCha20-Poly1305 is generally secure and offers better resistance to timing attacks than AES-GCM. However, like GCM, its security relies strictly on unique nonces. While specific implementations like SSH face vulnerabilities such as the Terrapin attack, this post focuses on a fundamental flaw: exploiting ChaCha20-Poly1305 under nonce reuse.
 
-First of all, I will create a chall named `chall_chacha20_poly1305.py` to generate 2 pairs (ct, tag) and known plaintext to get the keystream, and we need to forge a tag for a new message.
+First of all, I will create a challenge named [chall_chacha20_poly1305.py](https://github.com/r1muru2006/r1muru2006.github.io/blob/main/static/script/streamcipher/chall_chacha20_poly1305.py) to generate 2 pairs of (ct, tag) using a known plaintext. This allows us to recover the keystream and eventually forge a tag for a new message.
 
+In a typical oracle scheme, while the secret key is reused across multiple messages, the nonce must remain unique. However, if the Nonce is inadvertently reused, the Poly1305 one-time key pair $(r, s)$ remains identical for those messages. If we capture two distinct pairs of (ct, tag) generated from the same $(r, s)$, we can set up the following system of equations:
+
+$$tag_1 = \text{Poly1305}(r, s, m_1) = (P_1(r) \pmod p) + s \pmod{2^{128}}$$
+$$tag_2 = \text{Poly1305}(r, s, m_2) = (P_2(r) \pmod p) + s \pmod{2^{128}}$$
+$\text{where } p = 2^{130} - 5.$
+
+By subtracting one equation from the other, we can eliminate the unknown scalar $s$. However, because the final addition of $s$ is performed modulo $2^{128}$, while the polynomial evaluation is modulo $2^{130}-5$, we must account for the modular difference. This results in the following polynomial equation:
+$$tag_1 - tag_2 = \sum (\text{block}_{1,i} - \text{block}_{2,i}) \cdot r^i + k \cdot 2^{128} \pmod p$$
+
+Here, $k$ represents the "carry" difference resulting from the modulo $2^{128}$ addition, typically falling within the range $k \in \{-4, \dots, 4\}$.
+
+**Recovering the Key:**
+By iterating through the small range of possible $k$ values, we can solve for the roots of this polynomial to find potential candidates for $r$. The correct $r$ can be identified by verifying it against the specific formatting rules of the Poly1305 "clamp" function. Once $r$ is found, we can trivially derive $s$ from either original tag. With the complete $(r, s)$ pair, we can now forge valid tags for any arbitrary message.
 
 All of the code I put in [here](https://github.com/r1muru2006/r1muru2006.github.io/tree/main/static/script/streamcipher)
 # Reference

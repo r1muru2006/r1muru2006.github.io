@@ -620,7 +620,7 @@ player:
     options:
       audio: []
       fixed: false
-      autoplay: false
+      autoplay: true
       loop: all
       order: list
       preload: auto
