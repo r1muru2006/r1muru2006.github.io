@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Research on r1muru's blog</title><link>https://r1muru2006.github.io/tags/research/</link><description>Recent content from r1muru's blog</description><generator>Hugo</generator><language>en-us</language><managingEditor>cuongchu200@gmail.com (r1muru)</managingEditor><webMaster>cuongchu200@gmail.com (r1muru)</webMaster><copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright><lastBuildDate>Tue, 25 Nov 2025 14:33:54 +0700</lastBuildDate><atom:link href="https://r1muru2006.github.io/tags/research/index.xml" rel="self" type="application/rss+xml"/><item><title>Is stream encryption secure?</title><link>https://r1muru2006.github.io/post/streamcipher/</link><pubDate>Tue, 25 Nov 2025 14:33:54 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/streamcipher/</guid><description>
 <![CDATA[<h1>Is stream encryption secure?</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
-          <h1 id="chacha20-poly1305">
+          <h2 id="chacha20-poly1305">
 <a class="header-anchor" href="#chacha20-poly1305"></a>
 Chacha20-Poly1305
-</h1><h2 id="algorithm">
+</h2><p>ChaCha20-Poly1305 architecture consists of two main components, the stream cipher ChaCha20 and the authentication mechanism Poly1305 by the same author D.J. Berstein. The two building blocks of the construction, the algorithms Poly1305 and ChaCha20, were both independently designed, in 2005 and 2008.</p>
+<h3 id="algorithm">
 <a class="header-anchor" href="#algorithm"></a>
 Algorithm
-</h2><h3 id="chacha20">
+</h3><h4 id="chacha20">
 <a class="header-anchor" href="#chacha20"></a>
 Chacha20
-</h3><p>ChaCha20-Poly1305 architecture consists of two main components, the stream cipher ChaCha20 and the authentication mechanism Poly1305 by the same author D.J. Berstein.
-The ChaCha20 algorithm uses ChaCha20 block functions to generate the encryption keystream.
+</h4><p>The ChaCha20 algorithm uses ChaCha20 block functions to generate the encryption keystream.
 <img src="/images/StreamCipher/encrypt.png" alt="images"></p>
 <p>The input of the ChaCha20 block function is a 4x4 word matrix described as in this figure:
 <img src="/images/StreamCipher/input.png" alt="images"></p>
-<p>More details in figure a are 128 bit constant <em>C</em> (4-word), 256 bit key <em>K</em> (8-word), 32 bit counter parameter <em>Ctr</em> (1 word), 96 bit nonce <em>N</em> (3 words). Then perform 20 loops alternatingly executing the column round transformations according to figure b and the diagonal round transformations according to figure c.</p>
         
         <hr><p>Published on 2025-11-25 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-11-25</p>]]></description><category>Learning</category></item><item><title>Crack Random Modules</title><link>https://r1muru2006.github.io/post/crackrandommodule/</link><pubDate>Mon, 15 Sep 2025 20:31:17 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/crackrandommodule/</guid><description>
 <![CDATA[<h1>Crack Random Modules</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
