@@ -1,7 +1,6 @@
 from pwn import process, xor
 from sage.all import *
 
-# 1. Setup & Helper compact functions
 io = process(['python3', 'chall_chacha20_poly1305.py'])
 def recv_data():
     io.recvuntil(b'(hex):')

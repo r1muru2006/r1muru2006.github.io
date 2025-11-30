@@ -14,10 +14,10 @@ categories:
     - Learning
 ---
 
-# Chacha20-Poly1305
-## Algorithm
-### Chacha20
-ChaCha20-Poly1305 architecture consists of two main components, the stream cipher ChaCha20 and the authentication mechanism Poly1305 by the same author D.J. Berstein.
+## Chacha20-Poly1305
+ChaCha20-Poly1305 architecture consists of two main components, the stream cipher ChaCha20 and the authentication mechanism Poly1305 by the same author D.J. Berstein. The two building blocks of the construction, the algorithms Poly1305 and ChaCha20, were both independently designed, in 2005 and 2008.
+### Algorithm
+#### Chacha20
 The ChaCha20 algorithm uses ChaCha20 block functions to generate the encryption keystream.
 ![images](/images/StreamCipher/encrypt.png)
 
@@ -69,7 +69,7 @@ def chacha20_block(key32: bytes, counter: int, nonce12: bytes) -> bytes:
     out = b"".join(struct.pack("<I", (x[i] + state[i]) & 0xFFFFFFFF) for i in range(16))
     return out
 ```
-### Poly1305
+#### Poly1305
 Poly1305 is a message authentication cipher (MAC) to ensure the authenticity and integrity of data.
 The input key is divided into 2 parts called r and s, each part is 128 bits long. The pair (r,s) must be unique and unguessable for each call.
 
@@ -122,16 +122,17 @@ def poly1305_mac(msg: bytes, key: bytes) -> bytes:
     return tag
 ```
 
-## Security
+Here is the implement of this algorithm: [Link](https://github.com/r1muru2006/r1muru2006.github.io/tree/main/static/script/streamcipher/Chacha20_Poly1305/chacha20_poly1305.py)
+### Security
 ChaCha20-Poly1305 is generally secure and offers better resistance to timing attacks than AES-GCM. However, like GCM, its security relies strictly on unique nonces. While specific implementations like SSH face vulnerabilities such as the Terrapin attack, this post focuses on a fundamental flaw: exploiting ChaCha20-Poly1305 under nonce reuse.
 
-First of all, I will create a challenge named [chall_chacha20_poly1305.py](https://github.com/r1muru2006/r1muru2006.github.io/blob/main/static/script/streamcipher/chall_chacha20_poly1305.py) to generate 2 pairs of (ct, tag) using a known plaintext. This allows us to recover the keystream and eventually forge a tag for a new message.
+First of all, I will create a challenge named [chall.py](https://github.com/r1muru2006/r1muru2006.github.io/blob/main/static/script/streamcipher/Chacha20_Poly1305/chall.py) to generate 2 pairs of (ct, tag) using a known plaintext. This allows us to recover the keystream and eventually forge a tag for a new message.
 
 In a typical oracle scheme, while the secret key is reused across multiple messages, the nonce must remain unique. However, if the Nonce is inadvertently reused, the Poly1305 one-time key pair $(r, s)$ remains identical for those messages. If we capture two distinct pairs of (ct, tag) generated from the same $(r, s)$, we can set up the following system of equations:
 
 $$tag_1 = \text{Poly1305}(r, s, m_1) = (P_1(r) \pmod p) + s \pmod{2^{128}}$$
 $$tag_2 = \text{Poly1305}(r, s, m_2) = (P_2(r) \pmod p) + s \pmod{2^{128}}$$
-$\text{where } p = 2^{130} - 5.$
+$\text{where } p = 2^{130} - 5, P_j(r)=\sum\text{block}_{j, i} \cdot r^i \pmod p$
 
 By subtracting one equation from the other, we can eliminate the unknown scalar $s$. However, because the final addition of $s$ is performed modulo $2^{128}$, while the polynomial evaluation is modulo $2^{130}-5$, we must account for the modular difference. This results in the following polynomial equation:
 $$tag_1 - tag_2 = \sum (\text{block}_{1,i} - \text{block}_{2,i}) \cdot r^i + k \cdot 2^{128} \pmod p$$
@@ -141,7 +142,85 @@ Here, $k$ represents the "carry" difference resulting from the modulo $2^{128}$ 
 **Recovering the Key:**
 By iterating through the small range of possible $k$ values, we can solve for the roots of this polynomial to find potential candidates for $r$. The correct $r$ can be identified by verifying it against the specific formatting rules of the Poly1305 "clamp" function. Once $r$ is found, we can trivially derive $s$ from either original tag. With the complete $(r, s)$ pair, we can now forge valid tags for any arbitrary message.
 
-All of the code I put in [here](https://github.com/r1muru2006/r1muru2006.github.io/tree/main/static/script/streamcipher)
-# Reference
+All of the code I put in [here](https://github.com/r1muru2006/r1muru2006.github.io/tree/main/static/script/streamcipher/Chacha20_Poly1305)
+
+## RC4
+RC4 (also known as ARC4 or ARCFOUR, meaning Alleged RC4) is a stream cipher. While it is remarkable for its simplicity and speed in software, multiple vulnerabilities have been discovered in RC4, rendering it insecure.
+RC4 is a stream cipher designed by Ronald Rivest of RSA Security in 1987.
+
+### Algorithm
+To generate the keystream, the cipher makes use of a secret internal state which consists of two parts:
+
+1. A permutation of all 256 possible bytes (denoted "S").
+2. Two 8-bit index-pointers (denoted "i" and "j").
+
+The permutation is initialized with a variable-length `key`, typically between 40 and 2048 bits, using the key-scheduling algorithm (KSA). Then using the pseudo-random generation algorithm (PRGA) to generate `keystream`.
+![images](/images/StreamCipher/RC4.png)
+#### Key-Scheduling Algorithm (KSA)
+Let $S$ be a state array of size $N=256$ and $K$ be the secret key array of length $L$ bytes, where $1 \le L \le 256$.
+1. Initialization (Identity Permutation)
+$$\forall i \in \{0, \dots, N-1\}: S[i] \leftarrow i$$
+2. KSA Scrambling Loop
+
+Let $j \leftarrow 0$.
+For $i$ from $0$ to $N-1$:$$j \leftarrow (j + S[i] + K[i \bmod L]) \bmod N$$
+$$\text{Swap}(S[i], S[j])$$
+**Observation on Key Equivalence:**
+Due to the modulo operator $i \bmod L$, the key $K$ functions as a circular buffer.
+
+```python
+def rc4_ksa(key: bytes):
+    keylen = len(key)
+    S = list(range(256))
+    j = 0
+    for i in range(256):
+        j = (j + S[i] + key[i % keylen]) & 0xFF
+        S[i], S[j] = S[j], S[i]
+    return S
+```
+#### Pseudo-Random Generation Algorithm (PRGA)
+Let $S$ be the permutation state array of size $N=256$ and  $i, j$ be indices initialized to $0$.
+
+For each byte $k$ required:
+$$\begin{aligned}
+i &\leftarrow (i + 1) \bmod N \\
+j &\leftarrow (j + S[i]) \bmod N \\
+S &\leftarrow \text{Swap}(S[i], S[j]) \\
+t &\leftarrow (S[i] + S[j]) \bmod N \\
+K_k &\leftarrow S[t]
+\end{aligned}$$
+
+Since the index $i$ increments deterministically ($i \leftarrow i + 1$), so:$$\forall x \in \{0, \dots, 255\}, \text{the element } S[x] \text{ is swapped at least once per } 256 \text{ rounds.}$$
+
+This ensures that the permutation $S$ continues to evolve significantly throughout the keystream generation, rather than settling into a short cycle.
+![images](/images/StreamCipher/PRGA.png)
+```python
+def rc4_prga(S):
+    i = 0
+    j = 0
+    while True:
+        i = (i + 1) & 0xFF
+        j = (j + S[i]) & 0xFF
+        S[i], S[j] = S[j], S[i]
+        K = S[(S[i] + S[j]) & 0xFF]
+        yield K
+```
+Here is the implement of this algorithm: [Link](https://github.com/r1muru2006/r1muru2006.github.io/tree/main/static/script/streamcipher/RC4/RC4.py)
+
+### Security
+Unlike a modern stream cipher, RC4 does not take a separate nonce alongside the key. This means that if a single long-term key is to be used to securely encrypt multiple streams, the protocol must specify how to combine the nonce and the long-term key to generate the stream key for RC4.
+
+While it is remarkable for its simplicity and speed in software, multiple vulnerabilities have been discovered in RC4. Particularly problematic uses of RC4 have led to very insecure protocols such as WEP.
+
+![images](/images/StreamCipher/WEP.png)
+Wired Equivalent Privacy (WEP) was included as the privacy component of the original IEEE 802.11 standard ratified in 1997. WEP uses the stream cipher RC4 for confidentiality, and the CRC-32 checksum for integrity.
+
+However WEP’s 24-bit IV is too short to guarantee uniqueness on a busy network that makes WEP vulnerable to related key attacks. 
+
+
+## Reference
 1. [Hệ mã dòng có xác thực](https://tailieu.antoanthongtin.gov.vn/Files/files/site-2/files/Hemadongcoxacthuc.pdf)
 2. [Security of Chacha20-Poly1305 by Wikipedia](https://en.wikipedia.org/wiki/ChaCha20-Poly1305#Security)
+3. [RC4 by Wikipedia](https://en.wikipedia.org/wiki/RC4)
+4. [Related-key attack by Wikipedia](https://en.wikipedia.org/wiki/Related-key_attack)
+5. [Fluhrer, Mantin and Shamir attack by Wikipedia](https://en.wikipedia.org/wiki/Fluhrer,_Mantin_and_Shamir_attack)

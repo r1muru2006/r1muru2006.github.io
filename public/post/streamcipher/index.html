@@ -3,7 +3,7 @@
   lang="en-us" 
   data-theme-mode="auto"
   >
-  <head><meta charset="utf-8" />
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8" />
 <meta
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -11,7 +11,7 @@
   Is stream encryption secure? | r1muru
 </title>
 <meta name="description" content="Today I will go over some stream ciphers and learn how they can be exploited by attackers."/><script>
-  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://r1muru2006.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":false,\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"http://localhost:1313/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":false,\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
   
 </script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,14 +47,14 @@
     as="style"
     href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/v4-font-face.min.css"
     integrity="sha384-UlkrhOIvZxJFd4MElSUp7ow6/RUeYKi/orfCZIRRiOENFuQPIAA3T3HjYfmBRhNq" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
-  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
+  /><link rel="stylesheet" href="/css/loader.css" />
 <meta property="og:type" content="website" />
   <meta property="og:title" content="Is stream encryption secure? | r1muru" />
   <meta
     property="og:description"
     content="Today I will go over some stream ciphers and learn how they can be exploited by attackers."
   />
-  <meta property="og:url" content="https://r1muru2006.github.io/post/streamcipher/" />
+  <meta property="og:url" content="http://localhost:1313/post/streamcipher/" />
   <meta
     property="og:site_name"
     content="r1muru&#39;s blog"
@@ -67,7 +67,7 @@
   <meta property="article:published_time" content="2025-11-25T14:33:54&#43;07:00" />
   <meta property="article:modified_time" content="2025-11-25T14:33:54&#43;07:00" /><meta property="article:tag" content="ResearchCryptography" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/images/StreamCipher/background.png" />
-<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.fea35ec1dbb9520d5824bd8fcc5533a29acc2b60c759cf3ea9f2c705d51073c8.css" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.css" />
 <link
     rel="preload"
     as="style"
@@ -160,13 +160,18 @@ This article does not have a corresponding language version
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#algorithm">Algorithm</a>
+    <li><a href="#chacha20-poly1305">Chacha20-Poly1305</a>
       <ul>
-        <li><a href="#chacha20">Chacha20</a></li>
-        <li><a href="#poly1305">Poly1305</a></li>
+        <li><a href="#algorithm">Algorithm</a></li>
+        <li><a href="#security">Security</a></li>
       </ul>
     </li>
-    <li><a href="#security">Security</a></li>
+    <li><a href="#rc4">RC4</a>
+      <ul>
+        <li><a href="#algorithm-1">Algorithm</a></li>
+      </ul>
+    </li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
 </div></div>
@@ -293,17 +298,17 @@ This article does not have a corresponding language version
       data-aos="zoom-in"
       >LEARNING</a
     ></div>
-</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="chacha20-poly1305">
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h2 id="chacha20-poly1305">
 <a class="header-anchor" href="#chacha20-poly1305"></a>
 Chacha20-Poly1305
-</h1><h2 id="algorithm">
+</h2><p>ChaCha20-Poly1305 architecture consists of two main components, the stream cipher ChaCha20 and the authentication mechanism Poly1305 by the same author D.J. Berstein. The two building blocks of the construction, the algorithms Poly1305 and ChaCha20, were both independently designed, in 2005 and 2008.</p>
+<h3 id="algorithm">
 <a class="header-anchor" href="#algorithm"></a>
 Algorithm
-</h2><h3 id="chacha20">
+</h3><h4 id="chacha20">
 <a class="header-anchor" href="#chacha20"></a>
 Chacha20
-</h3><p>ChaCha20-Poly1305 architecture consists of two main components, the stream cipher ChaCha20 and the authentication mechanism Poly1305 by the same author D.J. Berstein.
-The ChaCha20 algorithm uses ChaCha20 block functions to generate the encryption keystream.
+</h4><p>The ChaCha20 algorithm uses ChaCha20 block functions to generate the encryption keystream.
 <img src="/images/StreamCipher/encrypt.png" alt="images"></p>
 <p>The input of the ChaCha20 block function is a 4x4 word matrix described as in this figure:
 <img src="/images/StreamCipher/input.png" alt="images"></p>
@@ -344,10 +349,10 @@ The ChaCha20 algorithm uses ChaCha20 block functions to generate the encryption 
 </span></span><span class="line"><span class="cl">        <span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="n">chacha20_quarter_round</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">14</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl">    <span class="n">out</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&#34;&lt;I&#34;</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">state</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mh">0xFFFFFFFF</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">out</span>
-</span></span></code></pre></div><h3 id="poly1305">
+</span></span></code></pre></div><h4 id="poly1305">
 <a class="header-anchor" href="#poly1305"></a>
 Poly1305
-</h3><p>Poly1305 is a message authentication cipher (MAC) to ensure the authenticity and integrity of data.
+</h4><p>Poly1305 is a message authentication cipher (MAC) to ensure the authenticity and integrity of data.
 The input key is divided into 2 parts called r and s, each part is 128 bits long. The pair (r,s) must be unique and unguessable for each call.</p>
 <p>The input message is divided into 16-byte blocks (the last block can be padded with 0 bits), the 16-byte blocks are padded with 1 byte with value 0x01 to 17 bytes, calculations are performed on these blocks with r on the Z() field to create an accumulator.
 <img src="/images/StreamCipher/poly1305.png" alt="images"></p>
@@ -393,32 +398,98 @@ The input key is divided into 2 parts called r and s, each part is 128 bits long
 </span></span><span class="line"><span class="cl">    <span class="n">tag_int</span> <span class="o">=</span> <span class="p">(</span><span class="n">acc</span> <span class="o">+</span> <span class="n">s</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">128</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">tag</span> <span class="o">=</span> <span class="n">tag_int</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="s2">&#34;little&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">tag</span>
-</span></span></code></pre></div><h2 id="security">
+</span></span></code></pre></div><p>Here is the implement of this algorithm: <a href="https://github.com/r1muru2006/r1muru2006.github.io/tree/main/static/script/streamcipher/Chacha20_Poly1305/chacha20_poly1305.py">Link</a></p>
+<h3 id="security">
 <a class="header-anchor" href="#security"></a>
 Security
-</h2><p>ChaCha20-Poly1305 is generally secure and offers better resistance to timing attacks than AES-GCM. However, like GCM, its security relies strictly on unique nonces. While specific implementations like SSH face vulnerabilities such as the Terrapin attack, this post focuses on a fundamental flaw: exploiting ChaCha20-Poly1305 under nonce reuse.</p>
-<p>First of all, I will create a challenge named <a href="https://github.com/r1muru2006/r1muru2006.github.io/blob/main/static/script/streamcipher/chall_chacha20_poly1305.py">chall_chacha20_poly1305.py</a> to generate 2 pairs of (ct, tag) using a known plaintext. This allows us to recover the keystream and eventually forge a tag for a new message.</p>
+</h3><p>ChaCha20-Poly1305 is generally secure and offers better resistance to timing attacks than AES-GCM. However, like GCM, its security relies strictly on unique nonces. While specific implementations like SSH face vulnerabilities such as the Terrapin attack, this post focuses on a fundamental flaw: exploiting ChaCha20-Poly1305 under nonce reuse.</p>
+<p>First of all, I will create a challenge named <a href="https://github.com/r1muru2006/r1muru2006.github.io/blob/main/static/script/streamcipher/Chacha20_Poly1305/chall.py">chall.py</a> to generate 2 pairs of (ct, tag) using a known plaintext. This allows us to recover the keystream and eventually forge a tag for a new message.</p>
 <p>In a typical oracle scheme, while the secret key is reused across multiple messages, the nonce must remain unique. However, if the Nonce is inadvertently reused, the Poly1305 one-time key pair $(r, s)$ remains identical for those messages. If we capture two distinct pairs of (ct, tag) generated from the same $(r, s)$, we can set up the following system of equations:</p>
 $$tag_1 = \text{Poly1305}(r, s, m_1) = (P_1(r) \pmod p) + s \pmod{2^{128}}$$<p>
 </p>
 $$tag_2 = \text{Poly1305}(r, s, m_2) = (P_2(r) \pmod p) + s \pmod{2^{128}}$$<p>
-$\text{where } p = 2^{130} - 5.$</p>
+$\text{where } p = 2^{130} - 5, P_j(r)=\sum\text{block}_{j, i} \cdot r^i \pmod p$</p>
 <p>By subtracting one equation from the other, we can eliminate the unknown scalar $s$. However, because the final addition of $s$ is performed modulo $2^{128}$, while the polynomial evaluation is modulo $2^{130}-5$, we must account for the modular difference. This results in the following polynomial equation:
 </p>
 $$tag_1 - tag_2 = \sum (\text{block}_{1,i} - \text{block}_{2,i}) \cdot r^i + k \cdot 2^{128} \pmod p$$<p>Here, $k$ represents the &ldquo;carry&rdquo; difference resulting from the modulo $2^{128}$ addition, typically falling within the range $k \in \{-4, \dots, 4\}$.</p>
 <p><strong>Recovering the Key:</strong>
 By iterating through the small range of possible $k$ values, we can solve for the roots of this polynomial to find potential candidates for $r$. The correct $r$ can be identified by verifying it against the specific formatting rules of the Poly1305 &ldquo;clamp&rdquo; function. Once $r$ is found, we can trivially derive $s$ from either original tag. With the complete $(r, s)$ pair, we can now forge valid tags for any arbitrary message.</p>
-<p>All of the code I put in <a href="https://github.com/r1muru2006/r1muru2006.github.io/tree/main/static/script/streamcipher">here</a></p>
-<h1 id="reference">
+<p>All of the code I put in <a href="https://github.com/r1muru2006/r1muru2006.github.io/tree/main/static/script/streamcipher/Chacha20_Poly1305">here</a></p>
+<h2 id="rc4">
+<a class="header-anchor" href="#rc4"></a>
+RC4
+</h2><p>RC4 (also known as ARC4 or ARCFOUR, meaning Alleged RC4) is a stream cipher. While it is remarkable for its simplicity and speed in software, multiple vulnerabilities have been discovered in RC4, rendering it insecure.
+RC4 is a stream cipher designed by Ronald Rivest of RSA Security in 1987.</p>
+<h3 id="algorithm-1">
+<a class="header-anchor" href="#algorithm-1"></a>
+Algorithm
+</h3><p>To generate the keystream, the cipher makes use of a secret internal state which consists of two parts:</p>
+<ol>
+<li>A permutation of all 256 possible bytes (denoted &ldquo;S&rdquo;).</li>
+<li>Two 8-bit index-pointers (denoted &ldquo;i&rdquo; and &ldquo;j&rdquo;).</li>
+</ol>
+<p>The permutation is initialized with a variable-length <code>key</code>, typically between 40 and 2048 bits, using the key-scheduling algorithm (KSA). Then using the pseudo-random generation algorithm (PRGA) to generate <code>keystream</code>.
+<img src="/images/StreamCipher/RC4.png" alt="images"></p>
+<h4 id="key-scheduling-algorithm-ksa">
+<a class="header-anchor" href="#key-scheduling-algorithm-ksa"></a>
+Key-Scheduling Algorithm (KSA)
+</h4><p>Let $S$ be a state array of size $N=256$ and $K$ be the secret key array of length $L$ bytes, where $1 \le L \le 256$.</p>
+<ol>
+<li>Initialization (Identity Permutation)
+$$\forall i \in \{0, \dots, N-1\}: S[i] \leftarrow i$$</li>
+<li>KSA Scrambling Loop</li>
+</ol>
+<p>Let $j \leftarrow 0$.
+For $i$ from $0$ to $N-1$:</p>
+$$j \leftarrow (j + S[i] + K[i \bmod L]) \bmod N$$<p>
+</p>
+$$\text{Swap}(S[i], S[j])$$<p>
+<strong>Observation on Key Equivalence:</strong>
+Due to the modulo operator $i \bmod L$, the key $K$ functions as a circular buffer.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">rc4_ksa</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">keylen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">S</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="n">keylen</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+</span></span><span class="line"><span class="cl">        <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">S</span>
+</span></span></code></pre></div><h4 id="pseudo-random-generation-algorithm-prga">
+<a class="header-anchor" href="#pseudo-random-generation-algorithm-prga"></a>
+Pseudo-Random Generation Algorithm (PRGA)
+</h4><p>Let $S$ be the permutation state array of size $N=256$ and  $i, j$ be indices initialized to $0$.</p>
+<p>For each byte $k$ required:
+</p>
+$$\begin{aligned}
+i &\leftarrow (i + 1) \bmod N \\
+j &\leftarrow (j + S[i]) \bmod N \\
+S &\leftarrow \text{Swap}(S[i], S[j]) \\
+t &\leftarrow (S[i] + S[j]) \bmod N \\
+K_k &\leftarrow S[t]
+\end{aligned}$$<p>Since the index $i$ increments deterministically ($i \leftarrow i + 1$), so:</p>
+$$\forall x \in \{0, \dots, 255\}, \text{the element } S[x] \text{ is swapped at least once per } 256 \text{ rounds.}$$<p>This ensures that the permutation $S$ continues to evolve significantly throughout the keystream generation, rather than settling into a short cycle.
+<img src="/images/StreamCipher/PRGA.png" alt="images"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">rc4_prga</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+</span></span><span class="line"><span class="cl">        <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+</span></span><span class="line"><span class="cl">        <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">K</span> <span class="o">=</span> <span class="n">S</span><span class="p">[(</span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">yield</span> <span class="n">K</span>
+</span></span></code></pre></div><p>Here is the implement of this algorithm: <a href="https://github.com/r1muru2006/r1muru2006.github.io/tree/main/static/script/streamcipher/RC4/RC4.py">Link</a></p>
+<h2 id="reference">
 <a class="header-anchor" href="#reference"></a>
 Reference
-</h1><ol>
+</h2><ol>
 <li><a href="https://tailieu.antoanthongtin.gov.vn/Files/files/site-2/files/Hemadongcoxacthuc.pdf">Hệ mã dòng có xác thực</a></li>
 <li><a href="https://en.wikipedia.org/wiki/ChaCha20-Poly1305#Security">Security of Chacha20-Poly1305 by Wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/RC4">RC4 by Wikipedia</a></li>
 </ol>
 </div>
     <footer class="article-footer"><blockquote class="article-copyright"><p><strong><span class="icon-user icon"></span>Author: </strong>r1muru</p><p>
-      <strong><span class="icon-link icon"></span>Permalink: </strong><a href="https://r1muru2006.github.io/post/streamcipher/">https://r1muru2006.github.io/post/streamcipher/</a>
+      <strong><span class="icon-link icon"></span>Permalink: </strong><a href="http://localhost:1313/post/streamcipher/">http://localhost:1313/post/streamcipher/</a>
     </p><p>
       
       <strong><span class="icon-copyright icon"></span>License: </strong>
@@ -479,10 +550,10 @@ Reference
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;29.0k</span
+          >&nbsp;29.5k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;02:22</span>
+        <span class="icon-coffee">&nbsp;02:24</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -508,13 +579,18 @@ Reference
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#algorithm">Algorithm</a>
+    <li><a href="#chacha20-poly1305">Chacha20-Poly1305</a>
       <ul>
-        <li><a href="#chacha20">Chacha20</a></li>
-        <li><a href="#poly1305">Poly1305</a></li>
+        <li><a href="#algorithm">Algorithm</a></li>
+        <li><a href="#security">Security</a></li>
       </ul>
     </li>
-    <li><a href="#security">Security</a></li>
+    <li><a href="#rc4">RC4</a>
+      <ul>
+        <li><a href="#algorithm-1">Algorithm</a></li>
+      </ul>
+    </li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
 </div></div>
@@ -631,7 +707,7 @@ Reference
     src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
     integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
     src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
-    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous" ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous" ></script><script>
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" ></script><script src="/js/aos.js" ></script><script>
     var aosInit = () => {
       AOS.init({
         duration: 1000,
@@ -645,7 +721,7 @@ Reference
     } else {
       aosInit();
     }
-  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script><script>
+  </script><script src="/js/pjax_main.js" data-pjax></script><script>
     var ALGOLIA_CONFIG = {
       logo: '\/images\/algolia_logo.svg',
       algolia: {
@@ -666,7 +742,7 @@ Reference
     src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
     deferintegrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"></script><script
     src="https://npm.webcache.cn/@reimujs/instantsearch.js@4.57.0-beta.1/dist/instantsearch.production.min.js"
-    deferintegrity="sha384-aagKMe8nkqaP2DYQc8kkYOL5l&#43;M5Q2WH/Uhr4teOh0Ybp0RZj0kUSDm45qPikMjK" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous" ></script><script
+    deferintegrity="sha384-aagKMe8nkqaP2DYQc8kkYOL5l&#43;M5Q2WH/Uhr4teOh0Ybp0RZj0kUSDm45qPikMjK" crossorigin="anonymous"></script><script src="/js/algolia_search.js" ></script><script
     src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
     integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
   if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
@@ -679,18 +755,18 @@ Reference
   }
 </script><script
     src="https://npm.webcache.cn/theme-shokax-pjax@0.0.3/dist/index.umd.js"
-    integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE/jMSCxD&#43;jAPU55x/jj3wlf" crossorigin="anonymous"></script><script src="/js/pjax.js" integrity="" crossorigin="anonymous" ></script>
+    integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE/jMSCxD&#43;jAPU55x/jj3wlf" crossorigin="anonymous"></script><script src="/js/pjax.js" ></script>
 
 <div id="lazy-script">
   <div><script data-pjax>
         window.REIMU_POST = {
           author: "r1muru",
           title: "Is stream encryption secure?",
-          url: "https:\/\/r1muru2006.github.io\/post\/streamcipher\/",
+          url: "http:\/\/localhost:1313\/post\/streamcipher\/",
           description: "Today I will go over some stream ciphers and learn how they can be exploited by attackers.",
-          cover: "https:\/\/r1muru2006.github.io\/images\/StreamCipher\/background.png",
+          cover: "http:\/\/localhost:1313\/images\/StreamCipher\/background.png",
         };
-      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+      </script><script src="/js/insert_highlight.js" data-pjax></script><script src="/js/tabs.js" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
           if (_$$(`${gallery} ${children}`).length > 0) {
             new PhotoSwipeLightbox({
               gallery,
