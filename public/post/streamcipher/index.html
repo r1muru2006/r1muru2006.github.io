@@ -169,6 +169,7 @@ This article does not have a corresponding language version
     <li><a href="#rc4">RC4</a>
       <ul>
         <li><a href="#algorithm-1">Algorithm</a></li>
+        <li><a href="#security-1">Security</a></li>
       </ul>
     </li>
     <li><a href="#reference">Reference</a></li>
@@ -479,6 +480,14 @@ $$\forall x \in \{0, \dots, 255\}, \text{the element } S[x] \text{ is swapped at
 </span></span><span class="line"><span class="cl">        <span class="n">K</span> <span class="o">=</span> <span class="n">S</span><span class="p">[(</span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">        <span class="k">yield</span> <span class="n">K</span>
 </span></span></code></pre></div><p>Here is the implement of this algorithm: <a href="https://github.com/r1muru2006/r1muru2006.github.io/tree/main/static/script/streamcipher/RC4/RC4.py">Link</a></p>
+<h3 id="security-1">
+<a class="header-anchor" href="#security-1"></a>
+Security
+</h3><p>Unlike a modern stream cipher, RC4 does not take a separate nonce alongside the key. This means that if a single long-term key is to be used to securely encrypt multiple streams, the protocol must specify how to combine the nonce and the long-term key to generate the stream key for RC4.</p>
+<p>While it is remarkable for its simplicity and speed in software, multiple vulnerabilities have been discovered in RC4. Particularly problematic uses of RC4 have led to very insecure protocols such as WEP.</p>
+<p><img src="/images/StreamCipher/WEP.png" alt="images">
+Wired Equivalent Privacy (WEP) was included as the privacy component of the original IEEE 802.11 standard ratified in 1997. WEP uses the stream cipher RC4 for confidentiality, and the CRC-32 checksum for integrity.</p>
+<p>However, RC4&rsquo;s weak key schedule then gives rise to related-key attacks, like the Fluhrer, Mantin and Shamir attack (FMS attack).</p>
 <h2 id="reference">
 <a class="header-anchor" href="#reference"></a>
 Reference
@@ -486,6 +495,8 @@ Reference
 <li><a href="https://tailieu.antoanthongtin.gov.vn/Files/files/site-2/files/Hemadongcoxacthuc.pdf">Hệ mã dòng có xác thực</a></li>
 <li><a href="https://en.wikipedia.org/wiki/ChaCha20-Poly1305#Security">Security of Chacha20-Poly1305 by Wikipedia</a></li>
 <li><a href="https://en.wikipedia.org/wiki/RC4">RC4 by Wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Related-key_attack">Related-key attack by Wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Fluhrer,_Mantin_and_Shamir_attack">Fluhrer, Mantin and Shamir attack by Wikipedia</a></li>
 </ol>
 </div>
     <footer class="article-footer"><blockquote class="article-copyright"><p><strong><span class="icon-user icon"></span>Author: </strong>r1muru</p><p>
@@ -550,10 +561,10 @@ Reference
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;29.5k</span
+          >&nbsp;29.6k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;02:24</span>
+        <span class="icon-coffee">&nbsp;02:25</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -588,6 +599,7 @@ Reference
     <li><a href="#rc4">RC4</a>
       <ul>
         <li><a href="#algorithm-1">Algorithm</a></li>
+        <li><a href="#security-1">Security</a></li>
       </ul>
     </li>
     <li><a href="#reference">Reference</a></li>

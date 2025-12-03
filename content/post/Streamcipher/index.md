@@ -215,8 +215,14 @@ While it is remarkable for its simplicity and speed in software, multiple vulner
 ![images](/images/StreamCipher/WEP.png)
 Wired Equivalent Privacy (WEP) was included as the privacy component of the original IEEE 802.11 standard ratified in 1997. WEP uses the stream cipher RC4 for confidentiality, and the CRC-32 checksum for integrity.
 
-However WEP’s 24-bit IV is too short to guarantee uniqueness on a busy network that makes WEP vulnerable to related key attacks. 
+However, RC4's weak key schedule then gives rise to related-key attacks, like the Fluhrer, Mantin and Shamir attack.
 
+#### Fluhrer, Mantin and Shamir attack
+The basis of the FMS attack lies in the use of weak initialization vectors (IVs) used with RC4.
+
+When the WEP security standard was designed for WiFi in the 90s, engineers specified the following key structure: `IV` length is fixed at 24 bits (3 bytes) and `session key` is the result of the concatenation of the `IV` and the `Root Key` together.
+
+Therefore, the `Root Key` will start at index 3 so if we want to recover the `Root Key`, we could start at this index. After a few calculation, we choose (i, 255, x) as the weak IV 
 
 ## Reference
 1. [Hệ mã dòng có xác thực](https://tailieu.antoanthongtin.gov.vn/Files/files/site-2/files/Hemadongcoxacthuc.pdf)
