@@ -36,7 +36,7 @@ while True:
     secret.append(found)
     print(bytes(secret))
 
-    if found == 125:
+    if found == 125: # the '}' char
         break
 
     A += 1

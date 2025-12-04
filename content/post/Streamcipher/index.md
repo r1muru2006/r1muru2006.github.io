@@ -310,9 +310,25 @@ Swap S[3] and S[Q]: S[3] = Q, S[X] = 1
                        i                       j
 ```
 
-Then continue until A + 3 rounds and if this still has S[0] = A + 3, S[1] = 0, it could lead to the first bytes of the keystream after PRGA is: $$K[0] = S[S[1] + S[S[1]] = S[0+S[0]]=S[3] =Q$$ We can recover the byte with index A of the `Root Key`: $$j_{A+4}=j_{A+3}+S_{A+3}[A+3]+K[A+3] \pmod {256} \\ \Leftrightarrow Q = j_{A+3} + S_{A+3}[A+3] + rk[A]\pmod {256} \\ \Leftrightarrow rk[A]= Q - j_{A+3} - S_{A+3}[A+3] \pmod {256}$$.
-When I calculate the probability of the case $Q = j_{A+4}$, it came out to be 5% compared to the normal $\dfrac{1}{256}$ because of my chosen weak IV. We can see that the probability that a value will not be touched in a random loop is approximately $1-\dfrac{1}{256}$ and survives 256 rounds is $(1-\dfrac{1}{256})^{256}=e^{-1}$. Finally, we need 3 specific values not moved which is $S[0]$, $S[1]$ and $j_{A+4}=Q$ so the probability is: $(e^{-1})^3 = e^{-3} \approx 0.0497$ (nearly 5%)
+Then continue until A + 3 rounds and if this still has S[0] = A + 3, S[1] = 0, it could lead to the first bytes of the keystream after PRGA is: $$K[0] = S[S[1] + S[S[1]] = S[0+S[0]]=S[3] =Q$$ We can recover the byte with index A of the `Root Key`: $$j_{A+4}=j_{A+3}+S_{A+3}[A+3]+K[A+3] \pmod {256} \\ \Leftrightarrow Q = j_{A+3} + S_{A+3}[A+3] + \text{rk}[A]\pmod {256} \\ \Leftrightarrow \text{rk}[A]= Q - j_{A+3} - S_{A+3}[A+3] \pmod {256}$$
+When I calculate the probability of the case $Q = j_{A+4}$, it came out to be 5% compared to the normal $\dfrac{1}{256}$ because of my chosen weak IV. The probability that a value will not be touched in a random loop is approximately $1-\dfrac{1}{256}$ and survives 256 rounds is $(1-\dfrac{1}{256})^{256}=e^{-1}$. Finally, we require three specific values ($S[0], S[1]$, and the target) to remain unmoved, the combined probability is derived as $(e^{-1})^3 = e^{-3} \approx 0.0497$.
 
+```python
+S = list(range(256))
+j = 0
+for i in range(A + 3):
+    j = (j + S[i] + key[i % len(key)]) % 256
+    S[i], S[j] = S[j], S[i]
+    if i == 1:
+        o0, o1 = S[0], S[1]
+
+i = A + 3
+if S[1] < i and (S[1] + S[S[1]]) == i:
+    if o0 != S[0] or o1 != S[1]:
+        continue
+    key_byte = (ks - j - S[i]) % 256
+    probs[key_byte] += 1
+```
 From there, we count each case x to see which value appears most often and determine that it is the one we are looking for.
 
 The implement, challenge and also the solution I put in [here](https://github.com/r1muru2006/r1muru2006.github.io/tree/main/static/script/streamcipher/RC4).
@@ -323,3 +339,4 @@ The implement, challenge and also the solution I put in [here](https://github.co
 3. [RC4 by Wikipedia](https://en.wikipedia.org/wiki/RC4)
 4. [Related-key attack by Wikipedia](https://en.wikipedia.org/wiki/Related-key_attack)
 5. [Fluhrer, Mantin and Shamir attack by Wikipedia](https://en.wikipedia.org/wiki/Fluhrer,_Mantin_and_Shamir_attack)
+6. [Weaknesses in the Key Scheduling Algorithm of RC4](https://link.springer.com/content/pdf/10.1007/3-540-45537-X_1.pdf)
