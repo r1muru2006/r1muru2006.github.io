@@ -1,6 +1,6 @@
 ---
 title: "Is stream encryption secure?"
-description: "Today I will go over some stream ciphers and learn how they can be exploited by attackers."
+description: "Today I will go over some stream ciphers (Chacha20-Poly1305, RC4) and learn how they can be exploited by attackers."
 date: 2025-11-25T14:33:54+07:00
 cover: /images/StreamCipher/background.png
 math: true
