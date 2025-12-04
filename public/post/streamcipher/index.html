@@ -10,7 +10,7 @@
 /><title>
   Is stream encryption secure? | r1muru
 </title>
-<meta name="description" content="Today I will go over some stream ciphers and learn how they can be exploited by attackers."/><script>
+<meta name="description" content="Today I will go over some stream ciphers (Chacha20-Poly1305, RC4) and learn how they can be exploited by attackers."/><script>
   window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://r1muru2006.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":false,\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
   
 </script>
@@ -52,7 +52,7 @@
   <meta property="og:title" content="Is stream encryption secure? | r1muru" />
   <meta
     property="og:description"
-    content="Today I will go over some stream ciphers and learn how they can be exploited by attackers."
+    content="Today I will go over some stream ciphers (Chacha20-Poly1305, RC4) and learn how they can be exploited by attackers."
   />
   <meta property="og:url" content="https://r1muru2006.github.io/post/streamcipher/" />
   <meta
@@ -908,7 +908,7 @@ Reference
           author: "r1muru",
           title: "Is stream encryption secure?",
           url: "https:\/\/r1muru2006.github.io\/post\/streamcipher\/",
-          description: "Today I will go over some stream ciphers and learn how they can be exploited by attackers.",
+          description: "Today I will go over some stream ciphers (Chacha20-Poly1305, RC4) and learn how they can be exploited by attackers.",
           cover: "https:\/\/r1muru2006.github.io\/images\/StreamCipher\/background.png",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
