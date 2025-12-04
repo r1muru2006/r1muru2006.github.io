@@ -3,7 +3,7 @@
   lang="en-us" 
   data-theme-mode="auto"
   >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=45075&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8" />
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8" />
 <meta
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -11,7 +11,7 @@
   Is stream encryption secure? | r1muru
 </title>
 <meta name="description" content="Today I will go over some stream ciphers and learn how they can be exploited by attackers."/><script>
-  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"http://localhost:45075/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":false,\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"http://localhost:1313/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":false,\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
   
 </script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -54,7 +54,7 @@
     property="og:description"
     content="Today I will go over some stream ciphers and learn how they can be exploited by attackers."
   />
-  <meta property="og:url" content="http://localhost:45075/post/streamcipher/" />
+  <meta property="og:url" content="http://localhost:1313/post/streamcipher/" />
   <meta
     property="og:site_name"
     content="r1muru&#39;s blog"
@@ -494,8 +494,7 @@ Fluhrer, Mantin and Shamir attack
 </h4><p>The basis of the FMS attack lies in the use of weak initialization vectors (IVs) used with RC4.</p>
 <p>When the WEP security standard was designed for WiFi in the 90s, engineers specified the following key structure: <code>IV</code> length is fixed at 24 bits (3 bytes) and <code>session key</code> is the result of the concatenation of the <code>IV</code> and the <code>Root Key</code> together.</p>
 <p>Therefore, the <code>Root Key</code> will start at index 3 so if we want to recover the <code>Root Key</code>, we could start at this index. After a few calculation, we choose $(i, 255, x)$ as the weak IV with i is the index of the bytes we want to recover, x is an arbitrary integer number.</p>
-<p>For example, if we want to exploit the first byte of <code>Root Key</code> then we set <code>i = 3</code>.</p>
-<p>Assuming length of the <code>Root Key</code> smaller than 256. The key now is: [3, 255, x, rk[0], rk[1],&hellip;]</p>
+<p>For example, we set <code>i = A + 3</code>. Assuming length of the <code>Root Key</code> smaller than 256. The key now is: [A + 3, 255, x, rk[0], rk[1],&hellip;]</p>
 <p>Here are some of the first rounds as we process the KSA:</p>
 <ul>
 <li>Round 1:</li>
@@ -508,55 +507,80 @@ Fluhrer, Mantin and Shamir attack
 </span></span><span class="line"><span class="cl">  i,j
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">- Calculate:
-</span></span><span class="line"><span class="cl">j = (j + S[i] + key[i % keylen]) &amp; 0xFF = (0 + S[0] + key[0]) &amp; 0xFF = (0 + 0 + 3) % 255 = 3
-</span></span><span class="line"><span class="cl">Swap S[0] and S[3]: S[0] = 3, S[3] = 0
+</span></span><span class="line"><span class="cl">j = (j + S[i] + key[i % keylen]) &amp; 0xFF = (0 + S[0] + key[0]) &amp; 0xFF = (0 + 0 + A + 3) % 255 = A + 3
+</span></span><span class="line"><span class="cl">Swap S[0] and S[A + 3]: S[0] = A + 3, S[A + 3] = 0
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">- S becomes:
-</span></span><span class="line"><span class="cl">+-----------------------------------------------+
-</span></span><span class="line"><span class="cl">|  3  |  1  |  2  |  0  |  4  |  5  | ... | 255 |
-</span></span><span class="line"><span class="cl">+-----------------------------------------------+
-</span></span><span class="line"><span class="cl">   ^                 ^
-</span></span><span class="line"><span class="cl">   i                 j
+</span></span><span class="line"><span class="cl">+--------------------------------------------+
+</span></span><span class="line"><span class="cl">| A + 3 |  1  |  2  | ...  |  0  | ... | 255 |
+</span></span><span class="line"><span class="cl">+--------------------------------------------+
+</span></span><span class="line"><span class="cl">    ^                         ^
+</span></span><span class="line"><span class="cl">    i                         j
 </span></span></code></pre></div><ul>
 <li>Round 2:</li>
 </ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">- Start with S:
-</span></span><span class="line"><span class="cl">+-----------------------------------------------+
-</span></span><span class="line"><span class="cl">|  3  |  1  |  2  |  0  |  4  |  5  | ... | 255 |
-</span></span><span class="line"><span class="cl">+-----------------------------------------------+
-</span></span><span class="line"><span class="cl">         ^           ^
-</span></span><span class="line"><span class="cl">         i           j
+</span></span><span class="line"><span class="cl">+--------------------------------------------+
+</span></span><span class="line"><span class="cl">| A + 3 |  1  |  2  | ...  |  0  | ... | 255 |
+</span></span><span class="line"><span class="cl">+--------------------------------------------+
+</span></span><span class="line"><span class="cl">           ^                  ^
+</span></span><span class="line"><span class="cl">           i                  j
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">- Calculate:
-</span></span><span class="line"><span class="cl">j = (j + S[i] + key[i % keylen]) &amp; 0xFF = (3 + S[1] + key[1]) &amp; 0xFF = (3 + 1 + 255) % 256 = 3
-</span></span><span class="line"><span class="cl">Swap S[1] and S[3]: S[1] = 0, S[3] = 1
+</span></span><span class="line"><span class="cl">j = (j + S[i] + key[i % keylen]) &amp; 0xFF = (A + 3 + S[1] + key[1]) &amp; 0xFF = (A + 3 + 1 + 255) % 256 = A + 3
+</span></span><span class="line"><span class="cl">Swap S[1] and S[A + 3]: S[1] = 0, S[A + 3] = 1
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">- S becomes:
-</span></span><span class="line"><span class="cl">+-----------------------------------------------+
-</span></span><span class="line"><span class="cl">|  3  |  0  |  2  |  1  |  4  |  5  | ... | 255 |
-</span></span><span class="line"><span class="cl">+-----------------------------------------------+
-</span></span><span class="line"><span class="cl">         ^           ^
-</span></span><span class="line"><span class="cl">         i           j
+</span></span><span class="line"><span class="cl">+--------------------------------------------+
+</span></span><span class="line"><span class="cl">| A + 3 |  0  |  2  | ...  |  1  | ... | 255 |
+</span></span><span class="line"><span class="cl">+--------------------------------------------+
+</span></span><span class="line"><span class="cl">           ^                  ^
+</span></span><span class="line"><span class="cl">           i                  j
 </span></span></code></pre></div><ul>
 <li>Round 3:</li>
 </ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">- Start with S:
-</span></span><span class="line"><span class="cl">+-----------------------------------------------+
-</span></span><span class="line"><span class="cl">|  3  |  1  |  2  |  0  |  4  |  5  | ... | 255 |
-</span></span><span class="line"><span class="cl">+-----------------------------------------------+
-</span></span><span class="line"><span class="cl">               ^     ^
-</span></span><span class="line"><span class="cl">               i     j
+</span></span><span class="line"><span class="cl">+--------------------------------------------+
+</span></span><span class="line"><span class="cl">| A + 3 |  0  |  2  | ...  |  1  | ... | 255 |
+</span></span><span class="line"><span class="cl">+--------------------------------------------+
+</span></span><span class="line"><span class="cl">                 ^            ^
+</span></span><span class="line"><span class="cl">                 i            j
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">- Calculate:
-</span></span><span class="line"><span class="cl">j = (j + S[i] + key[i % keylen]) &amp; 0xFF = (3 + S[2] + key[2]) &amp; 0xFF = (3 + 2 + x) % 256 = X,
-</span></span><span class="line"><span class="cl">with X = (x + 5) % 256
-</span></span><span class="line"><span class="cl">Swap S[1] and S[3]: S[1] = 0, S[3] = 1
+</span></span><span class="line"><span class="cl">j = (j + S[i] + key[i % keylen]) &amp; 0xFF = (A + 3 + S[2] + key[2]) &amp; 0xFF = (A + 3 + 2 + x) % 256 = X,
+</span></span><span class="line"><span class="cl">with X = (x + A + 5) % 256
+</span></span><span class="line"><span class="cl">Swap S[2] and S[X]: S[2] = X, S[X] = 2
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">- S becomes:
-</span></span><span class="line"><span class="cl">+-----------------------------------------------+
-</span></span><span class="line"><span class="cl">|  3  |  0  |  2  |  1  |  4  |  5  | ... | 255 |
-</span></span><span class="line"><span class="cl">+-----------------------------------------------+
-</span></span></code></pre></div><h2 id="reference">
+</span></span><span class="line"><span class="cl">+-----------------------------------------------------------+
+</span></span><span class="line"><span class="cl">| A + 3 |  0  |  X  |  1  |  4  |  5  | ... | 2 | ... | 255 |
+</span></span><span class="line"><span class="cl">+-----------------------------------------------------------+
+</span></span><span class="line"><span class="cl">                 ^                            ^
+</span></span><span class="line"><span class="cl">                 i                            j
+</span></span></code></pre></div><ul>
+<li>Round 4:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">- Start with S:
+</span></span><span class="line"><span class="cl">+-------------------------------------------------------------+
+</span></span><span class="line"><span class="cl">| A + 3 |  0  |  X  |  1  |  4  |  5  | ... |  2  | ... | 255 |
+</span></span><span class="line"><span class="cl">+-------------------------------------------------------------+
+</span></span><span class="line"><span class="cl">                       ^                       ^
+</span></span><span class="line"><span class="cl">                       i                       j
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">- Calculate:
+</span></span><span class="line"><span class="cl">j = (j + S[i] + key[i % keylen]) &amp; 0xFF = (X + S[3] + key[3]) &amp; 0xFF = (X + 1 + rk[0]) % 256 = Q,
+</span></span><span class="line"><span class="cl">with Q = (X + 1 + rk[0]) % 256 = (x + A + 6 + rk[0]) % 256
+</span></span><span class="line"><span class="cl">Swap S[3] and S[Q]: S[3] = Q, S[X] = 1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">- S becomes:
+</span></span><span class="line"><span class="cl">+-------------------------------------------------------------+
+</span></span><span class="line"><span class="cl">| A + 3 |  0  |  X  |  Q  |  4  |  5  | ... |  1  | ... | 255 |
+</span></span><span class="line"><span class="cl">+-------------------------------------------------------------+
+</span></span><span class="line"><span class="cl">                       ^                       ^
+</span></span><span class="line"><span class="cl">                       i                       j
+</span></span></code></pre></div><p>Then continue until A + 3 rounds and if this still has S[0] = A + 3, S[1] = 0 and S[A + 3] = Q, it could lead to the first bytes of the keystream after PRGA is: </p>
+$$K[0] = S[S[1] + S[S[1]] = S[0+S[0]]=S[3] =Q$$<p> We can recover the byte with index A of the <code>Root Key</code>: </p>
+$$j_{A+4}=j_{A+3}+S_{A+3}[A+3]+K[A+3] \pmod {256} \\ \Leftrightarrow j_{A+4}=j_{A+3}+S_{A+3}[A+3]+ \pmod {256}$$<h2 id="reference">
 <a class="header-anchor" href="#reference"></a>
 Reference
 </h2><ol>
@@ -568,7 +592,7 @@ Reference
 </ol>
 </div>
     <footer class="article-footer"><blockquote class="article-copyright"><p><strong><span class="icon-user icon"></span>Author: </strong>r1muru</p><p>
-      <strong><span class="icon-link icon"></span>Permalink: </strong><a href="http://localhost:45075/post/streamcipher/">http://localhost:45075/post/streamcipher/</a>
+      <strong><span class="icon-link icon"></span>Permalink: </strong><a href="http://localhost:1313/post/streamcipher/">http://localhost:1313/post/streamcipher/</a>
     </p><p>
       
       <strong><span class="icon-copyright icon"></span>License: </strong>
@@ -629,10 +653,10 @@ Reference
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;30.1k</span
+          >&nbsp;30.3k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;02:27</span>
+        <span class="icon-coffee">&nbsp;02:28</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -842,9 +866,9 @@ Reference
         window.REIMU_POST = {
           author: "r1muru",
           title: "Is stream encryption secure?",
-          url: "http:\/\/localhost:45075\/post\/streamcipher\/",
+          url: "http:\/\/localhost:1313\/post\/streamcipher\/",
           description: "Today I will go over some stream ciphers and learn how they can be exploited by attackers.",
-          cover: "http:\/\/localhost:45075\/images\/StreamCipher\/background.png",
+          cover: "http:\/\/localhost:1313\/images\/StreamCipher\/background.png",
         };
       </script><script src="/js/insert_highlight.js" data-pjax></script><script src="/js/tabs.js" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
           if (_$$(`${gallery} ${children}`).length > 0) {

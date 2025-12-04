@@ -205,7 +205,7 @@ def rc4_prga(S):
         K = S[(S[i] + S[j]) & 0xFF]
         yield K
 ```
-Here is the implement of this algorithm: [Link](https://github.com/r1muru2006/r1muru2006.github.io/tree/main/static/script/streamcipher/RC4/RC4.py)
+Here is the implement of this algorithm: [Link](https://github.com/r1muru2006/r1muru2006.github.io/tree/main/static/script/streamcipher/RC4/RC4.py).
 
 ### Security
 Unlike a modern stream cipher, RC4 does not take a separate nonce alongside the key. This means that if a single long-term key is to be used to securely encrypt multiple streams, the protocol must specify how to combine the nonce and the long-term key to generate the stream key for RC4.
@@ -224,9 +224,7 @@ When the WEP security standard was designed for WiFi in the 90s, engineers speci
 
 Therefore, the `Root Key` will start at index 3 so if we want to recover the `Root Key`, we could start at this index. After a few calculation, we choose $(i, 255, x)$ as the weak IV with i is the index of the bytes we want to recover, x is an arbitrary integer number.
 
-For example, if we want to exploit the first byte of `Root Key` then we set `i = 3`.
-
-Assuming length of the `Root Key` smaller than 256. The key now is: [3, 255, x, rk[0], rk[1],...]
+For example, we set `i = A + 3`. Assuming length of the `Root Key` smaller than 256. The key now is: [A + 3, 255, x, rk[0], rk[1],...]
 
 Here are some of the first rounds as we process the KSA:
 - Round 1:
@@ -239,59 +237,86 @@ Here are some of the first rounds as we process the KSA:
   i,j
 
 - Calculate:
-j = (j + S[i] + key[i % keylen]) & 0xFF = (0 + S[0] + key[0]) & 0xFF = (0 + 0 + 3) % 255 = 3
-Swap S[0] and S[3]: S[0] = 3, S[3] = 0
+j = (j + S[i] + key[i % keylen]) & 0xFF = (0 + S[0] + key[0]) & 0xFF = (0 + 0 + A + 3) % 255 = A + 3
+Swap S[0] and S[A + 3]: S[0] = A + 3, S[A + 3] = 0
 
 - S becomes:
-+-----------------------------------------------+
-|  3  |  1  |  2  |  0  |  4  |  5  | ... | 255 |
-+-----------------------------------------------+
-   ^                 ^
-   i                 j
++--------------------------------------------+
+| A + 3 |  1  |  2  | ...  |  0  | ... | 255 |
++--------------------------------------------+
+    ^                         ^
+    i                         j
 ```
 - Round 2:
 ```text
 - Start with S:
-+-----------------------------------------------+
-|  3  |  1  |  2  |  0  |  4  |  5  | ... | 255 |
-+-----------------------------------------------+
-         ^           ^
-         i           j
++--------------------------------------------+
+| A + 3 |  1  |  2  | ...  |  0  | ... | 255 |
++--------------------------------------------+
+           ^                  ^
+           i                  j
 
 - Calculate:
-j = (j + S[i] + key[i % keylen]) & 0xFF = (3 + S[1] + key[1]) & 0xFF = (3 + 1 + 255) % 256 = 3
-Swap S[1] and S[3]: S[1] = 0, S[3] = 1
+j = (j + S[i] + key[i % keylen]) & 0xFF = (A + 3 + S[1] + key[1]) & 0xFF = (A + 3 + 1 + 255) % 256 = A + 3
+Swap S[1] and S[A + 3]: S[1] = 0, S[A + 3] = 1
 
 - S becomes:
-+-----------------------------------------------+
-|  3  |  0  |  2  |  1  |  4  |  5  | ... | 255 |
-+-----------------------------------------------+
-         ^           ^
-         i           j
++--------------------------------------------+
+| A + 3 |  0  |  2  | ...  |  1  | ... | 255 |
++--------------------------------------------+
+           ^                  ^
+           i                  j
 ```
 - Round 3:
 ```text
 - Start with S:
-+-----------------------------------------------+
-|  3  |  1  |  2  |  0  |  4  |  5  | ... | 255 |
-+-----------------------------------------------+
-               ^     ^
-               i     j
++--------------------------------------------+
+| A + 3 |  0  |  2  | ...  |  1  | ... | 255 |
++--------------------------------------------+
+                 ^            ^
+                 i            j
 
 - Calculate:
-j = (j + S[i] + key[i % keylen]) & 0xFF = (3 + S[2] + key[2]) & 0xFF = (3 + 2 + x) % 256 = X,
-with X = (x + 5) % 256
+j = (j + S[i] + key[i % keylen]) & 0xFF = (A + 3 + S[2] + key[2]) & 0xFF = (A + 3 + 2 + x) % 256 = X,
+with X = (x + A + 5) % 256
 Swap S[2] and S[X]: S[2] = X, S[X] = 2
 
 - S becomes:
-+---------------------------------------------------------+
-|  3  |  0  |  X  |  1  |  4  |  5  | ... | 2 | ... | 255 |
-+---------------------------------------------------------+
-               ^                            ^
-               i                            j
++-----------------------------------------------------------+
+| A + 3 |  0  |  X  |  1  |  4  |  5  | ... | 2 | ... | 255 |
++-----------------------------------------------------------+
+                 ^                            ^
+                 i                            j
+```
+- Round 4:
+```text
+- Start with S:
++-------------------------------------------------------------+
+| A + 3 |  0  |  X  |  1  |  4  |  5  | ... |  2  | ... | 255 |
++-------------------------------------------------------------+
+                       ^                       ^
+                       i                       j
+
+- Calculate:
+j = (j + S[i] + key[i % keylen]) & 0xFF = (X + S[3] + key[3]) & 0xFF = (X + 1 + rk[0]) % 256 = Q,
+with Q = (X + 1 + rk[0]) % 256 = (x + A + 6 + rk[0]) % 256
+Swap S[3] and S[Q]: S[3] = Q, S[X] = 1
+
+- S becomes:
++-------------------------------------------------------------+
+| A + 3 |  0  |  X  |  Q  |  4  |  5  | ... |  1  | ... | 255 |
++-------------------------------------------------------------+
+                       ^                       ^
+                       i                       j
 ```
 
-As we can see, after 3 rounds we know S[0] = 3, S[1] = 0 and S[3] = 1. If this is constant, it could lead to the first bytes of the keystream after PRGA is: $$K[0] = S[S[1] + S[S[1]] = S[0+S[0]]=S[3] $$
+Then continue until A + 3 rounds and if this still has S[0] = A + 3, S[1] = 0, it could lead to the first bytes of the keystream after PRGA is: $$K[0] = S[S[1] + S[S[1]] = S[0+S[0]]=S[3] =Q$$ We can recover the byte with index A of the `Root Key`: $$j_{A+4}=j_{A+3}+S_{A+3}[A+3]+K[A+3] \pmod {256} \\ \Leftrightarrow Q = j_{A+3} + S_{A+3}[A+3] + rk[A]\pmod {256} \\ \Leftrightarrow rk[A]= Q - j_{A+3} - S_{A+3}[A+3] \pmod {256}$$.
+When I calculate the probability of the case $Q = j_{A+4}$, it came out to be 5% compared to the normal $\dfrac{1}{256}$ because of my chosen weak IV. We can see that the probability that a value will not be touched in a random loop is approximately $1-\dfrac{1}{256}$ and survives 256 rounds is $(1-\dfrac{1}{256})^{256}=e^{-1}$. Finally, we need 3 specific values not moved which is $S[0]$, $S[1]$ and $j_{A+4}=Q$ so the probability is: $(e^{-1})^3 = e^{-3} \approx 0.0497$ (nearly 5%)
+
+From there, we count each case x to see which value appears most often and determine that it is the one we are looking for.
+
+The implement, challenge and also the solution I put in [here](https://github.com/r1muru2006/r1muru2006.github.io/tree/main/static/script/streamcipher/RC4).
+
 ## Reference
 1. [Hệ mã dòng có xác thực](https://tailieu.antoanthongtin.gov.vn/Files/files/site-2/files/Hemadongcoxacthuc.pdf)
 2. [Security of Chacha20-Poly1305 by Wikipedia](https://en.wikipedia.org/wiki/ChaCha20-Poly1305#Security)
