@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reverse Engineering on r1muru&#39;s blog</title>
-    <link>http://localhost:1313/tags/reverse-engineering/</link>
+    <link>https://r1muru2006.github.io/tags/reverse-engineering/</link>
     <description>Recent content from r1muru&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Mon, 24 Nov 2025 21:40:43 +0700</lastBuildDate>
     
     
-    <atom:link href="http://localhost:1313/tags/reverse-engineering/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://r1muru2006.github.io/tags/reverse-engineering/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>Patriot CTF 2025</title>
-      <link>http://localhost:1313/post/patriotctf2025/</link>
+      <link>https://r1muru2006.github.io/post/patriotctf2025/</link>
       <pubDate>Mon, 24 Nov 2025 21:40:43 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>http://localhost:1313/post/patriotctf2025/</guid>
+      <guid>https://r1muru2006.github.io/post/patriotctf2025/</guid>
       <description>
         <![CDATA[<h1>Patriot CTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -46,7 +46,7 @@ Where&rsquo;s Legally Distinct Waldo One
 <p>In the picture, I noticed an area with a similar patterned tile floor to the challenge in the lower right corner of the photo at the George Mason Statue. When I scanned this street, I saw a corner with the same pattern and the building name <code>Horizon Hall</code> had the same view.
 <img src="/images/patriot/osint1_4.png" alt="images"></p>
         
-        <hr><p>Published on 2025-11-24 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-11-24</p>]]>
+        <hr><p>Published on 2025-11-24 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-11-24</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -57,10 +57,10 @@ Where&rsquo;s Legally Distinct Waldo One
 
     <item>
       <title>WannaGame NMLT</title>
-      <link>http://localhost:1313/post/wannagamenmlt/</link>
+      <link>https://r1muru2006.github.io/post/wannagamenmlt/</link>
       <pubDate>Tue, 08 Apr 2025 10:07:31 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>http://localhost:1313/post/wannagamenmlt/</guid>
+      <guid>https://r1muru2006.github.io/post/wannagamenmlt/</guid>
       <description>
         <![CDATA[<h1>WannaGame NMLT</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -108,7 +108,7 @@ Phân tích:
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">data</span><span class="p">)</span>
 </span></span></code></pre></div><p>Hàm <code>hehe</code> lấy <code>data</code> và chuyển đổi từng ký tự trong dữ liệu đó sang ký tự tương ứng bằng danh sách của <code>KEY</code>.</p>
         
-        <hr><p>Published on 2025-04-08 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-04-08</p>]]>
+        <hr><p>Published on 2025-04-08 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-04-08</p>]]>
       </description>
       
         <category>CTF Write-up</category><category>WannaGame</category>

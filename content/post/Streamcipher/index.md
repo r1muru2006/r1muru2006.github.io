@@ -138,7 +138,30 @@ By subtracting one equation from the other, we can eliminate the unknown scalar 
 $$tag_1 - tag_2 = \sum (\text{block}_{1,i} - \text{block}_{2,i}) \cdot r^i + k \cdot 2^{128} \pmod p$$
 
 Here, $k$ represents the "carry" difference resulting from the modulo $2^{128}$ addition, typically falling within the range $k \in \{-4, \dots, 4\}$.
+```python
+def make_poly(data):
+    padded = data + b'\x00' * ((16 - len(data) % 16) % 16)
+    msg = padded + (0).to_bytes(8, 'little') + len(data).to_bytes(8, 'little')
+    coeffs = [to_int(msg[i:i+16] + b'\x01') for i in range(0, len(msg), 16)]
+    return sum(c * r_sym**(len(coeffs)-i) for i, c in enumerate(coeffs))
 
+poly_diff = make_poly(c1) - make_poly(c2)
+delta_tag = t1 - t2
+r, s = None, None
+
+for k in range(-5, 6):
+    roots = (poly_diff - (delta_tag + k * 2**128)).roots()
+    for r_val, _ in roots:
+        r_int = int(r_val)
+        if clamp_check(r_int):
+            val_poly1 = int(make_poly(c1)(r_int))
+            s_cand = (t1 - val_poly1) % 2**128
+            val_poly2 = int(make_poly(c2)(r_int))
+            if (t2 - val_poly2) % 2**128 == s_cand:
+                r, s = r_int, s_cand
+                break
+    if r: break
+```
 **Recovering the Key:**
 By iterating through the small range of possible $k$ values, we can solve for the roots of this polynomial to find potential candidates for $r$. The correct $r$ can be identified by verifying it against the specific formatting rules of the Poly1305 "clamp" function. Once $r$ is found, we can trivially derive $s$ from either original tag. With the complete $(r, s)$ pair, we can now forge valid tags for any arbitrary message.
 
