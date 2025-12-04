@@ -226,7 +226,8 @@ Therefore, the `Root Key` will start at index 3 so if we want to recover the `Ro
 
 For example, if we want to exploit the first byte of `Root Key` then we set `i = 3`.
 
-The key now is: [3, 255, x, rk[0], rk[1],...]
+Assuming length of the `Root Key` smaller than 256. The key now is: [3, 255, x, rk[0], rk[1],...]
+
 Here are some of the first rounds as we process the KSA:
 - Round 1:
 ```text
@@ -238,10 +239,59 @@ Here are some of the first rounds as we process the KSA:
   i,j
 
 - Calculate:
-j = (j + S[i] + key[i % keylen]) & 0xFF = (0 + S[0] + key[0]) & 0xFF = (0 + 0 + 3) = 3
+j = (j + S[i] + key[i % keylen]) & 0xFF = (0 + S[0] + key[0]) & 0xFF = (0 + 0 + 3) % 255 = 3
+Swap S[0] and S[3]: S[0] = 3, S[3] = 0
+
+- S becomes:
++-----------------------------------------------+
+|  3  |  1  |  2  |  0  |  4  |  5  | ... | 255 |
++-----------------------------------------------+
+   ^                 ^
+   i                 j
+```
+- Round 2:
+```text
+- Start with S:
++-----------------------------------------------+
+|  3  |  1  |  2  |  0  |  4  |  5  | ... | 255 |
++-----------------------------------------------+
+         ^           ^
+         i           j
+
+- Calculate:
+j = (j + S[i] + key[i % keylen]) & 0xFF = (3 + S[1] + key[1]) & 0xFF = (3 + 1 + 255) % 256 = 3
+Swap S[1] and S[3]: S[1] = 0, S[3] = 1
+
+- S becomes:
++-----------------------------------------------+
+|  3  |  0  |  2  |  1  |  4  |  5  | ... | 255 |
++-----------------------------------------------+
+         ^           ^
+         i           j
+```
+- Round 3:
+```text
+- Start with S:
++-----------------------------------------------+
+|  3  |  1  |  2  |  0  |  4  |  5  | ... | 255 |
++-----------------------------------------------+
+               ^     ^
+               i     j
+
+- Calculate:
+j = (j + S[i] + key[i % keylen]) & 0xFF = (3 + S[2] + key[2]) & 0xFF = (3 + 2 + x) % 256 = X,
+with X = (x + 5) % 256
+Swap S[2] and S[X]: S[2] = X, S[X] = 2
+
+- S becomes:
++---------------------------------------------------------+
+|  3  |  0  |  X  |  1  |  4  |  5  | ... | 2 | ... | 255 |
++---------------------------------------------------------+
+               ^                            ^
+               i                            j
 ```
 
-
+As we can see, after 3 rounds we know S[0] = 3, S[1] = 0 and S[3] = 1. If this is constant, it could lead to the first bytes of the keystream after PRGA is: $$K[0] = S[S[1] + S[S[1]] = S[0+S[0]]=S[3] $$
 ## Reference
 1. [Hệ mã dòng có xác thực](https://tailieu.antoanthongtin.gov.vn/Files/files/site-2/files/Hemadongcoxacthuc.pdf)
 2. [Security of Chacha20-Poly1305 by Wikipedia](https://en.wikipedia.org/wiki/ChaCha20-Poly1305#Security)
