@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FIPS on r1muru's blog</title><link>https://r1muru2006.github.io/categories/fips/</link><description>Recent content from r1muru's blog</description><generator>Hugo</generator><language>en-us</language><managingEditor>cuongchu200@gmail.com (r1muru)</managingEditor><webMaster>cuongchu200@gmail.com (r1muru)</webMaster><copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright><lastBuildDate>Fri, 05 Dec 2025 08:13:43 +0700</lastBuildDate><atom:link href="https://r1muru2006.github.io/categories/fips/index.xml" rel="self" type="application/rss+xml"/><item><title>Implementing FIPS 205 - Stateless Hash-Based Digital Signature Standard (Part 1)</title><link>https://r1muru2006.github.io/post/implementing_fips_205_p1/</link><pubDate>Fri, 05 Dec 2025 08:13:43 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/implementing_fips_205_p1/</guid><description>
+<![CDATA[<h1>Implementing FIPS 205 - Stateless Hash-Based Digital Signature Standard (Part 1)</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
+        
+          <h1 id="overview-of-slh-dsa--address-structure-adrs">
+<a class="header-anchor" href="#overview-of-slh-dsa--address-structure-adrs"></a>
+Overview of SLH-DSA &amp; Address Structure (ADRS)
+</h1><h2 id="stateless-hash-based-digital-signature-standard-slh-dsa">
+<a class="header-anchor" href="#stateless-hash-based-digital-signature-standard-slh-dsa"></a>
+Stateless Hash-Based Digital Signature Standard (SLH-DSA)
+</h2><h2 id="references">
+<a class="header-anchor" href="#references"></a>
+References
+</h2><ol>
+<li><a href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.205.pdf">NIST.FIPS.205.pdf</a></li>
+<li><a href="https://en.wikipedia.org/wiki/SPHINCS%2B">SPHINCS+ by Wikipedia</a></li>
+</ol>
+        
+        <hr><p>Published on 2025-12-05 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-12-05</p>]]></description><category>Learning</category><category>FIPS</category></item></channel></rss>
