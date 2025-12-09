@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web3 on r1muru&#39;s blog</title>
+    <link>http://localhost:1313/tags/web3/</link>
+    <description>Recent content from r1muru&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    
+    <managingEditor>cuongchu200@gmail.com (r1muru)</managingEditor>
+    <webMaster>cuongchu200@gmail.com (r1muru)</webMaster>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate>Mon, 08 Dec 2025 13:44:12 +0700</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/tags/web3/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>WannaGame Championship 2025</title>
+      <link>http://localhost:1313/post/wannagamechampionship2025/</link>
+      <pubDate>Mon, 08 Dec 2025 13:44:12 &#43;0700</pubDate>
+      <author>cuongchu200@gmail.com (r1muru)</author>
+      <guid>http://localhost:1313/post/wannagamechampionship2025/</guid>
+      <description>
+        <![CDATA[<h1>WannaGame Championship 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
+        
+          <h1 id="crypto">
+<a class="header-anchor" href="#crypto"></a>
+Crypto
+</h1><h2 id="king-halo">
+<a class="header-anchor" href="#king-halo"></a>
+King Halo
+</h2><p><strong>Mô tả</strong>: Uma Musume is the best mobile game in 2025</p>
+<p><a href="https://www.youtube.com/watch?v=eAkxxgEHEmg">https://www.youtube.com/watch?v=eAkxxgEHEmg</a></p>
+<p><strong>Đính kèm</strong>: <code>attachments.tar</code></p>
+<p>Thử thách này sử dụng Rust làm ngôn ngữ chính để chạy chương trình.
+Yêu cầu của nó là mình phải chiến thắng 50 rounds đua ngựa để lấy được flag. Đầu tiền, đăng ký tên và chiến thuật cho 1 con ngựa:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="fm">write!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Register your horse name: &#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">writer</span><span class="p">.</span><span class="n">flush</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">horse_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read_line_trimmed</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">if</span><span class="w"> </span><span class="n">horse_name</span><span class="p">.</span><span class="n">is_empty</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">writeln!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Name cannot be empty. Session terminated.&#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">writeln!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Choose your running strategy:&#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">writeln!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;  1) Front-runner&#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">writeln!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;  2) Pace-maker&#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">writeln!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;  3) Late charge&#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">writeln!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;  4) End spurt&#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">write!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Strategy selection: &#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">writer</span><span class="p">.</span><span class="n">flush</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">strategy_line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read_line_trimmed</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">user_strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">parse_strategy_choice</span><span class="p">(</span><span class="o">&amp;</span><span class="n">strategy_line</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Some</span><span class="p">(</span><span class="n">strategy</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">strategy</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">writeln!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Invalid strategy choice. Session terminated.&#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">};</span><span class="w">
+</span></span></span></code></pre></div><p>Sau đó, đề cho mình biết các dữ kiện như là: <code>race distance</code>, <code>merkle root</code>, các vị trí và chỉ số của 16 con ngựa (tính cả ngựa của mình):</p>
+        
+        <hr><p>Published on 2025-12-08 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-12-08</p>]]>
+      </description>
+      
+        <category>CTF Write-up</category><category>WannaGame</category>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>r1muru&#39;s blog</title>
-    <link>https://r1muru2006.github.io/post/</link>
+    <link>http://localhost:1313/post/</link>
     <description>Recent content from r1muru&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -12,21 +12,107 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
-    <lastBuildDate>Tue, 25 Nov 2025 14:33:54 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 08 Dec 2025 13:44:12 +0700</lastBuildDate>
     
     
-    <atom:link href="https://r1muru2006.github.io/post/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
     
 
     <item>
+      <title>WannaGame Championship 2025</title>
+      <link>http://localhost:1313/post/wannagamechampionship2025/</link>
+      <pubDate>Mon, 08 Dec 2025 13:44:12 &#43;0700</pubDate>
+      <author>cuongchu200@gmail.com (r1muru)</author>
+      <guid>http://localhost:1313/post/wannagamechampionship2025/</guid>
+      <description>
+        <![CDATA[<h1>WannaGame Championship 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
+        
+          <h1 id="crypto">
+<a class="header-anchor" href="#crypto"></a>
+Crypto
+</h1><h2 id="king-halo">
+<a class="header-anchor" href="#king-halo"></a>
+King Halo
+</h2><p><strong>Mô tả</strong>: Uma Musume is the best mobile game in 2025</p>
+<p><a href="https://www.youtube.com/watch?v=eAkxxgEHEmg">https://www.youtube.com/watch?v=eAkxxgEHEmg</a></p>
+<p><strong>Đính kèm</strong>: <code>attachments.tar</code></p>
+<p>Thử thách này sử dụng Rust làm ngôn ngữ chính để chạy chương trình.
+Yêu cầu của nó là mình phải chiến thắng 50 rounds đua ngựa để lấy được flag. Đầu tiền, đăng ký tên và chiến thuật cho 1 con ngựa:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="fm">write!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Register your horse name: &#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">writer</span><span class="p">.</span><span class="n">flush</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">horse_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read_line_trimmed</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">if</span><span class="w"> </span><span class="n">horse_name</span><span class="p">.</span><span class="n">is_empty</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">writeln!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Name cannot be empty. Session terminated.&#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">writeln!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Choose your running strategy:&#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">writeln!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;  1) Front-runner&#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">writeln!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;  2) Pace-maker&#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">writeln!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;  3) Late charge&#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">writeln!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;  4) End spurt&#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">write!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Strategy selection: &#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">writer</span><span class="p">.</span><span class="n">flush</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">strategy_line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read_line_trimmed</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">user_strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">parse_strategy_choice</span><span class="p">(</span><span class="o">&amp;</span><span class="n">strategy_line</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Some</span><span class="p">(</span><span class="n">strategy</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">strategy</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">writeln!</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Invalid strategy choice. Session terminated.&#34;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">};</span><span class="w">
+</span></span></span></code></pre></div><p>Sau đó, đề cho mình biết các dữ kiện như là: <code>race distance</code>, <code>merkle root</code>, các vị trí và chỉ số của 16 con ngựa (tính cả ngựa của mình):</p>
+        
+        <hr><p>Published on 2025-12-08 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-12-08</p>]]>
+      </description>
+      
+        <category>CTF Write-up</category><category>WannaGame</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>Implementing FIPS 205 - Stateless Hash-Based Digital Signature Standard (Part 1)</title>
+      <link>http://localhost:1313/post/implementing_fips_205_p1/</link>
+      <pubDate>Fri, 05 Dec 2025 08:13:43 &#43;0700</pubDate>
+      <author>cuongchu200@gmail.com (r1muru)</author>
+      <guid>http://localhost:1313/post/implementing_fips_205_p1/</guid>
+      <description>
+        <![CDATA[<h1>Implementing FIPS 205 - Stateless Hash-Based Digital Signature Standard (Part 1)</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
+        
+          <h1 id="overview-of-slh-dsa--address-structure-adrs">
+<a class="header-anchor" href="#overview-of-slh-dsa--address-structure-adrs"></a>
+Overview of SLH-DSA &amp; Address Structure (ADRS)
+</h1><h2 id="stateless-hash-based-digital-signature-standard-slh-dsa">
+<a class="header-anchor" href="#stateless-hash-based-digital-signature-standard-slh-dsa"></a>
+Stateless Hash-Based Digital Signature Standard (SLH-DSA)
+</h2><h2 id="references">
+<a class="header-anchor" href="#references"></a>
+References
+</h2><ol>
+<li><a href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.205.pdf">NIST.FIPS.205.pdf</a></li>
+<li><a href="https://en.wikipedia.org/wiki/SPHINCS%2B">SPHINCS+ by Wikipedia</a></li>
+</ol>
+        
+        <hr><p>Published on 2025-12-05 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-12-05</p>]]>
+      </description>
+      
+        <category>Learning</category><category>FIPS</category>
+      
+    </item>
+    
+    
+
+    <item>
       <title>Is stream encryption secure?</title>
-      <link>https://r1muru2006.github.io/post/streamcipher/</link>
+      <link>http://localhost:1313/post/streamcipher/</link>
       <pubDate>Tue, 25 Nov 2025 14:33:54 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/streamcipher/</guid>
+      <guid>http://localhost:1313/post/streamcipher/</guid>
       <description>
         <![CDATA[<h1>Is stream encryption secure?</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -45,7 +131,7 @@ Chacha20
 <p>The input of the ChaCha20 block function is a 4x4 word matrix described as in this figure:
 <img src="/images/StreamCipher/input.png" alt="images"></p>
         
-        <hr><p>Published on 2025-11-25 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-11-25</p>]]>
+        <hr><p>Published on 2025-11-25 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-11-25</p>]]>
       </description>
       
         <category>Learning</category>
@@ -56,10 +142,10 @@ Chacha20
 
     <item>
       <title>Patriot CTF 2025</title>
-      <link>https://r1muru2006.github.io/post/patriotctf2025/</link>
+      <link>http://localhost:1313/post/patriotctf2025/</link>
       <pubDate>Mon, 24 Nov 2025 21:40:43 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/patriotctf2025/</guid>
+      <guid>http://localhost:1313/post/patriotctf2025/</guid>
       <description>
         <![CDATA[<h1>Patriot CTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -79,7 +165,7 @@ Where&rsquo;s Legally Distinct Waldo One
 <p>In the picture, I noticed an area with a similar patterned tile floor to the challenge in the lower right corner of the photo at the George Mason Statue. When I scanned this street, I saw a corner with the same pattern and the building name <code>Horizon Hall</code> had the same view.
 <img src="/images/patriot/osint1_4.png" alt="images"></p>
         
-        <hr><p>Published on 2025-11-24 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-11-24</p>]]>
+        <hr><p>Published on 2025-11-24 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-11-24</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -90,10 +176,10 @@ Where&rsquo;s Legally Distinct Waldo One
 
     <item>
       <title>M*CTF Quals 2025</title>
-      <link>https://r1muru2006.github.io/post/mctfquals2025/</link>
+      <link>http://localhost:1313/post/mctfquals2025/</link>
       <pubDate>Fri, 21 Nov 2025 22:19:58 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/mctfquals2025/</guid>
+      <guid>http://localhost:1313/post/mctfquals2025/</guid>
       <description>
         <![CDATA[<h1>M*CTF Quals 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -126,7 +212,7 @@ CRCL35
 </span></span><span class="line"><span class="cl"><span class="s2">&#34;No, it&#39;s all 0. Don&#39;t confuse it and don&#39;t forget the difference, otherwise, during the transformation, you&#39;ll end up in the wrong place.&#34;</span>
 </span></span></code></pre></div><p>In the description, I noticed the word &ldquo;difference&rdquo; so I quickly tested this method by python and it worked.</p>
         
-        <hr><p>Published on 2025-11-21 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-11-21</p>]]>
+        <hr><p>Published on 2025-11-21 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-11-21</p>]]>
       </description>
       
         <category>CTF Write-Up</category>
@@ -137,10 +223,10 @@ CRCL35
 
     <item>
       <title>Crack Random Modules</title>
-      <link>https://r1muru2006.github.io/post/crackrandommodule/</link>
+      <link>http://localhost:1313/post/crackrandommodule/</link>
       <pubDate>Mon, 15 Sep 2025 20:31:17 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/crackrandommodule/</guid>
+      <guid>http://localhost:1313/post/crackrandommodule/</guid>
       <description>
         <![CDATA[<h1>Crack Random Modules</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -195,7 +281,7 @@ Mersenne Twister
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Nếu <code>index &gt;= N (= 624)</code>, nghĩa là đã dùng hết số trong mảng <code>mt[]</code> và do đó phải tạo lại 624 số tiếp theo. Mảng <code>mt[]</code> được thay đổi bằng quá trình sau:</p>
         
-        <hr><p>Published on 2025-09-15 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-15</p>]]>
+        <hr><p>Published on 2025-09-15 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-09-15</p>]]>
       </description>
       
         <category>Learning</category>
@@ -206,10 +292,10 @@ Mersenne Twister
 
     <item>
       <title>ImaginaryCTF 2025</title>
-      <link>https://r1muru2006.github.io/post/imaginaryctf2025/</link>
+      <link>http://localhost:1313/post/imaginaryctf2025/</link>
       <pubDate>Sun, 14 Sep 2025 14:17:02 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/imaginaryctf2025/</guid>
+      <guid>http://localhost:1313/post/imaginaryctf2025/</guid>
       <description>
         <![CDATA[<h1>ImaginaryCTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -268,7 +354,7 @@ leaky-rsa
 Phân tích và lời giải
 </h3><p>Nhìn sơ qua thì đây là một bài ứng dụng thuật AES-RSA</p>
         
-        <hr><p>Published on 2025-09-14 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-14</p>]]>
+        <hr><p>Published on 2025-09-14 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-09-14</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -279,10 +365,10 @@ Phân tích và lời giải
 
     <item>
       <title>HOLACTF 2025</title>
-      <link>https://r1muru2006.github.io/post/holactf2025/</link>
+      <link>http://localhost:1313/post/holactf2025/</link>
       <pubDate>Tue, 09 Sep 2025 08:42:30 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/holactf2025/</guid>
+      <guid>http://localhost:1313/post/holactf2025/</guid>
       <description>
         <![CDATA[<h1>HOLACTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -343,7 +429,7 @@ Crypto
 <img src="https://hackmd.io/_uploads/SkGCc4-cge.png" alt="image">
 <img src="https://hackmd.io/_uploads/r1OJoEW9lx.png" alt="image"></p>
         
-        <hr><p>Published on 2025-09-09 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-09</p>]]>
+        <hr><p>Published on 2025-09-09 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-09-09</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -354,10 +440,10 @@ Crypto
 
     <item>
       <title>NahamCon CTF 2025</title>
-      <link>https://r1muru2006.github.io/post/nahamconctf2025/</link>
+      <link>http://localhost:1313/post/nahamconctf2025/</link>
       <pubDate>Thu, 05 Jun 2025 08:19:28 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/nahamconctf2025/</guid>
+      <guid>http://localhost:1313/post/nahamconctf2025/</guid>
       <description>
         <![CDATA[<h1>NahamCon CTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -396,7 +482,7 @@ Crypto
 3. Naham Commencement2025
 </h2><p>Thử thách cho ta một đường dẫn vào 1 trang đăng nhập, có vẻ như mục đích là ta phải sử dụng đúng tài khoản để truy cập vào và lấy flag. Khi <code>f12</code>, thì ta có source sau:</p>
         
-        <hr><p>Published on 2025-06-05 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-06-05</p>]]>
+        <hr><p>Published on 2025-06-05 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-06-05</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -407,10 +493,10 @@ Crypto
 
     <item>
       <title>WannaGame Cyber Knight 2025</title>
-      <link>https://r1muru2006.github.io/post/wannagamecyberknight2025/</link>
+      <link>http://localhost:1313/post/wannagamecyberknight2025/</link>
       <pubDate>Fri, 16 May 2025 14:13:38 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/wannagamecyberknight2025/</guid>
+      <guid>http://localhost:1313/post/wannagamecyberknight2025/</guid>
       <description>
         <![CDATA[<h1>WannaGame Cyber Knight 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -699,111 +785,10 @@ Choose!
 </span></span></code></pre></div><blockquote>
 <p>Bài này đơn giản là về phần mã hóa AES (<a href="https://vi.wikipedia.org/wiki/Advanced_Encryption_Standard">Advanced Encryption Standard</a>) và mình có xem lại cấu trúc của nó tại wikipedia và <a href="https://hackmd.io/@r1muru/HJmSbUld1x#Bringing-It-All-Together">đây</a> để tiếp cận.</p>
         
-        <hr><p>Published on 2025-05-16 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-05-16</p>]]>
+        <hr><p>Published on 2025-05-16 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-05-16</p>]]>
       </description>
       
         <category>CTF Write-up</category><category>WannaGame</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>WannaGame NMLT</title>
-      <link>https://r1muru2006.github.io/post/wannagamenmlt/</link>
-      <pubDate>Tue, 08 Apr 2025 10:07:31 &#43;0700</pubDate>
-      <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/wannagamenmlt/</guid>
-      <description>
-        <![CDATA[<h1>WannaGame NMLT</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
-        
-          <h2 id="pwn">
-<a class="header-anchor" href="#pwn"></a>
-Pwn
-</h2><h3 id="1-hello-pwner">
-<a class="header-anchor" href="#1-hello-pwner"></a>
-1. Hello pwner
-</h3><p><img src="https://hackmd.io/_uploads/SyPcemLL1g.png" alt="image"></p>
-<pre><code>Flag: W1{welcome_to_assembly}
-</code></pre>
-<h2 id="crypto">
-<a class="header-anchor" href="#crypto"></a>
-Crypto
-</h2><h3 id="2-substitution">
-<a class="header-anchor" href="#2-substitution"></a>
-2. Substitution
-</h3><p>Tải file, giải nén và mở chall lên:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">KEY</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">:</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;J&#39;</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">:</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">:</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">:</span> <span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">:</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;S&#39;</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">:</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">:</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">:</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">:</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">:</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;j&#39;</span><span class="p">:</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">:</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">:</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">:</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">:</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="s1">&#39;j&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;s&#39;</span><span class="p">:</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">:</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">:</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">:</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">hehe</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">data</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">plaintext</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">substituted</span> <span class="o">=</span> <span class="n">hehe</span><span class="p">(</span><span class="n">plaintext</span><span class="p">,</span> <span class="n">KEY</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">substituted</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">plaintext</span> <span class="o">=</span> <span class="s2">&#34;W1{???????????????}&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">encrypted</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;encrypted.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">encrypted</span><span class="p">)</span>
-</span></span></code></pre></div><h4 id="phân-tích">
-<a class="header-anchor" href="#ph%c3%a2n-t%c3%adch"></a>
-Phân tích:
-</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">hehe</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">data</span><span class="p">)</span>
-</span></span></code></pre></div><p>Hàm <code>hehe</code> lấy <code>data</code> và chuyển đổi từng ký tự trong dữ liệu đó sang ký tự tương ứng bằng danh sách của <code>KEY</code>.</p>
-        
-        <hr><p>Published on 2025-04-08 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-04-08</p>]]>
-      </description>
-      
-        <category>CTF Write-up</category><category>WannaGame</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>DiceCTF 2025</title>
-      <link>https://r1muru2006.github.io/post/dicectf2025/</link>
-      <pubDate>Wed, 26 Mar 2025 09:31:43 &#43;0700</pubDate>
-      <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/dicectf2025/</guid>
-      <description>
-        <![CDATA[<h1>DiceCTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
-        
-          <h2 id="misc">
-<a class="header-anchor" href="#misc"></a>
-Misc
-</h2><h3 id="bcu-binding">
-<a class="header-anchor" href="#bcu-binding"></a>
-bcu-binding
-</h3><p><img src="https://hackmd.io/_uploads/BJ2tcJv61e.png" alt="image"></p>
-<p>Tải file về thì ta search thử &lsquo;dice{&rsquo; để tìm flag và nó ra thật @@
-Có vẻ như nó được giấu trong phần nền trắng để không thể nhìn thấy&hellip;</p>
-<p><img src="https://hackmd.io/_uploads/HyXwoyPTJx.png" alt="Screenshot 2025-03-29 213449"></p>
-<pre><code>Flag: dice{r3ad1ng_th4_d0cs_71ccd}
-</code></pre>
-<h3 id="dicecap">
-<a class="header-anchor" href="#dicecap"></a>
-dicecap
-</h3><p><img src="https://hackmd.io/_uploads/SJIsi1wake.png" alt="image"></p>
-<p>Đề cho ta 1 file pcap nên ta mở nó lên bằng wireshark và xem thử:
-<img src="https://hackmd.io/_uploads/HJg7hyDTkx.png" alt="Screenshot 2025-03-29 215831"></p>
-<p>Thử tìm theo từ khóa thì ta ra được 2 kênh khả nghi chứa flag theo protocol FTP-DATA.
-Export file ra thì ta được 1 file main theo định dạng ELF cùng 1 tệp zip cần mật khẩu mà trong đó chứa flag.txt có thể lấy flag.</p>
-        
-        <hr><p>Published on 2025-03-26 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-03-26</p>]]>
-      </description>
-      
-        <category>CTF Write-up</category>
       
     </item>
     
