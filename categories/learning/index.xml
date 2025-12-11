@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Learning on r1muru's blog</title><link>https://r1muru2006.github.io/categories/learning/</link><description>Recent content from r1muru's blog</description><generator>Hugo</generator><language>en-us</language><managingEditor>cuongchu200@gmail.com (r1muru)</managingEditor><webMaster>cuongchu200@gmail.com (r1muru)</webMaster><copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright><lastBuildDate>Tue, 25 Nov 2025 14:33:54 +0700</lastBuildDate><atom:link href="https://r1muru2006.github.io/categories/learning/index.xml" rel="self" type="application/rss+xml"/><item><title>Is stream encryption secure?</title><link>https://r1muru2006.github.io/post/streamcipher/</link><pubDate>Tue, 25 Nov 2025 14:33:54 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/streamcipher/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Learning on r1muru's blog</title><link>https://r1muru2006.github.io/categories/learning/</link><description>Recent content from r1muru's blog</description><generator>Hugo</generator><language>en-us</language><managingEditor>cuongchu200@gmail.com (r1muru)</managingEditor><webMaster>cuongchu200@gmail.com (r1muru)</webMaster><copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright><lastBuildDate>Thu, 11 Dec 2025 13:42:41 +0700</lastBuildDate><atom:link href="https://r1muru2006.github.io/categories/learning/index.xml" rel="self" type="application/rss+xml"/><item><title>NSUCRYPTO 2025</title><link>https://r1muru2006.github.io/post/nsucrypto2025/</link><pubDate>Thu, 11 Dec 2025 13:42:41 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/nsucrypto2025/</guid><description>
+<![CDATA[<h1>NSUCRYPTO 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
+        
+          <h1 id="nsucrypto-2025">
+<a class="header-anchor" href="#nsucrypto-2025"></a>
+NSUCRYPTO 2025
+</h1><p>In this article, I will provide guidance and the way how to solve some NSUCRYPTO 2024 problems using my own solutions.</p>
+<h2 id="introduction">
+<a class="header-anchor" href="#introduction"></a>
+Introduction
+</h2><p>First and foremost, I want to send a huge thank you to everyone who supported me and helped me get to where I am today.</p>
+<p>Round 1 was intense with 9 questions, including the infamous Question 4 that seemed impossible for everyone. To be honest, this year&rsquo;s exam really threw me off. Even though I managed to tackle most of the problems, I walked away feeling unsure about the result.</p>
+        
+        <hr><p>Published on 2025-12-11 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-12-11</p>]]></description><category>Learning</category></item><item><title>Is stream encryption secure?</title><link>https://r1muru2006.github.io/post/streamcipher/</link><pubDate>Tue, 25 Nov 2025 14:33:54 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/streamcipher/</guid><description>
 <![CDATA[<h1>Is stream encryption secure?</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
           <h2 id="chacha20-poly1305">

@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cryptography on r1muru's blog</title><link>https://r1muru2006.github.io/tags/cryptography/</link><description>Recent content from r1muru's blog</description><generator>Hugo</generator><language>en-us</language><managingEditor>cuongchu200@gmail.com (r1muru)</managingEditor><webMaster>cuongchu200@gmail.com (r1muru)</webMaster><copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright><lastBuildDate>Mon, 08 Dec 2025 13:44:12 +0700</lastBuildDate><atom:link href="https://r1muru2006.github.io/tags/cryptography/index.xml" rel="self" type="application/rss+xml"/><item><title>WannaGame Championship 2025</title><link>https://r1muru2006.github.io/post/wannagamechampionship2025/</link><pubDate>Mon, 08 Dec 2025 13:44:12 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/wannagamechampionship2025/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cryptography on r1muru's blog</title><link>https://r1muru2006.github.io/tags/cryptography/</link><description>Recent content from r1muru's blog</description><generator>Hugo</generator><language>en-us</language><managingEditor>cuongchu200@gmail.com (r1muru)</managingEditor><webMaster>cuongchu200@gmail.com (r1muru)</webMaster><copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright><lastBuildDate>Thu, 11 Dec 2025 13:42:41 +0700</lastBuildDate><atom:link href="https://r1muru2006.github.io/tags/cryptography/index.xml" rel="self" type="application/rss+xml"/><item><title>NSUCRYPTO 2025</title><link>https://r1muru2006.github.io/post/nsucrypto2025/</link><pubDate>Thu, 11 Dec 2025 13:42:41 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/nsucrypto2025/</guid><description>
+<![CDATA[<h1>NSUCRYPTO 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
+        
+          <h1 id="nsucrypto-2025">
+<a class="header-anchor" href="#nsucrypto-2025"></a>
+NSUCRYPTO 2025
+</h1><p>In this article, I will provide guidance and the way how to solve some NSUCRYPTO 2024 problems using my own solutions.</p>
+<h2 id="introduction">
+<a class="header-anchor" href="#introduction"></a>
+Introduction
+</h2><p>First and foremost, I want to send a huge thank you to everyone who supported me and helped me get to where I am today.</p>
+<p>Round 1 was intense with 9 questions, including the infamous Question 4 that seemed impossible for everyone. To be honest, this year&rsquo;s exam really threw me off. Even though I managed to tackle most of the problems, I walked away feeling unsure about the result.</p>
+        
+        <hr><p>Published on 2025-12-11 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-12-11</p>]]></description><category>Learning</category></item><item><title>WannaGame Championship 2025</title><link>https://r1muru2006.github.io/post/wannagamechampionship2025/</link><pubDate>Mon, 08 Dec 2025 13:44:12 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/wannagamechampionship2025/</guid><description>
 <![CDATA[<h1>WannaGame Championship 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
           <h1 id="crypto">
@@ -619,28 +632,4 @@ Phân tích:
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">data</span><span class="p">)</span>
 </span></span></code></pre></div><p>Hàm <code>hehe</code> lấy <code>data</code> và chuyển đổi từng ký tự trong dữ liệu đó sang ký tự tương ứng bằng danh sách của <code>KEY</code>.</p>
         
-        <hr><p>Published on 2025-04-08 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-04-08</p>]]></description><category>CTF Write-up</category><category>WannaGame</category></item><item><title>DiceCTF 2025</title><link>https://r1muru2006.github.io/post/dicectf2025/</link><pubDate>Wed, 26 Mar 2025 09:31:43 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/dicectf2025/</guid><description>
-<![CDATA[<h1>DiceCTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
-        
-          <h2 id="misc">
-<a class="header-anchor" href="#misc"></a>
-Misc
-</h2><h3 id="bcu-binding">
-<a class="header-anchor" href="#bcu-binding"></a>
-bcu-binding
-</h3><p><img src="https://hackmd.io/_uploads/BJ2tcJv61e.png" alt="image"></p>
-<p>Tải file về thì ta search thử &lsquo;dice{&rsquo; để tìm flag và nó ra thật @@
-Có vẻ như nó được giấu trong phần nền trắng để không thể nhìn thấy&hellip;</p>
-<p><img src="https://hackmd.io/_uploads/HyXwoyPTJx.png" alt="Screenshot 2025-03-29 213449"></p>
-<pre><code>Flag: dice{r3ad1ng_th4_d0cs_71ccd}
-</code></pre>
-<h3 id="dicecap">
-<a class="header-anchor" href="#dicecap"></a>
-dicecap
-</h3><p><img src="https://hackmd.io/_uploads/SJIsi1wake.png" alt="image"></p>
-<p>Đề cho ta 1 file pcap nên ta mở nó lên bằng wireshark và xem thử:
-<img src="https://hackmd.io/_uploads/HJg7hyDTkx.png" alt="Screenshot 2025-03-29 215831"></p>
-<p>Thử tìm theo từ khóa thì ta ra được 2 kênh khả nghi chứa flag theo protocol FTP-DATA.
-Export file ra thì ta được 1 file main theo định dạng ELF cùng 1 tệp zip cần mật khẩu mà trong đó chứa flag.txt có thể lấy flag.</p>
-        
-        <hr><p>Published on 2025-03-26 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-03-26</p>]]></description><category>CTF Write-up</category></item></channel></rss>
+        <hr><p>Published on 2025-04-08 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-04-08</p>]]></description><category>CTF Write-up</category><category>WannaGame</category></item></channel></rss>
