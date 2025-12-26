@@ -15,7 +15,7 @@ categories:
 ---
 
 # NSUCRYPTO 2025
-In this article, I will provide guidance and the way how to solve some NSUCRYPTO 2024 problems using my own solutions.
+In this article, I will provide guidance and the way how to solve some NSUCRYPTO 2025 problems using my own solutions.
 
 ## Introduction
 First and foremost, I want to send a huge thank you to everyone who supported me and helped me get to where I am today.
