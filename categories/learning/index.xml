@@ -4,7 +4,7 @@
           <h1 id="nsucrypto-2025">
 <a class="header-anchor" href="#nsucrypto-2025"></a>
 NSUCRYPTO 2025
-</h1><p>In this article, I will provide guidance and the way how to solve some NSUCRYPTO 2024 problems using my own solutions.</p>
+</h1><p>In this article, I will provide guidance and the way how to solve some NSUCRYPTO 2025 problems using my own solutions.</p>
 <h2 id="introduction">
 <a class="header-anchor" href="#introduction"></a>
 Introduction
@@ -47,7 +47,7 @@ Mersenne Twister
 </span></span></span><span class="line"><span class="cl"><span class="cp">#define MATRIX_A 0x9908b0dfU    </span><span class="cm">/* constant vector a */</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#define UPPER_MASK 0x80000000U  </span><span class="cm">/* most significant w-r bits */</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#define LOWER_MASK 0x7fffffffU  </span><span class="cm">/* least significant r bits */</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">uint32_t</span>
 </span></span><span class="line"><span class="cl"><span class="nf">genrand_uint32</span><span class="p">(</span><span class="n">RandomObject</span> <span class="o">*</span><span class="n">self</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
