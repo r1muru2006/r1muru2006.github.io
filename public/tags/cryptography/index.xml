@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cryptography on r1muru&#39;s blog</title>
-    <link>https://r1muru2006.github.io/tags/cryptography/</link>
+    <link>http://localhost:1313/tags/cryptography/</link>
     <description>Recent content from r1muru&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -12,21 +12,44 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
-    <lastBuildDate>Thu, 11 Dec 2025 13:42:41 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 19 Jan 2026 10:39:34 +0700</lastBuildDate>
     
     
-    <atom:link href="https://r1muru2006.github.io/tags/cryptography/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/tags/cryptography/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
     
 
     <item>
+      <title>Trao đổi khóa Diffie-Hellman</title>
+      <link>http://localhost:1313/post/diffehellman/</link>
+      <pubDate>Mon, 19 Jan 2026 10:39:34 &#43;0700</pubDate>
+      <author>cuongchu200@gmail.com (r1muru)</author>
+      <guid>http://localhost:1313/post/diffehellman/</guid>
+      <description>
+        <![CDATA[<h1>Trao đổi khóa Diffie-Hellman</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
+        
+          <h1 id="trao-đổi-khóa-diffie-hellman">
+<a class="header-anchor" href="#trao-%c4%91%e1%bb%95i-kh%c3%b3a-diffie-hellman"></a>
+Trao đổi khóa Diffie-Hellman
+</h1><p>Nếu các bạn đã học và làm được 1 số bài tập từ mức trung bình trong phần RSA rồi (mong là vậy) thì chắc hẳn các bạn cũng biết thuật RSA hiện nay đang có nguy cơ bị máy tính lượng tử tiêu hủy trong tương lai. Điều đó xảy ra được là vì RSA bảo mật hay không thì phụ thuộc vào bài toán phân tích khóa, cụ thể hơn là phân tích thừa số nguyên tố.</p>
+        
+        <hr><p>Published on 2026-01-19 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2026-01-19</p>]]>
+      </description>
+      
+        <category>Learning</category>
+      
+    </item>
+    
+    
+
+    <item>
       <title>NSUCRYPTO 2025</title>
-      <link>https://r1muru2006.github.io/post/nsucrypto2025/</link>
+      <link>http://localhost:1313/post/nsucrypto2025/</link>
       <pubDate>Thu, 11 Dec 2025 13:42:41 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/nsucrypto2025/</guid>
+      <guid>http://localhost:1313/post/nsucrypto2025/</guid>
       <description>
         <![CDATA[<h1>NSUCRYPTO 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -40,7 +63,7 @@ Introduction
 </h2><p>First and foremost, I want to send a huge thank you to everyone who supported me and helped me get to where I am today.</p>
 <p>Round 1 was intense with 9 questions, including the infamous Question 4 that seemed impossible for everyone. To be honest, this year&rsquo;s exam really threw me off. Even though I managed to tackle most of the problems, I walked away feeling unsure about the result.</p>
         
-        <hr><p>Published on 2025-12-11 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-12-11</p>]]>
+        <hr><p>Published on 2025-12-11 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-12-11</p>]]>
       </description>
       
         <category>Learning</category>
@@ -51,10 +74,10 @@ Introduction
 
     <item>
       <title>WannaGame Championship 2025</title>
-      <link>https://r1muru2006.github.io/post/wannagamechampionship2025/</link>
+      <link>http://localhost:1313/post/wannagamechampionship2025/</link>
       <pubDate>Mon, 08 Dec 2025 13:44:12 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/wannagamechampionship2025/</guid>
+      <guid>http://localhost:1313/post/wannagamechampionship2025/</guid>
       <description>
         <![CDATA[<h1>WannaGame Championship 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -94,7 +117,7 @@ Yêu cầu của nó là mình phải chiến thắng 50 rounds đua ngựa đ�
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">};</span><span class="w">
 </span></span></span></code></pre></div><p>Sau đó, đề cho mình biết các dữ kiện như là: <code>race distance</code>, <code>merkle root</code>, các vị trí và chỉ số của 16 con ngựa (tính cả ngựa của mình):</p>
         
-        <hr><p>Published on 2025-12-08 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-12-08</p>]]>
+        <hr><p>Published on 2025-12-08 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-12-08</p>]]>
       </description>
       
         <category>CTF Write-up</category><category>WannaGame</category>
@@ -104,11 +127,43 @@ Yêu cầu của nó là mình phải chiến thắng 50 rounds đua ngựa đ�
     
 
     <item>
+      <title>Implementing FIPS 205 - Stateless Hash-Based Digital Signature Standard (Part 1)</title>
+      <link>http://localhost:1313/post/implementing_fips_205_p1/</link>
+      <pubDate>Fri, 05 Dec 2025 08:13:43 &#43;0700</pubDate>
+      <author>cuongchu200@gmail.com (r1muru)</author>
+      <guid>http://localhost:1313/post/implementing_fips_205_p1/</guid>
+      <description>
+        <![CDATA[<h1>Implementing FIPS 205 - Stateless Hash-Based Digital Signature Standard (Part 1)</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
+        
+          <h1 id="overview-of-slh-dsa--address-structure-adrs">
+<a class="header-anchor" href="#overview-of-slh-dsa--address-structure-adrs"></a>
+Overview of SLH-DSA &amp; Address Structure (ADRS)
+</h1><h2 id="stateless-hash-based-digital-signature-standard-slh-dsa">
+<a class="header-anchor" href="#stateless-hash-based-digital-signature-standard-slh-dsa"></a>
+Stateless Hash-Based Digital Signature Standard (SLH-DSA)
+</h2><h2 id="references">
+<a class="header-anchor" href="#references"></a>
+References
+</h2><ol>
+<li><a href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.205.pdf">NIST.FIPS.205.pdf</a></li>
+<li><a href="https://en.wikipedia.org/wiki/SPHINCS%2B">SPHINCS+ by Wikipedia</a></li>
+</ol>
+        
+        <hr><p>Published on 2025-12-05 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-12-05</p>]]>
+      </description>
+      
+        <category>Learning</category><category>FIPS</category>
+      
+    </item>
+    
+    
+
+    <item>
       <title>Is stream encryption secure?</title>
-      <link>https://r1muru2006.github.io/post/streamcipher/</link>
+      <link>http://localhost:1313/post/streamcipher/</link>
       <pubDate>Tue, 25 Nov 2025 14:33:54 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/streamcipher/</guid>
+      <guid>http://localhost:1313/post/streamcipher/</guid>
       <description>
         <![CDATA[<h1>Is stream encryption secure?</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -127,7 +182,7 @@ Chacha20
 <p>The input of the ChaCha20 block function is a 4x4 word matrix described as in this figure:
 <img src="/images/StreamCipher/input.png" alt="images"></p>
         
-        <hr><p>Published on 2025-11-25 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-11-25</p>]]>
+        <hr><p>Published on 2025-11-25 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-11-25</p>]]>
       </description>
       
         <category>Learning</category>
@@ -138,10 +193,10 @@ Chacha20
 
     <item>
       <title>Patriot CTF 2025</title>
-      <link>https://r1muru2006.github.io/post/patriotctf2025/</link>
+      <link>http://localhost:1313/post/patriotctf2025/</link>
       <pubDate>Mon, 24 Nov 2025 21:40:43 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/patriotctf2025/</guid>
+      <guid>http://localhost:1313/post/patriotctf2025/</guid>
       <description>
         <![CDATA[<h1>Patriot CTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -161,7 +216,7 @@ Where&rsquo;s Legally Distinct Waldo One
 <p>In the picture, I noticed an area with a similar patterned tile floor to the challenge in the lower right corner of the photo at the George Mason Statue. When I scanned this street, I saw a corner with the same pattern and the building name <code>Horizon Hall</code> had the same view.
 <img src="/images/patriot/osint1_4.png" alt="images"></p>
         
-        <hr><p>Published on 2025-11-24 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-11-24</p>]]>
+        <hr><p>Published on 2025-11-24 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-11-24</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -172,10 +227,10 @@ Where&rsquo;s Legally Distinct Waldo One
 
     <item>
       <title>Crack Random Modules</title>
-      <link>https://r1muru2006.github.io/post/crackrandommodule/</link>
+      <link>http://localhost:1313/post/crackrandommodule/</link>
       <pubDate>Mon, 15 Sep 2025 20:31:17 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/crackrandommodule/</guid>
+      <guid>http://localhost:1313/post/crackrandommodule/</guid>
       <description>
         <![CDATA[<h1>Crack Random Modules</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -230,7 +285,7 @@ Mersenne Twister
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Nếu <code>index &gt;= N (= 624)</code>, nghĩa là đã dùng hết số trong mảng <code>mt[]</code> và do đó phải tạo lại 624 số tiếp theo. Mảng <code>mt[]</code> được thay đổi bằng quá trình sau:</p>
         
-        <hr><p>Published on 2025-09-15 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-15</p>]]>
+        <hr><p>Published on 2025-09-15 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-09-15</p>]]>
       </description>
       
         <category>Learning</category>
@@ -241,10 +296,10 @@ Mersenne Twister
 
     <item>
       <title>ImaginaryCTF 2025</title>
-      <link>https://r1muru2006.github.io/post/imaginaryctf2025/</link>
+      <link>http://localhost:1313/post/imaginaryctf2025/</link>
       <pubDate>Sun, 14 Sep 2025 14:17:02 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/imaginaryctf2025/</guid>
+      <guid>http://localhost:1313/post/imaginaryctf2025/</guid>
       <description>
         <![CDATA[<h1>ImaginaryCTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -303,7 +358,7 @@ leaky-rsa
 Phân tích và lời giải
 </h3><p>Nhìn sơ qua thì đây là một bài ứng dụng thuật AES-RSA</p>
         
-        <hr><p>Published on 2025-09-14 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-14</p>]]>
+        <hr><p>Published on 2025-09-14 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-09-14</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -314,10 +369,10 @@ Phân tích và lời giải
 
     <item>
       <title>HOLACTF 2025</title>
-      <link>https://r1muru2006.github.io/post/holactf2025/</link>
+      <link>http://localhost:1313/post/holactf2025/</link>
       <pubDate>Tue, 09 Sep 2025 08:42:30 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/holactf2025/</guid>
+      <guid>http://localhost:1313/post/holactf2025/</guid>
       <description>
         <![CDATA[<h1>HOLACTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -378,7 +433,7 @@ Crypto
 <img src="https://hackmd.io/_uploads/SkGCc4-cge.png" alt="image">
 <img src="https://hackmd.io/_uploads/r1OJoEW9lx.png" alt="image"></p>
         
-        <hr><p>Published on 2025-09-09 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-09</p>]]>
+        <hr><p>Published on 2025-09-09 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-09-09</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -389,10 +444,10 @@ Crypto
 
     <item>
       <title>NahamCon CTF 2025</title>
-      <link>https://r1muru2006.github.io/post/nahamconctf2025/</link>
+      <link>http://localhost:1313/post/nahamconctf2025/</link>
       <pubDate>Thu, 05 Jun 2025 08:19:28 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/nahamconctf2025/</guid>
+      <guid>http://localhost:1313/post/nahamconctf2025/</guid>
       <description>
         <![CDATA[<h1>NahamCon CTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -431,375 +486,10 @@ Crypto
 3. Naham Commencement2025
 </h2><p>Thử thách cho ta một đường dẫn vào 1 trang đăng nhập, có vẻ như mục đích là ta phải sử dụng đúng tài khoản để truy cập vào và lấy flag. Khi <code>f12</code>, thì ta có source sau:</p>
         
-        <hr><p>Published on 2025-06-05 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-06-05</p>]]>
+        <hr><p>Published on 2025-06-05 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-06-05</p>]]>
       </description>
       
         <category>CTF Write-up</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>WannaGame Cyber Knight 2025</title>
-      <link>https://r1muru2006.github.io/post/wannagamecyberknight2025/</link>
-      <pubDate>Fri, 16 May 2025 14:13:38 &#43;0700</pubDate>
-      <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/wannagamecyberknight2025/</guid>
-      <description>
-        <![CDATA[<h1>WannaGame Cyber Knight 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
-        
-          <blockquote>
-<p>Trong giải đấu này, mình đã giải được 1 câu trong phần Cryptography và may mắn đứng thứ 8 trên bảng đến cuối (≧▽≦)
-<img src="https://hackmd.io/_uploads/BkKat26egg.png" alt="image">
-Sau đây là bài mình giải được trong giải đấu và tiếp đó là những bài mà mình chưa làm được khi còn trong giải.</p>
-</blockquote>
-<h2 id="choose">
-<a class="header-anchor" href="#choose"></a>
-Choose!
-</h2><p><img src="https://hackmd.io/_uploads/HkBEq3pexl.png" alt="image"></p>
-<p>Link: <a href="https://www.youtube.com/watch?v=1lqe8eU48HI">https://www.youtube.com/watch?v=1lqe8eU48HI</a></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># aes.py</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#Implementation from https://github.com/boppreh/aes/blob/master/aes.py</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">s_box</span> <span class="o">=</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x63</span><span class="p">,</span> <span class="mh">0x7C</span><span class="p">,</span> <span class="mh">0x77</span><span class="p">,</span> <span class="mh">0x7B</span><span class="p">,</span> <span class="mh">0xF2</span><span class="p">,</span> <span class="mh">0x6B</span><span class="p">,</span> <span class="mh">0x6F</span><span class="p">,</span> <span class="mh">0xC5</span><span class="p">,</span> <span class="mh">0x30</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x67</span><span class="p">,</span> <span class="mh">0x2B</span><span class="p">,</span> <span class="mh">0xFE</span><span class="p">,</span> <span class="mh">0xD7</span><span class="p">,</span> <span class="mh">0xAB</span><span class="p">,</span> <span class="mh">0x76</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0xCA</span><span class="p">,</span> <span class="mh">0x82</span><span class="p">,</span> <span class="mh">0xC9</span><span class="p">,</span> <span class="mh">0x7D</span><span class="p">,</span> <span class="mh">0xFA</span><span class="p">,</span> <span class="mh">0x59</span><span class="p">,</span> <span class="mh">0x47</span><span class="p">,</span> <span class="mh">0xF0</span><span class="p">,</span> <span class="mh">0xAD</span><span class="p">,</span> <span class="mh">0xD4</span><span class="p">,</span> <span class="mh">0xA2</span><span class="p">,</span> <span class="mh">0xAF</span><span class="p">,</span> <span class="mh">0x9C</span><span class="p">,</span> <span class="mh">0xA4</span><span class="p">,</span> <span class="mh">0x72</span><span class="p">,</span> <span class="mh">0xC0</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0xB7</span><span class="p">,</span> <span class="mh">0xFD</span><span class="p">,</span> <span class="mh">0x93</span><span class="p">,</span> <span class="mh">0x26</span><span class="p">,</span> <span class="mh">0x36</span><span class="p">,</span> <span class="mh">0x3F</span><span class="p">,</span> <span class="mh">0xF7</span><span class="p">,</span> <span class="mh">0xCC</span><span class="p">,</span> <span class="mh">0x34</span><span class="p">,</span> <span class="mh">0xA5</span><span class="p">,</span> <span class="mh">0xE5</span><span class="p">,</span> <span class="mh">0xF1</span><span class="p">,</span> <span class="mh">0x71</span><span class="p">,</span> <span class="mh">0xD8</span><span class="p">,</span> <span class="mh">0x31</span><span class="p">,</span> <span class="mh">0x15</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0xC7</span><span class="p">,</span> <span class="mh">0x23</span><span class="p">,</span> <span class="mh">0xC3</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x96</span><span class="p">,</span> <span class="mh">0x05</span><span class="p">,</span> <span class="mh">0x9A</span><span class="p">,</span> <span class="mh">0x07</span><span class="p">,</span> <span class="mh">0x12</span><span class="p">,</span> <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0xE2</span><span class="p">,</span> <span class="mh">0xEB</span><span class="p">,</span> <span class="mh">0x27</span><span class="p">,</span> <span class="mh">0xB2</span><span class="p">,</span> <span class="mh">0x75</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x09</span><span class="p">,</span> <span class="mh">0x83</span><span class="p">,</span> <span class="mh">0x2C</span><span class="p">,</span> <span class="mh">0x1A</span><span class="p">,</span> <span class="mh">0x1B</span><span class="p">,</span> <span class="mh">0x6E</span><span class="p">,</span> <span class="mh">0x5A</span><span class="p">,</span> <span class="mh">0xA0</span><span class="p">,</span> <span class="mh">0x52</span><span class="p">,</span> <span class="mh">0x3B</span><span class="p">,</span> <span class="mh">0xD6</span><span class="p">,</span> <span class="mh">0xB3</span><span class="p">,</span> <span class="mh">0x29</span><span class="p">,</span> <span class="mh">0xE3</span><span class="p">,</span> <span class="mh">0x2F</span><span class="p">,</span> <span class="mh">0x84</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x53</span><span class="p">,</span> <span class="mh">0xD1</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0xED</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="mh">0xFC</span><span class="p">,</span> <span class="mh">0xB1</span><span class="p">,</span> <span class="mh">0x5B</span><span class="p">,</span> <span class="mh">0x6A</span><span class="p">,</span> <span class="mh">0xCB</span><span class="p">,</span> <span class="mh">0xBE</span><span class="p">,</span> <span class="mh">0x39</span><span class="p">,</span> <span class="mh">0x4A</span><span class="p">,</span> <span class="mh">0x4C</span><span class="p">,</span> <span class="mh">0x58</span><span class="p">,</span> <span class="mh">0xCF</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0xD0</span><span class="p">,</span> <span class="mh">0xEF</span><span class="p">,</span> <span class="mh">0xAA</span><span class="p">,</span> <span class="mh">0xFB</span><span class="p">,</span> <span class="mh">0x43</span><span class="p">,</span> <span class="mh">0x4D</span><span class="p">,</span> <span class="mh">0x33</span><span class="p">,</span> <span class="mh">0x85</span><span class="p">,</span> <span class="mh">0x45</span><span class="p">,</span> <span class="mh">0xF9</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">,</span> <span class="mh">0x7F</span><span class="p">,</span> <span class="mh">0x50</span><span class="p">,</span> <span class="mh">0x3C</span><span class="p">,</span> <span class="mh">0x9F</span><span class="p">,</span> <span class="mh">0xA8</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x51</span><span class="p">,</span> <span class="mh">0xA3</span><span class="p">,</span> <span class="mh">0x40</span><span class="p">,</span> <span class="mh">0x8F</span><span class="p">,</span> <span class="mh">0x92</span><span class="p">,</span> <span class="mh">0x9D</span><span class="p">,</span> <span class="mh">0x38</span><span class="p">,</span> <span class="mh">0xF5</span><span class="p">,</span> <span class="mh">0xBC</span><span class="p">,</span> <span class="mh">0xB6</span><span class="p">,</span> <span class="mh">0xDA</span><span class="p">,</span> <span class="mh">0x21</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xF3</span><span class="p">,</span> <span class="mh">0xD2</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0xCD</span><span class="p">,</span> <span class="mh">0x0C</span><span class="p">,</span> <span class="mh">0x13</span><span class="p">,</span> <span class="mh">0xEC</span><span class="p">,</span> <span class="mh">0x5F</span><span class="p">,</span> <span class="mh">0x97</span><span class="p">,</span> <span class="mh">0x44</span><span class="p">,</span> <span class="mh">0x17</span><span class="p">,</span> <span class="mh">0xC4</span><span class="p">,</span> <span class="mh">0xA7</span><span class="p">,</span> <span class="mh">0x7E</span><span class="p">,</span> <span class="mh">0x3D</span><span class="p">,</span> <span class="mh">0x64</span><span class="p">,</span> <span class="mh">0x5D</span><span class="p">,</span> <span class="mh">0x19</span><span class="p">,</span> <span class="mh">0x73</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x60</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x4F</span><span class="p">,</span> <span class="mh">0xDC</span><span class="p">,</span> <span class="mh">0x22</span><span class="p">,</span> <span class="mh">0x2A</span><span class="p">,</span> <span class="mh">0x90</span><span class="p">,</span> <span class="mh">0x88</span><span class="p">,</span> <span class="mh">0x46</span><span class="p">,</span> <span class="mh">0xEE</span><span class="p">,</span> <span class="mh">0xB8</span><span class="p">,</span> <span class="mh">0x14</span><span class="p">,</span> <span class="mh">0xDE</span><span class="p">,</span> <span class="mh">0x5E</span><span class="p">,</span> <span class="mh">0x0B</span><span class="p">,</span> <span class="mh">0xDB</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0xE0</span><span class="p">,</span> <span class="mh">0x32</span><span class="p">,</span> <span class="mh">0x3A</span><span class="p">,</span> <span class="mh">0x0A</span><span class="p">,</span> <span class="mh">0x49</span><span class="p">,</span> <span class="mh">0x06</span><span class="p">,</span> <span class="mh">0x24</span><span class="p">,</span> <span class="mh">0x5C</span><span class="p">,</span> <span class="mh">0xC2</span><span class="p">,</span> <span class="mh">0xD3</span><span class="p">,</span> <span class="mh">0xAC</span><span class="p">,</span> <span class="mh">0x62</span><span class="p">,</span> <span class="mh">0x91</span><span class="p">,</span> <span class="mh">0x95</span><span class="p">,</span> <span class="mh">0xE4</span><span class="p">,</span> <span class="mh">0x79</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0xE7</span><span class="p">,</span> <span class="mh">0xC8</span><span class="p">,</span> <span class="mh">0x37</span><span class="p">,</span> <span class="mh">0x6D</span><span class="p">,</span> <span class="mh">0x8D</span><span class="p">,</span> <span class="mh">0xD5</span><span class="p">,</span> <span class="mh">0x4E</span><span class="p">,</span> <span class="mh">0xA9</span><span class="p">,</span> <span class="mh">0x6C</span><span class="p">,</span> <span class="mh">0x56</span><span class="p">,</span> <span class="mh">0xF4</span><span class="p">,</span> <span class="mh">0xEA</span><span class="p">,</span> <span class="mh">0x65</span><span class="p">,</span> <span class="mh">0x7A</span><span class="p">,</span> <span class="mh">0xAE</span><span class="p">,</span> <span class="mh">0x08</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0xBA</span><span class="p">,</span> <span class="mh">0x78</span><span class="p">,</span> <span class="mh">0x25</span><span class="p">,</span> <span class="mh">0x2E</span><span class="p">,</span> <span class="mh">0x1C</span><span class="p">,</span> <span class="mh">0xA6</span><span class="p">,</span> <span class="mh">0xB4</span><span class="p">,</span> <span class="mh">0xC6</span><span class="p">,</span> <span class="mh">0xE8</span><span class="p">,</span> <span class="mh">0xDD</span><span class="p">,</span> <span class="mh">0x74</span><span class="p">,</span> <span class="mh">0x1F</span><span class="p">,</span> <span class="mh">0x4B</span><span class="p">,</span> <span class="mh">0xBD</span><span class="p">,</span> <span class="mh">0x8B</span><span class="p">,</span> <span class="mh">0x8A</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x70</span><span class="p">,</span> <span class="mh">0x3E</span><span class="p">,</span> <span class="mh">0xB5</span><span class="p">,</span> <span class="mh">0x66</span><span class="p">,</span> <span class="mh">0x48</span><span class="p">,</span> <span class="mh">0x03</span><span class="p">,</span> <span class="mh">0xF6</span><span class="p">,</span> <span class="mh">0x0E</span><span class="p">,</span> <span class="mh">0x61</span><span class="p">,</span> <span class="mh">0x35</span><span class="p">,</span> <span class="mh">0x57</span><span class="p">,</span> <span class="mh">0xB9</span><span class="p">,</span> <span class="mh">0x86</span><span class="p">,</span> <span class="mh">0xC1</span><span class="p">,</span> <span class="mh">0x1D</span><span class="p">,</span> <span class="mh">0x9E</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0xE1</span><span class="p">,</span> <span class="mh">0xF8</span><span class="p">,</span> <span class="mh">0x98</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">,</span> <span class="mh">0x69</span><span class="p">,</span> <span class="mh">0xD9</span><span class="p">,</span> <span class="mh">0x8E</span><span class="p">,</span> <span class="mh">0x94</span><span class="p">,</span> <span class="mh">0x9B</span><span class="p">,</span> <span class="mh">0x1E</span><span class="p">,</span> <span class="mh">0x87</span><span class="p">,</span> <span class="mh">0xE9</span><span class="p">,</span> <span class="mh">0xCE</span><span class="p">,</span> <span class="mh">0x55</span><span class="p">,</span> <span class="mh">0x28</span><span class="p">,</span> <span class="mh">0xDF</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x8C</span><span class="p">,</span> <span class="mh">0xA1</span><span class="p">,</span> <span class="mh">0x89</span><span class="p">,</span> <span class="mh">0x0D</span><span class="p">,</span> <span class="mh">0xBF</span><span class="p">,</span> <span class="mh">0xE6</span><span class="p">,</span> <span class="mh">0x42</span><span class="p">,</span> <span class="mh">0x68</span><span class="p">,</span> <span class="mh">0x41</span><span class="p">,</span> <span class="mh">0x99</span><span class="p">,</span> <span class="mh">0x2D</span><span class="p">,</span> <span class="mh">0x0F</span><span class="p">,</span> <span class="mh">0xB0</span><span class="p">,</span> <span class="mh">0x54</span><span class="p">,</span> <span class="mh">0xBB</span><span class="p">,</span> <span class="mh">0x16</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">inv_s_box</span> <span class="o">=</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x52</span><span class="p">,</span> <span class="mh">0x09</span><span class="p">,</span> <span class="mh">0x6A</span><span class="p">,</span> <span class="mh">0xD5</span><span class="p">,</span> <span class="mh">0x30</span><span class="p">,</span> <span class="mh">0x36</span><span class="p">,</span> <span class="mh">0xA5</span><span class="p">,</span> <span class="mh">0x38</span><span class="p">,</span> <span class="mh">0xBF</span><span class="p">,</span> <span class="mh">0x40</span><span class="p">,</span> <span class="mh">0xA3</span><span class="p">,</span> <span class="mh">0x9E</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0xF3</span><span class="p">,</span> <span class="mh">0xD7</span><span class="p">,</span> <span class="mh">0xFB</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x7C</span><span class="p">,</span> <span class="mh">0xE3</span><span class="p">,</span> <span class="mh">0x39</span><span class="p">,</span> <span class="mh">0x82</span><span class="p">,</span> <span class="mh">0x9B</span><span class="p">,</span> <span class="mh">0x2F</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0x87</span><span class="p">,</span> <span class="mh">0x34</span><span class="p">,</span> <span class="mh">0x8E</span><span class="p">,</span> <span class="mh">0x43</span><span class="p">,</span> <span class="mh">0x44</span><span class="p">,</span> <span class="mh">0xC4</span><span class="p">,</span> <span class="mh">0xDE</span><span class="p">,</span> <span class="mh">0xE9</span><span class="p">,</span> <span class="mh">0xCB</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x54</span><span class="p">,</span> <span class="mh">0x7B</span><span class="p">,</span> <span class="mh">0x94</span><span class="p">,</span> <span class="mh">0x32</span><span class="p">,</span> <span class="mh">0xA6</span><span class="p">,</span> <span class="mh">0xC2</span><span class="p">,</span> <span class="mh">0x23</span><span class="p">,</span> <span class="mh">0x3D</span><span class="p">,</span> <span class="mh">0xEE</span><span class="p">,</span> <span class="mh">0x4C</span><span class="p">,</span> <span class="mh">0x95</span><span class="p">,</span> <span class="mh">0x0B</span><span class="p">,</span> <span class="mh">0x42</span><span class="p">,</span> <span class="mh">0xFA</span><span class="p">,</span> <span class="mh">0xC3</span><span class="p">,</span> <span class="mh">0x4E</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x08</span><span class="p">,</span> <span class="mh">0x2E</span><span class="p">,</span> <span class="mh">0xA1</span><span class="p">,</span> <span class="mh">0x66</span><span class="p">,</span> <span class="mh">0x28</span><span class="p">,</span> <span class="mh">0xD9</span><span class="p">,</span> <span class="mh">0x24</span><span class="p">,</span> <span class="mh">0xB2</span><span class="p">,</span> <span class="mh">0x76</span><span class="p">,</span> <span class="mh">0x5B</span><span class="p">,</span> <span class="mh">0xA2</span><span class="p">,</span> <span class="mh">0x49</span><span class="p">,</span> <span class="mh">0x6D</span><span class="p">,</span> <span class="mh">0x8B</span><span class="p">,</span> <span class="mh">0xD1</span><span class="p">,</span> <span class="mh">0x25</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x72</span><span class="p">,</span> <span class="mh">0xF8</span><span class="p">,</span> <span class="mh">0xF6</span><span class="p">,</span> <span class="mh">0x64</span><span class="p">,</span> <span class="mh">0x86</span><span class="p">,</span> <span class="mh">0x68</span><span class="p">,</span> <span class="mh">0x98</span><span class="p">,</span> <span class="mh">0x16</span><span class="p">,</span> <span class="mh">0xD4</span><span class="p">,</span> <span class="mh">0xA4</span><span class="p">,</span> <span class="mh">0x5C</span><span class="p">,</span> <span class="mh">0xCC</span><span class="p">,</span> <span class="mh">0x5D</span><span class="p">,</span> <span class="mh">0x65</span><span class="p">,</span> <span class="mh">0xB6</span><span class="p">,</span> <span class="mh">0x92</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x6C</span><span class="p">,</span> <span class="mh">0x70</span><span class="p">,</span> <span class="mh">0x48</span><span class="p">,</span> <span class="mh">0x50</span><span class="p">,</span> <span class="mh">0xFD</span><span class="p">,</span> <span class="mh">0xED</span><span class="p">,</span> <span class="mh">0xB9</span><span class="p">,</span> <span class="mh">0xDA</span><span class="p">,</span> <span class="mh">0x5E</span><span class="p">,</span> <span class="mh">0x15</span><span class="p">,</span> <span class="mh">0x46</span><span class="p">,</span> <span class="mh">0x57</span><span class="p">,</span> <span class="mh">0xA7</span><span class="p">,</span> <span class="mh">0x8D</span><span class="p">,</span> <span class="mh">0x9D</span><span class="p">,</span> <span class="mh">0x84</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x90</span><span class="p">,</span> <span class="mh">0xD8</span><span class="p">,</span> <span class="mh">0xAB</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x8C</span><span class="p">,</span> <span class="mh">0xBC</span><span class="p">,</span> <span class="mh">0xD3</span><span class="p">,</span> <span class="mh">0x0A</span><span class="p">,</span> <span class="mh">0xF7</span><span class="p">,</span> <span class="mh">0xE4</span><span class="p">,</span> <span class="mh">0x58</span><span class="p">,</span> <span class="mh">0x05</span><span class="p">,</span> <span class="mh">0xB8</span><span class="p">,</span> <span class="mh">0xB3</span><span class="p">,</span> <span class="mh">0x45</span><span class="p">,</span> <span class="mh">0x06</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0xD0</span><span class="p">,</span> <span class="mh">0x2C</span><span class="p">,</span> <span class="mh">0x1E</span><span class="p">,</span> <span class="mh">0x8F</span><span class="p">,</span> <span class="mh">0xCA</span><span class="p">,</span> <span class="mh">0x3F</span><span class="p">,</span> <span class="mh">0x0F</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">,</span> <span class="mh">0xC1</span><span class="p">,</span> <span class="mh">0xAF</span><span class="p">,</span> <span class="mh">0xBD</span><span class="p">,</span> <span class="mh">0x03</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x13</span><span class="p">,</span> <span class="mh">0x8A</span><span class="p">,</span> <span class="mh">0x6B</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x3A</span><span class="p">,</span> <span class="mh">0x91</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">,</span> <span class="mh">0x41</span><span class="p">,</span> <span class="mh">0x4F</span><span class="p">,</span> <span class="mh">0x67</span><span class="p">,</span> <span class="mh">0xDC</span><span class="p">,</span> <span class="mh">0xEA</span><span class="p">,</span> <span class="mh">0x97</span><span class="p">,</span> <span class="mh">0xF2</span><span class="p">,</span> <span class="mh">0xCF</span><span class="p">,</span> <span class="mh">0xCE</span><span class="p">,</span> <span class="mh">0xF0</span><span class="p">,</span> <span class="mh">0xB4</span><span class="p">,</span> <span class="mh">0xE6</span><span class="p">,</span> <span class="mh">0x73</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x96</span><span class="p">,</span> <span class="mh">0xAC</span><span class="p">,</span> <span class="mh">0x74</span><span class="p">,</span> <span class="mh">0x22</span><span class="p">,</span> <span class="mh">0xE7</span><span class="p">,</span> <span class="mh">0xAD</span><span class="p">,</span> <span class="mh">0x35</span><span class="p">,</span> <span class="mh">0x85</span><span class="p">,</span> <span class="mh">0xE2</span><span class="p">,</span> <span class="mh">0xF9</span><span class="p">,</span> <span class="mh">0x37</span><span class="p">,</span> <span class="mh">0xE8</span><span class="p">,</span> <span class="mh">0x1C</span><span class="p">,</span> <span class="mh">0x75</span><span class="p">,</span> <span class="mh">0xDF</span><span class="p">,</span> <span class="mh">0x6E</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x47</span><span class="p">,</span> <span class="mh">0xF1</span><span class="p">,</span> <span class="mh">0x1A</span><span class="p">,</span> <span class="mh">0x71</span><span class="p">,</span> <span class="mh">0x1D</span><span class="p">,</span> <span class="mh">0x29</span><span class="p">,</span> <span class="mh">0xC5</span><span class="p">,</span> <span class="mh">0x89</span><span class="p">,</span> <span class="mh">0x6F</span><span class="p">,</span> <span class="mh">0xB7</span><span class="p">,</span> <span class="mh">0x62</span><span class="p">,</span> <span class="mh">0x0E</span><span class="p">,</span> <span class="mh">0xAA</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0xBE</span><span class="p">,</span> <span class="mh">0x1B</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0xFC</span><span class="p">,</span> <span class="mh">0x56</span><span class="p">,</span> <span class="mh">0x3E</span><span class="p">,</span> <span class="mh">0x4B</span><span class="p">,</span> <span class="mh">0xC6</span><span class="p">,</span> <span class="mh">0xD2</span><span class="p">,</span> <span class="mh">0x79</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x9A</span><span class="p">,</span> <span class="mh">0xDB</span><span class="p">,</span> <span class="mh">0xC0</span><span class="p">,</span> <span class="mh">0xFE</span><span class="p">,</span> <span class="mh">0x78</span><span class="p">,</span> <span class="mh">0xCD</span><span class="p">,</span> <span class="mh">0x5A</span><span class="p">,</span> <span class="mh">0xF4</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x1F</span><span class="p">,</span> <span class="mh">0xDD</span><span class="p">,</span> <span class="mh">0xA8</span><span class="p">,</span> <span class="mh">0x33</span><span class="p">,</span> <span class="mh">0x88</span><span class="p">,</span> <span class="mh">0x07</span><span class="p">,</span> <span class="mh">0xC7</span><span class="p">,</span> <span class="mh">0x31</span><span class="p">,</span> <span class="mh">0xB1</span><span class="p">,</span> <span class="mh">0x12</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">,</span> <span class="mh">0x59</span><span class="p">,</span> <span class="mh">0x27</span><span class="p">,</span> <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0xEC</span><span class="p">,</span> <span class="mh">0x5F</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x60</span><span class="p">,</span> <span class="mh">0x51</span><span class="p">,</span> <span class="mh">0x7F</span><span class="p">,</span> <span class="mh">0xA9</span><span class="p">,</span> <span class="mh">0x19</span><span class="p">,</span> <span class="mh">0xB5</span><span class="p">,</span> <span class="mh">0x4A</span><span class="p">,</span> <span class="mh">0x0D</span><span class="p">,</span> <span class="mh">0x2D</span><span class="p">,</span> <span class="mh">0xE5</span><span class="p">,</span> <span class="mh">0x7A</span><span class="p">,</span> <span class="mh">0x9F</span><span class="p">,</span> <span class="mh">0x93</span><span class="p">,</span> <span class="mh">0xC9</span><span class="p">,</span> <span class="mh">0x9C</span><span class="p">,</span> <span class="mh">0xEF</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0xA0</span><span class="p">,</span> <span class="mh">0xE0</span><span class="p">,</span> <span class="mh">0x3B</span><span class="p">,</span> <span class="mh">0x4D</span><span class="p">,</span> <span class="mh">0xAE</span><span class="p">,</span> <span class="mh">0x2A</span><span class="p">,</span> <span class="mh">0xF5</span><span class="p">,</span> <span class="mh">0xB0</span><span class="p">,</span> <span class="mh">0xC8</span><span class="p">,</span> <span class="mh">0xEB</span><span class="p">,</span> <span class="mh">0xBB</span><span class="p">,</span> <span class="mh">0x3C</span><span class="p">,</span> <span class="mh">0x83</span><span class="p">,</span> <span class="mh">0x53</span><span class="p">,</span> <span class="mh">0x99</span><span class="p">,</span> <span class="mh">0x61</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x17</span><span class="p">,</span> <span class="mh">0x2B</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x7E</span><span class="p">,</span> <span class="mh">0xBA</span><span class="p">,</span> <span class="mh">0x77</span><span class="p">,</span> <span class="mh">0xD6</span><span class="p">,</span> <span class="mh">0x26</span><span class="p">,</span> <span class="mh">0xE1</span><span class="p">,</span> <span class="mh">0x69</span><span class="p">,</span> <span class="mh">0x14</span><span class="p">,</span> <span class="mh">0x63</span><span class="p">,</span> <span class="mh">0x55</span><span class="p">,</span> <span class="mh">0x21</span><span class="p">,</span> <span class="mh">0x0C</span><span class="p">,</span> <span class="mh">0x7D</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">sub_bytes</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">            <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">s_box</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">inv_sub_bytes</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">            <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">inv_s_box</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">shift_rows</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">inv_shift_rows</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">add_round_key</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">            <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">^=</span> <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># learned from https://web.archive.org/web/20100626212235/http://cs.ucsb.edu/~koc/cs178/projects/JT/aes.c</span>
-</span></span><span class="line"><span class="cl"><span class="n">xtime</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="p">(((</span><span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">^</span> <span class="mh">0x1B</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&amp;</span> <span class="mh">0x80</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">mix_single_column</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># see Sec 4.1.2 in The Design of Rijndael</span>
-</span></span><span class="line"><span class="cl">    <span class="n">t</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">^</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">^</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">^</span> <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="n">u</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">^=</span> <span class="n">t</span> <span class="o">^</span> <span class="n">xtime</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">^</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">^=</span> <span class="n">t</span> <span class="o">^</span> <span class="n">xtime</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">^</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">^=</span> <span class="n">t</span> <span class="o">^</span> <span class="n">xtime</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">^</span> <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">^=</span> <span class="n">t</span> <span class="o">^</span> <span class="n">xtime</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">^</span> <span class="n">u</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">mix_columns</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="n">mix_single_column</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">inv_mix_columns</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># see Sec 4.1.3 in The Design of Rijndael</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="n">u</span> <span class="o">=</span> <span class="n">xtime</span><span class="p">(</span><span class="n">xtime</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">^</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
-</span></span><span class="line"><span class="cl">        <span class="n">v</span> <span class="o">=</span> <span class="n">xtime</span><span class="p">(</span><span class="n">xtime</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">^</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]))</span>
-</span></span><span class="line"><span class="cl">        <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">^=</span> <span class="n">u</span>
-</span></span><span class="line"><span class="cl">        <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">^=</span> <span class="n">v</span>
-</span></span><span class="line"><span class="cl">        <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">^=</span> <span class="n">u</span>
-</span></span><span class="line"><span class="cl">        <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">^=</span> <span class="n">v</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">mix_columns</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">r_con</span> <span class="o">=</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x08</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x40</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0x1B</span><span class="p">,</span> <span class="mh">0x36</span><span class="p">,</span> <span class="mh">0x6C</span><span class="p">,</span> <span class="mh">0xD8</span><span class="p">,</span> <span class="mh">0xAB</span><span class="p">,</span> <span class="mh">0x4D</span><span class="p">,</span> <span class="mh">0x9A</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0x2F</span><span class="p">,</span> <span class="mh">0x5E</span><span class="p">,</span> <span class="mh">0xBC</span><span class="p">,</span> <span class="mh">0x63</span><span class="p">,</span> <span class="mh">0xC6</span><span class="p">,</span> <span class="mh">0x97</span><span class="p">,</span> <span class="mh">0x35</span><span class="p">,</span> <span class="mh">0x6A</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="mh">0xD4</span><span class="p">,</span> <span class="mh">0xB3</span><span class="p">,</span> <span class="mh">0x7D</span><span class="p">,</span> <span class="mh">0xFA</span><span class="p">,</span> <span class="mh">0xEF</span><span class="p">,</span> <span class="mh">0xC5</span><span class="p">,</span> <span class="mh">0x91</span><span class="p">,</span> <span class="mh">0x39</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">bytes2matrix</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34; Converts a 16-byte array into a 4x4 matrix.  &#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">4</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="mi">4</span><span class="p">)]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">matrix2bytes</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34; Converts a 4x4 matrix into a 16-byte array.  &#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="p">[]))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">xor_bytes</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34; Returns a new byte array with the elements xor&#39;ed. &#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">i</span><span class="o">^</span><span class="n">j</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">inc_bytes</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34; Returns a new byte array with the value increment by 1 &#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">out</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">out</span><span class="p">))):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mh">0xFF</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">            <span class="k">break</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">pad</span><span class="p">(</span><span class="n">plaintext</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">    Pads the given plaintext with PKCS#7 padding to a multiple of 16 bytes.
-</span></span></span><span class="line"><span class="cl"><span class="s2">    Note that if the plaintext size is a multiple of 16,
-</span></span></span><span class="line"><span class="cl"><span class="s2">    a whole block will be added.
-</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">padding_len</span> <span class="o">=</span> <span class="mi">16</span> <span class="o">-</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span> <span class="o">%</span> <span class="mi">16</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">padding</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">([</span><span class="n">padding_len</span><span class="p">]</span> <span class="o">*</span> <span class="n">padding_len</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">plaintext</span> <span class="o">+</span> <span class="n">padding</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">unpad</span><span class="p">(</span><span class="n">plaintext</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">    Removes a PKCS#7 padding, returning the unpadded text and ensuring the
-</span></span></span><span class="line"><span class="cl"><span class="s2">    padding was correct.
-</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">padding_len</span> <span class="o">=</span> <span class="n">plaintext</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="k">assert</span> <span class="n">padding_len</span> <span class="o">&gt;</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">    <span class="n">message</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="n">plaintext</span><span class="p">[:</span><span class="o">-</span><span class="n">padding_len</span><span class="p">],</span> <span class="n">plaintext</span><span class="p">[</span><span class="o">-</span><span class="n">padding_len</span><span class="p">:]</span>
-</span></span><span class="line"><span class="cl">    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">padding_len</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">padding</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">message</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">split_blocks</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">require_padding</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="o">%</span> <span class="n">block_size</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">require_padding</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[</span><span class="n">message</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">16</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">),</span> <span class="n">block_size</span><span class="p">)]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">AES</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">    Class for AES-128 encryption with CBC mode and PKCS#7.
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">    This is a raw implementation of AES, without key stretching or IV
-</span></span></span><span class="line"><span class="cl"><span class="s2">    management. Unless you need that, please use `encrypt` and `decrypt`.
-</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">rounds_by_key_size</span> <span class="o">=</span> <span class="p">{</span><span class="mi">16</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">24</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">32</span><span class="p">:</span> <span class="mi">14</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master_key</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">        Initializes the object with a given key.
-</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">master_key</span><span class="p">)</span> <span class="ow">in</span> <span class="n">AES</span><span class="o">.</span><span class="n">rounds_by_key_size</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">n_rounds</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">rounds_by_key_size</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">master_key</span><span class="p">)]</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">_key_matrices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expand_key</span><span class="p">(</span><span class="n">master_key</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">_expand_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master_key</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">        Expands and returns a list of key matrices for the given master_key.
-</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># Initialize round keys with raw key material.</span>
-</span></span><span class="line"><span class="cl">        <span class="n">key_columns</span> <span class="o">=</span> <span class="n">bytes2matrix</span><span class="p">(</span><span class="n">master_key</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">iteration_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">master_key</span><span class="p">)</span> <span class="o">//</span> <span class="mi">4</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">key_columns</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_rounds</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># Copy previous word.</span>
-</span></span><span class="line"><span class="cl">            <span class="n">word</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">key_columns</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="c1"># Perform schedule_core once every &#34;row&#34;.</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">key_columns</span><span class="p">)</span> <span class="o">%</span> <span class="n">iteration_size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                <span class="c1"># Circular shift.</span>
-</span></span><span class="line"><span class="cl">                <span class="n">word</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">                <span class="c1"># Map to S-BOX.</span>
-</span></span><span class="line"><span class="cl">                <span class="n">word</span> <span class="o">=</span> <span class="p">[</span><span class="n">s_box</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">word</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">                <span class="c1"># XOR with first byte of R-CON, since the others bytes of R-CON are 0.</span>
-</span></span><span class="line"><span class="cl">                <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">^=</span> <span class="n">r_con</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">master_key</span><span class="p">)</span> <span class="o">==</span> <span class="mi">32</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">key_columns</span><span class="p">)</span> <span class="o">%</span> <span class="n">iteration_size</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                <span class="c1"># Run word through S-box in the fourth iteration when using a</span>
-</span></span><span class="line"><span class="cl">                <span class="c1"># 256-bit key.</span>
-</span></span><span class="line"><span class="cl">                <span class="n">word</span> <span class="o">=</span> <span class="p">[</span><span class="n">s_box</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">word</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="c1"># XOR with equivalent word from previous iteration.</span>
-</span></span><span class="line"><span class="cl">            <span class="n">word</span> <span class="o">=</span> <span class="n">xor_bytes</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">key_columns</span><span class="p">[</span><span class="o">-</span><span class="n">iteration_size</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">            <span class="n">key_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1"># Group key words in 4x4 byte matrices.</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[</span><span class="n">key_columns</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">i</span> <span class="p">:</span> <span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">key_columns</span><span class="p">)</span> <span class="o">//</span> <span class="mi">4</span><span class="p">)]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">encrypt_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="p">[</span><span class="n">add_round_key</span><span class="p">,</span> <span class="n">sub_bytes</span><span class="p">,</span> <span class="n">shift_rows</span><span class="p">,</span> <span class="n">mix_columns</span><span class="p">]):</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">        Encrypts a single block of 16 byte long plaintext.
-</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span> <span class="o">==</span> <span class="mi">16</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">plain_state</span> <span class="o">=</span> <span class="n">bytes2matrix</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">step</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="n">plain_state</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_matrices</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_rounds</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">            <span class="n">step</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="n">plain_state</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">step</span><span class="p">[</span><span class="mi">2</span><span class="p">](</span><span class="n">plain_state</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">step</span><span class="p">[</span><span class="mi">3</span><span class="p">](</span><span class="n">plain_state</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">step</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="n">plain_state</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_matrices</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">step</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="n">plain_state</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">step</span><span class="p">[</span><span class="mi">2</span><span class="p">](</span><span class="n">plain_state</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">step</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="n">plain_state</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key_matrices</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">matrix2bytes</span><span class="p">(</span><span class="n">plain_state</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="n">plaintext</span> <span class="o">=</span> <span class="n">pad</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">ciphertext</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">split_blocks</span><span class="p">(</span><span class="n">plaintext</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">            <span class="n">ciphertext_block</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encrypt_block</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">ciphertext</span> <span class="o">+=</span> <span class="n">ciphertext_block</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ciphertext</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># chall.py</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">aes</span> <span class="kn">import</span> <span class="o">*</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">dumb_step</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">init_step</span> <span class="o">=</span> <span class="p">[</span><span class="n">add_round_key</span><span class="p">,</span> <span class="n">sub_bytes</span><span class="p">,</span> <span class="n">shift_rows</span><span class="p">,</span> <span class="n">mix_columns</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="nb">round</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Round </span><span class="si">{</span><span class="nb">round</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">/50&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">plaintext</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;&gt;&gt;&gt; &#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">16</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&#34;Too long!&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">step</span> <span class="o">=</span> <span class="n">init_step</span><span class="p">[:]</span>
-</span></span><span class="line"><span class="cl">        <span class="n">pos</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">step</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">step</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">dumb_step</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">bit</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">cipher</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">plaintext</span><span class="p">,</span> <span class="p">[</span><span class="n">init_step</span><span class="p">,</span> <span class="n">step</span><span class="p">][</span><span class="n">bit</span><span class="p">])</span><span class="o">.</span><span class="n">hex</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;&gt;&gt;&gt; &#34;</span><span class="p">))</span> <span class="o">!=</span> <span class="n">bit</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Wrong!&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Correct!&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">except</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Here is your flag !&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&#34;WannaGame_CyberKnight/choose/flag.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-</span></span></code></pre></div><blockquote>
-<p>Bài này đơn giản là về phần mã hóa AES (<a href="https://vi.wikipedia.org/wiki/Advanced_Encryption_Standard">Advanced Encryption Standard</a>) và mình có xem lại cấu trúc của nó tại wikipedia và <a href="https://hackmd.io/@r1muru/HJmSbUld1x#Bringing-It-All-Together">đây</a> để tiếp cận.</p>
-        
-        <hr><p>Published on 2025-05-16 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-05-16</p>]]>
-      </description>
-      
-        <category>CTF Write-up</category><category>WannaGame</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>WannaGame NMLT</title>
-      <link>https://r1muru2006.github.io/post/wannagamenmlt/</link>
-      <pubDate>Tue, 08 Apr 2025 10:07:31 &#43;0700</pubDate>
-      <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/wannagamenmlt/</guid>
-      <description>
-        <![CDATA[<h1>WannaGame NMLT</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
-        
-          <h2 id="pwn">
-<a class="header-anchor" href="#pwn"></a>
-Pwn
-</h2><h3 id="1-hello-pwner">
-<a class="header-anchor" href="#1-hello-pwner"></a>
-1. Hello pwner
-</h3><p><img src="https://hackmd.io/_uploads/SyPcemLL1g.png" alt="image"></p>
-<pre><code>Flag: W1{welcome_to_assembly}
-</code></pre>
-<h2 id="crypto">
-<a class="header-anchor" href="#crypto"></a>
-Crypto
-</h2><h3 id="2-substitution">
-<a class="header-anchor" href="#2-substitution"></a>
-2. Substitution
-</h3><p>Tải file, giải nén và mở chall lên:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">KEY</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">:</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">:</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;J&#39;</span><span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">:</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">:</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">:</span> <span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">:</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;S&#39;</span><span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">:</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">:</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">:</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">:</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">:</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;j&#39;</span><span class="p">:</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">:</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">:</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">:</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">:</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="s1">&#39;j&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;s&#39;</span><span class="p">:</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">:</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">:</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">:</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">hehe</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">data</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">plaintext</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">substituted</span> <span class="o">=</span> <span class="n">hehe</span><span class="p">(</span><span class="n">plaintext</span><span class="p">,</span> <span class="n">KEY</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">substituted</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">plaintext</span> <span class="o">=</span> <span class="s2">&#34;W1{???????????????}&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">encrypted</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;encrypted.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">encrypted</span><span class="p">)</span>
-</span></span></code></pre></div><h4 id="phân-tích">
-<a class="header-anchor" href="#ph%c3%a2n-t%c3%adch"></a>
-Phân tích:
-</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">hehe</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">data</span><span class="p">)</span>
-</span></span></code></pre></div><p>Hàm <code>hehe</code> lấy <code>data</code> và chuyển đổi từng ký tự trong dữ liệu đó sang ký tự tương ứng bằng danh sách của <code>KEY</code>.</p>
-        
-        <hr><p>Published on 2025-04-08 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-04-08</p>]]>
-      </description>
-      
-        <category>CTF Write-up</category><category>WannaGame</category>
       
     </item>
     

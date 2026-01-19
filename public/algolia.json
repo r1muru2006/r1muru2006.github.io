@@ -1,5 +1,11 @@
 [
   {
+    "objectID": "6bda29552cba4391a0dfa3d5b8cec1d6614b222f",
+    "permalink": "/post/diffehellman/",
+    "title": "Trao đổi khóa Diffie-Hellman","content": " Trao đổi khóa Diffie-Hellman Nếu các bạn đã học và làm được 1 số bài tập từ mức trung bình trong phần RSA rồi (mong là vậy) thì chắc hẳn các bạn cũng biết thuật RSA hiện nay đang có nguy cơ bị máy tính lượng tử tiêu hủy trong tương lai. Điều đó xảy ra được là vì RSA bảo mật hay không thì phụ thuộc vào bài toán phân tích khóa, cụ thể hơn là phân tích thừa số nguyên tố.\nĐối với Diffie-Hellman, vấn đề phân tích logarit rời rạc (Discrete Logarithm Problem) chính là mấu chốt. Trước khi đi vào quy trình hoạt động của giao thức trao đổi khóa này, ta sẽ tới phần toán liên quan tới trường hữu hạn, cụ thể là lý thuyết nhóm.\nLý thuyết nhóm Nhóm, vành và trường là những yếu tố cơ bản của một nhánh toán học được gọi là đại số trừu tượng. Trong đại số trừu tượng, chúng ta không bị giới hạn bởi các phép toán số học thông thường. Sau đây là một số lý thuyết về nhóm mà bạn phải nắm để hiểu rõ bản chất của thuật toán:\nNhóm là một tập hợp, G, cùng với phép toán hai ngôi $\\cdot$ (còn gọi là luật nhóm của …","date": "2026-01-19 10:39:34",
+    "updated": "2026-01-19 10:39:34"
+  }, 
+  {
     "objectID": "c915009a0bc2728e694ed18f4eec132e50784e7a",
     "permalink": "/post/nsucrypto2025/",
     "title": "NSUCRYPTO 2025","content": " NSUCRYPTO 2025 In this article, I will provide guidance and the way how to solve some NSUCRYPTO 2025 problems using my own solutions.\nIntroduction First and foremost, I want to send a huge thank you to everyone who supported me and helped me get to where I am today.\nRound 1 was intense with 9 questions, including the infamous Question 4 that seemed impossible for everyone. To be honest, this year\u0026amp;rsquo;s exam really threw me off. Even though I managed to tackle most of the problems, I walked away feeling unsure about the result.\nBut then, a miracle happened!!! I scored 24 points. Initially, I was awarded the Silver medal, but in a twist I didn\u0026amp;rsquo;t see coming, about two hours later, that medal changed color to Gold! It was an absolute roller-coaster of emotions, and I couldn\u0026amp;rsquo;t be happier.\nOnce again, thank you all so much!\nCrypto growth Description One old, experienced cryptographer told his young student: You can’t live without this function. Really, I believe you’ll …","date": "2025-12-11 13:42:41",
@@ -10,6 +16,12 @@
     "permalink": "/post/wannagamechampionship2025/",
     "title": "WannaGame Championship 2025","content": " Crypto King Halo Mô tả: Uma Musume is the best mobile game in 2025\nhttps://www.youtube.com/watch?v=eAkxxgEHEmg\nĐính kèm: attachments.tar\nThử thách này sử dụng Rust làm ngôn ngữ chính để chạy chương trình. Yêu cầu của nó là mình phải chiến thắng 50 rounds đua ngựa để lấy được flag. Đầu tiền, đăng ký tên và chiến thuật cho 1 con ngựa:\nwrite!(writer, \u0026amp;#34;Register your horse name: \u0026amp;#34;)?; writer.flush()?; let horse_name = read_line_trimmed(reader)?; if horse_name.is_empty() { writeln!(writer, \u0026amp;#34;Name cannot be empty. Session terminated.\u0026amp;#34;)?; return Ok(()); } writeln!(writer, \u0026amp;#34;Choose your running strategy:\u0026amp;#34;)?; writeln!(writer, \u0026amp;#34; 1) Front-runner\u0026amp;#34;)?; writeln!(writer, \u0026amp;#34; 2) Pace-maker\u0026amp;#34;)?; writeln!(writer, \u0026amp;#34; 3) Late charge\u0026amp;#34;)?; writeln!(writer, \u0026amp;#34; 4) End spurt\u0026amp;#34;)?; write!(writer, \u0026amp;#34;Strategy selection: \u0026amp;#34;)?; writer.flush()?; let strategy_line = read_line_trimmed(reader)?; let user_strategy = match parse_strategy_choice(\u0026amp;amp;strategy_line) { …","date": "2025-12-08 13:44:12",
     "updated": "2025-12-08 13:44:12"
+  }, 
+  {
+    "objectID": "d9f59849b05453905a282906c7eb7afe189017f6",
+    "permalink": "/post/implementing_fips_205_p1/",
+    "title": "Implementing FIPS 205 - Stateless Hash-Based Digital Signature Standard (Part 1)","content": " Overview of SLH-DSA \u0026amp; Address Structure (ADRS) Stateless Hash-Based Digital Signature Standard (SLH-DSA) References NIST.FIPS.205.pdf SPHINCS+ by Wikipedia ","date": "2025-12-05 08:13:43",
+    "updated": "2025-12-05 08:13:43"
   }, 
   {
     "objectID": "d4ea1cecd14dfaedad1b711e2abbfb3123141fad",
