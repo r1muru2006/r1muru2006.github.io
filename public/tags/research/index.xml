@@ -12,12 +12,35 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
-    <lastBuildDate>Tue, 25 Nov 2025 14:33:54 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 19 Jan 2026 10:39:34 +0700</lastBuildDate>
     
     
     <atom:link href="https://r1muru2006.github.io/tags/research/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>Trao đổi khóa Diffie-Hellman</title>
+      <link>https://r1muru2006.github.io/post/diffehellman/</link>
+      <pubDate>Mon, 19 Jan 2026 10:39:34 &#43;0700</pubDate>
+      <author>cuongchu200@gmail.com (r1muru)</author>
+      <guid>https://r1muru2006.github.io/post/diffehellman/</guid>
+      <description>
+        <![CDATA[<h1>Trao đổi khóa Diffie-Hellman</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
+        
+          <h1 id="trao-đổi-khóa-diffie-hellman">
+<a class="header-anchor" href="#trao-%c4%91%e1%bb%95i-kh%c3%b3a-diffie-hellman"></a>
+Trao đổi khóa Diffie-Hellman
+</h1><p>Nếu các bạn đã học và làm được 1 số bài tập từ mức trung bình trong phần RSA rồi (mong là vậy) thì chắc hẳn các bạn cũng biết thuật RSA hiện nay đang có nguy cơ bị máy tính lượng tử tiêu hủy trong tương lai. Điều đó xảy ra được là vì RSA bảo mật hay không thì phụ thuộc vào bài toán phân tích khóa, cụ thể hơn là phân tích thừa số nguyên tố.</p>
+        
+        <hr><p>Published on 2026-01-19 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2026-01-19</p>]]>
+      </description>
+      
+        <category>Learning</category>
+      
+    </item>
     
     
 
