@@ -18,12 +18,6 @@
     "updated": "2025-12-08 13:44:12"
   }, 
   {
-    "objectID": "d9f59849b05453905a282906c7eb7afe189017f6",
-    "permalink": "/post/implementing_fips_205_p1/",
-    "title": "Implementing FIPS 205 - Stateless Hash-Based Digital Signature Standard (Part 1)","content": " Overview of SLH-DSA \u0026amp; Address Structure (ADRS) Stateless Hash-Based Digital Signature Standard (SLH-DSA) References NIST.FIPS.205.pdf SPHINCS+ by Wikipedia ","date": "2025-12-05 08:13:43",
-    "updated": "2025-12-05 08:13:43"
-  }, 
-  {
     "objectID": "d4ea1cecd14dfaedad1b711e2abbfb3123141fad",
     "permalink": "/post/streamcipher/",
     "title": "Is stream encryption secure?","content": " Chacha20-Poly1305 ChaCha20-Poly1305 architecture consists of two main components, the stream cipher ChaCha20 and the authentication mechanism Poly1305 by the same author D.J. Berstein. The two building blocks of the construction, the algorithms Poly1305 and ChaCha20, were both independently designed, in 2005 and 2008.\nAlgorithm Chacha20 The ChaCha20 algorithm uses ChaCha20 block functions to generate the encryption keystream. The input of the ChaCha20 block function is a 4x4 word matrix described as in this figure: More details in figure a are 128 bit constant C (4-word), 256 bit key K (8-word), 32 bit counter parameter Ctr (1 word), 96 bit nonce N (3 words). Then perform 20 loops alternatingly executing the column round transformations according to figure b and the diagonal round transformations according to figure c.\nThese two circular shifts are implemented by a single QUARTERROUND transformation (cross or column shift based on the input index to the QUARTERROUND function) as shown …","date": "2025-11-25 14:33:54",

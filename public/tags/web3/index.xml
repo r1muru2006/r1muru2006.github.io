@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web3 on r1muru&#39;s blog</title>
-    <link>http://localhost:1313/tags/web3/</link>
+    <link>https://r1muru2006.github.io/tags/web3/</link>
     <description>Recent content from r1muru&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Mon, 08 Dec 2025 13:44:12 +0700</lastBuildDate>
     
     
-    <atom:link href="http://localhost:1313/tags/web3/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://r1muru2006.github.io/tags/web3/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>WannaGame Championship 2025</title>
-      <link>http://localhost:1313/post/wannagamechampionship2025/</link>
+      <link>https://r1muru2006.github.io/post/wannagamechampionship2025/</link>
       <pubDate>Mon, 08 Dec 2025 13:44:12 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>http://localhost:1313/post/wannagamechampionship2025/</guid>
+      <guid>https://r1muru2006.github.io/post/wannagamechampionship2025/</guid>
       <description>
         <![CDATA[<h1>WannaGame Championship 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -66,7 +66,7 @@ Yêu cầu của nó là mình phải chiến thắng 50 rounds đua ngựa đ�
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">};</span><span class="w">
 </span></span></span></code></pre></div><p>Sau đó, đề cho mình biết các dữ kiện như là: <code>race distance</code>, <code>merkle root</code>, các vị trí và chỉ số của 16 con ngựa (tính cả ngựa của mình):</p>
         
-        <hr><p>Published on 2025-12-08 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-12-08</p>]]>
+        <hr><p>Published on 2025-12-08 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-12-08</p>]]>
       </description>
       
         <category>CTF Write-up</category><category>WannaGame</category>
