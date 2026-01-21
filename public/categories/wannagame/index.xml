@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WannaGame on r1muru&#39;s blog</title>
-    <link>https://r1muru2006.github.io/categories/wannagame/</link>
+    <link>http://localhost:1313/categories/wannagame/</link>
     <description>Recent content from r1muru&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Mon, 08 Dec 2025 13:44:12 +0700</lastBuildDate>
     
     
-    <atom:link href="https://r1muru2006.github.io/categories/wannagame/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/categories/wannagame/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>WannaGame Championship 2025</title>
-      <link>https://r1muru2006.github.io/post/wannagamechampionship2025/</link>
+      <link>http://localhost:1313/post/wannagamechampionship2025/</link>
       <pubDate>Mon, 08 Dec 2025 13:44:12 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/wannagamechampionship2025/</guid>
+      <guid>http://localhost:1313/post/wannagamechampionship2025/</guid>
       <description>
         <![CDATA[<h1>WannaGame Championship 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -66,7 +66,7 @@ Yêu cầu của nó là mình phải chiến thắng 50 rounds đua ngựa đ�
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">};</span><span class="w">
 </span></span></span></code></pre></div><p>Sau đó, đề cho mình biết các dữ kiện như là: <code>race distance</code>, <code>merkle root</code>, các vị trí và chỉ số của 16 con ngựa (tính cả ngựa của mình):</p>
         
-        <hr><p>Published on 2025-12-08 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-12-08</p>]]>
+        <hr><p>Published on 2025-12-08 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-12-08</p>]]>
       </description>
       
         <category>CTF Write-up</category><category>WannaGame</category>
@@ -77,10 +77,10 @@ Yêu cầu của nó là mình phải chiến thắng 50 rounds đua ngựa đ�
 
     <item>
       <title>WannaGame Cyber Knight 2025</title>
-      <link>https://r1muru2006.github.io/post/wannagamecyberknight2025/</link>
+      <link>http://localhost:1313/post/wannagamecyberknight2025/</link>
       <pubDate>Fri, 16 May 2025 14:13:38 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/wannagamecyberknight2025/</guid>
+      <guid>http://localhost:1313/post/wannagamecyberknight2025/</guid>
       <description>
         <![CDATA[<h1>WannaGame Cyber Knight 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -369,7 +369,7 @@ Choose!
 </span></span></code></pre></div><blockquote>
 <p>Bài này đơn giản là về phần mã hóa AES (<a href="https://vi.wikipedia.org/wiki/Advanced_Encryption_Standard">Advanced Encryption Standard</a>) và mình có xem lại cấu trúc của nó tại wikipedia và <a href="https://hackmd.io/@r1muru/HJmSbUld1x#Bringing-It-All-Together">đây</a> để tiếp cận.</p>
         
-        <hr><p>Published on 2025-05-16 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-05-16</p>]]>
+        <hr><p>Published on 2025-05-16 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-05-16</p>]]>
       </description>
       
         <category>CTF Write-up</category><category>WannaGame</category>
@@ -380,10 +380,10 @@ Choose!
 
     <item>
       <title>WannaGame NMLT</title>
-      <link>https://r1muru2006.github.io/post/wannagamenmlt/</link>
+      <link>http://localhost:1313/post/wannagamenmlt/</link>
       <pubDate>Tue, 08 Apr 2025 10:07:31 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/wannagamenmlt/</guid>
+      <guid>http://localhost:1313/post/wannagamenmlt/</guid>
       <description>
         <![CDATA[<h1>WannaGame NMLT</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -431,7 +431,7 @@ Phân tích:
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">data</span><span class="p">)</span>
 </span></span></code></pre></div><p>Hàm <code>hehe</code> lấy <code>data</code> và chuyển đổi từng ký tự trong dữ liệu đó sang ký tự tương ứng bằng danh sách của <code>KEY</code>.</p>
         
-        <hr><p>Published on 2025-04-08 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-04-08</p>]]>
+        <hr><p>Published on 2025-04-08 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-04-08</p>]]>
       </description>
       
         <category>CTF Write-up</category><category>WannaGame</category>

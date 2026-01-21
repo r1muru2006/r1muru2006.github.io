@@ -66,11 +66,17 @@ Người thứ ba khi đã can thiệp được vào cuộc trao đổi thì có
 
 ![images](/images/DH/ElGamal.png)
 
-Về lý thuyết thì giao thức là vậy, trông thật vững chắc nhưng thực ra tất cả đều được cấu thành từ cái móng DLP và hiện tại thì ta có rất nhiều [cách để tấn công](https://en.wikipedia.org/wiki/Discrete_logarithm#Algorithms) nếu modulo không quá lớn:
+Về lý thuyết thì giao thức là vậy, trông thật vững chắc nhưng thực ra tất cả đều được cấu thành từ cái móng DLP và hiện tại thì ta có rất nhiều [cách để tấn công](https://en.wikipedia.org/wiki/Discrete_logarithm#Algorithms) nếu modulo có những tính chất đặc biệt:
 
 ![images](/images/DH/attack.png)
 
-Vậy nên để nâng cấp DH thì ta cần làm gì??? Đúng vậy ta phải nâng độ khó của DLP và đó là lúc ECC (Elliptic-curve cryptography) vào cuộc để sinh ra đứa con ECDH (Elliptic-curve Diffie–Hellman) nhưng bài viết đến đây cũng dài rồi nên hẹn bạn dịp sau :3
+> Nhưng liệu có cách nào để ngăn chặn MITM trong phương pháp trao đổi khoá Diffie-Hellman hay không???
+
+Câu trả lời là có. DH được sử dụng cho nhiều bộ mã hóa TLS 1.3 và cả TLS 1.2 và để nó ngăn được các cuộc tấn công MITM thì những giao thức này phải sử dụng [mã hóa xác thực](https://en.wikipedia.org/wiki/Authenticated_encryption) để đảm bảo tính toàn vẹn của dữ liệu. 1 số phương pháp mã hóa xác thực mà bạn có thể tham khảo tại [đây](https://en.wikipedia.org/wiki/Authenticated_encryption#Approaches_to_authenticated_encryption).
+
+> Thế nếu muốn nâng cấp DH thì ta cần làm gì???
+
+Để làm DH trở nên bảo mật hơn, ta phải nâng độ khó của DLP và đó là lúc ECC (Elliptic-curve cryptography) vào cuộc để sinh ra đứa con ECDH (Elliptic-curve Diffie–Hellman) nhưng bài viết đến đây cũng dài rồi nên hẹn bạn dịp sau :3
 
 ## Bài tập
 Sau đây là 1 số bài tập bắt buộc bạn cần làm để level up mớ kiến thức này vì **practice makes perfect**:
