@@ -35,7 +35,7 @@ Bạn có thể tham khảo thêm tại [đây](https://en.wikipedia.org/wiki/El
 Cách xây dựng đường cong Elliptic trong Sagemath:
 ```python
 from sage.all import *
-p = 65535
+p = 131 #Random prime number
 F = GF(p) # Construct finite field
 E = EllipticCurve(F, [-3, 3]) #(E): Y^2 = X^3 + -3X + 3
 ```
@@ -49,7 +49,7 @@ Do nằm trong trường hữu hạn, nên số lượng điểm $(X, Y)$ của 
 
 ```python
 from sage.all import *
-E = EllipticCurve(GF(65535), [-3, 3]) #(E): Y^2 = X^3 + -3X + 3
+E = EllipticCurve(GF(131), [-3, 3]) #(E): Y^2 = X^3 + -3X + 3
 n = E.order() #Get order of curve
 ```
 
@@ -88,7 +88,7 @@ Cho điểm $P \in E(\mathbb{F}_p)$ và số nguyên $n \ge 1$
 Vì phép cộng và nhân đã được tích hợp sẵn trên sagemath nên ta có thể tận dụng nó luôn:
 ```python
 from sage.all import *
-E = EllipticCurve(GF(65535), [-3, 3]) #(E): Y^2 = X^3 + -3X + 3
+E = EllipticCurve(GF(131), [-3, 3]) #(E): Y^2 = X^3 + -3X + 3
 P = E.random_point() #Get a random point in (E)
 Q = E.random_point() #Get another random point in (E)
 n = E.order() #Get order of curve
