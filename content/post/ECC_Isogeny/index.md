@@ -87,7 +87,7 @@ Cho điểm $P \in E(\mathbb{F}_p)$ và số nguyên $n \ge 1$
     - Nếu $n > 0$, tiếp tục vòng lặp tại bước 2.
 3. Trả về điểm $R$, lúc này $R = nP$
 
-Ở đây, ta tính $nP$ trong $O(\log n)$ bước bằng phương pháp này, vì nói cách khác n được phân tích thành:
+Ở đây, ta tính $nP$ trong $O(\log n)$ bước bằng phương pháp này, vì lúc này n được phân tích thành:
 $$n =n_0 + n_1 * 2+ n_2 *2^2 + \cdots + n_r*2^r$$
 , với $n_0, \cdots, n_r \in \{0, 1\}$
 > Chú ý: $\mathcal{O} = n * P$, với $n = \#E(\mathbb{F}_p)$. Từ đó, nếu $a * P + b * P = c * P$, ta có thể hiểu là $a + b = c \mod n$
