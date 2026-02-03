@@ -133,7 +133,7 @@ Bài tập **tự do (Không bắt buộc)**:
 - Dreamhack:
 1. [Not So Smart](https://dreamhack.io/wargame/challenges/390)
 2. [TEC](https://dreamhack.io/wargame/challenges/914)
-3. [ezCurve]() - Wannagame Championship 2023
+3. [ezCurve](https://github.com/Nhan-Laptop/WCO4/tree/main/6_Elliptic_Curve_Cryptography/src) - Wannagame Championship 2023
 ## Tài liệu tham khảo
 - Chương 6: Elliptic Curves and Cryptography trong cuốn An Introduction to Mathematical Cryptography của Jeffrey Hoffstein, Jill Pipher, Joseph H. Silverman
 - Cuốn The Arithmetic of Elliptic Curves của Joseph H. Silverman
