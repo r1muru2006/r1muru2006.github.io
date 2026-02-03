@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NSUCRYPTO on r1muru&#39;s blog</title>
-    <link>https://r1muru2006.github.io/tags/nsucrypto/</link>
+    <link>http://localhost:1313/tags/nsucrypto/</link>
     <description>Recent content from r1muru&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Thu, 11 Dec 2025 13:42:41 +0700</lastBuildDate>
     
     
-    <atom:link href="https://r1muru2006.github.io/tags/nsucrypto/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/tags/nsucrypto/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>NSUCRYPTO 2025</title>
-      <link>https://r1muru2006.github.io/post/nsucrypto2025/</link>
+      <link>http://localhost:1313/post/nsucrypto2025/</link>
       <pubDate>Thu, 11 Dec 2025 13:42:41 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/nsucrypto2025/</guid>
+      <guid>http://localhost:1313/post/nsucrypto2025/</guid>
       <description>
         <![CDATA[<h1>NSUCRYPTO 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -40,7 +40,7 @@ Introduction
 </h2><p>First and foremost, I want to send a huge thank you to everyone who supported me and helped me get to where I am today.</p>
 <p>Round 1 was intense with 9 questions, including the infamous Question 4 that seemed impossible for everyone. To be honest, this year&rsquo;s exam really threw me off. Even though I managed to tackle most of the problems, I walked away feeling unsure about the result.</p>
         
-        <hr><p>Published on 2025-12-11 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-12-11</p>]]>
+        <hr><p>Published on 2025-12-11 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-12-11</p>]]>
       </description>
       
         <category>Learning</category>

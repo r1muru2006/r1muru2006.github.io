@@ -60,6 +60,10 @@ Khi đó, E có những nguyên tắc cộng như sau:
 3. **Tính kết hợp [Associative]**: $(P + Q) + R = P + (Q + R), \forall P, Q, R \in (E)$
 4. **Tính giao hoán [Commutative]**: $P + Q = Q + P, \forall P, Q \in (E)$.
 
+Điểm $\mathcal{O}$ ở tính chất 1 và 2 còn được gọi là điểm vô cực. Nó là phần tử đơn vị của nhóm cộng các điểm trên đường cong, hoạt động tương tự như số 0 trong phép cộng thông thường và đại diện cho giao điểm của các đường thẳng đứng.
+
+![images](/images/ECC/O.png)
+
 Tiếp theo, ta sẽ đến với thuật toán cộng trên đường cong Elliptic:
 
 Với $(E): Y^2 = X^3 + AX + B$ là đường cong elliptic bất kì, với hai điểm $P_1 = (x_1, y_1), P_2 = (x_2, y_2)$ nằm trên $(E)$, ta có các công thức sau:
@@ -83,6 +87,9 @@ Cho điểm $P \in E(\mathbb{F}_p)$ và số nguyên $n \ge 1$
     - Nếu $n > 0$, tiếp tục vòng lặp tại bước 2.
 3. Trả về điểm $R$, lúc này $R = nP$
 
+Ở đây, ta tính $nP$ trong $O(\log n)$ bước bằng phương pháp này, vì nói cách khác n được phân tích thành:
+$$n =n_0 + n_1 * 2+ n_2 *2^2 + \cdots + n_r*2^r$$
+, với $n_0, \cdots, n_r \in \{0, 1\}$
 > Chú ý: $\mathcal{O} = n * P$, với $n = \#E(\mathbb{F}_p)$. Từ đó, nếu $a * P + b * P = c * P$, ta có thể hiểu là $a + b = c \mod n$
 
 Vì phép cộng và nhân đã được tích hợp sẵn trên sagemath nên ta có thể tận dụng nó luôn:

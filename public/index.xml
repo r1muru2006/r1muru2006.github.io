@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>r1muru&#39;s blog</title>
-    <link>https://r1muru2006.github.io/algolia.json</link>
+    <link>http://localhost:1313/algolia.json</link>
     <description>Recent content from r1muru&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Sun, 01 Feb 2026 12:27:52 +0700</lastBuildDate>
     
     
-    <atom:link href="https://r1muru2006.github.io/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>Elliptic Curve Cryptography</title>
-      <link>https://r1muru2006.github.io/post/ecc_isogeny/</link>
+      <link>http://localhost:1313/post/ecc_isogeny/</link>
       <pubDate>Sun, 01 Feb 2026 12:27:52 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/ecc_isogeny/</guid>
+      <guid>http://localhost:1313/post/ecc_isogeny/</guid>
       <description>
         <![CDATA[<h1>Elliptic Curve Cryptography</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -35,7 +35,7 @@
 Elliptic Curve Cryptography
 </h1><p>Elliptic Curve Cryptography được đề xuất sử dụng bởi Neal Koblitz và Victor S. Miller vào năm 1985, sau đó được sử dụng rộng rãi từ năm 2004. Bài viết này sẽ cho các bạn những kiến thức nền tảng liên quan và mở rộng để hiểu rõ và áp dụng ECC trong thực tiễn (bảo mật web (HTTPS/TLS), tiền điện tử (Bitcoin, Ethereum), trao đổi khóa an toàn (ECDH), chữ ký số, và thiết bị di động/IoT).</p>
         
-        <hr><p>Published on 2026-02-01 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2026-02-01</p>]]>
+        <hr><p>Published on 2026-02-01 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2026-02-01</p>]]>
       </description>
       
         <category>Learning</category>
@@ -46,10 +46,10 @@ Elliptic Curve Cryptography
 
     <item>
       <title>Trao đổi khóa Diffie-Hellman</title>
-      <link>https://r1muru2006.github.io/post/diffehellman/</link>
+      <link>http://localhost:1313/post/diffehellman/</link>
       <pubDate>Mon, 19 Jan 2026 10:39:34 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/diffehellman/</guid>
+      <guid>http://localhost:1313/post/diffehellman/</guid>
       <description>
         <![CDATA[<h1>Trao đổi khóa Diffie-Hellman</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -58,7 +58,7 @@ Elliptic Curve Cryptography
 Trao đổi khóa Diffie-Hellman
 </h1><p>Nếu các bạn đã học và làm được 1 số bài tập từ mức trung bình trong phần RSA rồi (mong là vậy) thì chắc hẳn các bạn cũng biết thuật RSA hiện nay đang có nguy cơ bị máy tính lượng tử tiêu hủy trong tương lai. Điều đó xảy ra được là vì RSA bảo mật hay không thì phụ thuộc vào bài toán phân tích khóa, cụ thể hơn là phân tích thừa số nguyên tố.</p>
         
-        <hr><p>Published on 2026-01-19 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2026-01-19</p>]]>
+        <hr><p>Published on 2026-01-19 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2026-01-19</p>]]>
       </description>
       
         <category>Learning</category>
@@ -69,10 +69,10 @@ Trao đổi khóa Diffie-Hellman
 
     <item>
       <title>NSUCRYPTO 2025</title>
-      <link>https://r1muru2006.github.io/post/nsucrypto2025/</link>
+      <link>http://localhost:1313/post/nsucrypto2025/</link>
       <pubDate>Thu, 11 Dec 2025 13:42:41 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/nsucrypto2025/</guid>
+      <guid>http://localhost:1313/post/nsucrypto2025/</guid>
       <description>
         <![CDATA[<h1>NSUCRYPTO 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -86,7 +86,7 @@ Introduction
 </h2><p>First and foremost, I want to send a huge thank you to everyone who supported me and helped me get to where I am today.</p>
 <p>Round 1 was intense with 9 questions, including the infamous Question 4 that seemed impossible for everyone. To be honest, this year&rsquo;s exam really threw me off. Even though I managed to tackle most of the problems, I walked away feeling unsure about the result.</p>
         
-        <hr><p>Published on 2025-12-11 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-12-11</p>]]>
+        <hr><p>Published on 2025-12-11 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-12-11</p>]]>
       </description>
       
         <category>Learning</category>
@@ -97,10 +97,10 @@ Introduction
 
     <item>
       <title>WannaGame Championship 2025</title>
-      <link>https://r1muru2006.github.io/post/wannagamechampionship2025/</link>
+      <link>http://localhost:1313/post/wannagamechampionship2025/</link>
       <pubDate>Mon, 08 Dec 2025 13:44:12 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/wannagamechampionship2025/</guid>
+      <guid>http://localhost:1313/post/wannagamechampionship2025/</guid>
       <description>
         <![CDATA[<h1>WannaGame Championship 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -140,7 +140,7 @@ Yêu cầu của nó là mình phải chiến thắng 50 rounds đua ngựa đ�
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">};</span><span class="w">
 </span></span></span></code></pre></div><p>Sau đó, đề cho mình biết các dữ kiện như là: <code>race distance</code>, <code>merkle root</code>, các vị trí và chỉ số của 16 con ngựa (tính cả ngựa của mình):</p>
         
-        <hr><p>Published on 2025-12-08 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-12-08</p>]]>
+        <hr><p>Published on 2025-12-08 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-12-08</p>]]>
       </description>
       
         <category>CTF Write-up</category><category>WannaGame</category>
@@ -150,11 +150,43 @@ Yêu cầu của nó là mình phải chiến thắng 50 rounds đua ngựa đ�
     
 
     <item>
+      <title>Implementing FIPS 205 - Stateless Hash-Based Digital Signature Standard (Part 1)</title>
+      <link>http://localhost:1313/post/implementing_fips_205_p1/</link>
+      <pubDate>Fri, 05 Dec 2025 08:13:43 &#43;0700</pubDate>
+      <author>cuongchu200@gmail.com (r1muru)</author>
+      <guid>http://localhost:1313/post/implementing_fips_205_p1/</guid>
+      <description>
+        <![CDATA[<h1>Implementing FIPS 205 - Stateless Hash-Based Digital Signature Standard (Part 1)</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
+        
+          <h1 id="overview-of-slh-dsa--address-structure-adrs">
+<a class="header-anchor" href="#overview-of-slh-dsa--address-structure-adrs"></a>
+Overview of SLH-DSA &amp; Address Structure (ADRS)
+</h1><h2 id="stateless-hash-based-digital-signature-standard-slh-dsa">
+<a class="header-anchor" href="#stateless-hash-based-digital-signature-standard-slh-dsa"></a>
+Stateless Hash-Based Digital Signature Standard (SLH-DSA)
+</h2><h2 id="references">
+<a class="header-anchor" href="#references"></a>
+References
+</h2><ol>
+<li><a href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.205.pdf">NIST.FIPS.205.pdf</a></li>
+<li><a href="https://en.wikipedia.org/wiki/SPHINCS%2B">SPHINCS+ by Wikipedia</a></li>
+</ol>
+        
+        <hr><p>Published on 2025-12-05 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-12-05</p>]]>
+      </description>
+      
+        <category>Learning</category><category>FIPS</category>
+      
+    </item>
+    
+    
+
+    <item>
       <title>Is stream encryption secure?</title>
-      <link>https://r1muru2006.github.io/post/streamcipher/</link>
+      <link>http://localhost:1313/post/streamcipher/</link>
       <pubDate>Tue, 25 Nov 2025 14:33:54 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/streamcipher/</guid>
+      <guid>http://localhost:1313/post/streamcipher/</guid>
       <description>
         <![CDATA[<h1>Is stream encryption secure?</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -173,7 +205,7 @@ Chacha20
 <p>The input of the ChaCha20 block function is a 4x4 word matrix described as in this figure:
 <img src="/images/StreamCipher/input.png" alt="images"></p>
         
-        <hr><p>Published on 2025-11-25 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-11-25</p>]]>
+        <hr><p>Published on 2025-11-25 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-11-25</p>]]>
       </description>
       
         <category>Learning</category>
@@ -184,10 +216,10 @@ Chacha20
 
     <item>
       <title>Patriot CTF 2025</title>
-      <link>https://r1muru2006.github.io/post/patriotctf2025/</link>
+      <link>http://localhost:1313/post/patriotctf2025/</link>
       <pubDate>Mon, 24 Nov 2025 21:40:43 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/patriotctf2025/</guid>
+      <guid>http://localhost:1313/post/patriotctf2025/</guid>
       <description>
         <![CDATA[<h1>Patriot CTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -207,7 +239,7 @@ Where&rsquo;s Legally Distinct Waldo One
 <p>In the picture, I noticed an area with a similar patterned tile floor to the challenge in the lower right corner of the photo at the George Mason Statue. When I scanned this street, I saw a corner with the same pattern and the building name <code>Horizon Hall</code> had the same view.
 <img src="/images/patriot/osint1_4.png" alt="images"></p>
         
-        <hr><p>Published on 2025-11-24 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-11-24</p>]]>
+        <hr><p>Published on 2025-11-24 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-11-24</p>]]>
       </description>
       
         <category>CTF Write-up</category>
@@ -218,10 +250,10 @@ Where&rsquo;s Legally Distinct Waldo One
 
     <item>
       <title>M*CTF Quals 2025</title>
-      <link>https://r1muru2006.github.io/post/mctfquals2025/</link>
+      <link>http://localhost:1313/post/mctfquals2025/</link>
       <pubDate>Fri, 21 Nov 2025 22:19:58 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/mctfquals2025/</guid>
+      <guid>http://localhost:1313/post/mctfquals2025/</guid>
       <description>
         <![CDATA[<h1>M*CTF Quals 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -254,7 +286,7 @@ CRCL35
 </span></span><span class="line"><span class="cl"><span class="s2">&#34;No, it&#39;s all 0. Don&#39;t confuse it and don&#39;t forget the difference, otherwise, during the transformation, you&#39;ll end up in the wrong place.&#34;</span>
 </span></span></code></pre></div><p>In the description, I noticed the word &ldquo;difference&rdquo; so I quickly tested this method by python and it worked.</p>
         
-        <hr><p>Published on 2025-11-21 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-11-21</p>]]>
+        <hr><p>Published on 2025-11-21 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-11-21</p>]]>
       </description>
       
         <category>CTF Write-Up</category>
@@ -265,10 +297,10 @@ CRCL35
 
     <item>
       <title>Crack Random Modules</title>
-      <link>https://r1muru2006.github.io/post/crackrandommodule/</link>
+      <link>http://localhost:1313/post/crackrandommodule/</link>
       <pubDate>Mon, 15 Sep 2025 20:31:17 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/crackrandommodule/</guid>
+      <guid>http://localhost:1313/post/crackrandommodule/</guid>
       <description>
         <![CDATA[<h1>Crack Random Modules</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -323,7 +355,7 @@ Mersenne Twister
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Nếu <code>index &gt;= N (= 624)</code>, nghĩa là đã dùng hết số trong mảng <code>mt[]</code> và do đó phải tạo lại 624 số tiếp theo. Mảng <code>mt[]</code> được thay đổi bằng quá trình sau:</p>
         
-        <hr><p>Published on 2025-09-15 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-15</p>]]>
+        <hr><p>Published on 2025-09-15 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-09-15</p>]]>
       </description>
       
         <category>Learning</category>
@@ -334,10 +366,10 @@ Mersenne Twister
 
     <item>
       <title>ImaginaryCTF 2025</title>
-      <link>https://r1muru2006.github.io/post/imaginaryctf2025/</link>
+      <link>http://localhost:1313/post/imaginaryctf2025/</link>
       <pubDate>Sun, 14 Sep 2025 14:17:02 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/imaginaryctf2025/</guid>
+      <guid>http://localhost:1313/post/imaginaryctf2025/</guid>
       <description>
         <![CDATA[<h1>ImaginaryCTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -396,82 +428,7 @@ leaky-rsa
 Phân tích và lời giải
 </h3><p>Nhìn sơ qua thì đây là một bài ứng dụng thuật AES-RSA</p>
         
-        <hr><p>Published on 2025-09-14 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-14</p>]]>
-      </description>
-      
-        <category>CTF Write-up</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>HOLACTF 2025</title>
-      <link>https://r1muru2006.github.io/post/holactf2025/</link>
-      <pubDate>Tue, 09 Sep 2025 08:42:30 &#43;0700</pubDate>
-      <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/holactf2025/</guid>
-      <description>
-        <![CDATA[<h1>HOLACTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
-        
-          <h2 id="crypto">
-<a class="header-anchor" href="#crypto"></a>
-Crypto
-</h2><h3 id="1-cs2rtrash">
-<a class="header-anchor" href="#1-cs2rtrash"></a>
-1. Cs2RTrash
-</h3><p><img src="https://hackmd.io/_uploads/B16EYV-qgl.png" alt="image"></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># chall.py</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">bytes_to_long</span><span class="p">,</span> <span class="n">long_to_bytes</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
-</span></span><span class="line"><span class="cl"><span class="n">n1</span> <span class="o">=</span> <span class="mi">106274132069853085771962684070654057294853035674691451636354054913790308627721</span>
-</span></span><span class="line"><span class="cl"><span class="n">n2</span> <span class="o">=</span> <span class="mi">73202720518342632558813895439681594395095017145510800999002057461861058762579</span>
-</span></span><span class="line"><span class="cl"><span class="n">n3</span> <span class="o">=</span> <span class="mi">58129476807669651703262865829974447479957080526429581698674448004236654958847</span>
-</span></span><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;HOLACTF{...}&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="n">m</span> <span class="o">=</span> <span class="n">bytes_to_long</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">c1</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">c2</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">c3</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n3</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;c1: </span><span class="si">{</span><span class="n">c1</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;c2: </span><span class="si">{</span><span class="n">c2</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;c3: </span><span class="si">{</span><span class="n">c3</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// output.txt</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nl">c1</span><span class="p">:</span><span class="w"> </span><span class="n">40409669713698525444927116587938485167766997176959778633087672968720888190012</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nl">c2</span><span class="p">:</span><span class="w"> </span><span class="n">50418608792183022472533104230595523000246213655735834753443442906871618770832</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nl">c3</span><span class="p">:</span><span class="w"> </span><span class="n">7151799367443802424297049002310776844321501905398348074481144597918413565153</span><span class="w">
-</span></span></span></code></pre></div><p>Đây chỉ là 1 bài RSA đơn giản và mình để ý rằng n1 là số nguyên tố nên bài này có thể được giải như sau:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># solution.py</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">inverse</span><span class="p">,</span> <span class="n">long_to_bytes</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">n1</span> <span class="o">=</span> <span class="mi">106274132069853085771962684070654057294853035674691451636354054913790308627721</span>
-</span></span><span class="line"><span class="cl"><span class="n">n2</span> <span class="o">=</span> <span class="mi">73202720518342632558813895439681594395095017145510800999002057461861058762579</span>
-</span></span><span class="line"><span class="cl"><span class="n">n3</span> <span class="o">=</span> <span class="mi">58129476807669651703262865829974447479957080526429581698674448004236654958847</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">c1</span> <span class="o">=</span> <span class="mi">40409669713698525444927116587938485167766997176959778633087672968720888190012</span>
-</span></span><span class="line"><span class="cl"><span class="n">c2</span> <span class="o">=</span> <span class="mi">50418608792183022472533104230595523000246213655735834753443442906871618770832</span>
-</span></span><span class="line"><span class="cl"><span class="n">c3</span> <span class="o">=</span> <span class="mi">7151799367443802424297049002310776844321501905398348074481144597918413565153</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">d1</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">n1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">n1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">long_to_bytes</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-</span></span></code></pre></div><pre><code>Flag: HOLACTF{ju5t_a_b4s1c_CRT}
-</code></pre>
-<h3 id="2-enigmahardcode">
-<a class="header-anchor" href="#2-enigmahardcode"></a>
-2. EnigmaHardCode
-</h3><p><img src="https://hackmd.io/_uploads/rJ_aqNWcee.png" alt="image">
-<img src="https://hackmd.io/_uploads/SkGCc4-cge.png" alt="image">
-<img src="https://hackmd.io/_uploads/r1OJoEW9lx.png" alt="image"></p>
-        
-        <hr><p>Published on 2025-09-09 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-09</p>]]>
+        <hr><p>Published on 2025-09-14 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-09-14</p>]]>
       </description>
       
         <category>CTF Write-up</category>
