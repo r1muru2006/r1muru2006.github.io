@@ -1,6 +1,6 @@
 ---
 title: "Elliptic Curve Cryptography"
-description: "Elliptic Curve Cryptography là một phương pháp mật mã khóa công khai dựa trên cấu trúc đại số của các đường cong elip trên các trường hữu hạn"
+description: "Elliptic Curve Cryptography là một phương pháp mật mã khóa công khai dựa trên cấu trúc đại số của các đường cong Elliptic trên các trường hữu hạn"
 date: 2026-02-01T12:27:52+07:00
 cover: /images/ECC/avatar.png
 license:
