@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web on r1muru&#39;s blog</title>
-    <link>http://localhost:1313/tags/web/</link>
+    <link>https://r1muru2006.github.io/tags/web/</link>
     <description>Recent content from r1muru&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Thu, 05 Jun 2025 08:19:28 +0700</lastBuildDate>
     
     
-    <atom:link href="http://localhost:1313/tags/web/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://r1muru2006.github.io/tags/web/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>NahamCon CTF 2025</title>
-      <link>http://localhost:1313/post/nahamconctf2025/</link>
+      <link>https://r1muru2006.github.io/post/nahamconctf2025/</link>
       <pubDate>Thu, 05 Jun 2025 08:19:28 &#43;0700</pubDate>
       <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>http://localhost:1313/post/nahamconctf2025/</guid>
+      <guid>https://r1muru2006.github.io/post/nahamconctf2025/</guid>
       <description>
         <![CDATA[<h1>NahamCon CTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
@@ -65,7 +65,7 @@
 3. Naham Commencement2025
 </h2><p>Thử thách cho ta một đường dẫn vào 1 trang đăng nhập, có vẻ như mục đích là ta phải sử dụng đúng tài khoản để truy cập vào và lấy flag. Khi <code>f12</code>, thì ta có source sau:</p>
         
-        <hr><p>Published on 2025-06-05 at <a href='http://localhost:1313/'>r1muru's blog</a>, last modified on 2025-06-05</p>]]>
+        <hr><p>Published on 2025-06-05 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-06-05</p>]]>
       </description>
       
         <category>CTF Write-up</category>
