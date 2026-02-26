@@ -1075,7 +1075,9 @@ clcg
 Phân tích đề bài
 </h3><ul>
 <li>p, A, C, X lần luợt là số nguyên tố 256 bit và các list gồm 1 độ dài nhất định (theo đề là 8) các giá trị ngẫu nhiên bé hơn p.</li>
-<li>Hàm <code>rand()</code> cho đầu ra là top 64 bit đầu của tổng S là 8 giá trị LCG không phụ thuộc modulo p của các cặp (A, X, C) tương ứng và gán X mới lần lượt là 8 giá trị LCG này. $$X^{(i)}_{t+1}\equiv a_i\times X^{(i)}_t+c_i\mod p,i=[1, 8]$$ $$S =\displaystyle \sum_{i=1}^8 X_t^{(i)}\mod p$$</li>
+<li>Hàm <code>rand()</code> cho đầu ra là top 64 bit đầu của tổng S là 8 giá trị LCG không phụ thuộc modulo p của các cặp (A, X, C) tương ứng và gán X mới lần lượt là 8 giá trị LCG này.
+$$X^{(i)}_{t+1}\equiv a_i\times X^{(i)}_t+c_i\mod p,i=[1, 8]$$
+$$S =\displaystyle \sum_{i=1}^8 X_t^{(i)}\mod p$$</li>
 <li>Lấy hàm <code>rand()</code> 36 lần rồi lấy 2 lần tiếp theo làm key cho chế độ mã hóa AES mode CBC với iv là ngẫu nhiên và plaintext là flag.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">data</span><span class="p">[</span><span class="s1">&#39;hints&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">clcg</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">36</span><span class="p">)]</span>

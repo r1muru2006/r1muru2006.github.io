@@ -332,7 +332,7 @@ Mersenne Twister
 </span></span></span><span class="line"><span class="cl"><span class="cp">#define MATRIX_A 0x9908b0dfU    </span><span class="cm">/* constant vector a */</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#define UPPER_MASK 0x80000000U  </span><span class="cm">/* most significant w-r bits */</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#define LOWER_MASK 0x7fffffffU  </span><span class="cm">/* least significant r bits */</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">uint32_t</span>
 </span></span><span class="line"><span class="cl"><span class="nf">genrand_uint32</span><span class="p">(</span><span class="n">RandomObject</span> <span class="o">*</span><span class="n">self</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -588,10 +588,10 @@ Thuật toán
 <p>$r_0...r_{343}$ không được sử dụng mà đầu ra $o_i$ của hàm <code>rand()</code> là: $o_i =r_{i+344} \gg 1$</p>
 <p>Code in C:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="cp">#define MAX 1000
 </span></span></span><span class="line"><span class="cl"><span class="cp">#define seed 1
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">r</span><span class="p">[</span><span class="n">MAX</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
@@ -776,6 +776,7 @@ Thuật toán
 </span></span></code></pre></div><ul>
 <li>Hai con trỏ <code>tap</code> và <code>feed</code> đi lùi trong vòng có độ dài 607.</li>
 <li>Theo đó là công thức Additive Lagged-Fibonacci Generator:
+
 $$
 vec_{feed}=(vec_{feed} + vec_{tap}) AND 0xFFFFFFFFFFFFFFFF
 $$</li>
