@@ -12,12 +12,35 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
-    <lastBuildDate>Sun, 01 Feb 2026 12:27:52 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 12 Feb 2026 19:55:47 +0700</lastBuildDate>
     
     
     <atom:link href="https://r1muru2006.github.io/categories/learning/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>Digital Signature</title>
+      <link>https://r1muru2006.github.io/post/dsa/</link>
+      <pubDate>Thu, 12 Feb 2026 19:55:47 &#43;0700</pubDate>
+      <author>cuongchu200@gmail.com (r1muru)</author>
+      <guid>https://r1muru2006.github.io/post/dsa/</guid>
+      <description>
+        <![CDATA[<h1>Digital Signature</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
+        
+          <h1 id="chữ-ký-số-digital-signature-algorithm">
+<a class="header-anchor" href="#ch%e1%bb%af-k%c3%bd-s%e1%bb%91-digital-signature-algorithm"></a>
+Chữ Ký Số (Digital Signature Algorithm)
+</h1><p>Chữ ký số hoạt động tương tự như chữ ký ngoài đời thực, mang chức năng xác nhận danh tính của một cá nhân hay tổ chức đối với một đoạn văn bản. Sự khác biệt tất yếu là chữ ký số được áp dụng cho các biên bản đã được số hóa trên không gian mạng, thay vì biên bản giấy (analog).</p>
+        
+        <hr><p>Published on 2026-02-12 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2026-02-12</p>]]>
+      </description>
+      
+        <category>Learning</category>
+      
+    </item>
     
     
 

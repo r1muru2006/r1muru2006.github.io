@@ -8,9 +8,9 @@
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
 /><title>
-  CTF | r1muru
+  Digital Signature | r1muru
 </title>
-<meta name="description" content="Life is not fair, get used to it"/><script>
+<meta name="description" content="Các lược đồ chữ ký số là các giao thức mật mã (sử dụng RSA, DSA hoặc ECDSA) đảm bảo tính toàn vẹn, tính xác thực và tính không thể phủ nhận của thông điệp."/><script>
   window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://r1muru2006.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":false,\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
   
 </script>
@@ -49,24 +49,24 @@
     integrity="sha384-UlkrhOIvZxJFd4MElSUp7ow6/RUeYKi/orfCZIRRiOENFuQPIAA3T3HjYfmBRhNq" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
   /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
 <meta property="og:type" content="website" />
-  <meta property="og:title" content="CTF | r1muru" />
+  <meta property="og:title" content="Digital Signature | r1muru" />
   <meta
     property="og:description"
-    content="Life is not fair, get used to it"
+    content="Các lược đồ chữ ký số là các giao thức mật mã (sử dụng RSA, DSA hoặc ECDSA) đảm bảo tính toàn vẹn, tính xác thực và tính không thể phủ nhận của thông điệp."
   />
-  <meta property="og:url" content="https://r1muru2006.github.io/tags/ctf/" />
+  <meta property="og:url" content="https://r1muru2006.github.io/post/dsa/" />
   <meta
     property="og:site_name"
     content="r1muru&#39;s blog"
   />
   <meta
     property="og:image"
-    content="/"
+    content="/images/DSA/avatar.png"
   />
   <meta property="article:author" content="r1muru" />
-  <meta property="article:published_time" content="2025-12-08T13:44:12&#43;07:00" />
-  <meta property="article:modified_time" content="2025-12-08T13:44:12&#43;07:00" /><meta name="twitter:card" content="summary" />
-  <meta name="twitter:image" content="/" /><link rel="alternate" type="application/rss+xml" href="https://r1muru2006.github.io/tags/ctf/index.xml" title="r1muru's blog">
+  <meta property="article:published_time" content="2026-02-12T19:55:47&#43;07:00" />
+  <meta property="article:modified_time" content="2026-02-12T19:55:47&#43;07:00" /><meta property="article:tag" content="CryptographyResearch" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/images/DSA/avatar.png" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.fea35ec1dbb9520d5824bd8fcc5533a29acc2b60c759cf3ea9f2c705d51073c8.css" />
 <link
     rel="preload"
@@ -139,23 +139,42 @@ This article does not have a corresponding language version
         <span class="main-nav-link">About</span>
       </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
   </nav>
-  <nav id="sub-nav" aria-label="Secondary navigation"><a id="nav-rss-link" class="nav-icon" href="/tags/ctf/index.xml" title="RSS Feed" aria-label="RSS Feed" target="_blank"></a><a id="nav-search-btn" class="nav-icon popup-trigger" title="Search" aria-label="Search"></a></nav></div>
-<header id="header" aria-label="Site header"><picture></picture><img  fetchpriority="high" src="/avatar/banner.jpg" alt="CTF"><div id="header-outer">
+  <nav id="sub-nav" aria-label="Secondary navigation"><a id="nav-search-btn" class="nav-icon popup-trigger" title="Search" aria-label="Search"></a></nav></div>
+<header id="header" aria-label="Site header"><picture></picture>
+    <img  fetchpriority="high" src="/images/DSA/avatar.png" alt="Digital Signature"><div id="header-outer">
     <div id="header-title"><span id="logo">
-            <h1 data-aos="slide-up">Tag</h1>
-          </span><h2 id="subtitle-wrap" data-aos="slide-down"><span id="subtitle">CTF</span></h2></div>
+            <h1 data-aos="slide-up">Digital Signature</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
   </div>
 </header><div id="content"
           aria-label="Page content"
           class="sidebar-left"
-            ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container "><meting-js
+            ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><meting-js
         theme="var(--color-link)"
         id="8668604226"server="netease"type="playlist"fixed="false"autoplay="true"loop="all"order="list"preload="auto"volume="0.7"list-folded="false">
       </meting-js><div class="sidebar-wrapper">
     <div
       class="sidebar-wrap"
       data-aos="fade-up"
-    ><div class="sidebar-author">
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">Contents</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-tầm-quan-trọng--ứng-dụng-thực-tiễn">1. Tầm Quan Trọng &amp; Ứng Dụng Thực Tiễn</a></li>
+    <li><a href="#2-cấu-trúc-chung-của-một-hệ-thống-chữ-ký-số">2. Cấu Trúc Chung Của Một Hệ Thống Chữ Ký Số</a></li>
+    <li><a href="#3-phân-tích-các-thuật-toán-tiêu-biểu">3. Phân Tích Các Thuật Toán Tiêu Biểu</a>
+      <ul>
+        <li><a href="#31-thuật-toán-rsa">3.1. Thuật toán RSA</a></li>
+        <li><a href="#32-thuật-toán-dsa-digital-signature-algorithm">3.2. Thuật toán DSA (Digital Signature Algorithm)</a></li>
+        <li><a href="#33-thuật-toán-ecdsa-elliptic-curve-dsa">3.3. Thuật toán ECDSA (Elliptic Curve DSA)</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-các-biện-pháp-tấn-công-phổ-biến-attack-vectors">4. Các Biện Pháp Tấn Công Phổ Biến (Attack Vectors)</a></li>
+    <li><a href="#5-tài-liệu-thực-hành--luyện-tập">5. Tài Liệu Thực Hành &amp; Luyện Tập</a></li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img
     data-src="/avatar/avatar.png"
     data-sizes="auto"
@@ -246,340 +265,255 @@ This article does not have a corresponding language version
       <div class='sidebar-menu-icon icon '>&#xf007;</div>
       <div class="sidebar-menu-link">About</div>
     </div></div>
-</div>
-  </div><div class="sidebar-widget"><div class="widget-wrapper">
-    <div
-      class="widget-wrap"
-      data-aos="fade-up"
-    >
-      <div style="display: flex; justify-content: space-between;">
-        <h3 class="widget-title">Categories</h3></div>
-      <div class="widget">
-        <ul class="category-list"><li class="category-list-item">
-                <a class="category-list-link" href="/categories/ctf-write-up/" 
-                  title="CTF Write-Up"
-                  >CTF Write-Up</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/learning/" 
-                  title="Learning"
-                  >Learning</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/wannagame/" 
-                  title="WannaGame"
-                  >WannaGame</a
-                >
-              </li></ul>
-      </div>
-    </div>
-  </div><div class="widget-wrapper">
-    <div
-      class="widget-wrap"
-      data-aos="fade-up"
-    >
-      <div style="display: flex; justify-content: space-between;">
-        <h3 class="widget-title">Tags</h3><a class="widget-link" href="/tags/">More</a></div>
-      <div class="widget">
-        <ul class="tag-list" itemprop="keywords"><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/cryptography/"
-                  aria-label="Tag: Cryptography"
-                  title="Cryptography"
-                >
-                  Cryptography
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/ctf/"
-                  aria-label="Tag: CTF"
-                  title="CTF"
-                >
-                  CTF
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/hardware/"
-                  aria-label="Tag: Hardware"
-                  title="Hardware"
-                >
-                  Hardware
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/miscellaneous/"
-                  aria-label="Tag: Miscellaneous"
-                  title="Miscellaneous"
-                >
-                  Miscellaneous
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/nsucrypto/"
-                  aria-label="Tag: NSUCRYPTO"
-                  title="NSUCRYPTO"
-                >
-                  NSUCRYPTO
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/osint/"
-                  aria-label="Tag: Osint"
-                  title="Osint"
-                >
-                  Osint
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/research/"
-                  aria-label="Tag: Research"
-                  title="Research"
-                >
-                  Research
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/reverse/"
-                  aria-label="Tag: Reverse"
-                  title="Reverse"
-                >
-                  Reverse
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/reverse-engineering/"
-                  aria-label="Tag: Reverse Engineering"
-                  title="Reverse Engineering"
-                >
-                  Reverse Engineering
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/web/"
-                  aria-label="Tag: Web"
-                  title="Web"
-                >
-                  Web
-                </a>
-              </li></ul>
-      </div>
-    </div>
-  </div><div class="widget-wrapper">
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
   <div
-    class="widget-wrap"
+    class="article-inner"
     data-aos="fade-up"
   >
-    <h3 class="widget-title">Tag Cloud</h3><div class="widget tagcloud"><a
-            style="font-size:10px"
-            href="/tags/cryptography/"
-            aria-label="Tag: Cryptography"
-            >Cryptography</a
-          ><a
-            style="font-size:10px"
-            href="/tags/ctf/"
-            aria-label="Tag: CTF"
-            >CTF</a
-          ><a
-            style="font-size:10px"
-            href="/tags/hardware/"
-            aria-label="Tag: Hardware"
-            >Hardware</a
-          ><a
-            style="font-size:10px"
-            href="/tags/miscellaneous/"
-            aria-label="Tag: Miscellaneous"
-            >Miscellaneous</a
-          ><a
-            style="font-size:10px"
-            href="/tags/nsucrypto/"
-            aria-label="Tag: NSUCRYPTO"
-            >NSUCRYPTO</a
-          ><a
-            style="font-size:10px"
-            href="/tags/osint/"
-            aria-label="Tag: Osint"
-            >Osint</a
-          ><a
-            style="font-size:10px"
-            href="/tags/research/"
-            aria-label="Tag: Research"
-            >Research</a
-          ><a
-            style="font-size:10px"
-            href="/tags/reverse/"
-            aria-label="Tag: Reverse"
-            >Reverse</a
-          ><a
-            style="font-size:10px"
-            href="/tags/reverse-engineering/"
-            aria-label="Tag: Reverse Engineering"
-            >Reverse Engineering</a
-          ><a
-            style="font-size:10px"
-            href="/tags/web/"
-            aria-label="Tag: Web"
-            >Web</a
-          ><a
-            style="font-size:10px"
-            href="/tags/web3/"
-            aria-label="Tag: Web3"
-            >Web3</a
-          ></div>
-  </div>
-</div><div class="widget-wrapper">
-    <div
-      class="widget-wrap"
-      data-aos="fade-up"
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2026-02-12 19:55:47 &#43;0700 &#43;07" itemprop="datePublished"
+      >2026-02-12</time
     >
-      <h3 class="widget-title">Recent Posts</h3>
-      <div class="widget">
-        <ul><li>
-              <a href="/post/dsa/" title="Digital Signature">Digital Signature</a>
-            </li><li>
-              <a href="/post/ecc_isogeny/" title="Elliptic Curve Cryptography">Elliptic Curve Cryptography</a>
-            </li><li>
-              <a href="/post/diffehellman/" title="Trao đổi khóa Diffie-Hellman">Trao đổi khóa Diffie-Hellman</a>
-            </li><li>
-              <a href="/post/nsucrypto2025/" title="NSUCRYPTO 2025">NSUCRYPTO 2025</a>
-            </li><li>
-              <a href="/post/wannagamechampionship2025/" title="WannaGame Championship 2025">WannaGame Championship 2025</a>
-            </li></ul>
-      </div>
-    </div>
-  </div></div></div></aside>
-<section id="main" aria-label="Main content"><div
-    class="archives-outer-wrap"
+    <time style="display: none;" id="post-update-time"
+      >2026-02-12</time
+    >
+  </span></div>
+<div class="article-category"><a
+      class="article-category-link"
+      href="/categories/learning"
+      data-aos="zoom-in"
+      >LEARNING</a
+    ></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="chữ-ký-số-digital-signature-algorithm">
+<a class="header-anchor" href="#ch%e1%bb%af-k%c3%bd-s%e1%bb%91-digital-signature-algorithm"></a>
+Chữ Ký Số (Digital Signature Algorithm)
+</h1><p>Chữ ký số hoạt động tương tự như chữ ký ngoài đời thực, mang chức năng xác nhận danh tính của một cá nhân hay tổ chức đối với một đoạn văn bản. Sự khác biệt tất yếu là chữ ký số được áp dụng cho các biên bản đã được số hóa trên không gian mạng, thay vì biên bản giấy (analog).</p>
+<p>Một thuật toán chữ ký số an toàn phải bảo đảm 2 nguyên tắc cốt lõi:</p>
+<ol>
+<li><strong>Tính không thể giả mạo:</strong> Chỉ có chủ sở hữu khóa bí mật mới có thể tạo ra chữ ký.</li>
+<li><strong>Tính có thể xác thực:</strong> Bất cứ ai cũng có thể sử dụng khóa công khai để xác nhận tính hợp lệ của chữ ký đó.</li>
+</ol>
+<hr>
+<h2 id="1-tầm-quan-trọng--ứng-dụng-thực-tiễn">
+<a class="header-anchor" href="#1-t%e1%ba%a7m-quan-tr%e1%bb%8dng--%e1%bb%a9ng-d%e1%bb%a5ng-th%e1%bb%b1c-ti%e1%bb%85n"></a>
+1. Tầm Quan Trọng &amp; Ứng Dụng Thực Tiễn
+</h2><p>Việc áp dụng chữ ký số, đặc biệt đối với các văn bản quan trọng của cá nhân, tổ chức hay chính phủ, là cực kỳ cần thiết. Chữ ký số giải quyết 3 bài toán lớn trong an toàn thông tin:</p>
+<ul>
+<li><strong>Bảo đảm tính toàn vẹn dữ liệu (Data Integrity):</strong> Ngăn chặn và phát hiện mọi sự thay đổi, sửa đổi trái phép đối với dữ liệu trong quá trình truyền tải.</li>
+<li><strong>Xác thực (Authentication):</strong> Khẳng định danh tính chính xác của người gửi và tác giả của văn bản.</li>
+<li><strong>Không thể phủ nhận (Non-Repudiation):</strong> Cung cấp bằng chứng pháp lý rõ ràng, người ký không thể chối bỏ việc mình đã tham gia vào giao dịch số.</li>
+</ul>
+<hr>
+<h2 id="2-cấu-trúc-chung-của-một-hệ-thống-chữ-ký-số">
+<a class="header-anchor" href="#2-c%e1%ba%a5u-tr%c3%bac-chung-c%e1%bb%a7a-m%e1%bb%99t-h%e1%bb%87-th%e1%bb%91ng-ch%e1%bb%af-k%c3%bd-s%e1%bb%91"></a>
+2. Cấu Trúc Chung Của Một Hệ Thống Chữ Ký Số
+</h2><p>Mọi hệ thống chữ ký số đều bao gồm 3 thuật toán con:</p>
+<ol>
+<li><strong>Thuật toán tạo khóa (Key Generation):</strong> Sinh ra một cặp khóa bất đối xứng gồm Public Key (Khóa công khai) và Private Key (Khóa bí mật).</li>
+<li><strong>Thuật toán ký (Signing):</strong> Nhận đầu vào là văn bản (Message) và Private Key để tạo ra chữ ký.</li>
+<li><strong>Thuật toán xác thực (Verification):</strong> Nhận đầu vào là chữ ký, văn bản ban đầu và Public Key để trả về kết quả hợp lệ hoặc không.</li>
+</ol>
+<p><strong>Lưu ý quan trọng về hàm băm:</strong> Trong thực tế, văn bản (message) hiếm khi được ký trực tiếp. Thay vào đó, dữ liệu sẽ đi qua một hàm băm (như MD5, SHA-1, SHA-256). Việc ký trên giá trị Hash giúp giảm thiểu khối lượng tính toán khổng lồ.</p>
+<hr>
+<h2 id="3-phân-tích-các-thuật-toán-tiêu-biểu">
+<a class="header-anchor" href="#3-ph%c3%a2n-t%c3%adch-c%c3%a1c-thu%e1%ba%adt-to%c3%a1n-ti%c3%aau-bi%e1%bb%83u"></a>
+3. Phân Tích Các Thuật Toán Tiêu Biểu
+</h2><p>Các thuật toán phổ biến nhất hiện nay bao gồm RSA, DSA và ECDSA.</p>
+<p><img src="/images/DSA/sign.png" alt="images"></p>
+<h3 id="31-thuật-toán-rsa">
+<a class="header-anchor" href="#31-thu%e1%ba%adt-to%c3%a1n-rsa"></a>
+3.1. Thuật toán RSA
+</h3><p>Bên cạnh khả năng mã hóa thông điệp, RSA còn đóng vai trò là một thuật toán chữ ký số mạnh mẽ.</p>
+<ul>
+<li><strong>Tạo khóa:</strong>
+<ul>
+<li>Chọn 2 số nguyên tố lớn $p, q$.</li>
+<li>Tính Modulus: $N = p \cdot q$.</li>
+<li>Chọn số mũ xác thực (verifying exponent) $e$.</li>
+<li>Tính số mũ ký (signing exponent) $d \equiv e^{-1} \pmod{(p-1)(q-1)}$.</li>
+<li>Public Key: $(N, e)$ | Private Key: $d$.</li>
+</ul>
+</li>
+<li><strong>Ký thông điệp (Sign):</strong>
+
+$$S \equiv M^d \pmod{N}$$</li>
+<li><strong>Xác thực (Verify):</strong>
+
+$$M \equiv S^e \pmod{N}$$</li>
+</ul>
+<h3 id="32-thuật-toán-dsa-digital-signature-algorithm">
+<a class="header-anchor" href="#32-thu%e1%ba%adt-to%c3%a1n-dsa-digital-signature-algorithm"></a>
+3.2. Thuật toán DSA (Digital Signature Algorithm)
+</h3><p>DSA được xây dựng dựa trên nền tảng của thuật toán Schnorr và ElGamal. Điểm mấu chốt của DSA là tham số ngẫu nhiên $k$ (nonce) được tạo ra cho mỗi lần ký.</p>
+<ul>
+<li><strong>Tạo khóa:</strong>
+<ul>
+<li>Khóa công khai (Public key - pk): $y = g^{sk} \pmod{p}$</li>
+<li>Khóa bí mật (Private key - sk): $x$ (hoặc $sk$)</li>
+</ul>
+</li>
+<li><strong>Ký thông điệp (Sign):</strong> Sử dụng tham số ngẫu nhiên $k$.
+
+$$r \equiv (g^k \pmod{p}) \pmod{q}$$
+
+$$s \equiv k^{-1} \cdot (H(m) + sk \cdot r) \pmod{q}$$
+Chữ ký sinh ra là một cặp giá trị: $(r, s)$.</li>
+<li><strong>Xác thực (Verify):</strong>
+
+$$w \equiv s^{-1} \pmod{q}$$
+
+$$u_1 \equiv H(m) \cdot w \pmod{q}$$
+
+$$u_2 \equiv r \cdot w \pmod{q}$$
+
+$$v \equiv (g^{u_1} \cdot y^{u_2} \pmod{p}) \pmod{q}$$
+<em>Chữ ký hợp lệ nếu $v = r$</em>.</li>
+</ul>
+<p><strong>Cảnh báo bảo mật:</strong> Giá trị $k$ phải hoàn toàn ngẫu nhiên và <strong>tuyệt đối không được trùng lặp</strong> khi ký các văn bản khác nhau bằng cùng một Private Key. Nếu $k$ bị rò rỉ hoặc tái sử dụng, kẻ tấn công có thể dễ dàng đảo ngược phương trình để khôi phục hoàn toàn Private Key.</p>
+<h3 id="33-thuật-toán-ecdsa-elliptic-curve-dsa">
+<a class="header-anchor" href="#33-thu%e1%ba%adt-to%c3%a1n-ecdsa-elliptic-curve-dsa"></a>
+3.3. Thuật toán ECDSA (Elliptic Curve DSA)
+</h3><p>ECDSA là biến thể của DSA áp dụng trên hệ mật mã đường cong Elliptic (ECC). Ưu điểm vượt trội của ECDSA là nhanh, gọn và nhẹ. Quá trình tính toán nhẹ hơn nhờ việc ECC sử dụng phép cộng điểm trên đường cong thay vì phép nhân số học khổng lồ.</p>
+<ul>
+<li><strong>Toán học cơ bản:</strong>
+<ul>
+<li>Private Key ($d_A$): Một số nguyên ngẫu nhiên.</li>
+<li>Public Key ($Q_A$): Sinh ra từ phép nhân vô hướng của điểm cơ sở $G$ trên đường cong: $Q_A = d_A \times G$.</li>
+<li>Quá trình ký (Signed hash) sinh ra (r,s) tương tự DSA nhưng áp dụng tính toán hình học trên tọa độ đường cong.</li>
+</ul>
+</li>
+</ul>
+<p><strong>So sánh cấp độ bảo mật (NIST Guidelines):</strong>
+ECDSA cung cấp độ an toàn tương đương RSA/DSA nhưng với kích thước khóa nhỏ hơn rất nhiều (tối ưu không gian lưu trữ và băng thông).</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Cấp độ bảo mật (Security Level)</th>
+          <th style="text-align: left">Khóa DSA / RSA (bits)</th>
+          <th style="text-align: left">Khóa ECC (bits)</th>
+          <th style="text-align: left">Tỷ lệ RSA : ECC</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">80</td>
+          <td style="text-align: left">1024</td>
+          <td style="text-align: left">160-223</td>
+          <td style="text-align: left">1:6</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">112</td>
+          <td style="text-align: left">2048</td>
+          <td style="text-align: left">224-255</td>
+          <td style="text-align: left">1:9</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">128</td>
+          <td style="text-align: left">3072</td>
+          <td style="text-align: left">256-383</td>
+          <td style="text-align: left">1:12</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">192</td>
+          <td style="text-align: left">7680</td>
+          <td style="text-align: left">384-511</td>
+          <td style="text-align: left">1:20</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">256</td>
+          <td style="text-align: left">15380</td>
+          <td style="text-align: left">512+</td>
+          <td style="text-align: left">1:30</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="4-các-biện-pháp-tấn-công-phổ-biến-attack-vectors">
+<a class="header-anchor" href="#4-c%c3%a1c-bi%e1%bb%87n-ph%c3%a1p-t%e1%ba%a5n-c%c3%b4ng-ph%e1%bb%95-bi%e1%ba%bfn-attack-vectors"></a>
+4. Các Biện Pháp Tấn Công Phổ Biến (Attack Vectors)
+</h2><p>Hiểu được cách hoạt động đồng nghĩa với việc biết cách khai thác nó. Dưới đây là các kỹ thuật tấn công tiêu biểu đối với từng hệ mật:</p>
+<ul>
+<li>
+<p><strong>Đối với RSA:</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=y35Xk-rUqiE"><em>Thường gặp</em></a></li>
+<li><a href="https://www.youtube.com/watch?v=D4O_y8ek6t0"><em>Blinding attack</em> </a></li>
+</ul>
+</li>
+<li>
+<p><strong>Đối với DSA / ECDSA:</strong></p>
+<ul>
+<li><a href="https://notsosecure.com/ecdsa-nonce-reuse-attack"><em>Reuse nonce / Nonce collision</em></a></li>
+<li><a href="https://sruthisekar.wordpress.com/wp-content/uploads/2024/11/ct13.pdf"><em>Related nonce / Biased nonce:</em></a></li>
+<li><a href="https://scispace.com/pdf/some-lattices-attacks-on-dsa-and-ecdsa-130e209wkq.pdf"><em>Lattice Attacks</em></a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="5-tài-liệu-thực-hành--luyện-tập">
+<a class="header-anchor" href="#5-t%c3%a0i-li%e1%bb%87u-th%e1%bb%b1c-h%c3%a0nh--luy%e1%bb%87n-t%e1%ba%adp"></a>
+5. Tài Liệu Thực Hành &amp; Luyện Tập
+</h2><p>Để củng cố kiến thức thực chiến, làm các bài tập sau:</p>
+<ul>
+<li><strong>Cryptohack (RSA Signatures):</strong> <a href="https://cryptohack.org/challenges/rsa/">https://cryptohack.org/challenges/rsa/</a></li>
+<li><strong>Cryptohack (ECC Signatures):</strong> <a href="https://cryptohack.org/challenges/ecc/">https://cryptohack.org/challenges/ecc/</a></li>
+<li><strong>Hackropole (Bài tập El-Gamal fait 1 &amp; 2):</strong> <a href="https://hackropole.fr/en/crypto/">https://hackropole.fr/en/crypto/</a></li>
+</ul>
+</div>
+    <footer class="article-footer"><blockquote class="article-copyright"><p><strong><span class="icon-user icon"></span>Author: </strong>r1muru</p><p>
+      <strong><span class="icon-link icon"></span>Permalink: </strong><a href="https://r1muru2006.github.io/post/dsa/">https://r1muru2006.github.io/post/dsa/</a>
+    </p><p>
+      
+      <strong><span class="icon-copyright icon"></span>License: </strong>
+      All articles on this blog are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener nofollow noreferrer" target="_blank"><span class="icon-creative-commons"></span>BY-NC-SA</a> license agreement unless otherwise stated. Please indicate the source when reprinting!
+    </p>
+    <span class="icon-creative-commons article-copyright-bg"></span></blockquote>
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/cryptography"
+        rel="tag"
+        >CRYPTOGRAPHY</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/research"
+        rel="tag"
+        >RESEARCH</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
     data-aos="fade-up"
-  ><div class="tag-wrap"><div
-      class="archives-tag-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-tag-list-link" href="/tags/cryptography/"
-        >Cryptography</a
-      >
-    </div><div
-      class="archives-tag-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-tag-list-link" href="/tags/ctf/"
-        >CTF</a
-      >
-    </div><div
-      class="archives-tag-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-tag-list-link" href="/tags/hardware/"
-        >Hardware</a
-      >
-    </div><div
-      class="archives-tag-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-tag-list-link" href="/tags/miscellaneous/"
-        >Miscellaneous</a
-      >
-    </div><div
-      class="archives-tag-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-tag-list-link" href="/tags/nsucrypto/"
-        >NSUCRYPTO</a
-      >
-    </div><div
-      class="archives-tag-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-tag-list-link" href="/tags/osint/"
-        >Osint</a
-      >
-    </div><div
-      class="archives-tag-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-tag-list-link" href="/tags/research/"
-        >Research</a
-      >
-    </div><div
-      class="archives-tag-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-tag-list-link" href="/tags/reverse/"
-        >Reverse</a
-      >
-    </div><div
-      class="archives-tag-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-tag-list-link" href="/tags/reverse-engineering/"
-        >Reverse Engineering</a
-      >
-    </div><div
-      class="archives-tag-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-tag-list-link" href="/tags/web/"
-        >Web</a
-      >
-    </div><div
-      class="archives-tag-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-tag-list-link" href="/tags/web3/"
-        >Web3</a
-      >
-    </div></div>
-<div class="category-wrap"><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/ctf-write-up/"
-        >CTF Write-Up</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/learning/"
-        >Learning</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/wannagame/"
-        >WannaGame</a
-      >
-    </div></div><section class="archives-wrap" data-aos="fade-up">
-    <div class="archive-year-wrap">
-      <span class="archive-year">2025</span>
-    </div>
-    <ul><li class="archive-article">
-          <div class="archive-article-date">
-            <span>
-              <time
-                class="dt-published"
-                datetime="2025-03-22 13:52:19 &#43;0700 &#43;07"
-                itemprop="datePublished"
-                >2025-03</time
-              >
-            </span>
-          </div><a class="archive-article-title" href="/post/picoctf2025/"
-              >picoCTF 2025</a
-            ></li></ul>
-  </section></div><nav id="page-nav" aria-label="Pagination navigation" data-aos="fade-up"><a class="extend prev" rel="prev" href="/tags/ctf/">
-      &laquo;
-      Prev</a><a class="page-number" href="/tags/ctf/">1</a><span class="page-number current">2</span></nav>
-</section>
+  ><div class="article-nav-link-wrap left"><img
+            data-src="/images/ECC/avatar.png"
+            data-sizes="auto"
+            alt="Elliptic Curve Cryptography"
+            class="lazyload"
+          /><a
+          href="/post/ecc_isogeny/"
+          aria-label="Prev:Elliptic Curve Cryptography"
+          title="Prev:Elliptic Curve Cryptography"
+        ></a>
+        <div class="article-nav-caption">Prev</div>
+        <h3 class="article-nav-title">Elliptic Curve Cryptography</h3>
+      </div></nav></article></section>
         </div><footer id="footer" aria-label="Site footer">
   <div style="width: 100%; overflow: hidden">
     <div class="footer-line"></div>
@@ -626,7 +560,25 @@ This article does not have a corresponding language version
             <div class="arrow-up"></div>
           </div><div id="mask" class="hide"></div>
       </div><nav id="mobile-nav" aria-label="Mobile navigation">
-  <div class="sidebar-wrap"><div class="sidebar-author">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">Contents</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-tầm-quan-trọng--ứng-dụng-thực-tiễn">1. Tầm Quan Trọng &amp; Ứng Dụng Thực Tiễn</a></li>
+    <li><a href="#2-cấu-trúc-chung-của-một-hệ-thống-chữ-ký-số">2. Cấu Trúc Chung Của Một Hệ Thống Chữ Ký Số</a></li>
+    <li><a href="#3-phân-tích-các-thuật-toán-tiêu-biểu">3. Phân Tích Các Thuật Toán Tiêu Biểu</a>
+      <ul>
+        <li><a href="#31-thuật-toán-rsa">3.1. Thuật toán RSA</a></li>
+        <li><a href="#32-thuật-toán-dsa-digital-signature-algorithm">3.2. Thuật toán DSA (Digital Signature Algorithm)</a></li>
+        <li><a href="#33-thuật-toán-ecdsa-elliptic-curve-dsa">3.3. Thuật toán ECDSA (Elliptic Curve DSA)</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-các-biện-pháp-tấn-công-phổ-biến-attack-vectors">4. Các Biện Pháp Tấn Công Phổ Biến (Attack Vectors)</a></li>
+    <li><a href="#5-tài-liệu-thực-hành--luyện-tập">5. Tài Liệu Thực Hành &amp; Luyện Tập</a></li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img
     data-src="/avatar/avatar.png"
     data-sizes="auto"
@@ -717,7 +669,10 @@ This article does not have a corresponding language version
       <div class='sidebar-menu-icon icon '>&#xf007;</div>
       <div class="sidebar-menu-link">About</div>
     </div></div>
-</div></nav>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
 </div><div class="site-search">
         <div class="reimu-popup popup">
           <div class="reimu-search">
@@ -790,10 +745,10 @@ This article does not have a corresponding language version
   <div><script data-pjax>
         window.REIMU_POST = {
           author: "r1muru",
-          title: "CTF",
-          url: "https:\/\/r1muru2006.github.io\/tags\/ctf\/",
-          description: "",
-          cover: "https:\/\/r1muru2006.github.io\/avatar\/banner.jpg",
+          title: "Digital Signature",
+          url: "https:\/\/r1muru2006.github.io\/post\/dsa\/",
+          description: "Các lược đồ chữ ký số là các giao thức mật mã (sử dụng RSA, DSA hoặc ECDSA) đảm bảo tính toàn vẹn, tính xác thực và tính không thể phủ nhận của thông điệp.",
+          cover: "https:\/\/r1muru2006.github.io\/images\/DSA\/avatar.png",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
           if (_$$(`${gallery} ${children}`).length > 0) {
@@ -813,7 +768,28 @@ This article does not have a corresponding language version
         } else {
           window.addEventListener('lightbox:ready', pswp);
         }
-      </script></div>
+      </script><script
+    src="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.js"
+    data-pjaxintegrity="sha384-MWNUH0WmtsYGhn2cbH6ELRCbf9LG3QDqCC&#43;gqPB3IBNO35xjZK3Ejb6oONRpDbPg" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/katex@0.16.24/dist/contrib/auto-render.min.js"
+    data-pjaxintegrity="sha384-hCXGrW6PitJEwbkoStFjeJxv&#43;fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"></script><script data-pjax>
+          var renderMath = () => {
+            if (!window.renderMathInElement) return;
+            window.renderMathInElement(_$("article"), {
+              delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "\\[", right: "\\]", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+              ],
+            });
+          };
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", renderMath, { once: true });
+          } else {
+            renderMath();
+          }
+        </script></div>
 </div><script
     src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
     asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>

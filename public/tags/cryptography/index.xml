@@ -12,12 +12,35 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
-    <lastBuildDate>Sun, 01 Feb 2026 12:27:52 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 12 Feb 2026 19:55:47 +0700</lastBuildDate>
     
     
     <atom:link href="https://r1muru2006.github.io/tags/cryptography/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>Digital Signature</title>
+      <link>https://r1muru2006.github.io/post/dsa/</link>
+      <pubDate>Thu, 12 Feb 2026 19:55:47 &#43;0700</pubDate>
+      <author>cuongchu200@gmail.com (r1muru)</author>
+      <guid>https://r1muru2006.github.io/post/dsa/</guid>
+      <description>
+        <![CDATA[<h1>Digital Signature</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
+        
+          <h1 id="chữ-ký-số-digital-signature-algorithm">
+<a class="header-anchor" href="#ch%e1%bb%af-k%c3%bd-s%e1%bb%91-digital-signature-algorithm"></a>
+Chữ Ký Số (Digital Signature Algorithm)
+</h1><p>Chữ ký số hoạt động tương tự như chữ ký ngoài đời thực, mang chức năng xác nhận danh tính của một cá nhân hay tổ chức đối với một đoạn văn bản. Sự khác biệt tất yếu là chữ ký số được áp dụng cho các biên bản đã được số hóa trên không gian mạng, thay vì biên bản giấy (analog).</p>
+        
+        <hr><p>Published on 2026-02-12 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2026-02-12</p>]]>
+      </description>
+      
+        <category>Learning</category>
+      
+    </item>
     
     
 
@@ -425,59 +448,6 @@ Crypto
 <img src="https://hackmd.io/_uploads/r1OJoEW9lx.png" alt="image"></p>
         
         <hr><p>Published on 2025-09-09 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-09</p>]]>
-      </description>
-      
-        <category>CTF Write-up</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>NahamCon CTF 2025</title>
-      <link>https://r1muru2006.github.io/post/nahamconctf2025/</link>
-      <pubDate>Thu, 05 Jun 2025 08:19:28 &#43;0700</pubDate>
-      <author>cuongchu200@gmail.com (r1muru)</author>
-      <guid>https://r1muru2006.github.io/post/nahamconctf2025/</guid>
-      <description>
-        <![CDATA[<h1>NahamCon CTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
-        
-          <h2 id="1-readtherules">
-<a class="header-anchor" href="#1-readtherules"></a>
-1. Readtherules
-</h2><p><img src="https://hackmd.io/_uploads/Bkc2_0AGel.png" alt="Screenshot 2025-05-24 063727"></p>
-<pre><code>Flag: flag{90bc54705794a62015369fd8e86e557b}
-</code></pre>
-<h2 id="2-freeflag">
-<a class="header-anchor" href="#2-freeflag"></a>
-2. FreeFlag
-</h2><p>Thử thách cho ta một file <code>free_flags.txt</code> chứa 1000 flag nên ta nghĩ ngay tới việc sử dụng định dạng mẫu và lọc flag phù hợp.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># solution.py</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">is_flag</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^flag\{[0-9a-f]</span><span class="si">{32}</span><span class="s1">\}$&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="k">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;free_flags.txt&#34;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">flag</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;  &#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">flag</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">is_flag</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</span></span></code></pre></div><pre><code>Flag: flag{ae6b6fb0686ec594652afe9eb6088167}
-</code></pre>
-<h2 id="3-naham-commencement2025">
-<a class="header-anchor" href="#3-naham-commencement2025"></a>
-3. Naham Commencement2025
-</h2><p>Thử thách cho ta một đường dẫn vào 1 trang đăng nhập, có vẻ như mục đích là ta phải sử dụng đúng tài khoản để truy cập vào và lấy flag. Khi <code>f12</code>, thì ta có source sau:</p>
-        
-        <hr><p>Published on 2025-06-05 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-06-05</p>]]>
       </description>
       
         <category>CTF Write-up</category>
