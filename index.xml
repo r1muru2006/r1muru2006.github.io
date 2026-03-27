@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>r1muru's blog</title><link>https://r1muru2006.github.io/algolia.json</link><description>Recent content from r1muru's blog</description><generator>Hugo</generator><language>en-us</language><managingEditor>cuongchu200@gmail.com (r1muru)</managingEditor><webMaster>cuongchu200@gmail.com (r1muru)</webMaster><copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright><lastBuildDate>Sun, 01 Feb 2026 12:27:52 +0700</lastBuildDate><atom:link href="https://r1muru2006.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Elliptic Curve Cryptography</title><link>https://r1muru2006.github.io/post/ecc_isogeny/</link><pubDate>Sun, 01 Feb 2026 12:27:52 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/ecc_isogeny/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>r1muru's blog</title><link>https://r1muru2006.github.io/algolia.json</link><description>Recent content from r1muru's blog</description><generator>Hugo</generator><language>en-us</language><managingEditor>cuongchu200@gmail.com (r1muru)</managingEditor><webMaster>cuongchu200@gmail.com (r1muru)</webMaster><copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright><lastBuildDate>Thu, 12 Feb 2026 19:55:47 +0700</lastBuildDate><atom:link href="https://r1muru2006.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Digital Signature</title><link>https://r1muru2006.github.io/post/dsa/</link><pubDate>Thu, 12 Feb 2026 19:55:47 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/dsa/</guid><description>
+<![CDATA[<h1>Digital Signature</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
+        
+          <h1 id="chữ-ký-số-digital-signature-algorithm">
+<a class="header-anchor" href="#ch%e1%bb%af-k%c3%bd-s%e1%bb%91-digital-signature-algorithm"></a>
+Chữ Ký Số (Digital Signature Algorithm)
+</h1><p>Chữ ký số hoạt động tương tự như chữ ký ngoài đời thực, mang chức năng xác nhận danh tính của một cá nhân hay tổ chức đối với một đoạn văn bản. Sự khác biệt tất yếu là chữ ký số được áp dụng cho các biên bản đã được số hóa trên không gian mạng, thay vì biên bản giấy (analog).</p>
+        
+        <hr><p>Published on 2026-02-12 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2026-02-12</p>]]></description><category>Learning</category></item><item><title>Elliptic Curve Cryptography</title><link>https://r1muru2006.github.io/post/ecc_isogeny/</link><pubDate>Sun, 01 Feb 2026 12:27:52 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/ecc_isogeny/</guid><description>
 <![CDATA[<h1>Elliptic Curve Cryptography</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
         
           <h1 id="elliptic-curve-cryptography">
@@ -247,64 +255,4 @@ leaky-rsa
 Phân tích và lời giải
 </h3><p>Nhìn sơ qua thì đây là một bài ứng dụng thuật AES-RSA</p>
         
-        <hr><p>Published on 2025-09-14 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-14</p>]]></description><category>CTF Write-up</category></item><item><title>HOLACTF 2025</title><link>https://r1muru2006.github.io/post/holactf2025/</link><pubDate>Tue, 09 Sep 2025 08:42:30 +0700</pubDate><author>cuongchu200@gmail.com (r1muru)</author><guid>https://r1muru2006.github.io/post/holactf2025/</guid><description>
-<![CDATA[<h1>HOLACTF 2025</h1><p>Author: r1muru(cuongchu200@gmail.com)</p>
-        
-          <h2 id="crypto">
-<a class="header-anchor" href="#crypto"></a>
-Crypto
-</h2><h3 id="1-cs2rtrash">
-<a class="header-anchor" href="#1-cs2rtrash"></a>
-1. Cs2RTrash
-</h3><p><img src="https://hackmd.io/_uploads/B16EYV-qgl.png" alt="image"></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># chall.py</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">bytes_to_long</span><span class="p">,</span> <span class="n">long_to_bytes</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
-</span></span><span class="line"><span class="cl"><span class="n">n1</span> <span class="o">=</span> <span class="mi">106274132069853085771962684070654057294853035674691451636354054913790308627721</span>
-</span></span><span class="line"><span class="cl"><span class="n">n2</span> <span class="o">=</span> <span class="mi">73202720518342632558813895439681594395095017145510800999002057461861058762579</span>
-</span></span><span class="line"><span class="cl"><span class="n">n3</span> <span class="o">=</span> <span class="mi">58129476807669651703262865829974447479957080526429581698674448004236654958847</span>
-</span></span><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;HOLACTF{...}&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="n">m</span> <span class="o">=</span> <span class="n">bytes_to_long</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">c1</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">c2</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">c3</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n3</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;c1: </span><span class="si">{</span><span class="n">c1</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;c2: </span><span class="si">{</span><span class="n">c2</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;c3: </span><span class="si">{</span><span class="n">c3</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// output.txt</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="nl">c1</span><span class="p">:</span><span class="w"> </span><span class="n">40409669713698525444927116587938485167766997176959778633087672968720888190012</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="nl">c2</span><span class="p">:</span><span class="w"> </span><span class="n">50418608792183022472533104230595523000246213655735834753443442906871618770832</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="nl">c3</span><span class="p">:</span><span class="w"> </span><span class="n">7151799367443802424297049002310776844321501905398348074481144597918413565153</span><span class="w">
-</span></span></span></code></pre></div><p>Đây chỉ là 1 bài RSA đơn giản và mình để ý rằng n1 là số nguyên tố nên bài này có thể được giải như sau:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># solution.py</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">inverse</span><span class="p">,</span> <span class="n">long_to_bytes</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">e</span> <span class="o">=</span> <span class="mi">65537</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">n1</span> <span class="o">=</span> <span class="mi">106274132069853085771962684070654057294853035674691451636354054913790308627721</span>
-</span></span><span class="line"><span class="cl"><span class="n">n2</span> <span class="o">=</span> <span class="mi">73202720518342632558813895439681594395095017145510800999002057461861058762579</span>
-</span></span><span class="line"><span class="cl"><span class="n">n3</span> <span class="o">=</span> <span class="mi">58129476807669651703262865829974447479957080526429581698674448004236654958847</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">c1</span> <span class="o">=</span> <span class="mi">40409669713698525444927116587938485167766997176959778633087672968720888190012</span>
-</span></span><span class="line"><span class="cl"><span class="n">c2</span> <span class="o">=</span> <span class="mi">50418608792183022472533104230595523000246213655735834753443442906871618770832</span>
-</span></span><span class="line"><span class="cl"><span class="n">c3</span> <span class="o">=</span> <span class="mi">7151799367443802424297049002310776844321501905398348074481144597918413565153</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">d1</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">n1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">n1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">long_to_bytes</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-</span></span></code></pre></div><pre><code>Flag: HOLACTF{ju5t_a_b4s1c_CRT}
-</code></pre>
-<h3 id="2-enigmahardcode">
-<a class="header-anchor" href="#2-enigmahardcode"></a>
-2. EnigmaHardCode
-</h3><p><img src="https://hackmd.io/_uploads/rJ_aqNWcee.png" alt="image">
-<img src="https://hackmd.io/_uploads/SkGCc4-cge.png" alt="image">
-<img src="https://hackmd.io/_uploads/r1OJoEW9lx.png" alt="image"></p>
-        
-        <hr><p>Published on 2025-09-09 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-09</p>]]></description><category>CTF Write-up</category></item></channel></rss>
+        <hr><p>Published on 2025-09-14 at <a href='https://r1muru2006.github.io/'>r1muru's blog</a>, last modified on 2025-09-14</p>]]></description><category>CTF Write-up</category></item></channel></rss>
