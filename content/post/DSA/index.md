@@ -1,5 +1,5 @@
 ---
-title: "Digital Signature"
+title: "Digital Signature Algorithm"
 description: "Các lược đồ chữ ký số là các giao thức mật mã (sử dụng RSA, DSA hoặc ECDSA) đảm bảo tính toàn vẹn, tính xác thực và tính không thể phủ nhận của thông điệp."
 date: 2026-02-12T19:55:47+07:00
 cover: /images/DSA/avatar.png
@@ -35,11 +35,11 @@ Việc áp dụng chữ ký số, đặc biệt đối với các văn bản qua
 
 ## 2. Cấu Trúc Chung Của Một Hệ Thống Chữ Ký Số
 Mọi hệ thống chữ ký số đều bao gồm 3 thuật toán con:
-1.  **Thuật toán tạo khóa (Key Generation):** Sinh ra một cặp khóa bất đối xứng gồm Public Key (Khóa công khai) và Private Key (Khóa bí mật).
-2.  **Thuật toán ký (Signing):** Nhận đầu vào là văn bản (Message) và Private Key để tạo ra chữ ký.
-3.  **Thuật toán xác thực (Verification):** Nhận đầu vào là chữ ký, văn bản ban đầu và Public Key để trả về kết quả hợp lệ hoặc không.
+1.  **Thuật toán tạo khóa (Key Generation):** Sinh ra một cặp khóa bất đối xứng gồm public key và private key.
+2.  **Thuật toán ký (Signing):** Nhận đầu vào là message và private key để tạo ra chữ ký.
+3.  **Thuật toán xác thực (Verification):** Nhận đầu vào là chữ ký, message và public key để trả về kết quả hợp lệ hoặc không.
 
-**Lưu ý quan trọng về hàm băm:** Trong thực tế, văn bản (message) hiếm khi được ký trực tiếp. Thay vào đó, dữ liệu sẽ đi qua một hàm băm (như MD5, SHA-1, SHA-256). Việc ký trên giá trị Hash giúp giảm thiểu khối lượng tính toán khổng lồ.
+**Lưu ý quan trọng về hàm băm:** Trong thực tế, message hiếm khi được ký trực tiếp. Thay vào đó, dữ liệu sẽ đi qua một hàm băm (như MD5, SHA-1, SHA-256). Việc ký trên giá trị Hash giúp giảm thiểu khối lượng tính toán khổng lồ.
 
 ---
 
@@ -80,7 +80,7 @@ DSA được xây dựng dựa trên nền tảng của thuật toán Schnorr v�
     $$v \equiv (g^{u_1} \cdot y^{u_2} \pmod{p}) \pmod{q}$$
     *Chữ ký hợp lệ nếu $v = r$*.
 
-**Cảnh báo bảo mật:** Giá trị $k$ phải hoàn toàn ngẫu nhiên và **tuyệt đối không được trùng lặp** khi ký các văn bản khác nhau bằng cùng một Private Key. Nếu $k$ bị rò rỉ hoặc tái sử dụng, kẻ tấn công có thể dễ dàng đảo ngược phương trình để khôi phục hoàn toàn Private Key.
+**Cảnh báo bảo mật:** Giá trị $k$ phải hoàn toàn ngẫu nhiên và **tuyệt đối không được trùng lặp** khi ký các văn bản khác nhau bằng cùng một private key. Nếu $k$ bị rò rỉ hoặc tái sử dụng, kẻ tấn công có thể dễ dàng đảo ngược phương trình để khôi phục hoàn toàn private key.
 
 ### 3.3. Thuật toán ECDSA (Elliptic Curve DSA)
 ECDSA là biến thể của DSA áp dụng trên hệ mật mã đường cong Elliptic (ECC). Ưu điểm vượt trội của ECDSA là nhanh, gọn và nhẹ. Quá trình tính toán nhẹ hơn nhờ việc ECC sử dụng phép cộng điểm trên đường cong thay vì phép nhân số học khổng lồ.
@@ -90,7 +90,7 @@ ECDSA là biến thể của DSA áp dụng trên hệ mật mã đường cong 
     * Public Key ($Q_A$): Sinh ra từ phép nhân vô hướng của điểm cơ sở $G$ trên đường cong: $Q_A = d_A \times G$.
     * Quá trình ký (Signed hash) sinh ra (r,s) tương tự DSA nhưng áp dụng tính toán hình học trên tọa độ đường cong.
 
-**So sánh cấp độ bảo mật (NIST Guidelines):**
+**Cấp độ bảo mật (NIST Guidelines):**
 ECDSA cung cấp độ an toàn tương đương RSA/DSA nhưng với kích thước khóa nhỏ hơn rất nhiều (tối ưu không gian lưu trữ và băng thông).
 
 | Cấp độ bảo mật (Security Level) | Khóa DSA / RSA (bits) | Khóa ECC (bits) | Tỷ lệ RSA : ECC |
