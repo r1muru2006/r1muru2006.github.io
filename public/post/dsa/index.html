@@ -8,7 +8,7 @@
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
 /><title>
-  Digital Signature | r1muru
+  Digital Signature Algorithm | r1muru
 </title>
 <meta name="description" content="Các lược đồ chữ ký số là các giao thức mật mã (sử dụng RSA, DSA hoặc ECDSA) đảm bảo tính toàn vẹn, tính xác thực và tính không thể phủ nhận của thông điệp."/><script>
   window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://r1muru2006.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":false,\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
@@ -49,7 +49,7 @@
     integrity="sha384-UlkrhOIvZxJFd4MElSUp7ow6/RUeYKi/orfCZIRRiOENFuQPIAA3T3HjYfmBRhNq" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
   /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
 <meta property="og:type" content="website" />
-  <meta property="og:title" content="Digital Signature | r1muru" />
+  <meta property="og:title" content="Digital Signature Algorithm | r1muru" />
   <meta
     property="og:description"
     content="Các lược đồ chữ ký số là các giao thức mật mã (sử dụng RSA, DSA hoặc ECDSA) đảm bảo tính toàn vẹn, tính xác thực và tính không thể phủ nhận của thông điệp."
@@ -141,9 +141,9 @@ This article does not have a corresponding language version
   </nav>
   <nav id="sub-nav" aria-label="Secondary navigation"><a id="nav-search-btn" class="nav-icon popup-trigger" title="Search" aria-label="Search"></a></nav></div>
 <header id="header" aria-label="Site header"><picture></picture>
-    <img  fetchpriority="high" src="/images/DSA/avatar.png" alt="Digital Signature"><div id="header-outer">
+    <img  fetchpriority="high" src="/images/DSA/avatar.png" alt="Digital Signature Algorithm"><div id="header-outer">
     <div id="header-title"><span id="logo">
-            <h1 data-aos="slide-up">Digital Signature</h1>
+            <h1 data-aos="slide-up">Digital Signature Algorithm</h1>
           </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
   </div>
 </header><div id="content"
@@ -322,11 +322,11 @@ Chữ Ký Số (Digital Signature Algorithm)
 2. Cấu Trúc Chung Của Một Hệ Thống Chữ Ký Số
 </h2><p>Mọi hệ thống chữ ký số đều bao gồm 3 thuật toán con:</p>
 <ol>
-<li><strong>Thuật toán tạo khóa (Key Generation):</strong> Sinh ra một cặp khóa bất đối xứng gồm Public Key (Khóa công khai) và Private Key (Khóa bí mật).</li>
-<li><strong>Thuật toán ký (Signing):</strong> Nhận đầu vào là văn bản (Message) và Private Key để tạo ra chữ ký.</li>
-<li><strong>Thuật toán xác thực (Verification):</strong> Nhận đầu vào là chữ ký, văn bản ban đầu và Public Key để trả về kết quả hợp lệ hoặc không.</li>
+<li><strong>Thuật toán tạo khóa (Key Generation):</strong> Sinh ra một cặp khóa bất đối xứng gồm public key và private key.</li>
+<li><strong>Thuật toán ký (Signing):</strong> Nhận đầu vào là message và private key để tạo ra chữ ký.</li>
+<li><strong>Thuật toán xác thực (Verification):</strong> Nhận đầu vào là chữ ký, message và public key để trả về kết quả hợp lệ hoặc không.</li>
 </ol>
-<p><strong>Lưu ý quan trọng về hàm băm:</strong> Trong thực tế, văn bản (message) hiếm khi được ký trực tiếp. Thay vào đó, dữ liệu sẽ đi qua một hàm băm (như MD5, SHA-1, SHA-256). Việc ký trên giá trị Hash giúp giảm thiểu khối lượng tính toán khổng lồ.</p>
+<p><strong>Lưu ý quan trọng về hàm băm:</strong> Trong thực tế, message hiếm khi được ký trực tiếp. Thay vào đó, dữ liệu sẽ đi qua một hàm băm (như MD5, SHA-1, SHA-256). Việc ký trên giá trị Hash giúp giảm thiểu khối lượng tính toán khổng lồ.</p>
 <hr>
 <h2 id="3-phân-tích-các-thuật-toán-tiêu-biểu">
 <a class="header-anchor" href="#3-ph%c3%a2n-t%c3%adch-c%c3%a1c-thu%e1%ba%adt-to%c3%a1n-ti%c3%aau-bi%e1%bb%83u"></a>
@@ -382,7 +382,7 @@ $$u_2 \equiv r \cdot w \pmod{q}$$
 $$v \equiv (g^{u_1} \cdot y^{u_2} \pmod{p}) \pmod{q}$$
 <em>Chữ ký hợp lệ nếu $v = r$</em>.</li>
 </ul>
-<p><strong>Cảnh báo bảo mật:</strong> Giá trị $k$ phải hoàn toàn ngẫu nhiên và <strong>tuyệt đối không được trùng lặp</strong> khi ký các văn bản khác nhau bằng cùng một Private Key. Nếu $k$ bị rò rỉ hoặc tái sử dụng, kẻ tấn công có thể dễ dàng đảo ngược phương trình để khôi phục hoàn toàn Private Key.</p>
+<p><strong>Cảnh báo bảo mật:</strong> Giá trị $k$ phải hoàn toàn ngẫu nhiên và <strong>tuyệt đối không được trùng lặp</strong> khi ký các văn bản khác nhau bằng cùng một private key. Nếu $k$ bị rò rỉ hoặc tái sử dụng, kẻ tấn công có thể dễ dàng đảo ngược phương trình để khôi phục hoàn toàn private key.</p>
 <h3 id="33-thuật-toán-ecdsa-elliptic-curve-dsa">
 <a class="header-anchor" href="#33-thu%e1%ba%adt-to%c3%a1n-ecdsa-elliptic-curve-dsa"></a>
 3.3. Thuật toán ECDSA (Elliptic Curve DSA)
@@ -396,7 +396,7 @@ $$v \equiv (g^{u_1} \cdot y^{u_2} \pmod{p}) \pmod{q}$$
 </ul>
 </li>
 </ul>
-<p><strong>So sánh cấp độ bảo mật (NIST Guidelines):</strong>
+<p><strong>Cấp độ bảo mật (NIST Guidelines):</strong>
 ECDSA cung cấp độ an toàn tương đương RSA/DSA nhưng với kích thước khóa nhỏ hơn rất nhiều (tối ưu không gian lưu trữ và băng thông).</p>
 <table>
   <thead>
@@ -745,7 +745,7 @@ ECDSA cung cấp độ an toàn tương đương RSA/DSA nhưng với kích thư
   <div><script data-pjax>
         window.REIMU_POST = {
           author: "r1muru",
-          title: "Digital Signature",
+          title: "Digital Signature Algorithm",
           url: "https:\/\/r1muru2006.github.io\/post\/dsa\/",
           description: "Các lược đồ chữ ký số là các giao thức mật mã (sử dụng RSA, DSA hoặc ECDSA) đảm bảo tính toàn vẹn, tính xác thực và tính không thể phủ nhận của thông điệp.",
           cover: "https:\/\/r1muru2006.github.io\/images\/DSA\/avatar.png",
